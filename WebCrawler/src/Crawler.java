@@ -12,39 +12,53 @@ import java.net.URI;
 
 public class Crawler {
 
-	public Object lock = new Object();
-	int count = 0;
+	public Object lock = new Object(); // Serves as a lock to all the thread to avoid any race conditions.
+	int count = 0; // Counts the number of downloaded webPages.
+	final static int TOTAL_NUM_WEBPAGES = 5000;
 
 	public static void main(String[] args) {
 
 		try {
+			// Create a scanner to read from the console.
 			Scanner s = new Scanner(System.in);
+			// Read the file name of the seeds webPages.
 			System.out.println("Please Enter the File name of the Seeds: ");
 			String fileName = s.next();
+			// Read the number of threads.
 			System.out.println("Please Enter the number of threads: ");
 			int numThreads = s.nextInt();
 			s.close();
 
+			// Create a scanner to read from the seeds file.
 			s = new Scanner(new File(fileName));
+			// Queue to store the webPages to be downloaded.
 			Queue<String> Q = new LinkedList<String>();
+			// Hashtable to store the webPages that have been downloaded (Avoid visiting
+			// same url twice).
 			Hashtable<String, Integer> visitedUrl = new Hashtable<String, Integer>();
+			// Hashtable to store the compacted downloaded webPages (Avoid visiting same
+			// webPage twice - from 2 different urls).
 			Hashtable<String, Integer> compactString = new Hashtable<String, Integer>();
 			System.out.println("The seeds initially in the Seeds file are:");
+			// Initialize the queue with the seeds.
 			while (s.hasNextLine()) {
 				String line = s.nextLine();
 				System.out.println(line);
 				Q.add(line);
 			}
 			s.close();
+			// Create a new thread pool.
 			Thread[] threadsArr = new Thread[numThreads];
+			// Create a new Crawler object.
 			Crawler crawler = new Crawler();
 			for (int i = 0; i < numThreads; i++) {
-				// Recursive function
+				// Create threads with the Crawler object.
 				threadsArr[i] = crawler.new CrawlerThread(Q, compactString, visitedUrl);
 				System.out.println("Started the thread number: " + i);
 				threadsArr[i].start();
 			}
 			for (int i = 0; i < numThreads; i++) {
+				// Wait for all the threads to finish.
 				threadsArr[i].join();
 				System.out.println("Thread number" + i + " Is terminated.");
 			}
@@ -56,12 +70,15 @@ public class Crawler {
 
 	private class CrawlerThread extends Thread {
 
-		private Queue<String> Q;
-		private Hashtable<String, Integer> compactString;
-		private Hashtable<String, Integer> visitedUrl;
+		private Queue<String> Q; // Queue to store the webPages to be downloaded
+		private Hashtable<String, Integer> compactString; // Hashtable to store the compacted downloaded
+															// webPages.
+		private Hashtable<String, Integer> visitedUrl; // Hashtable to store the webPages that have been
+														// downloaded.
 
 		CrawlerThread(Queue<String> Q, Hashtable<String, Integer> compactString,
 				Hashtable<String, Integer> visitedUrl) {
+			// Constructor to initialize the variables.
 			this.Q = Q;
 			this.compactString = compactString;
 			this.visitedUrl = visitedUrl;
@@ -69,8 +86,11 @@ public class Crawler {
 
 		public void run() {
 			String url = null;
+			// Keep looking for a url for the thread to start crawling with.
+			// Condition to keep looking is that the url is not initialize yet, or this url
+			// is already visited. It exits if the number of downloaded webPages is reached.
 			while (url == null || visitedUrl.containsKey(URI.create(url).normalize().toString())) {
-				if (count >= 5000)
+				if (count >= TOTAL_NUM_WEBPAGES)
 					return;
 				synchronized (lock) {
 					if (!Q.isEmpty()) {
@@ -82,18 +102,25 @@ public class Crawler {
 				crawl(url);
 		}
 
+		// This is a recursive function.
 		// State:
-		// URL: The URL of the web page.
-		// visited: Keep track of the websites that we visited.
+		// URL: The URL of the web page to crawl.
 		private void crawl(String url) {
 
-			if (count >= 5000)
+			// Base/Stopping condition:
+			if (count >= TOTAL_NUM_WEBPAGES)
 				return;
 			System.out.println("Crawling the url: " + url);
 			Document doc = req(url);
+			// doc is null if this url is not valid (visited before or not valid to
+			// download).
 			if (doc != null) {
+				// Loop over all the links in the web page and add then to the to-download
+				// Queue.
 				for (Element link : doc.select("a[href]")) {
-					if (count + Q.size() >= 5000)
+					// If the to-download urls in the queue are sufficient to finish downloading the
+					// required number of webPages do not add any more urls.
+					if (count + Q.size() >= TOTAL_NUM_WEBPAGES)
 						break;
 					String next_link = link.absUrl("href");
 					synchronized (lock) {
@@ -102,8 +129,9 @@ public class Crawler {
 				}
 			}
 			String next_url = null;
+			// Loop until you find a valid(not visited before) url to crawl.
 			while (next_url == null || visitedUrl.containsKey(URI.create(next_url).normalize().toString())) {
-				if (count >= 5000)
+				if (count >= TOTAL_NUM_WEBPAGES)
 					return;
 				synchronized (lock) {
 					if (!Q.isEmpty()) {
@@ -124,16 +152,17 @@ public class Crawler {
 		private Document req(String url) {
 			// We need the try block because the connection might fail.
 			try {
-				// Connection is a data type that comes with the imported Library JSoup.
+				// Connection and Document are data types that come with the imported Library
+				// JSoup.
 				Connection con = Jsoup.connect(url);
 				Document doc = con.get();
 				// Status Code 200 means that the request to visit this WebSite was successful,
 				// as it might be rejected due to Robot exlusion protocol.
 				if (con.response().statusCode() == 200) {
-					// Document is a data type that comes with the imported Library JSoup, It
-					// represents the URL's document.
-					if (count < 5000) {
+
+					if (count < TOTAL_NUM_WEBPAGES) {
 						System.out.println("Downloading the url: " + url);
+						// Result is a boolean is the download was success or failure.
 						Boolean result = DownloadWebPage(url, doc.hashCode());
 						if (result == false)
 							return null;
@@ -173,7 +202,7 @@ public class Crawler {
 				}
 				rd.close();
 				wr.close();
-				if (count >= 5000 ||
+				if (count >= TOTAL_NUM_WEBPAGES ||
 						compactString.containsKey(contentCompactString.toString())
 						|| visitedUrl.containsKey(URI.create(webPage).normalize().toString())) {
 					System.out.println("Download unsuccessful because the webPage: " + webPage + " is already visited");
@@ -188,7 +217,7 @@ public class Crawler {
 					visitedUrl.put(URI.create(webPage).normalize().toString(), 1);
 					count++;
 				}
-				System.out.println("Successful Downloadof the webPage: " + webPage);
+				System.out.println("Successful Download of the webPage: " + webPage);
 				return true;
 			} // Exceptions
 			catch (MalformedURLException mue) {
