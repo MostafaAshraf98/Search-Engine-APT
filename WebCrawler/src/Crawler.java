@@ -1,14 +1,23 @@
-import java.util.*;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.MalformedURLException;
+// import java.net.URI;
+// import java.net.URL;
+import java.util.Hashtable;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
 
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
-import java.net.URL;
-import java.net.MalformedURLException;
-import java.net.URI;
+import ch.sentric.*;
 
 public class Crawler {
 
@@ -86,16 +95,24 @@ public class Crawler {
 
 		public void run() {
 			String url = null;
+			URL normalizedURL = null;
 			// Keep looking for a url for the thread to start crawling with.
 			// Condition to keep looking is that the url is not initialize yet, or this url
 			// is already visited. It exits if the number of downloaded webPages is reached.
-			while (url == null || visitedUrl.containsKey(URI.create(url).normalize().toString())) {
+
+			while (url == null || visitedUrl.containsKey(normalizedURL.getNormalizedUrl())) {
 				if (count >= TOTAL_NUM_WEBPAGES)
 					return;
 				synchronized (lock) {
 					if (!Q.isEmpty()) {
 						url = Q.remove();
 					}
+				}
+				try {
+					normalizedURL = new URL(url);
+				} catch (MalformedURLException e) {
+					url = null;
+					System.out.println("Error while creating URL from the url: " + url + " " + e);
 				}
 			}
 			if (url != null)
@@ -115,7 +132,7 @@ public class Crawler {
 			// doc is null if this url is not valid (visited before or not valid to
 			// download).
 			if (doc != null) {
-				// Loop over all the links in the web page and add then to the to-download
+				// Loop over all the links in the web page and add them to the to-download
 				// Queue.
 				for (Element link : doc.select("a[href]")) {
 					// If the to-download urls in the queue are sufficient to finish downloading the
@@ -129,14 +146,21 @@ public class Crawler {
 				}
 			}
 			String next_url = null;
+			URL normalizedURL = null;
 			// Loop until you find a valid(not visited before) url to crawl.
-			while (next_url == null || visitedUrl.containsKey(URI.create(next_url).normalize().toString())) {
+			while (next_url == null || visitedUrl.containsKey(normalizedURL.getNormalizedUrl())) {
 				if (count >= TOTAL_NUM_WEBPAGES)
 					return;
 				synchronized (lock) {
 					if (!Q.isEmpty()) {
 						next_url = Q.remove();
 					}
+				}
+				try {
+					normalizedURL = new URL(next_url);
+				} catch (MalformedURLException e) {
+					next_url = null;
+					System.out.println("Error while creating URL from the url: " + next_url + " " + e);
 				}
 			}
 			if (next_url != null) {
@@ -163,7 +187,7 @@ public class Crawler {
 					if (count < TOTAL_NUM_WEBPAGES) {
 						System.out.println("Downloading the url: " + url);
 						// Result is a boolean is the download was success or failure.
-						Boolean result = DownloadWebPage(url, doc.hashCode());
+						Boolean result = DownloadWebPage(url, doc.hashCode(), doc);
 						if (result == false)
 							return null;
 					}
@@ -180,19 +204,21 @@ public class Crawler {
 			}
 		}
 
-		private Boolean DownloadWebPage(String webPage, int title) {
+		private Boolean DownloadWebPage(String webPage, int title, Document doc) {
 			try {
+				URL normalizedURL = new URL(webPage);
 				URL url = new URL(webPage);
+
 				BufferedReader rd = null;
 				BufferedWriter wr = null;
-				rd = new BufferedReader(new InputStreamReader(url.openStream()));
+				rd = new BufferedReader(new InputStreamReader(url.getURI().openStream()));
 				wr = new BufferedWriter(
 						new FileWriter(System.getProperty("user.dir") + "/webPages/" + title + ".html"));
 				// Read line by line
 				String line = rd.readLine();
 				StringBuilder contentCompactString = new StringBuilder();
 				while (line != null) {
-					wr.write(line);
+					// wr.write(line);
 					String trimmedLine = line.trim();
 					if (trimmedLine.length() != 0) {
 						contentCompactString.append(trimmedLine.charAt(0))
@@ -200,24 +226,27 @@ public class Crawler {
 					}
 					line = rd.readLine();
 				}
-				rd.close();
-				wr.close();
+
 				if (count >= TOTAL_NUM_WEBPAGES ||
 						compactString.containsKey(contentCompactString.toString())
-						|| visitedUrl.containsKey(URI.create(webPage).normalize().toString())) {
+						|| visitedUrl.containsKey(normalizedURL.getNormalizedUrl())) {
 					System.out.println("Download unsuccessful because the webPage: " + webPage + " is already visited");
 					// Delete the file
-					File f = new File(System.getProperty("user.dir") + "/webPages/" + title + ".html");
-					f.delete();
+					// File f = new File(System.getProperty("user.dir") + "/webPages/" + title +
+					// ".html");
+					// f.delete();
 					// Return false as the downloading was unsucessfull
 					return false;
 				}
 				synchronized (lock) {
 					compactString.put(contentCompactString.toString(), 1);
-					visitedUrl.put(URI.create(webPage).normalize().toString(), 1);
+					visitedUrl.put(normalizedURL.getNormalizedUrl(), 1);
 					count++;
 				}
 				System.out.println("Successful Download of the webPage: " + webPage);
+				wr.write(doc.html());
+				rd.close();
+				wr.close();
 				return true;
 			} // Exceptions
 			catch (MalformedURLException mue) {
@@ -232,6 +261,14 @@ public class Crawler {
 						"StringIndexOutOfBoundsException raised while downloading the webPage: " + webPage + " " + e);
 				return false;
 			}
+		}
+
+		private String compactStringHelper(String html) {
+			StringBuilder contentCompactString = new StringBuilder();
+			String trimmedhtml = html.trim();
+			for (int i = 0; i < trimmedhtml.length(); i += 10)
+				contentCompactString.append(trimmedhtml.charAt(i));
+			return contentCompactString.toString();
 		}
 
 	}
