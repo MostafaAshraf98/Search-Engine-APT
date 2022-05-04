@@ -1,0 +1,7 @@
+/target/
+robotstxt-java-master
+url-normalization-master
+.classpath
+.project
+org.eclipse.jdt.core.prefs
+org.eclipse.m2e.core.prefs
