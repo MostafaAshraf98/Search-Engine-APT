@@ -47,12 +47,14 @@ public class WebCrawler {
 	public Object lock = new Object(); // Serves as a lock to all the thread to avoid any race conditions.
 	public static int count = 0; // Counts the number of downloaded webPages.
 	final static int TOTAL_NUM_WEBPAGES = 75;
+	static Hashtable<String, BaseRobotRules> robotsTxtRules;
 	public static MongoCollection<org.bson.Document> downloadedURLs;
 	public static MongoCollection<org.bson.Document> inQueueURLs;
 
 	public static void main(String[] args) {
 		try {
 
+			robotsTxtRules = new Hashtable<String, BaseRobotRules>();
 			// Create a MongoClient passing the connection String of Mongo Atlas.
 			MongoClient client = MongoClients.create(
 					"mongodb+srv://Mostafa_98:mostafa123@webcrawler.6mfpo.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
@@ -125,7 +127,8 @@ public class WebCrawler {
 				}
 
 				try {
-					normalizedURL = (new URL(url));
+					if (url != null)
+						normalizedURL = (new URL(url));
 				} catch (MalformedURLException e) {
 					url = null;
 					System.out.println("Error while creating URL from the url: " + url + " " + e);
@@ -145,11 +148,7 @@ public class WebCrawler {
 			if (count >= TOTAL_NUM_WEBPAGES)
 				return;
 			System.out.println("Crawling the url: " + url);
-			Document doc = null;
-			if (!isRobotExcluded(url)) {
-				System.out.println("The url is not excluded by robots.txt");
-				doc = req(url);
-			}
+			Document doc = req(url);
 			// doc is null if this url is not valid (visited before or not valid to
 			// download).
 			if (doc != null) {
@@ -178,7 +177,8 @@ public class WebCrawler {
 					}
 				}
 				try {
-					normalizedURL = (new URL(next_url));
+					if (next_url != null)
+						normalizedURL = (new URL(next_url));
 				} catch (MalformedURLException e) {
 					next_url = null;
 					System.out.println("Error while creating URL from the url: " + url + " " + e);
@@ -240,6 +240,10 @@ public class WebCrawler {
 					System.out.println("Download unsuccessful because the webPage: " + url + " is already visited");
 					return false;
 				}
+				if (isRobotExcluded(url)) {
+					System.out.println("The url is  excluded by robots.txt");
+					return false;
+				}
 				synchronized (lock) {
 					count++;
 				}
@@ -286,7 +290,7 @@ public class WebCrawler {
 				java.net.URL urlObj = new java.net.URL(url);
 				String hostId = urlObj.getProtocol() + "://" + urlObj.getHost()
 						+ (urlObj.getPort() > -1 ? ":" + urlObj.getPort() : "");
-				Hashtable<String, BaseRobotRules> robotsTxtRules = new Hashtable<String, BaseRobotRules>();
+
 				rules = robotsTxtRules.get(hostId);
 				if (rules == null) {
 					HttpGet httpget = new HttpGet(hostId + "/robots.txt");
@@ -309,7 +313,7 @@ public class WebCrawler {
 				return false;
 			}
 
-			return rules.isAllowed(url);
+			return !rules.isAllowed(url);
 		}
 	}
 }
