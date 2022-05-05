@@ -5,11 +5,6 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.MalformedURLException;
-// import java.util.Enumeration;
-// import java.util.Hashtable;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.Queue;
 import java.util.Scanner;
 
 import org.jsoup.Connection;
@@ -20,31 +15,24 @@ import org.jsoup.nodes.Element;
 import io.mola.galimatias.GalimatiasParseException;
 import io.mola.galimatias.URL;
 
-import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import static com.mongodb.client.model.Filters.eq;
 
-// import ch.sentric.*;
-
 public class WebCrawler {
 
 	public Object lock = new Object(); // Serves as a lock to all the thread to avoid any race conditions.
 	public static int count = 0; // Counts the number of downloaded webPages.
-	final static int TOTAL_NUM_WEBPAGES = 20;
+	final static int TOTAL_NUM_WEBPAGES = 100;
 	public static MongoCollection<org.bson.Document> downloadedURLs;
 	public static MongoCollection<org.bson.Document> inQueueURLs;
 	public static MongoCollection<org.bson.Document> normalizedVisitedURLs;
 	public static MongoCollection<org.bson.Document> compactStringURLs;
 
 	public static void main(String[] args) {
-
 		try {
-
-			// Queue to store the webPages to be downloaded.
-			Queue<String> Q = new LinkedList<String>();
 
 			// Create a MongoClient passing the connection String of Mongo Atlas.
 			MongoClient client = MongoClients.create(
@@ -58,16 +46,6 @@ public class WebCrawler {
 			compactStringURLs = db.getCollection("compactStringURLs");
 
 			count = (int) downloadedURLs.countDocuments();
-			FindIterable<org.bson.Document> iterDoc = inQueueURLs.find();
-			Iterator<org.bson.Document> it = iterDoc.iterator();
-			while (it.hasNext()) {
-				org.bson.Document doc = it.next();
-				String url = doc.getString("url");
-				Q.add(url);
-			}
-
-			iterDoc = normalizedVisitedURLs.find();
-			it = iterDoc.iterator();
 
 			// Create a scanner to read from the console.
 			Scanner s = new Scanner(System.in);
@@ -86,7 +64,8 @@ public class WebCrawler {
 			while (s.hasNextLine()) {
 				String line = s.nextLine();
 				System.out.println(line);
-				Q.add(line);
+				org.bson.Document doc = new org.bson.Document("url", line);
+				inQueueURLs.insertOne(doc);
 			}
 			s.close();
 			// Create a new thread pool.
@@ -95,7 +74,7 @@ public class WebCrawler {
 			WebCrawler crawler = new WebCrawler();
 			for (int i = 0; i < numThreads; i++) {
 				// Create threads with the Crawler object.
-				threadsArr[i] = crawler.new CrawlerThread(Q);
+				threadsArr[i] = crawler.new CrawlerThread();
 				System.out.println("Started the thread number: " + i);
 				threadsArr[i].start();
 			}
@@ -103,13 +82,6 @@ public class WebCrawler {
 				// Wait for all the threads to finish.
 				threadsArr[i].join();
 				System.out.println("Thread number" + i + " Is terminated.");
-			}
-			while (!Q.isEmpty()) {
-				String urlToVisit = Q.remove();
-				if (inQueueURLs.find(eq("url", urlToVisit)).first() == null) {
-					org.bson.Document doc = new org.bson.Document("url", urlToVisit);
-					inQueueURLs.insertOne(doc);
-				}
 			}
 
 		} catch (Exception e) {
@@ -119,13 +91,6 @@ public class WebCrawler {
 	}
 
 	private class CrawlerThread extends Thread {
-
-		private Queue<String> Q; // Queue to store the webPages to be downloaded
-
-		CrawlerThread(Queue<String> Q) {
-			// Constructor to initialize the variables.
-			this.Q = Q;
-		}
 
 		public void run() {
 			String url = null;
@@ -137,10 +102,8 @@ public class WebCrawler {
 			while (url == null || normalizedVisitedURLs.find(eq("normalizedURL", normalizedURL)).first() != null) {
 				if (count >= TOTAL_NUM_WEBPAGES)
 					return;
-				synchronized (lock) {
-					if (!Q.isEmpty()) {
-						url = Q.remove();
-					}
+				if (inQueueURLs.countDocuments() != 0) {
+					url = inQueueURLs.findOneAndDelete(null).get("url").toString();
 				}
 
 				try {
@@ -174,12 +137,11 @@ public class WebCrawler {
 				for (Element link : doc.select("a[href]")) {
 					// If the to-download urls in the queue are sufficient to finish downloading the
 					// required number of webPages do not add any more urls.
-					if (count + Q.size() >= TOTAL_NUM_WEBPAGES)
+					if (count + inQueueURLs.countDocuments() >= TOTAL_NUM_WEBPAGES * 2)
 						break;
 					String next_link = link.absUrl("href");
-					synchronized (lock) {
-						Q.add(next_link);
-					}
+					org.bson.Document document = new org.bson.Document("url", next_link);
+					inQueueURLs.insertOne(document);
 				}
 			}
 			String next_url = null;
@@ -189,13 +151,13 @@ public class WebCrawler {
 				if (count >= TOTAL_NUM_WEBPAGES)
 					return;
 				synchronized (lock) {
-					if (!Q.isEmpty()) {
-						next_url = Q.remove();
+					if (inQueueURLs.countDocuments() != 0) {
+						next_url = inQueueURLs.findOneAndDelete(null).get("url").toString();
 					}
 				}
 				try {
-					if(next_url!=null)
-					normalizedURL = URL.parse(next_url).toString();
+					if (next_url != null)
+						normalizedURL = URL.parse(next_url).toString();
 				} catch (GalimatiasParseException e) {
 					next_url = null;
 					System.out.println("Error while creating URL from the url: " + next_url + " " + e);
