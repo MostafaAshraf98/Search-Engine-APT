@@ -5,8 +5,8 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.util.Enumeration;
-import java.util.Hashtable;
+// import java.util.Enumeration;
+// import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -33,7 +33,7 @@ public class WebCrawler {
 
 	public Object lock = new Object(); // Serves as a lock to all the thread to avoid any race conditions.
 	public static int count = 0; // Counts the number of downloaded webPages.
-	final static int TOTAL_NUM_WEBPAGES = 5;
+	final static int TOTAL_NUM_WEBPAGES = 20;
 	public static MongoCollection<org.bson.Document> downloadedURLs;
 	public static MongoCollection<org.bson.Document> inQueueURLs;
 	public static MongoCollection<org.bson.Document> normalizedVisitedURLs;
@@ -45,12 +45,6 @@ public class WebCrawler {
 
 			// Queue to store the webPages to be downloaded.
 			Queue<String> Q = new LinkedList<String>();
-			// Hashtable to store the webPages that have been downloaded (Avoid visiting
-			// same url twice).
-			Hashtable<String, Integer> visitedUrl = new Hashtable<String, Integer>();
-			// Hashtable to store the compacted downloaded webPages (Avoid visiting same
-			// webPage twice - from 2 different urls).
-			Hashtable<String, Integer> compactString = new Hashtable<String, Integer>();
 
 			// Create a MongoClient passing the connection String of Mongo Atlas.
 			MongoClient client = MongoClients.create(
@@ -74,19 +68,6 @@ public class WebCrawler {
 
 			iterDoc = normalizedVisitedURLs.find();
 			it = iterDoc.iterator();
-			while (it.hasNext()) {
-				org.bson.Document doc = it.next();
-				String url = doc.getString("url");
-				visitedUrl.put(url, 1);
-			}
-
-			iterDoc = compactStringURLs.find();
-			it = iterDoc.iterator();
-			while (it.hasNext()) {
-				org.bson.Document doc = it.next();
-				String url = doc.getString("url");
-				compactString.put(url, 1);
-			}
 
 			// Create a scanner to read from the console.
 			Scanner s = new Scanner(System.in);
@@ -114,7 +95,7 @@ public class WebCrawler {
 			WebCrawler crawler = new WebCrawler();
 			for (int i = 0; i < numThreads; i++) {
 				// Create threads with the Crawler object.
-				threadsArr[i] = crawler.new CrawlerThread(Q, compactString, visitedUrl);
+				threadsArr[i] = crawler.new CrawlerThread(Q);
 				System.out.println("Started the thread number: " + i);
 				threadsArr[i].start();
 			}
@@ -131,30 +112,6 @@ public class WebCrawler {
 				}
 			}
 
-			Enumeration<String> e = visitedUrl.keys();
-			while (e.hasMoreElements()) {
-
-				// Getting the key of a particular entry
-				String key = e.nextElement();
-				if (normalizedVisitedURLs.find(eq("url", key)).first() == null) {
-					org.bson.Document doc = new org.bson.Document("url", key);
-					normalizedVisitedURLs.insertOne(doc);
-				}
-
-			}
-
-			e = compactString.keys();
-			while (e.hasMoreElements()) {
-
-				// Getting the key of a particular entry
-				String key = e.nextElement();
-
-				if (compactStringURLs.find(eq("url", key)).first() == null) {
-					org.bson.Document doc = new org.bson.Document("url", key);
-					compactStringURLs.insertOne(doc);
-				}
-			}
-
 		} catch (Exception e) {
 			System.out.println("Error: " + e);
 		}
@@ -164,17 +121,10 @@ public class WebCrawler {
 	private class CrawlerThread extends Thread {
 
 		private Queue<String> Q; // Queue to store the webPages to be downloaded
-		private Hashtable<String, Integer> compactString; // Hashtable to store the compacted downloaded
-															// webPages.
-		private Hashtable<String, Integer> visitedUrl; // Hashtable to store the webPages that have been
-														// downloaded.
 
-		CrawlerThread(Queue<String> Q, Hashtable<String, Integer> compactString,
-				Hashtable<String, Integer> visitedUrl) {
+		CrawlerThread(Queue<String> Q) {
 			// Constructor to initialize the variables.
 			this.Q = Q;
-			this.compactString = compactString;
-			this.visitedUrl = visitedUrl;
 		}
 
 		public void run() {
@@ -184,7 +134,7 @@ public class WebCrawler {
 			// Condition to keep looking is that the url is not initialize yet, or this url
 			// is already visited. It exits if the number of downloaded webPages is reached.
 
-			while (url == null || visitedUrl.containsKey(normalizedURL)) {
+			while (url == null || normalizedVisitedURLs.find(eq("normalizedURL", normalizedURL)).first() != null) {
 				if (count >= TOTAL_NUM_WEBPAGES)
 					return;
 				synchronized (lock) {
@@ -235,7 +185,7 @@ public class WebCrawler {
 			String next_url = null;
 			String normalizedURL = null;
 			// Loop until you find a valid(not visited before) url to crawl.
-			while (next_url == null || visitedUrl.containsKey(normalizedURL)) {
+			while (next_url == null || normalizedVisitedURLs.find(eq("normalizedURL", normalizedURL)).first() != null) {
 				if (count >= TOTAL_NUM_WEBPAGES)
 					return;
 				synchronized (lock) {
@@ -244,6 +194,7 @@ public class WebCrawler {
 					}
 				}
 				try {
+					if(next_url!=null)
 					normalizedURL = URL.parse(next_url).toString();
 				} catch (GalimatiasParseException e) {
 					next_url = null;
@@ -298,25 +249,25 @@ public class WebCrawler {
 
 				String contentCompactString = compactStringHelper(doc.html());
 				if (count >= TOTAL_NUM_WEBPAGES ||
-						compactString.containsKey(contentCompactString)
-						|| visitedUrl.containsKey(normalizedURL)) {
+						compactStringURLs.find(eq("compactedContent",
+								contentCompactString)).first() != null
+						|| normalizedVisitedURLs.find(eq("normalizedURL", normalizedURL)).first() != null) {
 					System.out.println("Download unsuccessful because the webPage: " + url + " is already visited");
 					return false;
 				}
 				synchronized (lock) {
-					compactString.put(contentCompactString, 1);
-					visitedUrl.put(normalizedURL, 1);
 					count++;
 				}
 				wr = new BufferedWriter(
 						new FileWriter(System.getProperty("user.dir") + "/webPages/" + doc.hashCode() + ".html"));
 				wr.write(doc.html());
 				wr.close();
-				// org.bson.Document document = new org.bson.Document("url",
-				// url).append("fileName", doc.hashCode())
-				// .append("content", doc.html());
 				org.bson.Document document = new org.bson.Document("url", url).append("fileName", doc.hashCode());
 				downloadedURLs.insertOne(document);
+				document = new org.bson.Document("url", url).append("compactedContent", contentCompactString);
+				compactStringURLs.insertOne(document);
+				document = new org.bson.Document("url", url).append("normalizedURL", normalizedURL);
+				normalizedVisitedURLs.insertOne(document);
 				System.out.println("Successful Download of the webPage: " + url);
 				return true;
 			} // Exceptions
