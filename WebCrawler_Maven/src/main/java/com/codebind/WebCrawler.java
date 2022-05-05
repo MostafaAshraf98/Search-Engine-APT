@@ -12,8 +12,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
-import io.mola.galimatias.GalimatiasParseException;
-import io.mola.galimatias.URL;
+import ch.sentric.URL;
 
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
@@ -25,11 +24,9 @@ public class WebCrawler {
 
 	public Object lock = new Object(); // Serves as a lock to all the thread to avoid any race conditions.
 	public static int count = 0; // Counts the number of downloaded webPages.
-	final static int TOTAL_NUM_WEBPAGES = 100;
+	final static int TOTAL_NUM_WEBPAGES = 75;
 	public static MongoCollection<org.bson.Document> downloadedURLs;
 	public static MongoCollection<org.bson.Document> inQueueURLs;
-	public static MongoCollection<org.bson.Document> normalizedVisitedURLs;
-	public static MongoCollection<org.bson.Document> compactStringURLs;
 
 	public static void main(String[] args) {
 		try {
@@ -42,8 +39,6 @@ public class WebCrawler {
 			// Getting the collections from this database.
 			downloadedURLs = db.getCollection("downloadedURLs");
 			inQueueURLs = db.getCollection("inQueueURLs");
-			normalizedVisitedURLs = db.getCollection("normalizedVisitedURLs");
-			compactStringURLs = db.getCollection("compactStringURLs");
 
 			count = (int) downloadedURLs.countDocuments();
 
@@ -94,12 +89,13 @@ public class WebCrawler {
 
 		public void run() {
 			String url = null;
-			String normalizedURL = null;
+			URL normalizedURL = null;
 			// Keep looking for a url for the thread to start crawling with.
 			// Condition to keep looking is that the url is not initialize yet, or this url
 			// is already visited. It exits if the number of downloaded webPages is reached.
 
-			while (url == null || normalizedVisitedURLs.find(eq("normalizedURL", normalizedURL)).first() != null) {
+			while (url == null || downloadedURLs.find(eq("normalizedURL", normalizedURL.getNormalizedUrl()))
+					.first() != null) {
 				if (count >= TOTAL_NUM_WEBPAGES)
 					return;
 				if (inQueueURLs.countDocuments() != 0) {
@@ -107,11 +103,10 @@ public class WebCrawler {
 				}
 
 				try {
-					normalizedURL = URL.parse(url).toString();
-				} catch (GalimatiasParseException e) {
+					normalizedURL = (new URL(url));
+				} catch (MalformedURLException e) {
 					url = null;
 					System.out.println("Error while creating URL from the url: " + url + " " + e);
-
 				}
 
 			}
@@ -145,9 +140,10 @@ public class WebCrawler {
 				}
 			}
 			String next_url = null;
-			String normalizedURL = null;
+			URL normalizedURL = null;
 			// Loop until you find a valid(not visited before) url to crawl.
-			while (next_url == null || normalizedVisitedURLs.find(eq("normalizedURL", normalizedURL)).first() != null) {
+			while (next_url == null || downloadedURLs.find(eq("normalizedURL", normalizedURL.getNormalizedUrl()))
+					.first() != null) {
 				if (count >= TOTAL_NUM_WEBPAGES)
 					return;
 				synchronized (lock) {
@@ -156,12 +152,12 @@ public class WebCrawler {
 					}
 				}
 				try {
-					if (next_url != null)
-						normalizedURL = URL.parse(next_url).toString();
-				} catch (GalimatiasParseException e) {
+					normalizedURL = (new URL(next_url));
+				} catch (MalformedURLException e) {
 					next_url = null;
-					System.out.println("Error while creating URL from the url: " + next_url + " " + e);
+					System.out.println("Error while creating URL from the url: " + url + " " + e);
 				}
+
 			}
 			if (next_url != null) {
 				crawl(next_url);
@@ -206,14 +202,15 @@ public class WebCrawler {
 
 		private Boolean DownloadWebPage(String url, Document doc) {
 			try {
-				String normalizedURL = URL.parse(url).toString();
+				URL normalizedURL = (new URL(url));
 				BufferedWriter wr = null;
 
 				String contentCompactString = compactStringHelper(doc.html());
 				if (count >= TOTAL_NUM_WEBPAGES ||
-						compactStringURLs.find(eq("compactedContent",
+						downloadedURLs.find(eq("compactedContent",
 								contentCompactString)).first() != null
-						|| normalizedVisitedURLs.find(eq("normalizedURL", normalizedURL)).first() != null) {
+						|| downloadedURLs.find(eq("normalizedURL", normalizedURL.getNormalizedUrl()))
+								.first() != null) {
 					System.out.println("Download unsuccessful because the webPage: " + url + " is already visited");
 					return false;
 				}
@@ -224,12 +221,9 @@ public class WebCrawler {
 						new FileWriter(System.getProperty("user.dir") + "/webPages/" + doc.hashCode() + ".html"));
 				wr.write(doc.html());
 				wr.close();
-				org.bson.Document document = new org.bson.Document("url", url).append("fileName", doc.hashCode());
+				org.bson.Document document = new org.bson.Document("url", url).append("fileName", doc.hashCode())
+						.append("compactedContent", contentCompactString).append("normalizedURL", normalizedURL.getNormalizedUrl());
 				downloadedURLs.insertOne(document);
-				document = new org.bson.Document("url", url).append("compactedContent", contentCompactString);
-				compactStringURLs.insertOne(document);
-				document = new org.bson.Document("url", url).append("normalizedURL", normalizedURL);
-				normalizedVisitedURLs.insertOne(document);
 				System.out.println("Successful Download of the webPage: " + url);
 				return true;
 			} // Exceptions
@@ -243,9 +237,6 @@ public class WebCrawler {
 			} catch (StringIndexOutOfBoundsException e) {
 				System.out.println(
 						"StringIndexOutOfBoundsException raised while downloading the webPage: " + url + " " + e);
-				return false;
-			} catch (GalimatiasParseException e) {
-				System.out.println("Error while creating URL from the url: " + url + " " + e);
 				return false;
 			}
 		}

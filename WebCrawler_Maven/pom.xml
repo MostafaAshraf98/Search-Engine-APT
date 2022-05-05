@@ -17,11 +17,13 @@
         <version>4.6.0</version>
     </dependency>
 
-    <dependency>
-      <groupId>io.mola.galimatias</groupId>
-      <artifactId>galimatias</artifactId>
-      <version>0.2.1</version>
-    </dependency>
+    <!-- https://mvnrepository.com/artifact/com.naytev/url-normalization -->
+<dependency>
+    <groupId>com.naytev</groupId>
+    <artifactId>url-normalization_2.11</artifactId>
+    <version>0.3</version>
+</dependency>
+
 
 
   </dependencies>
