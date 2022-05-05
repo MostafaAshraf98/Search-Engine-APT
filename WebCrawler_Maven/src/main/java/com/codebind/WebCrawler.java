@@ -1,24 +1,46 @@
 package com.codebind;
 
+import static com.mongodb.client.model.Filters.eq;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.util.Hashtable;
 import java.util.Scanner;
 
+// Dependency for MongoDB connection 
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+
+// Dependency for HTTPClient
+import org.apache.commons.io.IOUtils;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.entity.BufferedHttpEntity;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.protocol.BasicHttpContext;
+import org.apache.http.protocol.HttpContext;
+import org.apache.http.util.EntityUtils;
+
+// Dependency for JSoup html parsing and manipulation
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
+// Dependency for URL normalization
 import ch.sentric.URL;
 
-import com.mongodb.client.MongoClient;
-import com.mongodb.client.MongoClients;
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoDatabase;
-import static com.mongodb.client.model.Filters.eq;
+// Dependency for robots.txt crawler Commons
+import crawlercommons.robots.BaseRobotRules;
+import crawlercommons.robots.SimpleRobotRules;
+import crawlercommons.robots.SimpleRobotRules.RobotRulesMode;
+import crawlercommons.robots.SimpleRobotRulesParser;
 
 public class WebCrawler {
 
@@ -123,7 +145,11 @@ public class WebCrawler {
 			if (count >= TOTAL_NUM_WEBPAGES)
 				return;
 			System.out.println("Crawling the url: " + url);
-			Document doc = req(url);
+			Document doc = null;
+			if (!isRobotExcluded(url)) {
+				System.out.println("The url is not excluded by robots.txt");
+				doc = req(url);
+			}
 			// doc is null if this url is not valid (visited before or not valid to
 			// download).
 			if (doc != null) {
@@ -222,7 +248,8 @@ public class WebCrawler {
 				wr.write(doc.html());
 				wr.close();
 				org.bson.Document document = new org.bson.Document("url", url).append("fileName", doc.hashCode())
-						.append("compactedContent", contentCompactString).append("normalizedURL", normalizedURL.getNormalizedUrl());
+						.append("compactedContent", contentCompactString)
+						.append("normalizedURL", normalizedURL.getNormalizedUrl());
 				downloadedURLs.insertOne(document);
 				System.out.println("Successful Download of the webPage: " + url);
 				return true;
@@ -249,5 +276,40 @@ public class WebCrawler {
 			return contentCompactString.toString();
 		}
 
+		private Boolean isRobotExcluded(String url) {
+
+			BaseRobotRules rules = null;
+			try {
+				CloseableHttpClient httpclient = HttpClients.createDefault();
+
+				final String USER_AGENT = "APTBot";
+				java.net.URL urlObj = new java.net.URL(url);
+				String hostId = urlObj.getProtocol() + "://" + urlObj.getHost()
+						+ (urlObj.getPort() > -1 ? ":" + urlObj.getPort() : "");
+				Hashtable<String, BaseRobotRules> robotsTxtRules = new Hashtable<String, BaseRobotRules>();
+				rules = robotsTxtRules.get(hostId);
+				if (rules == null) {
+					HttpGet httpget = new HttpGet(hostId + "/robots.txt");
+					HttpContext context = new BasicHttpContext();
+					HttpResponse response = httpclient.execute(httpget, context);
+					if (response.getStatusLine() != null && response.getStatusLine().getStatusCode() == 404) {
+						rules = new SimpleRobotRules(RobotRulesMode.ALLOW_ALL);
+						// consume entity to deallocate connection
+						EntityUtils.consumeQuietly(response.getEntity());
+					} else {
+						BufferedHttpEntity entity = new BufferedHttpEntity(response.getEntity());
+						SimpleRobotRulesParser robotParser = new SimpleRobotRulesParser();
+						rules = robotParser.parseContent(hostId, IOUtils.toByteArray(entity.getContent()),
+								"text/plain", USER_AGENT);
+					}
+					robotsTxtRules.put(hostId, rules);
+				}
+			} catch (IOException e) {
+				System.out.println("Error while fetching the robots.txt file for the url: " + url + " " + e);
+				return false;
+			}
+
+			return rules.isAllowed(url);
+		}
 	}
 }

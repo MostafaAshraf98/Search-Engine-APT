@@ -24,6 +24,18 @@
     <version>0.3</version>
 </dependency>
 
+    <!-- Apache HttpClient wrapper with ability to process and apply robots.txt file directives. -->
+       <dependency>
+        <groupId>com.panforge</groupId>
+        <artifactId>robots-http</artifactId>
+        <version>1.0.10</version>
+    </dependency>
+
+    <dependency>
+    <groupId>com.github.crawler-commons</groupId>
+    <artifactId>crawler-commons</artifactId>
+    <version>1.2</version>
+</dependency>
 
 
   </dependencies>
