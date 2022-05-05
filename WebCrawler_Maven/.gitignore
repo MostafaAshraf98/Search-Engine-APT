@@ -1,6 +1,5 @@
 /target/
-robotstxt-java-master
-url-normalization-master
+webPages
 .classpath
 .project
 org.eclipse.jdt.core.prefs
