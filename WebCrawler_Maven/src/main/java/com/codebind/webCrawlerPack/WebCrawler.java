@@ -1,4 +1,4 @@
-package com.codebind;
+package com.codebind.webCrawlerPack;
 
 import static com.mongodb.client.model.Filters.eq;
 
@@ -51,7 +51,7 @@ public class WebCrawler {
 	public static MongoCollection<org.bson.Document> downloadedURLs;
 	public static MongoCollection<org.bson.Document> inQueueURLs;
 
-	public static void main(String[] args) {
+	public static void Web(String[] args) {
 		try {
 
 			robotsTxtRules = new Hashtable<String, BaseRobotRules>();

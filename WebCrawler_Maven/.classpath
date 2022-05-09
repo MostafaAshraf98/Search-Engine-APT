@@ -52,6 +52,6 @@
 			<attribute name="m2e-apt" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/nadou/OneDrive/Documents/GitHub/Search-Engine-APT/WebCrawler_Maven/jsoup-1.14.3.jar"/>
+	<classpathentry kind="lib" path="D:/Work/CCE/Year 3 - Senior 1/Semester 2/APT/Project/Repo/Search-Engine-APT/WebCrawler_Maven/jsoup-1.14.3.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
