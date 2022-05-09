@@ -1,0 +1,42 @@
+<project
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"
+>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.codebind</groupId>
+  <artifactId>webcrawel</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+
+  <dependencies>
+    <!-- https://mvnrepository.com/artifact/org.mongodb/mongo-java-driver -->
+<!-- https://mvnrepository.com/artifact/org.mongodb/mongodb-driver-sync -->
+    <dependency>
+        <groupId>org.mongodb</groupId>
+        <artifactId>mongodb-driver-sync</artifactId>
+        <version>4.6.0</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/com.naytev/url-normalization -->
+<dependency>
+    <groupId>com.naytev</groupId>
+    <artifactId>url-normalization_2.11</artifactId>
+    <version>0.3</version>
+</dependency>
+
+    <!-- Apache HttpClient wrapper with ability to process and apply robots.txt file directives. -->
+       <dependency>
+        <groupId>com.panforge</groupId>
+        <artifactId>robots-http</artifactId>
+        <version>1.0.10</version>
+    </dependency>
+
+    <dependency>
+    <groupId>com.github.crawler-commons</groupId>
+    <artifactId>crawler-commons</artifactId>
+    <version>1.2</version>
+</dependency>
+
+
+  </dependencies>
+</project>
