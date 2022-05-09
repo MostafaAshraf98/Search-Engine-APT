@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.mongodb.client.MongoDatabase;
+import com.mongodb.MongoClient;
+import com.mongodb.MongoCredential;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -11,10 +15,16 @@ import org.jsoup.nodes.Element;
 public class indexer
 {
     static Map<String,ArrayList<ArrayList<String>>> index = new HashMap<String,ArrayList<ArrayList<String>>>();
-
+    public static MongoCollection<org.bson.Document> downloadedURLs;
     static String webpagesPath = "./webPages/";
     public static void main(String[] args) throws IOException
     {
+        MongoClient client = MongoClients.create(
+					"mongodb+srv://Mostafa_98:mostafa123@webcrawler.6mfpo.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
+		// Getting the dataBase from this client.
+		MongoDatabase db = client.getDatabase("WebCrawler");
+		// Getting the collections from this database.
+		downloadedURLs = db.getCollection("downloadedURLs");
         var docs = readAllHTML();
         for (var doc : docs)
         {
