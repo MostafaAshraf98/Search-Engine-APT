@@ -51,15 +51,15 @@ public class WebCrawler {
 	public static MongoCollection<org.bson.Document> downloadedURLs;
 	public static MongoCollection<org.bson.Document> inQueueURLs;
 
-	public static void Web(String[] args) {
+	public static void Web(String[] args,MongoDatabase db) {
 		try {
 
 			robotsTxtRules = new Hashtable<String, BaseRobotRules>();
 			// Create a MongoClient passing the connection String of Mongo Atlas.
-			MongoClient client = MongoClients.create(
-					"mongodb+srv://Mostafa_98:mostafa123@webcrawler.6mfpo.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
-			// Getting the dataBase from this client.
-			MongoDatabase db = client.getDatabase("WebCrawler");
+//			MongoClient client = MongoClients.create(
+//					"mongodb+srv://Mostafa_98:mostafa123@webcrawler.6mfpo.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
+//			// Getting the dataBase from this client.
+//			MongoDatabase db = client.getDatabase("WebCrawler");
 			// Getting the collections from this database.
 			downloadedURLs = db.getCollection("downloadedURLs");
 			inQueueURLs = db.getCollection("inQueueURLs");
