@@ -1,7 +1,7 @@
 package com.codebind.rankerPack;
 
 public class SearchResult {
-    public static WebPage[] searchResults;
+    public WebPage[] searchResults;
 
     public SearchResult() {
         WebPage P0 = new WebPage(0, new String[] { "2" }, 0, 0.25, 2, new Integer[] { 1, 2 });
