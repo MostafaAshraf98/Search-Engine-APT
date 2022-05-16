@@ -1,3 +1,5 @@
+package Indexer;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -9,10 +11,10 @@ import com.mongodb.MongoClient;
 import com.mongodb.MongoCredential;
 
 import org.jsoup.Jsoup;
-import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.javatuples.Pair;
 
 public class indexer
 {

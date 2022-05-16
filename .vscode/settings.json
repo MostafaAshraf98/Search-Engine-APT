@@ -3,6 +3,7 @@
   "java.project.referencedLibraries": [
     "lib/**/*.jar",
     "jsoup-1.14.3.jar",
-    "WebCrawler_Maven/jsoup-1.14.3.jar"
+    "WebCrawler_Maven/jsoup-1.14.3.jar",
+    "javatuples-1.2.jar"
   ]
 }
