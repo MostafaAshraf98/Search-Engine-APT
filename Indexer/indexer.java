@@ -53,9 +53,8 @@ public class indexer
                     // TODO: stemming
                     // TODO: remove words with length < 3
 
-                    // add word to inverted file
-                    boolean addWord = !isStopWord && word.length() > 0;
-                    if (addWord) {
+                    // If the word is not empty, add it to inverted file
+                    if (word.length() > 0) {
                         if (invertedFile.containsKey(word)) {
                             // If the word is already in the inverted file
 
