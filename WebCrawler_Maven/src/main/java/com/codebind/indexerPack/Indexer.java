@@ -33,7 +33,7 @@ import opennlp.tools.stemmer.PorterStemmer;
 public class Indexer {
     static Map<String, Map<String, Pair<Integer, Map<String, Integer>>>> invertedFile = new HashMap<String, Map<String, Pair<Integer, Map<String, Integer>>>>();
     static Map<String, ArrayList<ArrayList<String>>> index = new HashMap<String, ArrayList<ArrayList<String>>>();
-    public static MongoCollection<org.bson.Document> downloadedURLs;
+    public static MongoCollection<org.bson.Document> downloadedURLs,IndexerCollection;
     static String webpagesPath = "./webPages/";
     // static ArrayList<String> stopwords;
     static Map<String, Integer> stopwords;
@@ -41,16 +41,11 @@ public class Indexer {
     public static void indexer(String[] args, MongoDatabase db) throws IOException {
         loadStopwords();
         // Getting the collections from this database.
-        ArrayList<Document> docs = readAllHTML(db);
-        stemWord("news");
-        stemWord("things");
-        stemWord("computation");
-        stemWord("specifications");
-        stemWord("specify");
-        stemWord("specified");
-        stemWord("good");
-        stemWord("better");
-
+        IndexerCollection = db.getCollection("IndexerCollection");
+        downloadedURLs = db.getCollection("downloadedURLs");
+        ArrayList<Document> docs = readAllHTML();
+      
+        
         // Indexing the documents
         index(docs);
 
@@ -91,7 +86,7 @@ public class Indexer {
         for (Document doc : docs) {
             // Get all tags in a document
             Elements all = doc.getAllElements();
-            for (Element e : all) {
+            for (final Element e : all) {
                 // For each tag, get the text
                 String text = e.text();
                 String[] words = text.split(" ");
@@ -110,7 +105,6 @@ public class Indexer {
                     if (addWord) {
                         if (invertedFile.containsKey(word)) {
                             // If the word is already in the inverted file
-
                             // doc.baseUri() returns the url of the document
                             // ex. C:\Users\dusername\Desktop\Java\.\125241216.html
                             // get the last part of the url
@@ -144,8 +138,7 @@ public class Indexer {
                                 }
                             } else {
                                 // If the documnet is not in the inverted file
-                                invertedFile.get(word).put(fileName,
-                                        new Pair<Integer, Map<String, Integer>>(1, new HashMap<String, Integer>() {
+                                invertedFile.get(word).put(fileName,new Pair<Integer, Map<String, Integer>>(1, new HashMap<String, Integer>() {
                                             {
                                                 put(e.tagName(), 1);
                                             }
@@ -155,7 +148,7 @@ public class Indexer {
                         } else {
                             // If the word is not in the inverted file
 
-                            String fileName = doc.baseUri().substring(doc.baseUri().lastIndexOf("\\") + 1);
+                            final String fileName = doc.baseUri().substring(doc.baseUri().lastIndexOf("\\") + 1);
                             invertedFile.put(word, new HashMap<String, Pair<Integer, Map<String, Integer>>>() {
                                 {
                                     put(fileName,
@@ -173,12 +166,12 @@ public class Indexer {
         }
     }
 
-    private static ArrayList<Document> readAllHTML(MongoDatabase db) throws IOException {
+    private static ArrayList<Document> readAllHTML() throws IOException {
         ArrayList<Document> docs = new ArrayList<Document>();
         File folder = new File(webpagesPath);
         // File[] listOfFiles = folder.listFiles();
         // System.out.println("Number of files: " + listOfFiles.length);
-        downloadedURLs = db.getCollection("downloadedURLs");
+//        downloadedURLs = db.getCollection("downloadedURLs");
         Bson projection = Projections.fields(Projections.include("url", "fileName"), Projections.excludeId());
         FindIterable<org.bson.Document> iterDoc = downloadedURLs.find().projection(projection);
         Iterator it = iterDoc.iterator();
