@@ -29,15 +29,16 @@ import org.bson.conversions.Bson;
 //import org.apache.lucene.analysis.PorterStemmer;
 
 import opennlp.tools.stemmer.PorterStemmer;
+
 public class Indexer {
     static Map<String, Map<String, Pair<Integer, Map<String, Integer>>>> invertedFile = new HashMap<String, Map<String, Pair<Integer, Map<String, Integer>>>>();
-    static Map<String, ArrayList<ArrayList<String>>> index = new HashMap<String, ArrayList<ArrayList<String>>>();
     public static MongoCollection<org.bson.Document> downloadedURLs;
     static String webpagesPath = "./webPages/";
-//    static ArrayList<String> stopwords;
+    // static ArrayList<String> stopwords;
     static Map<String, Integer> stopwords;
-    public static void indexer(String[] args,MongoDatabase db) throws IOException {
-    	loadStopwords();
+
+    public static void indexer(String[] args, MongoDatabase db) throws IOException {
+        loadStopwords();
         // Getting the collections from this database.
         ArrayList<Document> docs = readAllHTML(db);
         stemWord("news");
@@ -53,36 +54,40 @@ public class Indexer {
         }
 
     }
-    public static void loadStopwords() throws IOException {
-    	stopwords= new HashMap<String, Integer>();
-    	 try {
-    		 File inputFile = new File("english_stopwords.txt");
-             Scanner myReader = new Scanner(inputFile);
-             while (myReader.hasNextLine()) {
-                 String word = myReader.next();
-                 if (!word.equals("") && !stopwords.containsKey(word))
-                	 stopwords.put(word, 1);
 
-             }
-             myReader.close();
-         } catch (FileNotFoundException e) {
-             System.out.println("An error occurred.");
-             e.printStackTrace();
-         }
+    public static void loadStopwords() throws IOException {
+        stopwords = new HashMap<String, Integer>();
+        try {
+            File inputFile = new File("english_stopwords.txt");
+            Scanner myReader = new Scanner(inputFile);
+            while (myReader.hasNextLine()) {
+                String word = myReader.next();
+                if (!word.equals("") && !stopwords.containsKey(word))
+                    stopwords.put(word, 1);
+
+            }
+            myReader.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
     }
+
     public static boolean isStopword(String word) {
-    	boolean result=false;
-    	 if (!word.equals("") && stopwords.containsKey(word))
-        	 result=true;
-    	 return result;
+        boolean result = false;
+        if (!word.equals("") && stopwords.containsKey(word))
+            result = true;
+        return result;
     }
+
     public static String stemWord(String word) {
-    	PorterStemmer stemmer = new PorterStemmer();
-    
-    	return stemmer.stem(word);
+        PorterStemmer stemmer = new PorterStemmer();
+
+        return stemmer.stem(word);
     }
-    private static void index(MongoDatabase db) throws IOException {
-        ArrayList<Document> docs = readAllHTML(db);
+
+    private static void index() throws IOException {
+        ArrayList<Document> docs = readAllHTML();
         for (Document doc : docs) {
             // Get all tags in a document
             Elements all = doc.getAllElements();
@@ -98,10 +103,12 @@ public class Indexer {
                     // TODO: remove stop words
                     boolean isStopWord = isStopword(word);
                     // TODO: stemming
-                    // TODO: remove words with length < 3
+                    word = stemWord(word);
+                    
 
-                    // If the word is not empty, add it to inverted file
-                    if (word.length() > 0) {
+                    // add word to inverted file
+                    boolean addWord = !isStopWord && word.length() > 0;
+                    if (addWord) {
                         if (invertedFile.containsKey(word)) {
                             // If the word is already in the inverted file
 
@@ -167,23 +174,17 @@ public class Indexer {
         }
     }
 
-    private static ArrayList<Document> readAllHTML(MongoDatabase db) throws IOException {
+    private static ArrayList<Document> readAllHTML() throws IOException {
         ArrayList<Document> docs = new ArrayList<Document>();
         File folder = new File(webpagesPath);
-//        File[] listOfFiles = folder.listFiles();
-//        System.out.println("Number of files: " + listOfFiles.length);
-        downloadedURLs = db.getCollection("downloadedURLs");
-        Bson projection = Projections.fields(Projections.include("url", "fileName"), Projections.excludeId());
-        FindIterable<org.bson.Document> iterDoc = downloadedURLs.find().projection(projection);
-        Iterator it = iterDoc.iterator();
-        int count=0;
-        while (it.hasNext()) {
-        	count+=1;
-//           System.out.println(fileUrlObject.getElementsByAttribute("filename"));
-        	org.bson.Document fileUrlObject= (org.bson.Document) it.next();
-//        	System.out.println(fileUrlObject.getElementsByAttribute("filename"));
-        	Document doc = readHTMLFile(webpagesPath + fileUrlObject.get("fileName")+".html");
-        	docs.add(doc);
+        File[] listOfFiles = folder.listFiles();
+        System.out.println("Number of files: " + listOfFiles.length);
+        for (File file : listOfFiles) {
+            if (file.isFile() && file.getName().endsWith(".html")) {
+                System.out.println(file.getName());
+                Document doc = readHTMLFile(webpagesPath + file.getName());
+                docs.add(doc);
+            }
         }
         return docs;
     }

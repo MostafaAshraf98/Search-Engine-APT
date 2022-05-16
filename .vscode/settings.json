@@ -2,8 +2,8 @@
   "java.configuration.updateBuildConfiguration": "automatic",
   "java.project.referencedLibraries": [
     "lib/**/*.jar",
+    "javatuples-1.2.jar",
     "jsoup-1.14.3.jar",
-    "WebCrawler_Maven/jsoup-1.14.3.jar",
-    "javatuples-1.2.jar"
+    "opennlp-tools-1.8.0.jar"
   ]
 }
