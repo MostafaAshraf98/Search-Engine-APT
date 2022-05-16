@@ -16,14 +16,19 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.model.Projections;
+//import com.mongodb.MongoClient;
+import com.mongodb.MongoCredential;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 //import org.bson.Document;
-
+import org.javatuples.Pair;
 import org.bson.conversions.Bson;
 
 public class Indexer {
+    static Map<String, Map<String, Pair<Integer, Map<String, Integer>>>> invertedFile = new HashMap<String, Map<String, Pair<Integer, Map<String, Integer>>>>();
     static Map<String, ArrayList<ArrayList<String>>> index = new HashMap<String, ArrayList<ArrayList<String>>>();
     public static MongoCollection<org.bson.Document> downloadedURLs;
     static String webpagesPath = "./webPages/";
@@ -60,6 +65,92 @@ public class Indexer {
     	 if (!word.equals("") && stopwords.containsKey(word))
         	 result=true;
     	 return result;
+    }
+
+    private static void index(MongoDatabase db) throws IOException {
+        ArrayList<Document> docs = readAllHTML(db);
+        for (Document doc : docs) {
+            // Get all tags in a document
+            Elements all = doc.getAllElements();
+            for (Element e : all) {
+                // For each tag, get the text
+                String text = e.text();
+                String[] words = text.split(" ");
+                for (String word : words) {
+                    word = word.toLowerCase();
+                    // Replacing all non-alphanumeric (not from "[^a-zA-Z0-9]") characters with
+                    // empty string
+                    word = word.replaceAll("[^a-zA-Z0-9]", "");
+                    // TODO: remove stop words
+                    boolean isStopWord = isStopword(word);
+                    // TODO: stemming
+                    // TODO: remove words with length < 3
+
+                    // If the word is not empty, add it to inverted file
+                    if (word.length() > 0) {
+                        if (invertedFile.containsKey(word)) {
+                            // If the word is already in the inverted file
+
+                            // doc.baseUri() returns the url of the document
+                            // ex. C:\Users\dusername\Desktop\Java\.\125241216.html
+                            // get the last part of the url
+                            // ex. 125241216.html
+                            String fileName = doc.baseUri().substring(doc.baseUri().lastIndexOf("\\") + 1);
+
+                            if (invertedFile.get(word).containsKey(fileName)) {
+                                // If the documnet is already in the inverted file
+                                Pair<Integer, Map<String, Integer>> pair = invertedFile.get(word).get(fileName);
+
+                                // Update the term frequency
+                                int newTermFreq = pair.getValue0() + 1;
+
+                                // Check if the position of the word in the document is already in the inverted
+                                // file
+                                if (pair.getValue1().containsKey(e.tagName())) {
+                                    // If the position is already in the inverted file, update the term frequency
+                                    int pos = pair.getValue1().get(e.tagName());
+                                    pos++;
+                                    Map<String, Integer> newMap = pair.getValue1();
+                                    newMap.put(e.tagName(), pos);
+                                    pair = new Pair<Integer, Map<String, Integer>>(newTermFreq, newMap);
+                                    invertedFile.get(word).put(fileName, pair);
+                                } else {
+                                    // If the position is not in the inverted file, add it
+                                    Map<String, Integer> newMap = pair.getValue1();
+                                    newMap.put(e.tagName(), 1);
+                                    pair = new Pair<Integer, Map<String, Integer>>(newTermFreq, newMap);
+                                    invertedFile.get(word).put(fileName, pair);
+
+                                }
+                            } else {
+                                // If the documnet is not in the inverted file
+                                invertedFile.get(word).put(fileName,
+                                        new Pair<Integer, Map<String, Integer>>(1, new HashMap<String, Integer>() {
+                                            {
+                                                put(e.tagName(), 1);
+                                            }
+                                        }));
+                            }
+
+                        } else {
+                            // If the word is not in the inverted file
+
+                            String fileName = doc.baseUri().substring(doc.baseUri().lastIndexOf("\\") + 1);
+                            invertedFile.put(word, new HashMap<String, Pair<Integer, Map<String, Integer>>>() {
+                                {
+                                    put(fileName,
+                                            new Pair<Integer, Map<String, Integer>>(1, new HashMap<String, Integer>() {
+                                                {
+                                                    put(e.tagName(), 1);
+                                                }
+                                            }));
+                                }
+                            });
+                        }
+                    }
+                }
+            }
+        }
     }
 
     private static ArrayList<Document> readAllHTML(MongoDatabase db) throws IOException {
