@@ -33,7 +33,7 @@ import opennlp.tools.stemmer.PorterStemmer;
 public class Indexer {
     static Map<String, Map<String, Pair<Integer, Map<String, Integer>>>> invertedFile = new HashMap<String, Map<String, Pair<Integer, Map<String, Integer>>>>();
     static Map<String, ArrayList<ArrayList<String>>> index = new HashMap<String, ArrayList<ArrayList<String>>>();
-    public static MongoCollection<org.bson.Document> downloadedURLs,IndexerCollection;
+    public static MongoCollection<org.bson.Document> downloadedURLs, IndexerCollection;
     static String webpagesPath = "./webPages/";
     // static ArrayList<String> stopwords;
     static Map<String, Integer> stopwords;
@@ -44,8 +44,7 @@ public class Indexer {
         IndexerCollection = db.getCollection("IndexerCollection");
         downloadedURLs = db.getCollection("downloadedURLs");
         ArrayList<Document> docs = readAllHTML();
-      
-        
+
         // Indexing the documents
         index(docs);
 
@@ -138,7 +137,8 @@ public class Indexer {
                                 }
                             } else {
                                 // If the documnet is not in the inverted file
-                                invertedFile.get(word).put(fileName,new Pair<Integer, Map<String, Integer>>(1, new HashMap<String, Integer>() {
+                                invertedFile.get(word).put(fileName,
+                                        new Pair<Integer, Map<String, Integer>>(1, new HashMap<String, Integer>() {
                                             {
                                                 put(e.tagName(), 1);
                                             }
@@ -171,7 +171,7 @@ public class Indexer {
         File folder = new File(webpagesPath);
         // File[] listOfFiles = folder.listFiles();
         // System.out.println("Number of files: " + listOfFiles.length);
-//        downloadedURLs = db.getCollection("downloadedURLs");
+        // downloadedURLs = db.getCollection("downloadedURLs");
         Bson projection = Projections.fields(Projections.include("url", "fileName"), Projections.excludeId());
         FindIterable<org.bson.Document> iterDoc = downloadedURLs.find().projection(projection);
         Iterator it = iterDoc.iterator();
