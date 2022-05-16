@@ -1,3 +1,5 @@
+package Indexer;
+
 import java.util.Map;
 
 public class Properties {
