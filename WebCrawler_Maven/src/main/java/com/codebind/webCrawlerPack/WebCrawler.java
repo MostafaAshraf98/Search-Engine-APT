@@ -50,9 +50,6 @@ public class WebCrawler {
 	// variable is the count).
 	public Object lock = new Object();
 
-	// Counts the number of downloaded webPages so far.
-	public static int count = 0;
-
 	// The total required number of crawled webpages.
 	final static int TOTAL_NUM_WEBPAGES = 75;
 
@@ -80,10 +77,6 @@ public class WebCrawler {
 			// Getting the collections from the database.
 			downloadedURLs = db.getCollection("downloadedURLs");
 			inQueueURLs = db.getCollection("inQueueURLs");
-
-			// The current count of downloaded pages is the number of document in the
-			// collection DownloadedUrls
-			count = (int) downloadedURLs.countDocuments();
 
 			// Create a scanner to read from the console.
 			Scanner s = new Scanner(System.in);
@@ -144,7 +137,7 @@ public class WebCrawler {
 
 			while (url == null || downloadedURLs.find(eq("normalizedURL", normalizedURL.getNormalizedUrl()))
 					.first() != null) {
-				if (count >= TOTAL_NUM_WEBPAGES)
+				if ((int) downloadedURLs.countDocuments() >= TOTAL_NUM_WEBPAGES)
 					return;
 				if (inQueueURLs.countDocuments() != 0) {
 					// FIFO so we take the first document (sorted with the objectID) so the filter
@@ -169,7 +162,7 @@ public class WebCrawler {
 		private void crawl(String url) {
 
 			// Base/Stopping condition:
-			if (count >= TOTAL_NUM_WEBPAGES)
+			if (downloadedURLs.countDocuments() >= TOTAL_NUM_WEBPAGES)
 				return;
 			System.out.println("Crawling the url: " + url);
 			// Request this document.
@@ -182,7 +175,7 @@ public class WebCrawler {
 				for (Element link : doc.select("a[href]")) {
 					// If the to-download urls in the queue are sufficient (the double) to
 					// finish downloading the required number of webPages do not add any more urls.
-					if (count + inQueueURLs.countDocuments() >= TOTAL_NUM_WEBPAGES * 2)
+					if (downloadedURLs.countDocuments() + inQueueURLs.countDocuments() >= TOTAL_NUM_WEBPAGES * 2)
 						break;
 					String next_link = link.absUrl("href");
 					org.bson.Document document = new org.bson.Document("url", next_link);
@@ -199,7 +192,7 @@ public class WebCrawler {
 			// It also exits if the number of downloaded webPages is reached.
 			while (next_url == null || downloadedURLs.find(eq("normalizedURL", normalizedURL.getNormalizedUrl()))
 					.first() != null) {
-				if (count >= TOTAL_NUM_WEBPAGES)
+				if (downloadedURLs.countDocuments() >= TOTAL_NUM_WEBPAGES)
 					return;
 				if (inQueueURLs.countDocuments() != 0) {
 					next_url = inQueueURLs.findOneAndDelete(null).get("url").toString();
@@ -231,7 +224,7 @@ public class WebCrawler {
 				// as it might be rejected due to Robot exlusion protocol.
 				if (con.response().statusCode() == 200) {
 
-					if (count < TOTAL_NUM_WEBPAGES) {
+					if (downloadedURLs.countDocuments() < TOTAL_NUM_WEBPAGES) {
 						System.out.println("Downloading the url: " + url);
 						// Result is a boolean is the download was success or failure.
 						Boolean result = DownloadWebPage(url, doc);
@@ -268,15 +261,12 @@ public class WebCrawler {
 					System.out.println("Download unsuccessful because the webPage: " + url
 							+ " is already visited (FOUND SAME NORMALIZED URL)");
 					return false;
-				} else if (count >= TOTAL_NUM_WEBPAGES) {
+				} else if (downloadedURLs.countDocuments() >= TOTAL_NUM_WEBPAGES) {
 					System.out.println("Download unsuccessful because we reached the FINAL COUNT");
 					return false;
 				} else if (isRobotExcluded(url)) {
 					System.out.println("Download unsuccessful because The url is EXCLUDED BY ROBOT.TXT");
 					return false;
-				}
-				synchronized (lock) {
-					count++;
 				}
 				// Write the html content (DOM) in a file with a unique name = to the hashcode
 				// of this document
