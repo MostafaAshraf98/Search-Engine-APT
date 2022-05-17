@@ -19,8 +19,8 @@ public class Project {
         MongoDatabase db = client.getDatabase("WebCrawler");
         WebCrawler webcrawler = new WebCrawler();
         WebCrawler.Web(args, db);
-        Indexer ind = new Indexer();
-        ind.indexer(args, db);
-        PageRank.rank();
+//        Indexer ind = new Indexer();
+//        ind.indexer(args, db);
+//        PageRank.rank();
     }
 }

@@ -7,8 +7,10 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.util.HashSet;
 import java.util.Hashtable;
 import java.util.Scanner;
+import java.util.Set;
 
 // Dependency for MongoDB connection 
 // import com.mongodb.client.MongoClient;
@@ -48,7 +50,7 @@ public class WebCrawler {
 
 	// Serves as a lock to all the thread to avoid any race conditions (Common
 	// variable is the count).
-	public Object lock = new Object();
+	// public Object lock = new Object();
 
 	// The total required number of crawled webpages.
 	final static int TOTAL_NUM_WEBPAGES = 75;
@@ -61,6 +63,9 @@ public class WebCrawler {
 
 	// The collection in MongoDB that contains the urls to crawl next (FIFO).
 	public static MongoCollection<org.bson.Document> inQueueURLs;
+
+	// The collection in MongoDB that containes the referencing urls. to every url
+	public static MongoCollection<org.bson.Document> References;
 
 	// Main Crawling Function.
 	public static void Web(String[] args, MongoDatabase db) {
@@ -77,6 +82,7 @@ public class WebCrawler {
 			// Getting the collections from the database.
 			downloadedURLs = db.getCollection("downloadedURLs");
 			inQueueURLs = db.getCollection("inQueueURLs");
+			References = db.getCollection("References");
 
 			// Create a scanner to read from the console.
 			Scanner s = new Scanner(System.in);
@@ -142,7 +148,11 @@ public class WebCrawler {
 				if (inQueueURLs.countDocuments() != 0) {
 					// FIFO so we take the first document (sorted with the objectID) so the filter
 					// is NULL
-					url = inQueueURLs.findOneAndDelete(null).get("url").toString();
+					try {
+						url = inQueueURLs.findOneAndDelete(null).get("url").toString();
+					} catch (NullPointerException e) {
+						System.out.println("Error while getting the next url from the queue: " + e);
+					}
 				}
 
 				try {
@@ -180,6 +190,19 @@ public class WebCrawler {
 					String next_link = link.absUrl("href");
 					org.bson.Document document = new org.bson.Document("url", next_link);
 					inQueueURLs.insertOne(document);
+					// Add this url to the referencing of the next_link.
+					// If it this the first time to meet this link.
+					// Then add a new document to the collection.
+					if (References.find(eq("url", next_link)).first() == null) {
+						Set<String> set = new HashSet<String>();
+						set.add(url);
+						org.bson.Document doc2 = new org.bson.Document("url", next_link).append("referencedBy", set);
+						References.insertOne(doc2);
+					} else {
+						// update the collection with the new referencedBy by adding it to the array.
+						References.updateOne(eq("url", next_link),
+								new org.bson.Document("$addToSet", new org.bson.Document("referencedBy", url)));
+					}
 				}
 			}
 			String next_url = null;
@@ -195,7 +218,11 @@ public class WebCrawler {
 				if (downloadedURLs.countDocuments() >= TOTAL_NUM_WEBPAGES)
 					return;
 				if (inQueueURLs.countDocuments() != 0) {
-					next_url = inQueueURLs.findOneAndDelete(null).get("url").toString();
+					try {
+						next_url = inQueueURLs.findOneAndDelete(null).get("url").toString();
+					} catch (NullPointerException e) {
+						System.out.println("Error while getting the next url from the queue: " + e);
+					}
 				}
 				try {
 					if (next_url != null)
@@ -276,9 +303,12 @@ public class WebCrawler {
 				wr.close();
 				// Save this downloaded Webpage in the database
 				// with the fields url, filname, compactedString and normalizedURL
-				org.bson.Document document = new org.bson.Document("url", url).append("fileName", doc.hashCode())
-						.append("compactedContent", contentCompactString)
-						.append("normalizedURL", normalizedURL.getNormalizedUrl());
+				org.bson.Document document = new org.bson.Document("url", url)
+						.append("normalizedURL", normalizedURL.getNormalizedUrl())
+						.append("fileName", doc.hashCode())
+						.append("linksCount", doc.select("a[href]").size())
+						.append("compactedContent", contentCompactString);
+
 				downloadedURLs.insertOne(document);
 				System.out.println("Successful Download of the webPage: " + url);
 				return true;
