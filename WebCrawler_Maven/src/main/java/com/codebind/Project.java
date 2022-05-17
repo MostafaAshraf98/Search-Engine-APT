@@ -17,10 +17,13 @@ public class Project {
                 "mongodb+srv://Mostafa_98:mostafa123@webcrawler.6mfpo.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
         // Getting the dataBase from this client.
         MongoDatabase db = client.getDatabase("WebCrawler");
-        WebCrawler webcrawler = new WebCrawler();
-        WebCrawler.Web(args, db);
-//        Indexer ind = new Indexer();
-//        ind.indexer(args, db);
-//        PageRank.rank();
+        // WebCrawler webcrawler = new WebCrawler();
+        // WebCrawler.Web(args, db);
+        // Indexer ind = new Indexer();
+        // ind.indexer(args, db);
+
+        SearchResult sR = new SearchResult();
+
+        PageRank.rank(args, db, sR);
     }
 }
