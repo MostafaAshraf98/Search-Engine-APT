@@ -33,7 +33,7 @@ import org.bson.conversions.Bson;
 import opennlp.tools.stemmer.PorterStemmer;
 
 public class Indexer {
-    static Map<String, Map<String, Triplet<Integer,Integer, Map<String, Integer>>>> invertedFile = new HashMap<String, Map<String, Triplet<Integer,Integer, Map<String, Integer>>>>();
+    static Map<String, Map<String, Triplet<Integer, Integer, Map<String, Integer>>>> invertedFile = new HashMap<String, Map<String, Triplet<Integer, Integer, Map<String, Integer>>>>();
     static Map<String, ArrayList<ArrayList<String>>> index = new HashMap<String, ArrayList<ArrayList<String>>>();
     public static MongoCollection<org.bson.Document> downloadedURLs, IndexerCollection;
     static String webpagesPath = "./webPages/";
@@ -61,14 +61,14 @@ public class Indexer {
         // System.out.print(file_URL.get("539506411.html"));
         index(docs);
         // print the inverted file
-        //printInvertedFile();
+        // printInvertedFile();
         AddToDatabase();
     }
 
     public static void loadStopwords() throws IOException {
         stopwords = new HashMap<String, Integer>();
         try {
-            File inputFile = new File("english_stopwords.txt");
+            File inputFile = new File("stop_words_english.txt");
             Scanner myReader = new Scanner(inputFile);
             while (myReader.hasNextLine()) {
                 String word = myReader.next();
@@ -110,7 +110,7 @@ public class Indexer {
             // ex. C:\Users\dusername\Desktop\Java\.\125241216.html
             // get the last part of the url
             // ex. 125241216.html
-            final String fileName = file_URL.get( doc.baseUri().substring(doc.baseUri().lastIndexOf("\\") + 1));
+            final String fileName = file_URL.get(doc.baseUri().substring(doc.baseUri().lastIndexOf("\\") + 1));
 
             for (final Element e : all) {
                 // For each tag, get the text
@@ -147,7 +147,8 @@ public class Indexer {
 
                             if (invertedFile.get(word).containsKey(fileName)) {
                                 // If the documnet is already in the inverted file
-                                Triplet<Integer,Integer, Map<String, Integer>> triplet = invertedFile.get(word).get(fileName);
+                                Triplet<Integer, Integer, Map<String, Integer>> triplet = invertedFile.get(word)
+                                        .get(fileName);
 
                                 // Update the term frequency
                                 int newTermFreq = triplet.getValue0() + 1;
@@ -165,12 +166,14 @@ public class Indexer {
                                         pos++;
                                         Map<String, Integer> newMap = triplet.getValue2();
                                         newMap.put(headName, pos);
-                                        triplet = new Triplet<Integer,Integer, Map<String, Integer>>(newTermFreq, wordCount, newMap);
+                                        triplet = new Triplet<Integer, Integer, Map<String, Integer>>(newTermFreq,
+                                                wordCount, newMap);
                                         invertedFile.get(word).put(fileName, triplet);
                                     } else {
                                         Map<String, Integer> newMap = triplet.getValue2();
                                         newMap.put(headName, 1);
-                                        triplet = new Triplet<Integer,Integer, Map<String, Integer>>(newTermFreq, wordCount, newMap);
+                                        triplet = new Triplet<Integer, Integer, Map<String, Integer>>(newTermFreq,
+                                                wordCount, newMap);
                                         invertedFile.get(word).put(fileName, triplet);
                                     }
                                 } else {
@@ -180,12 +183,14 @@ public class Indexer {
                                         pos++;
                                         Map<String, Integer> newMap = triplet.getValue2();
                                         newMap.put(bodyName, pos);
-                                        triplet = new Triplet<Integer,Integer, Map<String, Integer>>(newTermFreq, wordCount, newMap);
+                                        triplet = new Triplet<Integer, Integer, Map<String, Integer>>(newTermFreq,
+                                                wordCount, newMap);
                                         invertedFile.get(word).put(fileName, triplet);
                                     } else {
                                         Map<String, Integer> newMap = triplet.getValue2();
                                         newMap.put(bodyName, 1);
-                                        triplet = new Triplet<Integer,Integer, Map<String, Integer>>(newTermFreq, wordCount, newMap);
+                                        triplet = new Triplet<Integer, Integer, Map<String, Integer>>(newTermFreq,
+                                                wordCount, newMap);
                                         invertedFile.get(word).put(fileName, triplet);
                                     }
 
@@ -193,17 +198,18 @@ public class Indexer {
                             } else {
                                 // If the documnet is not in the inverted file
                                 invertedFile.get(word).put(fileName,
-                                        new Triplet<Integer,Integer, Map<String, Integer>>(1, wordCount, new HashMap<String, Integer>() {
-                                            {
-                                                if (tag == "title" || tag == "h1" || tag == "h2" || tag == "h3"
-                                                        || tag == "h4" || tag == "h5" || tag == "h6"
-                                                        || tag == "root" || tag == "html" || tag == "main") {
-                                                    put(headName, 1);
-                                                } else {
-                                                    put(bodyName, 1);
-                                                }
-                                            }
-                                        }));
+                                        new Triplet<Integer, Integer, Map<String, Integer>>(1, wordCount,
+                                                new HashMap<String, Integer>() {
+                                                    {
+                                                        if (tag == "title" || tag == "h1" || tag == "h2" || tag == "h3"
+                                                                || tag == "h4" || tag == "h5" || tag == "h6"
+                                                                || tag == "root" || tag == "html" || tag == "main") {
+                                                            put(headName, 1);
+                                                        } else {
+                                                            put(bodyName, 1);
+                                                        }
+                                                    }
+                                                }));
                             }
 
                         } else {
@@ -214,19 +220,20 @@ public class Indexer {
                             // System.out.print(fileName1+" ");
 
                             // System.out.print(fileName+" ");
-                            Map<String, Triplet<Integer,Integer, Map<String, Integer>>> newMap = new HashMap<String, Triplet<Integer,Integer, Map<String, Integer>>>();
+                            Map<String, Triplet<Integer, Integer, Map<String, Integer>>> newMap = new HashMap<String, Triplet<Integer, Integer, Map<String, Integer>>>();
                             newMap.put(fileName,
-                                    new Triplet<Integer,Integer, Map<String, Integer>>(1, wordCount, new HashMap<String, Integer>() {
-                                        {
-                                            if (tag == "title" || tag == "h1" || tag == "h2" || tag == "h3"
-                                                    || tag == "h4" || tag == "h5" || tag == "h6"
-                                                    || tag == "root" || tag == "html" || tag == "main") {
-                                                put(headName, 1);
-                                            } else {
-                                                put(bodyName, 1);
-                                            }
-                                        }
-                                    }));
+                                    new Triplet<Integer, Integer, Map<String, Integer>>(1, wordCount,
+                                            new HashMap<String, Integer>() {
+                                                {
+                                                    if (tag == "title" || tag == "h1" || tag == "h2" || tag == "h3"
+                                                            || tag == "h4" || tag == "h5" || tag == "h6"
+                                                            || tag == "root" || tag == "html" || tag == "main") {
+                                                        put(headName, 1);
+                                                    } else {
+                                                        put(bodyName, 1);
+                                                    }
+                                                }
+                                            }));
                             invertedFile.put(word, newMap);
                         }
                     }
@@ -264,7 +271,7 @@ public class Indexer {
             // QuerryDocuments=IndexerCollection.find(eq("word",word)).first();
             org.bson.Document IndexerDocument = new org.bson.Document("word", word);
             // org.bson.Document Occurancedocument=null;
-            Map<String, Triplet<Integer,Integer, Map<String, Integer>>> Occurances = invertedFile.get(word);
+            Map<String, Triplet<Integer, Integer, Map<String, Integer>>> Occurances = invertedFile.get(word);
             ArrayList<org.bson.Document> referencedat = new ArrayList<org.bson.Document>();
             for (String URL : Occurances.keySet()) {
 
@@ -278,7 +285,7 @@ public class Indexer {
                 totTFIDF += tfidf;
 
                 org.bson.Document ReferenceDocument = new org.bson.Document("URL", URL);
-                Triplet<Integer,Integer, Map<String, Integer>> OccurancesInfo = Occurances.get(URL);
+                Triplet<Integer, Integer, Map<String, Integer>> OccurancesInfo = Occurances.get(URL);
                 ReferenceDocument.append("TF", OccurancesInfo.getValue0());
                 ReferenceDocument.append("TFIDF", tfidf);
                 ArrayList<org.bson.Document> importanceInfo = new ArrayList<org.bson.Document>();
@@ -296,7 +303,8 @@ public class Indexer {
             IndexerDocument.append("TFIDF", totTFIDF);
             IndexerDocument.append("References", referencedat);
             documentsToInsert.add(IndexerDocument);
-            //IndexerCollection.insertOne(IndexerDocument);
+            // IndexerCollection.insertOne(IndexerDocument);
+//            break;
         }
         IndexerCollection.insertMany(documentsToInsert);
     }
@@ -305,42 +313,37 @@ public class Indexer {
         file_URL = new HashMap<String, String>();
         ArrayList<Document> docs = new ArrayList<Document>();
 
-        File folder = new File(webpagesPath);
-        File[] listOfFiles = folder.listFiles();
-        System.out.println("Number of files: " + listOfFiles.length);
-        for (int i = 0; i < listOfFiles.length; i++) {
-            if (listOfFiles[i].isFile()) {
-                String fileName = listOfFiles[i].getName();
-                String filePath = listOfFiles[i].getAbsolutePath();
-                file_URL.put(fileName, filePath);
-                Document doc = Jsoup.parse(new File(filePath), "UTF-8");
-                docs.add(doc);
-            }
-        }
+        // File folder = new File(webpagesPath);
+        // File[] listOfFiles = folder.listFiles();
+        // System.out.println("Number of files: " + listOfFiles.length);
+        // for (int i = 0; i < listOfFiles.length; i++) {
+        // if (listOfFiles[i].isFile()) {
+        // String fileName = listOfFiles[i].getName();
+        // String filePath = listOfFiles[i].getAbsolutePath();
+        // file_URL.put(fileName, filePath);
+        // Document doc = Jsoup.parse(new File(filePath), "UTF-8");
+        // docs.add(doc);
+        // }
+        // }
         // downloadedURLs = db.getCollection("downloadedURLs");
 
-        // Bson projection = Projections.fields(Projections.include("url", "fileName"),
-        // Projections.excludeId());
-        // FindIterable<org.bson.Document> iterDoc =
-        // downloadedURLs.find().projection(projection);
-        // Iterator it = iterDoc.iterator();
-        // int count = 0;
-        // Document doc = null;
-        // while (it.hasNext()) {
-        // count += 1;
-        // org.bson.Document fileUrlObject = (org.bson.Document) it.next();
-        // doc = readHTMLFile(webpagesPath + fileUrlObject.get("fileName") + ".html");
-        // if (doc == null) {
-        // continue;
-        // }
-        // String fileName = fileUrlObject.get("fileName") + ".html";
-        // String URL = fileUrlObject.get("url") + "";
-        // file_URL.put(fileName, URL);
-
-        // docs.add(doc);
-        // // break;
-        // }
-
+        Bson projection = Projections.fields(Projections.include("url", "fileName"),
+                Projections.excludeId());
+        FindIterable<org.bson.Document> iterDoc = downloadedURLs.find().projection(projection);
+        Iterator it = iterDoc.iterator();
+        Document doc = null;
+        while (it.hasNext()) {
+            org.bson.Document fileUrlObject = (org.bson.Document) it.next();
+            doc = readHTMLFile(webpagesPath + fileUrlObject.get("fileName") + ".html");
+            if (doc == null) {
+                continue;
+            }
+            String fileName = fileUrlObject.get("fileName") + ".html";
+            String URL = fileUrlObject.get("url") + "";
+            file_URL.put(fileName, URL);
+     
+            docs.add(doc);            
+        }
         return docs;
     }
 
@@ -360,13 +363,13 @@ public class Indexer {
     // print the inverted file
     private static void printInvertedFile() {
         for (String word : invertedFile.keySet()) {
-            Map<String, Triplet<Integer,Integer, Map<String, Integer>>> Occurances = invertedFile.get(word);
+            Map<String, Triplet<Integer, Integer, Map<String, Integer>>> Occurances = invertedFile.get(word);
             for (String URL : Occurances.keySet()) {
-                Triplet<Integer,Integer, Map<String, Integer>> OccurancesInfo = Occurances.get(URL);
+                Triplet<Integer, Integer, Map<String, Integer>> OccurancesInfo = Occurances.get(URL);
                 Integer count = OccurancesInfo.getValue0();
                 System.out.println(
-                        word + " " + URL + " Count " + count +" Doc word Count "+ OccurancesInfo.getValue1()
-                        + " Head " + OccurancesInfo.getValue2().get(headName) + " "
+                        word + " " + URL + " Count " + count + " Doc word Count " + OccurancesInfo.getValue1()
+                                + " Head " + OccurancesInfo.getValue2().get(headName) + " "
                                 + " Body " + OccurancesInfo.getValue2().get(bodyName));
             }
         }
