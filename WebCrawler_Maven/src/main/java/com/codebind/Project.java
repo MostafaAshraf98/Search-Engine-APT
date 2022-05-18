@@ -26,7 +26,7 @@ public class Project {
         System.out.println("Crawling Finished in " + (end - start) / 60000.0 + " minutes");
         // Indexer ind = new Indexer();
         // ind.indexer(args, db);
-         // SearchResult sR = new SearchResult();
+        // SearchResult sR = new SearchResult();
 
         // PageRank.rank(args, db, sR);
     }
