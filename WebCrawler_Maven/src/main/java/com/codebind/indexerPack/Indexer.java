@@ -277,9 +277,9 @@ public class Indexer {
 
                 Integer tf = Occurances.get(URL).getValue0();
                 Integer wordCount = Occurances.get(URL).getValue1();
-                Integer normalisedTF = tf / wordCount;
+                Double normalisedTF = (double) (tf) / (double)(wordCount);
 
-                Double idf = Math.log10(totDocCount / Occurances.size());
+                Double idf = Math.log10((double)totDocCount / (double) Occurances.size());
 
                 Double tfidf = 0.35 * normalisedTF + 0.65 * idf;
                 totTFIDF += tfidf;
