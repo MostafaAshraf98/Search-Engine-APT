@@ -5,18 +5,16 @@ import java.util.Arrays;
 import static com.mongodb.client.model.Filters.eq;
 
 import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
 
 import com.mongodb.client.FindIterable;
 // Dependency for MongoDB connection 
-import com.mongodb.client.MongoClient;
-import com.mongodb.client.MongoClients;
+// import com.mongodb.client.MongoClient;
+// import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
-import com.mongodb.client.model.Projections;
+// import com.mongodb.client.model.Projections;
 
-import org.bson.conversions.Bson;
+// import org.bson.conversions.Bson;
 
 public class PageRank {
     public static WebPage[] Result;
@@ -45,13 +43,23 @@ public class PageRank {
         for (String L : list) {
             System.out.println("link " + L);
             System.out.println("Count is  " + getOutgoingLinksCount(L));
+            FindIterable<org.bson.Document> referencedIterator = downloadedURLs
+                    .find(eq("url", L));
+            Iterator it = referencedIterator.iterator();
+            if (it.hasNext()) {
+                org.bson.Document filepointingToUrlObject = (org.bson.Document) it.next();
+                System.out.println("previousPRScore is " + filepointingToUrlObject.get("previousPRScore"));
+                System.out.println("currentPRScore is " + filepointingToUrlObject.get("currentPRScore"));
+
+            }
 
         }
 
         // SearchResult sR = new SearchResult();
         Result = sR.searchResults;
 
-        calculatePopularity(2);
+        calculatePopularity(5);
+
         double combinedScore = (5 * sR.getTfIDF()) + sR.getPR();
 
         sR.setCombinedScore(combinedScore);// sR.setCombinedScore(combinedScore * 10000000);
@@ -62,6 +70,8 @@ public class PageRank {
                     + WP.currentPRScore + " " + WP.previousPRScore);
         }
     }
+
+    // Set Combined Score
 
     // Function to get Pointing To links for a URL
     public static ArrayList<String> getPointingToLinks(String url) {
@@ -117,6 +127,14 @@ public class PageRank {
             WP.setPreviousPRScore(WP.getCurrentPRScore());
         }
     }
+
+    // private static class ScoreComparator implements Comparator<searchResults> {
+
+    // public int compare(searchResults a, searchResults b) {
+    // return Double.compare(a.getCombinedScore(), b.getCombinedScore());
+    // }
+
+    // }
 
     public static void PRCalcMatrix() {
         vec_PR = new double[Result.length];

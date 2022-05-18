@@ -40,7 +40,7 @@ public class Indexer {
     // static ArrayList<String> stopwords;
     static Map<String, Integer> stopwords;
     static Map<String, String> file_URL;
-//    static Map<String, String> File_size;
+    // static Map<String, String> File_size;
 
     public static void indexer(String[] args, MongoDatabase db) throws IOException {
         loadStopwords();
@@ -91,7 +91,7 @@ public class Indexer {
     // private static void index(Document doc, String Url) throws IOException {
     private static void index(ArrayList<Document> docs) throws IOException {
         for (Document doc : docs) {
-//        	int count=0;
+            // int count=0;
             // Get all tags in a document
             Elements all = doc.getAllElements();
             for (final Element e : all) {
@@ -99,7 +99,7 @@ public class Indexer {
                 String text = e.text();
                 String[] words = text.split(" ");
                 for (String word : words) {
-                	
+
                     word = word.toLowerCase();
                     // Replacing all non-alphanumeric (not from "[^a-zA-Z0-9]") characters with
                     // empty string
@@ -113,7 +113,7 @@ public class Indexer {
                     boolean addWord = !isStopWord && word.length() > 0;
                     if (addWord) {
                         if (invertedFile.containsKey(word)) {
-//                        	count=+1;
+                            // count=+1;
                             // If the word is already in the inverted file
                             // doc.baseUri() returns the url of the document
                             // ex. C:\Users\dusername\Desktop\Java\.\125241216.html
@@ -182,19 +182,21 @@ public class Indexer {
             }
             // AddToDatabase(invertedFile);
         }
-//        for (String word : invertedFile.keySet()) {
-//            Map<String, Pair<Integer, Map<String, Integer>>> Occurances = invertedFile.get(word);
-//            for (String URL : Occurances.keySet()) {
-//
-//                Pair<Integer, Map<String, Integer>> OccurancesInfo = Occurances.get(URL);
-//                for (String title : OccurancesInfo.getValue1().keySet()) {
-//                    Integer count = OccurancesInfo.getValue1().get(title);
-//                    // System.out.println(word + " "+URL+" "+ OccurancesInfo.getValue0()+" "+title+"
-//                    // "+OccurancesInfo.getValue1().get(title));
-//                    break;
-//                }
-//            }
-//        }
+        // for (String word : invertedFile.keySet()) {
+        // Map<String, Pair<Integer, Map<String, Integer>>> Occurances =
+        // invertedFile.get(word);
+        // for (String URL : Occurances.keySet()) {
+        //
+        // Pair<Integer, Map<String, Integer>> OccurancesInfo = Occurances.get(URL);
+        // for (String title : OccurancesInfo.getValue1().keySet()) {
+        // Integer count = OccurancesInfo.getValue1().get(title);
+        // // System.out.println(word + " "+URL+" "+ OccurancesInfo.getValue0()+"
+        // "+title+"
+        // // "+OccurancesInfo.getValue1().get(title));
+        // break;
+        // }
+        // }
+        // }
     }
 
     private static void AddToDatabase() {
@@ -202,7 +204,9 @@ public class Indexer {
         for (String word : invertedFile.keySet()) {
             // org.bson.Document
             // QuerryDocuments=IndexerCollection.find(eq("word",word)).first();
-        	org.bson.Document IndexerDocument = new org.bson.Document("word", word);
+            org.bson.Document IndexerDocument = new org.bson.Document("word", word);
+            // add IDF value = Math.log10(total # if doc aka 5000 /# of documents this word
+            // in )
             // org.bson.Document Occurancedocument=null;
             Map<String, Pair<Integer, Map<String, Integer>>> Occurances = invertedFile.get(word);
             ArrayList<org.bson.Document> referencedat = new ArrayList<org.bson.Document>();
@@ -211,6 +215,8 @@ public class Indexer {
                 org.bson.Document ReferenceDocument = new org.bson.Document("URL", URL);
                 Pair<Integer, Map<String, Integer>> OccurancesInfo = Occurances.get(URL);
                 ReferenceDocument.append("TF", OccurancesInfo.getValue0());
+                // TFBody value / # of words in this document
+                // TFTitle value / # of words in this document
                 ArrayList<org.bson.Document> importanceInfo = new ArrayList<org.bson.Document>();
                 for (String title : OccurancesInfo.getValue1().keySet()) {
                     Integer count = OccurancesInfo.getValue1().get(title);
@@ -219,11 +225,16 @@ public class Indexer {
                     importanceInfo.add(titleDocument);
                     // System.out.println(word + " "+URL+" "+ OccurancesInfo.getValue0()+" "+title+"
                     // "+OccurancesInfo.getValue1().get(title));
+
+                    // TF = TFBody*0.3+TFTitle*0.7
                 }
                 ReferenceDocument.append("Appeared as", importanceInfo);
                 referencedat.add(ReferenceDocument);
+                // TF-IDF = TF * IDF
+
             }
             IndexerDocument.append("References", referencedat);
+
             IndexerCollection.insertOne(IndexerDocument);
         }
     }
