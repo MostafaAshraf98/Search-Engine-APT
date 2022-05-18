@@ -53,7 +53,7 @@ public class WebCrawler {
 	// public Object lock = new Object();
 
 	// The total required number of crawled webpages.
-	final static int TOTAL_NUM_WEBPAGES = 75;
+	final static int TOTAL_NUM_WEBPAGES = 5000;
 
 	// Maps every hostID to the robot.txt rules in it.
 	static Hashtable<String, BaseRobotRules> robotsTxtRules;
@@ -307,7 +307,9 @@ public class WebCrawler {
 						.append("normalizedURL", normalizedURL.getNormalizedUrl())
 						.append("fileName", doc.hashCode())
 						.append("linksCount", doc.select("a[href]").size())
-						.append("compactedContent", contentCompactString);
+						.append("compactedContent", contentCompactString)
+						.append("currentPRScore", 0.0)
+						.append("previousPRScore", 1.0 / TOTAL_NUM_WEBPAGES);
 
 				downloadedURLs.insertOne(document);
 				System.out.println("Successful Download of the webPage: " + url);
