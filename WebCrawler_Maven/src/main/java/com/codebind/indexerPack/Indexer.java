@@ -50,6 +50,7 @@ public class Indexer {
         ArrayList<Document> docs = readAllHTML();
 
         // System.out.println(stemWord("universal"));
+
         // Indexing the documents
         System.out.print(file_URL.get("539506411.html"));
         index(docs);
@@ -231,6 +232,11 @@ public class Indexer {
         file_URL = new HashMap<String, String>();
         ArrayList<Document> docs = new ArrayList<Document>();
         File folder = new File(webpagesPath);
+
+        // File[] listOfFiles = folder.listFiles();
+        // System.out.println("Number of files: " + listOfFiles.length);
+        // downloadedURLs = db.getCollection("downloadedURLs");
+
         Bson projection = Projections.fields(Projections.include("url", "fileName"), Projections.excludeId());
         FindIterable<org.bson.Document> iterDoc = downloadedURLs.find().projection(projection);
         Iterator it = iterDoc.iterator();

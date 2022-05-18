@@ -23,21 +23,18 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" path="target/generated-sources/annotations">
+	<classpathentry kind="lib" path="D:/Work/CCE/Year 3 - Senior 1/Semester 2/APT/Project/Repo/Search-Engine-APT/WebCrawler_Maven/Our External Jar Files/JavaTuples/javatuples-1.2.jar"/>
+	<classpathentry kind="lib" path="D:/Work/CCE/Year 3 - Senior 1/Semester 2/APT/Project/Repo/Search-Engine-APT/WebCrawler_Maven/Our External Jar Files/Jsoup/jsoup-1.14.3.jar"/>
+	<classpathentry kind="lib" path="D:/Work/CCE/Year 3 - Senior 1/Semester 2/APT/Project/Repo/Search-Engine-APT/WebCrawler_Maven/Our External Jar Files/Servlet/servlet-api.jar"/>
+	<classpathentry kind="lib" path="D:/Work/CCE/Year 3 - Senior 1/Semester 2/APT/Project/Repo/Search-Engine-APT/WebCrawler_Maven/Our External Jar Files/Stemmer/opennlp-tools-1.9.4.jar"/>
+	<classpathentry excluding="**" kind="src" output="target/classes" path="src/main/resources">
 		<attributes>
-			<attribute name="ignore_optional_problems" value="true"/>
-			<attribute name="optional" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="m2e-apt" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="D:/Work/CCE/Year 3 - Senior 1/Semester 2/APT/Project/Repo/Search-Engine-APT/WebCrawler_Maven/jsoup-1.14.3.jar"/>
-	<classpathentry kind="src" output="target/test-classes" path="target/generated-test-sources/test-annotations">
+	<classpathentry excluding="**" kind="src" output="target/test-classes" path="src/test/resources">
 		<attributes>
-			<attribute name="optional" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="ignore_optional_problems" value="true"/>
-			<attribute name="m2e-apt" value="true"/>
 			<attribute name="test" value="true"/>
 		</attributes>
 	</classpathentry>

@@ -7,12 +7,14 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.util.HashSet;
 import java.util.Hashtable;
 import java.util.Scanner;
+import java.util.Set;
 
 // Dependency for MongoDB connection 
-import com.mongodb.client.MongoClient;
-import com.mongodb.client.MongoClients;
+// import com.mongodb.client.MongoClient;
+// import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 
@@ -44,27 +46,43 @@ import crawlercommons.robots.SimpleRobotRulesParser;
 
 public class WebCrawler {
 
-	public Object lock = new Object(); // Serves as a lock to all the thread to avoid any race conditions.
-	public static int count = 0; // Counts the number of downloaded webPages.
-	final static int TOTAL_NUM_WEBPAGES = 75;
+	// Global Variables:
+
+	// Serves as a lock to all the thread to avoid any race conditions (Common
+	// variable is the count).
+	// public Object lock = new Object();
+
+	// The total required number of crawled webpages.
+	final static int TOTAL_NUM_WEBPAGES = 5000;
+
+	// Maps every hostID to the robot.txt rules in it.
 	static Hashtable<String, BaseRobotRules> robotsTxtRules;
+
+	// The collection in MongoDB that contains the downloaded urls data.
 	public static MongoCollection<org.bson.Document> downloadedURLs;
+
+	// The collection in MongoDB that contains the urls to crawl next (FIFO).
 	public static MongoCollection<org.bson.Document> inQueueURLs;
 
-	public static void Web(String[] args,MongoDatabase db) {
+	// The collection in MongoDB that containes the referencing urls. to every url
+	public static MongoCollection<org.bson.Document> References;
+
+	// Main Crawling Function.
+	public static void Web(String[] args, MongoDatabase db) {
 		try {
 
 			robotsTxtRules = new Hashtable<String, BaseRobotRules>();
+
 			// Create a MongoClient passing the connection String of Mongo Atlas.
-//			MongoClient client = MongoClients.create(
-//					"mongodb+srv://Mostafa_98:mostafa123@webcrawler.6mfpo.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
-//			// Getting the dataBase from this client.
-//			MongoDatabase db = client.getDatabase("WebCrawler");
-			// Getting the collections from this database.
+			// MongoClient client = MongoClients.create(
+			// "mongodb+srv://Mostafa_98:mostafa123@webcrawler.6mfpo.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
+			// // Getting the dataBase from this client.
+			// MongoDatabase db = client.getDatabase("WebCrawler");
+
+			// Getting the collections from the database.
 			downloadedURLs = db.getCollection("downloadedURLs");
 			inQueueURLs = db.getCollection("inQueueURLs");
-
-			count = (int) downloadedURLs.countDocuments();
+			References = db.getCollection("References");
 
 			// Create a scanner to read from the console.
 			Scanner s = new Scanner(System.in);
@@ -79,7 +97,7 @@ public class WebCrawler {
 			// Create a scanner to read from the seeds file.
 			s = new Scanner(new File(fileName));
 			System.out.println("The seeds initially in the Seeds file are:");
-			// Initialize the queue with the seeds.
+			// Add the seeds to the Queue (The collection in the dataBase).
 			while (s.hasNextLine()) {
 				String line = s.nextLine();
 				System.out.println(line);
@@ -91,6 +109,7 @@ public class WebCrawler {
 			Thread[] threadsArr = new Thread[numThreads];
 			// Create a new Crawler object.
 			WebCrawler crawler = new WebCrawler();
+			// Create threads with the number that the user entered.
 			for (int i = 0; i < numThreads; i++) {
 				// Create threads with the Crawler object.
 				threadsArr[i] = crawler.new CrawlerThread();
@@ -109,21 +128,31 @@ public class WebCrawler {
 
 	}
 
+	// Class for the crawling threads
 	private class CrawlerThread extends Thread {
 
+		// Overrides the run function.
 		public void run() {
 			String url = null;
 			URL normalizedURL = null;
 			// Keep looking for a url for the thread to start crawling with.
-			// Condition to keep looking is that the url is not initialize yet, or this url
-			// is already visited. It exits if the number of downloaded webPages is reached.
+			// Conditions to keep looking are:
+			// 1- The url is not initialize yet.
+			// 2- This url is already visited.
+			// It also exits if the number of downloaded webPages is reached.
 
 			while (url == null || downloadedURLs.find(eq("normalizedURL", normalizedURL.getNormalizedUrl()))
 					.first() != null) {
-				if (count >= TOTAL_NUM_WEBPAGES)
+				if ((int) downloadedURLs.countDocuments() >= TOTAL_NUM_WEBPAGES)
 					return;
 				if (inQueueURLs.countDocuments() != 0) {
-					url = inQueueURLs.findOneAndDelete(null).get("url").toString();
+					// FIFO so we take the first document (sorted with the objectID) so the filter
+					// is NULL
+					try {
+						url = inQueueURLs.findOneAndDelete(null).get("url").toString();
+					} catch (NullPointerException e) {
+						System.out.println("Error while getting the next url from the queue: " + e);
+					}
 				}
 
 				try {
@@ -140,14 +169,13 @@ public class WebCrawler {
 		}
 
 		// This is a recursive function.
-		// State:
-		// URL: The URL of the web page to crawl.
 		private void crawl(String url) {
 
 			// Base/Stopping condition:
-			if (count >= TOTAL_NUM_WEBPAGES)
+			if (downloadedURLs.countDocuments() >= TOTAL_NUM_WEBPAGES)
 				return;
 			System.out.println("Crawling the url: " + url);
+			// Request this document.
 			Document doc = req(url);
 			// doc is null if this url is not valid (visited before or not valid to
 			// download).
@@ -155,25 +183,45 @@ public class WebCrawler {
 				// Loop over all the links in the web page and add them to the to-download
 				// Queue.
 				for (Element link : doc.select("a[href]")) {
-					// If the to-download urls in the queue are sufficient to finish downloading the
-					// required number of webPages do not add any more urls.
-					if (count + inQueueURLs.countDocuments() >= TOTAL_NUM_WEBPAGES * 2)
+					// If the to-download urls in the queue are sufficient (the double) to
+					// finish downloading the required number of webPages do not add any more urls.
+					if (downloadedURLs.countDocuments() + inQueueURLs.countDocuments() >= TOTAL_NUM_WEBPAGES * 2)
 						break;
 					String next_link = link.absUrl("href");
 					org.bson.Document document = new org.bson.Document("url", next_link);
 					inQueueURLs.insertOne(document);
+					// Add this url to the referencing of the next_link.
+					// If it this the first time to meet this link.
+					// Then add a new document to the collection.
+					if (References.find(eq("url", next_link)).first() == null) {
+						Set<String> set = new HashSet<String>();
+						set.add(url);
+						org.bson.Document doc2 = new org.bson.Document("url", next_link).append("referencedBy", set);
+						References.insertOne(doc2);
+					} else {
+						// update the collection with the new referencedBy by adding it to the array.
+						References.updateOne(eq("url", next_link),
+								new org.bson.Document("$addToSet", new org.bson.Document("referencedBy", url)));
+					}
 				}
 			}
 			String next_url = null;
 			URL normalizedURL = null;
-			// Loop until you find a valid(not visited before) url to crawl.
+
+			// Keep looking for a url for the thread to start crawling with.
+			// Conditions to keep looking are:
+			// 1- The url is not initialize yet.
+			// 2- This url is already visited.
+			// It also exits if the number of downloaded webPages is reached.
 			while (next_url == null || downloadedURLs.find(eq("normalizedURL", normalizedURL.getNormalizedUrl()))
 					.first() != null) {
-				if (count >= TOTAL_NUM_WEBPAGES)
+				if (downloadedURLs.countDocuments() >= TOTAL_NUM_WEBPAGES)
 					return;
-				synchronized (lock) {
-					if (inQueueURLs.countDocuments() != 0) {
+				if (inQueueURLs.countDocuments() != 0) {
+					try {
 						next_url = inQueueURLs.findOneAndDelete(null).get("url").toString();
+					} catch (NullPointerException e) {
+						System.out.println("Error while getting the next url from the queue: " + e);
 					}
 				}
 				try {
@@ -192,9 +240,6 @@ public class WebCrawler {
 
 		// Helper function:
 		// This function requests access to the link and returns a Document of the url
-		// Parameters:
-		// URL: The URL that we are requesting
-
 		private Document req(String url) {
 			// We need the try block because the connection might fail.
 			try {
@@ -206,7 +251,7 @@ public class WebCrawler {
 				// as it might be rejected due to Robot exlusion protocol.
 				if (con.response().statusCode() == 200) {
 
-					if (count < TOTAL_NUM_WEBPAGES) {
+					if (downloadedURLs.countDocuments() < TOTAL_NUM_WEBPAGES) {
 						System.out.println("Downloading the url: " + url);
 						// Result is a boolean is the download was success or failure.
 						Boolean result = DownloadWebPage(url, doc);
@@ -231,29 +276,41 @@ public class WebCrawler {
 				URL normalizedURL = (new URL(url));
 				BufferedWriter wr = null;
 
+				// Returns the compacted string of the content of this url (The DOM)
 				String contentCompactString = compactStringHelper(doc.html());
-				if (count >= TOTAL_NUM_WEBPAGES ||
-						downloadedURLs.find(eq("compactedContent",
-								contentCompactString)).first() != null
-						|| downloadedURLs.find(eq("normalizedURL", normalizedURL.getNormalizedUrl()))
-								.first() != null) {
-					System.out.println("Download unsuccessful because the webPage: " + url + " is already visited");
+				if (downloadedURLs.find(eq("compactedContent",
+						contentCompactString)).first() != null) {
+					System.out.println("Download unsuccessful because the webPage: " + url
+							+ " is already visited (FOUND SAME COMPACT STRING)");
+					return false;
+				} else if (downloadedURLs.find(eq("normalizedURL", normalizedURL.getNormalizedUrl()))
+						.first() != null) {
+					System.out.println("Download unsuccessful because the webPage: " + url
+							+ " is already visited (FOUND SAME NORMALIZED URL)");
+					return false;
+				} else if (downloadedURLs.countDocuments() >= TOTAL_NUM_WEBPAGES) {
+					System.out.println("Download unsuccessful because we reached the FINAL COUNT");
+					return false;
+				} else if (isRobotExcluded(url)) {
+					System.out.println("Download unsuccessful because The url is EXCLUDED BY ROBOT.TXT");
 					return false;
 				}
-				if (isRobotExcluded(url)) {
-					System.out.println("The url is  excluded by robots.txt");
-					return false;
-				}
-				synchronized (lock) {
-					count++;
-				}
+				// Write the html content (DOM) in a file with a unique name = to the hashcode
+				// of this document
 				wr = new BufferedWriter(
 						new FileWriter(System.getProperty("user.dir") + "/webPages/" + doc.hashCode() + ".html"));
 				wr.write(doc.html());
 				wr.close();
-				org.bson.Document document = new org.bson.Document("url", url).append("fileName", doc.hashCode())
+				// Save this downloaded Webpage in the database
+				// with the fields url, filname, compactedString and normalizedURL
+				org.bson.Document document = new org.bson.Document("url", url)
+						.append("normalizedURL", normalizedURL.getNormalizedUrl())
+						.append("fileName", doc.hashCode())
+						.append("linksCount", doc.select("a[href]").size())
 						.append("compactedContent", contentCompactString)
-						.append("normalizedURL", normalizedURL.getNormalizedUrl());
+						.append("currentPRScore", 0.0)
+						.append("previousPRScore", 1.0 / TOTAL_NUM_WEBPAGES);
+
 				downloadedURLs.insertOne(document);
 				System.out.println("Successful Download of the webPage: " + url);
 				return true;
@@ -272,6 +329,8 @@ public class WebCrawler {
 			}
 		}
 
+		// This is a helper function that compacts the content of html page by appending
+		// 1 char every 10 chars
 		private String compactStringHelper(String html) {
 			StringBuilder contentCompactString = new StringBuilder();
 			String trimmedhtml = html.trim();
@@ -280,39 +339,65 @@ public class WebCrawler {
 			return contentCompactString.toString();
 		}
 
+		// Function that Checks if this url is robot excluded.
+		// Returns true is it is excluded (cannot be crawled).
 		private Boolean isRobotExcluded(String url) {
 
+			// Initially the robot rules of this webpage is null.
 			BaseRobotRules rules = null;
 			try {
+				// Creates CloseableHttpClient instance with default configuration.
 				CloseableHttpClient httpclient = HttpClients.createDefault();
 
+				// Arbitrary name for our robot/Agent.
 				final String USER_AGENT = "APTBot";
+				// Creates CloseableHttpClient instance with default configuration.
 				java.net.URL urlObj = new java.net.URL(url);
+				// Get the host ID.
 				String hostId = urlObj.getProtocol() + "://" + urlObj.getHost()
 						+ (urlObj.getPort() > -1 ? ":" + urlObj.getPort() : "");
 
+				// Check in the global Hashtable if the rules of this host is already stored
 				rules = robotsTxtRules.get(hostId);
+				// If the rules of this host are not stored (First time to encounter this host
+				// ID)
 				if (rules == null) {
+					// The request to be executed.
 					HttpGet httpget = new HttpGet(hostId + "/robots.txt");
+
+					// The default http context
 					HttpContext context = new BasicHttpContext();
+
+					// Executes HTTP request using the given context.
+					// request: the request to execute
+					// context the context to use for the execution, or null to use the default
 					HttpResponse response = httpclient.execute(httpget, context);
+
+					// If There is no robot.txt
 					if (response.getStatusLine() != null && response.getStatusLine().getStatusCode() == 404) {
+						// Then it this host allows to crawl the webPage
 						rules = new SimpleRobotRules(RobotRulesMode.ALLOW_ALL);
+
 						// consume entity to deallocate connection
 						EntityUtils.consumeQuietly(response.getEntity());
 					} else {
+						// Creates a new buffered entity wrapper.
 						BufferedHttpEntity entity = new BufferedHttpEntity(response.getEntity());
 						SimpleRobotRulesParser robotParser = new SimpleRobotRulesParser();
+						// parse the Robot rules.
+						// Parse the robots.txt file in content, and return rules appropriate for
+						// processing paths by userAgent.
 						rules = robotParser.parseContent(hostId, IOUtils.toByteArray(entity.getContent()),
 								"text/plain", USER_AGENT);
 					}
+					// Add the rules of this host to the map.
 					robotsTxtRules.put(hostId, rules);
 				}
 			} catch (IOException e) {
 				System.out.println("Error while fetching the robots.txt file for the url: " + url + " " + e);
 				return false;
 			}
-
+			// return whether it is allowed or not to crawl this url.
 			return !rules.isAllowed(url);
 		}
 	}
