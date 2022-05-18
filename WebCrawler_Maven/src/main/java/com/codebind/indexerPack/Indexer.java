@@ -110,7 +110,7 @@ public class Indexer {
             // ex. C:\Users\dusername\Desktop\Java\.\125241216.html
             // get the last part of the url
             // ex. 125241216.html
-            final String fileName = doc.baseUri().substring(doc.baseUri().lastIndexOf("\\") + 1);
+            final String fileName = file_URL.get( doc.baseUri().substring(doc.baseUri().lastIndexOf("\\") + 1));
 
             for (final Element e : all) {
                 // For each tag, get the text
@@ -255,6 +255,8 @@ public class Indexer {
     private static void AddToDatabase() {
         System.out.println("adding to database");
         // Loop through the inverted file
+
+        ArrayList<org.bson.Document> documentsToInsert = new ArrayList<org.bson.Document>();
         for (String word : invertedFile.keySet()) {
 
             // org.bson.Document
@@ -293,8 +295,10 @@ public class Indexer {
             }
             IndexerDocument.append("TFIDF", totTFIDF);
             IndexerDocument.append("References", referencedat);
-            IndexerCollection.insertOne(IndexerDocument);
+            documentsToInsert.add(IndexerDocument);
+            //IndexerCollection.insertOne(IndexerDocument);
         }
+        IndexerCollection.insertMany(documentsToInsert);
     }
 
     private static ArrayList<Document> readAllHTML() throws IOException {
