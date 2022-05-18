@@ -1,0 +1,463 @@
+<!doctype html><!--[if lt IE 7]>   <html class="no-js ie6 lt-ie7 lt-ie8 lt-ie9">   <![endif]--><!--[if IE 7]>      <html class="no-js ie7 lt-ie8 lt-ie9">          <![endif]--><!--[if IE 8]>      <html class="no-js ie8 lt-ie9">                 <![endif]--><!--[if gt IE 8]><!-->
+<html class="no-js" lang="en" dir="ltr"> <!--<![endif]--> 
+ <head> 
+  <meta charset="utf-8"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  <link rel="prefetch" href="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"> 
+  <link rel="prefetch" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"> 
+  <meta name="application-name" content="Python.org"> 
+  <meta name="msapplication-tooltip" content="The official home of the Python Programming Language"> 
+  <meta name="apple-mobile-web-app-title" content="Python.org"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta name="HandheldFriendly" content="True"> 
+  <meta name="format-detection" content="telephone=no"> 
+  <meta http-equiv="cleartype" content="on"> 
+  <meta http-equiv="imagetoolbar" content="false"> 
+  <script async src="https://media.ethicalads.io/media/client/v1.4.0/ethicalads.min.js" integrity="sha256-U3hKDidudIaxBDEzwGJApJgPEf2mWk6cfMWghrAa6i0= sha384-UcmsCqcNRSLW/dV3Lo1oCi2/VaurXbib6p4HyUEOeIa/4OpsrnucrugAefzVZJfI sha512-q4t1L4xEjGV2R4hzqCa41P8jrgFUS8xTb8rdNv4FGvw7FpydVj/kkxBJHOiaoxHa8olCcx1Slk9K+3sNbsM4ug==" crossorigin="anonymous"></script> 
+  <script src="/static/js/libs/modernizr.js"></script> 
+  <link href="/static/stylesheets/style.a193d3b62d35.css" rel="stylesheet" type="text/css" media="all" title="default"> 
+  <link href="/static/stylesheets/mq.f9187444a4a1.css" rel="stylesheet" type="text/css" media="not print, braille, embossed, speech, tty"> <!--[if (lte IE 8)&(!IEMobile)]>
+    <link href="/static/stylesheets/no-mq.bf0c425cdb73.css" rel="stylesheet" type="text/css" media="screen" />
+    
+    
+    <![endif]--> 
+  <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css"> 
+  <link rel="icon" type="image/x-icon" href="/static/favicon.ico"> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/static/apple-touch-icon-144x144-precomposed.png"> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/static/apple-touch-icon-114x114-precomposed.png"> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/static/apple-touch-icon-72x72-precomposed.png"> 
+  <link rel="apple-touch-icon-precomposed" href="/static/apple-touch-icon-precomposed.png"> 
+  <link rel="apple-touch-icon" href="/static/apple-touch-icon-precomposed.png"> 
+  <meta name="msapplication-TileImage" content="/static/metro-icon-144x144-precomposed.png"><!-- white shape --> 
+  <meta name="msapplication-TileColor" content="#3673a5"><!-- python blue --> 
+  <meta name="msapplication-navbutton-color" content="#3673a5"> 
+  <title>Python Community Code of Conduct | Python Software Foundation</title> 
+  <meta name="description" content="The official home of the Python Programming Language"> 
+  <meta name="keywords" content="code conduct"> 
+  <meta property="og:type" content="website"> 
+  <meta property="og:site_name" content="Python.org"> 
+  <meta property="og:title" content="Python Community Code of Conduct"> 
+  <meta property="og:description" content="The official home of the Python Programming Language"> 
+  <meta property="og:image" content="https://www.python.org/static/opengraph-icon-200x200.png"> 
+  <meta property="og:image:secure_url" content="https://www.python.org/static/opengraph-icon-200x200.png"> 
+  <meta property="og:url" content="https://www.python.org/psf/conduct/"> 
+  <link rel="author" href="/static/humans.txt"> 
+  <link rel="alternate" type="application/rss+xml" title="Python Enhancement Proposals" href="https://www.python.org/dev/peps/peps.rss/"> 
+  <link rel="alternate" type="application/rss+xml" title="Python Job Opportunities" href="https://www.python.org/jobs/feed/rss/"> 
+  <link rel="alternate" type="application/rss+xml" title="Python Software Foundation News" href="https://feeds.feedburner.com/PythonSoftwareFoundationNews"> 
+  <link rel="alternate" type="application/rss+xml" title="Python Insider" href="https://feeds.feedburner.com/PythonInsider"> 
+  <script type="application/ld+json">
+     {
+       "@context": "https://schema.org",
+       "@type": "WebSite",
+       "url": "https://www.python.org/",
+       "potentialAction": {
+         "@type": "SearchAction",
+         "target": "https://www.python.org/search/?q={search_term_string}",
+         "query-input": "required name=search_term_string"
+       }
+     }
+    </script> 
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-39055973-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script> 
+ </head> 
+ <body class="psf pages default-page"> 
+  <div id="touchnav-wrapper"> 
+   <div id="nojs" class="do-not-print"> 
+    <p><strong>Notice:</strong> While JavaScript is not essential for this website, your interaction with the content will be limited. Please turn JavaScript on for the full experience. </p> 
+   </div> <!--[if lte IE 8]>
+        <div id="oldie-warning" class="do-not-print">
+            <p>
+                <strong>Notice:</strong> Your browser is <em>ancient</em>. Please
+                <a href="http://browsehappy.com/">upgrade to a different browser</a> to experience a better web.
+            </p>
+        </div>
+        <![endif]--> <!-- Sister Site Links --> 
+   <div id="top" class="top-bar do-not-print"> 
+    <nav class="meta-navigation container" role="navigation"> 
+     <div class="skip-link screen-reader-text"> <a href="#content" title="Skip to content">Skip to content</a> 
+     </div> <a id="close-python-network" class="jump-link" href="#python-network" aria-hidden="true"> <span aria-hidden="true" class="icon-arrow-down"><span>?</span></span> Close </a> 
+     <ul class="menu" role="tree"> 
+      <li class="python-meta "> <a href="/" title="The Python Programming Language">Python</a> </li> 
+      <li class="psf-meta current_branch selected"> <a href="/psf-landing/" title="The Python Software Foundation" class="current_branch selected">PSF</a> </li> 
+      <li class="docs-meta "> <a href="https://docs.python.org" title="Python Documentation">Docs</a> </li> 
+      <li class="pypi-meta "> <a href="https://pypi.org/" title="Python Package Index">PyPI</a> </li> 
+      <li class="jobs-meta "> <a href="/jobs/" title="Python Job Board">Jobs</a> </li> 
+      <li class="shop-meta "> <a href="/community-landing/">Community</a> </li> 
+     </ul> <a id="python-network" class="jump-link" href="#top" aria-hidden="true"> <span aria-hidden="true" class="icon-arrow-up"><span>?</span></span> The Python Network </a> 
+    </nav> 
+   </div> <!-- Header elements --> 
+   <header class="main-header" role="banner"> 
+    <div class="container"> 
+     <h1 class="site-headline"> <a href="/psf-landing/"><img class="psf-logo" src="/static/img/psf-logo.png" alt="Python Software Foundation"></a> </h1> 
+     <div class="options-bar-container do-not-print"> <a href="https://psfmember.org/civicrm/contribute/transact?reset=1&amp;id=2" class="donate-button">Donate</a> 
+      <div class="options-bar"> <a id="site-map-link" class="jump-to-menu" href="#site-map"><span class="menu-icon">?</span> Menu</a>
+       <form class="search-the-site" action="/search/" method="get"> 
+        <fieldset title="Search Python.org"> <span aria-hidden="true" class="icon-search"></span> <label class="screen-reader-text" for="id-search-field">Search This Site</label> 
+         <input id="id-search-field" name="q" type="search" role="textbox" class="search-field" placeholder="Search" value="" tabindex="1"> <button type="submit" name="submit" id="submit" class="search-button" title="Submit this Search" tabindex="3"> GO </button> <!--[if IE]><input type="text" style="display: none;" disabled="disabled" size="1" tabindex="4"><![endif]--> 
+        </fieldset> 
+       </form><span class="breaker"></span>
+       <div class="adjust-font-size" aria-hidden="true"> 
+        <ul class="navigation menu" aria-label="Adjust Text Size on Page"> 
+         <li class="tier-1 last" aria-haspopup="true"> <a href="#" class="action-trigger"><strong><small>A</small> A</strong></a> 
+          <ul class="subnav menu"> 
+           <li class="tier-2 element-1" role="treeitem"><a class="text-shrink" title="Make Text Smaller" href="javascript:;">Smaller</a></li> 
+           <li class="tier-2 element-2" role="treeitem"><a class="text-grow" title="Make Text Larger" href="javascript:;">Larger</a></li> 
+           <li class="tier-2 element-3" role="treeitem"><a class="text-reset" title="Reset any font size changes I have made" href="javascript:;">Reset</a></li> 
+          </ul> </li> 
+        </ul> 
+       </div>
+       <div class="winkwink-nudgenudge"> 
+        <ul class="navigation menu" aria-label="Social Media Navigation"> 
+         <li class="tier-1 last" aria-haspopup="true"> <a href="#" class="action-trigger">Socialize</a> 
+          <ul class="subnav menu"> 
+           <li class="tier-2 element-1" role="treeitem"><a href="https://www.facebook.com/pythonlang?fref=ts"><span aria-hidden="true" class="icon-facebook"></span>Facebook</a></li> 
+           <li class="tier-2 element-2" role="treeitem"><a href="https://twitter.com/ThePSF"><span aria-hidden="true" class="icon-twitter"></span>Twitter</a></li> 
+           <li class="tier-2 element-3" role="treeitem"><a href="/community/irc/"><span aria-hidden="true" class="icon-freenode"></span>Chat on IRC</a></li> 
+          </ul> </li> 
+        </ul> 
+       </div> <span data-html-include="/authenticated"></span> 
+      </div><!-- end options-bar --> 
+     </div> 
+     <nav id="mainnav" class="psf-navigation main-navigation do-not-print" role="navigation"> 
+      <ul class="navigation menu" role="menubar" aria-label="Main Navigation"> 
+       <li id="about" class="tier-1 element-1  " aria-haspopup="true"> <a href="/psf/about/" title="" class="">About</a> 
+        <ul class="subnav menu" role="menu" aria-hidden="true"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="/psf/mission/" title="">Mission statement</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="/psf/records/" title="">Public records</a></li> 
+         <li class="tier-2 element-3" role="treeitem"><a href="/psf/committees/" title="">PSF Workgroups</a></li> 
+         <li class="tier-2 element-4" role="treeitem"><a href="/psf/annual-report/2021/" title="">Annual Impact Report</a></li> 
+         <li class="tier-2 element-5" role="treeitem"><a href="/nominations/elections/" title="">Elections</a></li> 
+        </ul> </li> 
+       <li id="sponsorship" class="tier-1 element-2  " aria-haspopup="true"> <a href="/psf/sponsorship/" title="" class="">Sponsorship</a> 
+        <ul class="subnav menu" role="menu" aria-hidden="true"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="/psf/sponsors/" title="">PSF Sponsors</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="/psf/sponsorship/" title="">How to become a sponsor</a></li> 
+         <li class="tier-2 element-3" role="treeitem"><a href="/sponsors/application/" title="">Apply to Sponsor</a></li> 
+        </ul> </li> 
+       <li id="membership" class="tier-1 element-3  " aria-haspopup="true"> <a href="/psf/membership/" title="" class=" selected">Membership</a> 
+        <ul class="subnav menu" role="menu" aria-hidden="true"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="/psf/membership/" title="">Membership FAQ</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="/psf/members/" title="">Membership roster</a></li> 
+         <li class="tier-2 element-3" role="treeitem"><a href="/users/membership/" title="">Sign up as member</a></li> 
+         <li class="tier-2 element-4" role="treeitem"><a href="/community/awards/" title="">Community Awards</a></li> 
+         <li class="tier-2 element-5" role="treeitem"><a href="http://pyfound.blogspot.de/2015/02/enroll-as-psf-voting-member.html" title="">Self-certify as voting member</a></li> 
+         <li class="tier-2 element-6" role="treeitem"><a href="/psf/conduct/" title="">Python Community Code of Conduct</a></li> 
+         <li class="tier-2 element-7" role="treeitem"><a href="/psf/newsletter/" title="">Newsletter</a></li> 
+        </ul> </li> 
+       <li id="donations" class="tier-1 element-4  " aria-haspopup="true"> <a href="/psf/donations/" title="" class="">Donations </a> 
+        <ul class="subnav menu" role="menu" aria-hidden="true"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="/psf/donations/" title="">Donations</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="/psf/contrib/" title="">Contribution forms</a></li> 
+         <li class="tier-2 element-3" role="treeitem"><a href="/psf/fraud/" title="">Suspicious checks</a></li> 
+         <li class="tier-2 element-4" role="treeitem"><a href="https://www.python.org/psf/donations/matching-gifts/" title="">PSF Matching Donations</a></li> 
+        </ul> </li> 
+       <li id="volunteer" class="tier-1 element-5  " aria-haspopup="true"> <a href="/psf/volunteer/" title="" class="">Volunteer</a> 
+        <ul class="subnav menu" role="menu" aria-hidden="true"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="/psf/volunteer/" title="">PSF</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="/psf/volunteer/pycon/" title="">PyCon US</a></li> 
+        </ul> </li> 
+       <li id="grants" class="tier-1 element-6  " aria-haspopup="true"> <a href="/psf/grants/" title="" class="">Grants</a> 
+        <ul class="subnav menu" role="menu" aria-hidden="true"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="/psf/grants/" title="">Grants program</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="/psf/grants/faq/" title="">Grants Program FAQ</a></li> 
+        </ul> </li> 
+       <li id="vendor-info" class="tier-1 element-7  " aria-haspopup="true"> <a href="/psf/accounts-payable" title="" class="">Vendor Info</a> 
+        <ul class="subnav menu" role="menu" aria-hidden="true"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="/psf/vendorpolicies/" title="">Vendor Policies</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="/psf/paymentoptions/" title="">Payment Options</a></li> 
+        </ul> </li> 
+       <li id="legal" class="tier-1 element-8  " aria-haspopup="true"> <a href="/about/legal/" title="" class="">Legal</a> 
+        <ul class="subnav menu" role="menu" aria-hidden="true"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="/psf/bylaws/" title="">Bylaws</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="/psf/trademarks/" title="">Trademark policy</a></li> 
+         <li class="tier-2 element-3" role="treeitem"><a href="/psf/weblog-policy/" title="">Weblog policy</a></li> 
+         <li class="tier-2 element-4" role="treeitem"><a href="/psf/license" title="">License</a></li> 
+        </ul> </li> 
+       <li id="media" class="tier-1 element-9  " aria-haspopup="true"> <a href="https://www.python.org/psf/press-release/" title="" class="">Media</a> 
+        <ul class="subnav menu" role="menu" aria-hidden="true"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="/psf/press-release/" title="">Press releases</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="/community/logos/" title="">Logo</a></li> 
+        </ul> </li> 
+       <li id="psf-blog" class="tier-1 element-10  last" aria-haspopup="true"> <a href="http://pyfound.blogspot.com/" title="" class="">PSF Blog</a> </li> 
+      </ul> 
+     </nav> 
+     <div class="header-banner "> <!-- for optional "do-not-print" class --> 
+     </div> 
+    </div><!-- end .container --> 
+   </header> 
+   <div id="content" class="content-wrapper"> <!-- Main Content Column --> 
+    <div class="container"> 
+     <section class="main-content " role="main"> 
+      <div class="notification-bar notification-bar--survey" style="background-color: #ffdf76; color: #664e04; border-color: #004d7a; text-align: center; background-color: #004d7a; color: #fff; padding: 10px; margin: .5em; position: relative; width: 95%; background-color: #ffdf76; color: #664e04; border-color: #004d7a; border-radius: 1em;"> <span class="notification-bar__icon"> <i class="fa fa-chart-line" aria-hidden="true"></i> </span> <span class="notification-bar__message">Contribute today to the ?thon PSF Spring Fundraiser and show your love for Python! &nbsp;&nbsp;<a class="button button--dark button--small button--primary" style="color: #606060; border-color: #006dad; background-color: #006dad;" href="https://psfmember.org/civicrm/contribute/transact?reset=1&amp;id=37" target="_blank" rel="noopener">Donate Now</a> </span> 
+      </div> 
+      <ul class="breadcrumbs menu"> 
+       <li> <a href="/psf-landing/" title="The Python Software Foundation">PSF</a><span class="prompt">&gt;&gt;&gt;</span> </li> 
+       <li> <a href="/psf/membership/">Membership</a><span class="prompt">&gt;&gt;&gt;</span> </li> 
+       <li>Python Community Code of Conduct</li> 
+      </ul> 
+      <article class="text"> 
+       <h1>Code of Conduct</h1> 
+       <p>The Python community is made up of members from around the globe with a diverse set of skills, personalities, and experiences. It is through these differences that our community experiences great successes and continued growth. When you're working with members of the community, this Code of Conduct will help steer your interactions and keep Python a positive, successful, and growing community.</p> 
+       <h2>Our Community</h2> 
+       <p>Members of the Python community are <strong>open, considerate, and respectful</strong>. Behaviours that reinforce these values contribute to a positive environment, and include:</p> 
+       <ul> 
+        <li><strong>Being open.</strong> Members of the community are open to collaboration, whether it's on PEPs, patches, problems, or otherwise.</li> 
+        <li><strong>Focusing on what is best for the community.</strong> We're respectful of the processes set forth in the community, and we work within them.</li> 
+        <li><strong>Acknowledging time and effort.</strong> We're respectful of the volunteer efforts that permeate the Python community. We're thoughtful when addressing the efforts of others, keeping in mind that often times the labor was completed simply for the good of the community.</li> 
+        <li><strong>Being respectful of differing viewpoints and experiences.</strong> We're receptive to constructive comments and criticism, as the experiences and skill sets of other members contribute to the whole of our efforts.</li> 
+        <li><strong>Showing empathy towards other community members.</strong> We're attentive in our communications, whether in person or online, and we're tactful when approaching differing views.</li> 
+        <li><strong>Being considerate.</strong> Members of the community are considerate of their peers -- other Python users.</li> 
+        <li><strong>Being respectful.</strong> We're respectful of others, their positions, their skills, their commitments, and their efforts.</li> 
+        <li><strong>Gracefully accepting constructive criticism.</strong> When we disagree, we are courteous in raising our issues.</li> 
+        <li><strong>Using welcoming and inclusive language.</strong> We're accepting of all who wish to take part in our activities, fostering an environment where anyone can participate and everyone can make a difference.</li> 
+       </ul> 
+       <h2>Our Standards</h2> 
+       <p>Every member of our community has the right to have their identity respected. The Python community is dedicated to providing a positive experience for everyone, regardless of age, gender identity and expression, sexual orientation, disability, physical appearance, body size, ethnicity, nationality, race, or religion (or lack thereof), education, or socio-economic status.</p> 
+       <h3>Inappropriate Behavior</h3> 
+       <p>Examples of unacceptable behavior by participants include:</p> 
+       <ul> 
+        <li>Harassment of any participants in any form</li> 
+        <li>Deliberate intimidation, stalking, or following</li> 
+        <li>Logging or taking screenshots of online activity for harassment purposes</li> 
+        <li>Publishing others' private information, such as a physical or electronic address, without explicit permission</li> 
+        <li>Violent threats or language directed against another person</li> 
+        <li>Incitement of violence or harassment towards any individual, including encouraging a person to commit suicide or to engage in self-harm</li> 
+        <li>Creating additional online accounts in order to harass another person or circumvent a ban</li> 
+        <li>Sexual language and imagery in online communities or in any conference venue, including talks</li> 
+        <li>Insults, put downs, or jokes that are based upon stereotypes, that are exclusionary, or that hold others up for ridicule</li> 
+        <li>Excessive swearing</li> 
+        <li>Unwelcome sexual attention or advances</li> 
+        <li>Unwelcome physical contact, including simulated physical contact (eg, textual descriptions like "hug" or "backrub") without consent or after a request to stop</li> 
+        <li>Pattern of inappropriate social contact, such as requesting/assuming inappropriate levels of intimacy with others</li> 
+        <li>Sustained disruption of online community discussions, in-person presentations, or other in-person events</li> 
+        <li>Continued one-on-one communication after requests to cease</li> 
+        <li>Other conduct that is inappropriate for a professional audience including people of many different backgrounds</li> 
+       </ul> 
+       <p>Community members asked to stop any inappropriate behavior are expected to comply immediately.</p> 
+       <h3>Weapons Policy</h3> 
+       <p>No weapons are allowed at Python Software Foundation events. Weapons include but are not limited to explosives (including fireworks), guns, and large knives such as those used for hunting or display, as well as any other item used for the purpose of causing injury or harm to others. Anyone seen in possession of one of these items will be asked to leave immediately, and will only be allowed to return without the weapon.</p> 
+       <h3>Consequences</h3> 
+       <p>If a participant engages in behavior that violates this code of conduct, the Python community Code of Conduct team may take any action they deem appropriate, including warning the offender or expulsion from the community and community events with no refund of event tickets. The full list of consequences for inappropriate behavior is listed in the <a href="/psf/conduct/enforcement">Enforcement Procedures</a>.</p> 
+       <p>Thank you for helping make this a welcoming, friendly community for everyone.</p> 
+       <h2>Scope</h2> 
+       <h3>PSF Events</h3> 
+       <p>This Code of Conduct applies to the following people at events hosted by the Python Software Foundation, and <a href="https://www.python.org/psf/fiscal-sponsorees/">events hosted by projects under the PSF's fiscal sponsorship</a>:</p> 
+       <ul> 
+        <li>staff</li> 
+        <li>Python Software Foundation board members</li> 
+        <li>speakers</li> 
+        <li>panelists</li> 
+        <li>tutorial or workshop leaders</li> 
+        <li>poster presenters</li> 
+        <li>people invited to meetings or summits</li> 
+        <li>exhibitors</li> 
+        <li>organizers</li> 
+        <li>volunteers</li> 
+        <li>all attendees</li> 
+       </ul> 
+       <p>The Code of Conduct applies in official venue event spaces, including:</p> 
+       <ul> 
+        <li>exhibit hall or vendor tabling area</li> 
+        <li>panel and presentation rooms</li> 
+        <li>hackathon or sprint rooms</li> 
+        <li>tutorial or workshop rooms</li> 
+        <li>poster session rooms</li> 
+        <li>summit or meeting rooms</li> 
+        <li>staff areas</li> 
+        <li>con suite</li> 
+        <li>meal areas</li> 
+        <li>party suites</li> 
+        <li>walkways, hallways, elevators, and stairs that connect any of the above spaces</li> 
+       </ul> 
+       <p>The Code of Conduct applies to interactions with official event accounts on social media spaces and phone applications, including:</p> 
+       <ul> 
+        <li>comments made on official conference phone apps</li> 
+        <li>comments made on event video hosting services</li> 
+        <li>comments made on the official event hashtag or panel hashtags</li> 
+       </ul> 
+       <p>Event organizers will enforce this code throughout the event. Each event is required to provide a Code of Conduct committee that receives, evaluates, and acts on incident reports. Each event is required to provide contact information for the committee to attendees. The event Code of Conduct committee may (but is not required to) ask for advice from the Python Software Foundation Code of Conduct work group. The Python Software Foundation Code of Conduct work group can be reached by emailing <a href="mailto:conduct-wg@python.org">conduct-wg@python.org</a>.</p> 
+       <h3>PSF Online Spaces</h3> 
+       <p>This Code of Conduct applies to the following online spaces:</p> 
+       <ul> 
+        <li>The <a href="https://mail.python.org/mailman/listinfo/python-ideas">python-ideas</a>, <a href="https://mail.python.org/mm3/mailman3/lists/core-mentorship.python.org/">core-mentorship</a>, <a href="https://mail.python.org/mailman/listinfo/python-dev">python-dev</a>, <a href="https://mail.python.org/mailman/listinfo/docs">docs</a> mailing lists</li> 
+        <li>All other <a href="https://mail.python.org/mailman/listinfo">mailing lists hosted on python.org</a></li> 
+        <li>Python Software Foundation Zulip chat server</li> 
+        <li>Python Software Foundation hosted Discourse server <a href="https://discuss.python.org/">discuss.python.org</a></li> 
+        <li>Code repositories, issue trackers, and pull requests made against any Python Software Foundation controlled GitHub organization</li> 
+        <li>The python.org mercurial server <a href="https://hg.python.org/">hg.python.org</a></li> 
+        <li>Any other online space administered by the Python Software Foundation</li> 
+       </ul> 
+       <p>This Code of Conduct applies to the following people in official Python Software Foundation online spaces:</p> 
+       <ul> 
+        <li>admins of the online space</li> 
+        <li>maintainers</li> 
+        <li>reviewers</li> 
+        <li>contributors</li> 
+        <li>all community members</li> 
+       </ul> 
+       <p>Each online space listed above is required to provide the following information to the Python Software Foundation Code of Conduct work group:</p> 
+       <ul> 
+        <li>contact information for any administrators/moderators</li> 
+       </ul> 
+       <p>Each online space listed above is encouraged to provide the following information to community members:</p> 
+       <ul> 
+        <li>a welcome message with a link to this Code of Conduct and the contact information for making an incident report <a href="mailto:conduct-wg@python.org">conduct-wg@python.org</a></li> 
+       </ul> 
+       <p>The Python Software Foundation Code of Conduct work group will receive and evaluate incident reports from the online communities listed above. The Python Software Foundation Code of Conduct work group will work with online community administrators/moderators to suggest actions to take in response to a report. In cases where the administrators/moderators disagree on the suggested resolution for a report, the Python Software Foundation Code of Conduct work group may choose to notify the Python Software Foundation board.</p> 
+       <h4>Contact Information</h4> 
+       <p>If you believe that someone is violating the code of conduct, or have any other concerns, please contact a member of the Python Software Foundation Code of Conduct work group immediately. They can be reached by emailing <a href="mailto:conduct-wg@python.org">conduct-wg@python.org</a></p> 
+       <h2>Procedure for Handling Incidents</h2> 
+       <p><a href="/psf/conduct/reporting">Community Member Procedure For Reporting Code of Conduct Incidents</a></p> 
+       <p><a href="/psf/conduct/enforcement">Python Software Foundation Code of Conduct Working Group Enforcement Procedures</a></p> 
+       <h2>License</h2> 
+       <p>This Code of Conduct is licensed under the <a href="https://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</p> 
+       <p><a href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" src="https://licensebuttons.net/l/by-sa/3.0/88x31.png"></a></p> 
+       <h2>Attributions</h2> 
+       <p>This Code of Conduct was forked from the example policy from the <a href="http://geekfeminism.wikia.com/wiki/Conference_anti-harassment/Policy">Geek Feminism wiki, created by the Ada Initiative and other volunteers</a>, which is under a <a href="https://creativecommons.org/publicdomain/zero/1.0/">Creative Commons Zero license</a>.</p> 
+       <p>Additional new language and modifications were created by Sage Sharp of <a href="https://otter.technology/code-of-conduct-training/">Otter Tech</a>.</p> 
+       <p>Language was incorporated from the following Codes of Conduct:</p> 
+       <ul> 
+        <li><a href="https://affectconf.com/coc/">Affect Conf Code of Conduct</a>, licensed under a <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</li> 
+        <li><a href="http://citizencodeofconduct.org/">Citizen Code of Conduct</a>, licensed under a <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</li> 
+        <li><a href="https://www.contributor-covenant.org/version/1/4/code-of-conduct">Contributor Covenant version 1.4</a>, licensed <a href="https://github.com/ContributorCovenant/contributor_covenant/blob/master/LICENSE.md">Creative Commons Attribution 4.0 License</a>.</li> 
+        <li><a href="https://www.djangoproject.com/conduct/">Django Project Code of Conduct</a>, licensed under a <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.</li> 
+        <li><a href="https://lgbtq.technology/coc.html">LGBTQ in Tech Slack Code of Conduct</a>, licensed under a <a href="https://creativecommons.org/publicdomain/zero/1.0/">Creative Commons Zero License</a>.</li> 
+        <li><a href="https://us.pycon.org/2018/about/code-of-conduct/">PyCon 2018 Code of Conduct</a>, licensed under a <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.</li> 
+        <li><a href="https://www.rust-lang.org/en-US/conduct.html">Rust Code of Conduct</a></li> 
+       </ul> 
+      </article> 
+     </section> 
+    </div><!-- end .container --> 
+   </div><!-- end #content .content-wrapper --> <!-- Footer and social media list --> 
+   <footer id="site-map" class="main-footer" role="contentinfo"> 
+    <div class="main-footer-links"> 
+     <div class="container"> <a id="back-to-top-1" class="jump-link" href="#python-network"><span aria-hidden="true" class="icon-arrow-up"><span>?</span></span> Back to Top</a> 
+      <ul class="sitemap navigation menu do-not-print" role="tree" id="container"> 
+       <li class="tier-1 element-1"> <a href="/about/">About</a> 
+        <ul class="subnav menu"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="/about/apps/" title="">Applications</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="/about/quotes/" title="">Quotes</a></li> 
+         <li class="tier-2 element-3" role="treeitem"><a href="/about/gettingstarted/" title="">Getting Started</a></li> 
+         <li class="tier-2 element-4" role="treeitem"><a href="/about/help/" title="">Help</a></li> 
+         <li class="tier-2 element-5" role="treeitem"><a href="http://brochure.getpython.info/" title="">Python Brochure</a></li> 
+        </ul> </li> 
+       <li class="tier-1 element-2"> <a href="/downloads/">Downloads</a> 
+        <ul class="subnav menu"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="/downloads/" title="">All releases</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="/downloads/source/" title="">Source code</a></li> 
+         <li class="tier-2 element-3" role="treeitem"><a href="/downloads/windows/" title="">Windows</a></li> 
+         <li class="tier-2 element-4" role="treeitem"><a href="/downloads/macos/" title="">macOS</a></li> 
+         <li class="tier-2 element-5" role="treeitem"><a href="/download/other/" title="">Other Platforms</a></li> 
+         <li class="tier-2 element-6" role="treeitem"><a href="https://docs.python.org/3/license.html" title="">License</a></li> 
+         <li class="tier-2 element-7" role="treeitem"><a href="/download/alternatives" title="">Alternative Implementations</a></li> 
+        </ul> </li> 
+       <li class="tier-1 element-3"> <a href="/doc/">Documentation</a> 
+        <ul class="subnav menu"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="/doc/" title="">Docs</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="/doc/av" title="">Audio/Visual Talks</a></li> 
+         <li class="tier-2 element-3" role="treeitem"><a href="https://wiki.python.org/moin/BeginnersGuide" title="">Beginner's Guide</a></li> 
+         <li class="tier-2 element-4" role="treeitem"><a href="https://devguide.python.org/" title="">Developer's Guide</a></li> 
+         <li class="tier-2 element-5" role="treeitem"><a href="https://docs.python.org/faq/" title="">FAQ</a></li> 
+         <li class="tier-2 element-6" role="treeitem"><a href="http://wiki.python.org/moin/Languages" title="">Non-English Docs</a></li> 
+         <li class="tier-2 element-7" role="treeitem"><a href="http://python.org/dev/peps/" title="">PEP Index</a></li> 
+         <li class="tier-2 element-8" role="treeitem"><a href="https://wiki.python.org/moin/PythonBooks" title="">Python Books</a></li> 
+         <li class="tier-2 element-9" role="treeitem"><a href="/doc/essays/" title="">Python Essays</a></li> 
+        </ul> </li> 
+       <li class="tier-1 element-4"> <a href="/community/">Community</a> 
+        <ul class="subnav menu"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="/community/diversity/" title="">Diversity</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="/community/lists/" title="">Mailing Lists</a></li> 
+         <li class="tier-2 element-3" role="treeitem"><a href="/community/irc/" title="">IRC</a></li> 
+         <li class="tier-2 element-4" role="treeitem"><a href="/community/forums/" title="">Forums</a></li> 
+         <li class="tier-2 element-5" role="treeitem"><a href="/psf/annual-report/2021/" title="">PSF Annual Impact Report</a></li> 
+         <li class="tier-2 element-6" role="treeitem"><a href="/community/workshops/" title="">Python Conferences</a></li> 
+         <li class="tier-2 element-7" role="treeitem"><a href="/community/sigs/" title="">Special Interest Groups</a></li> 
+         <li class="tier-2 element-8" role="treeitem"><a href="/community/logos/" title="">Python Logo</a></li> 
+         <li class="tier-2 element-9" role="treeitem"><a href="https://wiki.python.org/moin/" title="">Python Wiki</a></li> 
+         <li class="tier-2 element-10" role="treeitem"><a href="/community/merchandise/" title="">Merchandise</a></li> 
+         <li class="tier-2 element-11" role="treeitem"><a href="/community/awards" title="">Community Awards</a></li> 
+         <li class="tier-2 element-12" role="treeitem"><a href="/psf/conduct/" title="">Code of Conduct</a></li> 
+         <li class="tier-2 element-13" role="treeitem"><a href="/psf/get-involved/" title="">Get Involved</a></li> 
+         <li class="tier-2 element-14" role="treeitem"><a href="/psf/community-stories/" title="">Shared Stories</a></li> 
+        </ul> </li> 
+       <li class="tier-1 element-5"> <a href="/success-stories/" title="success-stories">Success Stories</a> 
+        <ul class="subnav menu"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="/success-stories/category/arts/" title="">Arts</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="/success-stories/category/business/" title="">Business</a></li> 
+         <li class="tier-2 element-3" role="treeitem"><a href="/success-stories/category/education/" title="">Education</a></li> 
+         <li class="tier-2 element-4" role="treeitem"><a href="/success-stories/category/engineering/" title="">Engineering</a></li> 
+         <li class="tier-2 element-5" role="treeitem"><a href="/success-stories/category/government/" title="">Government</a></li> 
+         <li class="tier-2 element-6" role="treeitem"><a href="/success-stories/category/scientific/" title="">Scientific</a></li> 
+         <li class="tier-2 element-7" role="treeitem"><a href="/success-stories/category/software-development/" title="">Software Development</a></li> 
+        </ul> </li> 
+       <li class="tier-1 element-6"> <a href="/blogs/" title="News from around the Python world">News</a> 
+        <ul class="subnav menu"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="/blogs/" title="Python Insider Blog Posts">Python News</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="/psf/newsletter/" title="Python Software Foundation Newsletter">PSF Newsletter</a></li> 
+         <li class="tier-2 element-3" role="treeitem"><a href="http://planetpython.org/" title="Planet Python">Community News</a></li> 
+         <li class="tier-2 element-4" role="treeitem"><a href="http://pyfound.blogspot.com/" title="PSF Blog">PSF News</a></li> 
+         <li class="tier-2 element-5" role="treeitem"><a href="http://pycon.blogspot.com/" title="PyCon Blog">PyCon News</a></li> 
+        </ul> </li> 
+       <li class="tier-1 element-7"> <a href="/events/">Events</a> 
+        <ul class="subnav menu"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="/events/python-events/" title="">Python Events</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="/events/python-user-group/" title="">User Group Events</a></li> 
+         <li class="tier-2 element-3" role="treeitem"><a href="/events/python-events/past/" title="">Python Events Archive</a></li> 
+         <li class="tier-2 element-4" role="treeitem"><a href="/events/python-user-group/past/" title="">User Group Events Archive</a></li> 
+         <li class="tier-2 element-5" role="treeitem"><a href="https://wiki.python.org/moin/PythonEventsCalendar#Submitting_an_Event" title="">Submit an Event</a></li> 
+        </ul> </li> 
+       <li class="tier-1 element-8"> <a href="/dev/">Contributing</a> 
+        <ul class="subnav menu"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="https://devguide.python.org/" title="">Developer's Guide</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="https://bugs.python.org/" title="">Issue Tracker</a></li> 
+         <li class="tier-2 element-3" role="treeitem"><a href="https://mail.python.org/mailman/listinfo/python-dev" title="">python-dev list</a></li> 
+         <li class="tier-2 element-4" role="treeitem"><a href="/dev/core-mentorship/" title="">Core Mentorship</a></li> 
+         <li class="tier-2 element-5" role="treeitem"><a href="/dev/security/" title="">Report a Security Issue</a></li> 
+        </ul> </li> 
+      </ul> <a id="back-to-top-2" class="jump-link" href="#python-network"><span aria-hidden="true" class="icon-arrow-up"><span>?</span></span> Back to Top</a> 
+     </div><!-- end .container --> 
+    </div> <!-- end .main-footer-links --> 
+    <div class="site-base"> 
+     <div class="container"> 
+      <ul class="footer-links navigation menu do-not-print" role="tree"> 
+       <li class="tier-1 element-1"><a href="/about/help/">Help &amp; <span class="say-no-more">General</span> Contact</a></li> 
+       <li class="tier-1 element-2"><a href="/community/diversity/">Diversity <span class="say-no-more">Initiatives</span></a></li> 
+       <li class="tier-1 element-3"><a href="https://github.com/python/pythondotorg/issues">Submit Website Bug</a></li> 
+       <li class="tier-1 element-4"> <a href="https://status.python.org/">Status <span class="python-status-indicator-default" id="python-status-indicator"></span></a> </li> 
+      </ul> 
+      <div class="copyright"> 
+       <p><small> <span class="pre">Copyright ©2001-2022.</span> &nbsp;<span class="pre"><a href="/psf-landing/">Python Software Foundation</a></span> &nbsp;<span class="pre"><a href="/about/legal/">Legal Statements</a></span> &nbsp;<span class="pre"><a href="/privacy/">Privacy Policy</a></span> &nbsp;<span class="pre"><a href="/psf/sponsorship/sponsors/#heroku">Powered by Heroku</a></span> </small></p> 
+      </div> 
+     </div><!-- end .container --> 
+    </div><!-- end .site-base --> 
+   </footer> 
+  </div><!-- end #touchnav-wrapper --> 
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script> 
+  <script>window.jQuery || document.write('<script src="/static/js/libs/jquery-1.8.2.min.js"><\/script>')</script> 
+  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script> 
+  <script>window.jQuery || document.write('<script src="/static/js/libs/jquery-ui-1.12.1.min.js"><\/script>')</script> 
+  <script src="/static/js/libs/masonry.pkgd.min.js"></script> 
+  <script src="/static/js/libs/html-includes.js"></script> 
+  <script type="text/javascript" src="/static/js/main-min.dd72c1659644.js" charset="utf-8"></script> <!--[if lte IE 7]>
+    <script type="text/javascript" src="/static/js/plugins/IE8-min.8af6e26c7a3b.js" charset="utf-8"></script>
+    
+    
+    <![endif]--> <!--[if lte IE 8]>
+    <script type="text/javascript" src="/static/js/plugins/getComputedStyle-min.d41d8cd98f00.js" charset="utf-8"></script>
+    
+    
+    <![endif]-->  
+ </body>
+</html>

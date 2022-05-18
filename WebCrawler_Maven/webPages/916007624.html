@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="en" prefix="og: http://ogp.me/ns#"> 
+ <head> 
+  <meta charset="utf-8"> 
+  <script src="/public/gdpr-consent/cookieControl-config.js"></script>
+  <title>Rainfall Radar - Met Office</title> 
+  <meta name="dcterms.title" content="UK radar rainfall map"> 
+  <meta name="keywords" content="UK Radar, radar, rainfall radar, rainfall, weather, uk weather, rainfall map, rain map, recent weather map"> 
+  <meta name="description" content="UK rainfall radar map."> <!-- e-GMS mandatory --> 
+  <meta name="dcterms.creator" content="Met Office"> 
+  <meta name="dcterms.created" content="2014-05-01"><!-- when this went live --> 
+  <meta name="dcterms.publisher" content="Met Office, FitzRoy Road, Exeter, EX1 3PB, 0870 900 0100, enquiries@metoffice.gov.uk"> 
+  <meta name="dcterms.subject" content="Meteorology"> 
+  <meta name="dcterms.subject" content="Climate and weather"> 
+  <meta name="dcterms.subject" content="Weather forecasts"> <!-- e-GMS reccomended --> 
+  <meta name="dcterms.coverage" content="UK"><!-- except for world forecasts --> 
+  <meta name="dcterms.language" content="eng"><!-- except for translated pages --> <!-- meta for Twitter --> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:site" content="@metoffice"> 
+  <meta name="twitter:creator" content="@metoffice"> 
+  <meta name="twitter:image" content="https://www.metoffice.gov.uk/lib/template/logos/MO_Master_W.jpg"> 
+  <meta property="og:image" content="https://www.metoffice.gov.uk/lib/template/logos/MO_Master_W.jpg"> 
+  <script>
+/*Insert meta tag via js as it is not valid HTML5*/
+(function() {
+var m = document.createElement("meta");
+m.name = "google-translate-customization";
+m.content = "f8c19e614cd5ee7e-37428b41ac444aca-gd1bc91f73b6940ae-14";
+document.getElementsByTagName('head')[0].appendChild(m);
+})();
+</script><!-- desktop specific --> 
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"> <!-- css --> 
+  <link rel="stylesheet" href="/tide/minified/css/mo.min.161bee04647e4d7aa837641c9882bddd.css"> 
+  <link rel="stylesheet" href="/tide/minified/css/moMap.min.04f81ddf2291750eaf61489f757cabaf.css"> 
+  <link rel="stylesheet" href="/tide/minified/css/common/normalize.min.47a5bc42d4f786d7cf6876b833c6dcf5.css"> 
+  <link rel="stylesheet" href="/tide/minified/css/common/common.min.25c3fecde6df345cfb5cc67e7c14104e.css"> 
+  <link rel="stylesheet" href="/tide/minified/css/common/icons.min.094de7e516ec0af3ead7395fe33a37fa.css"> 
+  <link rel="stylesheet" href="/tide/minified/css/common/desktop.min.52914633b994cabfc436fe21dc68c5de.css"> 
+  <link rel="stylesheet" href="/tide/minified/css/forecast.min.15e97439a82332899d5f461b9f5bbc11.css"> 
+  <link rel="stylesheet" href="/tide/minified/css/weather.min.d71ae301e330afc8144c8c0f44070b8b.css"> 
+  <link rel="stylesheet" href="/tide/minified/css/hf-new.min.5dd0a474a08e962924127fd6c1978568.css"> 
+  <link href="/tide/minified/css/external/jquery-ui-1.8.11.custom.min.a5fecdd5fdbbc752aeb1049f1bdde292.css" rel="stylesheet"> <!--[if lte IE 8]>
+    <script type="text/javascript" src="/tide/minified/scripts/excanvas.min.9716447c3815cc824823bafe5ae8fcac.js"></script>
+<![endif]--> <!--[if lt IE 9]>
+    <script src="/tide/minified/scripts/html5shiv.min.ac92d31196131e67032d8ec4134c8c3b.js"></script>
+<![endif]--> <!-- advert scripts --> 
+  <script data-src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" type="text/plain" data-run-after-consent=""></script> 
+  <script>
+    window.googletag = window.googletag || {cmd: []};
+</script>
+  <link rel="icon" href="/tide/images/icons/mo-favicon.ico"> 
+  <noscript> 
+   <style>
+        #cover {
+            display: none;
+        }
+
+        .dataContent {
+            display: block !important;
+        }
+    </style> 
+  </noscript>
+  <script>
+googletag.cmd.push(function() {
+var pageType = "observations/radar-rainfall";
+slot1 = googletag.defineSlot('/6002/metoffice.weather/'+pageType, [[970,90],[728,90]], 'div-gpt-ad-super-leader').setCollapseEmptyDiv(true).addService(googletag.pubads()).setTargeting('pos', 'top');
+slot2 = googletag.defineSlot('/6002/metoffice.weather/'+pageType, [[300, 250],[300,600]], 'div-gpt-ad-mpu').setCollapseEmptyDiv(true).addService(googletag.pubads()).setTargeting('pos', 'btm');
+slot3 = googletag.defineSlot('/6002/metoffice.weather/'+pageType, [[970, 90],[970,250],[728,90]], 'ad-bottom').setCollapseEmptyDiv(true).addService(googletag.pubads()).setTargeting('pos', 'btm');
+// adds custom targeting that applies to the entire page - i.e. all the slots on the page.
+googletag.pubads().setTargeting("env", "www");
+// site info
+googletag.pubads().enableSingleRequest();
+googletag.enableServices();
+});
+</script>
+ </head> 
+ <body class="no-javascript"> <!-- Google Tag Manager --> <!--  Enable Google Tag Manager support for TCF  --> 
+  <script>window['gtag_enable_tcf_support'] = true;</script> 
+  <script type="text/plain" data-run-after-consent="" data-consent-purposes="1,3,7,9,10">//<!CDATA[
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-5LKBR7');
+//]]></script> <!-- End Google Tag Manager --> 
+  <div class="header-container"> 
+   <div id="skiplink-container" tabindex="0"> <a href="#moContent" id="skiplink" class="skiplink">Skip to main content</a> 
+   </div> 
+   <div class="logo" id="qrcode"></div> 
+   <div id="header"> 
+    <div id="toplevel"> 
+     <div class="headerContent"> 
+      <div id="toplogo"> <a href="/" title="Home" class="logo" accesskey="1"><img src="/tide/images/icons/mo-new-logo.png" alt="Met Office"></a> <span class="printonly"> <a href="/" title="Home" class="logo"> <img src="/tide/images/icons/mo-logo-print.png" alt="Met Office" width="145" height="28"> </a> </span> 
+      </div> 
+      <div id="toputilnav"> 
+       <div id="headerWarnings"> <iframe title="Warnings" id="warningsIFrame" src="/includes/warnings-iframe"></iframe> 
+       </div> 
+       <ul> 
+        <li class="settings"></li> 
+       </ul> 
+       <form action="https://search.metoffice.gov.uk/kb5/metoffice/metoffice/results.page" method="get" id="fsrch"> 
+        <fieldset> <label for="searchInput">Search</label> 
+         <input name="qt" type="text" id="searchInput" maxlength="1000" accesskey="4" placeholder="Search..."> <button type="submit" name="button" id="button" value="Search"><img src="/tide/images/icons/searchgo.gif" alt="Search" width="17" height="16"></button> 
+        </fieldset> 
+       </form> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div id="topNav"> 
+    <ul> 
+     <li><a href="/weather" title="Weather">Weather</a></li> 
+     <li><a href="/weather/climate-change/what-is-climate-change" title="Climate guide">Climate</a></li> 
+     <li><a href="/weather/learn-about" title="Learning">Learning</a></li> 
+     <li><a href="/research" title="Research">Research</a></li> 
+     <li><a href="/services" title="Products and services">Products</a></li> 
+     <li><a href="/about-us/press-office/news/weather-and-climate" title="News">News</a></li> 
+     <li><a href="/weather/travel/holiday-weather" title="Holiday weather">Holiday weather</a></li> 
+    </ul> 
+   </div> 
+   <div class="secondnav"> 
+    <ul> 
+     <li><a href="/weather/warnings-and-advice/uk-warnings" title="Weather warnings">Weather warnings</a></li> 
+     <li><a href="/weather/specialist-forecasts" title="Specialist forecasts">Specialist forecasts</a></li> 
+     <li><a href="/public/weather/observation" title="Last 24 hours">Last 24 hours</a></li> 
+     <li><a href="/research/climate/maps-and-data" title="UK climate">UK climate</a></li> 
+     <li><a href="/weather/guides" title="Weather guide">Weather guide</a></li> 
+     <li><a href="/weather/travel/holiday-weather" title="Holiday weather">Holiday weather</a></li> 
+     <li><a href="/services" title="Weather services">Weather services</a></li> 
+    </ul> 
+   </div> 
+   <div id="bcbar"> 
+    <div id="bcbarcontent"> 
+     <div id="breadcrumb"></div> 
+    </div> 
+   </div> 
+  </div>
+  <div id="moContainer"> 
+   <section id="moContent" role="main"> 
+    <noscript> 
+     <section class="warningBar" aria-label="JavaScript not enabled warning"> 
+      <p class="warningTitle">JavaScript is not enabled on this browser</p> 
+      <div class="warnBox warnInfo"> 
+       <p>For the best viewing experience of this website, JavaScript should be enabled.</p> 
+      </div> 
+     </section> 
+    </noscript> 
+    <article id="wxContainer" class="wxForecast fc"> 
+     <div class="adLeaderboard fc"> 
+      <div id="div-gpt-ad-super-leader" class="adSuperLeader"> 
+       <script>
+            googletag.cmd.push(function() { googletag.display('div-gpt-ad-super-leader'); });
+        </script> 
+      </div> 
+     </div> <!-- Beta Banner --> <!-- HTML --> 
+     <div id="betaBanner" class="betaBannerHidden"> 
+      <div class="betaBannerCloseButton" tabindex="0"> <span><img src="/public/weather/lib/images/controls/closeBetaBanner.png" alt="Close banner"></span> 
+      </div> 
+      <div class="betaBannerMessage">
+        This section of the new site isn't ready yet. We've brought you back to the current site. 
+      </div> 
+     </div> <!-- Javasscript --> 
+     <script>
+
+    if (window.location.href.indexOf("beta") > -1) {
+
+        // Show the returned to BAU from Beta banner
+        document.getElementById("betaBanner").classList.add("betaBannerShow");
+
+        // Close the banner on button click
+        document.getElementById("betaBanner").addEventListener("click", function () {
+            document.getElementById("betaBanner").classList.remove("betaBannerShow");
+        });
+
+    }
+
+</script> <!-- End Beta Banner --> 
+     <div id="moInclude"> 
+      <div id="main" class="nolocation"> 
+       <form id="searchLocationForm" action="/public/weather/location-search/sitename" method="get"> 
+        <fieldset> <label for="searchLocation">Search for a location</label> <i class="icon" data-type="utility" data-value="marker" data-color="black" data-form="search"></i> 
+         <input name="searchLocation" type="text" id="searchLocation" placeholder="Search for a location" value=""> 
+         <div id="findMyLocation">
+          <span>Use my current location </span><span class="icon" data-type="utility" data-value="crosshair" data-color="grey" data-form="find">crosshair</span>
+         </div> 
+        </fieldset> 
+       </form> 
+       <header> 
+        <h1>UK rainfall radar map</h1> 
+        <dl class="recent-locations"></dl>
+       </header> <a href="/public/weather/forecast/map/" class="subLink"> <i class="icon" data-color="blue" data-value="arrow-left" data-type="utility"></i>UK weather map</a> 
+       <div id="mapContainer"> 
+        <div id="mapContent" class="fc"> <span class="icon" data-type="loader" data-value="loader" data-color="black">Loading</span> <span class="icon" data-type="logo" data-value="black">Met Office</span> 
+         <div id="mapLayerInteraction"></div> 
+         <div id="map" class="rainfallMap"> 
+          <div class="map-tips"> 
+           <div id="mousePosList" class="wxTip"></div> 
+           <div id="mousePosTooltip" class="wxTip" style="display: none;"></div> 
+           <div id="mousePosTooltipMyLoc" class="wxTip" style="display: none; left: 920.5px; top: 780.067px;"> 
+            <h2> Your chosen location: <br> </h2> 
+           </div> 
+           <div id="genError" class="wxTip" style="display: none;"> <span id="genErrorClose"></span> 
+            <h2>Error</h2> 
+            <p>An error has occurred.</p> 
+           </div> 
+          </div> 
+         </div> 
+         <div id="mapCustomise" title="Customise options" class="iconTitleOnly"> <span class="icon" data-type="utility" data-value="cog" data-color="blue">Customise</span> 
+         </div> 
+         <div id="mapMenu"> 
+          <h2><em>Weather type</em> <span class="menuTab menuClosed" title="Choose a weather type to display"><span class="menuTabText">Show</span><span class="icon" style="display:inline-block" data-type="utility" data-color="blue" data-value="arrow-up">arrow up</span></span></h2> 
+          <div id="mapMenuContent"> 
+           <form>
+            <!-- populated with menu data from config file -->
+           </form> 
+          </div> 
+         </div> 
+         <div id="mapError" class="wxTip"> 
+         </div> 
+        </div> 
+        <div id="timelineContent"> 
+         <div id="timelineHead"> 
+          <div id="timelineControls"> 
+           <div id="timeDisplayPrint"></div> <span id="sliderAnimate" class="playOff iconTitleOnly" data-tip="Play animation"> <span class="icon" data-type="utility" data-value="play" data-color="blue">play</span> </span> <span id="sliderSpeed" class="speedOff1 iconTitleOnly" data-tip="Change speed"> <em>1x</em> <span class="icon" data-type="utility" data-value="chevron-right" data-color="blue">forward</span> </span> 
+          </div> 
+          <div id="timeDisplay" class="mapTimeTooltip" data-tip="" style="cursor:pointer"></div> 
+          <div id="mapIssuedByDateContainer"></div> 
+         </div> 
+         <div id="timeLine"> 
+          <div id="slider"> 
+           <div id="slideBar"> 
+            <div id="slideBarFill"> 
+             <ul id="timeBar"></ul> <span id="slideScreen"></span> 
+            </div> 
+           </div> 
+          </div> 
+          <div id="sliderTooltip" class="wxTip sliderTip"> <label></label> <span class="arrow"></span> 
+          </div> 
+         </div> 
+        </div> 
+        <div id="mapKey"></div> 
+       </div> 
+       <div class="columns"> 
+        <div class="c1and2container"> 
+         <div class="c1"> 
+          <div id="extremes"> 
+           <h2>Extremes</h2> 
+           <ul id="textNav"> 
+            <li id="tabText2">UK</li> 
+            <li id="tabText3">More info</li> 
+           </ul> <!-- The UK extremes Tab --> 
+           <section id="moduleText2" class="textModule"> 
+            <h3>UK extremes</h3> 
+            <table class="table extremes"> 
+             <thead> 
+              <tr> 
+               <th class="extremesParam">Parameter</th> 
+               <th>Location</th> 
+               <th>Value</th> 
+              </tr> 
+             </thead> 
+             <tbody> 
+             </tbody>
+             <tbody> 
+              <tr> 
+               <td> Highest maximum temperature </td> 
+               <td> Heathrow </td> 
+               <td data-c="27.5" data-type="temp" data-show-unit="true"> 27.5&nbsp;°C </td> 
+              </tr> 
+              <tr> 
+               <td> Lowest maximum temperature </td> 
+               <td> Fair Isle </td> 
+               <td data-c="10.4" data-precision="1" data-type="temp" data-show-unit="true"> 10.4&nbsp;°C </td> 
+              </tr> 
+              <tr> 
+               <td> Lowest minimum temperature </td> 
+               <td> Aviemore </td> 
+               <td data-c="3.8" data-precision="1" data-type="temp" data-show-unit="true"> 3.8&nbsp;°C </td> 
+              </tr> 
+              <tr> 
+               <td> Highest rainfall </td> 
+               <td> Machrihanish </td> 
+               <td data-mm="23.2&nbsp;mm" data-in="0.9?" data-type="rainfall"> 23.2&nbsp;mm </td> 
+              </tr> 
+              <tr> 
+               <td> Sunniest </td> 
+               <td> Wittering </td> 
+               <td data-hour="10.4"> 10.4&nbsp;hours </td> 
+              </tr> 
+             </tbody> 
+            </table> 
+           </section> <!-- More info about extremes --> 
+           <section id="moduleText3" class="textModule"> 
+            <h3>About extremes</h3> 
+            <p>Highest maximum temperature - (0900 to 2100 on the date shown)</p> 
+            <p>Lowest maximum temperature - (0900 to 2100 on the date shown)</p> 
+            <p>Lowest minimum temperature - (2100 on the previous day to 0900 on the date shown)</p> 
+            <p>Highest rainfall -(2100 on the previous day to 2100 on the date shown)</p> 
+            <p>Sunniest - (2100 on the previous day to 2100 on the date shown)</p> 
+            <p>The information shown is initial data as it is received; observations are subject to final quality control after publication on this website. This is particularly the case for rainfall totals during snow events.</p> 
+           </section> 
+           <p class="issueDate">Issued at: 0001 on Wed 18 May 2022</p> 
+          </div> 
+         </div> 
+         <div class="c2"> 
+          <p>This map shows rainfall radar images at 5 minute intervals. The key shows how the colours correspond to the amount of rainfall. For example, regions of yellow on the radar image indicate moderate rainfall. The time shown on the radar is local time.</p> 
+          <p>These rainfall radar maps are covered by Crown copyright and remain the property of the Met Office.</p> 
+          <h2>Change location</h2> 
+          <p> To view a specific weather location, enter a name (this could be a village, town or city) into the search box and select the appropriate location from the list provided. You can also search for world forecast locations. </p> 
+          <p><span>For web browsers that have geolocation capabilities, you can also use the 'find my location' button to automatically find your location. Find out more in the </span><a href="/weather/guides/uk-forecast">UK forecast guide</a>.</p> 
+         </div> 
+        </div> 
+        <div class="c3"> 
+         <div id="wxMPU"> 
+          <div class="mpu"> 
+           <div id="div-gpt-ad-mpu" class="adMediumRectangle"> 
+            <script>
+				googletag.cmd.push(function() { googletag.display('div-gpt-ad-mpu'); });
+			</script> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="listLinks"> 
+          <h2 class="related-info">Related pages</h2> 
+          <ul> 
+           <li><a href="/weather/warnings-and-advice/uk-warnings">UK severe weather warnings</a></li> 
+          </ul> 
+         </div>
+         <div class="listLinks weatherLinks"> 
+          <h2 class="related-info">More information</h2> 
+          <ul> 
+           <li><a href="/weather/guides/uk-forecast">UK forecast guide</a></li> 
+           <li><a href="/weather/guides/what-does-this-forecast-mean">Key to symbols and terms</a></li> 
+           <li><a href="/research/climate/maps-and-data/uk-climate-averages" title="UK climate information">What is normal?</a></li> 
+           <li><a href="/public/weather/verification/">How are we doing?</a></li> 
+          </ul> 
+         </div> 
+        </div> 
+       </div> 
+       <div id="symbols" data-symbol-c="°C" data-symbol-f="°F" data-symbol-mph="mph" data-symbol-kph="km/h" data-symbol-kn="kn" data-symbol-mps="m/s" data-symbol-hpa="hPa" data-symbol-pr-in="inHg" data-symbol-di-in="?" data-symbol-mm="mm" data-symbol-bft="Beaufort" data-symbol-km="km" data-symbol-m="miles"></div> 
+      </div> 
+     </div> 
+    </article> 
+   </section> 
+  </div> 
+  <div class="adLeaderboard fc bottomAdd"> 
+   <div id="ad-bottom" class="adBottom"> 
+    <script>
+googletag.cmd.push(function() { googletag.display('ad-bottom'); });
+</script> 
+   </div> 
+  </div> 
+  <div class="footer-container"> 
+   <div id="footer"> 
+    <div class="quicklinks"> 
+     <div class="row"> 
+      <div id="follow" class="half-column"> 
+       <h2>Follow us on</h2> 
+       <ul> 
+        <li><a href="https://www.facebook.com/metoffice" title="Like us on Facebook"><img src="/tide/images/icons/socialbadges/FB-fLogo-online.png" width="32" height="32" alt="Facebook"></a></li> 
+        <li><a href="https://twitter.com/metoffice" title="Follow @metoffice on Twitter"><img src="/tide/images/icons/socialbadges/Twitter_logo_white.png" width="32" height="32" alt="Follow @metoffice"></a></li> 
+        <li><a href="https://www.youtube.com/user/TheMetOffice" title="YouTube"><img src="/tide/images/icons/socialbadges/YouTube-social-square-red.png" alt="YouTube" width="32" height="32"></a></li> 
+        <li><a href="https://www.instagram.com/metoffice/?ref=badge" class="ig-b- ig-b-32" title="Instagram"><img src="https://badges.instagram.com/static/images/ig-badge-32.png" alt="Instagram"></a></li> 
+       </ul> 
+      </div> 
+      <div id="updates" class="half-column"> 
+       <h2>Get updates</h2> 
+       <ul> 
+        <li> <a href="/about-us/guide-to-emails">Email alerts</a> </li> 
+        <li> <a href="/weather/guides/rss">RSS</a> </li> 
+       </ul> 
+      </div> 
+     </div> 
+     <div id="contact"> 
+      <h2>Contact us</h2> 
+      <ul> 
+       <li> <a href="/about-us/contact">Contact Us</a> </li> 
+       <li> <a href="/about-us/press-office/contact-press-office">Contact the Press Office</a> </li> 
+      </ul> 
+     </div> 
+     <div id="moCustom"> 
+     </div> 
+    </div> 
+    <div class="footerutils"> 
+     <ul class="utils"> 
+      <li><a title="Contact us" href="/about-us/contact">Contact us</a></li> 
+      <li><a title="Help" href="/weather/guides">Help</a></li> 
+      <li><a title="Accessibility" href="/about-us/website/accessibility">Accessibility</a></li> 
+      <li><a title="Legal" href="/about-us/legal">Legal</a></li> 
+      <li><a title="Privacy policy" href="/about-us/legal/privacy">Privacy policy</a></li> 
+      <li><a title="Cookies policy" href="/about-us/legal/cookies">Cookies policy</a></li> 
+      <li><a title="Jobs and careers" href="/about-us/careers">Jobs and careers</a></li> 
+     </ul> 
+     <div class="licence">
+      <a href="/about-us/legal#licences"><img class="logo" src="/tide/images/icons/mo-new-logo.png" alt="Met Office"><span class="printonly"><img class="logo" src="/tide/images/icons/mo-logo-print.png" alt="Met Office"></span><br> © Crown copyright</a>
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <script>
+var moMenu = {
+init: function() {
+//delete this function
+}
+}
+var pageType = "rainfallMap";
+//---------------------------------------------------
+//map scripts ------------------------------
+//plot pin location and temporary tooltip on map
+if (typeof myLocation !== "undefined") {
+myLocation.plot('marker');
+//show temporary tooltip
+myLocation.tempTooltip();
+}
+</script> 
+  <script>
+/* Override some functions that are used in mo.js but not needed in TIDE pages
+*/
+function _(s, force) {return s;}
+//function doTranslation(useDefaultSelector, addSelectorStr) {}
+function doWidgetTranslation(widgetId) {return;}
+</script> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> 
+  <script src="https://code.jquery.com/ui/1.11.2/jquery-ui.min.js"></script> 
+  <script src="/public/lib/scripts/common/jquery.mousewheel.min.js"></script> 
+  <script src="/public/lib/scripts/metoffice.date.js"></script> 
+  <script src="/public/pws/lib/javascript/api/metoffice.data-1.4.0.js"></script>
+  <script src="/public/lib/scripts/compiled/5.14.0/metoffice.lang.js"></script> 
+  <script>
+var page = {
+location: {
+id: "gcv5g7wzw",
+name: "Muirkik",
+n: "gcv5g7wzw",
+l: "55.5",
+g: "-4",
+co: "Scotland",
+isInternational: "false"
+},
+selectedTab: "map",
+config: {
+id: "observations",
+locationBased: false,
+//notices: Object,
+//tabs: Array[5],
+title: "UK forecast"
+},
+queryString: "",
+map: {
+zoom: 5
+}
+}
+//---------------------------------------------------
+//map scripts ------------------------------
+//plot pin location and temporary tooltip on map
+if (typeof myLocation !== "undefined") {
+myLocation.plot('marker');
+//show temporary tooltip
+myLocation.tempTooltip();
+}
+</script>
+  <script src="/tide/minified/scripts/common/common-desktop.min.6bd46e091ff8805ee10f69e87aa7bb3b.js"></script> 
+  <script src="/tide/minified/scripts/weather.min.f5d5bf27b5cc855d9b282bb8d657905e.js"></script> 
+  <script src="/public/lib/scripts/OpenLayers-2.13.1/OpenLayers_MO.js"></script> 
+  <script src="/tide/minified/scripts/moCookies.min.1db9c847e7778a74b224cd9847bd5999.js"></script> 
+  <script src="/tide/minified/scripts/moCustomise.min.c7595b7a5d53ee1141c5119b17f4f461.js"></script> 
+  <script src="/tide/minified/scripts/moIcon.min.a82812db7d733c6748e7009a0046b1d6.js"></script> 
+  <script src="/tide/minified/scripts/adClosable.min.085104167087e36efad325ea61fd6f79.js"></script> 
+  <script src="/tide/minified/scripts/moFooter.min.5db876ad9c5c778334af0d53fdcb8a6f.js"></script> 
+  <script src="/tide/minified/scripts/mo.min.23017d650d967a10e241fdd0784f797e.js"></script> 
+  <script src="/tide/minified/scripts/loadWarnings.min.3c7f0dc3c85bb7eb979016fdcd204fc4.js"></script> 
+  <script src="/tide/minified/scripts/slider.min.f523518efa0d43ffed3a2bed0ba0038e.js"></script> 
+  <script src="/tide/minified/scripts/mapGen.min.4b2e323fccd0bc0d971cc2d88a4818d0.js"></script> 
+  <script src="/tide/minified/scripts/mapSettings.min.5f58144be63991f9b4ff2e7ffb7d79b1.js"></script> 
+  <script src="/tide/minified/scripts/moLocations.min.9a02b765448fb79dfd4979981d9ee4be.js"></script> 
+  <script src="/tide/minified/scripts/googleAdsTargeting.min.4eef6ba68e6811d00009240558e62278.js"></script> 
+  <script src="/public/adhoc/mo-adhoc.js" defer></script> 
+  <script data-src="/tide/scripts/delete-analytics-cookies.js" type="text/plain" data-run-after-consent="" data-consent-purposes="!1"></script> 
+  <script src="/tide/scripts/run-scripts-requiring-consent.js"></script> 
+ </body>
+</html>

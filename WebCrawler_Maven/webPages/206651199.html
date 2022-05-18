@@ -1,0 +1,165 @@
+<!doctype html>
+<html xmlns:ng="http://angularjs.org" xmlns:app="ignored" class="no-js">
+ <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Buildbot</title>
+  <link rel="shortcut icon" type="image/png" href="/img/icon.png">
+  <meta name="description" content="Buildbot - The Continuous Integration Framework">
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="styles.css" rel="stylesheet">
+ </head>
+ <body>
+  <!-- navbar-->
+  <nav role="navigation" class="navbar navbar-inverse">
+   <div class="navbar-header">
+    <button type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" class="navbar-toggle collapsed"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="https://buildbot.net" class="navbar-brand"><img alt="Buildbot" src="img/nut.svg" width="20px"></a>
+   </div>
+   <div id="navbar" class="collapse navbar-collapse">
+    <ul class="nav navbar-nav">
+     <li class="dropdown"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="dropdown-toggle">Discover Buildbot<span class="caret"></span></a>
+      <ul role="menu" class="dropdown-menu">
+       <li><a href="index.html#basics">Buildbot Basics</a></li>
+       <li><a href="index.html#automation">Automated Build, Test, and Release</a></li>
+       <li><a href="index.html#framework">A Framework with Batteries Included</a></li>
+       <li class="divider"></li>
+       <li><a href="about.html">About Us</a></li>
+       <li><a href="contact.html">Contact</a></li>
+       <li class="divider"></li>
+       <li><a href="https://github.com/buildbot/buildbot/wiki/SuccessStories">Success stories</a></li>
+       <li><a href="https://github.com/buildbot/buildbot/wiki/Press">Press</a></li>
+       <li><a href="https://buildbot.buildbot.net">Metabuildbot: Buildbot's Buildbot</a></li>
+      </ul></li>
+     <li class="dropdown"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="dropdown-toggle">Get Started<span class="caret"></span></a>
+      <ul role="menu" class="dropdown-menu">
+       <li><a href="http://buildbot.net/buildbot/docs/current/tutorial/">Follow the Tutorial</a></li>
+       <li><a href="http://buildbot.net/buildbot/docs/current/index.html">Read the Docs</a></li>
+       <li><a href="http://docs.buildbot.net/current/manual/installation/installation.html">Download and Install</a></li>
+       <li class="divider"></li>
+      </ul></li>
+     <li class="dropdown"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="dropdown-toggle">Get Involved<span class="caret"></span></a>
+      <ul role="menu" class="dropdown-menu">
+       <li><a href="https://lists.buildbot.net/mailman/listinfo">Join the Mailing List</a></li>
+       <li><a href="https://web.libera.chat/?channels=#buildbot">..or #buildbot on IRC</a></li>
+       <li class="divider"></li>
+       <li><a href="http://github.com/buildbot/buildbot">Get the Source</a></li>
+       <li><a href="http://docs.buildbot.net/current/developer/tests.html#quick-start">Get Started Hacking</a></li>
+       <li><a href="http://github.com/buildbot/buildbot/issues">File or Fix a Bug</a></li>
+      </ul></li>
+     <li><a href="https://medium.com/buildbot">Blog</a></li>
+    </ul>
+   </div>
+  </nav>
+  <div class="ribbon-holder right hidden-phone">
+   <a href="https://github.com/buildbot/buildbot" class="ribbon red"><span class="text">Fork me on GitHub!</span></a>
+  </div>
+  <header class="jumbotron subhead">
+   <div class="container">
+    <img src="img/full_logo.svg" style="margin-bottom: 20px">
+   </div>
+   <div class="bs-docs-social">
+    <div class="container">
+     <ul class="bs-docs-social-buttons">
+      <li><a href="https://github.com/buildbot/buildbot/"><img src="https://img.shields.io/github/watchers/buildbot/buildbot.svg?style=social&amp;label=Watch"></a></li>
+      <li><a href="https://github.com/buildbot/buildbot/"><img src="https://img.shields.io/github/forks/buildbot/buildbot.svg?style=social&amp;label=Fork"></a></li>
+      <li><a href="https://pypi.python.org/pypi/buildbot"><img src="https://img.shields.io/pypi/v/buildbot.svg"></a></li>
+      <li><img src="https://img.shields.io/badge/python-2.7%7C3.5%7C3.6%7C3.7-green.svg"></li>
+      <li><a href="https://codecov.io/github/buildbot/buildbot?branch=master"><img src="https://codecov.io/github/buildbot/buildbot/coverage.svg?branch=master"></a></li>
+      <li><a href="https://docs.buildbot.net"><img src="https://readthedocs.org/projects/buildbot/badge/?version=latest"></a></li>
+      <li><iframe allowtransparency="true" frameborder="0" scrolling="no" src="https://platform.twitter.com/widgets/tweet_button.1362636220.html#_=1362904126336&amp;count=horizontal&amp;hashtags=buildbot&amp;id=twitter-widget-0&amp;lang=en&amp;size=m&amp;text=Buildbot&amp;url=http%3A%2F%2Fbuildbot.net" style="width: 107px; height: 20px;" title="Twitter Tweet Button" data-twttr-rendered="true" class="twitter-share-button twitter-count-horizontal"></iframe></li>
+     </ul>
+    </div>
+   </div>
+  </header>
+  <div class="alert alert-danger text-center">
+   <h4><span class="glyphicon glyphicon-exclamation-sign"></span>Buildbot is dropping support for Python 2.7 for the master. Users are encouraged to migrate to Python 3 as soon as possible.</h4>
+   <h4><a href="https://github.com/buildbot/buildbot/issues/4439">More info</a></h4>
+  </div>
+  <div class="container subpage">
+   <div id="carousel-main" data-ride="carousel" style="height:400px" class="carousel">
+    <ol class="carousel-indicators">
+     <li data-target="#carousel-main" data-slide-to="0" class="active"></li>
+     <li data-target="#carousel-main" data-slide-to="1"></li>
+     <li data-target="#carousel-main" data-slide-to="2"></li>
+    </ol>
+    <div role="listbox" class="carousel-inner">
+     <div class="item active">
+      <img src="img/screenshoot1.png">
+      <div class="carousel-caption">
+       <h3>Buildbot Basics</h3>
+       <p>Buildbot is an <strong>open-source</strong> framework for automating software build, test, and release processes.</p><a href="#basics" class="btn btn-primary">Learn more</a>
+      </div>
+     </div>
+     <div class="item">
+      <img src="img/screenshoot2.png">
+      <div class="carousel-caption">
+       <h3>Automated Build, Test, and Release</h3>
+       <p>Buildbot can automate all aspects of the software development cycle:</p>
+       <p>Continuous Integration, Continuous Deployment, Release Management</p>
+       <p>..and any other process you can imagine.</p><a href="#automation" class="btn btn-primary">Learn more</a>
+      </div>
+     </div>
+     <div class="item">
+      <img src="img/screenshoot3.png">
+      <div class="carousel-caption">
+       <h3>A Framework with Batteries Included</h3>
+       <p>Buildbot is a framework in which <strong>you</strong> implement a system that matches <strong>your workflow</strong> and grows with your organization.</p><a href="#framework" class="btn btn-primary">Learn more</a>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="subpage dark">
+   <div id="basics" class="container">
+    <div class="row-fluid">
+     <h1>Buildbot Basics</h1>
+     <p class="well">Buildbot supports distributed, parallel execution of jobs across multiple platforms, flexible integration with version-control systems, extensive status reporting, and more. </p>
+     <img src="img/overview.png" class="pull-right shadow">
+     <h2>Buildbot in Action</h2>
+     <p>At its core, Buildbot is a job scheduling system: it queues jobs, executes the jobs when the required resources are available, and reports the results. </p>
+     <p>Your Buildbot installation has one or more masters and a collection of workers. The masters monitor source-code repositories for changes, coordinate the activities of the workers, and report results to users and developers. Workers run on a variety of operating systems. </p>
+     <p>You configure Buildbot by providing a Python configuration script to the master. This script can be very simple, configuring built-in components, but the full expressive power of Python is available. This allows dynamic generation of configuration, customized components, and anything else you can devise. </p>
+     <p>The framework itself is implemented in Twisted Python, and compatible with all major operating systems. </p>
+     <h2>Learn More</h2>
+     <p>See the<a href="https://docs.buildbot.net/current/tutorial/"> Buildbot Tutorial</a> for a gentle introduction to running and configuring Buildbot.</p>
+    </div>
+   </div>
+  </div>
+  <div class="subpage light">
+   <div id="automation" class="container">
+    <div class="row-fluid">
+     <div class="col-xs-3">
+      <img src="img/arrows_3_circular_interlocking.svg" style="width:90%">
+     </div>
+     <div class="col-xs-9">
+      <h1>Automated Build, Test, and Release</h1>
+      <p class="well">Buildbot supports not just continuous-integration testing, but automation of complex build systems, application deployment, and management of sophisticated software-release processes. </p>
+      <h2>Benefits of Automation</h2>
+      <p>When software development processes are automated, they are repeatable, reliable and can be run as frequently as available computing resources allow.</p> 
+      <p>Automating the build and test process gives developers immediate feedback on their work. Tests can run on multiple platforms, ensuring that code changes made on one platform do not cause failures on other platforms.</p> 
+      <p>Once a project is ready for use by users, it is either deployed (for hosted applications, such as web sites) or released (for packaged software such as desktop applications).</p> 
+      <p>Automating deployment makes the process predictable and lowers the risk involved with each push. Changes can be deployed to a staging environment first, then deployed to production using exactly the same procedure, eliminating failures due to human error. Deployments can occur many times every day, with only small changes between each deployment.</p> 
+      <p>Releasing packaged software, too, benefits from automation. The process can involve compiling and packaging on multiple platforms, signing builds, localizing strings, quality-assurance checks, and so on. When automated with a tool like Buildbot, all of this occurs repeatably and efficiently.</p> 
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="subpage dark">
+   <div id="framework" class="container">
+    <div class="row-fluid">
+     <div class="col-xs-9">
+      <h1>A Framework with Batteries Included</h1>
+      <p class="well">Just as web frameworks such as Django or Rails provide the structure and components to build websites, Buildbot provides the structure and components to automate your build, test, and release processes. </p>
+      <p>Many CI tools, such as <a href="http://cruisecontrol.sourceforge.net/gettingstarted.html">CruiseControl</a> or <a href="https://wiki.jenkins-ci.org/display/JENKINS/Meet+Jenkins">Jenkins</a>, are structured as ready-to-use applications. Users fill in specific details, such as version control information and build process, but the fundamental design is fixed and options are limited to those envisioned by the authors. This arrangement suits the common cases quite well: there are cookie-cutter tools to automatically build and test Java applications, Ruby gems, and so on. Such tools embody assumptions about the structure of the project and its processes. They are not well-suited to more complex cases, such as mixed-language applications or complex release tasks, where those assumptions are violated.</p> 
+      <p>Buildbot's design allows your installation to grow with your requirements, beginning with simple processes and growing to meet your unique needs. This flexibility has led to its use in a number of high-profile open-source projects, including <a href="https://github.com/buildbot/buildbot/wiki/SuccessStories">WebKit, Python, and Twisted</a>.</p> 
+     </div>
+     <div class="col-xs-3">
+      <img src="img/nut.svg" style="width:90%">
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html> 
+ <head> 
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+  <title>Cython: C-Extensions for Python</title> 
+  <link rel="StyleSheet" href="master.css" type="text/css" media="Screen"> 
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> 
+ </head> 
+ <body> 
+  <h1 id="head"><a href="../"><span>Cython: C-Extensions for Python</span></a></h1> 
+  <div id="sidebar"> 
+   <ul id="nav"> 
+    <li><a href="#about">About Cython</a></li> 
+    <li><a href="#donate"><strong>Support Cython!</strong></a></li> 
+    <li><a href="#documentation">Documentation</a></li> 
+    <li><a href="#download">Download</a></li> 
+    <li><a href="#community">People</a></li> 
+    <li><a href="#development">Useful Links</a></li> 
+   </ul> 
+  </div> 
+  <div id="main"> 
+   <h1>About Cython</h1> <a name="about"></a> 
+   <p> <strong>Cython</strong> is an <strong>optimising static compiler</strong> for both the <strong><a href="http://www.python.org/about/">Python</a></strong> programming language and the extended Cython programming language (based on <strong>Pyrex</strong>). It makes writing C extensions for Python as easy as Python itself. </p> 
+   <p> <strong>Cython gives you the combined power of Python and C to let you</strong> </p>
+   <ul> 
+    <li>write Python code that <a href="http://docs.cython.org/src/tutorial/external.html">calls back and forth</a> from and to C or C++ code natively at any point.</li> 
+    <li>easily tune readable Python code into plain C performance by <a href="http://docs.cython.org/src/quickstart/cythonize.html">adding static type declarations</a>, also <a href="http://docs.cython.org/en/latest/src/tutorial/pure.html#static-typing">in Python syntax</a>.</li> 
+    <li>use <a href="http://docs.cython.org/src/userguide/debugging.html">combined source code level debugging</a> to find bugs in your Python, Cython and C code.</li> 
+    <li><a href="http://docs.cython.org/src/userguide/memoryviews.html">interact efficiently</a> with large data sets, e.g. using multi-dimensional <a href="http://docs.cython.org/en/latest/src/userguide/numpy_tutorial.html">NumPy arrays</a>.</li> 
+    <li>quickly build your applications within the large, mature and widely used <a href="http://www.python.org/about/">CPython ecosystem</a>.</li> 
+    <li>integrate natively with existing code and data from legacy, low-level or high-performance libraries and applications.</li> 
+   </ul> 
+   <p></p> 
+   <p> The Cython language is a superset of the <strong>Python</strong> language that additionally supports calling <strong>C functions</strong> and declaring <strong>C types</strong> on variables and class attributes. This allows the compiler to generate very <strong>efficient C code</strong> from Cython code. The C code is <strong>generated once</strong> and then compiles with all major C/C++ compilers in <a href="http://python.org">CPython</a> 2.6, 2.7 (2.4+ with Cython 0.20.x) as well as 3.3 and all later versions. We regularly run integration tests against all supported CPython versions and their latest in-development branches to make sure that the generated code stays widely compatible and well adapted to each version. <a href="http://pypy.org/">PyPy</a> support is work in progress (on both sides) and is considered <a href="http://docs.cython.org/src/userguide/pypy.html">mostly usable</a> since Cython 0.17. The latest PyPy version is always recommended here. </p> 
+   <p> All of this makes Cython the ideal language for <strong>wrapping</strong> external C libraries, <strong>embedding</strong> CPython into existing applications, and for <strong>fast C modules</strong> that speed up the execution of Python code. </p> 
+   <h1>?? Your donation can help the Cython project! ???</h1> 
+   <p> <a name="donate"></a> <strong>Making Cython a great programming language for you</strong>, and keeping it up to speed with the Python ecosystem and the changing requirements of its diverse user bases, <strong>takes a lot of time and dedication</strong>. To support the maintenance and <strong>future development of the Cython language and compiler</strong>, <strong>YOU</strong> can sponsor the work of <strong>Stefan Behnel</strong> via: </p> 
+   <ul> 
+    <li><a href="https://github.com/users/scoder/sponsorship">GitHub Sponsors</a></li> 
+    <li><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=HLS9JEYD4ETB6&amp;source=url">PayPal</a></li> 
+    <li><a href="https://tidelift.com/subscription/pkg/pypi-cython">Tidelift</a></li> 
+   </ul> 
+   <p style="font-size: small"> Note that PayPal takes 5 - 15% fees for small non-EUR payments, which is money that you pay without helping us. Consider signing up for a GitHub Sponsors subscription instead. </p> <!--
+<h1>News</h1>
+<ul>
+  <li style="font-weight: bold; font-size: 120%">See our <a href="http://wiki.cython.org/GSoC2011">Google Summer of Code project proposals</a>.</li>
+</ul>
+
+<h1>News</h1>
+<p>
+We welcome Cython-related <strong>student applications</strong> for the <a href="http://code.google.com/soc/2009/">Google Summer of Code</a>. We are planning on going through the
+<a href="http://wiki.python.org/moin/SummerOfCode/2009">Python Foundation</a> as a mentoring organization.
+Here is a <strong>list</strong> of possible <a href="http://wiki.cython.org/enhancements/">enhancements</a> and
+<a href="http://wiki.cython.org/codeprojects">project ideas</a>.
+--> 
+   <h1>Documentation</h1> 
+   <p> <a name="documentation"></a> </p>
+   <ul> 
+    <li><a href="http://docs.cython.org">Cython Documentation</a></li> 
+    <li>The <a href="https://github.com/cython/cython/wiki">Cython Wiki</a>.</li> 
+    <li>The <a href="https://github.com/cython/cython/wiki/FAQ">Cython FAQ</a> (and the older <a href="http://www.cosc.canterbury.ac.nz/greg.ewing/python/Pyrex/version/Doc/FAQ.html">Pyrex FAQ</a>)</li> 
+   </ul> 
+   <p></p> 
+   <p>External resources: </p>
+   <ul> 
+    <li>Cython videos on <a href="https://pythonlinks.info/cython">PythonLinks</a> and <a href="https://pyvideo.org/search.html?q=cython">pyvideo.org</a></li> 
+    <li>Stefan's blog posts about <a href="http://blog.behnel.de/categories/cython.html">Cython and what's new in Cython releases</a>.</li> 
+    <li><a href="https://shop.oreilly.com/product/0636920033431.do">Cython - A Guide for Python Programmers</a>, book by Kurt W. Smith, O'Reilly 2015</li> 
+    <li><a href="http://doi.ieeecomputersociety.org/10.1109/MCSE.2010.118">Cython: The best of both worlds</a>, article by Stefan Behnel, Robert Bradshaw et al., IEEE 2011</li> 
+    <li>SciPy 2009 proceedings (pdf): <a href="http://conference.scipy.org/proceedings/SciPy2009/paper_1/">Cython Tutorial</a>; <a href="http://conference.scipy.org/proceedings/SciPy2009/paper_2/">Fast Numerical Computations with Cython</a> </li> 
+   </ul> 
+   <p></p> 
+   <p> If you still have questions, feel free to send an email to the <a href="https://groups.google.com/group/cython-users">cython users mailing list</a>. Aspects of the core development are discussed on the <a href="https://mail.python.org/mailman/listinfo/cython-devel">cython core developer</a> mailing list. If you are unsure which list to use, the cython users list is probably the right one to use, which has the larger audience. There is also a <strong>#cython</strong> channel on the freenode IRC servers for Cython related chats. </p> 
+   <h1>Download</h1> 
+   <p> <a name="download"></a> Cython is freely available under the <strong>open source</strong> <a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache License</a>. </p> 
+   <p>The <strong>latest release</strong> of Cython is 3.0 alpha 6 (released 2020-08-01). Cython is available from the <a href="http://pypi.python.org/pypi/Cython/">PyPI</a> <strong>package index repository</strong>. </p> 
+   <p>Christoph Gohlke has created Windows installers available for download on <a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/#cython">his site</a>. </p> 
+   <h1>People</h1> 
+   <p> <a name="community"></a> </p>
+   <p><strong>Core Developers</strong>: <a href="http://consulting.behnel.de/">Stefan Behnel</a>, <a href="http://bradshawfamily.net/">Robert Bradshaw</a>, Lisandro Dalcín, Mark Florisson, Vitja Makarov, <a href="http://folk.uio.no/dagss/">Dag Sverre Seljebotn</a>. </p> 
+   <p><strong>Contributors</strong>: Marc Abramowitz, Wichert Akkerman, Martin Albrecht, Peter Alexander, Francesc Alted, Ivan Andrus, Arfrever Frehtes Taifersar Arahesis, Philip Austin, Josh Ayers, Haoyu Bai, Grant Baillie, Nicolas Barbey, Gustavo Barbieri, David Barnett, Andrea Bedini, Brian Bishop, Chuck Blake, Alexey Borzenkov, Georg Brandl, Nils Braun, Erik Bray, Matthew Brett, Nils Bruin, Matthias Bussonnier, Lars Buitinck, Vladimir Cerny, Ondrej Certik, Shalabh Chaturvedi, Eric Chlebek, David Christenson, Craig Citro, Timothy Clemans, Bryan Cole, Favian Contreras, Dave Cournapeau, Andreas van Cranenburgh, Antonio Cuni, Armon Dadgar, Julien Danjou, Jeroen Demeyer, Eric Dill, Nicolas Dumazet, Ali Ebrahim, John Ehresman, Michael Enßlin, Jason Evans, Isuru Fernando, Eric Firing, Claudio Freire, Danilo Freitas, Bradley Froehle, Gary Furnish, Syam Gadde, Martín Gaitán, Gabriel Gellner, Christoph Gohlke, Evgeny Golyshev, Brian Granger, Olivier Grisel, Christoph Groth, Jason Grout, Romain Guillebert, Adrien Guinet, Valentin Haenel, Yaroslav Halchenko, Richard Hansen, Kay Hayen, Ian Henriksen, Philip Herron, Magnus Lie Hetland, David Hirschfeld, Jiajun Huang, Thomas Hunger, Eric Huss, Naoki Inada, Joe Jevnik, Omer Katz, Karl Kempe, Rafe Kettler, Jerome Kieffer, W. Trevor King, Jim Kleckner, Ronan Lamy, Torsten Landschoff, Chris Lasher, Sergei Lebedev, Antony Lee, Björn Linse, Mark Lodato, Thomas Lotze, Angus McMorland, David McNab, Jason Madden, Syrtis Major, Yesudeep Mangalapilly, Tadeu Manoel, Vasil Manolov, Gabriel de Marmiesse, Sturla Molden, Mansour Moufid, Nikita Nemkin, David Nogueira, Andrew Ohana, Jay Oster, Olivier Parcollet, Brent Pedersen, Mark Peek, Chris Perkins, Gabriel Pettier, Emmanuel Gil Peyrot, Matti Picus, Antoine Pitrou, Andrey Plotnikov, Paul Prescod, Prabhu Ramachandran, Jeff Ramnani, Holger Rapp, Nikolaus Rath, Peinthor Rene, Armin Rigo, Joon Ro, Fabian Rost, Ralf Schmitt, Michael Seifert, Corbin Simpson, Kirill Smelkov, Ivan Smirnov, Kurt Smith, Nathaniel Smith, William Stein, Andrew Straw, Boxiang Sun, Arfrever Taifersar Arahesis, Dimitri Tcaciuc, Gregor Thalhammer, Kevin R. Thornton, Peter Todd, Erik Tollerud, David Vierra, Petr Viktorin, Mathieu Virbel, Pauli Virtanen, Jakub Wilk, Carl Witty, David Woods, Felix Wu, Yury Zaytsev, Jelle Zijlstra. </p> 
+   <p><strong>Financial Contributions</strong>: <a href="http://www.google.com">Google</a> and <a href="http://www.enthought.com/">Enthought</a> funded Dag Seljebotn to greatly improve <a href="http://docs.cython.org/src/tutorial/numpy.html">Cython integration with NumPy</a>. Kurt Smith and Danilo Freitas were funded through the <a href="http://code.google.com/soc/">Google Summer of Code</a> program to work on improved Fortran and C++ support respectively, and in 2010 Haoyu Bai was funded to work on <a href="http://haoyugsoc.wordpress.com/">Python 3 compatibility</a>. </p> 
+   <p><strong>Special Thanks</strong> to Greg Ewing for inventing and developing Cython's predecessor <a href="http://www.cosc.canterbury.ac.nz/greg.ewing/python/Pyrex/">Pyrex</a> and for his valuable input in language design decisions. </p> 
+   <h1>Useful Links</h1> 
+   <p> <a name="development"></a> </p>
+   <ul> 
+    <li><a href="https://github.com/cython/cython/wiki">Wiki</a></li> 
+    <li><a href="https://groups.google.com/group/cython-users">General users mailing list</a> and <a href="http://blog.gmane.org/gmane.comp.python.cython.user">archive</a></li> 
+    <li><a href="https://mail.python.org/mailman/listinfo/cython-devel">Core developer mailing list</a> and <a href="http://dir.gmane.org/gmane.comp.python.cython.devel">archive</a></li> 
+    <li><a href="https://github.com/cython/cython/issues/">Bug &amp; Feature Tracker</a></li> 
+    <li><a href="https://github.com/cython">Source code repositories</a> (using the Git DVCS)</li> 
+   </ul> 
+   <p></p> 
+  </div> 
+  <div class="testimonials" id="testimonials"> 
+   <p style="font-weight: bold; font-size:120%">What users have to say about Cython:</p> 
+   <div> 
+    <p>»You would expect a whole lot of organizations and people to fancy a language that's about as high-level as Python, yet almost as fast and down-to-the-metal as C.</p> 
+    <p>Add to that the ability to seamlessly integrate with both your existing C/++ codebase and your Python codebase, easily mix very high level abstractions with very low-level machine access... clear winner.« ? <a href="http://article.gmane.org/gmane.comp.python.general/677238">Dun Peal</a> on c.l.py </p> 
+   </div> 
+   <div> 
+    <p>»You guys rock! In scikit-learn, we have decided early on to do Cython, rather than C or C++. That decision has been a clear win because the code is way more maintainable. We have had to convince new contributors that Cython was better for them, but the readability of the code, and the capacity to support multiple Python versions, was worth it.« ? <a href="http://thread.gmane.org/gmane.comp.python.cython.user/10764/focus=10787">Gaël Varoquaux</a> </p> 
+   </div> 
+   <div> 
+    <p>»The biggest surprise (and of course this is Cython's selling point) is how simple the interfacing between high level and low level code becomes, and the fact that it is all very robust.</p> 
+    <p>It's exiciting to see that there are several active projects around that attempt to speed up Python. The nice thing about Cython is that it doesn't give you "half the speed of C" or "maybe nearly the speed of C, 3 years from now" -- it gives the real deal, -O3 C, and it works right now.« ? <a href="http://fredrik-j.blogspot.com/2009/05/report-from-sage-days-15.html">Fredrik Johansson</a> </p> 
+   </div> 
+   <div> 
+    <p>»SciPy is approximately 50% Python, 25% Fortran, 20% C, 3% Cython and 2% C++ … The distribution of secondary programming languages in SciPy is a compromise between a powerful, performance-enhancing language that interacts well with Python (that is, Cython) and the usage of languages (and their libraries) that have proven reliable and performant over many decades.</p> 
+    <p>For implementing new functionality, Python is still the language of choice. If Python performance is an issue, then we prefer the use of Cython followed by C, C++ or Fortran (in that order). The main motivation for this is maintainability: Cython has the highest abstraction level, and most Python developers will understand it. C is also widely known, and easier for the current core development team to manage than C++ and especially Fortran.« ? <a href="https://www.nature.com/articles/s41592-019-0686-2">Pauli Virtanen et al., SciPy</a> </p>
+   </div> 
+   <div> 
+    <p>»Not to mention that the generated C often makes use of performance tricks that are too tedious or arcane to write by hand, partially motivated by scientific computing’s constant push. And through all that, Cython code maintains a high level of integration with Python itself, right down to the stack trace and line numbers.</p> 
+    <p>PayPal has certainly benefitted from their efforts through high-performance Cython users like gevent, lxml, and NumPy. While our first go with Cython didn’t stick in 2011, since 2015, all native extensions have been written and rewritten to use Cython.« ? <a href="https://www.paypal-engineering.com/2016/09/22/python-by-the-c-side/">Mahmoud Hashemi</a> </p> 
+   </div> 
+   <div> 
+    <p> »I'm honestly never going back to writing C again. Cython gives me all the expressiveness of Python combined with all the performance and close-to-the-metal-godlike-powers of C. I've been using it to implement high-performance graph traversal and routing algorithms and to interface with C/C++ libraries, and it's been an absolute amazing productivity boost.« ? <a href="http://news.ycombinator.com/item?id=1212790">Andrew Tipton</a> </p> 
+   </div> 
+   <div> 
+    <p>»A general rule of thumb is that your program spends 80% of its time running 20% of the code. Thus a good strategy for efficient coding is to write everything, profile your code, and optimize the parts that need it. Python’s profilers are great, and Cython allows you to do the latter step with minimal effort.« ? <a href="http://www.stat.washington.edu/~hoytak/blog/bestlibraries.html">Hoyt Koepke</a> </p> 
+   </div> 
+   <div> 
+    <p>»The question was, in auto-generated code, to what extent there were bugs there, to what extent there were bugs in the generators. The first time I did this, I got lots and lots of warnings from the tool for code generated by both SWIG and Cython [...]</p> 
+    <p>Basically, everything I found Cython emitting was a false positive and a bug in my checker tool [CPyChecker].« ? <a href="http://pyvideo.org/video/1698/death-by-a-thousand-leaks-what-statically-analys">David Malcolm</a> </p> 
+   </div> 
+   <div> 
+    <p> »Basically, Cython is about 7x times faster than Boost.Python, which astonished me.« ? <a href="http://blog.chrischou.org/2010/02/28/simple-benchmark-between-cython-and-boost-python/">Chris Chou</a> </p>
+    <p> </p>
+   </div> 
+   <div> 
+    <p> »Using Cython allows you to just put effort into speeding up the parts of code you need to work on, and to do so without having to change very much. This is vastly different from ditching all the code and reimplementing it another language. It also requires you to learn a pretty minimal amount of stuff. You also get to keep the niceness of the Python syntax which may Python coders have come to appreciate.« ? <a href="http://www.panda3d.org/blog/?p=173">Craig Macomber</a> </p> 
+   </div> 
+   <div> 
+    <p> »If you have a piece of Python that you need to run fast, then I would recommend you used Cython immediately. This means that I can exploit the beauty of Python and the speed of C together, and that’s a match made in heaven.« ? <a href="http://www.korokithakis.net/node/109">Stavros</a> </p> 
+   </div> 
+   <div> 
+    <p>»From 85 seconds (at the beginning of this post) down to 0.8 seconds: a reduction by a factor of 100 ...thank you cython! :-)« ? <a href="http://aroberge.blogspot.com/2010/01/profiling-adventures-and-cython.html">André Roberge</a> </p> 
+   </div> 
+   <div> 
+    <p> »Writing a full-on CPython module from scratch would probably offer better performance than Cython if you know the quirks and are disciplined. But to someone who doesn't already drip CPython C modules, Cython is a godsend. </p> 
+    <p>Ultimately, there's 5 commonly used ways (CPython [C-API], Boost::Python, SWIG, Cython, ctypes) to integrate C into Python, and right now you'd be crazy not to give Cython a shot, if that's your need. It's very easy to learn for anyone familiar with both C and Python.« ? <a href="http://news.ycombinator.com/item?id=1846002">ashika</a> </p> 
+   </div> 
+   <div> 
+    <p>»What I loved about the Cython code is that I use a Python list to manage the Vortex objects. This shows that we can use the normal Python containers to manage objects. This is extremely convenient. [...]</p> 
+    <p>Clearly, if you are building code from scratch and need speed, Cython is an excellent option. For this I really must congratulate the Cython and Pyrex developers.« ? <a href="http://prabhuramachandran.blogspot.de/2008/09/python-vs-cython-vs-d-pyd-vs-c-swig.html">Prabhu Ramachandran</a> </p> 
+   </div> 
+   <div> 
+    <p>»I wrote a script that compute a distance matrix (O^2) in Python with Numpy arrays and the same script in Cython. It took me 10 minutes to figure it out how Cython works and I gained a speed up of 550 times !!! Amazing« ? <a href="http://dpinte.wordpress.com/2010/04/22/interfacing-gsl-with-python-using-cython-comparison-with-weave/#comment-32">kfrancoi</a> </p> 
+   </div> 
+   <div> 
+    <p>»I would like to report on a successful Cython project. Successful in the sense that it was much faster than all code written by my predecessors mainly because the speed scales almost linearly with the number of cores. Also, the code is shorter and much easier to read and maintain. [...]</p> 
+    <p>Making it this fast &amp; short &amp; readable &amp; maintainable would have been pretty hard without Cython.« ? <a href="http://permalink.gmane.org/gmane.comp.python.cython.user/4004">Alex van Houten</a> </p> 
+   </div> 
+   <div> 
+    <p>»At work, we’ve started using Cython with excellent success. We rewrote one particular Perl script as Cython and achieved a 600% speed improvement. As a Perl lover, this was impressive. We still get all the benefits of Python such as rapid development and clean object-oriented design patterns but with the speed of C.« ? <a href="http://wim.kerkhofftech.ca/2010/11/cython-c-extensions-for-python/">Wim Kerkhoff</a> </p> 
+   </div> 
+   <div> 
+    <p>»The reason that I was interested in Cython was the long calculation times I encountered while doing a multi-variable optimization with a function evaluation that involved solving a differential equation with scipy.integrate.odeint. By simply replacing the class that contained the differential equation with a Cython version the calculation time dropped by a factor 5. Not bad for half a Sunday afternoons work.« ? <a href="http://korbinin.blogspot.com/2011/07/using-cython.html">Korbinin</a> </p> 
+   </div> 
+   <div> 
+    <p>»I was surprised how simple it was to get it working both under Windows and Linux. I did not have to mess with make files or configure the compiles. Cython integrated well with NumPy and SciPy. This expands the programming tasks you can do with Python substantially.« ? <a href="http://blog.samibadawi.com/2010/10/natural-language-processing-in-clojure.html">Sami Badawi</a> </p> 
+   </div> 
+   <div> 
+    <p>»This is why the Scipy folks keep harping about Cython – it’s rapidly becoming (or has already become) the lingua franca of exposing legacy libraries to Python. Their user base has tons of legacy code or external libraries that they need to interface, and most of the reason Python has had such a great adoption curve in that space is because Numpy has made the data portion of that interface easy. Cython makes the code portion quite painless, as well.« ? <a href="http://blog.streamitive.com/2011/10/17/numpy-isnt-about-fast-arrays/">Peter Z. Wang</a> </p> 
+   </div> 
+   <div> 
+    <p>»Added an optional step of compiling fastavro with Cython. Just doing that, with no Cython specific code reduced the time of processing 10K records from 2.9sec to 1.7sec. Not bad for that little work.« ? <a href="http://pythonwise.blogspot.com/2012/01/fastavro-with-cython.html">Miki Tebeka</a> </p> 
+   </div> 
+   <div> 
+    <p>»fastavro compiles the Python code without any specific Cython code. This way on machines that do not have a compiler users can still use fastavro.</p> 
+    <p>The end result is a package that reads Avro faster than Java and supports both Python 2 and Python 3. Using Cython and a little bit of work th[is] was achieved without too much effort.« ? <a href="http://pythonwise.blogspot.de/2012/03/reading-avro-files-faster-than-java.html">Miki Tebeka</a> </p> 
+   </div> 
+   <div> 
+    <p>»... the binding needed to be rewritten, mainly because the current binding is directly written in C++ and is a maintenance nightmare. This new binding is written in Cython« ? <a href="https://pysfml2-cython.readthedocs.io/en/latest/introduction.html#doesn-t-sfml-already-have-a-python-binding">Bastien Léonard</a> </p> 
+   </div> 
+   <div> 
+    <p> » Code generation via Cython allows the production of smaller and more maintainable bindings, including increased compatibility with all supported Python releases without additional burden for NEST developers. « </p> This approach resulted in a reduction of the code footprint of around 50% and a significant increase in the cohesiveness of the code related to the Python bindings: whereas previously seven core files and 22 additional files were involved, the new approach requires merely two core files. The new implementation also removes the compile-time dependency on NumPy and provides numerous additional maintainability benefits by reducing complexity and increasing comprehensibility of the code. The re-write of the build system also resulted in a 50% reduction of code, and resolved multiple issues with its usability and robustness. « 
+    <p></p> 
+    <p> » In conclusion, we hope that through a more widespread use of Cython, neuroscientific software developers will be able to focus their creative energy on refining their algorithms and implementing new features, instead of working to pay off the interest on the accumulating technical debt. « ? <a href="https://www.frontiersin.org/articles/10.3389/fninf.2014.00023/full">Yury V. Zaytsev and Abigail Morrison</a> </p> 
+   </div> 
+   <div> 
+    <p> » The Cython version took about 30 minutes to write, and it runs just as fast as the C code — because, why wouldn’t it? It *is* C code, really, with just some syntactic sugar. And you don’t even have to learn or think about a foreign, complicated C API…You just, write C. Or C++ — although that’s a little more awkward. Both the Cython version and the C version are about 70x faster than the pure Python version, which uses Numpy arrays. « ? <a href="https://explosion.ai/blog/writing-c-in-cython">Matthew Honnibal</a> </p> 
+   </div> 
+   <div> 
+    <p> » I love this project. Fantastic way to write Python bindings for native libs or speed up computationally intensive code without having to write C yourself. « ? <a href="https://news.ycombinator.com/item?id=7090430">schmichael</a> </p> 
+   </div> 
+   <div> 
+    <p> » I use a lot of pyrex/cython to bind to libraries - it's so much faster to code in python. It's been a huge boon. Having used swig, hand writing wrappers, and pyrex before i can say i much prefer cython. Thank you for the hard work. « ? <a href="https://news.ycombinator.com/item?id=7090430">jnazario</a> </p> 
+   </div> 
+   <div> 
+    <p> » I am not good with C so I mostly do pure python for my research. However, now dealing with clusters of 1000+ molecules, there was huge bottlenecks in my code. </p>
+    <p> Using cython it went from running single calculation in hours to seconds, focking nice... « ? <a href="https://www.reddit.com/r/Cython/comments/3sj5p4/optimized_my_code/">fishtickler</a> </p> 
+   </div> 
+   <div> 
+    <p> » Cython saves you from a great many of the gotchas [that C has]. The worst you'll usually get is a lack of performance gain (at which point cython -a is your friend). Wringing out all the performance you can get can require a reasonable working knowledge of C -- but you don't have to know it that well to do pretty darn well. « ? <a href="https://www.reddit.com/r/Python/comments/4k6mbr/how_much_c_should_i_know_before_i_start_writing/d3cssee">lmcinnes</a> </p> 
+   </div> 
+   <div> 
+    <p> » [spaCy is] written in clean but efficient Cython code, which allows us to manage both low level details and the high-level Python API in a single codebase. « ? <a href="https://spacy.io/">Matthew Honnibal</a> </p> 
+   </div> 
+   <div> 
+    <p> » [uvloop] is written in Cython, and by the way, Cython is just amazing. It's unfortunate that it's not as wide-spread and I think it's kind-a underappreciated what you can do in Cython. Essentially, it's a superset of the Python language, you can strictly type it and it will compile to C and you will have C speed. You can easily achieve it, with a syntax more similar to Python. Definitely check out Cython. « ? <a href="https://www.youtube.com/watch?v=wlUtkBa8tK8">Yury Selivanov (video@22:50)</a> </p> 
+   </div> 
+   <div> 
+    <p> » 300.000 req/sec is a number comparable to Go's built-in web server (I'm saying this based on a rough test I made some years ago). Given that Go is designed to do exactly that, this is really impressive. My kudos to your choice to use Cython. « ? <a href="https://www.reddit.com/r/Python/comments/8scbgm/fast_asynchronous_and_sexy_python_web_framework/e0z706z/">beertown</a> </p> 
+   </div> 
+   <div> 
+    <p> » Cython is one of the best kept secrets of Python. It extends Python in a direction that addresses many of the shortcomings of the language and the platform « ? <a href="http://okigiveup.net/an-introduction-to-cython/">Ula? Türkmen</a> </p> 
+   </div> 
+   <p id="showTestimonialsSwitch" style="text-align: right; display: none"> <a href="javascript:allTestimonials();">more ...</a><a href="javascript:hideTestimonials();">less ...</a> <script type="text/javascript" language="JavaScript"><!--
+function hideTestimonials() {
+  var topdiv = document.getElementById("testimonials");
+  if (topdiv) {
+    var top_hits = 4;
+
+    var divs = topdiv.getElementsByTagName("div");
+    var div = divs[ Math.floor(Math.random() * top_hits) % top_hits ];
+    if (div) {
+      for (var i=0; i<divs.length; i++) {
+        divs[i].style.display="none";
+      }
+      div.style.display="block";
+
+      var rest = divs.length - top_hits;
+      div = divs[ top_hits + Math.floor(Math.random() * rest) % rest ];
+      if (div) {
+        div.style.display="block";
+      }
+    }
+  }
+  var plink = document.getElementById("showTestimonialsSwitch");
+  if(plink) {
+    var links = plink.getElementsByTagName("a");
+    links[1].style.display="none";
+    links[0].style.display="block";
+    plink.style.display="block";
+  }
+}
+function allTestimonials() {
+  var topdiv = document.getElementById("testimonials");
+  if (topdiv) {
+    var divs = topdiv.getElementsByTagName("div");
+    for (var i=0; i<divs.length; i++) {
+      divs[i].style.display="block";
+    }
+  }
+  var plink = document.getElementById("showTestimonialsSwitch");
+  if(plink) {
+    var links = plink.getElementsByTagName("a");
+    links[0].style.display="none";
+    links[1].style.display="block";
+    plink.style.display="block";
+  }
+}
+hideTestimonials();
+// -->
+</script> </p> 
+  </div> <!--
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-6139100-1");
+pageTracker._trackPageview();
+</script>
+-->  
+ </body>
+</html>

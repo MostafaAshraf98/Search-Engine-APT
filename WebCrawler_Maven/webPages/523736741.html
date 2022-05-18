@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
+  <channel>
+    <title>Newest Python PEPs</title>
+    <link>https://peps.python.org/peps.rss</link>
+    <description>Newest Python Enhancement Proposals (PEPs) - Information on new language features, and some meta-information like release procedure and schedules.</description>
+    <atom:link href="https://peps.python.org/peps.rss" rel="self" />
+    <docs>https://cyber.harvard.edu/rss/rss.html</docs>
+    <language>en</language>
+    <lastBuildDate>Tue, 17 May 2022 18:52:18 GMT</lastBuildDate>
+    <item>
+      <title>PEP 691: JSON-based Simple API for Python Package Indexes</title>
+      <link>https://peps.python.org/pep-0691/</link>
+      <description>The "Simple Repository API" that was defined in PEP 503 (and was in use much longer than that) has served us reasonably well for a very long time. However, the reliance on using HTML as the data exchange mechanism has several shortcomings.</description>
+      <author>Donald Stufft (donald@stufft.io)</author>
+      <guid isPermaLink="true">https://peps.python.org/pep-0691/</guid>
+      <pubDate>Wed, 04 May 2022 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>PEP 690: Lazy Imports</title>
+      <link>https://peps.python.org/pep-0690/</link>
+      <description>This PEP proposes a feature to transparently defer the execution of imported modules until the moment when an imported object is used.  Since Python programs commonly import many more modules than a single invocation of the program is likely to use in practice, lazy imports can greatly reduce the overall number of modules loaded, improving startup time and memory usage. Lazy imports also mostly eliminate the risk of import cycles.</description>
+      <author>Germán Méndez Bravo (german.mb@gmail.com), Carl Meyer (carl@oddbird.net)</author>
+      <guid isPermaLink="true">https://peps.python.org/pep-0690/</guid>
+      <pubDate>Fri, 29 Apr 2022 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>PEP 688: Making the buffer protocol accessible in Python</title>
+      <link>https://peps.python.org/pep-0688/</link>
+      <description>This PEP proposes a mechanism for Python code to inspect whether a type supports the C-level buffer protocol. This allows type checkers to evaluate whether objects implement the protocol.</description>
+      <author>Jelle Zijlstra (jelle.zijlstra@gmail.com)</author>
+      <guid isPermaLink="true">https://peps.python.org/pep-0688/</guid>
+      <pubDate>Sat, 23 Apr 2022 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>PEP 689: Unstable C API tier</title>
+      <link>https://peps.python.org/pep-0689/</link>
+      <description>Some functions and types of the C-API are designated unstable, meaning that they will not change in patch (bugfix/security) releases, but may change between minor releases (e.g. between 3.11 and 3.12) without deprecation warnings.</description>
+      <author>Petr Viktorin (encukou@gmail.com)</author>
+      <guid isPermaLink="true">https://peps.python.org/pep-0689/</guid>
+      <pubDate>Fri, 22 Apr 2022 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>PEP 687: Isolating modules in the standard library</title>
+      <link>https://peps.python.org/pep-0687/</link>
+      <description>Extensions in the standard library will be converted to multi-phase initialization (PEP 489) and where possible, all state will be stored on module objects rather than in process-global variables.</description>
+      <author>Erlend Egeberg Aasland (erlend.aasland@protonmail.com), Petr Viktorin (encukou@gmail.com)</author>
+      <guid isPermaLink="true">https://peps.python.org/pep-0687/</guid>
+      <pubDate>Mon, 04 Apr 2022 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>PEP 686: Make UTF-8 mode default</title>
+      <link>https://peps.python.org/pep-0686/</link>
+      <description>This PEP proposes enabling UTF-8 mode by default.</description>
+      <author>Inada Naoki (songofacandy@gmail.com)</author>
+      <guid isPermaLink="true">https://peps.python.org/pep-0686/</guid>
+      <pubDate>Fri, 18 Mar 2022 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>PEP 685: Comparison of extra names for optional distribution dependencies</title>
+      <link>https://peps.python.org/pep-0685/</link>
+      <description>This PEP specifies how to normalize distribution extra names when performing comparisons. This prevents tools from either failing to find an extra name, or accidentally matching against an unexpected name.</description>
+      <author>Brett Cannon (brett@python.org)</author>
+      <guid isPermaLink="true">https://peps.python.org/pep-0685/</guid>
+      <pubDate>Tue, 08 Mar 2022 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>PEP 684: A Per-Interpreter GIL</title>
+      <link>https://peps.python.org/pep-0684/</link>
+      <description>Since Python 1.5 (1997), CPython users can run multiple interpreters in the same process.  However, interpreters in the same process have always shared a significant amount of global state.  This is a source of bugs, with a growing impact as more and more people use the feature.  Furthermore, sufficient isolation would facilitate true multi-core parallelism, where interpreters no longer share the GIL.  The changes outlined in this proposal will result in that level of interpreter isolation.</description>
+      <author>Eric Snow (ericsnowcurrently@gmail.com)</author>
+      <guid isPermaLink="true">https://peps.python.org/pep-0684/</guid>
+      <pubDate>Tue, 08 Mar 2022 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>PEP 683: Immortal Objects, Using a Fixed Refcount</title>
+      <link>https://peps.python.org/pep-0683/</link>
+      <description>Currently the CPython runtime maintains a small amount of mutable state in the allocated memory of each object.  Because of this, otherwise immutable objects are actually mutable.  This can have a large negative impact on CPU and memory performance, especially for approaches to increasing Python's scalability.</description>
+      <author>Eric Snow (ericsnowcurrently@gmail.com), Eddie Elizondo (eduardo.elizondorueda@gmail.com)</author>
+      <guid isPermaLink="true">https://peps.python.org/pep-0683/</guid>
+      <pubDate>Thu, 10 Feb 2022 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>PEP 682: Format Specifier for Signed Zero</title>
+      <link>https://peps.python.org/pep-0682/</link>
+      <description>Though float and Decimal types can represent signed zero, in many fields of mathematics negative zero is surprising or unwanted -- especially in the context of displaying an (often rounded) numerical result.  This PEP proposes an extension to the string format specification allowing negative zero to be normalized to positive zero.</description>
+      <author>John Belmonte (john@neggie.net)</author>
+      <guid isPermaLink="true">https://peps.python.org/pep-0682/</guid>
+      <pubDate>Sat, 29 Jan 2022 00:00:00 GMT</pubDate>
+    </item>
+  </channel>
+</rss>

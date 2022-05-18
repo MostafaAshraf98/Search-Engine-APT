@@ -1,0 +1,200 @@
+<!doctype html>
+<html>
+ <head>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=Material+Icons&amp;display=block" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@400;700&amp;family=Overpass:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <title>OSV</title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZXG9G6HTBR"></script>
+  <script>window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-ZXG9G6HTBR', { 'anonymize_ip': true });</script>
+  <script defer src="/static/vendors.afd4ec18caba527bce86.js"></script>
+  <script defer src="/static/main.783ae95fd4af7ee733c7.js"></script>
+  <link href="/static/main.79daa0478f6f3bf72ed7.css" rel="stylesheet">
+ </head>
+ <body>
+  <header class="top-bar">
+   <div class="logo">
+    <a href="/v2/"><img src="/static/img/logo.png" srcset="/static/img/logo.png, /static/img/logo@2x.png 2x"></a>
+   </div>
+   <ul class="tabs">
+    <li class=""><a href="/list">Vulnerability Database</a></li>
+    <li class=""><a href="/about">About</a></li>
+   </ul>
+  </header> 
+  <div class="mdc-layout-grid"> 
+   <div class="mdc-layout-grid__inner home-page"> 
+    <div class="mdc-layout-grid__cell--span-12 hero"> 
+     <h1 class="title">A distributed vulnerability database for Open Source</h1> 
+     <div class="explainer"> 
+      <p>An open, precise, and distributed approach to producing and consuming vulnerability information for open source. </p>
+     </div> 
+     <div class="cta"> <a class="cta-primary link-button" href="/list">Search Vulnerability Database</a> <a class="cta-primary link-button" href="#use-the-api">Use the API</a> 
+     </div> 
+    </div> 
+    <div class="mdc-layout-grid__cell--span-12 ecosystems-section"> 
+     <h2 class="heading">Ecosystems</h2> 
+     <div class="ecosystem-counts-wrapper"> 
+      <div class="ecosystems-line-mid"></div> 
+      <div class="ecosystems-line-0"></div> 
+      <div class="ecosystems-line-1"></div> 
+      <div class="ecosystems-line-2"></div> 
+      <div class="ecosystems-line-3"></div> 
+      <dl class="ecosystem-counts"> 
+       <dt class="ecosystem-name">
+        Android
+       </dt> 
+       <dd class="ecosystem-count-wrapper"> <a href="/list?ecosystem=Android"> <span class="ecosystem-count" style="
+                      width: 59.359567676008986px; height: 59.359567676008986px; line-height: 59.359567676008986px"> 361 <span class="tooltip" style="
+                       top: -34.6797838380045px;"> View Android vulnerabilities </span> </span> </a> 
+       </dd> 
+       <dt class="ecosystem-name">
+        crates.io
+       </dt> 
+       <dd class="ecosystem-count-wrapper"> <a href="/list?ecosystem=crates.io"> <span class="ecosystem-count" style="
+                      width: 67.2919328811986px; height: 67.2919328811986px; line-height: 67.2919328811986px"> 793 <span class="tooltip" style="
+                       top: -38.6459664405993px;"> View crates.io vulnerabilities </span> </span> </a> 
+       </dd> 
+       <dt class="ecosystem-name">
+        Go
+       </dt> 
+       <dd class="ecosystem-count-wrapper"> <a href="/list?ecosystem=Go"> <span class="ecosystem-count" style="
+                      width: 63.94596774164373px; height: 63.94596774164373px; line-height: 63.94596774164373px"> 569 <span class="tooltip" style="
+                       top: -36.972983870821864px;"> View Go vulnerabilities </span> </span> </a> 
+       </dd> 
+       <dt class="ecosystem-name">
+        Linux
+       </dt> 
+       <dd class="ecosystem-count-wrapper"> <a href="/list?ecosystem=Linux"> <span class="ecosystem-count" style="
+                      width: 90.14873621781705px; height: 90.14873621781705px; line-height: 90.14873621781705px"> 7657 <span class="tooltip" style="
+                       top: -50.07436810890852px;"> View Linux vulnerabilities </span> </span> </a> 
+       </dd> 
+       <dt class="ecosystem-name">
+        Maven
+       </dt> 
+       <dd class="ecosystem-count-wrapper"> <a href="/list?ecosystem=Maven"> <span class="ecosystem-count" style="
+                      width: 71.83056989082107px; height: 71.83056989082107px; line-height: 71.83056989082107px"> 1244 <span class="tooltip" style="
+                       top: -40.915284945410534px;"> View Maven vulnerabilities </span> </span> </a> 
+       </dd> 
+       <dt class="ecosystem-name">
+        npm
+       </dt> 
+       <dd class="ecosystem-count-wrapper"> <a href="/list?ecosystem=npm"> <span class="ecosystem-count" style="
+                      width: 78.68696900214435px; height: 78.68696900214435px; line-height: 78.68696900214435px"> 2456 <span class="tooltip" style="
+                       top: -44.343484501072176px;"> View npm vulnerabilities </span> </span> </a> 
+       </dd> 
+       <dt class="ecosystem-name">
+        NuGet
+       </dt> 
+       <dd class="ecosystem-count-wrapper"> <a href="/list?ecosystem=NuGet"> <span class="ecosystem-count" style="
+                      width: 52.11819582487589px; height: 52.11819582487589px; line-height: 52.11819582487589px"> 176 <span class="tooltip" style="
+                       top: -31.059097912437945px;"> View NuGet vulnerabilities </span> </span> </a> 
+       </dd> 
+       <dt class="ecosystem-name">
+        OSS-Fuzz
+       </dt> 
+       <dd class="ecosystem-count-wrapper"> <a href="/list?ecosystem=OSS-Fuzz"> <span class="ecosystem-count" style="
+                      width: 78.9061951404222px; height: 78.9061951404222px; line-height: 78.9061951404222px"> 2510 <span class="tooltip" style="
+                       top: -44.4530975702111px;"> View OSS-Fuzz vulnerabilities </span> </span> </a> 
+       </dd> 
+       <dt class="ecosystem-name">
+        Packagist
+       </dt> 
+       <dd class="ecosystem-count-wrapper"> <a href="/list?ecosystem=Packagist"> <span class="ecosystem-count" style="
+                      width: 68.16794348288884px; height: 68.16794348288884px; line-height: 68.16794348288884px"> 865 <span class="tooltip" style="
+                       top: -39.08397174144442px;"> View Packagist vulnerabilities </span> </span> </a> 
+       </dd> 
+       <dt class="ecosystem-name">
+        PyPI
+       </dt> 
+       <dd class="ecosystem-count-wrapper"> <a href="/list?ecosystem=PyPI"> <span class="ecosystem-count" style="
+                      width: 81.32590207774477px; height: 81.32590207774477px; line-height: 81.32590207774477px"> 3191 <span class="tooltip" style="
+                       top: -45.662951038872386px;"> View PyPI vulnerabilities </span> </span> </a> 
+       </dd> 
+       <dt class="ecosystem-name">
+        RubyGems
+       </dt> 
+       <dd class="ecosystem-count-wrapper"> <a href="/list?ecosystem=RubyGems"> <span class="ecosystem-count" style="
+                      width: 61.91140105555098px; height: 61.91140105555098px; line-height: 61.91140105555098px"> 465 <span class="tooltip" style="
+                       top: -35.95570052777549px;"> View RubyGems vulnerabilities </span> </span> </a> 
+       </dd> 
+      </dl> 
+     </div> 
+    </div> 
+    <div class="mdc-layout-grid__cell--span-12 text-info"> 
+     <h2 class="heading">OSV schema</h2> 
+     <p class="description"> All advisories in this database use the <a href="https://ossf.github.io/osv-schema/">OpenSSF OSV format</a>, which was developed in collaboration with open source communities. </p> 
+     <p class="description"> The OSV schema provides a human and machine readable data format to describe vulnerabilities in a way that precisely maps to open source package versions or commit hashes. </p> 
+     <div class="mdc-layout-grid__inner"> 
+      <div class="mdc-layout-grid__cell--span-12"> <code-block>
+        { "schema_version": "1.3.0", "id": "GHSA-c3g4-w6cv-6v7h", "modified": "2022-04-01T13:56:42Z", "published": "2022-04-01T13:56:42Z", "aliases": [ "CVE-2022-27651" ], "summary": "Non-empty default inheritable capabilities for linux container in Buildah", "details": "A bug was found in Buildah where containers were created ...", "affected": [ { "package": { "ecosystem": "Go", "name": "github.com/containers/buildah" }, "ranges": [ { "type": "SEMVER", "events": [ { "introduced": "0" }, { "fixed": "1.25.0" } ] } ] } ], "references": [ { "type": "WEB", "url": "https://github.com/containers/buildah/commit/..." }, { "type": "PACKAGE", "url": "https://github.com/containers/buildah" } ], }
+       </code-block> 
+      </div> 
+     </div> 
+     <div class="cta"> <a class="cta-primary link-button" href="https://ossf.github.io/osv-schema/">OSV Schema</a> <a class="cta-primary link-button" href="https://security.googleblog.com/2021/06/announcing-unified-vulnerability-schema.html">Blog post</a> 
+     </div> 
+    </div> 
+    <div class="mdc-layout-grid__cell--span-12 text-info"> 
+     <h2 class="heading">Data sources</h2> 
+     <p class="description"> This infrastructure serves as an aggregator of vulnerability databases that have adopted the <a href="https://ossf.github.io/osv-schema/">OSV schema</a>, including <a href="https://github.com/github/advisory-database">GitHub Security Advisories</a>, <a href="https://github.com/pypa/advisory-database">PyPA</a>, <a href="https://github.com/RustSec/advisory-db">RustSec</a>, and <a href="https://github.com/cloudsecurityalliance/gsd-database">Global Security Database</a>, and more. </p> 
+     <div class="cta"> <a class="cta-primary link-button" href="https://github.com/google/osv#current-data-sources">Learn more</a> 
+     </div> 
+    </div> 
+    <div id="use-the-api" class="mdc-layout-grid__cell--span-12 usage-examples"> 
+     <h2 class="heading">Use the API</h2> 
+     <p class="description"> An easy-to-use API is available to query for all known vulnerabilities by either a commit hash, or a package version. </p> 
+     <div class="code-card-container mdc-layout-grid__inner"> 
+      <div class="code-card mdc-layout-grid__cell--span-6 mdc-layout-grid__cell--span-12-tablet"> 
+       <h3 class="code-card-title">Query by commit hash</h3> 
+       <pre class="code-card-content" id="example-commit-hash">curl -X POST -d \
+  '{"commit": "6879efc2c1596d11a6a6ad296f80063b558d5e0f"}' \
+  "https://api.osv.dev/v1/query"</pre> <clipboard-copy class="code-card-copy" for="example-commit-hash"> 
+        <mwc-icon-button class="icon" icon="content_copy"></mwc-icon-button> 
+       </clipboard-copy> 
+      </div> 
+      <div class="code-card mdc-layout-grid__cell--span-6 mdc-layout-grid__cell--span-12-tablet"> 
+       <h3 class="code-card-title">Query by version number</h3> 
+       <pre class="code-card-content" id="example-version-number">curl -X POST -d \
+  '{"version": "2.4.1",
+    "package": {"name": "jinja2", "ecosystem": "PyPI"}}' \
+  "https://api.osv.dev/v1/query"</pre> <clipboard-copy class="code-card-copy" for="example-version-number"> 
+        <mwc-icon-button class="icon" icon="content_copy"></mwc-icon-button> 
+       </clipboard-copy> 
+      </div> 
+     </div> 
+     <div class="mdc-layout-grid__cell--span-12"> 
+      <div class="cta"> <a class="cta-primary link-button" href="/docs/" data-turbo="false">API Documentation</a> 
+      </div> 
+     </div> 
+    </div> 
+    <div id="use-the-api" class="mdc-layout-grid__cell--span-12 usage-examples"> 
+     <h2 class="heading">Command line tools</h2> 
+     <div class="cmdline code-card mdc-layout-grid__cell--span-12 mdc-layout-grid__cell--span-12-tablet"> 
+      <h3 class="code-card-title">Scan an SBOM (preview)</h3> 
+      <pre class="code-card-content" id="example-sbom-scan">go install github.com/google/osv/tools/osv-scanner@latest
+$GOPATH/bin/osv-scanner cycloned-or-spdx-sbom.json
+        </pre> <clipboard-copy class="code-card-copy" for="example-sbom-scan"> 
+       <mwc-icon-button class="icon" icon="content_copy"></mwc-icon-button> 
+      </clipboard-copy> 
+     </div> 
+     <div class="mdc-layout-grid__cell--span-12"> 
+      <div class="cta"> <a class="cta-primary link-button" href="https://github.com/google/osv/tree/master/tools/osv-scanner">More details</a> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="mdc-layout-grid__cell--span-12 open-source-banner"> 
+     <h2 class="heading">Open source</h2> 
+     <p class="description"> This project is <a href="https://github.com/google/osv">open source</a>. If you have any ideas or questions, please feel free to reach out by <a href="https://github.com/google/osv/issues/new">creating an issue</a>! </p> 
+     <div class="cta"> <a class="cta-primary link-button" href="/about">Learn more</a> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+ </body>
+</html>

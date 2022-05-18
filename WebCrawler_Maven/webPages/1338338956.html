@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"> 
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <meta name="Description" content="Documentation on the Roundup issue tracker, version 2.1.0."> 
+  <title>Roundup Tracker Templates - Roundup 2.1.0 documentation</title> 
+  <link rel="stylesheet" href="../_static/style.css" type="text/css"> 
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css"> 
+  <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+          URL_ROOT:    '../',
+          VERSION:     '2.1.0',
+          COLLAPSE_MODINDEX: false,
+          FILE_SUFFIX: '.html'
+      };
+    </script> 
+  <script type="text/javascript" src="../_static/jquery.js"></script> 
+  <script type="text/javascript" src="../_static/underscore.js"></script> 
+  <script type="text/javascript" src="../_static/doctools.js"></script> 
+  <script type="text/javascript" src="../_static/language_data.js"></script> 
+  <link rel="canonical" href="https://www.roundup-tracker.org/docs/tracker_templates.html"> 
+  <link rel="index" title="Index" href="../genindex.html"> 
+  <link rel="search" title="Search" href="../search.html"> 
+  <link rel="top" title="Roundup 2.1.0 documentation" href="../index.html"> 
+  <link rel="up" title="Docs" href="../docs.html"> 
+  <link rel="next" title="Roundup Glossary" href="glossary.html"> 
+  <link rel="prev" title="REST API for Roundup" href="rest.html"> 
+ </head> 
+ <body> 
+  <div class="header">
+   <h1>Roundup</h1> 
+   <div id="searchbox" style="display: none"> 
+    <form class="search" action="../search.html" method="get"> 
+     <input type="text" aria-label="Enter search terms" name="q" size="18"> 
+     <input type="submit" value="Search"> 
+     <input type="hidden" name="check_keywords" value="yes"> 
+     <input type="hidden" name="area" value="default"> 
+    </form> 
+   </div> 
+   <script type="text/javascript">$('#searchbox').show(0);</script> 
+  </div> 
+  <div class="navigation"> 
+   <div class="menu"> 
+    <ul class="current"> 
+     <li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a></li> 
+     <li class="toctree-l1"><a class="reference external" href="https://pypi.org/project/roundup/">Download</a></li> 
+     <li class="toctree-l1 current"><a class="reference internal" href="../docs.html">Docs</a>
+      <ul class="current"> 
+       <li class="toctree-l2"><a class="reference internal" href="features.html">Roundup Features</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="installation.html">Installing Roundup</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="upgrading.html">Upgrading to newer versions of Roundup</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="FAQ.html">Roundup FAQ</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="user_guide.html">User Guide</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="customizing.html">Customising Roundup</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="admin_guide.html">Administration Guide</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="debugging.html">Debugging Aids</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="xmlrpc.html">XML-RPC access to Roundup</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="rest.html">REST API for Roundup</a></li> 
+       <li class="toctree-l2 current"><a class="current reference internal" href="#">Roundup Tracker Templates</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="glossary.html">Roundup Glossary</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="acknowledgements.html">Acknowledgements</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="license.html">License</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="overview.html">Design Overview</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="design.html">Design (original)</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="developers.html">Developing Roundup</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="mysql.html">Notes about the MySQL Database backend</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="postgresql.html">Notes about the PostgreSQL Database backend</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="implementation.html">Richard Jones implementation notes</a></li> 
+      </ul> </li> 
+     <li class="toctree-l1"><a class="reference external" href="https://issues.roundup-tracker.org">Issues</a></li> 
+     <li class="toctree-l1"><a class="reference internal" href="../contact.html">Contact</a></li> 
+     <li class="toctree-l1"><a class="reference external" href="https://wiki.roundup-tracker.org">Wiki</a></li> 
+     <li class="toctree-l1"><a class="reference internal" href="../code.html">Code</a></li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="content"> 
+   <div id="subnav"> <a title="REST API for Roundup" href="rest.html"> Prev</a> <a title="Roundup Glossary" href="glossary.html"> Next</a> <a title="Index" href="../genindex.html"> Index</a> 
+   </div> 
+   <div class="section" id="roundup-tracker-templates"> 
+    <h1>Roundup Tracker Templates</h1> 
+    <p>The templates distributed with Roundup are stored in the “share” directory nominated by Python. On Unix this is typically <code class="docutils literal notranslate"><span class="pre">/usr/share/roundup/templates/</span></code> (or <code class="docutils literal notranslate"><span class="pre">/usr/local/share...</span></code>) and on Windows this is <code class="docutils literal notranslate"><span class="pre">c:\python22\share\roundup\templates\</span></code>.</p> 
+    <p>The template loading looks in four places to find the templates:</p> 
+    <ol class="arabic simple"> 
+     <li><em>share</em> - eg. <code class="docutils literal notranslate"><span class="pre">&lt;prefix&gt;/share/roundup/templates/*</span></code>. This should be the standard place to find them when Roundup is installed.</li> 
+     <li><code class="docutils literal notranslate"><span class="pre">&lt;roundup.admin.__file__&gt;/../templates/*</span></code>. This will be used if Roundup’s run in the distro (aka. source) directory.</li> 
+     <li><code class="docutils literal notranslate"><span class="pre">&lt;current</span> <span class="pre">working</span> <span class="pre">dir&gt;/*</span></code>. This is for when someone unpacks a 3rd-party template.</li> 
+     <li><code class="docutils literal notranslate"><span class="pre">&lt;current</span> <span class="pre">working</span> <span class="pre">dir&gt;</span></code>. This is for someone who “cd”s to the 3rd-party template dir.</li> 
+    </ol> 
+    <p>Templates contain:</p> 
+    <ul class="simple"> 
+     <li>modules <code class="docutils literal notranslate"><span class="pre">schema.py</span></code> and <code class="docutils literal notranslate"><span class="pre">initial_data.py</span></code></li> 
+     <li>directories <code class="docutils literal notranslate"><span class="pre">html</span></code>, <code class="docutils literal notranslate"><span class="pre">detectors</span></code> and <code class="docutils literal notranslate"><span class="pre">extensions</span></code> (with appropriate contents)</li> 
+     <li>optional <code class="docutils literal notranslate"><span class="pre">config_ini.ini</span></code> file. It is structured like a tracker’s <code class="docutils literal notranslate"><span class="pre">config.ini</span></code> but contains only headers (e.g. <code class="docutils literal notranslate"><span class="pre">[main]</span></code>) and <em>required</em> parameters that are different from defaults: e.g. <code class="docutils literal notranslate"><span class="pre">template_engine</span> <span class="pre">=</span> <span class="pre">jinja2</span></code> and <code class="docutils literal notranslate"><span class="pre">static_files</span> <span class="pre">=</span> <span class="pre">static</span></code>. These settings override the default values saved to the tracker’s <code class="docutils literal notranslate"><span class="pre">config.ini</span></code>.</li> 
+     <li>template “marker” file <code class="docutils literal notranslate"><span class="pre">TEMPLATE-INFO.txt</span></code>, which contains the name of the template, a description of the template and its intended audience.</li> 
+    </ul> 
+    <p>An example TEMPLATE-INFO.txt:</p> 
+    <div class="highlight-default notranslate">
+     <div class="highlight">
+      <pre><span></span><span class="n">Name</span><span class="p">:</span> <span class="n">classic</span>
+<span class="n">Description</span><span class="p">:</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">generic</span> <span class="n">issue</span> <span class="n">tracker</span> <span class="n">that</span> <span class="n">may</span> <span class="n">be</span> <span class="n">used</span> <span class="n">to</span> <span class="n">track</span> <span class="n">bugs</span><span class="p">,</span>
+             <span class="n">feature</span> <span class="n">requests</span><span class="p">,</span> <span class="n">project</span> <span class="n">issues</span> <span class="ow">or</span> <span class="nb">any</span> <span class="n">number</span> <span class="n">of</span> <span class="n">other</span> <span class="n">types</span>
+             <span class="n">of</span> <span class="n">issues</span><span class="o">.</span> <span class="n">Most</span> <span class="n">users</span> <span class="n">of</span> <span class="n">Roundup</span> <span class="n">will</span> <span class="n">find</span> <span class="n">that</span> <span class="n">this</span> <span class="n">template</span>
+             <span class="n">suits</span> <span class="n">them</span><span class="p">,</span> <span class="k">with</span> <span class="n">perhaps</span> <span class="n">a</span> <span class="n">few</span> <span class="n">customisations</span><span class="o">.</span>
+<span class="n">Intended</span><span class="o">-</span><span class="n">For</span><span class="p">:</span> <span class="n">All</span> <span class="n">first</span><span class="o">-</span><span class="n">time</span> <span class="n">Roundup</span> <span class="n">users</span>
+</pre>
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="footer"> 
+   <div> <span class="source">[<a href="../_sources/docs/tracker_templates.txt" rel="nofollow">page source</a>]</span> © Copyright 2009-2021, Richard Jones, Roundup-Team. 
+   </div> 
+   <div>
+     Last updated on May 09, 2022. <span>Hosted by <a href="https://sourceforge.net"><img src="https://sflogo.sourceforge.net/sflogo.php?group_id=31577&amp;type=1" width="88" height="31" border="0" alt="SourceForge.net Logo"></a></span> 
+   </div> 
+  </div> 
+  <script>
+      /* locally hosted goatcounter https://www.goatcounter.com/ */
+      /* include site info in path url to allow multiple sites to be
+      tracked together */
+      window.goatcounter = {
+      path: function(p) { return location.host + p }
+      }
+    </script> 
+  <script data-goatcounter="https://stats.rouilj.dynamic-dns.net/count" integrity="sha384-QGgNMMRFTi8ul5kHJ+vXysPe8gySvSA/Y3rpXZiRLzKPIw8CWY+a3ObKmQsyDr+a" async src="/_static/goatcounter_count.v3.js">
+    </script>  
+ </body>
+</html>

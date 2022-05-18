@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html> 
+ <head> 
+  <title> Mac users, upgrade to pip 9.0.3 (due to TLS deprecation)
+   </title> 
+  <link rel="Index" href="index.html"> 
+  <link rel="made" href="mailto:python-announce-list%40python.org?Subject=Re%3A%20Mac%20users%2C%20upgrade%20to%20pip%209.0.3%20%28due%20to%20TLS%20deprecation%29&amp;In-Reply-To=%3C367db39f-8a0b-f86d-0f8f-0f3a298b7e9b%40changeset.nyc%3E"> 
+  <meta name="robots" content="index,nofollow"> 
+  <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style> 
+  <meta http-equiv="Content-Type" content="text/html; charset=us-ascii"> 
+  <link rel="Previous" href="011884.html"> 
+  <link rel="Next" href="011886.html"> 
+ </head> 
+ <body bgcolor="#ffffff"> 
+  <h1>Mac users, upgrade to pip 9.0.3 (due to TLS deprecation)</h1> <b>Sumana Harihareswara</b> <a href="mailto:python-announce-list%40python.org?Subject=Re%3A%20Mac%20users%2C%20upgrade%20to%20pip%209.0.3%20%28due%20to%20TLS%20deprecation%29&amp;In-Reply-To=%3C367db39f-8a0b-f86d-0f8f-0f3a298b7e9b%40changeset.nyc%3E" title="Mac users, upgrade to pip 9.0.3 (due to TLS deprecation)">sh at changeset.nyc </a>
+  <br> <i>Mon Apr 2 17:05:43 EDT 2018</i> 
+  <p></p>
+  <ul> 
+   <li>Previous message (by thread): <a href="011884.html">Beta release of pip version 10 </a></li> 
+   <li>Next message (by thread): <a href="011886.html">Python-based LUM shell released </a></li> 
+   <li> <b>Messages sorted by:</b> <a href="date.html#11885">[ date ]</a> <a href="thread.html#11885">[ thread ]</a> <a href="subject.html#11885">[ subject ]</a> <a href="author.html#11885">[ author ]</a> </li> 
+  </ul> 
+  <hr> <!--beginarticle--> 
+  <pre>Mac users who use pip and PyPI:
+
+If you are running macOS/OS X version 10.12 or older, then you ought to
+upgrade to the latest pip (9.0.3) to connect to the Python Package Index
+securely:
+
+    curl <a href="https://bootstrap.pypa.io/get-pip.py">https://bootstrap.pypa.io/get-pip.py</a> | python
+
+and we recommend you do that by April 8th.
+
+Pip 9.0.3 supports TLSv1.2 when running under system Python on macOS &lt;
+10.13. Official release notes: <a href="https://pip.pypa.io/en/stable/news/">https://pip.pypa.io/en/stable/news/</a>
+
+Context:
+
+As PSF blogged last year
+<a href="https://pyfound.blogspot.com/2017/01/time-to-upgrade-your-python-tls-v12.html">https://pyfound.blogspot.com/2017/01/time-to-upgrade-your-python-tls-v12.html</a>
+, on June 30, 2018, Python.org sites are going to entirely stop
+supporting TLS versions 1.0 and 1.1, because our CDN provider is
+deprecating support for those versions.
+
+We are launching the new PyPI (in beta at <a href="https://pypi.org">https://pypi.org</a>) this month
+and replacing the legacy PyPI (<a href="https://pypi.python.org">https://pypi.python.org</a>). Here's the beta
+announcement for the new PyPI:
+<a href="https://pyfound.blogspot.com/2018/03/warehouse-all-new-pypi-is-now-in-beta.html">https://pyfound.blogspot.com/2018/03/warehouse-all-new-pypi-is-now-in-beta.html</a>
+
+Warehouse, the codebase for the new PyPI, does not support TLS 1.0 or 1.1.
+
+As of late March, the Python Package Index has started doing brownouts
+of the deprecated TLS versions. For some portion of each hour, anyone
+attempting to access PyPI with TLSv1.0 or TLSv1.1 will get a 403
+response with an informative error. We are ramping up the amount of time
+the endpoint is down for the deprecated TLS versions, and plan to make
+the endpoint 100% unavailable (for the deprecated TLS versions) on and
+after April 8th, prior to the final deadline. That gives us a few months
+where, someone tries to "pip install", we can give a good error message
+-- once June 30th hits, it will just be an uninformative OpenSSL error.
+
+More info:
+
+* <a href="https://github.com/pypa/warehouse/issues/3293">https://github.com/pypa/warehouse/issues/3293</a>
+* <a href="https://github.com/pypa/warehouse/issues/3411">https://github.com/pypa/warehouse/issues/3411</a>
+* <a href="https://status.python.org/incidents/btjtz01lzp88">https://status.python.org/incidents/btjtz01lzp88</a>
+
+If you have problems accessing PyPI, upgrading pip, etc., please file an
+issue at <a href="https://github.com/pypa/packaging-problems/issues/">https://github.com/pypa/packaging-problems/issues/</a> and we'll
+help figure it out.
+
+Please publicize this. Further discussion on this can be found in the
+distutils-sig mailing list
+<a href="https://mail.python.org/mailman/listinfo/distutils-sig">https://mail.python.org/mailman/listinfo/distutils-sig</a> .
+
+Thank you.
+
+-- 
+Sumana Harihareswara
+Warehouse project manager
+Changeset Consulting
+<a href="https://changeset.nyc">https://changeset.nyc</a>
+</pre> <!--endarticle--> 
+  <hr> 
+  <p></p>
+  <ul> <!--threads--> 
+   <li>Previous message (by thread): <a href="011884.html">Beta release of pip version 10 </a></li> 
+   <li>Next message (by thread): <a href="011886.html">Python-based LUM shell released </a></li> 
+   <li> <b>Messages sorted by:</b> <a href="date.html#11885">[ date ]</a> <a href="thread.html#11885">[ thread ]</a> <a href="subject.html#11885">[ subject ]</a> <a href="author.html#11885">[ author ]</a> </li> 
+  </ul> 
+  <hr> <a href="https://mail.python.org/mailman/listinfo/python-announce-list">More information about the Python-announce-list mailing list</a>
+  <br> 
+ </body>
+</html>

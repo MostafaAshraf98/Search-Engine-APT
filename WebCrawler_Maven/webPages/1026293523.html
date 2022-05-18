@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html> 
+ <head> 
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"> 
+  <meta name="robots" content="index,nofollow"> 
+  <title>BeginnersGuide - Python Wiki</title> 
+  <script type="text/javascript" src="/wiki/common/js/common.js"></script> 
+  <script type="text/javascript">
+<!--
+var search_hint = "Search";
+//-->
+</script> 
+  <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="/wiki/europython/css/common.css"> 
+  <link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="/wiki/europython/css/screen.css"> 
+  <link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="/wiki/europython/css/print.css"> 
+  <link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="/wiki/europython/css/projection.css"> <!-- css only for MS IE6/IE7 browsers --> <!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="/wiki/europython/css/msie.css">
+<![endif]--> 
+  <link rel="alternate" title="Python Wiki: BeginnersGuide" href="/moin/BeginnersGuide?diffs=1&amp;show_att=1&amp;action=rss_rc&amp;unique=0&amp;page=BeginnersGuide&amp;ddiffs=1" type="application/rss+xml"> 
+  <link rel="Start" href="/moin/FrontPage"> 
+  <link rel="Alternate" title="Wiki Markup" href="/moin/BeginnersGuide?action=raw"> 
+  <link rel="Alternate" media="print" title="Print View" href="/moin/BeginnersGuide?action=print"> 
+  <link rel="Search" href="/moin/FindPage"> 
+  <link rel="Index" href="/moin/TitleIndex"> 
+  <link rel="Glossary" href="/moin/WordIndex"> 
+  <link rel="Help" href="/moin/HelpOnFormatting"> 
+ </head> 
+ <body lang="en" dir="ltr"> 
+  <div id="header"> 
+   <form id="searchform" method="get" action="/moin/BeginnersGuide"> 
+    <div> 
+     <input type="hidden" name="action" value="fullsearch"> 
+     <input type="hidden" name="context" value="180"> <label for="searchinput">Search:</label> 
+     <input id="searchinput" type="text" name="value" value="" size="20" onfocus="searchFocus(this)" onblur="searchBlur(this)" onkeyup="searchChange(this)" onchange="searchChange(this)" alt="Search"> 
+     <input id="titlesearch" name="titlesearch" type="submit" value="Titles" alt="Search Titles"> 
+     <input id="fullsearch" name="fullsearch" type="submit" value="Text" alt="Search Full Text"> 
+    </div> 
+   </form> 
+   <script type="text/javascript">
+<!--// Initialize search form
+var f = document.getElementById('searchform');
+f.getElementsByTagName('label')[0].style.display = 'none';
+var e = document.getElementById('searchinput');
+searchChange(e);
+searchBlur(e);
+//-->
+</script> 
+   <div id="logo">
+    <a href="/moin/FrontPage"></a><a href="http://www.python.org"><img src="/wiki/europython/img/python-logo.gif" alt="Python"></a><a name="logo"></a>
+   </div> 
+   <div id="locationline"> 
+    <ul id="pagelocation"> 
+     <li><a href="/moin/BeginnersGuide">BeginnersGuide</a></li> 
+    </ul> 
+   </div> 
+   <ul id="pagetrail"> 
+    <li><a href="/moin/BeginnersGuide">BeginnersGuide</a></li> 
+   </ul> 
+  </div> 
+  <div id="sidebar"> 
+   <div id="star"> 
+   </div> 
+   <div class="sidepanel"> 
+    <ul id="navibar"> 
+     <li class="wikilink"><a href="/moin/FrontPage">FrontPage</a></li>
+     <li class="wikilink"><a href="/moin/RecentChanges">RecentChanges</a></li>
+     <li class="wikilink"><a href="/moin/FindPage">FindPage</a></li>
+     <li class="wikilink"><a href="/moin/HelpContents">HelpContents</a></li>
+     <li class="current"><a href="/moin/BeginnersGuide">BeginnersGuide</a></li> 
+    </ul> 
+   </div> 
+   <div class="sidepanel"> 
+    <h1>Page</h1> 
+    <ul class="editbar">
+     <li><span class="disabled">Immutable Page</span></li>
+     <li class="toggleCommentsButton" style="display:none;"><a href="#" class="nbcomment" onclick="toggleComments();return false;">Comments</a></li>
+     <li><a class="nbinfo" href="/moin/BeginnersGuide?action=info" rel="nofollow">Info</a></li>
+     <li><a class="nbattachments" href="/moin/BeginnersGuide?action=AttachFile" rel="nofollow">Attachments</a></li>
+     <li> 
+      <form class="actionsmenu" method="GET" action="/moin/BeginnersGuide"> 
+       <div> <label>More Actions:</label> <select name="action" onchange="if ((this.selectedIndex != 0) &amp;&amp;
+                      (this.options[this.selectedIndex].disabled == false)) {
+                this.form.submit();
+            }
+            this.selectedIndex = 0;"> <option value="raw">Raw Text</option> <option value="print">Print View</option> <option value="refresh">Delete Cache</option> <option value="show" disabled class="disabled">------------------------</option> <option value="SpellCheck">Check Spelling</option> <option value="LikePages">Like Pages</option> <option value="LocalSiteMap">Local Site Map</option> <option value="show" disabled class="disabled">------------------------</option> <option value="RenamePage" disabled class="disabled">Rename Page</option> <option value="DeletePage" disabled class="disabled">Delete Page</option> <option value="show" disabled class="disabled">------------------------</option> <option value="show" disabled class="disabled">------------------------</option> <option value="show" disabled class="disabled">Remove Spam</option> <option value="show" disabled class="disabled">Revert to this revision</option> <option value="show" disabled class="disabled">------------------------</option> <option value="SlideShow">SlideShow</option> </select> 
+        <input type="submit" value="Do"> 
+       </div> 
+       <script type="text/javascript">
+<!--// Init menu
+actionsMenuInit('More Actions:');
+//-->
+</script> 
+      </form> </li>
+    </ul> 
+   </div> 
+   <div class="sidepanel"> 
+    <h1>User</h1> 
+    <ul id="username">
+     <li><a href="/moin/BeginnersGuide?action=login" id="login" rel="nofollow">Login</a></li>
+    </ul> 
+   </div> 
+  </div> 
+  <div id="page" lang="en" dir="ltr"> 
+   <div dir="ltr" id="content" lang="en">
+    <span class="anchor" id="top"></span> <span class="anchor" id="line-1"></span>
+    <p class="line867"> </p>
+    <h1 id="Beginner.27s_Guide_to_Python">Beginner's Guide to Python</h1> <span class="anchor" id="line-2"></span>
+    <p class="line874">New to programming? Python is free and easy to learn if you know where to start! This guide will help you to get started quickly. <span class="anchor" id="line-3"></span><span class="anchor" id="line-4"></span></p>
+    <p class="line867"><a href="/moin/BeginnersGuideChinese">Chinese Translation</a> <span class="anchor" id="line-5"></span><span class="anchor" id="line-6"></span></p>
+    <p class="line867"> </p>
+    <h2 id="New_to_Python.3F">New to Python?</h2> <span class="anchor" id="line-7"></span>
+    <p class="line862">Read <a href="/moin/BeginnersGuide/Overview">BeginnersGuide/Overview</a> for a short explanation of what Python is. <span class="anchor" id="line-8"></span><span class="anchor" id="line-9"></span></p>
+    <p class="line867"> </p>
+    <h2 id="Getting_Python">Getting Python</h2> <span class="anchor" id="line-10"></span>
+    <p class="line862">Next, install the Python 3 interpreter on your computer. This is the program that reads Python programs and carries out their instructions; you need it before you can do any Python programming. Mac and Linux distributions may include an outdated version of Python (Python 2), but you should install an updated one (Python 3). See <a href="/moin/BeginnersGuide/Download">BeginnersGuide/Download</a> for instructions to download the correct version of Python. <span class="anchor" id="line-11"></span><span class="anchor" id="line-12"></span></p>
+    <p class="line862">There are also Python interpreter and IDE bundles available, such as <a class="http" href="http://thonny.org">Thonny</a>. Other options can be found at <a href="/moin/IntegratedDevelopmentEnvironments">IntegratedDevelopmentEnvironments</a>. <span class="anchor" id="line-13"></span><span class="anchor" id="line-14"></span></p>
+    <p class="line862">At some stage, you'll want to edit and save your program code. Take a look at <a href="/moin/HowToEditPythonCode">HowToEditPythonCode</a> for some advice and recommendations. <span class="anchor" id="line-15"></span><span class="anchor" id="line-16"></span></p>
+    <p class="line867"> </p>
+    <h2 id="Learning_Python">Learning Python</h2> <span class="anchor" id="line-17"></span>
+    <p class="line874">Next, read a tutorial and try some simple experiments with your new Python interpreter. <span class="anchor" id="line-18"></span><span class="anchor" id="line-19"></span></p>
+    <ul>
+     <li><p class="line862">If you have never programmed before, see <a href="/moin/BeginnersGuide/NonProgrammers">BeginnersGuide/NonProgrammers</a> for a list of suitable tutorials. <span class="anchor" id="line-20"></span></p></li>
+     <li><p class="line862">If you have previous programming experience, consult <a href="/moin/BeginnersGuide/Programmers">BeginnersGuide/Programmers</a>, which lists more advanced tutorials. <span class="anchor" id="line-21"></span></p></li>
+     <li><p class="line862">If English isn't your first language, you might be more comfortable with a tutorial that's been translated into your language. Consult python.org's <a href="/moin/Languages">list of Non-English resources</a>. <span class="anchor" id="line-22"></span><span class="anchor" id="line-23"></span></p></li>
+    </ul>
+    <p class="line862">Most tutorials assume that you know how to run a program on your computer. If you are using Windows and need help with this, see <a class="http" href="http://www.python.org/doc/faq/windows/#how-do-i-run-a-python-program-under-windows">How do I Run a Program Under Windows</a>. <span class="anchor" id="line-24"></span><span class="anchor" id="line-25"></span></p>
+    <p class="line874">Some sites offer in-browser coding for those who want to learn Python: <span class="anchor" id="line-26"></span><span class="anchor" id="line-27"></span></p>
+    <p class="line867"><span class="comment" style="display:none">please keep this list alphabetized</span> <span class="anchor" id="line-28"></span><span class="anchor" id="line-29"></span></p>
+    <ul>
+     <li><p class="line891"><a class="https" href="https://python.land/python-tutorial">A completely free beginners tutorial with interactive, editable code examples</a> <span class="anchor" id="line-30"></span><span class="anchor" id="line-31"></span></p></li>
+     <li class="gap"><p class="line891"><a class="https" href="https://www.codecademy.com/learn/learn-python">Codecademy</a> <span class="anchor" id="line-32"></span><span class="anchor" id="line-33"></span></p></li>
+     <li class="gap"><p class="line891"><a class="https" href="https://coding-bootcamps.com">Coding Bootcamps</a> <span class="anchor" id="line-34"></span><span class="anchor" id="line-35"></span></p></li>
+     <li class="gap"><p class="line891"><a class="http" href="http://www.datacamp.com">DataCamp</a> <span class="anchor" id="line-36"></span><span class="anchor" id="line-37"></span></p></li>
+     <li class="gap"><p class="line891"><a class="https" href="https://www.dataquest.io">Dataquest</a> for Python for data science. <span class="anchor" id="line-38"></span><span class="anchor" id="line-39"></span></p></li>
+     <li class="gap"><p class="line891"><a class="https" href="https://www.hackinscience.org">HackInScience</a> free and open source platform. <span class="anchor" id="line-40"></span><span class="anchor" id="line-41"></span></p></li>
+     <li class="gap"><p class="line891"><a class="https" href="https://www.myhsts.org">High School Technology Services</a> for general Python <span class="anchor" id="line-42"></span><span class="anchor" id="line-43"></span></p></li>
+    </ul>
+    <p class="line862">Print a <a class="https" href="https://blog.finxter.com/python-cheat-sheet/">cheat sheet</a> of the most important Python features and post it to your office wall until you know the basics well. <span class="anchor" id="line-44"></span><span class="anchor" id="line-45"></span></p>
+    <p class="line862">Once you have read a tutorial, you can browse through <a class="http" href="http://docs.python.org">Python's online documentation</a>. It includes <a class="http" href="http://docs.python.org/tut/">a tutorial</a> that might come in handy, <a class="http" href="http://docs.python.org//lib/">a Library Reference</a> that lists all of the modules that come standard with Python, and <a class="http" href="http://docs.python.org/ref/">the Language Reference</a> for a complete (if rather dry) explanation of Python's syntax. <span class="anchor" id="line-46"></span><span class="anchor" id="line-47"></span></p>
+    <p class="line862">When you are ready to write your first program, you will need a <a href="/moin/PythonEditors">text editor</a> or an <a href="/moin/IntegratedDevelopmentEnvironments">IDE</a>. If you don't want to use Thonny or something more advanced, then you can use <a class="https" href="https://docs.python.org/3/library/idle.html">IDLE</a>, which is bundled with Python and supports <a class="http" href="http://idlex.sourceforge.net">extensions</a>. <span class="anchor" id="line-48"></span><span class="anchor" id="line-49"></span></p>
+    <p class="line862">This Python wiki also contains a page about <a href="/moin/Powerful%20Python%20One-Liners">Python One-Liners</a> -- an obscure but interesting subculture in Python. <span class="anchor" id="line-50"></span><span class="anchor" id="line-51"></span></p>
+    <p class="line867"> </p>
+    <h2 id="Need_Help.3F">Need Help?</h2> <span class="anchor" id="line-52"></span>
+    <p class="line862">Need help with any of this? Read <a href="/moin/BeginnersGuide/Help">BeginnersGuide/Help</a> for mailing lists and newsgroups. <span class="anchor" id="line-53"></span><span class="anchor" id="line-54"></span></p>
+    <p class="line862">Most Python books will include an introduction to the language; see <a href="/moin/IntroductoryBooks">IntroductoryBooks</a> for suggested titles. <span class="anchor" id="line-55"></span><span class="anchor" id="line-56"></span></p>
+    <p class="line862">Consult <a href="/moin/BeginnersGuide/Examples">BeginnersGuide/Examples</a> for small programs and little snippets of code that can help you learn. <span class="anchor" id="line-57"></span><span class="anchor" id="line-58"></span></p>
+    <p class="line862">Or, if you prefer to learn Python through listening to a lecture, you can attend a training course or even hire a trainer to come to your company. Consult the <a href="/moin/PythonEvents">PythonEvents</a> page to see if any training courses are scheduled in your area and the <a href="/moin/PythonTraining">PythonTraining</a> page for a list of trainers. <span class="anchor" id="line-59"></span><span class="anchor" id="line-60"></span></p>
+    <p class="line862">Teachers can join the <a class="http" href="http://www.python.org/sigs/edu-sig/">EDU-SIG</a>, a mailing list for discussion of Python's use in teaching at any level ranging from K-12 up to university. <span class="anchor" id="line-61"></span><span class="anchor" id="line-62"></span></p>
+    <p class="line867"> </p>
+    <h2 id="Complete_list_of_Beginner.27s_Guide_pages">Complete list of Beginner's Guide pages</h2> <span class="anchor" id="line-63"></span>
+    <p class="line867"></p>
+    <div class="searchresults"> 
+     <ol start="1">
+      <li><a href="/moin/BeginnersGuide/Download"><strong>BeginnersGuide/</strong>Download</a></li>
+      <li><a href="/moin/BeginnersGuide/Examples"><strong>BeginnersGuide/</strong>Examples</a></li>
+      <li><a href="/moin/BeginnersGuide/Help"><strong>BeginnersGuide/</strong>Help</a></li>
+      <li><a href="/moin/BeginnersGuide/Mathematics"><strong>BeginnersGuide/</strong>Mathematics</a></li>
+      <li><a href="/moin/BeginnersGuide/NonProgrammers"><strong>BeginnersGuide/</strong>NonProgrammers</a></li>
+      <li><a href="/moin/BeginnersGuide/Overview"><strong>BeginnersGuide/</strong>Overview</a></li>
+      <li><a href="/moin/BeginnersGuide/Programmers"><strong>BeginnersGuide/</strong>Programmers</a></li>
+      <li><a href="/moin/BeginnersGuide/Programmers?action=AttachFile&amp;do=view&amp;target=Cpp2Python.pdf">BeginnersGuide/Programmers <strong>(Cpp2Python.pdf)</strong></a></li>
+      <li><a href="/moin/BeginnersGuide/Programmers/SimpleExamples"><strong>BeginnersGuide/</strong>Programmers/SimpleExamples</a></li>
+     </ol> 
+    </div> <span class="anchor" id="line-64"></span><span class="anchor" id="line-65"></span>
+    <p class="line867"> </p>
+    <h2 id="Quiz_and_Exercises">Quiz and Exercises</h2> <span class="anchor" id="line-66"></span>
+    <ul>
+     <li><p class="line862">Finxter - <a class="https" href="https://finxter.com">How good are your Python skills? Test and Training with a Daily Python Puzzle</a> <span class="anchor" id="line-67"></span></p></li>
+     <li><p class="line862">CheckIO - <a class="http" href="http://www.checkio.org">Online learning, testing and improving your python skills</a> <span class="anchor" id="line-68"></span></p></li>
+     <li><p class="line862">After Hours Programming - <a class="http" href="http://www.afterhoursprogramming.com/tutorial/Python/Python-Quiz/">Python Quiz</a> <span class="anchor" id="line-69"></span></p></li>
+     <li><p class="line862">Python Guru Quiz- <a class="http" href="http://thepythonguru.com/python-guru-quiz/">Python Quiz</a> <span class="anchor" id="line-70"></span></p></li>
+     <li><p class="line862">Pyschools - <a class="http" href="http://www.pyschools.com">A Collection of Python Quiz and Exercise Questions</a> <span class="anchor" id="line-71"></span></p></li>
+     <li><p class="line862">PyGUI - <a class="http" href="http://www.pythongui.com">Collection of python quiz answers, Examples And GUI Tkinter Tutorials For Beginners</a> <span class="anchor" id="line-72"></span></p></li>
+     <li><p class="line862">Pythonspot - <a class="https" href="https://pythonspot.com/python-tests-quizes/">Python Quiz</a> <span class="anchor" id="line-73"></span></p></li>
+     <li><p class="line862">Python Challenge - <a class="https" href="https://play.google.com/store/apps/details?id=sg.apps.garden.pythonchallenge">A Python Quiz App on Android Platform</a> <span class="anchor" id="line-74"></span></p></li>
+     <li><p class="line891"><a class="http" href="http://cscircles.cemc.uwaterloo.ca">CS Circles - online lessons and graded exercises</a> <span class="anchor" id="line-75"></span><span class="anchor" id="line-76"></span></p></li>
+    </ul>
+    <p class="line867"> </p>
+    <h2 id="Python_Style_Checker">Python Style Checker</h2> <span class="anchor" id="line-77"></span>
+    <ul>
+     <li><p class="line891"><a class="http" href="http://pythonchecker.com/">Pythonchecker.com</a> - An educative online tool to rate your Python style (with dynamic score computation and hints) <span class="anchor" id="line-78"></span><span class="anchor" id="line-79"></span></p></li>
+    </ul>
+    <p class="line867"> </p>
+    <h2 id="Looking_for_a_particular_Python_module_or_application.3F">Looking for a particular Python module or application?</h2> <span class="anchor" id="line-80"></span>
+    <ul>
+     <li><p class="line862">The first place to look is the <a class="http" href="http://pypi.python.org/pypi">Python Package Index</a>. <span class="anchor" id="line-81"></span><span class="anchor" id="line-82"></span></p></li>
+     <li class="gap">If you can't find anything relevant in the Package Index, <span class="anchor" id="line-83"></span><p class="line862">try <a class="http" href="http://www.python.org/search/">searching python.org</a> - you can find anything mentioned on the Python site, in the <a class="http" href="http://www.python.org/doc/faq/">FAQs</a>, or in the newsgroup. More info: <a class="http" href="http://www.python.org/search/">where to search</a>. <span class="anchor" id="line-84"></span><span class="anchor" id="line-85"></span></p></li>
+     <li class="gap"><p class="line862">You may also try our external guest project, <a class="http" href="http://pydoc.net/">pydoc.net</a>, for advanced package and module search. <span class="anchor" id="line-86"></span><span class="anchor" id="line-87"></span></p></li>
+     <li class="gap"><p class="line862">Next, try <a class="http" href="http://www.google.com">Google</a> or another search engine of your choice. Searching for "python" and some relevant keywords will usually find something helpful. <span class="anchor" id="line-88"></span><span class="anchor" id="line-89"></span></p></li>
+     <li class="gap">Finally, you can try posting a query to the comp.lang.python Usenet group. <span class="anchor" id="line-90"></span><span class="anchor" id="line-91"></span></li>
+    </ul>
+    <p class="line867"> </p>
+    <h2 id="Python-Related_Cheat_Sheets">Python-Related Cheat Sheets</h2> <span class="anchor" id="line-92"></span>
+    <ul>
+     <li><p class="line862">Python: <a class="https" href="https://blog.finxter.com/collection-5-cheat-sheets-every-python-coder-must-own/">Collection of 11 Best Python Cheat Sheets</a> <span class="anchor" id="line-93"></span><span class="anchor" id="line-94"></span></p></li>
+     <li class="gap"><p class="line891"><a href="/moin/NumPy">NumPy</a>: <a class="https" href="https://blog.finxter.com/collection-10-best-numpy-cheat-sheets-every-python-coder-must-own/">Collection of 10 Best NumPy Cheat Sheets</a> <span class="anchor" id="line-95"></span><span class="anchor" id="line-96"></span></p></li>
+     <li class="gap"><p class="line862">Pandas: <a class="https" href="https://blog.finxter.com/pandas-cheat-sheets/">Collection of 7 Beautiful Pandas Cheat Sheets</a> <span class="anchor" id="line-97"></span><span class="anchor" id="line-98"></span></p></li>
+     <li class="gap"><p class="line862">Machine Learning: <a class="https" href="https://blog.finxter.com/machine-learning-cheat-sheets/">Collection of 15 Machine Learning Cheat Sheets</a> <span class="anchor" id="line-99"></span><span class="anchor" id="line-100"></span></p></li>
+    </ul>
+    <p class="line867"> </p>
+    <h2 id="Want_to_contribute.3F">Want to contribute?</h2> <span class="anchor" id="line-101"></span>
+    <ul>
+     <li><p class="line862">Python is a product of the <a class="http" href="http://www.python.org/psf/">Python Software Foundation</a>, a non-profit organization that holds the copyright. <a class="http" href="http://www.python.org/psf/donations/">Donations to the PSF</a> are tax-deductible in the USA, and you can donate via credit card or <a class="nonexistent" href="/moin/PayPal">PayPal</a>. <span class="anchor" id="line-102"></span><span class="anchor" id="line-103"></span></p></li>
+     <li class="gap"><p class="line862">To report a bug in the Python core, use the <a class="http" href="http://bugs.python.org/">Python Bug Tracker</a>. <span class="anchor" id="line-104"></span><span class="anchor" id="line-105"></span></p></li>
+     <li class="gap"><p class="line862">To contribute a bug fix or other patch to the Python core, read the <a class="http" href="http://www.python.org/dev/">Python Developer's Guide</a> for more information about Python's development process. <span class="anchor" id="line-106"></span><span class="anchor" id="line-107"></span></p></li>
+     <li class="gap"><p class="line862">To contribute to the official <a class="http" href="http://www.python.org/doc/">Python documentation</a>, join the <a class="http" href="http://www.python.org/sigs/doc-sig/">Documentation SIG</a>, write to <a class="mailto" href="mailto:docs@python.org">docs@python.org</a> , or use the <a class="http" href="http://bugs.python.org/">Issue Tracker</a> to contribute a documentation patch. <span class="anchor" id="line-108"></span><span class="anchor" id="line-109"></span></p></li>
+     <li class="gap"><p class="line862">To announce your module or application to the Python community, use <a class="news" href="news:comp.lang.python.announce">comp.lang.python.announce</a>. See <a class="http" href="http://www.python.org/community/lists/#comp-lang-python-announce">the guide to Python mailing lists</a> for more information. <span class="anchor" id="line-110"></span><span class="anchor" id="line-111"></span></p></li>
+     <li class="gap"><p class="line862">To propose changes to the Python core, post your thoughts to <a class="news" href="news:comp.lang.python">comp.lang.python</a>. If you have an implementation, follow the <a class="http" href="http://www.python.org/patches/">Python Patch Guidelines</a>. <span class="anchor" id="line-112"></span><span class="anchor" id="line-113"></span></p></li>
+     <li class="gap"><p class="line862">If you have a question are not sure where to report it, check out the <a href="/moin/WhereDoIReportThis%3F">WhereDoIReportThis?</a> page. <span class="anchor" id="line-114"></span><span class="anchor" id="line-115"></span></p></li>
+    </ul>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-116"></span><a href="/moin/CategoryDocumentation">CategoryDocumentation</a> <span class="anchor" id="line-117"></span><span class="anchor" id="bottom"></span></p>
+   </div>
+   <p id="pageinfo" class="info" lang="en" dir="ltr">BeginnersGuide (last edited 2022-03-29 19:22:45 by <span title="eriky @ 77.173.232.46[77.173.232.46]"><a class="nonexistent" href="/moin/eriky" title="eriky @ 77.173.232.46[77.173.232.46]">eriky</a></span>)</p> 
+   <div id="pagebottom"></div> 
+  </div> 
+  <div id="footer"> 
+   <ul id="credits"> 
+    <li><a href="http://moinmo.in/" title="This site uses the MoinMoin Wiki software.">MoinMoin Powered</a></li>
+    <li><a href="http://moinmo.in/Python" title="MoinMoin is written in Python.">Python Powered</a></li>
+    <li><a href="http://moinmo.in/GPL" title="MoinMoin is GPL licensed.">GPL licensed</a></li>
+    <li><a href="http://validator.w3.org/check?uri=referer" title="Click here to validate this page.">Valid HTML 4.01</a></li> 
+   </ul> 
+  </div> 
+  <p style="text-align: center; font-size: 85%"><a href="/moin/FrontPage#use">Unable to edit the page? See the FrontPage for instructions.</a></p> 
+ </body>
+</html>

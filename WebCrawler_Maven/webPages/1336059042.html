@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"> 
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <meta name="Description" content="Documentation on the Roundup issue tracker, version 2.1.0."> 
+  <title>Implementation notes - Roundup 2.1.0 documentation</title> 
+  <link rel="stylesheet" href="../_static/style.css" type="text/css"> 
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css"> 
+  <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+          URL_ROOT:    '../',
+          VERSION:     '2.1.0',
+          COLLAPSE_MODINDEX: false,
+          FILE_SUFFIX: '.html'
+      };
+    </script> 
+  <script type="text/javascript" src="../_static/jquery.js"></script> 
+  <script type="text/javascript" src="../_static/underscore.js"></script> 
+  <script type="text/javascript" src="../_static/doctools.js"></script> 
+  <script type="text/javascript" src="../_static/language_data.js"></script> 
+  <link rel="canonical" href="https://www.roundup-tracker.org/docs/implementation.html"> 
+  <link rel="index" title="Index" href="../genindex.html"> 
+  <link rel="search" title="Search" href="../search.html"> 
+  <link rel="top" title="Roundup 2.1.0 documentation" href="../index.html"> 
+  <link rel="up" title="Docs" href="../docs.html"> 
+  <link rel="next" title="Contact" href="../contact.html"> 
+  <link rel="prev" title="PostgreSQL/psycopg Backend" href="postgresql.html"> 
+ </head> 
+ <body> 
+  <div class="header">
+   <h1>Roundup</h1> 
+   <div id="searchbox" style="display: none"> 
+    <form class="search" action="../search.html" method="get"> 
+     <input type="text" aria-label="Enter search terms" name="q" size="18"> 
+     <input type="submit" value="Search"> 
+     <input type="hidden" name="check_keywords" value="yes"> 
+     <input type="hidden" name="area" value="default"> 
+    </form> 
+   </div> 
+   <script type="text/javascript">$('#searchbox').show(0);</script> 
+  </div> 
+  <div class="navigation"> 
+   <div class="menu"> 
+    <ul class="current"> 
+     <li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a></li> 
+     <li class="toctree-l1"><a class="reference external" href="https://pypi.org/project/roundup/">Download</a></li> 
+     <li class="toctree-l1 current"><a class="reference internal" href="../docs.html">Docs</a>
+      <ul class="current"> 
+       <li class="toctree-l2"><a class="reference internal" href="features.html">Roundup Features</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="installation.html">Installing Roundup</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="upgrading.html">Upgrading to newer versions of Roundup</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="FAQ.html">Roundup FAQ</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="user_guide.html">User Guide</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="customizing.html">Customising Roundup</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="admin_guide.html">Administration Guide</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="debugging.html">Debugging Aids</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="xmlrpc.html">XML-RPC access to Roundup</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="rest.html">REST API for Roundup</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="tracker_templates.html">Roundup Tracker Templates</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="glossary.html">Roundup Glossary</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="acknowledgements.html">Acknowledgements</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="license.html">License</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="overview.html">Design Overview</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="design.html">Design (original)</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="developers.html">Developing Roundup</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="mysql.html">Notes about the MySQL Database backend</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="postgresql.html">Notes about the PostgreSQL Database backend</a></li> 
+       <li class="toctree-l2 current"><a class="current reference internal" href="#">Richard Jones implementation notes</a></li> 
+      </ul> </li> 
+     <li class="toctree-l1"><a class="reference external" href="https://issues.roundup-tracker.org">Issues</a></li> 
+     <li class="toctree-l1"><a class="reference internal" href="../contact.html">Contact</a></li> 
+     <li class="toctree-l1"><a class="reference external" href="https://wiki.roundup-tracker.org">Wiki</a></li> 
+     <li class="toctree-l1"><a class="reference internal" href="../code.html">Code</a></li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="content"> 
+   <div id="subnav"> <a title="PostgreSQL/psycopg Backend" href="postgresql.html"> Prev</a> <a title="Contact" href="../contact.html"> Next</a> <a title="Index" href="../genindex.html"> Index</a> 
+   </div> 
+   <div class="section" id="implementation-notes"> 
+    <h1>Implementation notes</h1> 
+    <p>[see also the roundup package docstring]</p> 
+    <p>There have been some modifications to the spec. I’ve marked these in the source with ‘XXX’ comments when I remember to.</p> 
+    <dl class="docutils"> 
+     <dt>
+      In short:
+     </dt> 
+     <dd>
+      <p class="first">Class.find() - may match multiple properties, uses keyword args.</p> 
+      <dl class="docutils"> 
+       <dt>
+        Class.filter() - isn’t in the spec and it’s very useful to have at the
+       </dt> 
+       <dd>
+        Class level.
+       </dd> 
+       <dt>
+        CGI interface index view specifier layout part - lose the ‘+’ from the
+       </dt> 
+       <dd>
+        sorting arguments (it’s a reserved URL character ;). Just made no prefix mean ascending and ‘-‘ prefix descending.
+       </dd> 
+       <dt>
+        ItemClass - renamed to IssueClass to better match it only having one
+       </dt> 
+       <dd>
+        hypderdb class “issue”. Allowing &gt; 1 hyperdb class breaks the “superseder” multilink (since it can only link to one thing, and we’d want bugs to link to support and vice-versa).
+       </dd> 
+       <dt>
+        template - the call=”link()” is handled by special-case mechanisms in
+       </dt> 
+       <dd>
+        my top-level CGI handler. In a nutshell, the handler looks for a method on itself called ‘index%s’ or ‘item%s’ where %s is a class. Most items pass on to the templating mechanism, but the file class _always_ does downloading. It’ll probably stay this way too…
+       </dd> 
+       <dt>
+        template - call=”link(property)” may be used to link “the current item”
+       </dt> 
+       <dd>
+        (from an index) - the link text is the property specified.
+       </dd> 
+       <dt>
+        template - added functions that I found very useful: List, History and
+       </dt> 
+       <dd>
+        Submit.
+       </dd> 
+       <dt>
+        template - items must specify the message lists, history, etc. Having
+       </dt> 
+       <dd>
+        them by default was sometimes not wanted.
+       </dd> 
+       <dt>
+        template - index view determines its default columns from the
+       </dt> 
+       <dd>
+        template’s <code class="docutils literal notranslate"><span class="pre">tal:condition="request/show/&lt;property&gt;"</span></code> directives.
+       </dd> 
+      </dl> 
+      <p>template - menu() and field() look awfully similar now …. ;)</p> 
+      <dl class="last docutils"> 
+       <dt>
+        roundup_admin.py - the command-line tool has a lot more commands at its
+       </dt> 
+       <dd>
+        disposal
+       </dd> 
+      </dl> 
+     </dd> 
+    </dl> 
+    <hr class="docutils"> 
+    <p>Back to <a class="reference external" href="index.html">Table of Contents</a></p> 
+   </div> 
+  </div> 
+  <div class="footer"> 
+   <div> <span class="source">[<a href="../_sources/docs/implementation.txt" rel="nofollow">page source</a>]</span> © Copyright 2009-2021, Richard Jones, Roundup-Team. 
+   </div> 
+   <div>
+     Last updated on May 09, 2022. <span>Hosted by <a href="https://sourceforge.net"><img src="https://sflogo.sourceforge.net/sflogo.php?group_id=31577&amp;type=1" width="88" height="31" border="0" alt="SourceForge.net Logo"></a></span> 
+   </div> 
+  </div> 
+  <script>
+      /* locally hosted goatcounter https://www.goatcounter.com/ */
+      /* include site info in path url to allow multiple sites to be
+      tracked together */
+      window.goatcounter = {
+      path: function(p) { return location.host + p }
+      }
+    </script> 
+  <script data-goatcounter="https://stats.rouilj.dynamic-dns.net/count" integrity="sha384-QGgNMMRFTi8ul5kHJ+vXysPe8gySvSA/Y3rpXZiRLzKPIw8CWY+a3ObKmQsyDr+a" async src="/_static/goatcounter_count.v3.js">
+    </script>  
+ </body>
+</html>

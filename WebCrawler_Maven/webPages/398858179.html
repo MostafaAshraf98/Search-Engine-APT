@@ -1,0 +1,326 @@
+<!doctype html><!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]--><!--[if gt IE 8]><!-->
+<html class="no-js" lang="en"> <!--<![endif]--> 
+ <head> 
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Structure of a Tornado web application — Tornado 6.1 documentation</title> 
+  <link rel="shortcut icon" href="../_static/favicon.ico"> 
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script> 
+  <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script> 
+  <script type="text/javascript" src="../_static/jquery.js"></script> 
+  <script type="text/javascript" src="../_static/underscore.js"></script> 
+  <script type="text/javascript" src="../_static/doctools.js"></script> 
+  <script type="text/javascript" src="../_static/language_data.js"></script> 
+  <script async type="text/javascript" src="https://assets.readthedocs.org/static/javascript/readthedocs-doc-embed.js"></script> 
+  <script type="text/javascript" src="../_static/js/theme.js"></script> 
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css"> 
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css"> 
+  <link rel="index" title="Index" href="../genindex.html"> 
+  <link rel="search" title="Search" href="../search.html"> 
+  <link rel="next" title="Templates and UI" href="templates.html"> 
+  <link rel="prev" title="Queue example - a concurrent web spider" href="queues.html"> <!-- RTD Extra Head --> <!-- 
+Always link to the latest version, as canonical.
+http://docs.readthedocs.org/en/latest/canonical.html
+--> 
+  <link rel="canonical" href="https://www.tornadoweb.org/en/stable/guide/structure.html"> 
+  <link rel="stylesheet" href="https://assets.readthedocs.org/static/css/readthedocs-doc-embed.css" type="text/css"> 
+  <script type="application/json" id="READTHEDOCS_DATA">{"ad_free": true, "api_host": "https://readthedocs.org", "build_date": "2020-10-31T00:02:57Z", "builder": "sphinx", "canonical_url": "https://www.tornadoweb.org/en/stable/", "commit": "2047e7ae", "docroot": "/docs/", "features": {"docsearch_disabled": false}, "global_analytics_code": "UA-17997319-1", "language": "en", "page": "guide/structure", "programming_language": "py", "project": "tornado", "proxied_api_host": "/_", "source_suffix": ".rst", "subprojects": {}, "theme": "sphinx_rtd_theme", "user_analytics_code": "UA-39143969-1", "version": "stable"}</script> <!--
+Using this variable directly instead of using `JSON.parse` is deprecated.
+The READTHEDOCS_DATA global variable will be removed in the future.
+--> 
+  <script type="text/javascript">
+READTHEDOCS_DATA = JSON.parse(document.getElementById('READTHEDOCS_DATA').innerHTML);
+</script> 
+  <script type="text/javascript" src="https://assets.readthedocs.org/static/javascript/readthedocs-analytics.js" async></script> <!-- end RTD <extrahead> --> 
+ </head> 
+ <body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav"> 
+   <nav data-toggle="wy-nav-shift" class="wy-nav-side"> 
+    <div class="wy-side-scroll"> 
+     <div class="wy-side-nav-search"> <a href="../index.html" class="icon icon-home"> Tornado </a> 
+      <div class="version">
+        stable 
+      </div> 
+      <div role="search"> 
+       <form id="rtd-search-form" class="wy-form" action="../search.html" method="get"> 
+        <input type="text" name="q" placeholder="Search docs"> 
+        <input type="hidden" name="check_keywords" value="yes"> 
+        <input type="hidden" name="area" value="default"> 
+       </form> 
+      </div> 
+     </div> 
+     <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation"> 
+      <ul class="current"> 
+       <li class="toctree-l1 current"><a class="reference internal" href="../guide.html">User’s guide</a>
+        <ul class="current"> 
+         <li class="toctree-l2"><a class="reference internal" href="intro.html">Introduction</a></li> 
+         <li class="toctree-l2"><a class="reference internal" href="async.html">Asynchronous and non-Blocking I/O</a></li> 
+         <li class="toctree-l2"><a class="reference internal" href="coroutines.html">Coroutines</a></li> 
+         <li class="toctree-l2"><a class="reference internal" href="queues.html"><code class="docutils literal notranslate"><span class="pre">Queue</span></code> example - a concurrent web spider</a></li> 
+         <li class="toctree-l2 current"><a class="current reference internal" href="#">Structure of a Tornado web application</a></li> 
+         <li class="toctree-l2"><a class="reference internal" href="templates.html">Templates and UI</a></li> 
+         <li class="toctree-l2"><a class="reference internal" href="security.html">Authentication and security</a></li> 
+         <li class="toctree-l2"><a class="reference internal" href="running.html">Running and deploying</a></li> 
+        </ul> </li> 
+       <li class="toctree-l1"><a class="reference internal" href="../webframework.html">Web framework</a></li> 
+       <li class="toctree-l1"><a class="reference internal" href="../http.html">HTTP servers and clients</a></li> 
+       <li class="toctree-l1"><a class="reference internal" href="../networking.html">Asynchronous networking</a></li> 
+       <li class="toctree-l1"><a class="reference internal" href="../coroutine.html">Coroutines and concurrency</a></li> 
+       <li class="toctree-l1"><a class="reference internal" href="../integration.html">Integration with other services</a></li> 
+       <li class="toctree-l1"><a class="reference internal" href="../utilities.html">Utilities</a></li> 
+       <li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li> 
+       <li class="toctree-l1"><a class="reference internal" href="../releases.html">Release notes</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </nav> 
+   <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"> 
+    <nav class="wy-nav-top" aria-label="top navigation"> <i data-toggle="wy-nav-top" class="fa fa-bars"></i> <a href="../index.html">Tornado</a> 
+    </nav> 
+    <div class="wy-nav-content"> 
+     <div class="rst-content"> 
+      <div role="navigation" aria-label="breadcrumbs navigation"> 
+       <ul class="wy-breadcrumbs"> 
+        <li><a href="../index.html">Docs</a> »</li> 
+        <li><a href="../guide.html">User’s guide</a> »</li> 
+        <li>Structure of a Tornado web application</li> 
+        <li class="wy-breadcrumbs-aside"> <a href="https://github.com/tornadoweb/tornado/blob/stable/docs/guide/structure.rst" class="fa fa-github"> Edit on GitHub</a> </li> 
+       </ul> 
+       <hr> 
+      </div> 
+      <div role="main" class="document" itemscope itemtype="http://schema.org/Article"> 
+       <div itemprop="articleBody"> 
+        <div class="section" id="structure-of-a-tornado-web-application"> 
+         <h1>Structure of a Tornado web application<a class="headerlink" href="#structure-of-a-tornado-web-application" title="Permalink to this headline">¶</a></h1> 
+         <p>A Tornado web application generally consists of one or more <a class="reference internal" href="../web.html#tornado.web.RequestHandler" title="tornado.web.RequestHandler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RequestHandler</span></code></a> subclasses, an <a class="reference internal" href="../web.html#tornado.web.Application" title="tornado.web.Application"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Application</span></code></a> object which routes incoming requests to handlers, and a <code class="docutils literal notranslate"><span class="pre">main()</span></code> function to start the server.</p> 
+         <p>A minimal “hello world” example looks something like this:</p> 
+         <div class="highlight-python notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="kn">import</span> <span class="nn">tornado.ioloop</span>
+<span class="kn">import</span> <span class="nn">tornado.web</span>
+
+<span class="k">class</span> <span class="nc">MainHandler</span><span class="p">(</span><span class="n">tornado</span><span class="o">.</span><span class="n">web</span><span class="o">.</span><span class="n">RequestHandler</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"Hello, world"</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">make_app</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">tornado</span><span class="o">.</span><span class="n">web</span><span class="o">.</span><span class="n">Application</span><span class="p">([</span>
+        <span class="p">(</span><span class="sa">r</span><span class="s2">"/"</span><span class="p">,</span> <span class="n">MainHandler</span><span class="p">),</span>
+    <span class="p">])</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+    <span class="n">app</span> <span class="o">=</span> <span class="n">make_app</span><span class="p">()</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">listen</span><span class="p">(</span><span class="mi">8888</span><span class="p">)</span>
+    <span class="n">tornado</span><span class="o">.</span><span class="n">ioloop</span><span class="o">.</span><span class="n">IOLoop</span><span class="o">.</span><span class="n">current</span><span class="p">()</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</pre>
+          </div> 
+         </div> 
+         <div class="section" id="the-application-object"> 
+          <h2>The <code class="docutils literal notranslate"><span class="pre">Application</span></code> object<a class="headerlink" href="#the-application-object" title="Permalink to this headline">¶</a></h2> 
+          <p>The <a class="reference internal" href="../web.html#tornado.web.Application" title="tornado.web.Application"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Application</span></code></a> object is responsible for global configuration, including the routing table that maps requests to handlers.</p> 
+          <p>The routing table is a list of <a class="reference internal" href="../web.html#tornado.web.URLSpec" title="tornado.web.URLSpec"><code class="xref py py-obj docutils literal notranslate"><span class="pre">URLSpec</span></code></a> objects (or tuples), each of which contains (at least) a regular expression and a handler class. Order matters; the first matching rule is used. If the regular expression contains capturing groups, these groups are the <em>path arguments</em> and will be passed to the handler’s HTTP method. If a dictionary is passed as the third element of the <a class="reference internal" href="../web.html#tornado.web.URLSpec" title="tornado.web.URLSpec"><code class="xref py py-obj docutils literal notranslate"><span class="pre">URLSpec</span></code></a>, it supplies the <em>initialization arguments</em> which will be passed to <a class="reference internal" href="../web.html#tornado.web.RequestHandler.initialize" title="tornado.web.RequestHandler.initialize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RequestHandler.initialize</span></code></a>. Finally, the <a class="reference internal" href="../web.html#tornado.web.URLSpec" title="tornado.web.URLSpec"><code class="xref py py-obj docutils literal notranslate"><span class="pre">URLSpec</span></code></a> may have a name, which will allow it to be used with <a class="reference internal" href="../web.html#tornado.web.RequestHandler.reverse_url" title="tornado.web.RequestHandler.reverse_url"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RequestHandler.reverse_url</span></code></a>.</p> 
+          <p>For example, in this fragment the root URL <code class="docutils literal notranslate"><span class="pre">/</span></code> is mapped to <code class="docutils literal notranslate"><span class="pre">MainHandler</span></code> and URLs of the form <code class="docutils literal notranslate"><span class="pre">/story/</span></code> followed by a number are mapped to <code class="docutils literal notranslate"><span class="pre">StoryHandler</span></code>. That number is passed (as a string) to <code class="docutils literal notranslate"><span class="pre">StoryHandler.get</span></code>.</p> 
+          <div class="highlight-default notranslate">
+           <div class="highlight">
+            <pre><span></span><span class="k">class</span> <span class="nc">MainHandler</span><span class="p">(</span><span class="n">RequestHandler</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'&lt;a href="</span><span class="si">%s</span><span class="s1">"&gt;link to story 1&lt;/a&gt;'</span> <span class="o">%</span>
+                   <span class="bp">self</span><span class="o">.</span><span class="n">reverse_url</span><span class="p">(</span><span class="s2">"story"</span><span class="p">,</span> <span class="s2">"1"</span><span class="p">))</span>
+
+<span class="k">class</span> <span class="nc">StoryHandler</span><span class="p">(</span><span class="n">RequestHandler</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">db</span> <span class="o">=</span> <span class="n">db</span>
+
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">story_id</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"this is story </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="n">story_id</span><span class="p">)</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Application</span><span class="p">([</span>
+    <span class="n">url</span><span class="p">(</span><span class="sa">r</span><span class="s2">"/"</span><span class="p">,</span> <span class="n">MainHandler</span><span class="p">),</span>
+    <span class="n">url</span><span class="p">(</span><span class="sa">r</span><span class="s2">"/story/([0-9]+)"</span><span class="p">,</span> <span class="n">StoryHandler</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="n">db</span><span class="o">=</span><span class="n">db</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s2">"story"</span><span class="p">)</span>
+    <span class="p">])</span>
+</pre>
+           </div> 
+          </div> 
+          <p>The <a class="reference internal" href="../web.html#tornado.web.Application" title="tornado.web.Application"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Application</span></code></a> constructor takes many keyword arguments that can be used to customize the behavior of the application and enable optional features; see <a class="reference internal" href="../web.html#tornado.web.Application.settings" title="tornado.web.Application.settings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Application.settings</span></code></a> for the complete list.</p> 
+         </div> 
+         <div class="section" id="subclassing-requesthandler"> 
+          <h2>Subclassing <code class="docutils literal notranslate"><span class="pre">RequestHandler</span></code><a class="headerlink" href="#subclassing-requesthandler" title="Permalink to this headline">¶</a></h2> 
+          <p>Most of the work of a Tornado web application is done in subclasses of <a class="reference internal" href="../web.html#tornado.web.RequestHandler" title="tornado.web.RequestHandler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RequestHandler</span></code></a>. The main entry point for a handler subclass is a method named after the HTTP method being handled: <code class="docutils literal notranslate"><span class="pre">get()</span></code>, <code class="docutils literal notranslate"><span class="pre">post()</span></code>, etc. Each handler may define one or more of these methods to handle different HTTP actions. As described above, these methods will be called with arguments corresponding to the capturing groups of the routing rule that matched.</p> 
+          <p>Within a handler, call methods such as <a class="reference internal" href="../web.html#tornado.web.RequestHandler.render" title="tornado.web.RequestHandler.render"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RequestHandler.render</span></code></a> or <a class="reference internal" href="../web.html#tornado.web.RequestHandler.write" title="tornado.web.RequestHandler.write"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RequestHandler.write</span></code></a> to produce a response. <code class="docutils literal notranslate"><span class="pre">render()</span></code> loads a <a class="reference internal" href="../template.html#tornado.template.Template" title="tornado.template.Template"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Template</span></code></a> by name and renders it with the given arguments. <code class="docutils literal notranslate"><span class="pre">write()</span></code> is used for non-template-based output; it accepts strings, bytes, and dictionaries (dicts will be encoded as JSON).</p> 
+          <p>Many methods in <a class="reference internal" href="../web.html#tornado.web.RequestHandler" title="tornado.web.RequestHandler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RequestHandler</span></code></a> are designed to be overridden in subclasses and be used throughout the application. It is common to define a <code class="docutils literal notranslate"><span class="pre">BaseHandler</span></code> class that overrides methods such as <a class="reference internal" href="../web.html#tornado.web.RequestHandler.write_error" title="tornado.web.RequestHandler.write_error"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_error</span></code></a> and <a class="reference internal" href="../web.html#tornado.web.RequestHandler.get_current_user" title="tornado.web.RequestHandler.get_current_user"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_current_user</span></code></a> and then subclass your own <code class="docutils literal notranslate"><span class="pre">BaseHandler</span></code> instead of <a class="reference internal" href="../web.html#tornado.web.RequestHandler" title="tornado.web.RequestHandler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RequestHandler</span></code></a> for all your specific handlers.</p> 
+         </div> 
+         <div class="section" id="handling-request-input"> 
+          <h2>Handling request input<a class="headerlink" href="#handling-request-input" title="Permalink to this headline">¶</a></h2> 
+          <p>The request handler can access the object representing the current request with <code class="docutils literal notranslate"><span class="pre">self.request</span></code>. See the class definition for <a class="reference internal" href="../httputil.html#tornado.httputil.HTTPServerRequest" title="tornado.httputil.HTTPServerRequest"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HTTPServerRequest</span></code></a> for a complete list of attributes.</p> 
+          <p>Request data in the formats used by HTML forms will be parsed for you and is made available in methods like <a class="reference internal" href="../web.html#tornado.web.RequestHandler.get_query_argument" title="tornado.web.RequestHandler.get_query_argument"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_query_argument</span></code></a> and <a class="reference internal" href="../web.html#tornado.web.RequestHandler.get_body_argument" title="tornado.web.RequestHandler.get_body_argument"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_body_argument</span></code></a>.</p> 
+          <div class="highlight-python notranslate">
+           <div class="highlight">
+            <pre><span></span><span class="k">class</span> <span class="nc">MyFormHandler</span><span class="p">(</span><span class="n">tornado</span><span class="o">.</span><span class="n">web</span><span class="o">.</span><span class="n">RequestHandler</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'&lt;html&gt;&lt;body&gt;&lt;form action="/myform" method="POST"&gt;'</span>
+                   <span class="s1">'&lt;input type="text" name="message"&gt;'</span>
+                   <span class="s1">'&lt;input type="submit" value="Submit"&gt;'</span>
+                   <span class="s1">'&lt;/form&gt;&lt;/body&gt;&lt;/html&gt;'</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_header</span><span class="p">(</span><span class="s2">"Content-Type"</span><span class="p">,</span> <span class="s2">"text/plain"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"You wrote "</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_body_argument</span><span class="p">(</span><span class="s2">"message"</span><span class="p">))</span>
+</pre>
+           </div> 
+          </div> 
+          <p>Since the HTML form encoding is ambiguous as to whether an argument is a single value or a list with one element, <a class="reference internal" href="../web.html#tornado.web.RequestHandler" title="tornado.web.RequestHandler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RequestHandler</span></code></a> has distinct methods to allow the application to indicate whether or not it expects a list. For lists, use <a class="reference internal" href="../web.html#tornado.web.RequestHandler.get_query_arguments" title="tornado.web.RequestHandler.get_query_arguments"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_query_arguments</span></code></a> and <a class="reference internal" href="../web.html#tornado.web.RequestHandler.get_body_arguments" title="tornado.web.RequestHandler.get_body_arguments"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_body_arguments</span></code></a> instead of their singular counterparts.</p> 
+          <p>Files uploaded via a form are available in <code class="docutils literal notranslate"><span class="pre">self.request.files</span></code>, which maps names (the name of the HTML <code class="docutils literal notranslate"><span class="pre">&lt;input</span> <span class="pre">type="file"&gt;</span></code> element) to a list of files. Each file is a dictionary of the form <code class="docutils literal notranslate"><span class="pre">{"filename":...,</span> <span class="pre">"content_type":...,</span> <span class="pre">"body":...}</span></code>. The <code class="docutils literal notranslate"><span class="pre">files</span></code> object is only present if the files were uploaded with a form wrapper (i.e. a <code class="docutils literal notranslate"><span class="pre">multipart/form-data</span></code> Content-Type); if this format was not used the raw uploaded data is available in <code class="docutils literal notranslate"><span class="pre">self.request.body</span></code>. By default uploaded files are fully buffered in memory; if you need to handle files that are too large to comfortably keep in memory see the <a class="reference internal" href="../web.html#tornado.web.stream_request_body" title="tornado.web.stream_request_body"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stream_request_body</span></code></a> class decorator.</p> 
+          <p>In the demos directory, <a class="reference external" href="https://github.com/tornadoweb/tornado/tree/master/demos/file_upload/">file_receiver.py</a> shows both methods of receiving file uploads.</p> 
+          <p>Due to the quirks of the HTML form encoding (e.g. the ambiguity around singular versus plural arguments), Tornado does not attempt to unify form arguments with other types of input. In particular, we do not parse JSON request bodies. Applications that wish to use JSON instead of form-encoding may override <a class="reference internal" href="../web.html#tornado.web.RequestHandler.prepare" title="tornado.web.RequestHandler.prepare"><code class="xref py py-obj docutils literal notranslate"><span class="pre">prepare</span></code></a> to parse their requests:</p> 
+          <div class="highlight-default notranslate">
+           <div class="highlight">
+            <pre><span></span><span class="k">def</span> <span class="nf">prepare</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"Content-Type"</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"application/json"</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">json_args</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">body</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">json_args</span> <span class="o">=</span> <span class="kc">None</span>
+</pre>
+           </div> 
+          </div> 
+         </div> 
+         <div class="section" id="overriding-requesthandler-methods"> 
+          <h2>Overriding RequestHandler methods<a class="headerlink" href="#overriding-requesthandler-methods" title="Permalink to this headline">¶</a></h2> 
+          <p>In addition to <code class="docutils literal notranslate"><span class="pre">get()</span></code>/<code class="docutils literal notranslate"><span class="pre">post()</span></code>/etc, certain other methods in <a class="reference internal" href="../web.html#tornado.web.RequestHandler" title="tornado.web.RequestHandler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RequestHandler</span></code></a> are designed to be overridden by subclasses when necessary. On every request, the following sequence of calls takes place:</p> 
+          <ol class="arabic simple"> 
+           <li>A new <a class="reference internal" href="../web.html#tornado.web.RequestHandler" title="tornado.web.RequestHandler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RequestHandler</span></code></a> object is created on each request.</li> 
+           <li><a class="reference internal" href="../web.html#tornado.web.RequestHandler.initialize" title="tornado.web.RequestHandler.initialize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">initialize()</span></code></a> is called with the initialization arguments from the <a class="reference internal" href="../web.html#tornado.web.Application" title="tornado.web.Application"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Application</span></code></a> configuration. <code class="docutils literal notranslate"><span class="pre">initialize</span></code> should typically just save the arguments passed into member variables; it may not produce any output or call methods like <a class="reference internal" href="../web.html#tornado.web.RequestHandler.send_error" title="tornado.web.RequestHandler.send_error"><code class="xref py py-obj docutils literal notranslate"><span class="pre">send_error</span></code></a>.</li> 
+           <li><a class="reference internal" href="../web.html#tornado.web.RequestHandler.prepare" title="tornado.web.RequestHandler.prepare"><code class="xref py py-obj docutils literal notranslate"><span class="pre">prepare()</span></code></a> is called. This is most useful in a base class shared by all of your handler subclasses, as <code class="docutils literal notranslate"><span class="pre">prepare</span></code> is called no matter which HTTP method is used. <code class="docutils literal notranslate"><span class="pre">prepare</span></code> may produce output; if it calls <a class="reference internal" href="../web.html#tornado.web.RequestHandler.finish" title="tornado.web.RequestHandler.finish"><code class="xref py py-obj docutils literal notranslate"><span class="pre">finish</span></code></a> (or <code class="docutils literal notranslate"><span class="pre">redirect</span></code>, etc), processing stops here.</li> 
+           <li>One of the HTTP methods is called: <code class="docutils literal notranslate"><span class="pre">get()</span></code>, <code class="docutils literal notranslate"><span class="pre">post()</span></code>, <code class="docutils literal notranslate"><span class="pre">put()</span></code>, etc. If the URL regular expression contains capturing groups, they are passed as arguments to this method.</li> 
+           <li>When the request is finished, <a class="reference internal" href="../web.html#tornado.web.RequestHandler.on_finish" title="tornado.web.RequestHandler.on_finish"><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_finish()</span></code></a> is called. This is generally after <code class="docutils literal notranslate"><span class="pre">get()</span></code> or another HTTP method returns.</li> 
+          </ol> 
+          <p>All methods designed to be overridden are noted as such in the <a class="reference internal" href="../web.html#tornado.web.RequestHandler" title="tornado.web.RequestHandler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RequestHandler</span></code></a> documentation. Some of the most commonly overridden methods include:</p> 
+          <ul class="simple"> 
+           <li><a class="reference internal" href="../web.html#tornado.web.RequestHandler.write_error" title="tornado.web.RequestHandler.write_error"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_error</span></code></a> - outputs HTML for use on error pages.</li> 
+           <li><a class="reference internal" href="../web.html#tornado.web.RequestHandler.on_connection_close" title="tornado.web.RequestHandler.on_connection_close"><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_connection_close</span></code></a> - called when the client disconnects; applications may choose to detect this case and halt further processing. Note that there is no guarantee that a closed connection can be detected promptly.</li> 
+           <li><a class="reference internal" href="../web.html#tornado.web.RequestHandler.get_current_user" title="tornado.web.RequestHandler.get_current_user"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_current_user</span></code></a> - see <a class="reference internal" href="security.html#user-authentication"><span class="std std-ref">User authentication</span></a>.</li> 
+           <li><a class="reference internal" href="../web.html#tornado.web.RequestHandler.get_user_locale" title="tornado.web.RequestHandler.get_user_locale"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_user_locale</span></code></a> - returns <a class="reference internal" href="../locale.html#tornado.locale.Locale" title="tornado.locale.Locale"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Locale</span></code></a> object to use for the current user.</li> 
+           <li><a class="reference internal" href="../web.html#tornado.web.RequestHandler.set_default_headers" title="tornado.web.RequestHandler.set_default_headers"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_default_headers</span></code></a> - may be used to set additional headers on the response (such as a custom <code class="docutils literal notranslate"><span class="pre">Server</span></code> header).</li> 
+          </ul> 
+         </div> 
+         <div class="section" id="error-handling"> 
+          <h2>Error Handling<a class="headerlink" href="#error-handling" title="Permalink to this headline">¶</a></h2> 
+          <p>If a handler raises an exception, Tornado will call <a class="reference internal" href="../web.html#tornado.web.RequestHandler.write_error" title="tornado.web.RequestHandler.write_error"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RequestHandler.write_error</span></code></a> to generate an error page. <a class="reference internal" href="../web.html#tornado.web.HTTPError" title="tornado.web.HTTPError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tornado.web.HTTPError</span></code></a> can be used to generate a specified status code; all other exceptions return a 500 status.</p> 
+          <p>The default error page includes a stack trace in debug mode and a one-line description of the error (e.g. “500: Internal Server Error”) otherwise. To produce a custom error page, override <a class="reference internal" href="../web.html#tornado.web.RequestHandler.write_error" title="tornado.web.RequestHandler.write_error"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RequestHandler.write_error</span></code></a> (probably in a base class shared by all your handlers). This method may produce output normally via methods such as <a class="reference internal" href="../web.html#tornado.web.RequestHandler.write" title="tornado.web.RequestHandler.write"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write</span></code></a> and <a class="reference internal" href="../web.html#tornado.web.RequestHandler.render" title="tornado.web.RequestHandler.render"><code class="xref py py-obj docutils literal notranslate"><span class="pre">render</span></code></a>. If the error was caused by an exception, an <code class="docutils literal notranslate"><span class="pre">exc_info</span></code> triple will be passed as a keyword argument (note that this exception is not guaranteed to be the current exception in <a class="reference external" href="https://docs.python.org/3.6/library/sys.html#sys.exc_info" title="(in Python v3.6)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sys.exc_info</span></code></a>, so <code class="docutils literal notranslate"><span class="pre">write_error</span></code> must use e.g. <a class="reference external" href="https://docs.python.org/3.6/library/traceback.html#traceback.format_exception" title="(in Python v3.6)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">traceback.format_exception</span></code></a> instead of <a class="reference external" href="https://docs.python.org/3.6/library/traceback.html#traceback.format_exc" title="(in Python v3.6)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">traceback.format_exc</span></code></a>).</p> 
+          <p>It is also possible to generate an error page from regular handler methods instead of <code class="docutils literal notranslate"><span class="pre">write_error</span></code> by calling <a class="reference internal" href="../web.html#tornado.web.RequestHandler.set_status" title="tornado.web.RequestHandler.set_status"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_status</span></code></a>, writing a response, and returning. The special exception <a class="reference internal" href="../web.html#tornado.web.Finish" title="tornado.web.Finish"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tornado.web.Finish</span></code></a> may be raised to terminate the handler without calling <code class="docutils literal notranslate"><span class="pre">write_error</span></code> in situations where simply returning is not convenient.</p> 
+          <p>For 404 errors, use the <code class="docutils literal notranslate"><span class="pre">default_handler_class</span></code> <a class="reference internal" href="../web.html#tornado.web.Application.settings" title="tornado.web.Application.settings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Application</span> <span class="pre">setting</span></code></a>. This handler should override <a class="reference internal" href="../web.html#tornado.web.RequestHandler.prepare" title="tornado.web.RequestHandler.prepare"><code class="xref py py-obj docutils literal notranslate"><span class="pre">prepare</span></code></a> instead of a more specific method like <code class="docutils literal notranslate"><span class="pre">get()</span></code> so it works with any HTTP method. It should produce its error page as described above: either by raising a <code class="docutils literal notranslate"><span class="pre">HTTPError(404)</span></code> and overriding <code class="docutils literal notranslate"><span class="pre">write_error</span></code>, or calling <code class="docutils literal notranslate"><span class="pre">self.set_status(404)</span></code> and producing the response directly in <code class="docutils literal notranslate"><span class="pre">prepare()</span></code>.</p> 
+         </div> 
+         <div class="section" id="redirection"> 
+          <h2>Redirection<a class="headerlink" href="#redirection" title="Permalink to this headline">¶</a></h2> 
+          <p>There are two main ways you can redirect requests in Tornado: <a class="reference internal" href="../web.html#tornado.web.RequestHandler.redirect" title="tornado.web.RequestHandler.redirect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RequestHandler.redirect</span></code></a> and with the <a class="reference internal" href="../web.html#tornado.web.RedirectHandler" title="tornado.web.RedirectHandler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RedirectHandler</span></code></a>.</p> 
+          <p>You can use <code class="docutils literal notranslate"><span class="pre">self.redirect()</span></code> within a <a class="reference internal" href="../web.html#tornado.web.RequestHandler" title="tornado.web.RequestHandler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RequestHandler</span></code></a> method to redirect users elsewhere. There is also an optional parameter <code class="docutils literal notranslate"><span class="pre">permanent</span></code> which you can use to indicate that the redirection is considered permanent. The default value of <code class="docutils literal notranslate"><span class="pre">permanent</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code>, which generates a <code class="docutils literal notranslate"><span class="pre">302</span> <span class="pre">Found</span></code> HTTP response code and is appropriate for things like redirecting users after successful <code class="docutils literal notranslate"><span class="pre">POST</span></code> requests. If <code class="docutils literal notranslate"><span class="pre">permanent</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>, the <code class="docutils literal notranslate"><span class="pre">301</span> <span class="pre">Moved</span> <span class="pre">Permanently</span></code> HTTP response code is used, which is useful for e.g. redirecting to a canonical URL for a page in an SEO-friendly manner.</p> 
+          <p><a class="reference internal" href="../web.html#tornado.web.RedirectHandler" title="tornado.web.RedirectHandler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RedirectHandler</span></code></a> lets you configure redirects directly in your <a class="reference internal" href="../web.html#tornado.web.Application" title="tornado.web.Application"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Application</span></code></a> routing table. For example, to configure a single static redirect:</p> 
+          <div class="highlight-default notranslate">
+           <div class="highlight">
+            <pre><span></span><span class="n">app</span> <span class="o">=</span> <span class="n">tornado</span><span class="o">.</span><span class="n">web</span><span class="o">.</span><span class="n">Application</span><span class="p">([</span>
+    <span class="n">url</span><span class="p">(</span><span class="sa">r</span><span class="s2">"/app"</span><span class="p">,</span> <span class="n">tornado</span><span class="o">.</span><span class="n">web</span><span class="o">.</span><span class="n">RedirectHandler</span><span class="p">,</span>
+        <span class="nb">dict</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">"http://itunes.apple.com/my-app-id"</span><span class="p">)),</span>
+    <span class="p">])</span>
+</pre>
+           </div> 
+          </div> 
+          <p><a class="reference internal" href="../web.html#tornado.web.RedirectHandler" title="tornado.web.RedirectHandler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RedirectHandler</span></code></a> also supports regular expression substitutions. The following rule redirects all requests beginning with <code class="docutils literal notranslate"><span class="pre">/pictures/</span></code> to the prefix <code class="docutils literal notranslate"><span class="pre">/photos/</span></code> instead:</p> 
+          <div class="highlight-default notranslate">
+           <div class="highlight">
+            <pre><span></span><span class="n">app</span> <span class="o">=</span> <span class="n">tornado</span><span class="o">.</span><span class="n">web</span><span class="o">.</span><span class="n">Application</span><span class="p">([</span>
+    <span class="n">url</span><span class="p">(</span><span class="sa">r</span><span class="s2">"/photos/(.*)"</span><span class="p">,</span> <span class="n">MyPhotoHandler</span><span class="p">),</span>
+    <span class="n">url</span><span class="p">(</span><span class="sa">r</span><span class="s2">"/pictures/(.*)"</span><span class="p">,</span> <span class="n">tornado</span><span class="o">.</span><span class="n">web</span><span class="o">.</span><span class="n">RedirectHandler</span><span class="p">,</span>
+        <span class="nb">dict</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="sa">r</span><span class="s2">"/photos/</span><span class="si">{0}</span><span class="s2">"</span><span class="p">)),</span>
+    <span class="p">])</span>
+</pre>
+           </div> 
+          </div> 
+          <p>Unlike <a class="reference internal" href="../web.html#tornado.web.RequestHandler.redirect" title="tornado.web.RequestHandler.redirect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RequestHandler.redirect</span></code></a>, <a class="reference internal" href="../web.html#tornado.web.RedirectHandler" title="tornado.web.RedirectHandler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RedirectHandler</span></code></a> uses permanent redirects by default. This is because the routing table does not change at runtime and is presumed to be permanent, while redirects found in handlers are likely to be the result of other logic that may change. To send a temporary redirect with a <a class="reference internal" href="../web.html#tornado.web.RedirectHandler" title="tornado.web.RedirectHandler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RedirectHandler</span></code></a>, add <code class="docutils literal notranslate"><span class="pre">permanent=False</span></code> to the <a class="reference internal" href="../web.html#tornado.web.RedirectHandler" title="tornado.web.RedirectHandler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RedirectHandler</span></code></a> initialization arguments.</p> 
+         </div> 
+         <div class="section" id="asynchronous-handlers"> 
+          <h2>Asynchronous handlers<a class="headerlink" href="#asynchronous-handlers" title="Permalink to this headline">¶</a></h2> 
+          <p>Certain handler methods (including <code class="docutils literal notranslate"><span class="pre">prepare()</span></code> and the HTTP verb methods <code class="docutils literal notranslate"><span class="pre">get()</span></code>/<code class="docutils literal notranslate"><span class="pre">post()</span></code>/etc) may be overridden as coroutines to make the handler asynchronous.</p> 
+          <p>For example, here is a simple handler using a coroutine:</p> 
+          <div class="highlight-python notranslate">
+           <div class="highlight">
+            <pre><span></span><span class="k">class</span> <span class="nc">MainHandler</span><span class="p">(</span><span class="n">tornado</span><span class="o">.</span><span class="n">web</span><span class="o">.</span><span class="n">RequestHandler</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">http</span> <span class="o">=</span> <span class="n">tornado</span><span class="o">.</span><span class="n">httpclient</span><span class="o">.</span><span class="n">AsyncHTTPClient</span><span class="p">()</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">http</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s2">"http://friendfeed-api.com/v2/feed/bret"</span><span class="p">)</span>
+        <span class="n">json</span> <span class="o">=</span> <span class="n">tornado</span><span class="o">.</span><span class="n">escape</span><span class="o">.</span><span class="n">json_decode</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">body</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"Fetched "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s2">"entries"</span><span class="p">]))</span> <span class="o">+</span> <span class="s2">" entries "</span>
+                   <span class="s2">"from the FriendFeed API"</span><span class="p">)</span>
+</pre>
+           </div> 
+          </div> 
+          <p>For a more advanced asynchronous example, take a look at the <a class="reference external" href="https://github.com/tornadoweb/tornado/tree/stable/demos/chat">chat example application</a>, which implements an AJAX chat room using <a class="reference external" href="http://en.wikipedia.org/wiki/Push_technology#Long_polling">long polling</a>. Users of long polling may want to override <code class="docutils literal notranslate"><span class="pre">on_connection_close()</span></code> to clean up after the client closes the connection (but see that method’s docstring for caveats).</p> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <footer> 
+       <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation"> <a href="templates.html" class="btn btn-neutral float-right" title="Templates and UI" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a> <a href="queues.html" class="btn btn-neutral float-left" title="Queue example - a concurrent web spider" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a> 
+       </div> 
+       <hr> 
+       <div role="contentinfo"> 
+        <p> © Copyright The Tornado Authors <span class="commit"> Revision <code>2047e7ae</code>. </span> </p> 
+       </div> Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+      </footer> 
+     </div> 
+    </div> 
+   </section> 
+  </div> 
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions"> <span class="rst-current-version" data-toggle="rst-current-version"> <span class="fa fa-book"> Read the Docs</span> v: stable <span class="fa fa-caret-down"></span> </span> 
+   <div class="rst-other-versions"> 
+    <dl> 
+     <dt>
+      Versions
+     </dt> 
+     <dd>
+      <a href="/en/latest/">latest</a>
+     </dd> 
+     <dd>
+      <a href="/en/stable/">stable</a>
+     </dd> 
+     <dd>
+      <a href="/en/branch6.0/">branch6.0</a>
+     </dd> 
+     <dd>
+      <a href="/en/branch5.1/">branch5.1</a>
+     </dd> 
+     <dd>
+      <a href="/en/branch4.5/">branch4.5</a>
+     </dd> 
+    </dl> 
+    <dl> 
+     <dt>
+      Downloads
+     </dt> 
+     <dd>
+      <a href="//www.tornadoweb.org/_/downloads/en/stable/pdf/">pdf</a>
+     </dd> 
+     <dd>
+      <a href="//www.tornadoweb.org/_/downloads/en/stable/htmlzip/">html</a>
+     </dd> 
+     <dd>
+      <a href="//www.tornadoweb.org/_/downloads/en/stable/epub/">epub</a>
+     </dd> 
+    </dl> 
+    <dl> 
+     <dt>
+      On Read the Docs
+     </dt> 
+     <dd> <a href="//readthedocs.org/projects/tornado/?fromdocs=tornado">Project Home</a> 
+     </dd> 
+     <dd> <a href="//readthedocs.org/builds/tornado/?fromdocs=tornado">Builds</a> 
+     </dd> 
+    </dl> 
+    <hr> Free document hosting provided by <a href="http://www.readthedocs.org">Read the Docs</a>. 
+   </div> 
+  </div> 
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+ </body>
+</html>

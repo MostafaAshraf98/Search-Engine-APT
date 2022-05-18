@@ -1,0 +1,432 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+ <head> 
+  <title>
+Issue 37426: getpass.getpass not working with on windows when ctrl+v  is used to enter the string - Python tracker
+
+</title> 
+  <link rel="shortcut icon" href="@@file/favicon.ico"> 
+  <link rel="stylesheet" type="text/css" href="@@file/main.css"> 
+  <link rel="stylesheet" type="text/css" href="@@file/style.css"> 
+  <link rel="search" type="application/opensearchdescription+xml" href="@@file/osd.xml" title="Python bug tracker search"> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <script nonce="68e25d90be9b446b186b287b52c0f6aff4edf2921c54901356c9744af0e8fe9d" type="text/javascript">
+submitted = false;
+function submit_once() {
+    if (submitted) {
+        alert("Your request is being processed.\nPlease be patient.");
+        return false;
+    }
+    submitted = true;
+    return true;
+}
+
+function help_window(helpurl, width, height) {
+    HelpWin = window.open('https://bugs.python.org/' + helpurl, 'RoundupHelpWindow', 'scrollbars=yes,resizable=yes,toolbar=no,height='+height+',width='+width);
+    HelpWin.focus ()
+}
+</script> 
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script> 
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.15/jquery-ui.js"></script> 
+  <script type="text/javascript" src="@@file/issue.item.js"></script> 
+  <link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/smoothness/jquery-ui.css"> 
+ </head> 
+ <body> <!--  Logo  --> 
+  <h1 id="logoheader"> <a accesskey="1" href="." id="logolink"> <img src="@@file/python-logo.gif" alt="homepage" border="0" id="logo"></a> </h1> 
+  <div id="utility-menu"> <!-- Search Box --> 
+   <div id="searchbox"> 
+    <form name="searchform" method="get" action="issue" id="searchform"> 
+     <div id="search"> 
+      <input type="hidden" name="@columns" value="id,github,activity,title,creator,assignee,status,type"> 
+      <input type="hidden" name="@sort" value="-activity"> 
+      <input type="hidden" name="@filter" value="status"> 
+      <input type="hidden" name="@action" value="searchid"> 
+      <input type="hidden" name="ignore" value="file:content"> 
+      <input class="input-text" id="search-text" name="@search_text" size="10"> 
+      <input type="submit" id="submit" value="search" name="submit" class="input-button"> 
+      <input type="radio" name="status" id="status_notresolved" value="-1,1,3"> <label for="status_notresolved">open</label> 
+      <input type="radio" name="status" checked id="status_all" value="-1,1,2,3"> <label for="status_all">all</label> 
+     </div> 
+    </form> 
+   </div> 
+  </div> 
+  <div id="left-hand-navigation"> <!--  Main Menu NEED LEVEL TWO HEADER AND FOOTER --> 
+   <div id="menu"> 
+    <ul class="level-one"> 
+     <li><a href="https://www.python.org/" title="Go to the Python homepage">Python Home</a></li> 
+     <li><a href="https://www.python.org/about/" title="About The Python Language">About</a></li> 
+     <li><a href="https://www.python.org/blogs/" title="">News</a></li> 
+     <li><a href="https://www.python.org/doc/" title="">Documentation</a></li> 
+     <li><a href="https://www.python.org/downloads/" title="">Downloads</a></li> 
+     <li><a href="https://www.python.org/community/" title="">Community</a></li> 
+     <li><a href="https://www.python.org/psf/" title="Python Software Foundation">Foundation</a></li> 
+     <li><a href="https://devguide.python.org/" title="Python Developer's Guide">Developer's Guide</a></li> 
+     <li class="selected"><a href="." class="selected" title="Python Issue Tracker">Issue Tracker</a> 
+      <ul class="level-two"> 
+       <li> <strong>Issues</strong> 
+        <ul class="level-three"> 
+         <li><a href="issue?@template=search&amp;status=1">Search</a></li> 
+         <li><a href="issue?@action=random">Random Issue</a></li> 
+         <li> 
+          <form method="post" action="issue37426"> 
+           <input type="submit" class="form-small" value="Show issue:"> 
+           <input class="form-small" size="4" type="text" name="@number"> 
+           <input type="hidden" name="@type" value="issue"> 
+           <input type="hidden" name="@action" value="show"> 
+          </form> </li> 
+        </ul> </li> 
+       <li> <strong>Summaries</strong> 
+        <ul class="level-three"> 
+         <li> <a href="issue?status=1&amp;@sort=-activity&amp;@columns=id%2Cgithub%2Cactivity%2Ctitle%2Ccreator%2Cstatus&amp;@dispname=Issues%20with%20patch&amp;@startwith=0&amp;@group=priority&amp;keywords=2&amp;@action=search&amp;@filter=&amp;@pagesize=50">Issues with patch</a> </li> 
+         <li> <a href="issue?status=1&amp;@sort=-activity&amp;@columns=id%2Cgithub%2Cactivity%2Ctitle%2Ccreator%2Cstatus&amp;@dispname=Easy%20issues&amp;@startwith=0&amp;@group=priority&amp;keywords=6&amp;@action=search&amp;@filter=&amp;@pagesize=50">Easy issues</a> </li> 
+         <li> <a href="issue?@template=stats">Stats</a> </li> 
+        </ul> </li> 
+       <li> <strong>User</strong> 
+        <form method="post" action="issue37426"> 
+         <ul class="level-three"> 
+          <li> Login&nbsp;(OpenID&nbsp;possible)<br> <a style="display:inline;width:0;margin:0" href="issue37426?@action=oic_login&amp;provider=Google"> <img hspace="0" vspace="0" width="16" height="16" src="https://www.google.com/favicon.ico" alt="Google" title="Google"></a> <a style="display:inline;width:0;margin:0" href="issue37426?@action=oic_login&amp;provider=GitHub"> <img hspace="0" vspace="0" width="16" height="16" src="https://www.github.com/favicon.ico" alt="GitHub" title="GitHub"></a> <a style="display:inline;width:0;margin:0" href="issue37426?@action=openid_login&amp;provider=Launchpad"> <img hspace="0" vspace="0" width="16" height="16" src="https://launchpad.net/favicon.ico" alt="Launchpad" title="Launchpad"></a> <input size="10" name="openid_identifier" style="background:url(@@file/openid-16x16.gif)
+                  center left no-repeat;padding-left:16px"><br> <input size="10" type="password" name="__login_password"><br> <input type="hidden" name="@action" value="Login"> <input type="checkbox" name="remember" id="remember"> <label for="remember">Remember me?</label><br> <input class="form-small" type="submit" value="Login"><br> <input type="hidden" name="__came_from" value="https://bugs.python.org/issue37426?"> <input type="hidden" name="@sort" value=""> <input type="hidden" name="@group" value=""> <input type="hidden" name="@pagesize" value="50"> <input type="hidden" name="@startwith" value="0"> </li> 
+          <li> </li> 
+          <li><a href="user?@template=forgotten">Lost&nbsp;your&nbsp;login?</a></li> 
+         </ul> 
+        </form> </li> 
+       <li> <strong>Administration</strong> 
+        <ul class="level-three"> 
+         <li> <a href="user?@sort=username">User List</a></li> 
+         <li> <a href="user?iscommitter=1&amp;@action=search&amp;@sort=username&amp;@pagesize=300">Committer List</a></li> 
+        </ul> </li> 
+       <li> <strong>Help</strong> 
+        <ul class="level-three"> 
+         <li><a href="http://docs.python.org/devguide/triaging.html"> Tracker Documentation</a></li> 
+         <li><a href="http://wiki.python.org/moin/TrackerDevelopment"> Tracker Development</a></li> 
+         <li><a href="https://github.com/python/psf-infra-meta/issues"> Report Tracker Problem</a></li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> <!-- menu --> 
+  </div> <!-- left-hand-navigation --> 
+  <div id="content-body"> 
+   <div id="body-main"> 
+    <div id="content"> 
+     <div id="breadcrumb">
+       Issue37426 
+     </div> 
+     <div id="migration-notice"> 
+      <div id="migration-images"> 
+       <img width="32" src="@@file/python-logo-small.png"> ? <a href="https://github.com/python/cpython/issues"><img width="32" src="@@file/gh-icon.png"></a> 
+      </div> 
+      <p>This issue tracker <b>has been migrated to <a href="https://github.com/python/cpython/issues">GitHub</a></b>, and is currently <b>read-only</b>.<br> For more information, <a title="GitHub FAQs" href="https://devguide.python.org/gh-faq/"> see the GitHub FAQs in the Python's Developer Guide.</a></p> 
+     </div> 
+     <div> 
+      <form method="post" name="itemSynopsis" onsubmit="return submit_once()" enctype="multipart/form-data" action="issue37426"> 
+       <div id="gh-issue-link"> <a href="https://github.com/python/cpython/issues/81607"> <img width="32" src="@@file/gh-icon.png"> <p> <span>This issue has been migrated to GitHub:</span> https://github.com/python/cpython/issues/81607 </p> </a> 
+       </div> 
+       <fieldset>
+        <legend>classification</legend> 
+        <table class="form"> 
+         <tbody>
+          <tr> 
+           <th class="required"><a href="http://docs.python.org/devguide/triaging.html#title" target="_blank">Title</a>:</th> 
+           <td colspan="3"> <span>getpass.getpass not working with on windows when ctrl+v is used to enter the string</span> <input type="hidden" name="title" value="getpass.getpass not working with on windows when ctrl+v  is used to enter the string"> </td> 
+          </tr> 
+          <tr> 
+           <th class="required"><a href="http://docs.python.org/devguide/triaging.html#type" target="_blank">Type</a>:</th> 
+           <td>behavior</td> 
+           <th><a href="http://docs.python.org/devguide/triaging.html#stage" target="_blank">Stage</a>:</th> 
+           <td></td> 
+          </tr> 
+          <tr> 
+           <th><a href="http://docs.python.org/devguide/triaging.html#components" target="_blank">Components</a>:</th> 
+           <td>Documentation</td> 
+           <th><a href="http://docs.python.org/devguide/triaging.html#versions" target="_blank">Versions</a>:</th> 
+           <td>Python 3.11</td> 
+          </tr> 
+         </tbody>
+        </table> 
+       </fieldset> 
+       <fieldset>
+        <legend>process</legend> 
+        <table class="form"> 
+         <tbody>
+          <tr> 
+           <th><a href="http://docs.python.org/devguide/triaging.html#status" target="_blank">Status</a>:</th> 
+           <td>open</td> 
+           <th><a href="http://docs.python.org/devguide/triaging.html#resolution" target="_blank">Resolution</a>:</th> 
+           <td></td> 
+          </tr> 
+          <tr> 
+           <th> <a href="http://docs.python.org/devguide/triaging.html#dependencies" target="_blank">Dependencies</a>: </th> 
+           <td> </td> 
+           <th><a href="http://docs.python.org/devguide/triaging.html#superseder" target="_blank">Superseder</a>:</th> 
+           <td> </td> 
+          </tr> 
+          <tr> 
+           <th> <a href="http://docs.python.org/devguide/triaging.html#assigned-to" target="_blank">Assigned To</a>: </th> 
+           <td> docs@python </td> 
+           <th> <a href="http://docs.python.org/devguide/triaging.html#nosy-list" target="_blank">Nosy List</a><!--
+        <span tal:condition="context/nosy_count" tal:replace="python: ' (%d)' % context.nosy_count" /> -->: </th> 
+           <td> Atul Bagga, W_M, brianhrutledge, docs@python, eryksun, paul.moore, steve.dower, tim.golden, zach.ware </td> 
+          </tr> 
+          <tr> 
+           <th> <a href="http://docs.python.org/devguide/triaging.html#priority" target="_blank">Priority</a>: </th> 
+           <td>normal</td> 
+           <th> <a href="http://docs.python.org/devguide/triaging.html#keywords" target="_blank">Keywords</a>: </th> 
+           <td></td> 
+          </tr> 
+         </tbody>
+        </table> 
+       </fieldset> 
+      </form> 
+      <p>Created on <strong>2019-06-27 09:49</strong> by <strong>Atul Bagga</strong>, last changed <strong>2022-04-11 14:59</strong> by <strong>admin</strong>.</p> 
+      <table class="messages"> 
+       <tbody>
+        <tr>
+         <th colspan="4" class="header">Messages (8)</th>
+        </tr> 
+        <tr> 
+         <th> <a href="#msg346721" id="msg346721">msg346721</a> - <a href="msg346721">(view)</a></th> 
+         <th>Author: Atul Bagga (Atul Bagga)</th> 
+         <th>Date: 2019-06-27 09:49</th> 
+        </tr> 
+        <tr> 
+         <td colspan="4" class="content"> <pre>Detailed issue filed here - <a href="https://github.com/microsoft/knack/issues/160">https://github.com/microsoft/knack/issues/160</a></pre> </td> 
+        </tr> 
+        <tr> 
+         <th> <a href="#msg346727" id="msg346727">msg346727</a> - <a href="msg346727">(view)</a></th> 
+         <th>Author: Eryk Sun (eryksun) <span title="Contributor form received">*</span> <img src="@@file/triager.png" title="Python triager" alt="(Python triager)"></th> 
+         <th>Date: 2019-06-27 11:00</th> 
+        </tr> 
+        <tr> 
+         <td colspan="4" class="content"> <pre>getpass() reads from the console via msvcrt.getwch(). This is a raw console read, so Ctrl+V is read as the SYN (0x16) control character. Only the following keys are handled specially by getpass: 
+
+* Ctrl+C - raise KeyboardInterrupt
+* Ctrl+H (backspace) - delete the previous character
+* Ctrl+J (linefeed) and Ctrl+M (return) - return
+
+getpass() behaves pretty much the same in a Linux terminal emulator, except Ctrl+H isn't backspace. 
+
+Recent versions of the console host in Windows 10 have an option to support pasting via Ctrl+Shift+V, regardless of the input mode. This is pretty common in Unix terminal emulators as well. You can change this setting in the Properties-&gt;Options dialog for a particular window or shortcut, or the default setting in the Defaults-&gt;Options dialog. In the "HKCU\Console" registry key, the DWORD value name is "InterceptCopyPaste".</pre> </td> 
+        </tr> 
+        <tr> 
+         <th> <a href="#msg346867" id="msg346867">msg346867</a> - <a href="msg346867">(view)</a></th> 
+         <th>Author: Terry J. Reedy (terry.reedy) <span title="Contributor form received">*</span> <img src="@@file/committer.png" title="Python committer" alt="(Python committer)"></th> 
+         <th>Date: 2019-06-28 21:19</th> 
+        </tr> 
+        <tr> 
+         <td colspan="4" class="content"> <pre>If anything, this seems to be a getpass doc issue.</pre> </td> 
+        </tr> 
+        <tr> 
+         <th> <a href="#msg347126" id="msg347126">msg347126</a> - <a href="msg347126">(view)</a></th> 
+         <th>Author: Atul Bagga (Atul Bagga)</th> 
+         <th>Date: 2019-07-02 10:04</th> 
+        </tr> 
+        <tr> 
+         <td colspan="4" class="content"> <pre>Suprisingly this works fine on ConEMU which I commonly use on windows though internally I still use powershell on conemu. 
+<a href="https://conemu.github.io/">https://conemu.github.io/</a>
+
+It does not work on CMD and Powershell consoles.</pre> </td> 
+        </tr> 
+        <tr> 
+         <th> <a href="#msg375819" id="msg375819">msg375819</a> - <a href="msg375819">(view)</a></th> 
+         <th>Author: Brian Rutledge (brianhrutledge)</th> 
+         <th>Date: 2020-08-23 17:46</th> 
+        </tr> 
+        <tr> 
+         <td colspan="4" class="content"> <pre>In addition to Ctrl+V, Shift+Insert also doesn't work. This behavior is the same Command Prompt and PowerShell on Windows 10.
+
+Workarounds include:
+
+- Clicking `Edit &gt; Paste` from the window menu
+- Enabling `Properties &gt; Options &gt; Use Ctrl+Shift+C/V as Copy/Paste` from the menu
+- Use right-click to paste
+- Using the new Windows Terminal: <a href="https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701">https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701</a>
+
+I stumbled upon this issue while investigating <a href="https://github.com/pypa/twine/issues/671">https://github.com/pypa/twine/issues/671</a>. Thanks for writing it up!</pre> </td> 
+        </tr> 
+        <tr> 
+         <th> <a href="#msg413993" id="msg413993">msg413993</a> - <a href="msg413993">(view)</a></th> 
+         <th>Author: ??? (W_M)</th> 
+         <th>Date: 2022-02-25 14:04</th> 
+        </tr> 
+        <tr> 
+         <td colspan="4" class="content"> <pre>I have an idea to solve it. But I don't know how to get the clipboard data.
+
+The code like this (Windows):
+
+def win_getpass(prompt='Password: ', stream=None, echoChar='*'):
+    """Prompt for password with echo off, using Windows getwch()."""
+    if not isinstance(echoChar, str) or len(echoChar) &lt; 1 or len(echoChar) &gt; 1:
+        raise ValueError("Argument 'echoChar' is incorrect. It should be a character.")
+    if sys.stdin is not sys.__stdin__:
+        return fallback_getpass(prompt, stream)
+    for c in prompt:
+        msvcrt.putwch(c)
+    pw = ""
+    while 1:
+        c = msvcrt.getwch()
+        if ord(c) == 22: # User pressed Ctrl-V
+            k = &lt;Clipboard Info&gt;
+            pw += k
+            for _ in range(len(k)):
+                msvcrt.putwch(echoChar)
+        if c == '\r' or c == '\n' or c == '\r\n':
+            break
+        if c == '\003':
+            raise KeyboardInterrupt
+        if c == '\b':
+            if pw != '':
+                pw = pw[:-1]
+                count = len(pw)
+                for _ in range(count+1):
+                    msvcrt.putwch('\b')
+                for _ in range(count):
+                    msvcrt.putwch(echoChar)
+                msvcrt.putwch(' ')
+                msvcrt.putwch('\b')
+        else:
+            pw = pw + c
+            msvcrt.putwch(echoChar)
+            
+    msvcrt.putwch('\r')
+    msvcrt.putwch('\n')
+    return pw</pre> </td> 
+        </tr> 
+        <tr> 
+         <th> <a href="#msg414012" id="msg414012">msg414012</a> - <a href="msg414012">(view)</a></th> 
+         <th>Author: Eryk Sun (eryksun) <span title="Contributor form received">*</span> <img src="@@file/triager.png" title="Python triager" alt="(Python triager)"></th> 
+         <th>Date: 2022-02-25 16:02</th> 
+        </tr> 
+        <tr> 
+         <td colspan="4" class="content"> <pre>&gt; Clicking `Edit &gt; Paste` from the window menu
+&gt; Use right-click to paste
+
+In particular, if the console has quick-edit mode enabled, then you can paste text by right-clicking. Also, if text is selected in quick-edit mode, right-clicking copies to the clipboard.
+
+&gt; Enabling `Properties &gt; Options &gt; Use Ctrl+Shift+C/V as Copy/Paste` from the menu
+
+I prefer this setting because it matches the behavior of terminals on other platforms. I suggest setting it in the "Defaults" dialog instead of "Properties". Otherwise, you'll have to configure it individually for each shell link (.LNK file) or session title. (The console session title defaults to the executable path, unless set in STARTUPINFO.)
+
+&gt; Using the new Windows Terminal
+
+Terminal allows configuring the actions for keyboard shortcuts. By default it grabs Ctrl+C (copy) and Ctrl+V (paste). I disable these mappings. I leave the default mappings in place for Ctrl+Shift+C (copy), Ctrl+Shift+V (paste), Ctrl+Insert (copy), and Shift+Insert (paste).  
+
+&gt; This behavior is the same Command Prompt and PowerShell
+
+The behavior has to be the same when the parent process is a normal console shell such as CMD or PowerShell. Python inherits its console session from the shell, and that's the extent of the shell's involvement. 
+
+A console session is hosted by an instance of conhost.exe or openconsole.exe. If the host is running in pseudoconsole (headless) mode, then the user interface for the session is hosted by another application (e.g. Windows Terminal). Even in pseudoconsole mode, however, the console host a lot to do in order to manage the session state for the console API.</pre> </td> 
+        </tr> 
+        <tr> 
+         <th> <a href="#msg414024" id="msg414024">msg414024</a> - <a href="msg414024">(view)</a></th> 
+         <th>Author: Eryk Sun (eryksun) <span title="Contributor form received">*</span> <img src="@@file/triager.png" title="Python triager" alt="(Python triager)"></th> 
+         <th>Date: 2022-02-25 17:19</th> 
+        </tr> 
+        <tr> 
+         <td colspan="4" class="content"> <pre>&gt; I have an idea to solve it. But I don't know how to get the 
+&gt; clipboard data.
+
+In Windows, using the window manager entails extending the process and the current thread with GUI-related structures in the kernel and then connecting the process to a window station (usually "WinSta0", which contains the clipboard) and connecting the thread to a desktop (usually "Default"). This permanently changes how the OS sees the process. I think whether or not the process should be a GUI process is something for the application to decide, not the standard library. Thus getpass should not read text from the clipboard.
+
+The docs could note that terminals may need to be configured to support Ctrl+Shift+C (copy) and Ctrl+Shift+V (paste) shortcuts, and that some terminals provide alternate ways to paste text, such as a right-click action or context menu. I don't think the docs should provide detailed explanations and configuration details for particular terminals.</pre> </td> 
+        </tr> 
+       </tbody>
+      </table> 
+      <table class="history table table-condensed table-striped">
+       <tbody>
+        <tr>
+         <th colspan="4" class="header"> History </th>
+        </tr>
+        <tr> 
+         <th>Date</th> 
+         <th>User</th> 
+         <th>Action</th> 
+         <th>Args</th> 
+        </tr> 
+        <tr>
+         <td>2022-04-11&nbsp;14:59:17</td>
+         <td>admin</td>
+         <td>set</td>
+         <td>github: 81607</td>
+        </tr> 
+        <tr>
+         <td>2022-02-25&nbsp;20:01:48</td>
+         <td>terry.reedy</td>
+         <td>set</td>
+         <td>nosy: - <a rel="nofollow" href="user155">terry.reedy</a><br><br>versions: + Python 3.11</td>
+        </tr> 
+        <tr>
+         <td>2022-02-25&nbsp;17:19:21</td>
+         <td>eryksun</td>
+         <td>set</td>
+         <td>messages: + <a rel="nofollow" href="msg414024">msg414024</a></td>
+        </tr> 
+        <tr>
+         <td>2022-02-25&nbsp;16:02:26</td>
+         <td>eryksun</td>
+         <td>set</td>
+         <td>messages: + <a rel="nofollow" href="msg414012">msg414012</a></td>
+        </tr> 
+        <tr>
+         <td>2022-02-25&nbsp;14:04:29</td>
+         <td>W_M</td>
+         <td>set</td>
+         <td>nosy: + <a rel="nofollow" href="user40294">W_M</a><br><br>messages: + <a rel="nofollow" href="msg413993">msg413993</a><br>versions: - Python 3.8, Python 3.9, Python 3.10</td>
+        </tr> 
+        <tr>
+         <td>2020-08-23&nbsp;19:01:16</td>
+         <td>terry.reedy</td>
+         <td>set</td>
+         <td>versions: - Python 3.6, Python 3.7</td>
+        </tr> 
+        <tr>
+         <td>2020-08-23&nbsp;17:46:22</td>
+         <td>brianhrutledge</td>
+         <td>set</td>
+         <td>nosy: + <a rel="nofollow" href="user35614">brianhrutledge</a><br><br>messages: + <a rel="nofollow" href="msg375819">msg375819</a><br>versions: + Python 3.7, Python 3.8, Python 3.9, Python 3.10</td>
+        </tr> 
+        <tr>
+         <td>2019-07-02&nbsp;10:04:03</td>
+         <td>Atul Bagga</td>
+         <td>set</td>
+         <td>messages: + <a rel="nofollow" href="msg347126">msg347126</a></td>
+        </tr> 
+        <tr>
+         <td>2019-06-28&nbsp;21:19:47</td>
+         <td>terry.reedy</td>
+         <td>set</td>
+         <td>nosy: + <a rel="nofollow" href="user155">terry.reedy</a>, <a rel="nofollow" href="user12260">docs@python</a><br>messages: + <a rel="nofollow" href="msg346867">msg346867</a><br><br>assignee: <a rel="nofollow" href="user12260">docs@python</a><br>components: + Documentation, - Library (Lib), Windows</td>
+        </tr> 
+        <tr>
+         <td>2019-06-27&nbsp;11:00:55</td>
+         <td>eryksun</td>
+         <td>set</td>
+         <td>nosy: + <a rel="nofollow" href="user16413">eryksun</a><br>messages: + <a rel="nofollow" href="msg346727">msg346727</a><br></td>
+        </tr> 
+        <tr>
+         <td>2019-06-27&nbsp;10:32:50</td>
+         <td>xtreak</td>
+         <td>set</td>
+         <td>nosy: + <a rel="nofollow" href="user3951">tim.golden</a>, <a rel="nofollow" href="user16632">steve.dower</a>, <a rel="nofollow" href="user15467">zach.ware</a>, <a rel="nofollow" href="user301">paul.moore</a><br>components: + Windows<br></td>
+        </tr> 
+        <tr>
+         <td>2019-06-27&nbsp;09:49:37</td>
+         <td>Atul Bagga</td>
+         <td>create</td>
+         <td></td>
+        </tr> 
+       </tbody>
+      </table> 
+     </div> 
+    </div> <!-- content-body --> 
+    <div id="footer"> 
+     <div id="credits">
+       Hosted on <a href="https://m.do.co/c/783434964889" title="Hosted on DigitalOcean">DigitalOcean</a>, 
+      <br> Supported by <a href="https://python.org/psf-landing/" title="The Python Software Foundation">The Python Software Foundation</a>, 
+      <br> Powered by <a href="http://roundup.sourceforge.net" title="Powered by the Roundup Issue Tracker">Roundup</a> 
+     </div> <!-- credits --> Copyright © 1990-2022, <a href="http://python.org/psf">Python Software Foundation</a>
+     <br> <a href="http://python.org/about/legal">Legal Statements</a> 
+    </div> <!-- footer --> 
+   </div> <!-- body-main --> 
+  </div> <!-- content -->  
+ </body>
+</html>

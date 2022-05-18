@@ -1,0 +1,1076 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html> 
+ <head> 
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"> 
+  <meta name="robots" content="noindex,nofollow"> 
+  <title>Info for "GuiProgramming" - Python Wiki</title> 
+  <script type="text/javascript" src="/wiki/common/js/common.js"></script> 
+  <script type="text/javascript">
+<!--
+var search_hint = "Search";
+//-->
+</script> 
+  <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="/wiki/europython/css/common.css"> 
+  <link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="/wiki/europython/css/screen.css"> 
+  <link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="/wiki/europython/css/print.css"> 
+  <link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="/wiki/europython/css/projection.css"> <!-- css only for MS IE6/IE7 browsers --> <!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="/wiki/europython/css/msie.css">
+<![endif]--> 
+  <link rel="alternate" title="Python Wiki: GuiProgramming" href="/moin/GuiProgramming?diffs=1&amp;show_att=1&amp;action=rss_rc&amp;unique=0&amp;page=GuiProgramming&amp;ddiffs=1" type="application/rss+xml"> 
+  <link rel="Start" href="/moin/FrontPage"> 
+  <link rel="Alternate" title="Wiki Markup" href="/moin/GuiProgramming?action=raw"> 
+  <link rel="Alternate" media="print" title="Print View" href="/moin/GuiProgramming?action=print"> 
+  <link rel="Search" href="/moin/FindPage"> 
+  <link rel="Index" href="/moin/TitleIndex"> 
+  <link rel="Glossary" href="/moin/WordIndex"> 
+  <link rel="Help" href="/moin/HelpOnFormatting"> 
+ </head> 
+ <body lang="en" dir="ltr"> 
+  <div id="header"> 
+   <form id="searchform" method="get" action="/moin/GuiProgramming"> 
+    <div> 
+     <input type="hidden" name="action" value="fullsearch"> 
+     <input type="hidden" name="context" value="180"> <label for="searchinput">Search:</label> 
+     <input id="searchinput" type="text" name="value" value="" size="20" onfocus="searchFocus(this)" onblur="searchBlur(this)" onkeyup="searchChange(this)" onchange="searchChange(this)" alt="Search"> 
+     <input id="titlesearch" name="titlesearch" type="submit" value="Titles" alt="Search Titles"> 
+     <input id="fullsearch" name="fullsearch" type="submit" value="Text" alt="Search Full Text"> 
+    </div> 
+   </form> 
+   <script type="text/javascript">
+<!--// Initialize search form
+var f = document.getElementById('searchform');
+f.getElementsByTagName('label')[0].style.display = 'none';
+var e = document.getElementById('searchinput');
+searchChange(e);
+searchBlur(e);
+//-->
+</script> 
+   <div id="logo">
+    <a href="/moin/FrontPage"></a><a href="http://www.python.org"><img src="/wiki/europython/img/python-logo.gif" alt="Python"></a><a name="logo"></a>
+   </div> 
+   <div id="locationline"> 
+    <ul id="pagelocation"> 
+     <li>Info for "GuiProgramming"</li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div id="sidebar"> 
+   <div id="star"> 
+   </div> 
+   <div class="sidepanel"> 
+    <ul id="navibar"> 
+     <li class="wikilink"><a href="/moin/FrontPage">FrontPage</a></li>
+     <li class="wikilink"><a href="/moin/RecentChanges">RecentChanges</a></li>
+     <li class="wikilink"><a href="/moin/FindPage">FindPage</a></li>
+     <li class="wikilink"><a href="/moin/HelpContents">HelpContents</a></li>
+     <li class="current"><a href="/moin/GuiProgramming">GuiProgramming</a></li> 
+    </ul> 
+   </div> 
+   <div class="sidepanel"> 
+    <h1>Page</h1> 
+    <ul class="editbar">
+     <li><span class="disabled">Immutable Page</span></li>
+     <li class="toggleCommentsButton" style="display:none;"><a href="#" class="nbcomment" onclick="toggleComments();return false;">Comments</a></li>
+     <li><a class="nbinfo" href="/moin/GuiProgramming?action=info" rel="nofollow">Info</a></li>
+     <li><a class="nbattachments" href="/moin/GuiProgramming?action=AttachFile" rel="nofollow">Attachments</a></li>
+     <li> 
+      <form class="actionsmenu" method="GET" action="/moin/GuiProgramming"> 
+       <div> <label>More Actions:</label> <select name="action" onchange="if ((this.selectedIndex != 0) &amp;&amp;
+                      (this.options[this.selectedIndex].disabled == false)) {
+                this.form.submit();
+            }
+            this.selectedIndex = 0;"> <option value="raw">Raw Text</option> <option value="print">Print View</option> <option value="show" disabled class="disabled">Delete Cache</option> <option value="show" disabled class="disabled">------------------------</option> <option value="SpellCheck">Check Spelling</option> <option value="LikePages">Like Pages</option> <option value="LocalSiteMap">Local Site Map</option> <option value="show" disabled class="disabled">------------------------</option> <option value="RenamePage" disabled class="disabled">Rename Page</option> <option value="DeletePage" disabled class="disabled">Delete Page</option> <option value="show" disabled class="disabled">------------------------</option> <option value="show" disabled class="disabled">------------------------</option> <option value="show" disabled class="disabled">Remove Spam</option> <option value="show" disabled class="disabled">Revert to this revision</option> <option value="show" disabled class="disabled">------------------------</option> <option value="SlideShow">SlideShow</option> </select> 
+        <input type="submit" value="Do"> 
+       </div> 
+       <script type="text/javascript">
+<!--// Init menu
+actionsMenuInit('More Actions:');
+//-->
+</script> 
+      </form> </li>
+    </ul> 
+   </div> 
+   <div class="sidepanel"> 
+    <h1>User</h1> 
+    <ul id="username">
+     <li><a href="/moin/GuiProgramming?action=login" id="login" rel="nofollow">Login</a></li>
+    </ul> 
+   </div> 
+  </div> 
+  <div id="page" lang="en" dir="ltr"> 
+   <div id="content">
+    <p>[<a href="/moin/GuiProgramming?action=info" rel="nofollow">Show "Revision History"</a>] [<a href="/moin/GuiProgramming?action=info&amp;general=1" rel="nofollow">Show "General Page Infos"</a>] [<a href="/moin/GuiProgramming?action=info&amp;hitcounts=1" rel="nofollow">Show "Page hits and edits"</a>] </p>
+    <h2>Revision History</h2>
+    <form action="" method="GET">
+     <div class="info-paging-info">
+      <p class="searchstats info-paging-info">Showing page edit history entries from <strong>359</strong> to <strong>458</strong> out of <strong>458</strong> entries total.<span class="info-count-selector"> (<span class="info-count-item"><a class="info-count-link" href="/moin/GuiProgramming?action=info&amp;max_count=5&amp;offset=0" rel="nofollow">5</a></span><span class="info-count-selector info-count-selector-divider"> | </span><span class="info-count-item"><a class="info-count-link" href="/moin/GuiProgramming?action=info&amp;max_count=10&amp;offset=0" rel="nofollow">10</a></span><span class="info-count-selector info-count-selector-divider"> | </span><span class="info-count-item"><a class="info-count-link" href="/moin/GuiProgramming?action=info&amp;max_count=25&amp;offset=0" rel="nofollow">25</a></span><span class="info-count-selector info-count-selector-divider"> | </span><span class="info-count-item"><a class="info-count-link" href="/moin/GuiProgramming?action=info&amp;max_count=50&amp;offset=0" rel="nofollow">50</a></span><span class="info-count-selector info-count-selector-divider"> | </span><span class="info-count-item info-cur-count">100</span><span class="info-count-selector info-count-selector-divider"> | </span><span class="info-count-item"><a class="info-count-link" href="/moin/GuiProgramming?action=info&amp;max_count=200&amp;offset=0" rel="nofollow">200</a></span> items per page)</span></p>
+     </div>
+     <div class="info-paging-nav info-paging-nav-top">
+      <div>
+       <table class="searchpages">
+        <tbody>
+         <tr> 
+          <td class="info-offset-item info-cur-offset">458</td> 
+          <td class="info-offset-item"><a class="info-offset-nav-link" href="/moin/GuiProgramming?action=info&amp;max_count=100&amp;offset=100" rel="nofollow">358</a></td> 
+          <td class="info-offset-item"><a class="info-offset-nav-link" href="/moin/GuiProgramming?action=info&amp;max_count=100&amp;offset=200" rel="nofollow">258</a></td> 
+          <td class="info-offset-item"><a class="info-offset-nav-link" href="/moin/GuiProgramming?action=info&amp;max_count=100&amp;offset=300" rel="nofollow">158</a></td> 
+          <td class="info-offset-item"><a class="info-offset-nav-link" href="/moin/GuiProgramming?action=info&amp;max_count=100&amp;offset=400" rel="nofollow">58</a></td> 
+          <td class="info-offset-item"><a class="info-offset-nav-link" href="/moin/GuiProgramming?action=info&amp;max_count=100&amp;offset=100" rel="nofollow">Older</a></td> 
+         </tr> 
+        </tbody>
+       </table>
+      </div>
+     </div>
+     <div id="page-history">
+      <input type="hidden" name="action" value="diff">
+      <div>
+       <div>
+        <table id="dbw.table">
+         <tbody>
+          <tr> 
+           <td class="hcolumn0"><strong>#</strong></td> 
+           <td class="hcolumn1"><strong>Date</strong></td> 
+           <td class="hcolumn2"><strong>Size</strong></td> 
+           <td class="hcolumn3"><strong><input type="submit" value="Diff"></strong></td> 
+           <td class="hcolumn4"><strong>Editor</strong></td> 
+           <td class="hcolumn5"><strong>Comment</strong></td> 
+           <td class="hcolumn6"><strong>Action</strong></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">458</td> 
+           <td class="column1">2022-05-11 11:21:39</td> 
+           <td class="column2">13986</td> 
+           <td class="column3"><input type="radio" name="rev1" value="458"><input type="radio" name="rev2" value="458" checked><a href="/moin/GuiProgramming?action=diff&amp;rev1=457&amp;rev2=458" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="PySimpleGUI @ 65.191.132.93[65.191.132.93]"><a href="/moin/PySimpleGUI" title="PySimpleGUI @ 65.191.132.93[65.191.132.93]">PySimpleGUI</a></span></td> 
+           <td class="column5">Updated latest version of PySimpleGUI to 4.60.0</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=458" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">457</td> 
+           <td class="column1">2022-04-07 14:29:42</td> 
+           <td class="column2">13986</td> 
+           <td class="column3"><input type="radio" name="rev1" value="457" checked><input type="radio" name="rev2" value="457"><a href="/moin/GuiProgramming?action=diff&amp;rev1=456&amp;rev2=457" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="PySimpleGUI @ 65.191.132.93[65.191.132.93]"><a href="/moin/PySimpleGUI" title="PySimpleGUI @ 65.191.132.93[65.191.132.93]">PySimpleGUI</a></span></td> 
+           <td class="column5">Latest release info</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=457" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">456</td> 
+           <td class="column1">2022-03-10 12:25:59</td> 
+           <td class="column2">13986</td> 
+           <td class="column3"><input type="radio" name="rev1" value="456"><input type="radio" name="rev2" value="456"><a href="/moin/GuiProgramming?action=diff&amp;rev1=455&amp;rev2=456" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="MalcolmSmith @ 2a00:23c5:3694:3800:50ff:446a:61e3:6fbe[2a00:23c5:3694:3800:50ff:446a:61e3:6fbe]"><a class="nonexistent" href="/moin/MalcolmSmith" title="MalcolmSmith @ 2a00:23c5:3694:3800:50ff:446a:61e3:6fbe[2a00:23c5:3694:3800:50ff:446a:61e3:6fbe]">MalcolmSmith</a></span></td> 
+           <td class="column5">Update Chaquopy</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=456" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">455</td> 
+           <td class="column1">2022-03-07 17:58:37</td> 
+           <td class="column2">13986</td> 
+           <td class="column3"><input type="radio" name="rev1" value="455"><input type="radio" name="rev2" value="455"><a href="/moin/GuiProgramming?action=diff&amp;rev1=454&amp;rev2=455" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="TimHuegerich @ 71.13.175.226[71.13.175.226]"><a class="nonexistent" href="/moin/TimHuegerich" title="TimHuegerich @ 71.13.175.226[71.13.175.226]">TimHuegerich</a></span></td> 
+           <td class="column5">Add Anvil</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=455" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">454</td> 
+           <td class="column1">2022-01-05 22:27:10</td> 
+           <td class="column2">13746</td> 
+           <td class="column3"><input type="radio" name="rev1" value="454"><input type="radio" name="rev2" value="454"><a href="/moin/GuiProgramming?action=diff&amp;rev1=453&amp;rev2=454" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="MikeTheWatchGuy @ 65.191.132.93[65.191.132.93]"><a class="nonexistent" href="/moin/MikeTheWatchGuy" title="MikeTheWatchGuy @ 65.191.132.93[65.191.132.93]">MikeTheWatchGuy</a></span></td> 
+           <td class="column5">&nbsp;</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=454" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">453</td> 
+           <td class="column1">2021-12-27 18:47:35</td> 
+           <td class="column2">13746</td> 
+           <td class="column3"><input type="radio" name="rev1" value="453"><input type="radio" name="rev2" value="453"><a href="/moin/GuiProgramming?action=diff&amp;rev1=452&amp;rev2=453" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="RobertArk @ 206.116.72.44[206.116.72.44]"><a class="nonexistent" href="/moin/RobertArk" title="RobertArk @ 206.116.72.44[206.116.72.44]">RobertArk</a></span></td> 
+           <td class="column5">&nbsp;</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=453" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">452</td> 
+           <td class="column1">2021-12-27 18:38:33</td> 
+           <td class="column2">13691</td> 
+           <td class="column3"><input type="radio" name="rev1" value="452"><input type="radio" name="rev2" value="452"><a href="/moin/GuiProgramming?action=diff&amp;rev1=451&amp;rev2=452" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="RobertArk @ 206.116.72.44[206.116.72.44]"><a class="nonexistent" href="/moin/RobertArk" title="RobertArk @ 206.116.72.44[206.116.72.44]">RobertArk</a></span></td> 
+           <td class="column5">&nbsp;</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=452" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">451</td> 
+           <td class="column1">2021-12-12 07:02:28</td> 
+           <td class="column2">13681</td> 
+           <td class="column3"><input type="radio" name="rev1" value="451"><input type="radio" name="rev2" value="451"><a href="/moin/GuiProgramming?action=diff&amp;rev1=450&amp;rev2=451" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="Epeios @ 88.137.186.75[88.137.186.75]"><a class="nonexistent" href="/moin/ClaudeSimon" title="Epeios @ 88.137.186.75[88.137.186.75]">ClaudeSimon</a></span></td> 
+           <td class="column5">&nbsp;</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=451" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">450</td> 
+           <td class="column1">2021-11-15 12:55:42</td> 
+           <td class="column2">13620</td> 
+           <td class="column3"><input type="radio" name="rev1" value="450"><input type="radio" name="rev2" value="450"><a href="/moin/GuiProgramming?action=diff&amp;rev1=449&amp;rev2=450" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="PySimpleGUI @ 65.191.132.93[65.191.132.93]"><a href="/moin/PySimpleGUI" title="PySimpleGUI @ 65.191.132.93[65.191.132.93]">PySimpleGUI</a></span></td> 
+           <td class="column5">&nbsp;</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=450" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">449</td> 
+           <td class="column1">2021-11-15 12:52:32</td> 
+           <td class="column2">13608</td> 
+           <td class="column3"><input type="radio" name="rev1" value="449"><input type="radio" name="rev2" value="449"><a href="/moin/GuiProgramming?action=diff&amp;rev1=448&amp;rev2=449" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="PySimpleGUI @ 65.191.132.93[65.191.132.93]"><a href="/moin/PySimpleGUI" title="PySimpleGUI @ 65.191.132.93[65.191.132.93]">PySimpleGUI</a></span></td> 
+           <td class="column5">&nbsp;</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=449" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">448</td> 
+           <td class="column1">2021-10-25 01:47:40</td> 
+           <td class="column2">13585</td> 
+           <td class="column3"><input type="radio" name="rev1" value="448"><input type="radio" name="rev2" value="448"><a href="/moin/GuiProgramming?action=diff&amp;rev1=447&amp;rev2=448" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="PySimpleGUI @ 65.191.132.93[65.191.132.93]"><a href="/moin/PySimpleGUI" title="PySimpleGUI @ 65.191.132.93[65.191.132.93]">PySimpleGUI</a></span></td> 
+           <td class="column5">&nbsp;</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=448" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">447</td> 
+           <td class="column1">2021-10-13 04:16:36</td> 
+           <td class="column2">13585</td> 
+           <td class="column3"><input type="radio" name="rev1" value="447"><input type="radio" name="rev2" value="447"><a href="/moin/GuiProgramming?action=diff&amp;rev1=446&amp;rev2=447" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="Preston @ 2601:2c3:57f:c6ec:cdf1:fed4:3156:935[2601:2c3:57f:c6ec:cdf1:fed4:3156:935]"><a class="nonexistent" href="/moin/Preston" title="Preston @ 2601:2c3:57f:c6ec:cdf1:fed4:3156:935[2601:2c3:57f:c6ec:cdf1:fed4:3156:935]">Preston</a></span></td> 
+           <td class="column5">Update version and doc link for Dear PyGUI</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=447" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">446</td> 
+           <td class="column1">2021-09-24 10:04:21</td> 
+           <td class="column2">13585</td> 
+           <td class="column3"><input type="radio" name="rev1" value="446"><input type="radio" name="rev2" value="446"><a href="/moin/GuiProgramming?action=diff&amp;rev1=445&amp;rev2=446" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="MalcolmSmith @ 2a00:23c5:3694:3800:1495:a269:5623:9932[2a00:23c5:3694:3800:1495:a269:5623:9932]"><a class="nonexistent" href="/moin/MalcolmSmith" title="MalcolmSmith @ 2a00:23c5:3694:3800:1495:a269:5623:9932[2a00:23c5:3694:3800:1495:a269:5623:9932]">MalcolmSmith</a></span></td> 
+           <td class="column5">Remove projects which have been inactive for over 10 years</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=446" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">445</td> 
+           <td class="column1">2021-09-24 09:51:19</td> 
+           <td class="column2">14339</td> 
+           <td class="column3"><input type="radio" name="rev1" value="445"><input type="radio" name="rev2" value="445"><a href="/moin/GuiProgramming?action=diff&amp;rev1=444&amp;rev2=445" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="MalcolmSmith @ 2a00:23c5:3694:3800:1495:a269:5623:9932[2a00:23c5:3694:3800:1495:a269:5623:9932]"><a class="nonexistent" href="/moin/MalcolmSmith" title="MalcolmSmith @ 2a00:23c5:3694:3800:1495:a269:5623:9932[2a00:23c5:3694:3800:1495:a269:5623:9932]">MalcolmSmith</a></span></td> 
+           <td class="column5">Update Chaquopy</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=445" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">444</td> 
+           <td class="column1">2021-09-04 03:31:04</td> 
+           <td class="column2">14338</td> 
+           <td class="column3"><input type="radio" name="rev1" value="444"><input type="radio" name="rev2" value="444"><a href="/moin/GuiProgramming?action=diff&amp;rev1=443&amp;rev2=444" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="HorstJENS @ 84.115.182.147[84.115.182.147]"><a class="nonexistent" href="/moin/HorstJENS" title="HorstJENS @ 84.115.182.147[84.115.182.147]">HorstJENS</a></span></td> 
+           <td class="column5">added link to pysimplegui wiki site</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=444" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">443</td> 
+           <td class="column1">2021-08-24 16:00:56</td> 
+           <td class="column2">14321</td> 
+           <td class="column3"><input type="radio" name="rev1" value="443"><input type="radio" name="rev2" value="443"><a href="/moin/GuiProgramming?action=diff&amp;rev1=442&amp;rev2=443" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="PySimpleGUI @ 65.191.132.93[65.191.132.93]"><a href="/moin/PySimpleGUI" title="PySimpleGUI @ 65.191.132.93[65.191.132.93]">PySimpleGUI</a></span></td> 
+           <td class="column5">Updated latest release version and date.</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=443" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">442</td> 
+           <td class="column1">2021-07-09 13:26:51</td> 
+           <td class="column2">14240</td> 
+           <td class="column3"><input type="radio" name="rev1" value="442"><input type="radio" name="rev2" value="442"><a href="/moin/GuiProgramming?action=diff&amp;rev1=441&amp;rev2=442" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="Preston @ 67-200-144-138.static.logixcom.net[67.200.144.138]"><a class="nonexistent" href="/moin/Preston" title="Preston @ 67-200-144-138.static.logixcom.net[67.200.144.138]">Preston</a></span></td> 
+           <td class="column5">&nbsp;</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=442" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">441</td> 
+           <td class="column1">2021-06-03 14:30:36</td> 
+           <td class="column2">14241</td> 
+           <td class="column3"><input type="radio" name="rev1" value="441"><input type="radio" name="rev2" value="441"><a href="/moin/GuiProgramming?action=diff&amp;rev1=440&amp;rev2=441" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="Epeios @ 75.186.137.88.rev.sfr.net[88.137.186.75]"><a class="nonexistent" href="/moin/ClaudeSimon" title="Epeios @ 75.186.137.88.rev.sfr.net[88.137.186.75]">ClaudeSimon</a></span></td> 
+           <td class="column5">&nbsp;</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=441" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">440</td> 
+           <td class="column1">2021-05-25 13:26:03</td> 
+           <td class="column2">14285</td> 
+           <td class="column3"><input type="radio" name="rev1" value="440"><input type="radio" name="rev2" value="440"><a href="/moin/GuiProgramming?action=diff&amp;rev1=439&amp;rev2=440" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="PySimpleGUI @ 065-191-132-093.inf.spectrum.com[65.191.132.93]"><a href="/moin/PySimpleGUI" title="PySimpleGUI @ 065-191-132-093.inf.spectrum.com[65.191.132.93]">PySimpleGUI</a></span></td> 
+           <td class="column5">Latest PySimpleGUI release info</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=440" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">439</td> 
+           <td class="column1">2021-03-25 12:36:31</td> 
+           <td class="column2">14277</td> 
+           <td class="column3"><input type="radio" name="rev1" value="439"><input type="radio" name="rev2" value="439"><a href="/moin/GuiProgramming?action=diff&amp;rev1=438&amp;rev2=439" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="MikeTheWatchGuy @ 065-191-132-093.inf.spectrum.com[65.191.132.93]"><a class="nonexistent" href="/moin/MikeTheWatchGuy" title="MikeTheWatchGuy @ 065-191-132-093.inf.spectrum.com[65.191.132.93]">MikeTheWatchGuy</a></span></td> 
+           <td class="column5">Latest release info</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=439" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">438</td> 
+           <td class="column1">2021-03-07 13:05:05</td> 
+           <td class="column2">14247</td> 
+           <td class="column3"><input type="radio" name="rev1" value="438"><input type="radio" name="rev2" value="438"><a href="/moin/GuiProgramming?action=diff&amp;rev1=437&amp;rev2=438" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="MalcolmSmith @ host86-169-174-115.range86-169.btcentralplus.com[86.169.174.115]"><a class="nonexistent" href="/moin/MalcolmSmith" title="MalcolmSmith @ host86-169-174-115.range86-169.btcentralplus.com[86.169.174.115]">MalcolmSmith</a></span></td> 
+           <td class="column5">Update Chaquopy</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=438" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">437</td> 
+           <td class="column1">2021-02-24 22:29:36</td> 
+           <td class="column2">14249</td> 
+           <td class="column3"><input type="radio" name="rev1" value="437"><input type="radio" name="rev2" value="437"><a href="/moin/GuiProgramming?action=diff&amp;rev1=436&amp;rev2=437" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="Preston @ 67-200-144-138.static.logixcom.net[67.200.144.138]"><a class="nonexistent" href="/moin/Preston" title="Preston @ 67-200-144-138.static.logixcom.net[67.200.144.138]">Preston</a></span></td> 
+           <td class="column5">&nbsp;</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=437" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">436</td> 
+           <td class="column1">2021-02-24 22:28:36</td> 
+           <td class="column2">14249</td> 
+           <td class="column3"><input type="radio" name="rev1" value="436"><input type="radio" name="rev2" value="436"><a href="/moin/GuiProgramming?action=diff&amp;rev1=435&amp;rev2=436" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="Preston @ 67-200-144-138.static.logixcom.net[67.200.144.138]"><a class="nonexistent" href="/moin/Preston" title="Preston @ 67-200-144-138.static.logixcom.net[67.200.144.138]">Preston</a></span></td> 
+           <td class="column5">&nbsp;</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=436" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">435</td> 
+           <td class="column1">2021-02-24 22:27:14</td> 
+           <td class="column2">14249</td> 
+           <td class="column3"><input type="radio" name="rev1" value="435"><input type="radio" name="rev2" value="435"><a href="/moin/GuiProgramming?action=diff&amp;rev1=434&amp;rev2=435" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="Preston @ 67-200-144-138.static.logixcom.net[67.200.144.138]"><a class="nonexistent" href="/moin/Preston" title="Preston @ 67-200-144-138.static.logixcom.net[67.200.144.138]">Preston</a></span></td> 
+           <td class="column5">&nbsp;</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=435" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">434</td> 
+           <td class="column1">2021-02-11 14:51:22</td> 
+           <td class="column2">14233</td> 
+           <td class="column3"><input type="radio" name="rev1" value="434"><input type="radio" name="rev2" value="434"><a href="/moin/GuiProgramming?action=diff&amp;rev1=433&amp;rev2=434" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="Preston @ 67-200-144-138.static.logixcom.net[67.200.144.138]"><a class="nonexistent" href="/moin/Preston" title="Preston @ 67-200-144-138.static.logixcom.net[67.200.144.138]">Preston</a></span></td> 
+           <td class="column5">&nbsp;</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=434" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">433</td> 
+           <td class="column1">2021-01-28 07:41:01</td> 
+           <td class="column2">14233</td> 
+           <td class="column3"><input type="radio" name="rev1" value="433"><input type="radio" name="rev2" value="433"><a href="/moin/GuiProgramming?action=diff&amp;rev1=432&amp;rev2=433" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="Epeios @ 75.186.137.88.rev.sfr.net[88.137.186.75]"><a class="nonexistent" href="/moin/ClaudeSimon" title="Epeios @ 75.186.137.88.rev.sfr.net[88.137.186.75]">ClaudeSimon</a></span></td> 
+           <td class="column5">Adding 'JustPy'</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=433" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">432</td> 
+           <td class="column1">2021-01-17 16:25:50</td> 
+           <td class="column2">14060</td> 
+           <td class="column3"><input type="radio" name="rev1" value="432"><input type="radio" name="rev2" value="432"><a href="/moin/GuiProgramming?action=diff&amp;rev1=431&amp;rev2=432" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="PySimpleGUI @ cpe-75-191-143-158.triad.res.rr.com[75.191.143.158]"><a href="/moin/PySimpleGUI" title="PySimpleGUI @ cpe-75-191-143-158.triad.res.rr.com[75.191.143.158]">PySimpleGUI</a></span></td> 
+           <td class="column5">Updated latest release date.</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=432" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">431</td> 
+           <td class="column1">2021-01-03 23:36:50</td> 
+           <td class="column2">14060</td> 
+           <td class="column3"><input type="radio" name="rev1" value="431"><input type="radio" name="rev2" value="431"><a href="/moin/GuiProgramming?action=diff&amp;rev1=430&amp;rev2=431" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="CB @ p5b25e608.dip0.t-ipconnect.de[91.37.230.8]"><a class="nonexistent" href="/moin/ChristofB%C3%B6ckler" title="CB @ p5b25e608.dip0.t-ipconnect.de[91.37.230.8]">ChristofBöckler</a></span></td> 
+           <td class="column5">New release of wxGlade, clarified version recommendations</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=431" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">430</td> 
+           <td class="column1">2021-01-03 23:29:08</td> 
+           <td class="column2">14032</td> 
+           <td class="column3"><input type="radio" name="rev1" value="430"><input type="radio" name="rev2" value="430"><a href="/moin/GuiProgramming?action=diff&amp;rev1=429&amp;rev2=430" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="CB @ p5b25e608.dip0.t-ipconnect.de[91.37.230.8]"><a class="nonexistent" href="/moin/ChristofB%C3%B6ckler" title="CB @ p5b25e608.dip0.t-ipconnect.de[91.37.230.8]">ChristofBöckler</a></span></td> 
+           <td class="column5">New release of PAGE, updated description from the project’s homepage</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=430" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">429</td> 
+           <td class="column1">2021-01-03 23:25:50</td> 
+           <td class="column2">13882</td> 
+           <td class="column3"><input type="radio" name="rev1" value="429"><input type="radio" name="rev2" value="429"><a href="/moin/GuiProgramming?action=diff&amp;rev1=428&amp;rev2=429" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="CB @ p5b25e608.dip0.t-ipconnect.de[91.37.230.8]"><a class="nonexistent" href="/moin/ChristofB%C3%B6ckler" title="CB @ p5b25e608.dip0.t-ipconnect.de[91.37.230.8]">ChristofBöckler</a></span></td> 
+           <td class="column5">Latest release of Nodebox</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=429" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">428</td> 
+           <td class="column1">2021-01-03 23:23:07</td> 
+           <td class="column2">13882</td> 
+           <td class="column3"><input type="radio" name="rev1" value="428"><input type="radio" name="rev2" value="428"><a href="/moin/GuiProgramming?action=diff&amp;rev1=427&amp;rev2=428" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="CB @ p5b25e608.dip0.t-ipconnect.de[91.37.230.8]"><a class="nonexistent" href="/moin/ChristofB%C3%B6ckler" title="CB @ p5b25e608.dip0.t-ipconnect.de[91.37.230.8]">ChristofBöckler</a></span></td> 
+           <td class="column5">Glade is used together with PyGObject nowadays</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=428" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">427</td> 
+           <td class="column1">2021-01-03 23:20:29</td> 
+           <td class="column2">13878</td> 
+           <td class="column3"><input type="radio" name="rev1" value="427"><input type="radio" name="rev2" value="427"><a href="/moin/GuiProgramming?action=diff&amp;rev1=426&amp;rev2=427" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="CB @ p5b25e608.dip0.t-ipconnect.de[91.37.230.8]"><a class="nonexistent" href="/moin/ChristofB%C3%B6ckler" title="CB @ p5b25e608.dip0.t-ipconnect.de[91.37.230.8]">ChristofBöckler</a></span></td> 
+           <td class="column5">Latest release of Glade</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=427" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">426</td> 
+           <td class="column1">2021-01-03 23:17:05</td> 
+           <td class="column2">13883</td> 
+           <td class="column3"><input type="radio" name="rev1" value="426"><input type="radio" name="rev2" value="426"><a href="/moin/GuiProgramming?action=diff&amp;rev1=425&amp;rev2=426" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="CB @ p5b25e608.dip0.t-ipconnect.de[91.37.230.8]"><a class="nonexistent" href="/moin/ChristofB%C3%B6ckler" title="CB @ p5b25e608.dip0.t-ipconnect.de[91.37.230.8]">ChristofBöckler</a></span></td> 
+           <td class="column5">Latest release of eric; updated description</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=426" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">425</td> 
+           <td class="column1">2021-01-03 23:10:58</td> 
+           <td class="column2">13842</td> 
+           <td class="column3"><input type="radio" name="rev1" value="425"><input type="radio" name="rev2" value="425"><a href="/moin/GuiProgramming?action=diff&amp;rev1=424&amp;rev2=425" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="CB @ p5b25e608.dip0.t-ipconnect.de[91.37.230.8]"><a class="nonexistent" href="/moin/ChristofB%C3%B6ckler" title="CB @ p5b25e608.dip0.t-ipconnect.de[91.37.230.8]">ChristofBöckler</a></span></td> 
+           <td class="column5">New release of wxPython</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=425" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">424</td> 
+           <td class="column1">2021-01-03 23:03:21</td> 
+           <td class="column2">13841</td> 
+           <td class="column3"><input type="radio" name="rev1" value="424"><input type="radio" name="rev2" value="424"><a href="/moin/GuiProgramming?action=diff&amp;rev1=423&amp;rev2=424" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="CB @ p5b25e608.dip0.t-ipconnect.de[91.37.230.8]"><a class="nonexistent" href="/moin/ChristofB%C3%B6ckler" title="CB @ p5b25e608.dip0.t-ipconnect.de[91.37.230.8]">ChristofBöckler</a></span></td> 
+           <td class="column5">New release of PyGObject, unified spelling of GTK, removed obsolete notes on PyGTK</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=424" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">423</td> 
+           <td class="column1">2021-01-03 22:45:39</td> 
+           <td class="column2">14065</td> 
+           <td class="column3"><input type="radio" name="rev1" value="423"><input type="radio" name="rev2" value="423"><a href="/moin/GuiProgramming?action=diff&amp;rev1=422&amp;rev2=423" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="CB @ p5b25e608.dip0.t-ipconnect.de[91.37.230.8]"><a class="nonexistent" href="/moin/ChristofB%C3%B6ckler" title="CB @ p5b25e608.dip0.t-ipconnect.de[91.37.230.8]">ChristofBöckler</a></span></td> 
+           <td class="column5">New release of pyglet</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=423" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">422</td> 
+           <td class="column1">2021-01-03 22:41:56</td> 
+           <td class="column2">14064</td> 
+           <td class="column3"><input type="radio" name="rev1" value="422"><input type="radio" name="rev2" value="422"><a href="/moin/GuiProgramming?action=diff&amp;rev1=421&amp;rev2=422" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="CB @ p5b25e608.dip0.t-ipconnect.de[91.37.230.8]"><a class="nonexistent" href="/moin/ChristofB%C3%B6ckler" title="CB @ p5b25e608.dip0.t-ipconnect.de[91.37.230.8]">ChristofBöckler</a></span></td> 
+           <td class="column5">Pygame 2 came out, better description taken from the About page</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=422" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">421</td> 
+           <td class="column1">2021-01-03 22:38:36</td> 
+           <td class="column2">14083</td> 
+           <td class="column3"><input type="radio" name="rev1" value="421"><input type="radio" name="rev2" value="421"><a href="/moin/GuiProgramming?action=diff&amp;rev1=420&amp;rev2=421" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="CB @ p5b25e608.dip0.t-ipconnect.de[91.37.230.8]"><a class="nonexistent" href="/moin/ChristofB%C3%B6ckler" title="CB @ p5b25e608.dip0.t-ipconnect.de[91.37.230.8]">ChristofBöckler</a></span></td> 
+           <td class="column5">New release of pyFLTK</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=421" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">420</td> 
+           <td class="column1">2021-01-03 22:33:59</td> 
+           <td class="column2">14082</td> 
+           <td class="column3"><input type="radio" name="rev1" value="420"><input type="radio" name="rev2" value="420"><a href="/moin/GuiProgramming?action=diff&amp;rev1=419&amp;rev2=420" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="CB @ p5b25e608.dip0.t-ipconnect.de[91.37.230.8]"><a class="nonexistent" href="/moin/ChristofB%C3%B6ckler" title="CB @ p5b25e608.dip0.t-ipconnect.de[91.37.230.8]">ChristofBöckler</a></span></td> 
+           <td class="column5">New release of Kivy</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=420" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">419</td> 
+           <td class="column1">2021-01-03 22:27:15</td> 
+           <td class="column2">14082</td> 
+           <td class="column3"><input type="radio" name="rev1" value="419"><input type="radio" name="rev2" value="419"><a href="/moin/GuiProgramming?action=diff&amp;rev1=418&amp;rev2=419" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="CB @ p5b25e608.dip0.t-ipconnect.de[91.37.230.8]"><a class="nonexistent" href="/moin/ChristofB%C3%B6ckler" title="CB @ p5b25e608.dip0.t-ipconnect.de[91.37.230.8]">ChristofBöckler</a></span></td> 
+           <td class="column5">New release of Jython</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=419" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">418</td> 
+           <td class="column1">2021-01-03 22:24:07</td> 
+           <td class="column2">14132</td> 
+           <td class="column3"><input type="radio" name="rev1" value="418"><input type="radio" name="rev2" value="418"><a href="/moin/GuiProgramming?action=diff&amp;rev1=417&amp;rev2=418" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="CB @ p5b25e608.dip0.t-ipconnect.de[91.37.230.8]"><a class="nonexistent" href="/moin/ChristofB%C3%B6ckler" title="CB @ p5b25e608.dip0.t-ipconnect.de[91.37.230.8]">ChristofBöckler</a></span></td> 
+           <td class="column5">New release of guizero</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=418" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">417</td> 
+           <td class="column1">2020-12-30 17:29:26</td> 
+           <td class="column2">14132</td> 
+           <td class="column3"><input type="radio" name="rev1" value="417"><input type="radio" name="rev2" value="417"><a href="/moin/GuiProgramming?action=diff&amp;rev1=416&amp;rev2=417" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="Preston @ 67-200-144-138.static.logixcom.net[67.200.144.138]"><a class="nonexistent" href="/moin/Preston" title="Preston @ 67-200-144-138.static.logixcom.net[67.200.144.138]">Preston</a></span></td> 
+           <td class="column5">&nbsp;</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=417" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">416</td> 
+           <td class="column1">2020-12-30 17:17:50</td> 
+           <td class="column2">14135</td> 
+           <td class="column3"><input type="radio" name="rev1" value="416"><input type="radio" name="rev2" value="416"><a href="/moin/GuiProgramming?action=diff&amp;rev1=415&amp;rev2=416" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="Preston @ 67-200-144-138.static.logixcom.net[67.200.144.138]"><a class="nonexistent" href="/moin/Preston" title="Preston @ 67-200-144-138.static.logixcom.net[67.200.144.138]">Preston</a></span></td> 
+           <td class="column5">&nbsp;</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=416" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">415</td> 
+           <td class="column1">2020-12-29 04:20:04</td> 
+           <td class="column2">14134</td> 
+           <td class="column3"><input type="radio" name="rev1" value="415"><input type="radio" name="rev2" value="415"><a href="/moin/GuiProgramming?action=diff&amp;rev1=414&amp;rev2=415" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="Preston @ c-73-155-199-167.hsd1.tx.comcast.net[73.155.199.167]"><a class="nonexistent" href="/moin/Preston" title="Preston @ c-73-155-199-167.hsd1.tx.comcast.net[73.155.199.167]">Preston</a></span></td> 
+           <td class="column5">&nbsp;</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=415" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">414</td> 
+           <td class="column1">2020-12-29 04:13:56</td> 
+           <td class="column2">14130</td> 
+           <td class="column3"><input type="radio" name="rev1" value="414"><input type="radio" name="rev2" value="414"><a href="/moin/GuiProgramming?action=diff&amp;rev1=413&amp;rev2=414" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="Preston @ c-73-155-199-167.hsd1.tx.comcast.net[73.155.199.167]"><a class="nonexistent" href="/moin/Preston" title="Preston @ c-73-155-199-167.hsd1.tx.comcast.net[73.155.199.167]">Preston</a></span></td> 
+           <td class="column5">&nbsp;</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=414" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">413</td> 
+           <td class="column1">2020-12-09 13:46:46</td> 
+           <td class="column2">14130</td> 
+           <td class="column3"><input type="radio" name="rev1" value="413"><input type="radio" name="rev2" value="413"><a href="/moin/GuiProgramming?action=diff&amp;rev1=412&amp;rev2=413" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="PySimpleGUI @ cpe-75-191-143-158.triad.res.rr.com[75.191.143.158]"><a href="/moin/PySimpleGUI" title="PySimpleGUI @ cpe-75-191-143-158.triad.res.rr.com[75.191.143.158]">PySimpleGUI</a></span></td> 
+           <td class="column5">Updated latest release date.</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=413" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">412</td> 
+           <td class="column1">2020-11-10 01:50:36</td> 
+           <td class="column2">14117</td> 
+           <td class="column3"><input type="radio" name="rev1" value="412"><input type="radio" name="rev2" value="412"><a href="/moin/GuiProgramming?action=diff&amp;rev1=411&amp;rev2=412" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="Preston @ c-73-155-199-167.hsd1.tx.comcast.net[73.155.199.167]"><a class="nonexistent" href="/moin/Preston" title="Preston @ c-73-155-199-167.hsd1.tx.comcast.net[73.155.199.167]">Preston</a></span></td> 
+           <td class="column5">&nbsp;</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=412" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">411</td> 
+           <td class="column1">2020-11-10 01:47:32</td> 
+           <td class="column2">14117</td> 
+           <td class="column3"><input type="radio" name="rev1" value="411"><input type="radio" name="rev2" value="411"><a href="/moin/GuiProgramming?action=diff&amp;rev1=410&amp;rev2=411" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="Preston @ c-73-155-199-167.hsd1.tx.comcast.net[73.155.199.167]"><a class="nonexistent" href="/moin/Preston" title="Preston @ c-73-155-199-167.hsd1.tx.comcast.net[73.155.199.167]">Preston</a></span></td> 
+           <td class="column5">&nbsp;</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=411" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">410</td> 
+           <td class="column1">2020-11-10 01:44:00</td> 
+           <td class="column2">14114</td> 
+           <td class="column3"><input type="radio" name="rev1" value="410"><input type="radio" name="rev2" value="410"><a href="/moin/GuiProgramming?action=diff&amp;rev1=409&amp;rev2=410" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="Preston @ c-73-155-199-167.hsd1.tx.comcast.net[73.155.199.167]"><a class="nonexistent" href="/moin/Preston" title="Preston @ c-73-155-199-167.hsd1.tx.comcast.net[73.155.199.167]">Preston</a></span></td> 
+           <td class="column5">&nbsp;</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=410" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">409</td> 
+           <td class="column1">2020-10-21 01:36:53</td> 
+           <td class="column2">14115</td> 
+           <td class="column3"><input type="radio" name="rev1" value="409"><input type="radio" name="rev2" value="409"><a href="/moin/GuiProgramming?action=diff&amp;rev1=408&amp;rev2=409" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="Alejandro Autalán @ 201-190-231-55.supercanal.com.ar[201.190.231.55]"><a class="nonexistent" href="/moin/Alejandro%20Autal%C3%A1n" title="Alejandro Autalán @ 201-190-231-55.supercanal.com.ar[201.190.231.55]">Alejandro Autalán</a></span></td> 
+           <td class="column5">&nbsp;</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=409" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">408</td> 
+           <td class="column1">2020-10-13 01:36:15</td> 
+           <td class="column2">14114</td> 
+           <td class="column3"><input type="radio" name="rev1" value="408"><input type="radio" name="rev2" value="408"><a href="/moin/GuiProgramming?action=diff&amp;rev1=407&amp;rev2=408" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="Preston @ c-73-232-65-207.hsd1.tx.comcast.net[73.232.65.207]"><a class="nonexistent" href="/moin/Preston" title="Preston @ c-73-232-65-207.hsd1.tx.comcast.net[73.232.65.207]">Preston</a></span></td> 
+           <td class="column5">&nbsp;</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=408" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">407</td> 
+           <td class="column1">2020-09-24 00:16:22</td> 
+           <td class="column2">14112</td> 
+           <td class="column3"><input type="radio" name="rev1" value="407"><input type="radio" name="rev2" value="407"><a href="/moin/GuiProgramming?action=diff&amp;rev1=406&amp;rev2=407" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="Preston @ c-73-232-65-207.hsd1.tx.comcast.net[73.232.65.207]"><a class="nonexistent" href="/moin/Preston" title="Preston @ c-73-232-65-207.hsd1.tx.comcast.net[73.232.65.207]">Preston</a></span></td> 
+           <td class="column5">&nbsp;</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=407" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">406</td> 
+           <td class="column1">2020-09-17 14:31:37</td> 
+           <td class="column2">14109</td> 
+           <td class="column3"><input type="radio" name="rev1" value="406"><input type="radio" name="rev2" value="406"><a href="/moin/GuiProgramming?action=diff&amp;rev1=405&amp;rev2=406" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="DavidBoddie @ host-37-191-188-128.lynet.no[37.191.188.128]"><a href="/moin/DavidBoddie" title="DavidBoddie @ host-37-191-188-128.lynet.no[37.191.188.128]">DavidBoddie</a></span></td> 
+           <td class="column5">&nbsp;</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=406" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">405</td> 
+           <td class="column1">2020-09-06 12:40:23</td> 
+           <td class="column2">14109</td> 
+           <td class="column3"><input type="radio" name="rev1" value="405"><input type="radio" name="rev2" value="405"><a href="/moin/GuiProgramming?action=diff&amp;rev1=404&amp;rev2=405" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="MalcolmSmith @ host86-145-145-127.range86-145.btcentralplus.com[86.145.145.127]"><a class="nonexistent" href="/moin/MalcolmSmith" title="MalcolmSmith @ host86-145-145-127.range86-145.btcentralplus.com[86.145.145.127]">MalcolmSmith</a></span></td> 
+           <td class="column5">Remove link to duplicate page</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=405" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">404</td> 
+           <td class="column1">2020-09-06 12:32:22</td> 
+           <td class="column2">14248</td> 
+           <td class="column3"><input type="radio" name="rev1" value="404"><input type="radio" name="rev2" value="404"><a href="/moin/GuiProgramming?action=diff&amp;rev1=403&amp;rev2=404" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="MalcolmSmith @ host86-145-145-127.range86-145.btcentralplus.com[86.145.145.127]"><a class="nonexistent" href="/moin/MalcolmSmith" title="MalcolmSmith @ host86-145-145-127.range86-145.btcentralplus.com[86.145.145.127]">MalcolmSmith</a></span></td> 
+           <td class="column5">Remove projects which have been inactive for over 10 years</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=404" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">403</td> 
+           <td class="column1">2020-09-06 11:58:03</td> 
+           <td class="column2">17576</td> 
+           <td class="column3"><input type="radio" name="rev1" value="403"><input type="radio" name="rev2" value="403"><a href="/moin/GuiProgramming?action=diff&amp;rev1=402&amp;rev2=403" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="MalcolmSmith @ host86-145-145-127.range86-145.btcentralplus.com[86.145.145.127]"><a class="nonexistent" href="/moin/MalcolmSmith" title="MalcolmSmith @ host86-145-145-127.range86-145.btcentralplus.com[86.145.145.127]">MalcolmSmith</a></span></td> 
+           <td class="column5">Update Chaquopy</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=403" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">402</td> 
+           <td class="column1">2020-08-28 16:18:16</td> 
+           <td class="column2">17576</td> 
+           <td class="column3"><input type="radio" name="rev1" value="402"><input type="radio" name="rev2" value="402"><a href="/moin/GuiProgramming?action=diff&amp;rev1=401&amp;rev2=402" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="Epeios @ 75.186.137.88.rev.sfr.net[88.137.186.75]"><a class="nonexistent" href="/moin/ClaudeSimon" title="Epeios @ 75.186.137.88.rev.sfr.net[88.137.186.75]">ClaudeSimon</a></span></td> 
+           <td class="column5">Atlas toolkit - new version.</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=402" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">401</td> 
+           <td class="column1">2020-08-28 04:54:16</td> 
+           <td class="column2">17518</td> 
+           <td class="column3"><input type="radio" name="rev1" value="401"><input type="radio" name="rev2" value="401"><a href="/moin/GuiProgramming?action=diff&amp;rev1=400&amp;rev2=401" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="Preston @ c-73-232-65-207.hsd1.tx.comcast.net[73.232.65.207]"><a class="nonexistent" href="/moin/Preston" title="Preston @ c-73-232-65-207.hsd1.tx.comcast.net[73.232.65.207]">Preston</a></span></td> 
+           <td class="column5">&nbsp;</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=401" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">400</td> 
+           <td class="column1">2020-08-28 04:47:29</td> 
+           <td class="column2">17518</td> 
+           <td class="column3"><input type="radio" name="rev1" value="400"><input type="radio" name="rev2" value="400"><a href="/moin/GuiProgramming?action=diff&amp;rev1=399&amp;rev2=400" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="Preston @ c-73-232-65-207.hsd1.tx.comcast.net[73.232.65.207]"><a class="nonexistent" href="/moin/Preston" title="Preston @ c-73-232-65-207.hsd1.tx.comcast.net[73.232.65.207]">Preston</a></span></td> 
+           <td class="column5">&nbsp;</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=400" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">399</td> 
+           <td class="column1">2020-07-13 18:56:29</td> 
+           <td class="column2">17298</td> 
+           <td class="column3"><input type="radio" name="rev1" value="399"><input type="radio" name="rev2" value="399"><a href="/moin/GuiProgramming?action=diff&amp;rev1=398&amp;rev2=399" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="AlfioPuglisi @ host-79-30-147-3.retail.telecomitalia.it[79.30.147.3]"><a class="nonexistent" href="/moin/AlfioPuglisi" title="AlfioPuglisi @ host-79-30-147-3.retail.telecomitalia.it[79.30.147.3]">AlfioPuglisi</a></span></td> 
+           <td class="column5">Added guietta framework</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=399" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">398</td> 
+           <td class="column1">2020-07-07 09:15:34</td> 
+           <td class="column2">17132</td> 
+           <td class="column3"><input type="radio" name="rev1" value="398"><input type="radio" name="rev2" value="398"><a href="/moin/GuiProgramming?action=diff&amp;rev1=397&amp;rev2=398" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="Cristian @ 115-0-142-46.pool.kielnet.net[46.142.0.115]"><a class="nonexistent" href="/moin/Cristian" title="Cristian @ 115-0-142-46.pool.kielnet.net[46.142.0.115]">Cristian</a></span></td> 
+           <td class="column5">&nbsp;</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=398" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">397</td> 
+           <td class="column1">2020-06-17 11:09:20</td> 
+           <td class="column2">17138</td> 
+           <td class="column3"><input type="radio" name="rev1" value="397"><input type="radio" name="rev2" value="397"><a href="/moin/GuiProgramming?action=diff&amp;rev1=396&amp;rev2=397" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="Epeios @ shm67-7-78-228-96-47.fbx.proxad.net[78.228.96.47]"><a class="nonexistent" href="/moin/ClaudeSimon" title="Epeios @ shm67-7-78-228-96-47.fbx.proxad.net[78.228.96.47]">ClaudeSimon</a></span></td> 
+           <td class="column5">Updating Atlas toolkit description.</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=397" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">396</td> 
+           <td class="column1">2020-06-14 10:52:18</td> 
+           <td class="column2">17122</td> 
+           <td class="column3"><input type="radio" name="rev1" value="396"><input type="radio" name="rev2" value="396"><a href="/moin/GuiProgramming?action=diff&amp;rev1=395&amp;rev2=396" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="PySimpleGUI @ cpe-75-191-143-158.triad.res.rr.com[75.191.143.158]"><a href="/moin/PySimpleGUI" title="PySimpleGUI @ cpe-75-191-143-158.triad.res.rr.com[75.191.143.158]">PySimpleGUI</a></span></td> 
+           <td class="column5">Updated to latest PySimpleGUI version. Added that there are 200 example programs toio.</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=396" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">395</td> 
+           <td class="column1">2020-06-13 14:19:42</td> 
+           <td class="column2">17073</td> 
+           <td class="column3"><input type="radio" name="rev1" value="395"><input type="radio" name="rev2" value="395"><a href="/moin/GuiProgramming?action=diff&amp;rev1=394&amp;rev2=395" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="Epeios @ shm67-7-78-228-96-47.fbx.proxad.net[78.228.96.47]"><a class="nonexistent" href="/moin/ClaudeSimon" title="Epeios @ shm67-7-78-228-96-47.fbx.proxad.net[78.228.96.47]">ClaudeSimon</a></span></td> 
+           <td class="column5">Updating version of the Atlas toolkit.</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=395" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">394</td> 
+           <td class="column1">2020-03-05 17:12:23</td> 
+           <td class="column2">17056</td> 
+           <td class="column3"><input type="radio" name="rev1" value="394"><input type="radio" name="rev2" value="394"><a href="/moin/GuiProgramming?action=diff&amp;rev1=393&amp;rev2=394" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="MalcolmSmith @ host86-168-135-12.range86-168.btcentralplus.com[86.168.135.12]"><a class="nonexistent" href="/moin/MalcolmSmith" title="MalcolmSmith @ host86-168-135-12.range86-168.btcentralplus.com[86.168.135.12]">MalcolmSmith</a></span></td> 
+           <td class="column5">Update Chaquopy</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=394" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">393</td> 
+           <td class="column1">2020-02-23 22:10:46</td> 
+           <td class="column2">17056</td> 
+           <td class="column3"><input type="radio" name="rev1" value="393"><input type="radio" name="rev2" value="393"><a href="/moin/GuiProgramming?action=diff&amp;rev1=392&amp;rev2=393" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="PySimpleGUI @ 162.210.192.154[162.210.192.154]"><a href="/moin/PySimpleGUI" title="PySimpleGUI @ 162.210.192.154[162.210.192.154]">PySimpleGUI</a></span></td> 
+           <td class="column5">Updated to latest release number and date</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=393" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">392</td> 
+           <td class="column1">2019-12-11 15:36:23</td> 
+           <td class="column2">17054</td> 
+           <td class="column3"><input type="radio" name="rev1" value="392"><input type="radio" name="rev2" value="392"><a href="/moin/GuiProgramming?action=diff&amp;rev1=391&amp;rev2=392" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="Scott Cooper @ ec2-52-27-40-219.us-west-2.compute.amazonaws.com[52.27.40.219]"><a class="nonexistent" href="/moin/Scott%20Cooper" title="Scott Cooper @ ec2-52-27-40-219.us-west-2.compute.amazonaws.com[52.27.40.219]">Scott Cooper</a></span></td> 
+           <td class="column5">Version and date changes</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=392" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">391</td> 
+           <td class="column1">2019-12-09 17:22:59</td> 
+           <td class="column2">17092</td> 
+           <td class="column3"><input type="radio" name="rev1" value="391"><input type="radio" name="rev2" value="391"><a href="/moin/GuiProgramming?action=diff&amp;rev1=390&amp;rev2=391" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="PySimpleGUI @ 162.210.192.154[162.210.192.154]"><a href="/moin/PySimpleGUI" title="PySimpleGUI @ 162.210.192.154[162.210.192.154]">PySimpleGUI</a></span></td> 
+           <td class="column5">Updated PySimpleGUI version, last release date, list of platforms, newest features</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=391" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">390</td> 
+           <td class="column1">2019-12-04 23:45:02</td> 
+           <td class="column2">16994</td> 
+           <td class="column3"><input type="radio" name="rev1" value="390"><input type="radio" name="rev2" value="390"><a href="/moin/GuiProgramming?action=diff&amp;rev1=389&amp;rev2=390" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="Scott Cooper @ ec2-52-27-40-219.us-west-2.compute.amazonaws.com[52.27.40.219]"><a class="nonexistent" href="/moin/Scott%20Cooper" title="Scott Cooper @ ec2-52-27-40-219.us-west-2.compute.amazonaws.com[52.27.40.219]">Scott Cooper</a></span></td> 
+           <td class="column5">Version numbers and update dates</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=390" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">389</td> 
+           <td class="column1">2019-09-07 12:17:35</td> 
+           <td class="column2">17001</td> 
+           <td class="column3"><input type="radio" name="rev1" value="389"><input type="radio" name="rev2" value="389"><a href="/moin/GuiProgramming?action=diff&amp;rev1=388&amp;rev2=389" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="DavidBoddie @ host-37-191-180-161.lynet.no[37.191.180.161]"><a href="/moin/DavidBoddie" title="DavidBoddie @ host-37-191-180-161.lynet.no[37.191.180.161]">DavidBoddie</a></span></td> 
+           <td class="column5">Removed duplicate category footers.</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=389" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">388</td> 
+           <td class="column1">2019-08-27 13:19:43</td> 
+           <td class="column2">17055</td> 
+           <td class="column3"><input type="radio" name="rev1" value="388"><input type="radio" name="rev2" value="388"><a href="/moin/GuiProgramming?action=diff&amp;rev1=387&amp;rev2=388" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="MalcolmSmith @ host86-156-87-188.range86-156.btcentralplus.com[86.156.87.188]"><a class="nonexistent" href="/moin/MalcolmSmith" title="MalcolmSmith @ host86-156-87-188.range86-156.btcentralplus.com[86.156.87.188]">MalcolmSmith</a></span></td> 
+           <td class="column5">Remove projects which have been inactive for over 10 years</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=388" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">387</td> 
+           <td class="column1">2019-08-27 12:58:23</td> 
+           <td class="column2">19887</td> 
+           <td class="column3"><input type="radio" name="rev1" value="387"><input type="radio" name="rev2" value="387"><a href="/moin/GuiProgramming?action=diff&amp;rev1=386&amp;rev2=387" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="MalcolmSmith @ host86-156-87-188.range86-156.btcentralplus.com[86.156.87.188]"><a class="nonexistent" href="/moin/MalcolmSmith" title="MalcolmSmith @ host86-156-87-188.range86-156.btcentralplus.com[86.156.87.188]">MalcolmSmith</a></span></td> 
+           <td class="column5">Update Chaquopy</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=387" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">386</td> 
+           <td class="column1">2019-07-26 08:01:39</td> 
+           <td class="column2">19887</td> 
+           <td class="column3"><input type="radio" name="rev1" value="386"><input type="radio" name="rev2" value="386"><a href="/moin/GuiProgramming?action=diff&amp;rev1=385&amp;rev2=386" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="Epeios @ shm67-7-78-228-96-47.fbx.proxad.net[78.228.96.47]"><a class="nonexistent" href="/moin/ClaudeSimon" title="Epeios @ shm67-7-78-228-96-47.fbx.proxad.net[78.228.96.47]">ClaudeSimon</a></span></td> 
+           <td class="column5">&nbsp;</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=386" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">385</td> 
+           <td class="column1">2019-07-09 18:58:55</td> 
+           <td class="column2">19911</td> 
+           <td class="column3"><input type="radio" name="rev1" value="385"><input type="radio" name="rev2" value="385"><a href="/moin/GuiProgramming?action=diff&amp;rev1=384&amp;rev2=385" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="PySimpleGUI @ 45.32.222.196.vultr.com[45.32.222.196]"><a href="/moin/PySimpleGUI" title="PySimpleGUI @ 45.32.222.196.vultr.com[45.32.222.196]">PySimpleGUI</a></span></td> 
+           <td class="column5">Change PySimpleGUI version number to the latest (4.0.0) and bumped up the release date to match that release.</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=385" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">384</td> 
+           <td class="column1">2019-06-12 04:50:18</td> 
+           <td class="column2">19914</td> 
+           <td class="column3"><input type="radio" name="rev1" value="384"><input type="radio" name="rev2" value="384"><a href="/moin/GuiProgramming?action=diff&amp;rev1=383&amp;rev2=384" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="AndrewFedoniouk @ S0106a84e3fbbf203.vc.shawcable.net[24.85.20.23]"><a class="nonexistent" href="/moin/AndrewFedoniouk" title="AndrewFedoniouk @ S0106a84e3fbbf203.vc.shawcable.net[24.85.20.23]">AndrewFedoniouk</a></span></td> 
+           <td class="column5">&nbsp;</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=384" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">383</td> 
+           <td class="column1">2019-05-25 21:33:49</td> 
+           <td class="column2">19698</td> 
+           <td class="column3"><input type="radio" name="rev1" value="383"><input type="radio" name="rev2" value="383"><a href="/moin/GuiProgramming?action=diff&amp;rev1=382&amp;rev2=383" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="RichardJarvis @ 88-104-28-123.dynamic.dsl.as9105.com[88.104.28.123]"><a class="nonexistent" href="/moin/RichardJarvis" title="RichardJarvis @ 88-104-28-123.dynamic.dsl.as9105.com[88.104.28.123]">RichardJarvis</a></span></td> 
+           <td class="column5">Updated appJar version</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=383" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">382</td> 
+           <td class="column1">2019-04-29 19:48:48</td> 
+           <td class="column2">19698</td> 
+           <td class="column3"><input type="radio" name="rev1" value="382"><input type="radio" name="rev2" value="382"><a href="/moin/GuiProgramming?action=diff&amp;rev1=381&amp;rev2=382" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="Epeios @ shm67-7-78-228-96-47.fbx.proxad.net[78.228.96.47]"><a class="nonexistent" href="/moin/ClaudeSimon" title="Epeios @ shm67-7-78-228-96-47.fbx.proxad.net[78.228.96.47]">ClaudeSimon</a></span></td> 
+           <td class="column5">Updating Atlas toolkit.</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=382" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">381</td> 
+           <td class="column1">2019-04-17 18:11:24</td> 
+           <td class="column2">19689</td> 
+           <td class="column3"><input type="radio" name="rev1" value="381"><input type="radio" name="rev2" value="381"><a href="/moin/GuiProgramming?action=diff&amp;rev1=380&amp;rev2=381" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="Jonathan Rocher @ 63.99.22.122[63.99.22.122]"><a class="nonexistent" href="/moin/Jonathan%20Rocher" title="Jonathan Rocher @ 63.99.22.122[63.99.22.122]">Jonathan Rocher</a></span></td> 
+           <td class="column5">Updated the TraitsUI link: the old one was dead.</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=381" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">380</td> 
+           <td class="column1">2019-04-17 18:07:55</td> 
+           <td class="column2">19645</td> 
+           <td class="column3"><input type="radio" name="rev1" value="380"><input type="radio" name="rev2" value="380"><a href="/moin/GuiProgramming?action=diff&amp;rev1=379&amp;rev2=380" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="Jonathan Rocher @ 63.99.22.122[63.99.22.122]"><a class="nonexistent" href="/moin/Jonathan%20Rocher" title="Jonathan Rocher @ 63.99.22.122[63.99.22.122]">Jonathan Rocher</a></span></td> 
+           <td class="column5">&nbsp;</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=380" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">379</td> 
+           <td class="column1">2019-04-06 16:11:27</td> 
+           <td class="column2">19643</td> 
+           <td class="column3"><input type="radio" name="rev1" value="379"><input type="radio" name="rev2" value="379"><a href="/moin/GuiProgramming?action=diff&amp;rev1=378&amp;rev2=379" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="Epeios @ shm67-7-78-228-96-47.fbx.proxad.net[78.228.96.47]"><a class="nonexistent" href="/moin/ClaudeSimon" title="Epeios @ shm67-7-78-228-96-47.fbx.proxad.net[78.228.96.47]">ClaudeSimon</a></span></td> 
+           <td class="column5">&nbsp;</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=379" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">378</td> 
+           <td class="column1">2019-03-24 06:58:56</td> 
+           <td class="column2">19447</td> 
+           <td class="column3"><input type="radio" name="rev1" value="378"><input type="radio" name="rev2" value="378"><a href="/moin/GuiProgramming?action=diff&amp;rev1=377&amp;rev2=378" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="SteveBarnes @ 0545ba5f.skybroadband.com[5.69.186.95]"><a href="/moin/SteveBarnes" title="SteveBarnes @ 0545ba5f.skybroadband.com[5.69.186.95]">SteveBarnes</a></span></td> 
+           <td class="column5">Added Gooey, Updated wxPython. wxGlade, numerous case changes from Wx to wx</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=378" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">377</td> 
+           <td class="column1">2019-02-24 21:17:29</td> 
+           <td class="column2">19119</td> 
+           <td class="column3"><input type="radio" name="rev1" value="377"><input type="radio" name="rev2" value="377"><a href="/moin/GuiProgramming?action=diff&amp;rev1=376&amp;rev2=377" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="MalcolmSmith @ host165-120-73-213.range165-120.btcentralplus.com[165.120.73.213]"><a class="nonexistent" href="/moin/MalcolmSmith" title="MalcolmSmith @ host165-120-73-213.range165-120.btcentralplus.com[165.120.73.213]">MalcolmSmith</a></span></td> 
+           <td class="column5">Update Chaquopy</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=377" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">376</td> 
+           <td class="column1">2019-02-04 00:48:23</td> 
+           <td class="column2">19119</td> 
+           <td class="column3"><input type="radio" name="rev1" value="376"><input type="radio" name="rev2" value="376"><a href="/moin/GuiProgramming?action=diff&amp;rev1=375&amp;rev2=376" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="PySimpleGUI @ 71-217-189-138.rcmt.centurylink.net[71.217.189.138]"><a href="/moin/PySimpleGUI" title="PySimpleGUI @ 71-217-189-138.rcmt.centurylink.net[71.217.189.138]">PySimpleGUI</a></span></td> 
+           <td class="column5">Updated list of platforms for PySimpleGUI</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=376" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">375</td> 
+           <td class="column1">2018-11-18 16:20:33</td> 
+           <td class="column2">19065</td> 
+           <td class="column3"><input type="radio" name="rev1" value="375"><input type="radio" name="rev2" value="375"><a href="/moin/GuiProgramming?action=diff&amp;rev1=374&amp;rev2=375" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="PySimpleGUI @ 162.210.192.154[162.210.192.154]"><a href="/moin/PySimpleGUI" title="PySimpleGUI @ 162.210.192.154[162.210.192.154]">PySimpleGUI</a></span></td> 
+           <td class="column5">New Qt port.... supports both tkinter and Qt now.</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=375" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">374</td> 
+           <td class="column1">2018-09-23 11:06:50</td> 
+           <td class="column2">19057</td> 
+           <td class="column3"><input type="radio" name="rev1" value="374"><input type="radio" name="rev2" value="374"><a href="/moin/GuiProgramming?action=diff&amp;rev1=373&amp;rev2=374" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="MalcolmSmith @ host109-155-45-101.range109-155.btcentralplus.com[109.155.45.101]"><a class="nonexistent" href="/moin/MalcolmSmith" title="MalcolmSmith @ host109-155-45-101.range109-155.btcentralplus.com[109.155.45.101]">MalcolmSmith</a></span></td> 
+           <td class="column5">Update</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=374" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">373</td> 
+           <td class="column1">2018-08-20 18:23:35</td> 
+           <td class="column2">19057</td> 
+           <td class="column3"><input type="radio" name="rev1" value="373"><input type="radio" name="rev2" value="373"><a href="/moin/GuiProgramming?action=diff&amp;rev1=372&amp;rev2=373" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="Czarek Tomczak @ public-gprs210501.centertel.pl[46.134.161.134]"><a class="nonexistent" href="/moin/Czarek%20Tomczak" title="Czarek Tomczak @ public-gprs210501.centertel.pl[46.134.161.134]">Czarek Tomczak</a></span></td> 
+           <td class="column5">Update CEF Python version and release date</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=373" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">372</td> 
+           <td class="column1">2018-08-20 03:47:31</td> 
+           <td class="column2">19057</td> 
+           <td class="column3"><input type="radio" name="rev1" value="372"><input type="radio" name="rev2" value="372"><a href="/moin/GuiProgramming?action=diff&amp;rev1=371&amp;rev2=372" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="PySimpleGUI @ 4d.c8.c0ad.ip4.static.sl-reverse.com[173.192.200.77]"><a href="/moin/PySimpleGUI" title="PySimpleGUI @ 4d.c8.c0ad.ip4.static.sl-reverse.com[173.192.200.77]">PySimpleGUI</a></span></td> 
+           <td class="column5">Added PySimpleGUI</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=372" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">371</td> 
+           <td class="column1">2018-06-23 12:02:28</td> 
+           <td class="column2">18795</td> 
+           <td class="column3"><input type="radio" name="rev1" value="371"><input type="radio" name="rev2" value="371"><a href="/moin/GuiProgramming?action=diff&amp;rev1=370&amp;rev2=371" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="MalcolmSmith @ host109-150-208-224.range109-150.btcentralplus.com[109.150.208.224]"><a class="nonexistent" href="/moin/MalcolmSmith" title="MalcolmSmith @ host109-150-208-224.range109-150.btcentralplus.com[109.150.208.224]">MalcolmSmith</a></span></td> 
+           <td class="column5">Update Chaquopy</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=371" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">370</td> 
+           <td class="column1">2018-05-14 13:44:11</td> 
+           <td class="column2">18795</td> 
+           <td class="column3"><input type="radio" name="rev1" value="370"><input type="radio" name="rev2" value="370"><a href="/moin/GuiProgramming?action=diff&amp;rev1=369&amp;rev2=370" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="DavidBoddie @ host-37-191-179-129.lynet.no[37.191.179.129]"><a href="/moin/DavidBoddie" title="DavidBoddie @ host-37-191-179-129.lynet.no[37.191.179.129]">DavidBoddie</a></span></td> 
+           <td class="column5">Removed duplicate category.</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=370" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">369</td> 
+           <td class="column1">2018-05-14 13:43:04</td> 
+           <td class="column2">18822</td> 
+           <td class="column3"><input type="radio" name="rev1" value="369"><input type="radio" name="rev2" value="369"><a href="/moin/GuiProgramming?action=diff&amp;rev1=368&amp;rev2=369" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="DavidBoddie @ host-37-191-179-129.lynet.no[37.191.179.129]"><a href="/moin/DavidBoddie" title="DavidBoddie @ host-37-191-179-129.lynet.no[37.191.179.129]">DavidBoddie</a></span></td> 
+           <td class="column5">Changed PyQt link to refer to the Riverbank site and updated the version details.</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=369" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">368</td> 
+           <td class="column1">2018-05-07 16:52:37</td> 
+           <td class="column2">18828</td> 
+           <td class="column3"><input type="radio" name="rev1" value="368"><input type="radio" name="rev2" value="368"><a href="/moin/GuiProgramming?action=diff&amp;rev1=367&amp;rev2=368" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="RichardJarvis @ host-92-14-23-185.as43234.net[92.14.23.185]"><a class="nonexistent" href="/moin/RichardJarvis" title="RichardJarvis @ host-92-14-23-185.as43234.net[92.14.23.185]">RichardJarvis</a></span></td> 
+           <td class="column5">&nbsp;</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=368" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">367</td> 
+           <td class="column1">2018-03-23 10:33:53</td> 
+           <td class="column2">18828</td> 
+           <td class="column3"><input type="radio" name="rev1" value="367"><input type="radio" name="rev2" value="367"><a href="/moin/GuiProgramming?action=diff&amp;rev1=366&amp;rev2=367" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="MalcolmSmith @ host86-184-175-115.range86-184.btcentralplus.com[86.184.175.115]"><a class="nonexistent" href="/moin/MalcolmSmith" title="MalcolmSmith @ host86-184-175-115.range86-184.btcentralplus.com[86.184.175.115]">MalcolmSmith</a></span></td> 
+           <td class="column5">Update</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=367" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">366</td> 
+           <td class="column1">2018-03-04 15:22:08</td> 
+           <td class="column2">18828</td> 
+           <td class="column3"><input type="radio" name="rev1" value="366"><input type="radio" name="rev2" value="366"><a href="/moin/GuiProgramming?action=diff&amp;rev1=365&amp;rev2=366" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="RichardJarvis @ host-92-14-29-143.as43234.net[92.14.29.143]"><a class="nonexistent" href="/moin/RichardJarvis" title="RichardJarvis @ host-92-14-29-143.as43234.net[92.14.29.143]">RichardJarvis</a></span></td> 
+           <td class="column5">Updated appJar version number</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=366" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">365</td> 
+           <td class="column1">2018-01-27 14:59:49</td> 
+           <td class="column2">18827</td> 
+           <td class="column3"><input type="radio" name="rev1" value="365"><input type="radio" name="rev2" value="365"><a href="/moin/GuiProgramming?action=diff&amp;rev1=364&amp;rev2=365" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="RichardJarvis @ 79-76-86-160.dynamic.dsl.as9105.com[79.76.86.160]"><a class="nonexistent" href="/moin/RichardJarvis" title="RichardJarvis @ 79-76-86-160.dynamic.dsl.as9105.com[79.76.86.160]">RichardJarvis</a></span></td> 
+           <td class="column5">updated version</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=365" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">364</td> 
+           <td class="column1">2017-12-29 13:06:48</td> 
+           <td class="column2">18830</td> 
+           <td class="column3"><input type="radio" name="rev1" value="364"><input type="radio" name="rev2" value="364"><a href="/moin/GuiProgramming?action=diff&amp;rev1=363&amp;rev2=364" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="MalcolmSmith @ host109-150-218-217.range109-150.btcentralplus.com[109.150.218.217]"><a class="nonexistent" href="/moin/MalcolmSmith" title="MalcolmSmith @ host109-150-218-217.range109-150.btcentralplus.com[109.150.218.217]">MalcolmSmith</a></span></td> 
+           <td class="column5">Add internal link</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=364" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">363</td> 
+           <td class="column1">2017-12-29 13:03:45</td> 
+           <td class="column2">18826</td> 
+           <td class="column3"><input type="radio" name="rev1" value="363"><input type="radio" name="rev2" value="363"><a href="/moin/GuiProgramming?action=diff&amp;rev1=362&amp;rev2=363" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="MalcolmSmith @ host109-150-218-217.range109-150.btcentralplus.com[109.150.218.217]"><a class="nonexistent" href="/moin/MalcolmSmith" title="MalcolmSmith @ host109-150-218-217.range109-150.btcentralplus.com[109.150.218.217]">MalcolmSmith</a></span></td> 
+           <td class="column5">Remove more dead projects</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=363" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">362</td> 
+           <td class="column1">2017-12-29 12:52:12</td> 
+           <td class="column2">19312</td> 
+           <td class="column3"><input type="radio" name="rev1" value="362"><input type="radio" name="rev2" value="362"><a href="/moin/GuiProgramming?action=diff&amp;rev1=361&amp;rev2=362" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="MalcolmSmith @ host109-150-218-217.range109-150.btcentralplus.com[109.150.218.217]"><a class="nonexistent" href="/moin/MalcolmSmith" title="MalcolmSmith @ host109-150-218-217.range109-150.btcentralplus.com[109.150.218.217]">MalcolmSmith</a></span></td> 
+           <td class="column5">Add Chaquopy</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=362" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">361</td> 
+           <td class="column1">2017-12-29 12:36:21</td> 
+           <td class="column2">18998</td> 
+           <td class="column3"><input type="radio" name="rev1" value="361"><input type="radio" name="rev2" value="361"><a href="/moin/GuiProgramming?action=diff&amp;rev1=360&amp;rev2=361" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="MalcolmSmith @ host109-150-218-217.range109-150.btcentralplus.com[109.150.218.217]"><a class="nonexistent" href="/moin/MalcolmSmith" title="MalcolmSmith @ host109-150-218-217.range109-150.btcentralplus.com[109.150.218.217]">MalcolmSmith</a></span></td> 
+           <td class="column5">Alphabetical order</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=361" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">360</td> 
+           <td class="column1">2017-12-29 12:31:51</td> 
+           <td class="column2">18998</td> 
+           <td class="column3"><input type="radio" name="rev1" value="360"><input type="radio" name="rev2" value="360"><a href="/moin/GuiProgramming?action=diff&amp;rev1=359&amp;rev2=360" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="MalcolmSmith @ host109-150-218-217.range109-150.btcentralplus.com[109.150.218.217]"><a class="nonexistent" href="/moin/MalcolmSmith" title="MalcolmSmith @ host109-150-218-217.range109-150.btcentralplus.com[109.150.218.217]">MalcolmSmith</a></span></td> 
+           <td class="column5">Delete list of inactive projects, most of which are dead for over 10 years</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=360" rel="nofollow">view</a></td> 
+          </tr> 
+          <tr> 
+           <td class="column0">359</td> 
+           <td class="column1">2017-10-31 20:19:39</td> 
+           <td class="column2">22522</td> 
+           <td class="column3"><input type="radio" name="rev1" value="359"><input type="radio" name="rev2" value="359"><a href="/moin/GuiProgramming?action=diff&amp;rev1=358&amp;rev2=359" rel="nofollow"> to previous</a></td> 
+           <td class="column4"><span title="RichardJarvis @ 79-76-72-231.dynamic.dsl.as9105.com[79.76.72.231]"><a class="nonexistent" href="/moin/RichardJarvis" title="RichardJarvis @ 79-76-72-231.dynamic.dsl.as9105.com[79.76.72.231]">RichardJarvis</a></span></td> 
+           <td class="column5">update appJar release details</td> 
+           <td class="column6"><a href="/moin/GuiProgramming?action=recall&amp;rev=359" rel="nofollow">view</a></td> 
+          </tr> 
+         </tbody>
+        </table>
+       </div>
+      </div>
+     </div>
+    </form>
+    <div class="info-paging-nav info-paging-nav-bottom">
+     <div>
+      <table class="searchpages">
+       <tbody>
+        <tr> 
+         <td class="info-offset-item info-cur-offset">458</td> 
+         <td class="info-offset-item"><a class="info-offset-nav-link" href="/moin/GuiProgramming?action=info&amp;max_count=100&amp;offset=100" rel="nofollow">358</a></td> 
+         <td class="info-offset-item"><a class="info-offset-nav-link" href="/moin/GuiProgramming?action=info&amp;max_count=100&amp;offset=200" rel="nofollow">258</a></td> 
+         <td class="info-offset-item"><a class="info-offset-nav-link" href="/moin/GuiProgramming?action=info&amp;max_count=100&amp;offset=300" rel="nofollow">158</a></td> 
+         <td class="info-offset-item"><a class="info-offset-nav-link" href="/moin/GuiProgramming?action=info&amp;max_count=100&amp;offset=400" rel="nofollow">58</a></td> 
+         <td class="info-offset-item"><a class="info-offset-nav-link" href="/moin/GuiProgramming?action=info&amp;max_count=100&amp;offset=100" rel="nofollow">Older</a></td> 
+        </tr> 
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div> 
+   <div id="pagebottom"></div> 
+  </div> 
+  <div id="footer"> 
+   <ul id="credits"> 
+    <li><a href="http://moinmo.in/" title="This site uses the MoinMoin Wiki software.">MoinMoin Powered</a></li>
+    <li><a href="http://moinmo.in/Python" title="MoinMoin is written in Python.">Python Powered</a></li>
+    <li><a href="http://moinmo.in/GPL" title="MoinMoin is GPL licensed.">GPL licensed</a></li>
+    <li><a href="http://validator.w3.org/check?uri=referer" title="Click here to validate this page.">Valid HTML 4.01</a></li> 
+   </ul> 
+  </div> 
+  <p style="text-align: center; font-size: 85%"><a href="/moin/FrontPage#use">Unable to edit the page? See the FrontPage for instructions.</a></p> 
+ </body>
+</html>

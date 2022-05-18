@@ -1,0 +1,399 @@
+<!doctype html>
+<html> 
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta name="ROBOTS" content="INDEX, FOLLOW"> 
+  <title>Mailman 3 
+Available lists - python.org
+</title> 
+  <meta name="author" content=""> 
+  <meta name="dc.language" content="en"> 
+  <link rel="shortcut icon" href="/static/hyperkitty/img/favicon.ico"> 
+  <link rel="stylesheet" href="/static/hyperkitty/libs/jquery/smoothness/jquery-ui-1.13.1.min.css" type="text/css" media="all"> 
+  <link rel="stylesheet" href="/static/hyperkitty/libs/fonts/font-awesome/css/font-awesome.min.css" type="text/css" media="all"> 
+  <link rel="stylesheet" href="/static/CACHE/css/output.59b3e3b6da7c.css" type="text/css" media="all">
+  <link rel="stylesheet" href="/static/CACHE/css/output.e68c4908b3de.css" type="text/css">
+  <link rel="stylesheet" href="/static/CACHE/css/output.56dbf9a6bbd3.css" type="text/css" media="all"> 
+ </head> 
+ <body> 
+  <nav class="navbar sticky-top navbar-light bg-light navbar-expand-md"> 
+   <div class="container"> 
+    <div class="navbar-header col-md"> <!--part of navbar that's always present--> <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target=".navbar-collapse"> <span class="fa fa-bars"></span> </button> <a class="navbar-brand" href="/archives/">Mailman 3 python.org</a> 
+    </div> <!-- /navbar-header --> 
+    <div class="navbar-collapse collapse justify-content-end"> <!--part of navbar that's collapsed on small screens--> <!-- show dropdown for smaller viewports b/c login name/email may be too long --> <!-- only show this extra button/dropdown if we're in small screen sizes --> 
+     <div class="nav navbar-nav navbar-right auth dropdown d-sm-none"> <a href="#" role="button" class="btn dropdown-toggle" id="loginDropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span class="fa fa-bars"></span> </a> <a role="menuitem" tabindex="-1" href="/accounts/login/?next=/archives/"> <span class="fa fa-sign-in"></span> Sign In </a> <a role="menuitem" tabindex="-1" href="/accounts/signup/?next=/archives/"> <span class="fa fa-user-plus"></span> Sign Up </a> 
+     </div> 
+     <form name="search" method="get" action="/archives/search" class="navbar-form navbar-right my-2 my-lg-2 order-1" role="search"> 
+      <div class="input-group"> 
+       <input name="q" type="text" class="form-control" placeholder="Search all lists"> <span class="input-group-append"> <button class="btn btn-secondary" type="submit"><span class="fa fa-search"></span></button> </span> 
+      </div> 
+     </form> <!-- larger viewports --> 
+     <ul class="nav navbar-nav d-none d-sm-flex auth order-3"> 
+      <li class="nav-item"><a href="/accounts/login/?next=/archives/" class="nav-link"> <span class="fa fa-sign-in"></span> Sign In </a></li> 
+      <li class="nav-item"><a href="/accounts/signup/?next=/archives/" class="nav-link"> <span class="fa fa-user-plus"></span> Sign Up </a></li> 
+     </ul> 
+     <ul class="nav navbar-nav order-2"> 
+      <li class="nav-item"> <a href="/mailman3/lists/" class="nav-link"> <span class="fa fa-cog"></span> Manage lists </a> </li> 
+     </ul> 
+    </div> <!--/navbar-collapse --> 
+   </div> <!-- /container for navbar --> 
+  </nav> 
+  <div class="modal fade" tabindex="-1" role="dialog" id="keyboard-shortcuts"> 
+   <div class="modal-dialog" role="document"> 
+    <div class="modal-content"> 
+     <div class="modal-header"> <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button> 
+      <h4 class="modal-title">Keyboard Shortcuts</h4> 
+     </div> 
+     <div class="modal-body"> 
+      <h3>Thread View</h3> 
+      <ul> 
+       <li><code>j</code>: Next unread message </li> 
+       <li><code>k</code>: Previous unread message </li> 
+       <li><code>j a</code>: Jump to all threads </li>
+       <li><code>j l</code>: Jump to MailingList overview </li>
+      </ul> 
+     </div> 
+    </div><!-- /.modal-content --> 
+   </div><!-- /.modal-dialog --> 
+  </div><!-- /.modal --> 
+  <div class="container"> 
+   <div class="all-lists"> 
+    <div class="row header"> 
+     <nav class="sort-mode right d-none d-md-flex mr-5 align-items-end"> 
+      <ul class="list-unstyled list-inline"> 
+       <li class="list-inline-item"> <a href="/archives/?sort=popular" data-toggle="tooltip" data-placement="bottom" title="Sort by number of recent participants">Most popular</a> </li> 
+       <li class="list-inline-item"> <a href="/archives/?sort=active" data-toggle="tooltip" data-placement="bottom" title="Sort by number of recent discussions">Most active</a> </li> 
+       <li class="list-inline-item"> <span class="active">By name</span> </li> 
+       <li class="list-inline-item"> <a href="/archives/?sort=creation" data-toggle="tooltip" data-placement="bottom" title="Sort by list creation date">Newest</a> </li> 
+      </ul> 
+     </nav> 
+     <h1 class="col-12 col-sm-8"> Available lists </h1> 
+     <div class="btn-group float-right col-5 col-sm-3 d-md-none"> <button type="button" class="btn btn-sm btn-secondary dropdown-toggle pull-right" data-toggle="dropdown"> Sort by <span class="caret"></span> </button> 
+      <ul class="dropdown-menu" role="menu"> 
+       <li class="dropdown-item"> <a href="/archives/?sort=popular">Most popular</a> </li> 
+       <li class="dropdown-item"> <a href="/archives/?sort=active">Most active</a> </li> 
+       <li class="dropdown-item"> <a href="/archives/?sort=name">By name</a> </li> 
+       <li class="dropdown-item"> <a href="/archives/?sort=creation">Newest</a> </li> 
+      </ul> 
+     </div> 
+    </div> <!--/row, for title & header --> 
+    <div class="row filter-lists"> 
+     <div class="col-12 col-sm-7 col-md-8"> 
+      <p class="hide-switches"> <label><input type="checkbox" value="inactive"> Hide inactive</label> <label><input type="checkbox" value="private"> Hide private</label> </p> 
+     </div> 
+     <div class="float-right col-12 col-sm-5 col-md-4"> 
+      <form method="get" action=""> 
+       <input name="name" type="text" class="form-control" id="focusedInput" placeholder="Find list"> 
+      </form> 
+     </div> 
+    </div> <!--/row, for switches & filter --> <!-- condensed table for tiny & xsmall screens --> 
+    <div class="row lists d-md-none"> 
+     <div class="col-12"> 
+      <table class="lists table"> 
+       <tbody> 
+        <tr class="list
+                   
+                   " data-list-name="async-sig@python.org"> 
+         <td> <a name="a"></a> <a href="/archives/list/async-sig@python.org/" class="list-name"> Async-sig </a> <span class="list-address">async-sig@python.org</span> <br> <span class="list-description">async/await discussions</span> 
+          <div class="chart d-xs-none"> 
+           <img alt="Loading..." class="ajaxloader" src="/static/hyperkitty/img/ajax-loader.gif"> 
+          </div> <span class="badge badge-secondary"> <i class="fa fa-user"></i> 1 </span> <span class="badge badge-secondary"> <i class="fa fa-comments"></i> 1 </span>  </td> 
+        </tr> 
+        <tr class="list
+                   
+                   " data-list-name="boolsi@python.org"> 
+         <td> <a name="b"></a> <a href="/archives/list/boolsi@python.org/" class="list-name"> BoolSi </a> <span class="list-address">boolsi@python.org</span> <br> <span class="list-description">List for discussion of BoolSi</span> 
+          <div class="chart d-xs-none"> 
+           <img alt="Loading..." class="ajaxloader" src="/static/hyperkitty/img/ajax-loader.gif"> 
+          </div> <span class="badge badge-secondary"> <i class="fa fa-user"></i> 2 </span> <span class="badge badge-secondary"> <i class="fa fa-comments"></i> 3 </span>  </td> 
+        </tr> 
+        <tr class="list
+                   
+                   " data-list-name="buildbot-status@python.org"> 
+         <td> <a href="/archives/list/buildbot-status@python.org/" class="list-name"> Buildbot-status </a> <span class="list-address">buildbot-status@python.org</span> <br> <span class="list-description">List to get notifications from buildbots on failures (green/orange =&gt; red state change).</span> 
+          <div class="chart d-xs-none"> 
+           <img alt="Loading..." class="ajaxloader" src="/static/hyperkitty/img/ajax-loader.gif"> 
+          </div> <span class="badge badge-secondary"> <i class="fa fa-user"></i> 3 </span> <span class="badge badge-secondary"> <i class="fa fa-comments"></i> 122 </span>  </td> 
+        </tr> 
+        <tr class="list
+                   
+                   " data-list-name="capi-sig@python.org"> 
+         <td> <a name="c"></a> <a href="/archives/list/capi-sig@python.org/" class="list-name"> capi-sig </a> <span class="list-address">capi-sig@python.org</span> <br> <span class="list-description">Mailing list for discussing the Python/C API</span> 
+          <div class="chart d-xs-none"> 
+           <img alt="Loading..." class="ajaxloader" src="/static/hyperkitty/img/ajax-loader.gif"> 
+          </div> <span class="badge badge-secondary"> <i class="fa fa-user"></i> 8 </span> <span class="badge badge-secondary"> <i class="fa fa-comments"></i> 4 </span>  </td> 
+        </tr> 
+        <tr class="list
+                   
+                   " data-list-name="charlottepython@python.org"> 
+         <td> <a href="/archives/list/charlottepython@python.org/" class="list-name"> CharlottePython </a> <span class="list-address">charlottepython@python.org</span> <br> <span class="list-description">List for the Python user group in Charlotte, North Carolina.</span> 
+          <div class="chart d-xs-none"> 
+           <img alt="Loading..." class="ajaxloader" src="/static/hyperkitty/img/ajax-loader.gif"> 
+          </div> <span class="badge badge-secondary"> <i class="fa fa-user"></i> 7 </span> <span class="badge badge-secondary"> <i class="fa fa-comments"></i> 1 </span>  </td> 
+        </tr> 
+        <tr class="list
+                   
+                   " data-list-name="code-quality@python.org"> 
+         <td> <a href="/archives/list/code-quality@python.org/" class="list-name"> code-quality </a> <span class="list-address">code-quality@python.org</span> <br> <span class="list-description">A mailing list for code-quality tools related to Python</span> 
+          <div class="chart d-xs-none"> 
+           <img alt="Loading..." class="ajaxloader" src="/static/hyperkitty/img/ajax-loader.gif"> 
+          </div> <span class="badge badge-secondary"> <i class="fa fa-user"></i> 2 </span> <span class="badge badge-secondary"> <i class="fa fa-comments"></i> 1 </span>  </td> 
+        </tr> 
+        <tr class="list
+                   
+                   inactive
+                   
+                   " data-list-name="core-workflow@python.org"> 
+         <td> <a href="/archives/list/core-workflow@python.org/" class="list-name"> core-workflow </a> <span class="list-address">core-workflow@python.org</span> <span class="list-tags">inactive</span> <br> <span class="list-description">Working Group for Core Development workflow improvements</span> 
+          <div class="chart d-xs-none"> 
+           <img alt="Loading..." class="ajaxloader" src="/static/hyperkitty/img/ajax-loader.gif"> 
+          </div> <span class="badge badge-secondary"> <i class="fa fa-user"></i> 0 </span> <span class="badge badge-secondary"> <i class="fa fa-comments"></i> 0 </span>  </td> 
+        </tr> 
+        <tr class="list
+                   
+                   " data-list-name="datetime-sig@python.org"> 
+         <td> <a name="d"></a> <a href="/archives/list/datetime-sig@python.org/" class="list-name"> Datetime-SIG </a> <span class="list-address">datetime-sig@python.org</span> <br> <span class="list-description">Discussions related to date and time</span> 
+          <div class="chart d-xs-none"> 
+           <img alt="Loading..." class="ajaxloader" src="/static/hyperkitty/img/ajax-loader.gif"> 
+          </div> <span class="badge badge-secondary"> <i class="fa fa-user"></i> 5 </span> <span class="badge badge-secondary"> <i class="fa fa-comments"></i> 2 </span>  </td> 
+        </tr> 
+        <tr class="list
+                   
+                   inactive
+                   
+                   " data-list-name="devpi-dev@python.org"> 
+         <td> <a href="/archives/list/devpi-dev@python.org/" class="list-name"> devpi-dev </a> <span class="list-address">devpi-dev@python.org</span> <span class="list-tags">inactive</span> <br> <span class="list-description">Discussion about development of the "devpi" private pypi packaging system.</span> 
+          <div class="chart d-xs-none"> 
+           <img alt="Loading..." class="ajaxloader" src="/static/hyperkitty/img/ajax-loader.gif"> 
+          </div> <span class="badge badge-secondary"> <i class="fa fa-user"></i> 0 </span> <span class="badge badge-secondary"> <i class="fa fa-comments"></i> 0 </span>  </td> 
+        </tr> 
+        <tr class="list
+                   
+                   inactive
+                   
+                   " data-list-name="diff-review@python.org"> 
+         <td> <a href="/archives/list/diff-review@python.org/" class="list-name"> Diff-review </a> <span class="list-address">diff-review@python.org</span> <span class="list-tags">inactive</span> <br> <span class="list-description">MailingList to discuss and announce security review of package updates.</span> 
+          <div class="chart d-xs-none"> 
+           <img alt="Loading..." class="ajaxloader" src="/static/hyperkitty/img/ajax-loader.gif"> 
+          </div> <span class="badge badge-secondary"> <i class="fa fa-user"></i> 0 </span> <span class="badge badge-secondary"> <i class="fa fa-comments"></i> 0 </span>  </td> 
+        </tr> 
+       </tbody> 
+      </table> <!-- /table, main-content --> 
+     </div> 
+    </div> <!-- /row, for lists --> 
+    <div class="row lists d-none d-md-block"> 
+     <div class="col-sm-12"> 
+      <table class="lists table"> <!-- headings only shown in screens >= 480px --> 
+       <thead class="d-xs-none"> 
+        <tr> 
+         <th class="">List</th> 
+         <th class="d-none d-md-table-cell">Description</th> 
+         <th class="" colspan="2">Activity in the past 30 days</th> 
+        </tr> 
+       </thead> 
+       <tbody> 
+        <tr class="list
+                   
+                   " data-list-name="async-sig@python.org"> <!-- tiny/xsmall screens have 1 column, small screens have 2 columns, med/large screen have 3 columns --> 
+         <td> <a name="a"></a> <a href="/archives/list/async-sig@python.org/" class="list-name"> Async-sig </a> <span class="list-address"> async-sig@python.org </span> </td> 
+         <td class="list-description d-none d-md-table-cell"> async/await discussions </td> 
+         <td class="statistics"> 
+          <ul class="list-stats list-unstyled"> 
+           <li> <i class="fa fa-user"></i> 1 participants </li> 
+           <li> <i class="fa fa-comments"></i> 1 discussions </li> 
+          </ul> </td> 
+         <td class="activity"> 
+          <div class="chart"> 
+           <img alt="Loading..." class="ajaxloader" src="/static/hyperkitty/img/ajax-loader.gif"> 
+          </div> </td> 
+        </tr> 
+        <tr class="list
+                   
+                   " data-list-name="boolsi@python.org"> <!-- tiny/xsmall screens have 1 column, small screens have 2 columns, med/large screen have 3 columns --> 
+         <td> <a name="b"></a> <a href="/archives/list/boolsi@python.org/" class="list-name"> BoolSi </a> <span class="list-address"> boolsi@python.org </span> </td> 
+         <td class="list-description d-none d-md-table-cell"> List for discussion of BoolSi </td> 
+         <td class="statistics"> 
+          <ul class="list-stats list-unstyled"> 
+           <li> <i class="fa fa-user"></i> 2 participants </li> 
+           <li> <i class="fa fa-comments"></i> 3 discussions </li> 
+          </ul> </td> 
+         <td class="activity"> 
+          <div class="chart"> 
+           <img alt="Loading..." class="ajaxloader" src="/static/hyperkitty/img/ajax-loader.gif"> 
+          </div> </td> 
+        </tr> 
+        <tr class="list
+                   
+                   " data-list-name="buildbot-status@python.org"> <!-- tiny/xsmall screens have 1 column, small screens have 2 columns, med/large screen have 3 columns --> 
+         <td> <a href="/archives/list/buildbot-status@python.org/" class="list-name"> Buildbot-status </a> <span class="list-address"> buildbot-status@python.org </span> </td> 
+         <td class="list-description d-none d-md-table-cell"> List to get notifications from buildbots on failures (green/orange =&gt; red state change). </td> 
+         <td class="statistics"> 
+          <ul class="list-stats list-unstyled"> 
+           <li> <i class="fa fa-user"></i> 3 participants </li> 
+           <li> <i class="fa fa-comments"></i> 122 discussions </li> 
+          </ul> </td> 
+         <td class="activity"> 
+          <div class="chart"> 
+           <img alt="Loading..." class="ajaxloader" src="/static/hyperkitty/img/ajax-loader.gif"> 
+          </div> </td> 
+        </tr> 
+        <tr class="list
+                   
+                   " data-list-name="capi-sig@python.org"> <!-- tiny/xsmall screens have 1 column, small screens have 2 columns, med/large screen have 3 columns --> 
+         <td> <a name="c"></a> <a href="/archives/list/capi-sig@python.org/" class="list-name"> capi-sig </a> <span class="list-address"> capi-sig@python.org </span> </td> 
+         <td class="list-description d-none d-md-table-cell"> Mailing list for discussing the Python/C API </td> 
+         <td class="statistics"> 
+          <ul class="list-stats list-unstyled"> 
+           <li> <i class="fa fa-user"></i> 8 participants </li> 
+           <li> <i class="fa fa-comments"></i> 4 discussions </li> 
+          </ul> </td> 
+         <td class="activity"> 
+          <div class="chart"> 
+           <img alt="Loading..." class="ajaxloader" src="/static/hyperkitty/img/ajax-loader.gif"> 
+          </div> </td> 
+        </tr> 
+        <tr class="list
+                   
+                   " data-list-name="charlottepython@python.org"> <!-- tiny/xsmall screens have 1 column, small screens have 2 columns, med/large screen have 3 columns --> 
+         <td> <a href="/archives/list/charlottepython@python.org/" class="list-name"> CharlottePython </a> <span class="list-address"> charlottepython@python.org </span> </td> 
+         <td class="list-description d-none d-md-table-cell"> List for the Python user group in Charlotte, North Carolina. </td> 
+         <td class="statistics"> 
+          <ul class="list-stats list-unstyled"> 
+           <li> <i class="fa fa-user"></i> 7 participants </li> 
+           <li> <i class="fa fa-comments"></i> 1 discussions </li> 
+          </ul> </td> 
+         <td class="activity"> 
+          <div class="chart"> 
+           <img alt="Loading..." class="ajaxloader" src="/static/hyperkitty/img/ajax-loader.gif"> 
+          </div> </td> 
+        </tr> 
+        <tr class="list
+                   
+                   " data-list-name="code-quality@python.org"> <!-- tiny/xsmall screens have 1 column, small screens have 2 columns, med/large screen have 3 columns --> 
+         <td> <a href="/archives/list/code-quality@python.org/" class="list-name"> code-quality </a> <span class="list-address"> code-quality@python.org </span> </td> 
+         <td class="list-description d-none d-md-table-cell"> A mailing list for code-quality tools related to Python </td> 
+         <td class="statistics"> 
+          <ul class="list-stats list-unstyled"> 
+           <li> <i class="fa fa-user"></i> 2 participants </li> 
+           <li> <i class="fa fa-comments"></i> 1 discussions </li> 
+          </ul> </td> 
+         <td class="activity"> 
+          <div class="chart"> 
+           <img alt="Loading..." class="ajaxloader" src="/static/hyperkitty/img/ajax-loader.gif"> 
+          </div> </td> 
+        </tr> 
+        <tr class="list
+                   
+                   inactive
+                   
+                   " data-list-name="core-workflow@python.org"> <!-- tiny/xsmall screens have 1 column, small screens have 2 columns, med/large screen have 3 columns --> 
+         <td> <a href="/archives/list/core-workflow@python.org/" class="list-name"> core-workflow </a> <span class="list-tags">inactive</span> <span class="list-address"> core-workflow@python.org </span> </td> 
+         <td class="list-description d-none d-md-table-cell"> Working Group for Core Development workflow improvements </td> 
+         <td class="statistics"> 
+          <ul class="list-stats list-unstyled"> 
+           <li> <i class="fa fa-user"></i> 0 participants </li> 
+           <li> <i class="fa fa-comments"></i> 0 discussions </li> 
+          </ul> </td> 
+         <td class="activity"> 
+          <div class="chart"> 
+           <img alt="Loading..." class="ajaxloader" src="/static/hyperkitty/img/ajax-loader.gif"> 
+          </div> </td> 
+        </tr> 
+        <tr class="list
+                   
+                   " data-list-name="datetime-sig@python.org"> <!-- tiny/xsmall screens have 1 column, small screens have 2 columns, med/large screen have 3 columns --> 
+         <td> <a name="d"></a> <a href="/archives/list/datetime-sig@python.org/" class="list-name"> Datetime-SIG </a> <span class="list-address"> datetime-sig@python.org </span> </td> 
+         <td class="list-description d-none d-md-table-cell"> Discussions related to date and time </td> 
+         <td class="statistics"> 
+          <ul class="list-stats list-unstyled"> 
+           <li> <i class="fa fa-user"></i> 5 participants </li> 
+           <li> <i class="fa fa-comments"></i> 2 discussions </li> 
+          </ul> </td> 
+         <td class="activity"> 
+          <div class="chart"> 
+           <img alt="Loading..." class="ajaxloader" src="/static/hyperkitty/img/ajax-loader.gif"> 
+          </div> </td> 
+        </tr> 
+        <tr class="list
+                   
+                   inactive
+                   
+                   " data-list-name="devpi-dev@python.org"> <!-- tiny/xsmall screens have 1 column, small screens have 2 columns, med/large screen have 3 columns --> 
+         <td> <a href="/archives/list/devpi-dev@python.org/" class="list-name"> devpi-dev </a> <span class="list-tags">inactive</span> <span class="list-address"> devpi-dev@python.org </span> </td> 
+         <td class="list-description d-none d-md-table-cell"> Discussion about development of the "devpi" private pypi packaging system. </td> 
+         <td class="statistics"> 
+          <ul class="list-stats list-unstyled"> 
+           <li> <i class="fa fa-user"></i> 0 participants </li> 
+           <li> <i class="fa fa-comments"></i> 0 discussions </li> 
+          </ul> </td> 
+         <td class="activity"> 
+          <div class="chart"> 
+           <img alt="Loading..." class="ajaxloader" src="/static/hyperkitty/img/ajax-loader.gif"> 
+          </div> </td> 
+        </tr> 
+        <tr class="list
+                   
+                   inactive
+                   
+                   " data-list-name="diff-review@python.org"> <!-- tiny/xsmall screens have 1 column, small screens have 2 columns, med/large screen have 3 columns --> 
+         <td> <a href="/archives/list/diff-review@python.org/" class="list-name"> Diff-review </a> <span class="list-tags">inactive</span> <span class="list-address"> diff-review@python.org </span> </td> 
+         <td class="list-description d-none d-md-table-cell"> MailingList to discuss and announce security review of package updates. </td> 
+         <td class="statistics"> 
+          <ul class="list-stats list-unstyled"> 
+           <li> <i class="fa fa-user"></i> 0 participants </li> 
+           <li> <i class="fa fa-comments"></i> 0 discussions </li> 
+          </ul> </td> 
+         <td class="activity"> 
+          <div class="chart"> 
+           <img alt="Loading..." class="ajaxloader" src="/static/hyperkitty/img/ajax-loader.gif"> 
+          </div> </td> 
+        </tr> 
+       </tbody> 
+      </table> <!-- /table, main-content --> 
+     </div> <!-- /container for table --> 
+    </div> <!-- /row, for lists --> 
+    <div class="paginator"> 
+     <div class="row justify-content-center"> 
+      <nav aria-label="Page navigation"> 
+       <ul class="pagination"> 
+        <li class="page-item disabled"><a href="#" class="page-link">? Previous</a></li> 
+        <li class="page-item active"><span class="page-link" aria-label="Current Page, Page 1" aria-current="true">1</span></li> 
+        <li class="page-item"><a href="?sort=name&amp;page=2" class="page-link" aria-label="Goto Page 2">2</a></li> 
+        <li class="page-item"><a href="?sort=name&amp;page=3" class="page-link" aria-label="Goto Page 3">3</a></li> 
+        <li class="page-item"><a href="?sort=name&amp;page=4" class="page-link" aria-label="Goto Page 4">4</a></li> 
+        <li class="page-item"><a href="#" class="jump-to-page active page-link">...</a></li> 
+        <li class="page-item"><a href="?sort=name&amp;page=12" class="page-link" aria-label="Goto Page 12">12</a></li> 
+        <li class="page-item"> <a href="?sort=name&amp;page=2" class="page-link"> Next ? </a> </li> 
+       </ul> 
+      </nav> 
+     </div> 
+     <div class="row"> 
+      <form class="form-inline jump-to-page" action="" method="get"> <label> Jump to page: <select class="form-control input-sm" name="page"> <option value="1" selected> 1 </option> <option value="2"> 2 </option> <option value="3"> 3 </option> <option value="4"> 4 </option> <option value="5"> 5 </option> <option value="6"> 6 </option> <option value="7"> 7 </option> <option value="8"> 8 </option> <option value="9"> 9 </option> <option value="10"> 10 </option> <option value="11"> 11 </option> <option value="12"> 12 </option> </select> </label> 
+       <input type="hidden" name="sort" value="name"> 
+      </form> 
+      <form class="form-inline" action="" method="get">
+        Results per page: <select name="count" class="form-control input-sm"> <option value="10" selected>10 </option> <option value="25">25 </option> <option value="50">50 </option> <option value="100">100 </option> <option value="200">200 </option> </select> 
+       <input type="hidden" name="sort" value="name"> 
+       <input type="submit" class="btn btn-default btn-sm" value="Update"> 
+      </form> 
+     </div> 
+    </div> 
+    <img class="logo" alt="HyperKitty" src="/static/hyperkitty/img/logo.png"> 
+   </div> <!-- /all-lists, outer-wrapper --> 
+  </div> <!-- /container for content --> 
+  <footer class="footer"> 
+   <div class="container"> 
+    <p class="text-muted"> Powered by <a href="http://hyperkitty.readthedocs.org">HyperKitty</a> version 1.3.5. </p> 
+   </div> 
+  </footer> 
+  <script src="/static/hyperkitty/libs/jquery/jquery-3.6.0.min.js"></script> 
+  <script src="/static/hyperkitty/libs/jquery/jquery-ui-1.13.1.min.js"></script> 
+  <script src="/static/CACHE/js/output.91b332875351.js"></script> 
+  <script>
+    $(function() {
+        setup_index("/archives/list/PLACEHOLDER@PLACEHOLDER/recent-activity");
+    });
+</script>  
+ </body>
+</html>

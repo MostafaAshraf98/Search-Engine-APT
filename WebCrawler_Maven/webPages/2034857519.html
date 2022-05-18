@@ -1,0 +1,300 @@
+<!doctype html>
+<html> 
+ <head> 
+  <script type="text/javascript">
+            var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-27880019-2']); _gaq.push(['_trackPageview']);
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script> 
+  <title>pandas - Python Data Analysis Library</title> 
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+  <link rel="shortcut icon" type="image/x-icon" id="favicon-tag" href="/static/img/favicon.ico"> 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous"> 
+  <link rel="stylesheet" href="/static/css/pandas.css"> 
+  <script src="https://kit.fontawesome.com/79e5369384.js" crossorigin="anonymous"></script> 
+ </head> 
+ <body> 
+  <header> 
+   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark"> 
+    <div class="container"> <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-content" aria-controls="nav-content" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button> <a class="navbar-brand" href="/"><img alt="" src="/static/img/pandas_white.svg"></a> 
+     <div class="collapse navbar-collapse" id="nav-content"> 
+      <ul class="navbar-nav ms-auto"> 
+       <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" id="about-us" href="#" role="button" aria-haspopup="true" aria-expanded="false">About us</a> 
+        <div class="dropdown-menu" aria-labelledby="about-us"> <a class="dropdown-item" href="/about/">About pandas</a> <a class="dropdown-item" href="/about/roadmap.html">Project roadmap</a> <a class="dropdown-item" href="/about/team.html">Team</a> <a class="dropdown-item" href="/about/sponsors.html">Sponsors</a> <a class="dropdown-item" href="/about/citing.html">Citing and logo</a> 
+        </div> </li> 
+       <li class="nav-item"> <a class="nav-link" href="/getting_started.html">Getting started</a> </li> 
+       <li class="nav-item"> <a class="nav-link" href="/docs/">Documentation</a> </li> 
+       <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" id="community" href="#" role="button" aria-haspopup="true" aria-expanded="false">Community</a> 
+        <div class="dropdown-menu" aria-labelledby="community"> <a class="dropdown-item" href="/community/blog/">Blog</a> <a class="dropdown-item" href="https://stackoverflow.com/questions/tagged/pandas">Ask a question (StackOverflow)</a> <a class="dropdown-item" href="/community/coc.html">Code of conduct</a> <a class="dropdown-item" href="/community/ecosystem.html">Ecosystem</a> 
+        </div> </li> 
+       <li class="nav-item"> <a class="nav-link" href="/contribute.html">Contribute</a> </li> 
+      </ul> 
+     </div> 
+    </div> 
+   </nav> 
+  </header> 
+  <main role="main"> 
+   <div class="container"> 
+    <h1 id="team">Team</h1> 
+    <h2 id="contributors">Contributors</h2> 
+    <p><em>pandas</em> is made with love by more than <a href="https://github.com/pandas-dev/pandas/graphs/contributors">2,000 volunteer contributors</a>.</p> 
+    <p>If you want to support pandas development, you can find information in the <a href="../donate.html">donations page</a>.</p> 
+    <h2 id="maintainers">Maintainers</h2> 
+    <div class="card-group maintainers"> 
+     <div class="card"> 
+      <img class="card-img-top" alt="" src="https://avatars.githubusercontent.com/u/329591?v=4"> 
+      <div class="card-body"> 
+       <h6 class="card-title"> <a href="http://wesmckinney.com"> Wes McKinney </a> </h6> 
+       <p class="card-text small"><a href="https://github.com/wesm">wesm</a></p> 
+      </div> 
+     </div> 
+     <div class="card"> 
+      <img class="card-img-top" alt="" src="https://avatars.githubusercontent.com/u/1020496?v=4"> 
+      <div class="card-body"> 
+       <h6 class="card-title"> <a href="https://jorisvandenbossche.github.io/"> Joris Van den Bossche </a> </h6> 
+       <p class="card-text small"><a href="https://github.com/jorisvandenbossche">jorisvandenbossche</a></p> 
+      </div> 
+     </div> 
+     <div class="card"> 
+      <img class="card-img-top" alt="" src="https://avatars.githubusercontent.com/u/1312546?v=4"> 
+      <div class="card-body"> 
+       <h6 class="card-title"> <a href="https://tomaugspurger.github.io"> Tom Augspurger </a> </h6> 
+       <p class="card-text small"><a href="https://github.com/TomAugspurger">TomAugspurger</a></p> 
+      </div> 
+     </div> 
+     <div class="card"> 
+      <img class="card-img-top" alt="" src="https://avatars.githubusercontent.com/u/1217238?v=4"> 
+      <div class="card-body"> 
+       <h6 class="card-title"> <a href="http://stephanhoyer.com"> Stephan Hoyer </a> </h6> 
+       <p class="card-text small"><a href="https://github.com/shoyer">shoyer</a></p> 
+      </div> 
+     </div> 
+     <div class="card"> 
+      <img class="card-img-top" alt="" src="https://avatars.githubusercontent.com/u/953992?v=4"> 
+      <div class="card-body"> 
+       <h6 class="card-title"> Jeff Reback </h6> 
+       <p class="card-text small"><a href="https://github.com/jreback">jreback</a></p> 
+      </div> 
+     </div> 
+     <div class="card"> 
+      <img class="card-img-top" alt="" src="https://avatars.githubusercontent.com/u/1924092?v=4"> 
+      <div class="card-body"> 
+       <h6 class="card-title"> chris-b1 </h6> 
+       <p class="card-text small"><a href="https://github.com/chris-b1">chris-b1</a></p> 
+      </div> 
+     </div> 
+     <div class="card"> 
+      <img class="card-img-top" alt="" src="https://avatars.githubusercontent.com/u/1696302?v=4"> 
+      <div class="card-body"> 
+       <h6 class="card-title"> Sinhrks </h6> 
+       <p class="card-text small"><a href="https://github.com/sinhrks">sinhrks</a></p> 
+      </div> 
+     </div> 
+     <div class="card"> 
+      <img class="card-img-top" alt="" src="https://avatars.githubusercontent.com/u/417981?v=4"> 
+      <div class="card-body"> 
+       <h6 class="card-title"> Phillip Cloud </h6> 
+       <p class="card-text small"><a href="https://github.com/cpcloud">cpcloud</a></p> 
+      </div> 
+     </div> 
+     <div class="card"> 
+      <img class="card-img-top" alt="" src="https://avatars.githubusercontent.com/u/9273653?v=4"> 
+      <div class="card-body"> 
+       <h6 class="card-title"> <a href="https://gitlab.com/gfyoung"> gfyoung </a> </h6> 
+       <p class="card-text small"><a href="https://github.com/gfyoung">gfyoung</a></p> 
+      </div> 
+     </div> 
+     <div class="card"> 
+      <img class="card-img-top" alt="" src="https://avatars.githubusercontent.com/u/1224492?v=4"> 
+      <div class="card-body"> 
+       <h6 class="card-title"> <a href="http://pietrobattiston.it"> Pietro Battiston </a> </h6> 
+       <p class="card-text small"><a href="https://github.com/toobaz">toobaz</a></p> 
+      </div> 
+     </div> 
+     <div class="card"> 
+      <img class="card-img-top" alt="" src="https://avatars.githubusercontent.com/u/609873?v=4"> 
+      <div class="card-body"> 
+       <h6 class="card-title"> <a href="http://innobi.io"> William Ayd </a> </h6> 
+       <p class="card-text small"><a href="https://github.com/WillAyd">WillAyd</a></p> 
+      </div> 
+     </div> 
+     <div class="card"> 
+      <img class="card-img-top" alt="" src="https://avatars.githubusercontent.com/u/10647082?v=4"> 
+      <div class="card-body"> 
+       <h6 class="card-title"> Matthew Roeschke </h6> 
+       <p class="card-text small"><a href="https://github.com/mroeschke">mroeschke</a></p> 
+      </div> 
+     </div> 
+     <div class="card"> 
+      <img class="card-img-top" alt="" src="https://avatars.githubusercontent.com/u/5332445?v=4"> 
+      <div class="card-body"> 
+       <h6 class="card-title"> Jeremy Schendel </h6> 
+       <p class="card-text small"><a href="https://github.com/jschendel">jschendel</a></p> 
+      </div> 
+     </div> 
+     <div class="card"> 
+      <img class="card-img-top" alt="" src="https://avatars.githubusercontent.com/u/8078968?v=4"> 
+      <div class="card-body"> 
+       <h6 class="card-title"> jbrockmendel </h6> 
+       <p class="card-text small"><a href="https://github.com/jbrockmendel">jbrockmendel</a></p> 
+      </div> 
+     </div> 
+     <div class="card"> 
+      <img class="card-img-top" alt="" src="https://avatars.githubusercontent.com/u/10058240?v=4"> 
+      <div class="card-body"> 
+       <h6 class="card-title"> <a href="https://datapythonista.me"> Marc Garcia </a> </h6> 
+       <p class="card-text small"><a href="https://github.com/datapythonista">datapythonista</a></p> 
+      </div> 
+     </div> 
+     <div class="card"> 
+      <img class="card-img-top" alt="" src="https://avatars.githubusercontent.com/u/13159005?v=4"> 
+      <div class="card-body"> 
+       <h6 class="card-title"> Simon Hawkins </h6> 
+       <p class="card-text small"><a href="https://github.com/simonjayhawkins">simonjayhawkins</a></p> 
+      </div> 
+     </div> 
+     <div class="card"> 
+      <img class="card-img-top" alt="" src="https://avatars.githubusercontent.com/u/26364415?v=4"> 
+      <div class="card-body"> 
+       <h6 class="card-title"> Terji Petersen </h6> 
+       <p class="card-text small"><a href="https://github.com/topper-123">topper-123</a></p> 
+      </div> 
+     </div> 
+     <div class="card"> 
+      <img class="card-img-top" alt="" src="https://avatars.githubusercontent.com/u/16733618?v=4"> 
+      <div class="card-body"> 
+       <h6 class="card-title"> <a href="https://alimcmaster.com"> Ali McMaster </a> </h6> 
+       <p class="card-text small"><a href="https://github.com/alimcmaster1">alimcmaster1</a></p> 
+      </div> 
+     </div> 
+     <div class="card"> 
+      <img class="card-img-top" alt="" src="https://avatars.githubusercontent.com/u/5585221?v=4"> 
+      <div class="card-body"> 
+       <h6 class="card-title"> <a href="http://www.kevinsheppard.com"> Kevin Sheppard </a> </h6> 
+       <p class="card-text small"><a href="https://github.com/bashtage">bashtage</a></p> 
+      </div> 
+     </div> 
+     <div class="card"> 
+      <img class="card-img-top" alt="" src="https://avatars.githubusercontent.com/u/9269816?v=4"> 
+      <div class="card-body"> 
+       <h6 class="card-title"> <a href="https://medium.com/@kaiqidong"> Kaiqi Dong </a> </h6> 
+       <p class="card-text small"><a href="https://github.com/charlesdong1991">charlesdong1991</a></p> 
+      </div> 
+     </div> 
+     <div class="card"> 
+      <img class="card-img-top" alt="" src="https://avatars.githubusercontent.com/u/15113894?v=4"> 
+      <div class="card-body"> 
+       <h6 class="card-title"> Irv Lustig </h6> 
+       <p class="card-text small"><a href="https://github.com/Dr-Irv">Dr-Irv</a></p> 
+      </div> 
+     </div> 
+     <div class="card"> 
+      <img class="card-img-top" alt="" src="https://avatars.githubusercontent.com/u/2658661?v=4"> 
+      <div class="card-body"> 
+       <h6 class="card-title"> Daniel Saxton </h6> 
+       <p class="card-text small"><a href="https://github.com/dsaxton">dsaxton</a></p> 
+      </div> 
+     </div> 
+     <div class="card"> 
+      <img class="card-img-top" alt="" src="https://avatars.githubusercontent.com/u/33491632?v=4"> 
+      <div class="card-body"> 
+       <h6 class="card-title"> Marco Edward Gorelli </h6> 
+       <p class="card-text small"><a href="https://github.com/MarcoGorelli">MarcoGorelli</a></p> 
+      </div> 
+     </div> 
+     <div class="card"> 
+      <img class="card-img-top" alt="" src="https://avatars.githubusercontent.com/u/45562402?v=4"> 
+      <div class="card-body"> 
+       <h6 class="card-title"> Richard Shadrach </h6> 
+       <p class="card-text small"><a href="https://github.com/rhshadrach">rhshadrach</a></p> 
+      </div> 
+     </div> 
+     <div class="card"> 
+      <img class="card-img-top" alt="" src="https://avatars.githubusercontent.com/u/61934744?v=4"> 
+      <div class="card-body"> 
+       <h6 class="card-title"> Patrick Hoefler </h6> 
+       <p class="card-text small"><a href="https://github.com/phofl">phofl</a></p> 
+      </div> 
+     </div> 
+     <div class="card"> 
+      <img class="card-img-top" alt="" src="https://avatars.githubusercontent.com/u/24256554?v=4"> 
+      <div class="card-body"> 
+       <h6 class="card-title"> JHM Darbyshire </h6> 
+       <p class="card-text small"><a href="https://github.com/attack68">attack68</a></p> 
+      </div> 
+     </div> 
+     <div class="card"> 
+      <img class="card-img-top" alt="" src="https://avatars.githubusercontent.com/u/7614606?v=4"> 
+      <div class="card-body"> 
+       <h6 class="card-title"> Fangchen Li </h6> 
+       <p class="card-text small"><a href="https://github.com/fangchenli">fangchenli</a></p> 
+      </div> 
+     </div> 
+     <div class="card"> 
+      <img class="card-img-top" alt="" src="https://avatars.githubusercontent.com/u/6618166?v=4"> 
+      <div class="card-body"> 
+       <h6 class="card-title"> <a href="https://bitbucket.org/twoertwein/"> Torsten Wörtwein </a> </h6> 
+       <p class="card-text small"><a href="https://github.com/twoertwein">twoertwein</a></p> 
+      </div> 
+     </div> 
+    </div> 
+    <h2 id="diversity-and-inclusion">Diversity and Inclusion</h2> 
+    <blockquote> 
+     <p><em>pandas</em> expressly welcomes and encourages contributions from anyone who faces under-representation, discrimination in the technology industry or anyone willing to increase the diversity of our team. We have identified visible gaps and obstacles in sustaining diversity and inclusion in the open-source communities and we are proactive in increasing the diversity of our team. We have a <a href="../community/coc.html">code of conduct</a> to ensure a friendly and welcoming environment. Please send an email to <a href="/cdn-cgi/l/email-protection#b0c0d1ded4d1c39dd3dfd3f0d7dfdfd7dcd5d7c2dfc5c0c39ed3dfdd">pandas-code-of-conduct-committee</a>, if you think we can do a better job at achieving this goal.</p> 
+    </blockquote> 
+    <h2 id="governance">Governance</h2> 
+    <p>Wes McKinney is the Benevolent Dictator for Life (BDFL).</p> 
+    <p>The project governance is available in the <a href="https://github.com/pandas-dev/pandas-governance">project governance documents</a>.</p> 
+    <h2 id="code-of-conduct-committee">Code of conduct committee</h2> 
+    <ul> 
+     <li>Safia Abdalla</li> 
+     <li>Tom Augspurger</li> 
+     <li>Joris Van den Bossche</li> 
+     <li>Camille Scott</li> 
+     <li>Nathaniel Smith</li> 
+    </ul> 
+    <h2 id="numfocus-committee">NumFOCUS committee</h2> 
+    <ul> 
+     <li>Phillip Cloud</li> 
+     <li>Stephan Hoyer</li> 
+     <li>Wes McKinney</li> 
+     <li>Jeff Reback</li> 
+     <li>Joris Van den Bossche</li> 
+    </ul> 
+    <h2 id="emeritus-maintainers">Emeritus maintainers</h2> 
+    <ul> 
+     <li>Wouter Overmeire</li> 
+     <li>Skipper Seabold</li> 
+     <li>Jeff Tratner</li> 
+    </ul> 
+   </div> 
+  </main> 
+  <footer class="container pt-4 pt-md-5 border-top"> 
+   <ul class="list-inline social-buttons float-end"> 
+    <li class="list-inline-item"> <a href="https://twitter.com/pandas_dev/"> <i class="fab fa-twitter"></i> </a> </li> 
+    <li class="list-inline-item"> <a href="https://github.com/pandas-dev/pandas/"> <i class="fab fa-github"></i> </a> </li> 
+    <li class="list-inline-item"> <a href="https://stackoverflow.com/questions/tagged/pandas"> <i class="fab fa-stack-overflow"></i> </a> </li> 
+   </ul> 
+   <p> pandas is a fiscally sponsored project of <a href="https://numfocus.org">NumFOCUS.</a> </p> 
+  </footer> 
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script> 
+  <script type="text/javascript">
+            const faviconTag = document.getElementById('favicon-tag');
+            const matcher = window.matchMedia('(prefers-color-scheme:dark)');
+            
+            const onUpdate = () => {
+                if (matcher.matches) faviconTag.href = "/static/img/favicon_white.ico";
+                else faviconTag.href = "/static/img/favicon.ico";
+            };
+            
+            onUpdate();
+            
+            matcher.addEventListener('change', onUpdate);
+        </script>  
+ </body>
+</html>

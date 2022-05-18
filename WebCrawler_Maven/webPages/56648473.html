@@ -1,0 +1,185 @@
+<!doctype html><!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]--><!--[if gt IE 8]><!-->
+<html class="no-js" lang="en"> <!--<![endif]--> 
+ <head> 
+  <meta charset="utf-8"> 
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>IPython Kernel Docs — IPython Kernel 6.6.0 documentation</title> 
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script> 
+  <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script> 
+  <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script> 
+  <script src="_static/jquery.js"></script> 
+  <script src="_static/underscore.js"></script> 
+  <script src="_static/doctools.js"></script> 
+  <script async src="https://assets.readthedocs.org/static/javascript/readthedocs-doc-embed.js"></script> 
+  <script type="text/javascript" src="_static/js/theme.js"></script> 
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css"> 
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css"> 
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css"> 
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css"> 
+  <link rel="index" title="Index" href="genindex.html"> 
+  <link rel="search" title="Search" href="search.html"> 
+  <link rel="next" title="Changes in IPython kernel" href="changelog.html"> <!-- RTD Extra Head --> 
+  <link rel="stylesheet" href="https://assets.readthedocs.org/static/css/readthedocs-doc-embed.css" type="text/css"> 
+  <script type="application/json" id="READTHEDOCS_DATA">{"ad_free": false, "api_host": "https://readthedocs.org", "build_date": "2021-12-09T18:56:26Z", "builder": "sphinx", "canonical_url": null, "commit": "2c9b6fff", "docroot": "/docs/", "features": {"docsearch_disabled": false}, "global_analytics_code": "UA-17997319-1", "language": "en", "page": "index", "programming_language": "py", "project": "ipykernel", "proxied_api_host": "/_", "source_suffix": ".rst", "subprojects": {}, "theme": "sphinx_rtd_theme", "user_analytics_code": "UA-52617120-1", "version": "latest"}</script> <!--
+Using this variable directly instead of using `JSON.parse` is deprecated.
+The READTHEDOCS_DATA global variable will be removed in the future.
+--> 
+  <script type="text/javascript">
+READTHEDOCS_DATA = JSON.parse(document.getElementById('READTHEDOCS_DATA').innerHTML);
+</script> 
+  <script type="text/javascript" src="https://assets.readthedocs.org/static/javascript/readthedocs-analytics.js" async></script> <!-- end RTD <extrahead> --> 
+ </head> 
+ <body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav"> 
+   <nav data-toggle="wy-nav-shift" class="wy-nav-side"> 
+    <div class="wy-side-scroll"> 
+     <div class="wy-side-nav-search"> <a href="#" class="icon icon-home"> IPython Kernel </a> 
+      <div class="version">
+        latest 
+      </div> 
+      <div role="search"> 
+       <form id="rtd-search-form" class="wy-form" action="search.html" method="get"> 
+        <input type="text" name="q" placeholder="Search docs"> 
+        <input type="hidden" name="check_keywords" value="yes"> 
+        <input type="hidden" name="area" value="default"> 
+       </form> 
+      </div> 
+     </div> 
+     <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation"> 
+      <ul> 
+       <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changes in IPython kernel</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </nav> 
+   <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"> 
+    <nav class="wy-nav-top" aria-label="top navigation"> <i data-toggle="wy-nav-top" class="fa fa-bars"></i> <a href="#">IPython Kernel</a> 
+    </nav> 
+    <div class="wy-nav-content"> 
+     <div class="rst-content"> 
+      <div role="navigation" aria-label="breadcrumbs navigation"> 
+       <ul class="wy-breadcrumbs"> 
+        <li><a href="#">Docs</a> »</li> 
+        <li>IPython Kernel Docs</li> 
+        <li class="wy-breadcrumbs-aside"> <a href="https://github.com/ipython/ipykernel/blob/master/docs/index.rst" class="fa fa-github"> Edit on GitHub</a> </li> 
+       </ul> 
+       <hr> 
+      </div> 
+      <div role="main" class="document" itemscope itemtype="http://schema.org/Article"> 
+       <div itemprop="articleBody"> 
+        <section id="ipython-kernel-docs"> <span id="index"></span>
+         <h1>IPython Kernel Docs<a class="headerlink" href="#ipython-kernel-docs" title="Permalink to this headline">¶</a></h1> 
+         <p>This contains minimal version-sensitive documentation for the IPython kernel package. Most IPython kernel documentation is in the <a class="reference external" href="https://ipython.readthedocs.io/en/latest/">IPython documentation</a>.</p> 
+         <p>Contents:</p> 
+         <div class="toctree-wrapper compound"> 
+          <ul> 
+           <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changes in IPython kernel</a>
+            <ul> 
+             <li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">6.3</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">6.6.0</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">6.5.1</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="changelog.html#id7">6.5.0</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="changelog.html#id11">6.4.2</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="changelog.html#id16">6.4.1</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="changelog.html#id18">6.4.0</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="changelog.html#id23">6.3.1</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="changelog.html#id26">6.3.0</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="changelog.html#id30">6.2</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="changelog.html#id31">6.2.0</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="changelog.html#id34">6.1</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="changelog.html#id35">6.1.0</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="changelog.html#id38">6.0</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="changelog.html#id39">6.0.3</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="changelog.html#id40">6.0.2</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="changelog.html#id43">6.0.1</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="changelog.html#id44">6.0.0</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="changelog.html#id49">5.5</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="changelog.html#id56">5.4</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="changelog.html#id61">5.3</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="changelog.html#id67">5.2</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="changelog.html#id70">5.1</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="changelog.html#id76">5.0</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="changelog.html#id78">4.10</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="changelog.html#id79">4.9</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="changelog.html#id81">4.8</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="changelog.html#id85">4.7</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="changelog.html#id87">4.6</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="changelog.html#id90">4.5</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="changelog.html#id94">4.4</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="changelog.html#id97">4.3</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="changelog.html#id101">4.2</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="changelog.html#id105">4.1</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="changelog.html#id108">4.0</a></li> 
+            </ul> </li> 
+          </ul> 
+         </div> 
+        </section> 
+        <section id="indices-and-tables"> 
+         <h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1> 
+         <ul class="simple"> 
+          <li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li> 
+          <li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li> 
+          <li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li> 
+         </ul> 
+        </section> 
+       </div> 
+      </div> 
+      <footer> 
+       <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation"> <a href="changelog.html" class="btn btn-neutral float-right" title="Changes in IPython kernel" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a> 
+       </div> 
+       <hr> 
+       <div role="contentinfo"> 
+        <p> © Copyright 2015, IPython Development Team <span class="commit"> Revision <code>2c9b6fff</code>. </span> </p> 
+       </div> Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+      </footer> 
+     </div> 
+    </div> 
+   </section> 
+  </div> 
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions"> <span class="rst-current-version" data-toggle="rst-current-version"> <span class="fa fa-book"> Read the Docs</span> v: latest <span class="fa fa-caret-down"></span> </span> 
+   <div class="rst-other-versions"> 
+    <dl> 
+     <dt>
+      Versions
+     </dt> 
+     <dd>
+      <a href="/en/latest/">latest</a>
+     </dd> 
+     <dd>
+      <a href="/en/stable/">stable</a>
+     </dd> 
+    </dl> 
+    <dl> 
+     <dt>
+      Downloads
+     </dt> 
+     <dd>
+      <a href="//ipykernel.readthedocs.io/_/downloads/en/latest/pdf/">pdf</a>
+     </dd> 
+     <dd>
+      <a href="//ipykernel.readthedocs.io/_/downloads/en/latest/htmlzip/">html</a>
+     </dd> 
+     <dd>
+      <a href="//ipykernel.readthedocs.io/_/downloads/en/latest/epub/">epub</a>
+     </dd> 
+    </dl> 
+    <dl> 
+     <dt>
+      On Read the Docs
+     </dt> 
+     <dd> <a href="//readthedocs.org/projects/ipykernel/?fromdocs=ipykernel">Project Home</a> 
+     </dd> 
+     <dd> <a href="//readthedocs.org/builds/ipykernel/?fromdocs=ipykernel">Builds</a> 
+     </dd> 
+    </dl> 
+    <hr> Free document hosting provided by <a href="http://www.readthedocs.org">Read the Docs</a>. 
+   </div> 
+  </div> 
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+ </body>
+</html>

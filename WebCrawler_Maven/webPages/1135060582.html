@@ -1,0 +1,576 @@
+<!doctype html>
+<html class="no-js" lang="en"> 
+ <head>
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width,initial-scale=1"> 
+  <meta name="color-scheme" content="light dark">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/"> 
+  <link rel="index" title="Index" href="genindex.html">
+  <link rel="search" title="Search" href="search.html">
+  <link rel="next" title="twine package" href="internal/twine.html">
+  <link rel="prev" title="Changelog" href="changelog.html"> 
+  <link rel="canonical" href="https://twine.readthedocs.io/en/stable/contributing.html"> 
+  <meta name="generator" content="sphinx-4.5.0, furo 2022.04.07"> 
+  <title>Contributing - twine 4.0.1.dev2+gb0b932f documentation</title> 
+  <link rel="stylesheet" type="text/css" href="_static/pygments.css"> 
+  <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852"> 
+  <link rel="stylesheet" type="text/css" href="https://assets.readthedocs.org/static/css/badge_only.css"> 
+  <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e"> 
+  <style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style> <!-- RTD Extra Head --> 
+  <link rel="stylesheet" href="https://assets.readthedocs.org/static/css/readthedocs-doc-embed.css" type="text/css"> 
+  <script type="application/json" id="READTHEDOCS_DATA">{"ad_free": false, "api_host": "https://readthedocs.org", "build_date": "2022-05-15T14:05:10Z", "builder": "sphinx", "canonical_url": null, "commit": "b0b932f2", "docroot": "/docs/", "features": {"docsearch_disabled": false}, "global_analytics_code": "UA-17997319-1", "language": "en", "page": "contributing", "programming_language": "py", "project": "twine", "proxied_api_host": "/_", "source_suffix": ".rst", "subprojects": {}, "theme": "furo", "user_analytics_code": "", "version": "latest"}</script> <!--
+Using this variable directly instead of using `JSON.parse` is deprecated.
+The READTHEDOCS_DATA global variable will be removed in the future.
+--> 
+  <script type="text/javascript">
+READTHEDOCS_DATA = JSON.parse(document.getElementById('READTHEDOCS_DATA').innerHTML);
+</script> 
+  <script type="text/javascript" src="https://assets.readthedocs.org/static/javascript/readthedocs-analytics.js" async></script> <!-- end RTD <extrahead> --> 
+ </head> 
+ <body> 
+  <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script> 
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;"> <symbol id="svg-toc" viewbox="0 0 24 24"> 
+    <title>Contents</title> 
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewbox="0 0 1024 1024"> <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z" /> 
+    </svg> 
+   </symbol> <symbol id="svg-menu" viewbox="0 0 24 24"> 
+    <title>Menu</title> 
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu"> <line x1="3" y1="12" x2="21" y2="12" /> <line x1="3" y1="6" x2="21" y2="6" /> <line x1="3" y1="18" x2="21" y2="18" /> 
+    </svg> 
+   </symbol> <symbol id="svg-arrow-right" viewbox="0 0 24 24"> 
+    <title>Expand</title> 
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right"> <polyline points="9 18 15 12 9 6"></polyline> 
+    </svg> 
+   </symbol> <symbol id="svg-sun" viewbox="0 0 24 24"> 
+    <title>Light mode</title> 
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun"> <circle cx="12" cy="12" r="5" /> <line x1="12" y1="1" x2="12" y2="3" /> <line x1="12" y1="21" x2="12" y2="23" /> <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" /> <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" /> <line x1="1" y1="12" x2="3" y2="12" /> <line x1="21" y1="12" x2="23" y2="12" /> <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" /> <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" /> 
+    </svg> 
+   </symbol> <symbol id="svg-moon" viewbox="0 0 24 24"> 
+    <title>Dark mode</title> 
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon"> <path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" /> 
+    </svg> 
+   </symbol> <symbol id="svg-sun-half" viewbox="0 0 24 24"> 
+    <title>Auto light/dark mode</title> 
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow"> <path stroke="none" d="M0 0h24v24H0z" fill="none" /> <circle cx="12" cy="12" r="9" /> <path d="M13 12h5" /> <path d="M13 15h4" /> <path d="M13 18h1" /> <path d="M13 9h4" /> <path d="M13 6h1" /> 
+    </svg> 
+   </symbol> 
+  </svg> 
+  <input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation"> 
+  <input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc"> <label class="overlay sidebar-overlay" for="__navigation"> 
+   <div class="visually-hidden">
+    Hide navigation sidebar
+   </div> </label> <label class="overlay toc-overlay" for="__toc"> 
+   <div class="visually-hidden">
+    Hide table of contents sidebar
+   </div> </label> 
+  <div class="page"> 
+   <header class="mobile-header"> 
+    <div class="header-left"> <label class="nav-overlay-icon" for="__navigation"> 
+      <div class="visually-hidden">
+       Toggle site navigation sidebar
+      </div> <i class="icon">
+       <svg>
+        <use href="#svg-menu"></use>
+       </svg></i> </label> 
+    </div> 
+    <div class="header-center"> <a href="index.html">
+      <div class="brand">
+       twine 4.0.1.dev2+gb0b932f documentation
+      </div></a> 
+    </div> 
+    <div class="header-right"> 
+     <div class="theme-toggle-container theme-toggle-header"> <button class="theme-toggle"> 
+       <div class="visually-hidden">
+        Toggle Light / Dark / Auto color theme
+       </div> 
+       <svg class="theme-icon-when-auto">
+        <use href="#svg-sun-half"></use>
+       </svg> 
+       <svg class="theme-icon-when-dark">
+        <use href="#svg-moon"></use>
+       </svg> 
+       <svg class="theme-icon-when-light">
+        <use href="#svg-sun"></use>
+       </svg> </button> 
+     </div> <label class="toc-overlay-icon toc-header-icon" for="__toc"> 
+      <div class="visually-hidden">
+       Toggle table of contents sidebar
+      </div> <i class="icon">
+       <svg>
+        <use href="#svg-toc"></use>
+       </svg></i> </label> 
+    </div> 
+   </header> 
+   <aside class="sidebar-drawer"> 
+    <div class="sidebar-container"> 
+     <div class="sidebar-sticky">
+      <a class="sidebar-brand" href="index.html"> <span class="sidebar-brand-text">twine 4.0.1.dev2+gb0b932f documentation</span> </a>
+      <form class="sidebar-search-container" method="get" action="search.html" role="search"> 
+       <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search"> 
+       <input type="hidden" name="check_keywords" value="yes"> 
+       <input type="hidden" name="area" value="default"> 
+      </form> 
+      <div id="searchbox"></div>
+      <div class="sidebar-scroll">
+       <div class="sidebar-tree"> 
+        <ul class="current"> 
+         <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li> 
+         <li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">Contributing</a><input checked class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"><label for="toctree-checkbox-1">
+           <div class="visually-hidden">
+            Toggle child pages in navigation
+           </div><i class="icon">
+            <svg>
+             <use href="#svg-arrow-right"></use>
+            </svg></i></label>
+          <ul> 
+           <li class="toctree-l2 has-children"><a class="reference internal" href="internal/twine.html">twine package</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"><label for="toctree-checkbox-2">
+             <div class="visually-hidden">
+              Toggle child pages in navigation
+             </div><i class="icon">
+              <svg>
+               <use href="#svg-arrow-right"></use>
+              </svg></i></label>
+            <ul> 
+             <li class="toctree-l3 has-children"><a class="reference internal" href="internal/twine.commands.html">twine.commands package</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"><label for="toctree-checkbox-3">
+               <div class="visually-hidden">
+                Toggle child pages in navigation
+               </div><i class="icon">
+                <svg>
+                 <use href="#svg-arrow-right"></use>
+                </svg></i></label>
+              <ul> 
+               <li class="toctree-l4"><a class="reference internal" href="internal/twine.commands.check.html">twine.commands.check module</a></li> 
+               <li class="toctree-l4"><a class="reference internal" href="internal/twine.commands.register.html">twine.commands.register module</a></li> 
+               <li class="toctree-l4"><a class="reference internal" href="internal/twine.commands.upload.html">twine.commands.upload module</a></li> 
+              </ul> </li> 
+             <li class="toctree-l3"><a class="reference internal" href="internal/twine.auth.html">twine.auth module</a></li> 
+             <li class="toctree-l3"><a class="reference internal" href="internal/twine.cli.html">twine.cli module</a></li> 
+             <li class="toctree-l3"><a class="reference internal" href="internal/twine.exceptions.html">twine.exceptions module</a></li> 
+             <li class="toctree-l3"><a class="reference internal" href="internal/twine.package.html">twine.package module</a></li> 
+             <li class="toctree-l3"><a class="reference internal" href="internal/twine.repository.html">twine.repository module</a></li> 
+             <li class="toctree-l3"><a class="reference internal" href="internal/twine.settings.html">twine.settings module</a></li> 
+             <li class="toctree-l3"><a class="reference internal" href="internal/twine.utils.html">twine.utils module</a></li> 
+             <li class="toctree-l3"><a class="reference internal" href="internal/twine.wheel.html">twine.wheel module</a></li> 
+             <li class="toctree-l3"><a class="reference internal" href="internal/twine.wininst.html">twine.wininst module</a></li> 
+            </ul> </li> 
+          </ul> </li> 
+         <li class="toctree-l1"><a class="reference external" href="https://github.com/pypa/.github/blob/main/CODE_OF_CONDUCT.md">Code of Conduct</a></li> 
+         <li class="toctree-l1"><a class="reference external" href="https://pypi.org/project/twine/">PyPI Project</a></li> 
+         <li class="toctree-l1"><a class="reference external" href="https://github.com/pypa/twine">GitHub Repository</a></li> 
+         <li class="toctree-l1"><a class="reference external" href="https://packaging.python.org/tutorials/packaging-projects/">Python Packaging Tutorial</a></li> 
+        </ul> 
+       </div> 
+       <div id="furo-sidebar-ad-placement" class="flat" data-ea-publisher="readthedocs" data-ea-type="readthedocs-sidebar" data-ea-manual="true"></div> 
+      </div> 
+      <div id="furo-readthedocs-versions" class="rst-versions" data-toggle="rst-versions" role="note" aria-label="Versions" tabindex="0"> <span class="rst-current-version" data-toggle="rst-current-version"> <span class="fa fa-book">&nbsp;</span> v: latest </span> 
+       <div class="rst-other-versions"> 
+        <dl> 
+         <dt>
+          Versions
+         </dt> 
+         <dd>
+          <a href="/en/latest/">latest</a>
+         </dd> 
+         <dd>
+          <a href="/en/stable/">stable</a>
+         </dd> 
+        </dl> 
+        <dl> 
+         <dt>
+          Downloads
+         </dt> 
+         <dd>
+          <a href="//twine.readthedocs.io/_/downloads/en/latest/pdf/">pdf</a>
+         </dd> 
+         <dd>
+          <a href="//twine.readthedocs.io/_/downloads/en/latest/htmlzip/">html</a>
+         </dd> 
+         <dd>
+          <a href="//twine.readthedocs.io/_/downloads/en/latest/epub/">epub</a>
+         </dd> 
+        </dl> 
+        <dl> 
+         <dt>
+          On Read the Docs
+         </dt> 
+         <dd> <a href="//readthedocs.org/projects/twine/?fromdocs=twine">Project Home</a> 
+         </dd> 
+         <dd> <a href="//readthedocs.org/builds/twine/?fromdocs=twine">Builds</a> 
+         </dd> 
+        </dl> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </aside> 
+   <div class="main"> 
+    <div class="content"> 
+     <div class="article-container"> <a href="#" class="back-to-top muted-link"> 
+       <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"> <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z" /> 
+       </svg> <span>Back to top</span> </a> 
+      <div class="content-icon-container"> 
+       <div class="edit-this-page"> <a class="muted-link" href="https://github.com/pypa/twine/edit/main/docs/contributing.rst" title="Edit this page"> 
+         <svg aria-hidden="true" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"> <path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M4 20h4l10.5 -10.5a1.5 1.5 0 0 0 -4 -4l-10.5 10.5v4" /> <line x1="13.5" y1="6.5" x2="17.5" y2="10.5" /> 
+         </svg> <span class="visually-hidden">Edit this page</span> </a> 
+       </div> 
+       <div class="theme-toggle-container theme-toggle-content"> <button class="theme-toggle"> 
+         <div class="visually-hidden">
+          Toggle Light / Dark / Auto color theme
+         </div> 
+         <svg class="theme-icon-when-auto">
+          <use href="#svg-sun-half"></use>
+         </svg> 
+         <svg class="theme-icon-when-dark">
+          <use href="#svg-moon"></use>
+         </svg> 
+         <svg class="theme-icon-when-light">
+          <use href="#svg-sun"></use>
+         </svg> </button> 
+       </div> <label class="toc-overlay-icon toc-content-icon" for="__toc"> 
+        <div class="visually-hidden">
+         Toggle table of contents sidebar
+        </div> <i class="icon">
+         <svg>
+          <use href="#svg-toc"></use>
+         </svg></i> </label> 
+      </div> 
+      <article role="main"> 
+       <section id="contributing"> 
+        <h1>Contributing<a class="headerlink" href="#contributing" title="Permalink to this headline">#</a></h1> 
+        <p>We are happy you have decided to contribute to Twine.</p> 
+        <p>Please see <a class="reference external" href="https://github.com/pypa/twine">the GitHub repository</a> for code and more documentation, and the <a class="reference external" href="https://packaging.python.org/tutorials/packaging-projects/">official Python Packaging User Guide</a> for user documentation. To ask questions or get involved, you can join the <a class="reference external" href="https://discuss.python.org/c/packaging/">Python Packaging Discourse forum</a>, <code class="docutils literal notranslate"><span class="pre">#pypa</span></code> or <code class="docutils literal notranslate"><span class="pre">#pypa-dev</span></code> on <a class="reference external" href="https://web.libera.chat/#pypa-dev,#pypa">IRC</a>, or the <a class="reference external" href="https://mail.python.org/mailman3/lists/distutils-sig.python.org/">distutils-sig mailing list</a>.</p> 
+        <p>Everyone interacting in the Twine project’s codebases, issue trackers, chat rooms, and mailing lists is expected to follow the <a class="reference external" href="https://github.com/pypa/.github/blob/main/CODE_OF_CONDUCT.md">PSF Code of Conduct</a>.</p> 
+        <section id="getting-started"> 
+         <h2>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">#</a></h2> 
+         <p>We use <a class="reference external" href="https://tox.readthedocs.io/">tox</a> to run tests, check code style, and build the documentation. To install <code class="docutils literal notranslate"><span class="pre">tox</span></code>, run:</p> 
+         <div class="highlight-bash notranslate">
+          <div class="highlight">
+           <pre><span></span>python3 -m pip install tox
+</pre>
+          </div> 
+         </div> 
+         <p>Clone the twine repository from GitHub, then run:</p> 
+         <div class="highlight-bash notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="nb">cd</span> /path/to/your/local/twine
+tox -e dev
+</pre>
+          </div> 
+         </div> 
+         <p>This creates a <a class="reference external" href="https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/">virtual environment</a>, so that twine and its dependencies do not interfere with other packages installed on your machine. In the virtual environment, <code class="docutils literal notranslate"><span class="pre">twine</span></code> is pointing at your local copy, so when you make changes, you can easily see their effect.</p> 
+         <p>The virtual environment also contains the tools for running tests and checking code style, so you can run them on single files directly or in your code editor. However, we still encourage using the <code class="docutils literal notranslate"><span class="pre">tox</span></code> commands below on the whole codebase.</p> 
+         <p>To use the virtual environment, run:</p> 
+         <div class="highlight-bash notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="nb">source</span> venv/bin/activate
+</pre>
+          </div> 
+         </div> 
+         <section id="building-the-documentation"> 
+          <h3>Building the documentation<a class="headerlink" href="#building-the-documentation" title="Permalink to this headline">#</a></h3> 
+          <p>Additions and edits to twine’s documentation are welcome and appreciated.</p> 
+          <p>To preview the docs while you’re making changes, run:</p> 
+          <div class="highlight-bash notranslate">
+           <div class="highlight">
+            <pre><span></span>tox -e watch-docs
+</pre>
+           </div> 
+          </div> 
+          <p>Then open a web browser to <a class="reference external" href="http://127.0.0.1:8000">http://127.0.0.1:8000</a>.</p> 
+          <p>When you’re done making changes, lint and build the docs locally before making a pull request. In your active virtual environment, run:</p> 
+          <div class="highlight-bash notranslate">
+           <div class="highlight">
+            <pre><span></span>tox -e docs
+</pre>
+           </div> 
+          </div> 
+          <p>The HTML of the docs will be written to <code class="file docutils literal notranslate"><span class="pre">docs/_build/html</span></code>.</p> 
+         </section> 
+         <section id="code-style"> 
+          <h3>Code style<a class="headerlink" href="#code-style" title="Permalink to this headline">#</a></h3> 
+          <p>To automatically reformat your changes with <a class="reference external" href="https://timothycrosley.github.io/isort/">isort</a> and <a class="reference external" href="https://black.readthedocs.io/">black</a>, run:</p> 
+          <div class="highlight-bash notranslate">
+           <div class="highlight">
+            <pre><span></span>tox -e format
+</pre>
+           </div> 
+          </div> 
+          <p>To detect any remaining code smells with <a class="reference external" href="https://flake8.pycqa.org/">flake8</a>, run:</p> 
+          <div class="highlight-bash notranslate">
+           <div class="highlight">
+            <pre><span></span>tox -e lint
+</pre>
+           </div> 
+          </div> 
+          <p>To perform strict type-checking using <a class="reference external" href="https://mypy.readthedocs.io/">mypy</a>, run:</p> 
+          <div class="highlight-bash notranslate">
+           <div class="highlight">
+            <pre><span></span>tox -e types
+</pre>
+           </div> 
+          </div> 
+          <p>Any errors from <code class="docutils literal notranslate"><span class="pre">lint</span></code> or <code class="docutils literal notranslate"><span class="pre">types</span></code> need to be fixed manually.</p> 
+          <p>Additionally, we prefer that <code class="docutils literal notranslate"><span class="pre">import</span></code> statements be used for packages and modules only, rather than individual classes or functions.</p> 
+         </section> 
+         <section id="testing"> 
+          <h3>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">#</a></h3> 
+          <p>We use <a class="reference external" href="https://docs.pytest.org/">pytest</a> for writing and running tests.</p> 
+          <p>To run the tests in your virtual environment, run:</p> 
+          <div class="highlight-bash notranslate">
+           <div class="highlight">
+            <pre><span></span>tox -e py
+</pre>
+           </div> 
+          </div> 
+          <p>To pass options to <code class="docutils literal notranslate"><span class="pre">pytest</span></code>, e.g. the name of a test, run:</p> 
+          <div class="highlight-bash notranslate">
+           <div class="highlight">
+            <pre><span></span>tox -e py -- tests/test_upload.py::test_exception_for_http_status
+</pre>
+           </div> 
+          </div> 
+          <p>Twine is continuously tested against supported versions of Python using <a class="reference external" href="https://github.com/pypa/twine/actions">GitHub Actions</a>. To run the tests against a specific version, e.g. Python 3.8, you will need it installed on your machine. Then, run:</p> 
+          <div class="highlight-bash notranslate">
+           <div class="highlight">
+            <pre><span></span>tox -e py38
+</pre>
+           </div> 
+          </div> 
+          <p>To run the “integration” tests of uploading to real package indexes, run:</p> 
+          <div class="highlight-bash notranslate">
+           <div class="highlight">
+            <pre><span></span>tox -e integration
+</pre>
+           </div> 
+          </div> 
+          <p>To run the tests against all supported Python versions, check code style, and build the documentation, run:</p> 
+          <div class="highlight-bash notranslate">
+           <div class="highlight">
+            <pre><span></span>tox
+</pre>
+           </div> 
+          </div> 
+         </section> 
+        </section> 
+        <section id="submitting-changes"> 
+         <h2>Submitting changes<a class="headerlink" href="#submitting-changes" title="Permalink to this headline">#</a></h2> 
+         <ol class="arabic simple"> 
+          <li><p>Fork <a class="reference external" href="https://github.com/pypa/twine">the GitHub repository</a>.</p></li> 
+          <li><p>Make a branch off of <code class="docutils literal notranslate"><span class="pre">main</span></code> and commit your changes to it.</p></li> 
+          <li><p>Run the tests, check code style, and build the docs as described above.</p></li> 
+          <li><p>Optionally, add your name to the end of the <code class="file docutils literal notranslate"><span class="pre">AUTHORS</span></code> file using the format <code class="docutils literal notranslate"><span class="pre">Name</span> <span class="pre">&lt;email@domain.com&gt;</span> <span class="pre">(url)</span></code>, where the <code class="docutils literal notranslate"><span class="pre">(url)</span></code> portion is optional.</p></li> 
+          <li><p>Submit a pull request to the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch on GitHub, referencing an open issue.</p></li> 
+          <li><p>Add a changelog entry.</p></li> 
+         </ol> 
+         <section id="changelog-entries"> 
+          <h3>Changelog entries<a class="headerlink" href="#changelog-entries" title="Permalink to this headline">#</a></h3> 
+          <p>The <code class="docutils literal notranslate"><span class="pre">docs/changelog.rst</span></code> file is built by <a class="reference external" href="https://pypi.org/project/towncrier/">towncrier</a> from files in the <code class="docutils literal notranslate"><span class="pre">changelog/</span></code> directory. To add an entry, create a file in that directory named <code class="docutils literal notranslate"><span class="pre">{number}.{type}.rst</span></code>, where <code class="docutils literal notranslate"><span class="pre">{number}</span></code> is the pull request number, and <code class="docutils literal notranslate"><span class="pre">{type}</span></code> is <code class="docutils literal notranslate"><span class="pre">feature</span></code>, <code class="docutils literal notranslate"><span class="pre">bugfix</span></code>, <code class="docutils literal notranslate"><span class="pre">doc</span></code>, <code class="docutils literal notranslate"><span class="pre">removal</span></code>, or <code class="docutils literal notranslate"><span class="pre">misc</span></code>.</p> 
+          <p>For example, if your PR number is 1234 and it’s fixing a bug, then you would create <code class="docutils literal notranslate"><span class="pre">changelog/1234.bugfix.rst</span></code>. PRs can span multiple categories by creating multiple files: if you added a feature and deprecated/removed an old feature in PR #5678, you would create <code class="docutils literal notranslate"><span class="pre">changelog/5678.feature.rst</span></code> and <code class="docutils literal notranslate"><span class="pre">changelog/5678.removal.rst</span></code>.</p> 
+          <p>A changelog entry is meant for end users and should only contain details relevant to them. In order to maintain a consistent style, please keep the entry to the point, in sentence case, shorter than 80 characters, and in an imperative tone. An entry should complete the sentence “This change will …”. If one line is not enough, use a summary line in an imperative tone, followed by a description of the change in one or more paragraphs, each wrapped at 80 characters and separated by blank lines.</p> 
+          <p>You don’t need to reference the pull request or issue number in a changelog entry, since towncrier will add a link using the number in the file name, and the pull request should reference an issue number. Similarly, you don’t need to add your name to the entry, since that will be associated with the pull request.</p> 
+          <p>Changelog entries are rendered using <a class="reference external" href="https://www.writethedocs.org/guide/writing/reStructuredText/">reStructuredText</a>, but they should only have minimal formatting (such as <code class="docutils literal notranslate"><span class="pre">``monospaced</span> <span class="pre">text``</span></code>).</p> 
+         </section> 
+        </section> 
+        <section id="architectural-overview"> 
+         <h2>Architectural overview<a class="headerlink" href="#architectural-overview" title="Permalink to this headline">#</a></h2> 
+         <p>Twine is a command-line tool for interacting with PyPI securely over HTTPS. Its three purposes are to be:</p> 
+         <ol class="arabic simple"> 
+          <li><p>A user-facing tool for publishing on pypi.org</p></li> 
+          <li><p>A user-facing tool for publishing on other Python package indexes (e.g., <code class="docutils literal notranslate"><span class="pre">devpi</span></code> instances)</p></li> 
+          <li><p>A useful API for other programs (e.g., <code class="docutils literal notranslate"><span class="pre">zest.releaser</span></code>) to call for publishing on any Python package index</p></li> 
+         </ol> 
+         <p>Currently, twine has two principle functions: uploading new packages and registering new <a class="reference external" href="https://packaging.python.org/glossary/#term-Project">projects</a> (<code class="docutils literal notranslate"><span class="pre">register</span></code> is no longer supported on PyPI, and is in Twine for use with other package indexes).</p> 
+         <p>Its command line arguments are parsed in <code class="file docutils literal notranslate"><span class="pre">twine/cli.py</span></code>. The code for registering new projects is in <code class="file docutils literal notranslate"><span class="pre">twine/commands/register.py</span></code>, and the code for uploading is in <code class="file docutils literal notranslate"><span class="pre">twine/commands/upload.py</span></code>. The file <code class="file docutils literal notranslate"><span class="pre">twine/package.py</span></code> contains a single class, <code class="docutils literal notranslate"><span class="pre">PackageFile</span></code>, which hashes the project files and extracts their metadata. The file <code class="file docutils literal notranslate"><span class="pre">twine/repository.py</span></code> contains the <code class="docutils literal notranslate"><span class="pre">Repository</span></code> class, whose methods control the URL the package is uploaded to (which the user can specify either as a default, in the <code class="file docutils literal notranslate"><span class="pre">.pypirc</span></code> file, or pass on the command line), and the methods that upload the package securely to a URL.</p> 
+         <p>For more details, refer to the source documentation (currently a <a class="reference external" href="https://github.com/pypa/twine/issues/635">work in progress</a>):</p> 
+         <div class="toctree-wrapper compound"> 
+          <ul> 
+           <li class="toctree-l1"><a class="reference internal" href="internal/twine.html">twine package</a>
+            <ul> 
+             <li class="toctree-l2"><a class="reference internal" href="internal/twine.commands.html">twine.commands package</a>
+              <ul> 
+               <li class="toctree-l3"><a class="reference internal" href="internal/twine.commands.check.html">twine.commands.check module</a></li> 
+               <li class="toctree-l3"><a class="reference internal" href="internal/twine.commands.register.html">twine.commands.register module</a></li> 
+               <li class="toctree-l3"><a class="reference internal" href="internal/twine.commands.upload.html">twine.commands.upload module</a></li> 
+              </ul> </li> 
+             <li class="toctree-l2"><a class="reference internal" href="internal/twine.auth.html">twine.auth module</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="internal/twine.cli.html">twine.cli module</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="internal/twine.exceptions.html">twine.exceptions module</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="internal/twine.package.html">twine.package module</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="internal/twine.repository.html">twine.repository module</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="internal/twine.settings.html">twine.settings module</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="internal/twine.utils.html">twine.utils module</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="internal/twine.wheel.html">twine.wheel module</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="internal/twine.wininst.html">twine.wininst module</a></li> 
+            </ul> </li> 
+          </ul> 
+         </div> 
+         <section id="where-twine-gets-configuration-and-credentials"> 
+          <h3>Where Twine gets configuration and credentials<a class="headerlink" href="#where-twine-gets-configuration-and-credentials" title="Permalink to this headline">#</a></h3> 
+          <p>A user can set the repository URL, username, and/or password via command line, <code class="docutils literal notranslate"><span class="pre">.pypirc</span></code> files, environment variables, and <code class="docutils literal notranslate"><span class="pre">keyring</span></code>.</p> 
+         </section> 
+        </section> 
+        <section id="adding-a-maintainer"> 
+         <h2>Adding a maintainer<a class="headerlink" href="#adding-a-maintainer" title="Permalink to this headline">#</a></h2> 
+         <p>A checklist for adding a new maintainer to the project.</p> 
+         <ol class="arabic simple"> 
+          <li><p>Add them as a Member in the GitHub repo settings.</p></li> 
+          <li><p>Get them Test PyPI and canon PyPI usernames and add them as a Maintainer on <a class="reference external" href="https://test.pypi.org/manage/project/twine/collaboration/">our Test PyPI project</a> and <a class="reference external" href="https://pypi.org/manage/project/twine/collaboration/">canon PyPI</a>.</p></li> 
+         </ol> 
+        </section> 
+        <section id="making-a-new-release"> 
+         <h2>Making a new release<a class="headerlink" href="#making-a-new-release" title="Permalink to this headline">#</a></h2> 
+         <p>A checklist for creating, testing, and distributing a new version.</p> 
+         <ol class="arabic"> 
+          <li><p>Choose a version number, and create a new branch</p> 
+           <div class="highlight-bash notranslate">
+            <div class="highlight">
+             <pre><span></span><span class="nv">VERSION</span><span class="o">=</span><span class="m">3</span>.4.2
+
+git switch -c release-<span class="nv">$VERSION</span>
+</pre>
+            </div> 
+           </div> </li> 
+          <li><p>Update <code class="file docutils literal notranslate"><span class="pre">docs/changelog.rst</span></code></p> 
+           <div class="highlight-bash notranslate">
+            <div class="highlight">
+             <pre><span></span>tox -e changelog -- --version <span class="nv">$VERSION</span>
+
+git commit -am <span class="s2">"Update changelog for </span><span class="nv">$VERSION</span><span class="s2">"</span>
+</pre>
+            </div> 
+           </div> </li> 
+          <li><p>Open a pull request for review</p></li> 
+          <li><p>Merge the pull request, and ensure the <a class="reference external" href="https://github.com/pypa/twine/actions">GitHub Actions</a> build passes</p></li> 
+          <li><p>Create a new git tag for the version</p> 
+           <div class="highlight-bash notranslate">
+            <div class="highlight">
+             <pre><span></span>git switch main
+
+git pull --ff-only upstream main
+
+git tag -m <span class="s2">"Release v</span><span class="nv">$VERSION</span><span class="s2">"</span> <span class="nv">$VERSION</span>
+</pre>
+            </div> 
+           </div> </li> 
+          <li><p>Push to start the release, and watch it in <a class="reference external" href="https://github.com/pypa/twine/actions">GitHub Actions</a></p> 
+           <div class="highlight-bash notranslate">
+            <div class="highlight">
+             <pre><span></span>git push upstream <span class="nv">$VERSION</span>
+</pre>
+            </div> 
+           </div> </li> 
+          <li><p>View the new release on <a class="reference external" href="https://pypi.org/project/twine/">PyPI</a></p></li> 
+         </ol> 
+        </section> 
+        <section id="future-development"> 
+         <h2>Future development<a class="headerlink" href="#future-development" title="Permalink to this headline">#</a></h2> 
+         <p>See our <a class="reference external" href="https://github.com/pypa/twine/issues">open issues</a>.</p> 
+         <p>In the future, <code class="docutils literal notranslate"><span class="pre">pip</span></code> and <code class="docutils literal notranslate"><span class="pre">twine</span></code> may merge into a single tool; see <a class="reference external" href="https://github.com/pypa/packaging-problems/issues/60">ongoing discussion</a>.</p> 
+        </section> 
+       </section> 
+      </article> 
+     </div> 
+     <footer> 
+      <div class="related-pages"> <a class="next-page" href="internal/twine.html"> 
+        <div class="page-info"> 
+         <div class="context"> <span>Next</span> 
+         </div> 
+         <div class="title">
+          twine package
+         </div> 
+        </div> 
+        <svg>
+         <use href="#svg-arrow-right"></use>
+        </svg> </a> <a class="prev-page" href="changelog.html"> 
+        <svg>
+         <use href="#svg-arrow-right"></use>
+        </svg> 
+        <div class="page-info"> 
+         <div class="context"> <span>Previous</span> 
+         </div> 
+         <div class="title">
+          Changelog
+         </div> 
+        </div> </a> 
+      </div> 
+      <div class="bottom-of-page"> 
+       <div class="left-details"> 
+        <div class="copyright">
+          Copyright © 2019, Donald Stufft and individual contributors 
+        </div> Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s <a href="https://github.com/pradyunsg/furo">Furo</a> 
+       </div> 
+       <div class="right-details"> 
+        <div class="icons"> <a class="muted-link" href="https://readthedocs.org/projects/twine" aria-label="On Read the Docs"> 
+          <svg x="0px" y="0px" viewbox="-125 217 360 360" xml:space="preserve"> <path fill="currentColor" d="M39.2,391.3c-4.2,0.6-7.1,4.4-6.5,8.5c0.4,3,2.6,5.5,5.5,6.3 c0,0,18.5,6.1,50,8.7c25.3,2.1,54-1.8,54-1.8c4.2-0.1,7.5-3.6,7.4-7.8c-0.1-4.2-3.6-7.5-7.8-7.4c-0.5,0-1,0.1-1.5,0.2 c0,0-28.1,3.5-50.9,1.6c-30.1-2.4-46.5-7.9-46.5-7.9C41.7,391.3,40.4,391.1,39.2,391.3z M39.2,353.6c-4.2,0.6-7.1,4.4-6.5,8.5 c0.4,3,2.6,5.5,5.5,6.3c0,0,18.5,6.1,50,8.7c25.3,2.1,54-1.8,54-1.8c4.2-0.1,7.5-3.6,7.4-7.8c-0.1-4.2-3.6-7.5-7.8-7.4 c-0.5,0-1,0.1-1.5,0.2c0,0-28.1,3.5-50.9,1.6c-30.1-2.4-46.5-7.9-46.5-7.9C41.7,353.6,40.4,353.4,39.2,353.6z M39.2,315.9 c-4.2,0.6-7.1,4.4-6.5,8.5c0.4,3,2.6,5.5,5.5,6.3c0,0,18.5,6.1,50,8.7c25.3,2.1,54-1.8,54-1.8c4.2-0.1,7.5-3.6,7.4-7.8 c-0.1-4.2-3.6-7.5-7.8-7.4c-0.5,0-1,0.1-1.5,0.2c0,0-28.1,3.5-50.9,1.6c-30.1-2.4-46.5-7.9-46.5-7.9 C41.7,315.9,40.4,315.8,39.2,315.9z M39.2,278.3c-4.2,0.6-7.1,4.4-6.5,8.5c0.4,3,2.6,5.5,5.5,6.3c0,0,18.5,6.1,50,8.7 c25.3,2.1,54-1.8,54-1.8c4.2-0.1,7.5-3.6,7.4-7.8c-0.1-4.2-3.6-7.5-7.8-7.4c-0.5,0-1,0.1-1.5,0.2c0,0-28.1,3.5-50.9,1.6 c-30.1-2.4-46.5-7.9-46.5-7.9C41.7,278.2,40.4,278.1,39.2,278.3z M-13.6,238.5c-39.6,0.3-54.3,12.5-54.3,12.5v295.7 c0,0,14.4-12.4,60.8-10.5s55.9,18.2,112.9,19.3s71.3-8.8,71.3-8.8l0.8-301.4c0,0-25.6,7.3-75.6,7.7c-49.9,0.4-61.9-12.7-107.7-14.2 C-8.2,238.6-10.9,238.5-13.6,238.5z M19.5,257.8c0,0,24,7.9,68.3,10.1c37.5,1.9,75-3.7,75-3.7v267.9c0,0-19,10-66.5,6.6 C59.5,536.1,19,522.1,19,522.1L19.5,257.8z M-3.6,264.8c4.2,0,7.7,3.4,7.7,7.7c0,4.2-3.4,7.7-7.7,7.7c0,0-12.4,0.1-20,0.8 c-12.7,1.3-21.4,5.9-21.4,5.9c-3.7,2-8.4,0.5-10.3-3.2c-2-3.7-0.5-8.4,3.2-10.3c0,0,0,0,0,0c0,0,11.3-6,27-7.5 C-16,264.9-3.6,264.8-3.6,264.8z M-11,302.6c4.2-0.1,7.4,0,7.4,0c4.2,0.5,7.2,4.3,6.7,8.5c-0.4,3.5-3.2,6.3-6.7,6.7 c0,0-12.4,0.1-20,0.8c-12.7,1.3-21.4,5.9-21.4,5.9c-3.7,2-8.4,0.5-10.3-3.2c-2-3.7-0.5-8.4,3.2-10.3c0,0,11.3-6,27-7.5 C-20.5,302.9-15.2,302.7-11,302.6z M-3.6,340.2c4.2,0,7.7,3.4,7.7,7.7s-3.4,7.7-7.7,7.7c0,0-12.4-0.1-20,0.7 c-12.7,1.3-21.4,5.9-21.4,5.9c-3.7,2-8.4,0.5-10.3-3.2c-2-3.7-0.5-8.4,3.2-10.3c0,0,11.3-6,27-7.5C-16,340.1-3.6,340.2-3.6,340.2z" /> 
+          </svg> </a><a class="muted-link" href="https://github.com/pypa/twine" aria-label="On GitHub"> 
+          <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewbox="0 0 16 16"> <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z" /> 
+          </svg> </a> 
+        </div> 
+       </div> 
+      </div> 
+     </footer> 
+    </div> 
+    <aside class="toc-drawer"> 
+     <div class="toc-sticky toc-scroll"> 
+      <div class="toc-title-container"> <span class="toc-title"> Contents </span> 
+      </div> 
+      <div class="toc-tree-container"> 
+       <div class="toc-tree"> 
+        <ul> 
+         <li><a class="reference internal" href="#">Contributing</a>
+          <ul> 
+           <li><a class="reference internal" href="#getting-started">Getting started</a>
+            <ul> 
+             <li><a class="reference internal" href="#building-the-documentation">Building the documentation</a></li> 
+             <li><a class="reference internal" href="#code-style">Code style</a></li> 
+             <li><a class="reference internal" href="#testing">Testing</a></li> 
+            </ul> </li> 
+           <li><a class="reference internal" href="#submitting-changes">Submitting changes</a>
+            <ul> 
+             <li><a class="reference internal" href="#changelog-entries">Changelog entries</a></li> 
+            </ul> </li> 
+           <li><a class="reference internal" href="#architectural-overview">Architectural overview</a>
+            <ul> 
+             <li><a class="reference internal" href="#where-twine-gets-configuration-and-credentials">Where Twine gets configuration and credentials</a></li> 
+            </ul> </li> 
+           <li><a class="reference internal" href="#adding-a-maintainer">Adding a maintainer</a></li> 
+           <li><a class="reference internal" href="#making-a-new-release">Making a new release</a></li> 
+           <li><a class="reference internal" href="#future-development">Future development</a></li> 
+          </ul> </li> 
+        </ul> 
+       </div> 
+      </div> 
+     </div> 
+    </aside> 
+   </div> 
+  </div>
+  <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script> 
+  <script src="_static/jquery.js"></script> 
+  <script src="_static/underscore.js"></script> 
+  <script src="_static/doctools.js"></script> 
+  <script src="_static/scripts/furo.js"></script> 
+  <script async src="https://assets.readthedocs.org/static/javascript/readthedocs-doc-embed.js"></script>  
+ </body>
+</html>

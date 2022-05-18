@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en"> 
+ <head> 
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/"> 
+  <title>Using TestPyPI — Python Packaging User Guide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="stylesheet" type="text/css" href="../../_static/pygments.css"> 
+  <link rel="stylesheet" type="text/css" href="../../_static/pypa.css"> 
+  <link rel="stylesheet" type="text/css" href="../../_static/tabs.css"> 
+  <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css"> 
+  <link rel="stylesheet" type="text/css" href="https://assets.readthedocs.org/static/css/badge_only.css"> 
+  <link rel="stylesheet" type="text/css" href="../../_static/overrides.css"> 
+  <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script> 
+  <script src="../../_static/jquery.js"></script> 
+  <script src="../../_static/underscore.js"></script> 
+  <script src="../../_static/doctools.js"></script> 
+  <script src="../../_static/tabs.js"></script> 
+  <script src="../../_static/clipboard.min.js"></script> 
+  <script src="../../_static/copybutton.js"></script> 
+  <script async src="https://assets.readthedocs.org/static/javascript/readthedocs-doc-embed.js"></script> 
+  <script src="../../_static/sidebar.js"></script> 
+  <link rel="canonical" href="https://packaging.python.org/en/latest/guides/using-testpypi.html"> 
+  <link rel="index" title="Index" href="../../genindex/"> 
+  <link rel="search" title="Search" href="../../search/"> 
+  <link rel="next" title="Making a PyPI-friendly README" href="../making-a-pypi-friendly-readme/"> 
+  <link rel="prev" title="Migrating to PyPI.org" href="../migrating-to-pypi-org/">
+  <link rel="shortcut icon" type="image/png" href="../../_static/py.svg"> 
+  <script type="text/javascript" src="../../_static/copybutton.js"></script> 
+  <script type="text/javascript" src="../../_static/menu.js"></script> <!-- RTD Extra Head --> 
+  <link rel="stylesheet" href="https://assets.readthedocs.org/static/css/readthedocs-doc-embed.css" type="text/css"> 
+  <script type="application/json" id="READTHEDOCS_DATA">{"ad_free": false, "api_host": "https://readthedocs.org", "build_date": "2022-05-09T12:23:52Z", "builder": "sphinx", "canonical_url": null, "commit": "eb42238e", "docroot": "/source/", "features": {"docsearch_disabled": false}, "global_analytics_code": "UA-17997319-1", "language": "en", "page": "guides/using-testpypi", "programming_language": "py", "project": "python-packaging-user-guide", "proxied_api_host": "/_", "source_suffix": ".rst", "subprojects": {}, "theme": "pypa_theme", "user_analytics_code": "", "version": "latest"}</script> <!--
+Using this variable directly instead of using `JSON.parse` is deprecated.
+The READTHEDOCS_DATA global variable will be removed in the future.
+--> 
+  <script type="text/javascript">
+READTHEDOCS_DATA = JSON.parse(document.getElementById('READTHEDOCS_DATA').innerHTML);
+</script> 
+  <script type="text/javascript" src="https://assets.readthedocs.org/static/javascript/readthedocs-analytics.js" async></script> <!-- end RTD <extrahead> --> 
+ </head> 
+ <body> 
+  <div class="mobile-nav"> 
+   <input type="checkbox" id="menuToggler" class="toggler__input" aria-controls="navigation" aria-pressed="false" aria-expanded="false" role="button" aria-label="Menu"> <label for="menuToggler" class="toggler__label"> <span></span> </label> 
+   <nav class="nav-content" role="navigation"> <a href="https://pypa.io" class="nav-logo"> <img src="../../_static/py.svg" alt="Logo"> </a> 
+    <div class="version_switcher_placeholder"></div> 
+    <form id="searchbox" role="search" class="search" action="../../search/" method="get"> 
+     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" class="search-icon"> <path fill-rule="nonzero" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" fill="#444"></path> 
+     </svg> 
+     <input type="text" name="q" aria-label="Quick search"> 
+     <input type="submit" value="Go"> 
+    </form> 
+   </nav> 
+   <div class="menu-wrapper"> 
+    <nav class="menu" role="navigation" aria-label="main navigation"> 
+     <div class="language_switcher_placeholder"></div> 
+     <h3><a href="../../">Table of Contents</a></h3> 
+     <ul class="current"> 
+      <li class="toctree-l1"><a class="reference internal" href="../../overview/">An Overview of Packaging for Python</a></li> 
+      <li class="toctree-l1"><a class="reference internal" href="../../tutorials/">Tutorials</a></li> 
+      <li class="toctree-l1 current"><a class="reference internal" href="../">Guides</a>
+       <ul class="current"> 
+        <li class="toctree-l2"><a class="reference internal" href="../installing-using-pip-and-virtual-environments/">Installing packages using pip and virtual environments</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../installing-stand-alone-command-line-tools/">Installing stand alone command line tools</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../installing-using-linux-tools/">Installing pip/setuptools/wheel with Linux Package Managers</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../installing-scientific-packages/">Installing scientific packages</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../multi-version-installs/">Multi-version installs</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../index-mirrors-and-caches/">Package index mirrors and caches</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../hosting-your-own-index/">Hosting your own simple repository</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../distributing-packages-using-setuptools/">Packaging and distributing projects</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../using-manifest-in/">Including files in source distributions with <code class="docutils literal notranslate"><span class="pre">MANIFEST.in</span></code></a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../single-sourcing-package-version/">Single-sourcing the package version</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../supporting-multiple-python-versions/">Supporting multiple Python versions</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../dropping-older-python-versions/">Dropping support for older Python versions</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../packaging-binary-extensions/">Packaging binary extensions</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../supporting-windows-using-appveyor/">Supporting Windows using Appveyor</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../packaging-namespace-packages/">Packaging namespace packages</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../creating-and-discovering-plugins/">Creating and discovering plugins</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../migrating-to-pypi-org/">Migrating to PyPI.org</a></li> 
+        <li class="toctree-l2 current"><a class="current reference internal" href="#">Using TestPyPI</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../making-a-pypi-friendly-readme/">Making a PyPI-friendly README</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../publishing-package-distribution-releases-using-github-actions-ci-cd-workflows/">Publishing package distribution releases using GitHub Actions CI/CD workflows</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../tool-recommendations/">Tool recommendations</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../analyzing-pypi-package-downloads/">Analyzing PyPI package downloads</a></li> 
+       </ul> </li> 
+      <li class="toctree-l1"><a class="reference internal" href="../../discussions/">Discussions</a></li> 
+      <li class="toctree-l1"><a class="reference internal" href="../../specifications/">PyPA specifications</a></li> 
+      <li class="toctree-l1"><a class="reference internal" href="../../key_projects/">Project Summaries</a></li> 
+      <li class="toctree-l1"><a class="reference internal" href="../../glossary/">Glossary</a></li> 
+      <li class="toctree-l1"><a class="reference internal" href="../../support/">How to Get Support</a></li> 
+      <li class="toctree-l1"><a class="reference internal" href="../../contribute/">Contribute to this guide</a></li> 
+      <li class="toctree-l1"><a class="reference internal" href="../../news/">News</a></li> 
+     </ul> 
+     <h4>Previous topic</h4> 
+     <p class="topless"><a href="../migrating-to-pypi-org/" title="previous chapter">Migrating to PyPI.org</a></p> 
+     <h4>Next topic</h4> 
+     <p class="topless"><a href="../making-a-pypi-friendly-readme/" title="next chapter">Making a PyPI-friendly README</a></p> 
+    </nav> 
+   </div> 
+  </div> 
+  <div class="related" role="navigation" aria-label="related navigation"> 
+   <h3>Navigation</h3> 
+   <ul> 
+    <li class="right" style="margin-right: 10px"> <a href="../../genindex/" title="General Index" accesskey="I">index</a></li> 
+    <li class="right"> <a href="../making-a-pypi-friendly-readme/" title="Making a PyPI-friendly README" accesskey="N">next</a> |</li> 
+    <li class="right"> <a href="../migrating-to-pypi-org/" title="Migrating to PyPI.org" accesskey="P">previous</a> |</li> 
+    <li><img src="../../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"></li> 
+    <li><a href="https://pypa.io">PyPA</a> »</li> 
+    <li class="switchers"> 
+     <div class="language_switcher_placeholder"></div> 
+     <div class="version_switcher_placeholder"></div> </li> 
+    <li> <a href="../../">Python Packaging User Guide</a> » </li> 
+    <li class="nav-item nav-item-1"><a href="../" accesskey="U">Guides</a> »</li> 
+    <li class="nav-item nav-item-this"><a href="">Using TestPyPI</a></li> 
+    <li class="right"> 
+     <div class="inline-search" role="search"> 
+      <form class="inline-search" action="../../search/" method="get"> 
+       <input placeholder="Quick search" aria-label="Quick search" type="text" name="q"> 
+       <input type="submit" value="Go"> 
+       <input type="hidden" name="check_keywords" value="yes"> 
+       <input type="hidden" name="area" value="default"> 
+      </form> 
+     </div> | </li> 
+   </ul> 
+  </div> 
+  <div class="document"> 
+   <div class="documentwrapper"> 
+    <div class="bodywrapper"> 
+     <div class="body" role="main"> 
+      <section id="using-testpypi"> <span id="using-test-pypi"></span>
+       <h1>Using TestPyPI<a class="headerlink" href="#using-testpypi" title="Permalink to this headline">¶</a></h1> 
+       <p><code class="docutils literal notranslate"><span class="pre">TestPyPI</span></code> is a separate instance of the <a class="reference internal" href="../../glossary/#term-Python-Package-Index-PyPI"><span class="xref std std-term">Python Package Index (PyPI)</span></a> that allows you to try out the distribution tools and process without worrying about affecting the real index. TestPyPI is hosted at <a class="reference external" href="https://test.pypi.org">test.pypi.org</a></p> 
+       <section id="registering-your-account"> 
+        <h2>Registering your account<a class="headerlink" href="#registering-your-account" title="Permalink to this headline">¶</a></h2> 
+        <p>Because TestPyPI has a separate database from the live PyPI, you’ll need a separate user account specifically for TestPyPI. Go to <a class="reference external" href="https://test.pypi.org/account/register/">https://test.pypi.org/account/register/</a> to register your account.</p> 
+        <div class="admonition note"> 
+         <p class="admonition-title">Note</p> 
+         <p>The database for TestPyPI may be periodically pruned, so it is not unusual for user accounts to be deleted.</p> 
+        </div> 
+       </section> 
+       <section id="using-testpypi-with-twine"> 
+        <h2>Using TestPyPI with Twine<a class="headerlink" href="#using-testpypi-with-twine" title="Permalink to this headline">¶</a></h2> 
+        <p>You can upload your distributions to TestPyPI using <a class="reference internal" href="../../key_projects/#twine"><span class="std std-ref">twine</span></a> by specifying the <code class="docutils literal notranslate"><span class="pre">--repository</span></code> flag:</p> 
+        <div class="highlight-bash notranslate">
+         <div class="highlight">
+          <pre><span></span>twine upload --repository testpypi dist/*
+</pre>
+         </div> 
+        </div> 
+        <p>You can see if your package has successfully uploaded by navigating to the URL <code class="docutils literal notranslate"><span class="pre">https://test.pypi.org/project/&lt;sampleproject&gt;</span></code> where <code class="docutils literal notranslate"><span class="pre">sampleproject</span></code> is the name of your project that you uploaded. It may take a minute or two for your project to appear on the site.</p> 
+       </section> 
+       <section id="using-testpypi-with-pip"> 
+        <h2>Using TestPyPI with pip<a class="headerlink" href="#using-testpypi-with-pip" title="Permalink to this headline">¶</a></h2> 
+        <p>You can tell <a class="reference internal" href="../../key_projects/#pip"><span class="std std-ref">pip</span></a> to download packages from TestPyPI instead of PyPI by specifying the <code class="docutils literal notranslate"><span class="pre">--index-url</span></code> flag:</p> 
+        <div class="tab-set docutils container"> 
+         <input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">Unix/macOS</label>
+         <div class="tab-content docutils container"> 
+          <div class="highlight-bash notranslate">
+           <div class="highlight">
+            <pre><span></span>python3 -m pip install --index-url https://test.pypi.org/simple/ your-package
+</pre>
+           </div> 
+          </div> 
+         </div> 
+         <input class="tab-input" id="tab-set--0-input--2" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--2">Windows</label>
+         <div class="tab-content docutils container"> 
+          <div class="highlight-bat notranslate">
+           <div class="highlight">
+            <pre><span></span>py -m pip install --index-url https://test.pypi.org/simple/ your-package
+</pre>
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <p>If you want to allow pip to also download packages from PyPI, you can specify <code class="docutils literal notranslate"><span class="pre">--extra-index-url</span></code> to point to PyPI. This is useful when the package you’re testing has dependencies:</p> 
+        <div class="tab-set docutils container"> 
+         <input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">Unix/macOS</label>
+         <div class="tab-content docutils container"> 
+          <div class="highlight-bash notranslate">
+           <div class="highlight">
+            <pre><span></span>python3 -m pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple/ your-package
+</pre>
+           </div> 
+          </div> 
+         </div> 
+         <input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--2">Windows</label>
+         <div class="tab-content docutils container"> 
+          <div class="highlight-bat notranslate">
+           <div class="highlight">
+            <pre><span></span>py -m pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple/ your-package
+</pre>
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </section> 
+       <section id="setting-up-testpypi-in-pypirc"> 
+        <h2>Setting up TestPyPI in <code class="file docutils literal notranslate"><span class="pre">.pypirc</span></code><a class="headerlink" href="#setting-up-testpypi-in-pypirc" title="Permalink to this headline">¶</a></h2> 
+        <p>If you want to avoid entering your username, you can configure TestPyPI in your <code class="file docutils literal notranslate"><span class="pre">$HOME/.pypirc</span></code>:</p> 
+        <div class="highlight-default notranslate">
+         <div class="highlight">
+          <pre><span></span><span class="p">[</span><span class="n">testpypi</span><span class="p">]</span>
+<span class="n">username</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">your</span> <span class="n">TestPyPI</span> <span class="n">username</span><span class="o">&gt;</span>
+</pre>
+         </div> 
+        </div> 
+        <p>For more details, see the <a class="reference internal" href="../../specifications/pypirc/#pypirc"><span class="std std-ref">specification</span></a> for <code class="file docutils literal notranslate"><span class="pre">.pypirc</span></code>.</p> 
+       </section> 
+      </section> 
+      <div class="clearer"></div> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="sphinxsidebar" role="navigation" aria-label="main navigation"> 
+    <div class="sphinxsidebarwrapper"> 
+     <h3><a href="../../">Table of Contents</a></h3> 
+     <ul class="current"> 
+      <li class="toctree-l1"><a class="reference internal" href="../../overview/">An Overview of Packaging for Python</a></li> 
+      <li class="toctree-l1"><a class="reference internal" href="../../tutorials/">Tutorials</a></li> 
+      <li class="toctree-l1 current"><a class="reference internal" href="../">Guides</a>
+       <ul class="current"> 
+        <li class="toctree-l2"><a class="reference internal" href="../installing-using-pip-and-virtual-environments/">Installing packages using pip and virtual environments</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../installing-stand-alone-command-line-tools/">Installing stand alone command line tools</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../installing-using-linux-tools/">Installing pip/setuptools/wheel with Linux Package Managers</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../installing-scientific-packages/">Installing scientific packages</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../multi-version-installs/">Multi-version installs</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../index-mirrors-and-caches/">Package index mirrors and caches</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../hosting-your-own-index/">Hosting your own simple repository</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../distributing-packages-using-setuptools/">Packaging and distributing projects</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../using-manifest-in/">Including files in source distributions with <code class="docutils literal notranslate"><span class="pre">MANIFEST.in</span></code></a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../single-sourcing-package-version/">Single-sourcing the package version</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../supporting-multiple-python-versions/">Supporting multiple Python versions</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../dropping-older-python-versions/">Dropping support for older Python versions</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../packaging-binary-extensions/">Packaging binary extensions</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../supporting-windows-using-appveyor/">Supporting Windows using Appveyor</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../packaging-namespace-packages/">Packaging namespace packages</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../creating-and-discovering-plugins/">Creating and discovering plugins</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../migrating-to-pypi-org/">Migrating to PyPI.org</a></li> 
+        <li class="toctree-l2 current"><a class="current reference internal" href="#">Using TestPyPI</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../making-a-pypi-friendly-readme/">Making a PyPI-friendly README</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../publishing-package-distribution-releases-using-github-actions-ci-cd-workflows/">Publishing package distribution releases using GitHub Actions CI/CD workflows</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../tool-recommendations/">Tool recommendations</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../analyzing-pypi-package-downloads/">Analyzing PyPI package downloads</a></li> 
+       </ul> </li> 
+      <li class="toctree-l1"><a class="reference internal" href="../../discussions/">Discussions</a></li> 
+      <li class="toctree-l1"><a class="reference internal" href="../../specifications/">PyPA specifications</a></li> 
+      <li class="toctree-l1"><a class="reference internal" href="../../key_projects/">Project Summaries</a></li> 
+      <li class="toctree-l1"><a class="reference internal" href="../../glossary/">Glossary</a></li> 
+      <li class="toctree-l1"><a class="reference internal" href="../../support/">How to Get Support</a></li> 
+      <li class="toctree-l1"><a class="reference internal" href="../../contribute/">Contribute to this guide</a></li> 
+      <li class="toctree-l1"><a class="reference internal" href="../../news/">News</a></li> 
+     </ul> 
+     <h4>Previous topic</h4> 
+     <p class="topless"><a href="../migrating-to-pypi-org/" title="previous chapter">Migrating to PyPI.org</a></p> 
+     <h4>Next topic</h4> 
+     <p class="topless"><a href="../making-a-pypi-friendly-readme/" title="next chapter">Making a PyPI-friendly README</a></p> 
+    </div> 
+   </div> 
+   <div class="clearer"></div> 
+  </div> 
+  <div class="related" role="navigation" aria-label="related navigation"> 
+   <h3>Navigation</h3> 
+   <ul> 
+    <li class="right" style="margin-right: 10px"> <a href="../../genindex/" title="General Index">index</a></li> 
+    <li class="right"> <a href="../making-a-pypi-friendly-readme/" title="Making a PyPI-friendly README">next</a> |</li> 
+    <li class="right"> <a href="../migrating-to-pypi-org/" title="Migrating to PyPI.org">previous</a> |</li> 
+    <li><img src="../../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"></li> 
+    <li><a href="https://pypa.io">PyPA</a> »</li> 
+    <li class="switchers"> 
+     <div class="language_switcher_placeholder"></div> 
+     <div class="version_switcher_placeholder"></div> </li> 
+    <li> <a href="../../">Python Packaging User Guide</a> » </li> 
+    <li class="nav-item nav-item-1"><a href="../">Guides</a> »</li> 
+    <li class="nav-item nav-item-this"><a href="">Using TestPyPI</a></li> 
+    <li class="right"> 
+     <div class="inline-search" role="search"> 
+      <form class="inline-search" action="../../search/" method="get"> 
+       <input placeholder="Quick search" aria-label="Quick search" type="text" name="q"> 
+       <input type="submit" value="Go"> 
+       <input type="hidden" name="check_keywords" value="yes"> 
+       <input type="hidden" name="area" value="default"> 
+      </form> 
+     </div> | </li> 
+   </ul> 
+  </div> 
+  <div class="footer">
+    © <a href="../../copyright/">Copyright</a> 2013–2020, PyPA. 
+   <br> This page is licensed under the Python Software Foundation License Version 2. 
+   <br> Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License. 
+   <br> See <a href="">History and License</a> for more information. 
+   <br>
+   <br> The Python Software Foundation is a non-profit corporation. <a href="https://www.python.org/psf/donations/">Please donate.</a> 
+   <br> 
+   <br> Last updated on May 09, 2022. <a href="https://github.com/pypa/packaging.python.org/issues">Found a bug</a>? 
+   <br> Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.3.1. 
+  </div>  
+ </body>
+</html>

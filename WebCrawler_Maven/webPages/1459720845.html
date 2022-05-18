@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"> 
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <meta name="Description" content="Documentation on the Roundup issue tracker, version 2.1.0."> 
+  <meta content="Features of using the Roundup Issue Tracker. Describes all access methods, configuration and workflow capabilities. Links to detailed documentation." language="en" name="description"> 
+  <title>Roundup Features - Roundup 2.1.0 documentation</title> 
+  <link rel="stylesheet" href="../_static/style.css" type="text/css"> 
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css"> 
+  <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+          URL_ROOT:    '../',
+          VERSION:     '2.1.0',
+          COLLAPSE_MODINDEX: false,
+          FILE_SUFFIX: '.html'
+      };
+    </script> 
+  <script type="text/javascript" src="../_static/jquery.js"></script> 
+  <script type="text/javascript" src="../_static/underscore.js"></script> 
+  <script type="text/javascript" src="../_static/doctools.js"></script> 
+  <script type="text/javascript" src="../_static/language_data.js"></script> 
+  <link rel="canonical" href="https://www.roundup-tracker.org/docs/features.html"> 
+  <link rel="index" title="Index" href="../genindex.html"> 
+  <link rel="search" title="Search" href="../search.html"> 
+  <link rel="top" title="Roundup 2.1.0 documentation" href="../index.html"> 
+  <link rel="up" title="Docs" href="../docs.html"> 
+  <link rel="next" title="Installing Roundup" href="installation.html"> 
+  <link rel="prev" title="Docs" href="../docs.html"> 
+ </head> 
+ <body> 
+  <div class="header">
+   <h1>Roundup</h1> 
+   <div id="searchbox" style="display: none"> 
+    <form class="search" action="../search.html" method="get"> 
+     <input type="text" aria-label="Enter search terms" name="q" size="18"> 
+     <input type="submit" value="Search"> 
+     <input type="hidden" name="check_keywords" value="yes"> 
+     <input type="hidden" name="area" value="default"> 
+    </form> 
+   </div> 
+   <script type="text/javascript">$('#searchbox').show(0);</script> 
+  </div> 
+  <div class="navigation"> 
+   <div class="menu"> 
+    <ul class="current"> 
+     <li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a></li> 
+     <li class="toctree-l1"><a class="reference external" href="https://pypi.org/project/roundup/">Download</a></li> 
+     <li class="toctree-l1 current"><a class="reference internal" href="../docs.html">Docs</a>
+      <ul class="current"> 
+       <li class="toctree-l2 current"><a class="current reference internal" href="#">Roundup Features</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="installation.html">Installing Roundup</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="upgrading.html">Upgrading to newer versions of Roundup</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="FAQ.html">Roundup FAQ</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="user_guide.html">User Guide</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="customizing.html">Customising Roundup</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="admin_guide.html">Administration Guide</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="debugging.html">Debugging Aids</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="xmlrpc.html">XML-RPC access to Roundup</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="rest.html">REST API for Roundup</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="tracker_templates.html">Roundup Tracker Templates</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="glossary.html">Roundup Glossary</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="acknowledgements.html">Acknowledgements</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="license.html">License</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="overview.html">Design Overview</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="design.html">Design (original)</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="developers.html">Developing Roundup</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="mysql.html">Notes about the MySQL Database backend</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="postgresql.html">Notes about the PostgreSQL Database backend</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="implementation.html">Richard Jones implementation notes</a></li> 
+      </ul> </li> 
+     <li class="toctree-l1"><a class="reference external" href="https://issues.roundup-tracker.org">Issues</a></li> 
+     <li class="toctree-l1"><a class="reference internal" href="../contact.html">Contact</a></li> 
+     <li class="toctree-l1"><a class="reference external" href="https://wiki.roundup-tracker.org">Wiki</a></li> 
+     <li class="toctree-l1"><a class="reference internal" href="../code.html">Code</a></li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="content"> 
+   <div id="subnav"> <a title="Docs" href="../docs.html"> Prev</a> <a title="Installing Roundup" href="installation.html"> Next</a> <a title="Index" href="../genindex.html"> Index</a> 
+   </div> 
+   <div class="section" id="roundup-features"> 
+    <h1>Roundup Features</h1> 
+    <p>Roundup is a simple-to-use and -install issue-tracking system with web, e-mail and command-line interfaces. It is based on the winning design from Ka-Ping Yee in the <span class="target" id="index-0"></span>Software Carpentry “Track” design competition.</p> 
+    <dl class="docutils"> 
+     <dt>
+      <em>simple to install</em>
+     </dt> 
+     <dd>
+      <ul class="first last simple"> 
+       <li>installation (including web interface) takes about 30 minutes</li> 
+       <li>instant-gratification <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">demo.py</span></code> :)</li> 
+       <li>two templates included in the distribution for you to base your tracker on</li> 
+       <li>play with the demo, customise it and then use <em>it</em> as the template for your production tracker</li> 
+       <li>requires <em>no</em> additional support software - python (2.7 or 3.4+) is enough to get you going</li> 
+       <li>easy to set up higher-performance storage backends like <a class="reference external" href="http://www.hwaci.com/sw/sqlite/">sqlite</a>, <a class="reference external" href="https://pypi.org/project/MySQL-python/">mysql</a> and <a class="reference external" href="https://www.psycopg.org/">postgresql</a></li> 
+      </ul> 
+     </dd> 
+     <dt>
+      <em>simple to use</em>
+     </dt> 
+     <dd>
+      <ul class="first last simple"> 
+       <li>accessible through the web, email, command-line or Python programs</li> 
+       <li>may be used to track bugs, features, user feedback, sales opportunities, milestones, …</li> 
+       <li>automatically keeps a full history of changes to issues with configurable verbosity and easy access to information about who created or last modified <em>any</em> item in the database</li> 
+       <li>issues have their own mini mailing list (nosy list)</li> 
+       <li>users may sign themselves up, there may be automatic signup for incoming email and users may handle their own password reset requests</li> 
+      </ul> 
+     </dd> 
+     <dt>
+      <em>highly configurable</em>
+     </dt> 
+     <dd>
+      <ul class="first last simple"> 
+       <li>web interface HTML is fully editable</li> 
+       <li>database schema is also fully editable (only the “user” class is required) with a full set of data types (including dates and many-to-many relations) across all storages available</li> 
+       <li>customised automatic auditors and reactors may be written that perform actions before and after changes are made to entries in the database, or may veto the creation or modification of items in the database</li> 
+       <li>samples are provided for all manner of configuration changes and customisations</li> 
+      </ul> 
+     </dd> 
+     <dt>
+      <em>fast, scalable</em>
+     </dt> 
+     <dd>
+      <ul class="first last simple"> 
+       <li>with the sqlite, mysql and postgresql backends, roundup is also fast and scalable, easily handling thousands of issues and users with decent response times</li> 
+       <li>database indexes are automatically added for those backends that support them (sqlite, mysql and postgresql)</li> 
+       <li>indexed text searching giving fast responses to searches across all messages and indexed string properties</li> 
+       <li>support for the Xapian or Whoosh full-text indexing engine for large trackers</li> 
+      </ul> 
+     </dd> 
+     <dt>
+      <em>documented</em>
+     </dt> 
+     <dd>
+      <ul class="first last simple"> 
+       <li>documentation exists for installation, upgrading, maintenance, users and customisation</li> 
+      </ul> 
+     </dd> 
+     <dt>
+      <em>web interface</em>
+     </dt> 
+     <dd>
+      <ul class="first last simple"> 
+       <li>fully editable interfaces for listing and display of items</li> 
+       <li>extendable to include wizards, parent/meta bug displays, …</li> 
+       <li>differentiates between anonymous, known and admin users</li> 
+       <li>may be set up to require login, and may also only allow admin users to register new users</li> 
+       <li>authentication of user registration and user-driven password resetting using email and one time keys</li> 
+       <li>may be run using WSGI or through CGI as a normal cgi script, as a stand-alone web server, under mod_wsgi (mod_python is deprecated) or through Zope</li> 
+       <li>searching may be performed using many constraints, including a full-text search of messages attached to issues</li> 
+       <li>file attachments (added through the web or email) are served up with the correct content-type and filename</li> 
+       <li>email change messages generated by roundup appear to be sent by the person who made the change, but responses will go back through the nosy list by default</li> 
+       <li>flexible access control built around Permissions and Roles with assigned Permissions</li> 
+       <li>generates valid HTML4 or XHTML</li> 
+       <li>detects concurrent user changes</li> 
+       <li>saving and editing of user-defined queries which may optionally be shared with other users</li> 
+      </ul> 
+     </dd> 
+     <dt>
+      <em>e-mail interface</em>
+     </dt> 
+     <dd>
+      <ul class="first last simple"> 
+       <li>may be set up using sendmail-like delivery alias, POP polling or mailbox polling</li> 
+       <li>may auto-register users who send in mail and aren’t known to roundup</li> 
+       <li>nosy list configuration controls how people are added and when messages are sent to the list</li> 
+       <li>auto-filing of “unformatted” messages into a particular class</li> 
+       <li>e-mail attachments are handled sanely, being attached to the issue they’re intended for, and forwarded on to the nosy list</li> 
+       <li>sane handling of content-type and content-encoding of messages (text/plain preferred in all situations)</li> 
+       <li>email packages that display threading will show issue messages correctly threaded</li> 
+       <li>users may send in messages from multiple addresses and be associated with the same roundup username</li> 
+       <li>built-in security features like TLS and APOP</li> 
+      </ul> 
+     </dd> 
+     <dt>
+      <em>command-line</em>
+     </dt> 
+     <dd>
+      <ul class="first last simple"> 
+       <li>may be used to interactively manage roundup databases</li> 
+       <li>may be scripted using standard shell scripting</li> 
+       <li>roundup’s API may also be used by other Python programs - a sample is provided that runs once a day and emails people their assigned issues</li> 
+       <li>a variety of sample shell scripts are provided (weekly reports, issue generation, …)</li> 
+      </ul> 
+     </dd> 
+     <dt>
+      <em>xmlrpc interface</em>
+     </dt> 
+     <dd>
+      <ul class="first last simple"> 
+       <li>simple remote tracker interface with basic HTTP authentication available at the /xmlrpc endpoint.</li> 
+       <li>provides same access to tracker as roundup-admin, but based on XMLRPC calls</li> 
+       <li>see the <a class="reference external" href="xmlrpc.html">xmlrpc guide</a> for more details simple clients etc.</li> 
+      </ul> 
+     </dd> 
+     <dt>
+      <em>restful interface</em>
+     </dt> 
+     <dd>
+      <ul class="first last simple"> 
+       <li>accessible using basic HTTP authentication at /rest starting point</li> 
+       <li>see the <a class="reference external" href="rest.html">rest guide</a> for details.</li> 
+      </ul> 
+     </dd> 
+    </dl> 
+   </div> 
+  </div> 
+  <div class="footer"> 
+   <div> <span class="source">[<a href="../_sources/docs/features.txt" rel="nofollow">page source</a>]</span> © Copyright 2009-2021, Richard Jones, Roundup-Team. 
+   </div> 
+   <div>
+     Last updated on May 09, 2022. <span>Hosted by <a href="https://sourceforge.net"><img src="https://sflogo.sourceforge.net/sflogo.php?group_id=31577&amp;type=1" width="88" height="31" border="0" alt="SourceForge.net Logo"></a></span> 
+   </div> 
+  </div> 
+  <script>
+      /* locally hosted goatcounter https://www.goatcounter.com/ */
+      /* include site info in path url to allow multiple sites to be
+      tracked together */
+      window.goatcounter = {
+      path: function(p) { return location.host + p }
+      }
+    </script> 
+  <script data-goatcounter="https://stats.rouilj.dynamic-dns.net/count" integrity="sha384-QGgNMMRFTi8ul5kHJ+vXysPe8gySvSA/Y3rpXZiRLzKPIw8CWY+a3ObKmQsyDr+a" async src="/_static/goatcounter_count.v3.js">
+    </script>  
+ </body>
+</html>

@@ -1,0 +1,212 @@
+<!doctype html>
+<html class="writer-html5" lang="en"> 
+ <head> 
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Translations — Warehouse  documentation</title> 
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css"> 
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css"> 
+  <link rel="canonical" href="https://warehouse.pypa.io/translations.html"> <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]--> 
+  <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script> 
+  <script src="_static/jquery.js"></script> 
+  <script src="_static/underscore.js"></script> 
+  <script src="_static/doctools.js"></script> 
+  <script async src="https://assets.readthedocs.org/static/javascript/readthedocs-doc-embed.js"></script> 
+  <script src="_static/js/theme.js"></script> 
+  <link rel="index" title="Index" href="genindex.html"> 
+  <link rel="search" title="Search" href="search.html"> 
+  <link rel="next" title="Roadmap and Sprints" href="roadmap.html"> 
+  <link rel="prev" title="Security" href="security.html"> <!-- RTD Extra Head --> 
+  <link rel="stylesheet" href="https://assets.readthedocs.org/static/css/readthedocs-doc-embed.css" type="text/css"> 
+  <script type="application/json" id="READTHEDOCS_DATA">{"ad_free": false, "api_host": "https://readthedocs.org", "build_date": "2022-05-16T21:16:41Z", "builder": "sphinx", "canonical_url": null, "commit": "140a2cc3", "docroot": "/docs/", "features": {"docsearch_disabled": false}, "global_analytics_code": "UA-17997319-1", "language": "en", "page": "translations", "programming_language": "py", "project": "warehouse", "proxied_api_host": "/_", "source_suffix": ".rst", "subprojects": {}, "theme": "sphinx_rtd_theme", "user_analytics_code": "", "version": "latest"}</script> <!--
+Using this variable directly instead of using `JSON.parse` is deprecated.
+The READTHEDOCS_DATA global variable will be removed in the future.
+--> 
+  <script type="text/javascript">
+READTHEDOCS_DATA = JSON.parse(document.getElementById('READTHEDOCS_DATA').innerHTML);
+</script> 
+  <script type="text/javascript" src="https://assets.readthedocs.org/static/javascript/readthedocs-analytics.js" async></script> <!-- end RTD <extrahead> --> 
+ </head> 
+ <body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav"> 
+   <nav data-toggle="wy-nav-shift" class="wy-nav-side"> 
+    <div class="wy-side-scroll"> 
+     <div class="wy-side-nav-search"> <a href="index.html" class="icon icon-home"> Warehouse </a> 
+      <div class="version">
+        latest 
+      </div> 
+      <div role="search"> 
+       <form id="rtd-search-form" class="wy-form" action="search.html" method="get"> 
+        <input type="text" name="q" placeholder="Search docs"> 
+        <input type="hidden" name="check_keywords" value="yes"> 
+        <input type="hidden" name="area" value="default"> 
+       </form> 
+      </div> 
+     </div>
+     <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu"> 
+      <ul class="current"> 
+       <li class="toctree-l1"><a class="reference internal" href="development/index.html">Development</a></li> 
+       <li class="toctree-l1"><a class="reference internal" href="application.html">Warehouse codebase</a></li> 
+       <li class="toctree-l1"><a class="reference internal" href="api-reference/index.html">API reference</a></li> 
+       <li class="toctree-l1"><a class="reference internal" href="ui-principles.html">UI principles</a></li> 
+       <li class="toctree-l1"><a class="reference internal" href="security.html">Security</a></li> 
+       <li class="toctree-l1 current"><a class="current reference internal" href="#">Translations</a>
+        <ul> 
+         <li class="toctree-l2"><a class="reference internal" href="#adding-a-newly-completed-translation">Adding a newly completed translation</a></li> 
+         <li class="toctree-l2"><a class="reference internal" href="#marking-new-strings-for-translation">Marking new strings for translation</a></li> 
+         <li class="toctree-l2"><a class="reference internal" href="#passing-non-translatable-values-to-translated-strings">Passing non-translatable values to translated strings</a></li> 
+         <li class="toctree-l2"><a class="reference internal" href="#marking-new-strings-for-pluralization">Marking new strings for pluralization</a></li> 
+         <li class="toctree-l2"><a class="reference internal" href="#marking-views-as-translatable">Marking views as translatable</a></li> 
+        </ul> </li> 
+       <li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap and Sprints</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </nav> 
+   <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+    <nav class="wy-nav-top" aria-label="Mobile navigation menu"> <i data-toggle="wy-nav-top" class="fa fa-bars"></i> <a href="index.html">Warehouse</a> 
+    </nav> 
+    <div class="wy-nav-content"> 
+     <div class="rst-content"> 
+      <div role="navigation" aria-label="Page navigation"> 
+       <ul class="wy-breadcrumbs"> 
+        <li><a href="index.html" class="icon icon-home"></a> »</li> 
+        <li>Translations</li> 
+        <li class="wy-breadcrumbs-aside"> <a href="https://github.com/pypa/warehouse/blob/main/docs/translations.rst" class="fa fa-github"> Edit on GitHub</a> </li> 
+       </ul> 
+       <hr> 
+      </div> 
+      <div role="main" class="document" itemscope itemtype="http://schema.org/Article"> 
+       <div itemprop="articleBody"> 
+        <section id="translations"> 
+         <h1>Translations<a class="headerlink" href="#translations" title="Permalink to this headline">¶</a></h1> 
+         <p>We use <a class="reference external" href="https://weblate.org/">Weblate</a> to manage PyPI translations across several languages. Visit the <a class="reference external" href="https://hosted.weblate.org/projects/pypa/warehouse/">Warehouse project on Weblate</a> to contribute.</p> 
+         <p>If you are experiencing issues as a translator, please let us know by opening a <a class="reference external" href="https://github.com/pypa/warehouse/issues/new?template=translation-issue.md">translation issue on the Warehouse issue tracker</a>.</p> 
+         <section id="adding-a-newly-completed-translation"> 
+          <h2>Adding a newly completed translation<a class="headerlink" href="#adding-a-newly-completed-translation" title="Permalink to this headline">¶</a></h2> 
+          <p>Weblate will automatically add commits to a pull request as translations are updated.</p> 
+          <p>When a translation reaches 100%, it should be added as a known locale and have it’s MO file (Machine Object file) compiled.</p> 
+          <p>To add a new known locale:</p> 
+          <ol class="arabic simple"> 
+           <li><p>Check for <a class="reference external" href="https://github.com/pypa/warehouse/pulls/weblate">outstanding Weblate pull requests</a> and merge them if so.</p></li> 
+           <li><p>In a new branch, add a key/value to the <code class="docutils literal notranslate"><span class="pre">KNOWN_LOCALES</span></code> mapping in <a class="reference external" href="https://github.com/pypa/warehouse/blob/master/warehouse/i18n/__init__.py"><code class="docutils literal notranslate"><span class="pre">warehouse/i18n/__init__.py</span></code></a>. The key is the locale code, and corresponds to a directory in <code class="docutils literal notranslate"><span class="pre">warehouse/locale</span></code>.</p></li> 
+           <li><p>Commit these changes and make a new pull request.</p></li> 
+          </ol> 
+         </section> 
+         <section id="marking-new-strings-for-translation"> 
+          <h2>Marking new strings for translation<a class="headerlink" href="#marking-new-strings-for-translation" title="Permalink to this headline">¶</a></h2> 
+          <p>In an HTML template, use the <code class="code docutils literal notranslate"><span class="pre">{%</span> <span class="pre">trans</span> <span class="pre">%}</span></code> and <code class="code docutils literal notranslate"><span class="pre">{%</span> <span class="pre">endtrans</span> <span class="pre">%}</span></code> tags to mark a string for translation.</p> 
+          <p>In Python, given a request context, call <code class="code docutils literal notranslate"><span class="pre">request._(message)</span></code> to mark <code class="code docutils literal notranslate"><span class="pre">message</span></code> for translation. Without a request context, you can do the following:</p> 
+          <div class="highlight-python notranslate">
+           <div class="highlight">
+            <pre><span></span><span class="kn">from</span> <span class="nn">warehouse.i18n</span> <span class="kn">import</span> <span class="n">localize</span> <span class="k">as</span> <span class="n">_</span>
+<span class="n">message</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">"Your message here."</span><span class="p">)</span>
+</pre>
+           </div> 
+          </div> 
+         </section> 
+         <section id="passing-non-translatable-values-to-translated-strings"> 
+          <h2>Passing non-translatable values to translated strings<a class="headerlink" href="#passing-non-translatable-values-to-translated-strings" title="Permalink to this headline">¶</a></h2> 
+          <p>To pass values you don’t want to be translated into translated strings, define them inside the <code class="code docutils literal notranslate"><span class="pre">{%</span> <span class="pre">trans</span> <span class="pre">%}</span></code> tag. For example, to pass a non-translatable link <code class="code docutils literal notranslate"><span class="pre">request.route_path('classifiers')</span></code> into a string, instead of placing it directly in the string like so:</p> 
+          <div class="highlight-html notranslate">
+           <div class="highlight">
+            <pre><span></span>{% trans trimmed %}
+Filter by <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"request.route_path('classifiers')"</span><span class="p">&gt;</span>classifier<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+{% endtrans %}
+</pre>
+           </div> 
+          </div> 
+          <p>Instead, define it inside the <code class="code docutils literal notranslate"><span class="pre">{%</span> <span class="pre">trans</span> <span class="pre">%}</span></code> tag:</p> 
+          <div class="highlight-html notranslate">
+           <div class="highlight">
+            <pre><span></span>{% trans trimmed href=request.route_path('classifiers') %}
+Filter by <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"{{ href }}"</span><span class="p">&gt;</span>classifier<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+{% endtrans %}
+</pre>
+           </div> 
+          </div> 
+         </section> 
+         <section id="marking-new-strings-for-pluralization"> 
+          <h2>Marking new strings for pluralization<a class="headerlink" href="#marking-new-strings-for-pluralization" title="Permalink to this headline">¶</a></h2> 
+          <p>To pluralize a translated string in an HTML template, use the <code class="code docutils literal notranslate"><span class="pre">{%</span> <span class="pre">pluralize</span> <span class="pre">%}</span></code> tag to separate the singular and plural variants of a string, for example:</p> 
+          <div class="highlight-html notranslate">
+           <div class="highlight">
+            <pre><span></span>{% trans trimmed n_hours=n_hours %}
+This link will expire in {{ n_hours }} hour.
+<span class="hll">{% pluralize %}
+</span>This link will expire in {{ n_hours }} hours.
+{% endtrans %}
+</pre>
+           </div> 
+          </div> 
+          <p>This is not yet directly possible in Python for Warehouse.</p> 
+         </section> 
+         <section id="marking-views-as-translatable"> 
+          <h2>Marking views as translatable<a class="headerlink" href="#marking-views-as-translatable" title="Permalink to this headline">¶</a></h2> 
+          <p>If a view’s renderer uses translations, you should mark the view as translatable by setting the <code class="code docutils literal notranslate"><span class="pre">has_translations</span></code> option in the view’s configuration:</p> 
+          <div class="highlight-python notranslate">
+           <div class="highlight">
+            <pre><span></span><span class="nd">@viewconfig</span><span class="p">(</span>
+   <span class="n">route_name</span><span class="o">=</span><span class="s2">"sample.route"</span><span class="p">,</span>
+   <span class="n">renderer</span><span class="o">=</span><span class="s2">"translatable_sample.html"</span><span class="p">,</span>
+<span class="hll">   <span class="n">has_translations</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">SampleViews</span><span class="p">:</span>
+</pre>
+           </div> 
+          </div> 
+         </section> 
+        </section> 
+       </div> 
+      </div> 
+      <footer>
+       <div class="rst-footer-buttons" role="navigation" aria-label="Footer"> <a href="security.html" class="btn btn-neutral float-left" title="Security" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a> <a href="roadmap.html" class="btn btn-neutral float-right" title="Roadmap and Sprints" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a> 
+       </div> 
+       <hr> 
+       <div role="contentinfo"> 
+        <p>© Copyright 2022. <span class="commit">Revision <code>140a2cc3</code>. </span></p> 
+       </div> Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+      </footer> 
+     </div> 
+    </div> 
+   </section> 
+  </div> 
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="Versions"> <span class="rst-current-version" data-toggle="rst-current-version"> <span class="fa fa-book"> Read the Docs</span> v: latest <span class="fa fa-caret-down"></span> </span> 
+   <div class="rst-other-versions"> 
+    <dl> 
+     <dt>
+      Versions
+     </dt> 
+     <dd>
+      <a href="/en/latest/">latest</a>
+     </dd> 
+     <dd>
+      <a href="/en/stable/">stable</a>
+     </dd> 
+    </dl> 
+    <dl> 
+     <dt>
+      Downloads
+     </dt> 
+    </dl> 
+    <dl> 
+     <dt>
+      On Read the Docs
+     </dt> 
+     <dd> <a href="//readthedocs.org/projects/warehouse/?fromdocs=warehouse">Project Home</a> 
+     </dd> 
+     <dd> <a href="//readthedocs.org/builds/warehouse/?fromdocs=warehouse">Builds</a> 
+     </dd> 
+    </dl> 
+   </div> 
+  </div> 
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+ </body>
+</html>

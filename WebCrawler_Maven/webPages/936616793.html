@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"> 
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <meta name="Description" content="Documentation on the Roundup issue tracker, version 2.1.0."> 
+  <title>Docs - Roundup 2.1.0 documentation</title> 
+  <link rel="stylesheet" href="_static/style.css" type="text/css"> 
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css"> 
+  <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+          URL_ROOT:    './',
+          VERSION:     '2.1.0',
+          COLLAPSE_MODINDEX: false,
+          FILE_SUFFIX: '.html'
+      };
+    </script> 
+  <script type="text/javascript" src="_static/jquery.js"></script> 
+  <script type="text/javascript" src="_static/underscore.js"></script> 
+  <script type="text/javascript" src="_static/doctools.js"></script> 
+  <script type="text/javascript" src="_static/language_data.js"></script> 
+  <link rel="canonical" href="https://www.roundup-tracker.org/docs.html"> 
+  <link rel="index" title="Index" href="genindex.html"> 
+  <link rel="search" title="Search" href="search.html"> 
+  <link rel="top" title="Roundup 2.1.0 documentation" href="index.html"> 
+  <link rel="next" title="Roundup Features" href="docs/features.html"> 
+  <link rel="prev" title="Roundup Issue Tracker" href="index.html"> 
+ </head> 
+ <body> 
+  <div class="header">
+   <h1>Roundup</h1> 
+   <div id="searchbox" style="display: none"> 
+    <form class="search" action="search.html" method="get"> 
+     <input type="text" aria-label="Enter search terms" name="q" size="18"> 
+     <input type="submit" value="Search"> 
+     <input type="hidden" name="check_keywords" value="yes"> 
+     <input type="hidden" name="area" value="default"> 
+    </form> 
+   </div> 
+   <script type="text/javascript">$('#searchbox').show(0);</script> 
+  </div> 
+  <div class="navigation"> 
+   <div class="menu"> 
+    <ul class="current"> 
+     <li class="toctree-l1"><a class="reference internal" href="index.html">Home</a></li> 
+     <li class="toctree-l1"><a class="reference external" href="https://pypi.org/project/roundup/">Download</a></li> 
+     <li class="toctree-l1 current"><a class="current reference internal" href="#">Docs</a>
+      <ul> 
+       <li class="toctree-l2"><a class="reference internal" href="docs/features.html">Roundup Features</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="docs/installation.html">Installing Roundup</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="docs/upgrading.html">Upgrading to newer versions of Roundup</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="docs/FAQ.html">Roundup FAQ</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="docs/user_guide.html">User Guide</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="docs/customizing.html">Customising Roundup</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="docs/admin_guide.html">Administration Guide</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="docs/debugging.html">Debugging Aids</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="docs/xmlrpc.html">XML-RPC access to Roundup</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="docs/rest.html">REST API for Roundup</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="docs/tracker_templates.html">Roundup Tracker Templates</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="docs/glossary.html">Roundup Glossary</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="docs/acknowledgements.html">Acknowledgements</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="docs/license.html">License</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="docs/overview.html">Design Overview</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="docs/design.html">Design (original)</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="docs/developers.html">Developing Roundup</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="docs/mysql.html">Notes about the MySQL Database backend</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="docs/postgresql.html">Notes about the PostgreSQL Database backend</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="docs/implementation.html">Richard Jones implementation notes</a></li> 
+      </ul> </li> 
+     <li class="toctree-l1"><a class="reference external" href="https://issues.roundup-tracker.org">Issues</a></li> 
+     <li class="toctree-l1"><a class="reference internal" href="contact.html">Contact</a></li> 
+     <li class="toctree-l1"><a class="reference external" href="https://wiki.roundup-tracker.org">Wiki</a></li> 
+     <li class="toctree-l1"><a class="reference internal" href="code.html">Code</a></li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="content"> 
+   <div id="subnav"> <a title="Roundup Issue Tracker" href="index.html"> Prev</a> <a title="Roundup Features" href="docs/features.html"> Next</a> <a title="Index" href="genindex.html"> Index</a> 
+   </div> 
+   <div class="section" id="docs"> 
+    <h1>Docs</h1> 
+    <div class="toctree-wrapper compound"> 
+     <ul> 
+      <li class="toctree-l1"><a class="reference internal" href="docs/features.html">Roundup Features</a></li> 
+      <li class="toctree-l1"><a class="reference internal" href="docs/installation.html">Installing Roundup</a>
+       <ul> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/installation.html#overview">Overview</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/installation.html#prerequisites">Prerequisites</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/installation.html#optional-components">Optional Components</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/installation.html#getting-roundup">Getting Roundup</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/installation.html#for-the-really-impatient">For The Really Impatient</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/installation.html#installation">Installation</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/installation.html#maintenance">Maintenance</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/installation.html#upgrading">Upgrading</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/installation.html#further-reading">Further Reading</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/installation.html#running-multiple-trackers">Running Multiple Trackers</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/installation.html#platform-specific-notes">Platform-Specific Notes</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/installation.html#problems-testing-your-python">Problems? Testing your Python…</a></li> 
+       </ul> </li> 
+      <li class="toctree-l1"><a class="reference internal" href="docs/upgrading.html">Upgrading to newer versions of Roundup</a>
+       <ul> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/upgrading.html#migrating-from-2-0-0-to-2-1-0">Migrating from 2.0.0 to 2.1.0</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/upgrading.html#migrating-from-1-6-x-to-2-0-0">Migrating from 1.6.X to 2.0.0</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/upgrading.html#migrating-from-1-5-1-to-1-6-0">Migrating from 1.5.1 to 1.6.0</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/upgrading.html#migrating-from-1-5-0-to-1-5-1">Migrating from 1.5.0 to 1.5.1</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/upgrading.html#migrating-from-1-4-20-to-1-4-21">Migrating from 1.4.20 to 1.4.21</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/upgrading.html#migrating-from-1-4-19-to-1-4-20">Migrating from 1.4.19 to 1.4.20</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/upgrading.html#migrating-from-1-4-17-to-1-4-18">Migrating from 1.4.17 to 1.4.18</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/upgrading.html#migrating-from-1-4-x-to-1-4-17">Migrating from 1.4.x to 1.4.17</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/upgrading.html#migrating-from-1-4-x-to-1-4-12">Migrating from 1.4.x to 1.4.12</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/upgrading.html#migrating-from-1-4-x-to-1-4-11">Migrating from 1.4.x to 1.4.11</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/upgrading.html#migrating-from-1-4-x-to-1-4-9">Migrating from 1.4.x to 1.4.9</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/upgrading.html#migrating-from-1-4-x-to-1-4-7">Migrating from 1.4.x to 1.4.7</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/upgrading.html#migrating-from-1-4-2-to-1-4-3">Migrating from 1.4.2 to 1.4.3</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/upgrading.html#migrating-from-1-4-x-to-1-4-2">Migrating from 1.4.x to 1.4.2</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/upgrading.html#migrating-from-1-3-3-to-1-4-0">Migrating from 1.3.3 to 1.4.0</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/upgrading.html#migrating-from-1-2-x-to-1-3-0">Migrating from 1.2.x to 1.3.0</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/upgrading.html#migrating-from-1-1-2-to-1-2-0">Migrating from 1.1.2 to 1.2.0</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/upgrading.html#migrating-from-1-1-0-to-1-1-1">Migrating from 1.1.0 to 1.1.1</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/upgrading.html#migrating-from-1-0-x-to-1-1-0">Migrating from 1.0.x to 1.1.0</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/upgrading.html#migrating-from-0-8-x-to-1-0">Migrating from 0.8.x to 1.0</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/upgrading.html#migrating-from-0-8-0-to-0-8-3">Migrating from 0.8.0 to 0.8.3</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/upgrading.html#migrating-from-0-7-1-to-0-8-0">Migrating from 0.7.1 to 0.8.0</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/upgrading.html#migrating-from-0-7-2-to-0-7-3">Migrating from 0.7.2 to 0.7.3</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/upgrading.html#migrating-from-0-7-0-to-0-7-2">Migrating from 0.7.0 to 0.7.2</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/upgrading.html#migrating-from-0-7-0-to-0-7-1">Migrating from 0.7.0 to 0.7.1</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/upgrading.html#migrating-from-0-6-to-0-7">Migrating from 0.6 to 0.7</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/upgrading.html#migrating-from-0-6-x-to-0-6-3">Migrating from 0.6.x to 0.6.3</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/upgrading.html#migrating-from-0-5-to-0-6">Migrating from 0.5 to 0.6</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/upgrading.html#migrating-from-0-4-x-to-0-5-0">Migrating from 0.4.x to 0.5.0</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/upgrading.html#migrating-from-0-4-1-to-0-4-2">Migrating from 0.4.1 to 0.4.2</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/upgrading.html#migrating-from-0-4-0-to-0-4-1">Migrating from 0.4.0 to 0.4.1</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/upgrading.html#migrating-from-0-3-x-to-0-4-0">Migrating from 0.3.x to 0.4.0</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/upgrading.html#migrating-from-0-2-x-to-0-3-x">Migrating from 0.2.x to 0.3.x</a></li> 
+       </ul> </li> 
+      <li class="toctree-l1"><a class="reference internal" href="docs/FAQ.html">Roundup FAQ</a>
+       <ul> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/FAQ.html#installation">Installation</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/FAQ.html#templates">Templates</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/FAQ.html#using-roundup">Using Roundup</a></li> 
+       </ul> </li> 
+      <li class="toctree-l1"><a class="reference internal" href="docs/user_guide.html">User Guide</a>
+       <ul> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/user_guide.html#your-tracker-in-a-nutshell">Your Tracker in a Nutshell</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/user_guide.html#web-interface">Web Interface</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/user_guide.html#e-mail-gateway">E-Mail Gateway</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/user_guide.html#command-line-tool">Command Line Tool</a></li> 
+       </ul> </li> 
+      <li class="toctree-l1"><a class="reference internal" href="docs/customizing.html">Customising Roundup</a>
+       <ul> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/customizing.html#what-you-can-do">What You Can Do</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/customizing.html#trackers-in-a-nutshell">Trackers in a Nutshell</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/customizing.html#tracker-configuration">Tracker Configuration</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/customizing.html#tracker-schema">Tracker Schema</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/customizing.html#detectors-adding-behaviour-to-your-tracker">Detectors - adding behaviour to your tracker</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/customizing.html#extensions-adding-capabilities-to-your-tracker">Extensions - adding capabilities to your tracker</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/customizing.html#interfaces-py-hooking-into-the-core-of-roundup">interfaces.py - hooking into the core of roundup</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/customizing.html#database-content">Database Content</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/customizing.html#security-access-controls">Security / Access Controls</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/customizing.html#web-interface">Web Interface</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/customizing.html#examples">Examples</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/customizing.html#debugging-trackers">Debugging Trackers</a></li> 
+       </ul> </li> 
+      <li class="toctree-l1"><a class="reference internal" href="docs/admin_guide.html">Administration Guide</a>
+       <ul> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/admin_guide.html#what-does-roundup-install">What does Roundup install?</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/admin_guide.html#configuring-roundup-s-logging-of-messages-for-sysadmins">Configuring Roundup’s Logging of Messages For Sysadmins</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/admin_guide.html#configuring-roundup-server">Configuring roundup-server</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/admin_guide.html#users-and-security">Users and Security</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/admin_guide.html#tasks">Tasks</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/admin_guide.html#running-the-servers">Running the Servers</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/admin_guide.html#using-roundup-admin">Using roundup-admin</a></li> 
+       </ul> </li> 
+      <li class="toctree-l1"><a class="reference internal" href="docs/debugging.html">Debugging Aids</a>
+       <ul> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/debugging.html#sendmaildebug">SENDMAILDEBUG</a></li> 
+       </ul> </li> 
+      <li class="toctree-l1"><a class="reference internal" href="docs/xmlrpc.html">XML-RPC access to Roundup</a>
+       <ul> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/xmlrpc.html#introduction">Introduction</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/xmlrpc.html#enabling-xml-rpc-server">Enabling XML-RPC server</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/xmlrpc.html#through-roundup">through roundup</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/xmlrpc.html#stand-alone-roundup-xmlrpc-server">stand alone roundup-xmlrpc-server</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/xmlrpc.html#security-consideration">security consideration</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/xmlrpc.html#client-api">Client API</a></li> 
+       </ul> </li> 
+      <li class="toctree-l1"><a class="reference internal" href="docs/rest.html">REST API for Roundup</a>
+       <ul> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/rest.html#introduction">Introduction</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/rest.html#enabling-the-rest-api">Enabling the REST API</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/rest.html#client-api">Client API</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/rest.html#examples-and-use-cases">Examples and Use Cases</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/rest.html#programming-the-rest-api">Programming the REST API</a></li> 
+       </ul> </li> 
+      <li class="toctree-l1"><a class="reference internal" href="docs/tracker_templates.html">Roundup Tracker Templates</a></li> 
+      <li class="toctree-l1"><a class="reference internal" href="docs/glossary.html">Roundup Glossary</a></li> 
+      <li class="toctree-l1"><a class="reference internal" href="docs/acknowledgements.html">Acknowledgements</a>
+       <ul> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/acknowledgements.html#id1">2.1</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/acknowledgements.html#id3">2.0</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/acknowledgements.html#id5">1.6</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/acknowledgements.html#id8">1.5</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/acknowledgements.html#pre-1-5-0">pre 1.5.0</a></li> 
+       </ul> </li> 
+      <li class="toctree-l1"><a class="reference internal" href="docs/license.html">License</a></li> 
+      <li class="toctree-l1"><a class="reference internal" href="docs/overview.html">Design Overview</a>
+       <ul> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/overview.html#introduction">Introduction</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/overview.html#data-model">Data Model</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/overview.html#user-interface">User Interface</a></li> 
+       </ul> </li> 
+      <li class="toctree-l1"><a class="reference internal" href="docs/design.html">Design (original)</a>
+       <ul> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/design.html#introduction">Introduction</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/design.html#the-layer-cake">The Layer Cake</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/design.html#hyperdatabase">Hyperdatabase</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/design.html#roundup-database">Roundup Database</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/design.html#detector-interface">Detector Interface</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/design.html#command-interface">Command Interface</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/design.html#e-mail-user-interface">E-mail User Interface</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/design.html#web-user-interface">Web User Interface</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/design.html#access-control">Access Control</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/design.html#deployment-scenarios">Deployment Scenarios</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/design.html#acknowledgements">Acknowledgements</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/design.html#changes-to-this-document">Changes to this document</a></li> 
+       </ul> </li> 
+      <li class="toctree-l1"><a class="reference internal" href="docs/developers.html">Developing Roundup</a>
+       <ul> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/developers.html#getting-started">Getting Started</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/developers.html#small-changes">Small Changes</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/developers.html#source-repository-access">Source Repository Access</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/developers.html#project-rules">Project Rules</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/developers.html#debugging-aids">Debugging Aids</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/developers.html#internationalization-notes">Internationalization Notes</a></li> 
+       </ul> </li> 
+      <li class="toctree-l1"><a class="reference internal" href="docs/mysql.html">Notes about the MySQL Database backend</a>
+       <ul> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/mysql.html#prerequisites">Prerequisites</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/mysql.html#other-configuration">Other Configuration</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/mysql.html#running-the-mysql-tests">Running the MySQL tests</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/mysql.html#showing-mysql-who-s-boss">Showing MySQL who’s boss</a></li> 
+       </ul> </li> 
+      <li class="toctree-l1"><a class="reference internal" href="docs/postgresql.html">Notes about the PostgreSQL Database backend</a>
+       <ul> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/postgresql.html#prerequisites">Prerequisites</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/postgresql.html#running-the-postgresql-unit-tests">Running the PostgreSQL unit tests</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="docs/postgresql.html#credit">Credit</a></li> 
+       </ul> </li> 
+      <li class="toctree-l1"><a class="reference internal" href="docs/implementation.html">Richard Jones implementation notes</a></li> 
+     </ul> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="footer"> 
+   <div> <span class="source">[<a href="_sources/docs.txt" rel="nofollow">page source</a>]</span> © Copyright 2009-2021, Richard Jones, Roundup-Team. 
+   </div> 
+   <div>
+     Last updated on May 09, 2022. <span>Hosted by <a href="https://sourceforge.net"><img src="https://sflogo.sourceforge.net/sflogo.php?group_id=31577&amp;type=1" width="88" height="31" border="0" alt="SourceForge.net Logo"></a></span> 
+   </div> 
+  </div> 
+  <script>
+      /* locally hosted goatcounter https://www.goatcounter.com/ */
+      /* include site info in path url to allow multiple sites to be
+      tracked together */
+      window.goatcounter = {
+      path: function(p) { return location.host + p }
+      }
+    </script> 
+  <script data-goatcounter="https://stats.rouilj.dynamic-dns.net/count" integrity="sha384-QGgNMMRFTi8ul5kHJ+vXysPe8gySvSA/Y3rpXZiRLzKPIw8CWY+a3ObKmQsyDr+a" async src="/_static/goatcounter_count.v3.js">
+    </script>  
+ </body>
+</html>

@@ -1,0 +1,705 @@
+<!doctype html>
+<html lang="en">
+ <head> 
+  <meta name="robots" content="noindex"> 
+  <meta charset="utf-8"> 
+  <script type="text/javascript">
+window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{s.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(25),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,s){try{l?l-=1:o(s||new UncaughtException(t,e,n),!0)}catch(f){try{i("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t,e){var n=e?null:c.now();i("err",[t,n])}var i=t("handle"),a=t(26),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,p="nr@seenError",l=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(13),t(12),"addEventListener"in window&&t(6),c.xhrWrappable&&t(14),d=!0)}s.on("fn-start",function(t,e,n){d&&(l+=1)}),s.on("fn-err",function(t,e,n){d&&!n[p]&&(f(n,p,function(){return!0}),this.thrown=!0,o(n))}),s.on("fn-end",function(){d&&!this.thrown&&l>0&&(l-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(){L++,C=g.hash,this[u]=y.now()}function o(){L--,g.hash!==C&&i(0,!0);var t=y.now();this[h]=~~this[h]+t-this[u],this[d]=t}function i(t,e){E.emit("newURL",[""+g,e])}function a(t,e){t.on(e,function(){this[e]=y.now()})}var s="-start",c="-end",f="-body",u="fn"+s,d="fn"+c,p="cb"+s,l="cb"+c,h="jsTime",m="fetch",v="addEventListener",w=window,g=w.location,y=t("loader");if(w[v]&&y.xhrWrappable){var x=t(10),b=t(11),E=t(8),O=t(6),R=t(13),P=t(7),T=t(14),N=t(9),M=t("ee"),S=M.get("tracer");t(16),y.features.spa=!0;var C,L=0;M.on(u,r),M.on(p,r),M.on(d,o),M.on(l,o),M.buffer([u,d,"xhr-done","xhr-resolved"]),O.buffer([u]),R.buffer(["setTimeout"+c,"clearTimeout"+s,u]),T.buffer([u,"new-xhr","send-xhr"+s]),P.buffer([m+s,m+"-done",m+f+s,m+f+c]),E.buffer(["newURL"]),x.buffer([u]),b.buffer(["propagate",p,l,"executor-err","resolve"+s]),S.buffer([u,"no-"+u]),N.buffer(["new-jsonp","cb-start","jsonp-error","jsonp-end"]),a(T,"send-xhr"+s),a(M,"xhr-resolved"),a(M,"xhr-done"),a(P,m+s),a(P,m+"-done"),a(N,"new-jsonp"),a(N,"jsonp-end"),a(N,"cb-start"),E.on("pushState-end",i),E.on("replaceState-end",i),w[v]("hashchange",i,!0),w[v]("load",i,!0),w[v]("popstate",function(){i(0,L>1)},!0)}},{}],5:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(13),s=t(12),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",p="resource",l="-start",h="-end",m="fn"+l,v="fn"+h,w="bstTimer",g="pushState",y=t("loader");y.features.stn=!0,t(8),"addEventListener"in window&&t(6);var x=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof x&&(this.bstStart=y.now())}),o.on(v,function(t,e){var n=t[0];n instanceof x&&i("bst",[n,e,this.bstStart,y.now()])}),a.on(m,function(t,e,n){this.bstStart=y.now(),this.bstType=n}),a.on(v,function(t,e){i(w,[e,this.bstStart,y.now(),this.bstType])}),s.on(m,function(){this.bstStart=y.now()}),s.on(v,function(t,e){i(w,[e,this.bstStart,y.now(),"requestAnimationFrame"])}),o.on(g+l,function(t){this.time=y.now(),this.startPath=location.pathname+location.hash}),o.on(g+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(p)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(p)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],6:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),s=t("wrap-function")(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=c(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?s(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],7:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&&(t[e]=function(){var t=i(arguments),e={};o.emit(n+"before-start",[t],e);var a;e[m]&&e[m].dt&&(a=e[m].dt);var s=r.apply(this,t);return o.emit(n+"start",[t,a],s),s.then(function(t){return o.emit(n+"end",[null,t],s),t},function(t){throw o.emit(n+"end",[t],s),t})})}var o=t("ee").get("fetch"),i=t(26),a=t(25);e.exports=o;var s=window,c="fetch-",f=c+"body-",u=["arrayBuffer","blob","json","text","formData"],d=s.Request,p=s.Response,l=s.fetch,h="prototype",m="nr@context";d&&p&&l&&(a(u,function(t,e){r(d[h],e,f),r(p[h],e,f)}),r(s,"fetch",c),o.on(c+"end",function(t,e){var n=this;if(e){var r=e.headers.get("content-length");null!==r&&(n.rxSize=r),o.emit(c+"done",[null,e],n)}else o.emit(c+"done",[t],n)}))},{}],8:[function(t,e,n){var r=t("ee").get("history"),o=t("wrap-function")(r);e.exports=r;var i=window.history&&window.history.constructor&&window.history.constructor.prototype,a=window.history;i&&i.pushState&&i.replaceState&&(a=i),o.inPlace(a,["pushState","replaceState"],"-")},{}],9:[function(t,e,n){function r(t){function e(){c.emit("jsonp-end",[],p),t.removeEventListener("load",e,!1),t.removeEventListener("error",n,!1)}function n(){c.emit("jsonp-error",[],p),c.emit("jsonp-end",[],p),t.removeEventListener("load",e,!1),t.removeEventListener("error",n,!1)}var r=t&&"string"==typeof t.nodeName&&"script"===t.nodeName.toLowerCase();if(r){var o="function"==typeof t.addEventListener;if(o){var a=i(t.src);if(a){var u=s(a),d="function"==typeof u.parent[u.key];if(d){var p={};f.inPlace(u.parent,[u.key],"cb-",p),t.addEventListener("load",e,!1),t.addEventListener("error",n,!1),c.emit("new-jsonp",[t.src],p)}}}}}function o(){return"addEventListener"in window}function i(t){var e=t.match(u);return e?e[1]:null}function a(t,e){var n=t.match(p),r=n[1],o=n[3];return o?a(o,e[r]):e[r]}function s(t){var e=t.match(d);return e&&e.length>=3?{key:e[2],parent:a(e[1],window)}:{key:t,parent:window}}var c=t("ee").get("jsonp"),f=t("wrap-function")(c);if(e.exports=c,o()){var u=/[?&](?:callback|cb)=([^&#]+)/,d=/(.*)\.([^.]+)/,p=/^(\w+)(\.|$)(.*)$/,l=["appendChild","insertBefore","replaceChild"];Node&&Node.prototype&&Node.prototype.appendChild?f.inPlace(Node.prototype,l,"dom-"):(f.inPlace(HTMLElement.prototype,l,"dom-"),f.inPlace(HTMLHeadElement.prototype,l,"dom-"),f.inPlace(HTMLBodyElement.prototype,l,"dom-")),c.on("dom-start",function(t){r(t[0])})}},{}],10:[function(t,e,n){var r=t("ee").get("mutation"),o=t("wrap-function")(r),i=NREUM.o.MO;e.exports=r,i&&(window.MutationObserver=function(t){return this instanceof i?new i(o(t,"fn-")):i.apply(this,arguments)},MutationObserver.prototype=i.prototype)},{}],11:[function(t,e,n){function r(t){var e=a.context(),n=s(t,"executor-",e),r=new f(n);return a.context(r).getCtx=function(){return e},a.emit("new-promise",[r,e],e),r}function o(t,e){return e}var i=t("wrap-function"),a=t("ee").get("promise"),s=i(a),c=t(25),f=NREUM.o.PR;e.exports=a,f&&(window.Promise=r,["all","race"].forEach(function(t){var e=f[t];f[t]=function(n){function r(t){return function(){a.emit("propagate",[null,!o],i),o=o||!t}}var o=!1;c(n,function(e,n){Promise.resolve(n).then(r("all"===t),r(!1))});var i=e.apply(f,arguments),s=f.resolve(i);return s}}),["resolve","reject"].forEach(function(t){var e=f[t];f[t]=function(t){var n=e.apply(f,arguments);return t!==n&&a.emit("propagate",[t,!0],n),n}}),f.prototype["catch"]=function(t){return this.then(null,t)},f.prototype=Object.create(f.prototype,{constructor:{value:r}}),c(Object.getOwnPropertyNames(f),function(t,e){try{r[e]=f[e]}catch(n){}}),a.on("executor-start",function(t){t[0]=s(t[0],"resolve-",this),t[1]=s(t[1],"resolve-",this)}),a.on("executor-err",function(t,e,n){t[1](n)}),s.inPlace(f.prototype,["then"],"then-",o),a.on("then-start",function(t,e){this.promise=e,t[0]=s(t[0],"cb-",this),t[1]=s(t[1],"cb-",this)}),a.on("then-end",function(t,e,n){this.nextPromise=n;var r=this.promise;a.emit("propagate",[r,!0],n)}),a.on("cb-end",function(t,e,n){a.emit("propagate",[n,!0],this.nextPromise)}),a.on("propagate",function(t,e,n){this.getCtx&&!e||(this.getCtx=function(){if(t instanceof Promise)var e=a.context(t);return e&&e.getCtx?e.getCtx():this})}),r.toString=function(){return""+f})},{}],12:[function(t,e,n){var r=t("ee").get("raf"),o=t("wrap-function")(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],13:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t("wrap-function")(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],14:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",s)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,g,"fn-",s)}function i(t){y.push(t),h&&(b?b.then(a):v?v(a):(E=-E,O.data=E))}function a(){for(var t=0;t<y.length;t++)r([],y[t]);y.length&&(y=[])}function s(t,e){return e}function c(t,e){for(var n in t)e[n]=t[n];return e}t(6);var f=t("ee"),u=f.get("xhr"),d=t("wrap-function")(u),p=NREUM.o,l=p.XHR,h=p.MO,m=p.PR,v=p.SI,w="readystatechange",g=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],y=[];e.exports=u;var x=window.XMLHttpRequest=function(t){var e=new l(t);try{u.emit("new-xhr",[e],e),e.addEventListener(w,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(c(l,x),x.prototype=l.prototype,d.inPlace(x.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var b=m&&m.resolve();if(!v&&!m){var E=1,O=document.createTextNode(E);new h(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===w||a()})},{}],15:[function(t,e,n){function r(t){if(!i(t))return null;var e=window.NREUM;if(!e.loader_config)return null;var n=(e.loader_config.accountID||"").toString()||null,r=(e.loader_config.agentID||"").toString()||null,s=(e.loader_config.trustKey||"").toString()||null;if(!n||!r)return null;var c=a.generateCatId(),f=a.generateCatId(),u=Date.now(),d=o(c,f,u,n,r,s);return{header:d,guid:c,traceId:f,timestamp:u}}function o(t,e,n,r,o,i){var a="btoa"in window&&"function"==typeof window.btoa;if(!a)return null;var s={v:[0,1],d:{ty:"Browser",ac:r,ap:o,id:t,tr:e,ti:n}};return i&&r!==i&&(s.d.tk=i),btoa(JSON.stringify(s))}function i(t){var e=!1,n=!1,r={};if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(r=NREUM.init.distributed_tracing,n=!!r.enabled),n)if(t.sameOrigin)e=!0;else if(r.allowed_origins instanceof Array)for(var o=0;o<r.allowed_origins.length;o++){var i=s(r.allowed_origins[o]);if(t.hostname===i.hostname&&t.protocol===i.protocol&&t.port===i.port){e=!0;break}}return n&&e}var a=t(23),s=t(17);e.exports={generateTracePayload:r,shouldGenerateTrace:i}},{}],16:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<p;r++)t.removeEventListener(d[r],this.listener,!1);e.aborted||(n.duration=a.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==e.status&&(e.status=0):i(this,t),n.cbTime=this.cbTime,u.emit("xhr-done",[t],t),s("xhr",[e,n,this.startTime]))}}function o(t,e){var n=c(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.parsedOrigin=c(e),t.sameOrigin=t.parsedOrigin.sameOrigin}function i(t,e){t.params.status=e.status;var n=v(e,t.lastSize);if(n&&(t.metrics.rxSize=n),t.sameOrigin){var r=e.getResponseHeader("X-NewRelic-App-Data");r&&(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var a=t("loader");if(a.xhrWrappable){var s=t("handle"),c=t(17),f=t(15).generateTracePayload,u=t("ee"),d=["load","error","abort","timeout"],p=d.length,l=t("id"),h=t(21),m=t(20),v=t(18),w=window.XMLHttpRequest;a.features.xhr=!0,t(14),t(7),u.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,e.loadCaptureCalled=!1,t.addEventListener("load",function(n){i(e,t)},!1),h&&(h>34||h<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),u.on("open-xhr-start",function(t){this.params={method:t[0]},o(this,t[1]),this.metrics={}}),u.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var n=f(this.parsedOrigin);n&&n.header&&(e.setRequestHeader("newrelic",n.header),this.dt=n)}),u.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=m(r);i&&(n.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"!==t.type||o.loadCaptureCalled||(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}};for(var s=0;s<p;s++)e.addEventListener(d[s],this.listener,!1)}),u.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),u.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),u.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),u.on("addEventListener-end",function(t,e){e instanceof w&&"load"===t[0]&&u.emit("xhr-load-added",[t[1],t[2]],e)}),u.on("removeEventListener-end",function(t,e){e instanceof w&&"load"===t[0]&&u.emit("xhr-load-removed",[t[1],t[2]],e)}),u.on("fn-start",function(t,e,n){e instanceof w&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),u.on("fn-end",function(t,e){this.xhrCbStart&&u.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)}),u.on("fetch-before-start",function(t){var e,n=t[1]||{};"string"==typeof t[0]?e=t[0]:t[0]&&t[0].url&&(e=t[0].url),e&&(this.parsedOrigin=c(e),this.sameOrigin=this.parsedOrigin.sameOrigin);var r=f(this.parsedOrigin);if(r&&r.header){var o=r.header;if("string"==typeof t[0]){var i={};for(var a in n)i[a]=n[a];i.headers=new Headers(n.headers||{}),i.headers.set("newrelic",o),this.dt=r,t.length>1?t[1]=i:t.push(i)}else t[0]&&t[0].headers&&(t[0].headers.append("newrelic",o),this.dt=r)}})}},{}],17:[function(t,e,n){var r={};e.exports=function(t){if(t in r)return r[t];var e=document.createElement("a"),n=window.location,o={};e.href=t,o.port=e.port;var i=e.href.split("://");!o.port&&i[1]&&(o.port=i[1].split("/")[0].split("@").pop().split(":")[1]),o.port&&"0"!==o.port||(o.port="https"===i[0]?"443":"80"),o.hostname=e.hostname||n.hostname,o.pathname=e.pathname,o.protocol=i[0],"/"!==o.pathname.charAt(0)&&(o.pathname="/"+o.pathname);var a=!e.protocol||":"===e.protocol||e.protocol===n.protocol,s=e.hostname===document.domain&&e.port===n.port;return o.sameOrigin=a&&(!e.hostname||s),"/"===o.pathname&&(r[t]=o),o}},{}],18:[function(t,e,n){function r(t,e){var n=t.responseType;return"json"===n&&null!==e?e:"arraybuffer"===n||"blob"===n||"json"===n?o(t.response):"text"===n||"document"===n||""===n||void 0===n?o(t.responseText):void 0}var o=t(20);e.exports=r},{}],19:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[f.now()].concat(s(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(25),s=t(26),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){u[e]=o(p+e,!0,"api")}),u.addPageAction=o(p+"addPageAction",!0),u.setCurrentRouteName=o(p+"routeName",!0),e.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[f.now(),t,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[f.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){h[e]=o(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now(),!1,e])}},{}],20:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],21:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],22:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?c("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&c("timing",["fcp",Math.floor(t.startTime)])})}function o(t,e){var n=t.getEntries();n.length>0&&c("lcp",[n[n.length-1]])}function i(t){if(t instanceof u&&!p){var e,n=Math.round(t.timeStamp);e=n>1e12?Date.now()-n:f.now()-n,p=!0,c("timing",["fi",n,{type:t.type,fid:e}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var a,s,c=t("handle"),f=t("loader"),u=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){a=new PerformanceObserver(r),s=new PerformanceObserver(o);try{a.observe({entryTypes:["paint"]}),s.observe({entryTypes:["largest-contentful-paint"]})}catch(d){}}if("addEventListener"in document){var p=!1,l=["click","keydown","mousedown","pointerdown","touchstart"];l.forEach(function(t){document.addEventListener(t,i,!1)})}}},{}],23:[function(t,e,n){function r(){function t(){return e?15&e[n++]:16*Math.random()|0}var e=null,n=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&(e=r.getRandomValues(new Uint8Array(31)));for(var o,i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",s=0;s<i.length;s++)o=i[s],"x"===o?a+=t().toString(16):"y"===o?(o=3&t()|8,a+=o.toString(16)):a+=o;return a}function o(){function t(){return e?15&e[n++]:16*Math.random()|0}var e=null,n=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&Uint8Array&&(e=r.getRandomValues(new Uint8Array(31)));for(var o=[],i=0;i<16;i++)o.push(t().toString(16));return o.join("")}e.exports={generateUuid:r,generateCatId:o}},{}],24:[function(t,e,n){function r(t,e){if(!o)return!1;if(t!==o)return!1;if(!e)return!0;if(!i)return!1;for(var n=i.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var s=navigator.userAgent,c=s.match(a);c&&s.indexOf("Chrome")===-1&&s.indexOf("Chromium")===-1&&(o="Safari",i=c[1])}e.exports={agent:o,version:i,match:r}},{}],25:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],26:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],27:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?c(t,s,i):i()}function n(n,r,o,i){if(!p.aborted||i){t&&t(n,r,o);for(var a=e(o),s=m(n),c=s.length,f=0;f<c;f++)s[f].apply(a,r);var d=u[y[n]];return d&&d.push([x,n,r,a]),a}}function l(t,e){g[t]=m(t).concat(e)}function h(t,e){var n=g[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return g[t]||[]}function v(t){return d[t]=d[t]||o(n)}function w(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in u||(u[e]=[])})}var g={},y={},x={on:l,addEventListener:l,removeEventListener:h,emit:n,get:v,listeners:m,context:e,buffer:w,abort:a,aborted:!1};return x}function i(){return new r}function a(){(u.api||u.feature)&&(p.aborted=!0,u=p.backlog={})}var s="nr@context",c=t("gos"),f=t(25),u={},d={},p=e.exports=o();p.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!E++){var t=b.info=NREUM.info,e=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(y,function(e,n){t[e]||(t[e]=n)}),c("mark",["onload",a()+b.offset],null,"api");var n=l.createElement("script");n.src="https://"+t.agent,e.parentNode.insertBefore(n,e)}}function o(){"complete"===l.readyState&&i()}function i(){c("mark",["domContent",a()+b.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(s=Math.max((new Date).getTime(),s))-b.offset}var s=(new Date).getTime(),c=t("handle"),f=t(25),u=t("ee"),d=t(24),p=window,l=p.document,h="addEventListener",m="attachEvent",v=p.XMLHttpRequest,w=v&&v.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:v,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var g=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-spa-1163.min.js"},x=v&&w&&w[h]&&!/CriOS/.test(navigator.userAgent),b=e.exports={offset:s,now:a,origin:g,features:{},xhrWrappable:x,userAgent:d};t(19),t(22),l[h]?(l[h]("DOMContentLoaded",i,!1),p[h]("load",r,!1)):(l[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",s],null,"api");var E=0,O=t(27)},{}],"wrap-function":[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(26),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof n?n(r,a):n||{}}catch(f){p([f,"",[r,a,o],s])}u(e+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],s),d}finally{u(e+"end",[r,a,c],s)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<e.length;c++)s=e[c],a=t[s],r(a)||(t[s]=n(a,f?s+o:o,i,s))}function u(n,r,o){if(!c||e){var i=c;c=!0;try{t.emit(n,r,o,e)}catch(a){p([a,n,r,o])}c=i}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){p([r])}for(var o in t)s.call(t,o)&&(e[o]=t[o]);return e}function p(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}]},{},["loader",2,16,5,3,4]);
+;NREUM.loader_config={accountID:"2421773",trustKey:"2421773",agentID:"243300593",licenseKey:"9c0db52a54",applicationID:"243300593"}
+;NREUM.info={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",licenseKey:"9c0db52a54",applicationID:"243300593",sa:1}
+</script> 
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"> 
+  <meta name="theme-color" content="#000000"> 
+  <link rel="manifest" href="./manifest.json"> 
+  <link rel="shortcut icon" href="./favicon.ico"> 
+  <link rel="preload stylesheet prefetch" href="https://fonts.insiderintelligence.us/ii-fonts.css" as="style"> 
+  <title>Search Results for  | Insider Intelligence</title> 
+  <link href="./static/css/main.0306c393.css" rel="stylesheet"> 
+  <style data-styled-components="bcCCNc hbNQRN dJoJAz kuIfHG gkjWKI bYYpOa hVpLfl chqzHH bRFnsl hfiKJk fYpDVb gHwaYI dKmHOi ilmMtF lhlHbC eqNFeB dgGylB hXfZMe jSxzf dFzoAr kJeQgs kbCQpH lpbsUU kaPdSD hgRExV cpQJPz irilpd OqFYp czEaya gAJvXn hMITzd jtJCoh kGXPhb frKRsV IAXmQ igcadQ fUythD hneALa OXTjj elACwI fCzKMV YSGRw fRDWRW jeadZZ cFizqq dAVsSy gXuVlI bZIErY jjzKgx jTKCKv kKuVrD dKBvXu jIShjW ddeCXr bDLSLQ flOUhI kBJoqG caqdLs fOriDk imvWCf lbNcoW iDiGEo kVJAfu dAjphc gKvXCM cSpLvR">
+/* sc-component-id: sc-ifAKCX */
+.jtJCoh{width:100%;cursor:pointer;font-size:100%;font-family:'Lab Grotesque',sans-serif;line-height:1.4;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-weight:800;font-style:normal;}
+/* sc-component-id: sc-EHOje */
+.kGXPhb{border-radius:0;cursor:pointer;display:inline-block;width:16px;height:16px;vertical-align:middle;margin-right:4px;box-shadow:inset 0 0 0 1px #d4d8e3;background:#FFFFFF url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 10 9' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4.88l2.378 2.435L9.046 1.6' stroke-width='1.6' stroke='%23000' fill='none' fill-rule='evenodd' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat 50%/10px;border-color:#000000;box-shadow:inset 0 0 0 1px rgb(199,199,215);} .kGXPhb:hover{box-shadow:inset 0 0 0 2px #d4d8e3;}.frKRsV{border-radius:0;cursor:pointer;display:inline-block;width:16px;height:16px;vertical-align:middle;margin-right:4px;box-shadow:inset 0 0 0 1px #d4d8e3;} .frKRsV:hover{box-shadow:inset 0 0 0 2px #d4d8e3;}
+/* sc-component-id: sc-bZQynM */
+.IAXmQ{cursor:pointer;}
+/* sc-component-id: sc-gzVnrw */
+.igcadQ{color:rgba(0,0,0,.5);}
+/* sc-component-id: sc-htoDjs */
+.gAJvXn:hover{-webkit-text-decoration:underline;text-decoration:underline;}
+/* sc-component-id: sc-dnqmqq */
+.czEaya{position:relative;padding-left:15px;font-size:100%;min-height:22px;margin-top:6px;cursor:pointer;font-family:'Lab Grotesque',sans-serif;line-height:22px;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-weight:800;font-style:normal;} .czEaya:hover{color:#111111;} .czEaya:before{content:"";display:block;position:absolute;top:50%;left:0px;width:12px;height:12px;background:url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 8 13' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.5 1.5l5 4.98-5 5.02' stroke='%23111111' stroke-width='2.0' fill='none' fill-rule='evenodd' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat 50%/contain;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%);margin-right:5px;}
+/* sc-component-id: sc-iwsKbI */
+.hMITzd{background:none;color:rgba(0,0,0,.5);font-size:inherit;padding:2px 5px;}
+/* sc-component-id: sc-gZMcBi */
+.irilpd{position:relative;}
+/* sc-component-id: sc-gqjmRU */
+.kbCQpH{border-top:3px solid black;padding-bottom:20px;color:#111111;}
+/* sc-component-id: sc-VigVT */
+.lpbsUU{position:relative;cursor:pointer;}
+/* sc-component-id: sc-jTzLTM */
+.hgRExV{right:0;top:10px;position:absolute;font-size:12px;text-rendering:auto;color:#007EFF;-webkit-transform:rotate(0deg);-ms-transform:rotate(0deg);transform:rotate(0deg);-webkit-transition:-webkit-transform 0.5s;-webkit-transition:transform 0.5s;transition:transform 0.5s;}.cpQJPz{right:0;top:10px;position:absolute;font-size:12px;text-rendering:auto;color:#007EFF;-webkit-transform:rotate(0deg);-ms-transform:rotate(0deg);transform:rotate(0deg);-webkit-transition:-webkit-transform 0.5s;-webkit-transition:transform 0.5s;transition:transform 0.5s;-webkit-transform-origin:50% 50%;-ms-transform-origin:50% 50%;transform-origin:50% 50%;-webkit-transform:rotate(180deg);-ms-transform:rotate(180deg);transform:rotate(180deg);}
+/* sc-component-id: sc-fjdhpX */
+.OqFYp{padding-bottom:20px;}
+/* sc-component-id: sc-jzJRlG */
+.kaPdSD{margin:0;padding-top:5px;font-size:112.5%;font-family:'Lab Grotesque',sans-serif;line-height:1.4;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-weight:900;font-style:normal;}
+/* sc-component-id: sc-cSHVUG */
+.hneALa{padding:20px 0 30px 0;max-height:300px;} @media(min-width:992px){.hneALa{margin:30px 0 30px 0;overflow-y:hidden;}}
+/* sc-component-id: sc-kAzzGY */
+.OXTjj{width:100%;} .OXTjj a{height:0;display:block;} .OXTjj a:first-child{height:auto;} .OXTjj a:first-child img{height:auto;width:100%;} @media(min-width:992px){.OXTjj a:first-child{max-width:100%;}.OXTjj a:first-child img{max-width:100%;-webkit-box-shadow:0px 2px 3px 0px rgba(0,0,0,0.08);-moz-box-shadow:0px 2px 3px 0px rgba(0,0,0,0.08);box-shadow:0px 2px 3px 0px rgba(0,0,0,0.08);}}
+/* sc-component-id: sc-chPdSV */
+.dFzoAr{width:25%;} @media (max-width:767px){.dFzoAr{width:100%;}}
+/* sc-component-id: sc-kgoBCf */
+@media (min-width:1280px){.fUythD{height:270px;width:270px;}} .fUythD img{aspect-ratio:1 / 1;}
+/* sc-component-id: sc-kGXeez */
+.kJeQgs{display:inline-block;width:100%;padding-right:20px;} @media (max-width:767px){.kJeQgs{display:none;}}
+/* sc-component-id: sc-kpOJdX */
+.eqNFeB{display:inline-block;font-family:'Lab Grotesque',sans-serif;line-height:1.4;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-weight:400;font-style:normal;}
+/* sc-component-id: sc-dxgOiQ */
+.dgGylB{display:inline-block;padding:3px 10px;margin:0px 10px 10px 0px;color:#333;font-size:88%;background-color:#e2e2e2;border-radius:4px;}
+/* sc-component-id: sc-ckVGcZ */
+.hXfZMe{color:red;border:none;vertical-align:middle;visibility:visible;margin-left:6px;cursor:pointer;padding-bottom:3px;} .hXfZMe:before{content:"\f00d";font-weight:900;font-family:Font Awesome 5 Free;padding-left:2px;font-size:90%;} .hXfZMe:hover{-webkit-transform:scale(1.2);-ms-transform:scale(1.2);transform:scale(1.2);}
+/* sc-component-id: sc-jWBwVP */
+.ilmMtF{display:block;width:100%;position:relative;margin-bottom:8px;margin-top:20px;} @media (min-width:767px){.ilmMtF{padding-right:300px;}}
+/* sc-component-id: sc-brqgnP */
+.lhlHbC{display:inline-block;min-height:30px;}
+/* sc-component-id: sc-cMljjf */
+.jSxzf{display:inline-block;position:absolute;right:0;top:0;}
+/* sc-component-id: sc-jAaTju */
+.hfiKJk{background:#007EFF;position:absolute;top:0;z-index:2;right:0;margin:0;border:0;border-radius:0px 25px 25px 0px;padding:0px 27px;height:100%;vertical-align:middle;text-align:center;font-size:inherit;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:pointer;color:white;font-size:14px;font-family:'Lab Grotesque',sans-serif;line-height:1.4;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-weight:900;font-style:normal;} @media (min-width:1024px){.hfiKJk{padding:0px 40px;}}
+/* sc-component-id: sc-jDwBTQ */
+.fYpDVb{display:none;} @media (min-width:1024px){.fYpDVb{display:block;}}
+/* sc-component-id: sc-gPEVay */
+.gHwaYI{display:block;position:absolute;top:12px;left:9px;z-index:10;color:white;border:none;vertical-align:middle;visibility:visible;margin-left:6px;padding-top:2px;cursor:pointer;} .gHwaYI:before{content:"\f002";font-weight:900;font-family:Font Awesome 5 Free;font-size:125%;} @media (min-width:1024px){.gHwaYI{display:none;}}
+/* sc-component-id: sc-iRbamj */
+.bYYpOa{position:static;top:auto;z-index:auto;max-width:1130px;margin:0 auto;-webkit-transition:top 0.2s ease;transition:top 0.2s ease;-webkit-transition:margin 0.2s ease;transition:margin 0.2s ease;} @media (min-width:1024px){.bYYpOa{position:absolute;top:-21px;z-index:999999;left:0;right:0;margin:0 350px;height:0;}} @media (min-width:1750px){.bYYpOa{margin:0 auto;width:100%;}}
+/* sc-component-id: sc-jlyJG */
+.hVpLfl{max-width:none;display:block;width:100%;padding:0;margin:15px 0px 15px 0px;} .hVpLfl *:focus{outline:inherit;} @media (min-width:1024px){.hVpLfl{margin:36px 0 15px 0;}}
+/* sc-component-id: sc-gipzik */
+.chqzHH{max-width:none;display:block;position:relative;} .chqzHH .input-search-box{height:45px;} .chqzHH .autocomplete__menu{top:45px;}
+/* sc-component-id: sc-csuQGl */
+.bRFnsl{display:none;position:absolute;top:10px;left:9px;z-index:10;color:#007EFF;border:none;vertical-align:middle;visibility:visible;margin-left:6px;padding-top:2px;cursor:pointer;} .bRFnsl:before{content:"\f002";font-family:Font Awesome 5 Free;font-weight:900;font-size:125%;} @media (min-width:1024px){.bRFnsl{display:block;}}
+/* sc-component-id: sc-Rmtcm */
+.YSGRw{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;font-family:'Lab Grotesque',sans-serif;line-height:1.4;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-weight:400;font-style:normal;} @media (max-width:768px){.YSGRw{display:none;}}
+/* sc-component-id: sc-bRBYWo */
+.fRDWRW{position:relative;width:110px;margin:8px 10px 10px 0px;font-size:14px;padding:7px 0px 5px 0px;color:#333;background-color:#EBEBEB;border-radius:4px;cursor:pointer;text-align:center;}
+/* sc-component-id: sc-hzDkRC */
+.jeadZZ{position:absolute;bottom:-10px;left:46px;width:0;height:0;border-left:10px solid transparent;border-right:10px solid transparent;border-top:10px solid #111111;border-top:10px solid transparent;}
+/* sc-component-id: sc-jhAzac */
+.cFizqq{width:25%;text-align:center;height:45px;padding-top:16px;margin-top:-13px;border-left:1px solid #ccc;border-right:1px solid #ccc;} @media (max-width:1250px){.cFizqq{width:20%;}} @media (max-width:1000px){.cFizqq{height:auto;padding-top:0px;margin-top:0px;border-left:none;border-right:none;}} @media (max-width:767px){.cFizqq{width:100%;text-align:left;}}
+/* sc-component-id: sc-fBuWsC */
+.jjzKgx{display:block;width:100%;margin-top:10px;border-top:1px solid #000000;} @media (min-width:768px){.jjzKgx{display:none;}}
+/* sc-component-id: sc-fMiknA */
+.gXuVlI{color:rgba(255,255,255,1);background:#111;text-align:center;border-radius:4px;width:28px;height:28px;width:22%;line-height:28px;vertical-align:middle;font-size:16px;overflow:hidden;margin-bottom:0;float:right;padding:0px;-webkit-transition:all .2s ease-in-out;transition:all .2s ease-in-out;font-family:"Lab Grotesque",sans-serif;font-weight:700;} .gXuVlI:hover{cursor:pointer;} .gXuVlI:focus{outline:0;box-shadow:0 0 0 2px rgba(2,117,216,.25);} @media (min-width:768px){.gXuVlI{display:none;}}
+/* sc-component-id: sc-dVhcbM */
+.bZIErY{display:inline-block;text-rendering:auto;-webkit-font-smoothing:antialiased;font-size:85%;}
+/* sc-component-id: sc-eqIVtm */
+.dAVsSy{font-size:14px;color:#2c2c2c;display:inline-block;font-family:'Lab Grotesque',sans-serif;line-height:1.4;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-weight:400;font-style:normal;} @media (max-width:768px){.dAVsSy{font-size:16px;}}
+/* sc-component-id: sc-fAjcbJ */
+.jTKCKv{padding-left:10px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-item:center;-webkit-box-align-item:center;-ms-flex-align-item:center;align-item:center;font-size:14px;font-family:'Lab Grotesque',sans-serif;line-height:1.4;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-weight:400;font-style:normal;} @media(max-width:1000px){.jTKCKv{display:none;}} .jTKCKv span:hover{-webkit-text-decoration:underline;text-decoration:underline;}
+/* sc-component-id: sc-caSCKo */
+.kKuVrD{cursor:pointer;color:#111111;font-weight:900;cursor:default;}.dKBvXu{cursor:pointer;}
+/* sc-component-id: sc-gisBJw */
+.fCzKMV{border-top:3px solid #000;padding:5px 0;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;font-family:'Lab Grotesque',sans-serif;line-height:1.4;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-weight:900;font-style:normal;} @media (min-width:450px){.fCzKMV{-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}}
+/* sc-component-id: sc-kjoXOD */
+.flOUhI{color:#111111;text-transform:uppercase;margin-bottom:5px;display:inline-block;font-size:13px;font-family:'Lab Grotesque',sans-serif;line-height:22px;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-weight:900;font-style:normal;}
+/* sc-component-id: sc-jqCOkK */
+.caqdLs{margin-right:0;position:relative;}
+/* sc-component-id: sc-uJMKN */
+.fOriDk{width:100%;line-height:22px;padding-right:10px;padding-left:0;margin-bottom:10px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;font-family:'Lab Grotesque',sans-serif;line-height:1.1;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-style:normal;} .fOriDk a{color:#111111;} .fOriDk a:hover{color:#111111;-webkit-text-decoration:underline;text-decoration:underline;}
+/* sc-component-id: sc-bbmXgH */
+.imvWCf{color:#111111;font-size:20px;font-weight:900;}
+/* sc-component-id: sc-gGBfsJ */
+.lbNcoW{color:#747474;font-size:19px;font-weight:400;}
+/* sc-component-id: sc-jnlKLf */
+.kBJoqG{font-family:'Lab Grotesque',sans-serif;line-height:22px;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-weight:100;font-style:normal;font-size:13px;color:#747474;margin-bottom:5px;display:inline-block;}
+/* sc-component-id: sc-fYxtnH */
+.bDLSLQ{border-bottom:1px solid rgba(0,0,0,0.13);padding:15px 0;position:relative;} .bDLSLQ:last-child{border-bottom:none;} .bDLSLQ:first-child{padding-top:0px;}
+/* sc-component-id: sc-tilXH */
+.iDiGEo{font-family:'Lab Grotesque',sans-serif;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-weight:100;font-style:normal;color:gray;font-size:14px;} .iDiGEo em{font-weight:700;font-style:normal;color:#747474;}
+/* sc-component-id: sc-gxMtzJ */
+.jIShjW{margin-top:10px;} @media(max-width:575px){.jIShjW{margin-top:0;}}
+/* sc-component-id: sc-dfVpRl */
+.ddeCXr{border-top:none;margin-top:0;padding-left:10px;padding-right:15px;-webkit-margin-before:0;-webkit-margin-after:0;} @media (min-width:768px){.ddeCXr{padding-left:20px;padding-right:30px;}}
+/* sc-component-id: sc-keyframes-bcCCNc */
+@-webkit-keyframes bcCCNc{0%{opacity:0;}100%{opacity:1;}} @keyframes bcCCNc{0%{opacity:0;}100%{opacity:1;}}
+/* sc-component-id: sc-gzOgki */
+.kVJAfu{margin-bottom:25px;font-family:'Lab Grotesque',sans-serif;line-height:1.4;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-weight:800;font-style:normal;} .kVJAfu .pagination{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding:10px 0;-webkit-margin-before:0;-webkit-margin-after:0;} .kVJAfu .pagination .link{text-align:center;box-sizing:border-box;cursor:pointer;display:inline-block;padding:3px;width:4%;min-width:25px;border-radius:4px;font-size:16px;} .kVJAfu .pagination .link.activePage a{color:black;} .kVJAfu .pagination .link a{-webkit-text-decoration:none;text-decoration:none;color:#2b7cac;display:inline-block;position:relative;z-index:1;padding:50%;margin:-50%;} .kVJAfu .pagination .link:hover{background:rgba(39,81,175,.1);-webkit-text-decoration:none;text-decoration:none;} .kVJAfu .pagination .link:hover a{color:#0275d8;} .kVJAfu .pagination .link:focus{color:red;-webkit-text-decoration:none;text-decoration:none;} .kVJAfu .pagination .link.disabled{cursor:default;} .kVJAfu .pagination .link.disabled a{color:black;cursor:default;} .kVJAfu .pagination .link.disabled:hover{background-color:transparent;}
+/* sc-component-id: sc-iyvyFf */
+.dAjphc{font-family:'Lab Grotesque',sans-serif;line-height:1.1;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-style:normal;font-weight:900;font-size:20px;text-align:center;margin-top:10px;}
+/* sc-component-id: sc-hwwEjo */
+.gKvXCM{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%;-webkit-flex-flow:wrap;-ms-flex-flow:wrap;flex-flow:wrap;padding:20px 10px 40px;}
+/* sc-component-id: sc-kPVwWT */
+.cSpLvR{font-family:'Lab Grotesque',sans-serif;line-height:1.1;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-style:normal;font-weight:400px;font-size:14px;padding:20px;border-radius:25px;background-color:#D8D8D8;color:#111;padding:10px 15px;margin:0 10px 10px;} .cSpLvR:hover{background-color:#BEBEBE;}
+/* sc-component-id: sc-kfGgVZ */
+.elACwI{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;width:100%;padding-left:2px;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;} .elACwI ul{list-style:none;} @media(min-width:768px){.elACwI{width:75%;}}
+/* sc-component-id: sc-ibxdXY */
+.kuIfHG{max-height:300px;margin-top:30px;} @media(min-width:992px){.kuIfHG{overflow-y:hidden;}}
+/* sc-component-id: sc-RefOD */
+.gkjWKI{width:100%;} .gkjWKI a{height:0;display:block;} .gkjWKI a:first-child{height:auto;} .gkjWKI a:first-child img{height:auto;width:100%;} @media(min-width:992px){.gkjWKI{max-width:100%;}.gkjWKI img{max-width:100%;-webkit-box-shadow:0px 2px 3px 0px rgba(0,0,0,0.08);-moz-box-shadow:0px 2px 3px 0px rgba(0,0,0,0.08);box-shadow:0px 2px 3px 0px rgba(0,0,0,0.08);}}
+/* sc-component-id: sc-iQKALj */
+.hbNQRN{width:95%;max-width:1200px;margin:auto;padding-right:15px;padding-left:15px;} @media (min-width:320px){.hbNQRN{font-size:18px;}} @media (min-width:768px){.hbNQRN{font-size:16px;}}
+/* sc-component-id: sc-bwCtUz */
+.dJoJAz img{aspect-ratio:10 / 1;}
+/* sc-component-id: sc-hrWEMg */
+.dKmHOi{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;} @media (min-width:768px){.dKmHOi{-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;}}</style>
+  <script>
+      // WARNING: See the following for security issues around embedding JSON in HTML:
+      // http://redux.js.org/docs/recipes/ServerRendering.html#security-considerations
+      window.__PRELOADED_STATE__ = {"selectedFacetsFilters":{"type":["report"]},"selectedNumericFilters":{},"searchResults":{"indexVersion":"search_universal-search__2_13","results":[{"author":"Insider Intelligence Analysts","body":null,"companies":[],"deck":null,"blurb":"12 Analysts Tackle Client Questions on Crashing Tech, Broken Supply Chains, War, and Inflation","demographics":{},"featured":false,"file_num":null,"geographies":{"lvl2":["Europe > Central & Eastern Europe > Ukraine","Europe > Central & Eastern Europe > Russia"],"lvl0":["Worldwide","North America","Europe","Europe","Europe","Europe","Asia-Pacific"],"lvl1":["North America > United States","Europe > Central & Eastern Europe","Europe > Central & Eastern Europe","Europe > Central & Eastern Europe","Europe > Western Europe","Asia-Pacific > China"]},"industries":{"lvl2":["Ecommerce & Retail > Retail Categories > Groceries & Consumer Products (CPG)","Financial Services > Consumer Banking > Digital Banking"],"lvl0":["Financial Services","Ecommerce & Retail","Ecommerce & Retail","Ecommerce & Retail","Financial Services","Ecommerce & Retail"],"lvl1":["Ecommerce & Retail > Loyalty","Ecommerce & Retail > Ecommerce Sales","Ecommerce & Retail > Retail Categories","Financial Services > Consumer Banking","Ecommerce & Retail > Consumer Behavior"]},"locked":true,"narrowest_demos":[],"narrowest_geos":["Worldwide","United States","Ukraine","Russia","Central & Eastern Europe","Western Europe","China"],"narrowest_industries":["Financial Services","Loyalty","Ecommerce Sales","Groceries & Consumer Products (CPG)","Digital Banking","Consumer Behavior"],"narrowest_topics":["Digital Advertising","Total Media Ad Spending","Social Media Users","Video-on-Demand (VOD)"],"objectID":"14f80f43-13b9-4051-096f-0a57cfe55243","published_date":1652760000,"selection":null,"sources":[],"text":null,"thumbnail":"https://emnax1euselasticsearch.blob.core.windows.net/14f80f4313b94051096f0a57cfe55243/cover_image","title":"The Era of Uncertainty: 12 Analysts Tackle Client Questions on Crashing Tech, Broken Supply Chains, War, and Inflation","topics":{"lvl0":["Advertising","Ad Spending","Social Media","Video"],"lvl1":["Advertising > Digital Advertising","Ad Spending > Total Media Ad Spending","Social Media > Social Media Users","Video > Video-on-Demand (VOD)"]},"type":"Report","url":"https://www.emarketer.com/content/era-of-uncertainty","user_id":null,"user_name":null,"report_summary":"How should businesses view these global trends and events? How are behaviors and spending changing? In this report, Insider Intelligence analysts weigh in on the questions they’re being asked by both clients and the media about the shifting landscape in key areas like digital advertising, retail and ecommerce, and financial services."},{"author":"Michael Tattersall","body":null,"companies":[],"deck":null,"blurb":"How Investment Managers Can Seize a $50 Trillion AUM Opportunity","demographics":{},"featured":false,"file_num":null,"geographies":{"lvl2":["Europe > Western Europe > United Kingdom"],"lvl0":["Worldwide","Europe","North America"],"lvl1":["Europe > Western Europe","North America > United States"]},"industries":{"lvl0":["Financial Services"],"lvl1":["Financial Services > Wealth & Asset Management"]},"locked":true,"narrowest_demos":[],"narrowest_geos":["Worldwide","United Kingdom","United States"],"narrowest_industries":["Wealth & Asset Management"],"narrowest_topics":[],"objectID":"89d034f0-eb8d-f441-9cab-c07cc04f954a","published_date":1652673600,"selection":null,"sources":[],"text":null,"thumbnail":"https://emnax1euselasticsearch.blob.core.windows.net/89d034f0eb8df4419cabc07cc04f954a/cover_image","title":"The Rise of ESG Investing: How Investment Managers Can Seize a $50 Trillion AUM Opportunity","topics":{},"type":"Report","url":"https://www.emarketer.com/content/rise-of-esg-investing","user_id":null,"user_name":null,"report_summary":"Spiking client demand for ESG-focused investment products will drive AUM growth over the next three years. Yet a lack of quality or public ESG data threatens investment managers’ ability to offer accurate products and might see them run afoul of rising ESG regulatory standards."},{"author":"Grace Broadbent","body":null,"companies":[],"deck":null,"blurb":"How $10.4 Billion in Transactions Is Upending B2B, Retail, and Remittances","demographics":{},"featured":false,"file_num":null,"geographies":{"lvl0":["North America","Worldwide"],"lvl1":["North America > United States"]},"industries":{"lvl2":["Ecommerce & Retail > Payments > Digital Payments"],"lvl0":["Ecommerce & Retail","Financial Services","Ecommerce & Retail"],"lvl1":["Ecommerce & Retail > Payments","Ecommerce & Retail > Payments"]},"locked":true,"narrowest_demos":[],"narrowest_geos":["United States","Worldwide"],"narrowest_industries":["Payments","Financial Services","Digital Payments"],"narrowest_topics":[],"objectID":"968e512f-b568-c06d-5783-5d8d483b2ab5","published_date":1652328000,"selection":null,"sources":[],"text":null,"thumbnail":"https://emnax1euselasticsearch.blob.core.windows.net/968e512fb568c06d57835d8d483b2ab5/cover_image","title":"US Crypto Payments: How $10.4 Billion in Transactions Is Upending B2B, Retail, and Remittances","topics":{},"type":"Report","url":"https://www.emarketer.com/content/us-crypto-payments","user_id":null,"user_name":null,"report_summary":"Payment provider innovation across remittances, B2B payments, and retail card and noncard payments is setting a long-term growth runway. In the short term, providers must navigate a host of obstacles to enable more crypto users to become crypto payers—and so far they’re succeeding."},{"author":"Matthew Gaughan","body":null,"companies":[],"deck":null,"blurb":"Steady Investment to Stave Off Looming Competition","demographics":{},"featured":false,"file_num":null,"geographies":{"lvl0":["North America"],"lvl1":["North America > United States"]},"industries":{"lvl2":["Financial Services > Consumer Banking > Mobile Banking","Financial Services > Consumer Banking > Digital Banking"],"lvl0":["Financial Services","Technology","Financial Services","Financial Services"],"lvl1":["Financial Services > Consumer Banking","Financial Services > Consumer Banking","Financial Services > Consumer Banking"]},"locked":true,"narrowest_demos":[],"narrowest_geos":["United States"],"narrowest_industries":["Consumer Banking","Technology","Mobile Banking","Digital Banking"],"narrowest_topics":[],"objectID":"cdf9218a-49ad-2ac9-febf-277dc7dd3615","published_date":1652328000,"selection":null,"sources":[],"text":null,"thumbnail":"https://emnax1euselasticsearch.blob.core.windows.net/cdf9218a49ad2ac9febf277dc7dd3615/cover_image","title":"Spotlight: US Bank Technology Spending: Steady Investment to Stave Off Looming Competition","topics":{},"type":"Report","url":"https://www.emarketer.com/content/spotlight-us-bank-technology-spending","user_id":null,"user_name":null,"report_summary":"Technology decision-makers within the banking industry will need to justify tech plans if spending growth is to remain steady."},{"author":"Matthew Gaughan","body":null,"companies":[],"deck":null,"blurb":"How Banks Are Staying on Top of Their Tech Spending","demographics":{},"featured":false,"file_num":null,"geographies":{"lvl2":["Europe > Western Europe > United Kingdom"],"lvl0":["Europe"],"lvl1":["Europe > Western Europe"]},"industries":{"lvl2":["Financial Services > Consumer Banking > Mobile Banking","Financial Services > Consumer Banking > Digital Banking"],"lvl0":["Financial Services","Technology","Financial Services","Financial Services"],"lvl1":["Financial Services > Consumer Banking","Financial Services > Consumer Banking","Financial Services > Consumer Banking"]},"locked":true,"narrowest_demos":[],"narrowest_geos":["United Kingdom"],"narrowest_industries":["Consumer Banking","Technology","Mobile Banking","Digital Banking"],"narrowest_topics":[],"objectID":"b1b9b038-0f3e-f954-9f95-4e6dc3c55258","published_date":1652328000,"selection":null,"sources":[],"text":null,"thumbnail":"https://emnax1euselasticsearch.blob.core.windows.net/b1b9b0380f3ef9549f954e6dc3c55258/cover_image","title":"Spotlight: UK Bank Technology Spending: How Banks Are Staying on Top of Their Tech Spending","topics":{},"type":"Report","url":"https://www.emarketer.com/content/spotlight-uk-bank-technology-spending","user_id":null,"user_name":null,"report_summary":"Technology decision-makers within the banking industry will need to balance high tech spending with the potential for regulatory disruptors."},{"author":"Matthew Gaughan","body":null,"companies":[],"deck":null,"blurb":"Steady Investment to Stave Off Looming Competition","demographics":{},"featured":false,"file_num":null,"geographies":{"lvl0":["North America"],"lvl1":["North America > Canada"]},"industries":{"lvl2":["Financial Services > Consumer Banking > Mobile Banking","Financial Services > Consumer Banking > Digital Banking"],"lvl0":["Financial Services","Technology","Financial Services","Financial Services"],"lvl1":["Financial Services > Consumer Banking","Financial Services > Consumer Banking","Financial Services > Consumer Banking"]},"locked":true,"narrowest_demos":[],"narrowest_geos":["Canada"],"narrowest_industries":["Consumer Banking","Technology","Mobile Banking","Digital Banking"],"narrowest_topics":[],"objectID":"88309083-33e8-51ba-454d-f5097ef5f204","published_date":1652328000,"selection":null,"sources":[],"text":null,"thumbnail":"https://emnax1euselasticsearch.blob.core.windows.net/8830908333e851ba454df5097ef5f204/cover_image","title":"Spotlight: Canada Bank Technology Spending: Steady Investment to Stave Off Looming Competition","topics":{},"type":"Report","url":"https://www.emarketer.com/content/spotlight-canada-bank-technology-spending","user_id":null,"user_name":null,"report_summary":"Technology decision-makers within the banking industry will need to balance high tech spending with the potential for competitive disruptors."},{"author":"Man-Chung Cheung","body":null,"companies":[],"deck":null,"blurb":"Rising Connectivity Is Driving Commerce Opportunities","demographics":{},"featured":false,"file_num":null,"geographies":{"lvl0":["Asia-Pacific","Asia-Pacific","Asia-Pacific","Asia-Pacific","Asia-Pacific","Asia-Pacific","Asia-Pacific"],"lvl1":["Asia-Pacific > Indonesia","Asia-Pacific > Malaysia","Asia-Pacific > Philippines","Asia-Pacific > Singapore","Asia-Pacific > Thailand","Asia-Pacific > Vietnam"]},"industries":{"lvl2":["Technology > Mobile > Mobile Users","Technology > Mobile > Mobile Users","Technology > Mobile > Mobile Users","Ecommerce & Retail > Consumer Behavior > Digital Shoppers & Buyers","Ecommerce & Retail > Payments > Digital Payments","Technology > Mobile > Mobile Activities","Ecommerce & Retail > Retail Categories > Groceries & Consumer Products (CPG)","Ecommerce & Retail > Retail Categories > Groceries & Consumer Products (CPG)"],"lvl3":["Technology > Mobile > Mobile Users > Smartphone Users","Technology > Mobile > Mobile Users > Tablet Users","Ecommerce & Retail > Retail Categories > Groceries & Consumer Products (CPG) > Food & Beverage"],"lvl0":["Technology","Technology","Technology","Ecommerce & Retail","Ecommerce & Retail","Technology","Ecommerce & Retail","Ecommerce & Retail"],"lvl1":["Technology > Mobile","Technology > Mobile","Technology > Mobile","Ecommerce & Retail > Consumer Behavior","Ecommerce & Retail > Payments","Technology > Mobile","Ecommerce & Retail > Retail Categories","Ecommerce & Retail > Retail Categories"]},"locked":true,"narrowest_demos":[],"narrowest_geos":["Indonesia","Malaysia","Philippines","Singapore","Thailand","Vietnam","Asia-Pacific"],"narrowest_industries":["Mobile Users","Smartphone Users","Tablet Users","Digital Shoppers & Buyers","Digital Payments","Mobile Activities","Food & Beverage","Groceries & Consumer Products (CPG)"],"narrowest_topics":["Internet Users","Digital Video","Video Games","Media Consumption","Time Spent with Media"],"objectID":"a6c0921e-ec56-5f19-4780-07bc354a9bbb","published_date":1652068800,"selection":null,"sources":[],"text":null,"thumbnail":"https://emnax1euselasticsearch.blob.core.windows.net/a6c0921eec565f19478007bc354a9bbb/cover_image","title":"Southeast Asia Digital Users Forecast 2022: Rising Connectivity Is Driving Commerce Opportunities","topics":{"lvl2":["Media > Internet > Internet Users","Media > Media Consumption > Time Spent with Media"],"lvl0":["Media","Video","Media","Media","Media"],"lvl1":["Media > Internet","Video > Digital Video","Media > Video Games","Media > Media Consumption","Media > Media Consumption"]},"type":"Report","url":"https://www.emarketer.com/content/southeast-asia-digital-users-forecast-2022","user_id":null,"user_name":null,"report_summary":"Nearly 90% of internet users in Southeast Asia will access the internet via a smartphone this year, making mobile both ubiquitous and indispensable for the region’s flourishing digital economy."},{"author":"Tyler Brown, and Matthew Gaughan","body":null,"companies":[],"deck":null,"blurb":"How 7 Top Financial Institutions’ Mobile Apps Meet Customer Demand","demographics":{},"featured":false,"file_num":null,"geographies":{"lvl0":["North America"],"lvl1":["North America > Canada"]},"industries":{"lvl2":["Financial Services > Consumer Banking > Mobile Banking","Financial Services > Consumer Banking > Digital Banking"],"lvl0":["Financial Services","Financial Services","Financial Services"],"lvl1":["Financial Services > Consumer Banking","Financial Services > Consumer Banking","Financial Services > Consumer Banking"]},"locked":true,"narrowest_demos":[],"narrowest_geos":["Canada"],"narrowest_industries":["Consumer Banking","Mobile Banking","Digital Banking"],"narrowest_topics":[],"objectID":"f5a32b2b-3866-ec05-11a7-bb41b6b77534","published_date":1651636800,"selection":null,"sources":[],"text":null,"thumbnail":"https://emnax1euselasticsearch.blob.core.windows.net/f5a32b2b3866ec0511a7bb41b6b77534/cover_image","title":"Canada Mobile Banking Emerging Features Benchmark 2022: How 7 Top Financial Institutions’ Mobile Apps Meet Customer Demand","topics":{},"type":"Report","url":"https://www.emarketer.com/content/canada-mobile-banking-emerging-features-benchmark-2022","user_id":null,"user_name":null,"report_summary":"This second annual benchmark evaluates seven Canadian financial institutions across six feature categories and weights their scores according to the results of a survey of mobile banking users in Canada."},{"author":"Andrew Lipsman","body":null,"companies":[],"deck":null,"blurb":"How Established Brands and DNVBs Achieve Sustainable Growth with Direct Sales Strategies","demographics":{},"featured":false,"file_num":null,"geographies":{"lvl0":["North America"],"lvl1":["North America > United States"]},"industries":{"lvl2":["Ecommerce & Retail > Consumer Behavior > Digital Shoppers & Buyers"],"lvl0":["Ecommerce & Retail","Ecommerce & Retail"],"lvl1":["Ecommerce & Retail > Omnichannel Retail","Ecommerce & Retail > Consumer Behavior"]},"locked":true,"narrowest_demos":[],"narrowest_geos":["United States"],"narrowest_industries":["Omnichannel Retail","Digital Shoppers & Buyers"],"narrowest_topics":["Brand Marketing","Direct Marketing"],"objectID":"88814cd0-4d12-018f-b130-d8e2ff8eac19","published_date":1651118400,"selection":null,"sources":[],"text":null,"thumbnail":"https://emnax1euselasticsearch.blob.core.windows.net/88814cd04d12018fb130d8e2ff8eac19/cover_image","title":"D2C Brands 2022: How Established Brands and DNVBs Achieve Sustainable Growth with Direct Sales Strategies","topics":{"lvl0":["Marketing","Marketing"],"lvl1":["Marketing > Brand Marketing","Marketing > Direct Marketing"]},"type":"Report","url":"https://www.emarketer.com/content/d2c-brands-2022","user_id":null,"user_name":null,"report_summary":"Recent gains in direct-to-consumer (D2C) ecommerce sales are being driven more by incumbent brands than disruptors. What can they learn from each other about building brands in the digital age?"},{"author":"Jingqiu Ren","body":null,"companies":[],"deck":null,"blurb":"Authentic Connection Is Key to Reaching This $1.6 Trillion US Market","demographics":{"lvl0":["Ethnicity & Race","Ethnicity & Race"],"lvl1":["Ethnicity & Race > Black"]},"featured":false,"file_num":null,"geographies":{"lvl0":["North America"],"lvl1":["North America > United States"]},"industries":{},"locked":true,"narrowest_demos":["Ethnicity & Race","Black"],"narrowest_geos":["United States"],"narrowest_industries":[],"narrowest_topics":[],"objectID":"f67daf73-9336-9983-f016-4dd12576de4f","published_date":1651032000,"selection":null,"sources":[],"text":null,"thumbnail":"https://emnax1euselasticsearch.blob.core.windows.net/f67daf7393369983f0164dd12576de4f/cover_image","title":"Demographic Spotlight: Black Consumers 2022: Authentic Connection Is Key to Reaching This $1.6 Trillion US Market","topics":{},"type":"Report","url":"https://www.emarketer.com/content/demographic-spotlight-black-consumers-2022","user_id":null,"user_name":null,"report_summary":"Nearly 1 in 5 Black consumers in the US view brands as generally disingenuous for holding Black History Month promotions, recent research shows. A partnership with Black consumers should start with a deep understanding and appreciation of the elements that make them, as individuals and as a group, unique."},{"author":"Patty Soltis","body":null,"companies":[],"deck":null,"blurb":"Converting Data Into Actionable Insights","demographics":{},"featured":false,"file_num":null,"geographies":{"lvl0":["North America","Worldwide"],"lvl1":["North America > United States"]},"industries":{"lvl0":["Ecommerce & Retail","Ecommerce & Retail"],"lvl1":["Ecommerce & Retail > Customer Experience","Ecommerce & Retail > Consumer Behavior"]},"locked":true,"narrowest_demos":[],"narrowest_geos":["United States","Worldwide"],"narrowest_industries":["Customer Experience","Consumer Behavior"],"narrowest_topics":[],"objectID":"bf2e4eff-5123-1baf-9ded-330ce0fd8557","published_date":1650945600,"selection":null,"sources":[],"text":null,"thumbnail":"https://emnax1euselasticsearch.blob.core.windows.net/bf2e4eff51231baf9ded330ce0fd8557/cover_image","title":"Spotlight: Reinvigorating the Voice of the Customer: Converting Data Into Actionable Insights","topics":{},"type":"Report","url":"https://www.emarketer.com/content/spotlight-reinvigorating-voice-of-customer","user_id":null,"user_name":null,"report_summary":"By upgrading and integrating voice of the customer strategies throughout the entire organization, businesses can improve the customer experience and boost financial results."},{"author":"Ross Benes","body":null,"companies":[],"deck":null,"blurb":"More Listeners, More Marketing Attention: Inside a $2 Billion Medium","demographics":{},"featured":false,"file_num":null,"geographies":{"lvl0":["North America"],"lvl1":["North America > United States"]},"industries":{},"locked":true,"narrowest_demos":[],"narrowest_geos":["United States"],"narrowest_industries":[],"narrowest_topics":["Podcasts","Internet Radio","Digital Music","Radio"],"objectID":"133ad792-2d2c-daf4-4ceb-31e24469df97","published_date":1650859200,"selection":null,"sources":[],"text":null,"thumbnail":"https://emnax1euselasticsearch.blob.core.windows.net/133ad7922d2cdaf44ceb31e24469df97/cover_image","title":"US Podcast Advertising 2022: More Listeners, More Marketing Attention: Inside a $2 Billion Medium","topics":{"lvl2":["Media > Radio > Internet Radio","Media > Music > Digital Music"],"lvl0":["Media","Media","Media","Media"],"lvl1":["Media > Podcasts","Media > Radio","Media > Music","Media > Radio"]},"type":"Report","url":"https://www.emarketer.com/content/us-podcast-advertising-2022","user_id":null,"user_name":null,"report_summary":"Podcast listening keeps making gains, and the medium is becoming a bigger part of marketers’ audio strategies."},{"author":"Insider Intelligence Analysts","body":null,"companies":[],"deck":null,"blurb":"Our Coverage on Tech, Retail, Marketing, Crypto, Healthcare, and China in the Virtual World","demographics":{},"featured":false,"file_num":null,"geographies":{"lvl0":["Worldwide","North America","Asia-Pacific"],"lvl1":["North America > United States","Asia-Pacific > China"]},"industries":{"lvl2":["Ecommerce & Retail > Ecommerce Sales > B2C Ecommerce Sales","Technology > Mobile > 5G"],"lvl3":["Ecommerce & Retail > Ecommerce Sales > B2C Ecommerce Sales > Retail Ecommerce Sales"],"lvl0":["Technology","Technology","Health","Ecommerce & Retail","Ecommerce & Retail","Ecommerce & Retail","Technology"],"lvl1":["Technology > Augmented & Virtual Reality","Health > Digital Health","Ecommerce & Retail > Retail Sales","Ecommerce & Retail > Ecommerce Sales","Ecommerce & Retail > Ecommerce Tactics","Technology > Mobile"]},"locked":true,"narrowest_demos":[],"narrowest_geos":["Worldwide","United States","China"],"narrowest_industries":["Augmented & Virtual Reality","Technology","Digital Health","Retail Sales","Retail Ecommerce Sales","Ecommerce Tactics","5G"],"narrowest_topics":["Social Media Users","Social Media Marketing","Brand Marketing","Video Games"],"objectID":"31d4a0ff-883b-5cab-cad8-89535e8ff1da","published_date":1650340800,"selection":null,"sources":[],"text":null,"thumbnail":"https://emnax1euselasticsearch.blob.core.windows.net/31d4a0ff883b5cabcad889535e8ff1da/cover_image","title":"The Metaverse: Our Coverage on Tech, Retail, Marketing, Crypto, Healthcare, and China in the Virtual World","topics":{"lvl0":["Social Media","Marketing","Marketing","Media"],"lvl1":["Social Media > Social Media Users","Marketing > Social Media Marketing","Marketing > Brand Marketing","Media > Video Games"]},"type":"Report","url":"https://www.emarketer.com/content/the-metaverse","user_id":null,"user_name":null,"report_summary":"The metaverse is expected to be a major disruptor across industries, but it's still early days for the emerging realm. In this report, we look at how different markets are embarking on their own metaverse business models."},{"author":"Matteo Ceurvels","body":null,"companies":[],"deck":null,"blurb":"Double-Digit Gains in Digital Advertising and Retail Ecommerce Sales Spark New Opportunities for Brand Marketers","demographics":{},"featured":false,"file_num":null,"geographies":{"lvl0":["Latin America","Latin America","Latin America","Latin America","Latin America","Latin America","Latin America","North America","Asia-Pacific"],"lvl1":["Latin America > Argentina","Latin America > Brazil","Latin America > Chile","Latin America > Colombia","Latin America > Mexico","Latin America > Peru","North America > United States","Asia-Pacific > China"]},"industries":{"lvl2":["Ecommerce & Retail > Ecommerce Sales > B2C Ecommerce Sales","Ecommerce & Retail > Consumer Behavior > Digital Shoppers & Buyers"],"lvl3":["Ecommerce & Retail > Ecommerce Sales > B2C Ecommerce Sales > Retail Ecommerce Sales"],"lvl0":["Ecommerce & Retail","Ecommerce & Retail","Ecommerce & Retail","Ecommerce & Retail","Ecommerce & Retail","Ecommerce & Retail"],"lvl1":["Ecommerce & Retail > Ecommerce Sales","Ecommerce & Retail > Consumer Behavior","Ecommerce & Retail > Consumer Behavior","Ecommerce & Retail > Ecommerce Tactics","Ecommerce & Retail > Holiday & Seasonal Shopping","Ecommerce & Retail > Retail Performance Metrics"]},"locked":true,"narrowest_demos":[],"narrowest_geos":["Latin America","Argentina","Brazil","Chile","Colombia","Mexico","Peru","United States","China"],"narrowest_industries":["Retail Ecommerce Sales","Consumer Behavior","Digital Shoppers & Buyers","Ecommerce Tactics","Holiday & Seasonal Shopping","Retail Performance Metrics"],"narrowest_topics":["Digital Advertising","Digital Ad Spending","Digital Display Ad Spending","Search Marketing","Search","Brand Marketing","Consumer Attitudes on Marketing","Marketing Management Trends","Personalization"],"objectID":"c94678ee-f96a-4c60-cd8a-5d85e3196398","published_date":1649995200,"selection":null,"sources":[],"text":null,"thumbnail":"https://emnax1euselasticsearch.blob.core.windows.net/c94678eef96a4c60cd8a5d85e3196398/cover_image","title":"Latin America Retail Media Advertising 2022: Double-Digit Gains in Digital Advertising and Retail Ecommerce Sales Spark New Opportunities for Brand Marketers","topics":{"lvl2":["Ad Spending > Ad Spending by Media > Digital Ad Spending","Ad Spending > Ad Spending by Media > Digital Display Ad Spending","Media > Internet > Search"],"lvl0":["Advertising","Ad Spending","Ad Spending","Marketing","Media","Marketing","Marketing","Marketing","Marketing"],"lvl1":["Advertising > Digital Advertising","Ad Spending > Ad Spending by Media","Ad Spending > Ad Spending by Media","Marketing > Search Marketing","Media > Internet","Marketing > Brand Marketing","Marketing > Consumer Attitudes on Marketing","Marketing > Marketing Management Trends","Marketing > Personalization"]},"type":"Report","url":"https://www.emarketer.com/content/latin-america-retail-media-advertising-2022","user_id":null,"user_name":null,"report_summary":"Retail media advertising sits at the intersection of two major digital disruptions unfolding in Latin America: the meteoric rise of ecommerce and reallocation of ad dollars toward digital formats. While still nascent, retail media will play a larger part of brands’ marketing strategies in 2022."},{"author":"Tiffani Montez, and Matthew Gaughan","body":null,"companies":[],"deck":null,"blurb":"From Bricks to Clicks to the Metaverse and Beyond","demographics":{},"featured":false,"file_num":null,"geographies":{"lvl0":["North America"],"lvl1":["North America > United States"]},"industries":{"lvl2":["Financial Services > Consumer Banking > Branches","Financial Services > Consumer Banking > Mobile Banking","Financial Services > Consumer Banking > Digital Banking","Financial Services > Consumer Banking > Digital Banking"],"lvl3":["Financial Services > Consumer Banking > Digital Banking > Neobanks"],"lvl0":["Financial Services","Financial Services","Financial Services","Financial Services","Financial Services"],"lvl1":["Financial Services > Consumer Banking","Financial Services > Consumer Banking","Financial Services > Consumer Banking","Financial Services > Consumer Banking","Financial Services > Consumer Banking"]},"locked":true,"narrowest_demos":[],"narrowest_geos":["United States"],"narrowest_industries":["Consumer Banking","Branches","Mobile Banking","Digital Banking","Neobanks"],"narrowest_topics":[],"objectID":"f3d9b098-878f-394e-e9bc-a9a681d4b228","published_date":1649908800,"selection":null,"sources":[],"text":null,"thumbnail":"https://emnax1euselasticsearch.blob.core.windows.net/f3d9b098878f394ee9bca9a681d4b228/cover_image","title":"Branch Transformation: From Bricks to Clicks to the Metaverse and Beyond","topics":{},"type":"Report","url":"https://www.emarketer.com/content/branch-transformation","user_id":null,"user_name":null,"report_summary":"Neobank and Big Tech competition, rising mobile adoption, and new touchpoints like the metaverse are pushing banks to rethink their branch footprints. They must react to evolving consumer banking preferences so they can future-proof their branches."},{"author":"Rajiv Leventhal","body":null,"companies":[],"deck":null,"blurb":"How Digital Therapies Can Help Reimagine Care and Treatment","demographics":{},"featured":false,"file_num":null,"geographies":{"lvl0":["North America","Europe","Worldwide"],"lvl1":["North America > United States"]},"industries":{"lvl0":["Health","Health"],"lvl1":["Health > Digital Health","Health > Healthcare Providers"]},"locked":true,"narrowest_demos":[],"narrowest_geos":["United States","Europe","Worldwide"],"narrowest_industries":["Digital Health","Healthcare Providers"],"narrowest_topics":[],"objectID":"f39c5a5c-bb0e-33ee-44de-2594b1f9ddef","published_date":1649736000,"selection":null,"sources":[],"text":null,"thumbnail":"https://emnax1euselasticsearch.blob.core.windows.net/f39c5a5cbb0e33ee44de2594b1f9ddef/cover_image","title":"The Rise of Digital Therapeutics: How Digital Therapies Can Help Reimagine Care and Treatment","topics":{},"type":"Report","url":"https://www.emarketer.com/content/rise-of-digital-therapeutics","user_id":null,"user_name":null,"report_summary":"Digital therapeutics (DTx) are becoming more prominent offerings in healthcare. Questions are now arising around which stakeholders will pay for these products and how accessible they’ll be for patients."},{"author":"Paul Briggs","body":null,"companies":[],"deck":null,"blurb":"Spotify’s the Top Platform for Brands as the Ad Market Matures","demographics":{},"featured":false,"file_num":null,"geographies":{"lvl0":["North America"],"lvl1":["North America > Canada"]},"industries":{},"locked":true,"narrowest_demos":[],"narrowest_geos":["Canada"],"narrowest_industries":[],"narrowest_topics":["Podcasts","Radio","Digital Music","Digital Advertising","Time Spent with Media","Internet Radio","Music","Media Buying"],"objectID":"10b05732-7140-b3d3-ded2-efdf0d2d138e","published_date":1649304000,"selection":null,"sources":[],"text":null,"thumbnail":"https://emnax1euselasticsearch.blob.core.windows.net/10b057327140b3d3ded2efdf0d2d138e/cover_image","title":"Digital Audio in Canada 2022: Spotify’s the Top Platform for Brands as the Ad Market Matures","topics":{"lvl2":["Media > Music > Digital Music","Media > Media Consumption > Time Spent with Media","Media > Radio > Internet Radio"],"lvl0":["Media","Media","Media","Advertising","Media","Media","Media","Advertising"],"lvl1":["Media > Podcasts","Media > Radio","Media > Music","Advertising > Digital Advertising","Media > Media Consumption","Media > Radio","Media > Music","Advertising > Media Buying"]},"type":"Report","url":"https://www.emarketer.com/content/digital-audio-canada-2022","user_id":null,"user_name":null,"report_summary":"As digital audio consumption increases, the advertising market in Canada is developing rapidly to reach new listeners."},{"author":"Jaime Toplin","body":null,"companies":[],"deck":null,"blurb":"How Merchant Services Players Can Tap Into Changing Competitive Dynamics and Tech Innovation","demographics":{},"featured":false,"file_num":null,"geographies":{"lvl0":["North America"],"lvl1":["North America > United States"]},"industries":{"lvl2":["Ecommerce & Retail > Payments > Digital Payments","Ecommerce & Retail > Payments > Credit & Debit"],"lvl0":["Financial Services","Ecommerce & Retail","Ecommerce & Retail","Ecommerce & Retail","Small Business (SMB)"],"lvl1":["Ecommerce & Retail > Payments","Ecommerce & Retail > Payments","Ecommerce & Retail > Payments"]},"locked":true,"narrowest_demos":[],"narrowest_geos":["United States"],"narrowest_industries":["Financial Services","Payments","Digital Payments","Credit & Debit","Small Business (SMB)"],"narrowest_topics":[],"objectID":"0018e816-2b35-4697-91e6-bb4861c8edcc","published_date":1649217600,"selection":null,"sources":[],"text":null,"thumbnail":"https://emnax1euselasticsearch.blob.core.windows.net/0018e8162b35469791e6bb4861c8edcc/cover_image","title":"Small-Business Payment Disruptors: How Merchant Services Players Can Tap Into Changing Competitive Dynamics and Tech Innovation","topics":{},"type":"Report","url":"https://www.emarketer.com/content/small-business-payment-disruptors","user_id":null,"user_name":null,"report_summary":"Increasing digitization among the 32 million US small businesses is changing the competitive landscape and forcing banks, acquirers, and fintechs to invest in next-generation features. These features range from payments and value-added services to outreach."},{"author":"Yoram Wurmser","body":null,"companies":[],"deck":null,"blurb":"As Businesses Strive to Adapt, Consumer-Facing Tech Can Make a Difference","demographics":{},"featured":false,"file_num":null,"geographies":{"lvl0":["Worldwide"]},"industries":{"lvl0":["Technology","Ecommerce & Retail"],"lvl1":["Ecommerce & Retail > Retail Categories"]},"locked":true,"narrowest_demos":[],"narrowest_geos":["Worldwide"],"narrowest_industries":["Technology","Retail Categories"],"narrowest_topics":[],"objectID":"26058391-9397-2695-bf08-d95c4a10795e","published_date":1649217600,"selection":null,"sources":[],"text":null,"thumbnail":"https://emnax1euselasticsearch.blob.core.windows.net/2605839193972695bf08d95c4a10795e/cover_image","title":"Technologies to Drive Sustainability: As Businesses Strive to Adapt, Consumer-Facing Tech Can Make a Difference","topics":{},"type":"Report","url":"https://www.emarketer.com/content/technologies-drive-sustainability","user_id":null,"user_name":null,"report_summary":"Businesses know they need to become more sustainable. This report looks at how they can use technology to convince consumers—and employees—of their commitment."},{"author":"Suzy Davidkhanian","body":null,"companies":[],"deck":null,"blurb":"How Store Brands Fill Product Voids and Boost Margins","demographics":{},"featured":false,"file_num":null,"geographies":{"lvl0":["North America"],"lvl1":["North America > United States"]},"industries":{"lvl2":["Ecommerce & Retail > Retail Categories > Apparel & Accessories","Ecommerce & Retail > Retail Categories > Groceries & Consumer Products (CPG)"],"lvl0":["Ecommerce & Retail","Ecommerce & Retail","Ecommerce & Retail","Ecommerce & Retail","Ecommerce & Retail"],"lvl1":["Ecommerce & Retail > Retail Sales","Ecommerce & Retail > Consumer Behavior","Ecommerce & Retail > Retail Categories","Ecommerce & Retail > Retail Categories","Ecommerce & Retail > Loyalty"]},"locked":true,"narrowest_demos":[],"narrowest_geos":["United States"],"narrowest_industries":["Retail Sales","Consumer Behavior","Apparel & Accessories","Groceries & Consumer Products (CPG)","Loyalty"],"narrowest_topics":[],"objectID":"aa9ff552-a937-a2bc-a40c-7ec787ea4870","published_date":1649131200,"selection":null,"sources":[],"text":null,"thumbnail":"https://emnax1euselasticsearch.blob.core.windows.net/aa9ff552a937a2bca40c7ec787ea4870/cover_image","title":"Spotlight: Private Label Brands 2022: How Store Brands Fill Product Voids and Boost Margins","topics":{},"type":"Report","url":"https://www.emarketer.com/content/spotlight-private-label-brands-2022","user_id":null,"user_name":null,"report_summary":"Private label brands have taken on increasing importance in retailers’ arsenals on the heels of positive consumer sentiment. This report looks at how retailers can use store brands to bolster their product assortment and thus increase their margins."},{"author":"Maria Elm","body":null,"companies":[],"deck":null,"blurb":"Opportunities and Risks for Banks in the Age of Rebundling","demographics":{},"featured":false,"file_num":null,"geographies":{"lvl0":["North America","Europe"],"lvl1":["North America > United States"]},"industries":{"lvl2":["Financial Services > Consumer Banking > Mobile Banking","Ecommerce & Retail > Payments > Mobile Payments","Financial Services > Consumer Banking > Digital Banking","Financial Services > Consumer Banking > Digital Banking"],"lvl3":["Financial Services > Consumer Banking > Digital Banking > Neobanks"],"lvl0":["Financial Services","Ecommerce & Retail","Financial Services","Ecommerce & Retail","Ecommerce & Retail","Financial Services","Financial Services"],"lvl1":["Financial Services > Consumer Banking","Ecommerce & Retail > Payments","Financial Services > Consumer Banking","Ecommerce & Retail > Payments","Ecommerce & Retail > Ecommerce Sales","Financial Services > Consumer Banking","Financial Services > Consumer Banking"]},"locked":true,"narrowest_demos":[],"narrowest_geos":["United States","Europe"],"narrowest_industries":["Consumer Banking","Payments","Mobile Banking","Mobile Payments","Ecommerce Sales","Digital Banking","Neobanks"],"narrowest_topics":[],"objectID":"34a59585-44ce-7a46-b7d7-262adc9e3db3","published_date":1649131200,"selection":null,"sources":[],"text":null,"thumbnail":"https://emnax1euselasticsearch.blob.core.windows.net/34a5958544ce7a46b7d7262adc9e3db3/cover_image","title":"Super Apps in Banking: Opportunities and Risks for Banks in the Age of Rebundling","topics":{},"type":"Report","url":"https://www.emarketer.com/content/super-apps-banking","user_id":null,"user_name":null,"report_summary":"The super app model is moving to the West and will upend how consumers interact with financial services. Banks must start preparing now to make the changing tide work to their advantage."},{"author":"Peter Adrian, and Yoram Wurmser","body":null,"companies":[],"deck":null,"blurb":"Social Media and Retail Continue to Drive Growth","demographics":{},"featured":false,"file_num":null,"geographies":{"lvl0":["North America"],"lvl1":["North America > United States"]},"industries":{"lvl2":["Technology > Mobile > Mobile Devices"],"lvl3":["Technology > Mobile > Mobile Devices > Wearables"],"lvl0":["Technology","Technology","Ecommerce & Retail","Technology"],"lvl1":["Technology > Augmented & Virtual Reality","Ecommerce & Retail > Retail Sales","Technology > Mobile"]},"locked":true,"narrowest_demos":[],"narrowest_geos":["United States"],"narrowest_industries":["Augmented & Virtual Reality","Technology","Retail Sales","Wearables"],"narrowest_topics":["Social Media Users"],"objectID":"07ffc8fc-7cb2-8d42-3ddf-8dd134835f51","published_date":1649044800,"selection":null,"sources":[],"text":null,"thumbnail":"https://emnax1euselasticsearch.blob.core.windows.net/07ffc8fc7cb28d423ddf8dd134835f51/cover_image","title":"US Augmented and Virtual Reality Users Forecast 2022: Social Media and Retail Continue to Drive Growth","topics":{"lvl0":["Social Media"],"lvl1":["Social Media > Social Media Users"]},"type":"Report","url":"https://www.emarketer.com/content/us-augmented-virtual-reality-users-forecast-2022","user_id":null,"user_name":null,"report_summary":"Augmented and virtual reality (AR/VR) continue to expand their reach as new devices and applications make them more accessible to consumers."},{"author":"Evelyn Mitchell","body":null,"companies":[],"deck":null,"blurb":"The Start of a New Era Measuring Video","demographics":{},"featured":false,"file_num":null,"geographies":{"lvl0":["North America"],"lvl1":["North America > United States"]},"industries":{},"locked":true,"narrowest_demos":[],"narrowest_geos":["United States"],"narrowest_industries":[],"narrowest_topics":["TV Advertising","Video Advertising","Digital Transformation","Advertising Performance Metrics"],"objectID":"32b4c4a2-de7b-d30c-9f89-23e36743a253","published_date":1648785600,"selection":null,"sources":[],"text":null,"thumbnail":"https://emnax1euselasticsearch.blob.core.windows.net/32b4c4a2de7bd30c9f8923e36743a253/cover_image","title":"Ad Measurement 2022: The Start of a New Era Measuring Video","topics":{"lvl2":["Advertising > Digital Advertising > Video Advertising"],"lvl0":["Advertising","Advertising","Marketing","Advertising"],"lvl1":["Advertising > TV Advertising","Advertising > Digital Advertising","Marketing > Digital Transformation","Advertising > Advertising Performance Metrics"]},"type":"Report","url":"https://www.emarketer.com/content/ad-measurement-2022","user_id":null,"user_name":null,"report_summary":"The advertising industry has yet to crack the code on cross-screen, cross-platform video measurement. This year, buyers will experiment with new and improved measurement solutions and a multicurrency upfront."},{"author":"Jessica Lis","body":null,"companies":[],"deck":null,"blurb":"How AI Is Improving the Ways Companies Reach Consumers","demographics":{},"featured":false,"file_num":null,"geographies":{"lvl0":["North America","Europe"],"lvl1":["North America > United States"]},"industries":{"lvl0":["Ecommerce & Retail","Technology","Technology"],"lvl1":["Ecommerce & Retail > Customer Experience","Technology > Artificial Intelligence (AI)"]},"locked":true,"narrowest_demos":[],"narrowest_geos":["United States","Europe"],"narrowest_industries":["Customer Experience","Technology","Artificial Intelligence (AI)"],"narrowest_topics":["Marketing Tactics","Consumer Attitudes on Marketing","Marketing Technology"],"objectID":"faa7d4ce-75be-ad87-623d-a170273919f4","published_date":1648699200,"selection":null,"sources":[],"text":null,"thumbnail":"https://emnax1euselasticsearch.blob.core.windows.net/faa7d4ce75bead87623da170273919f4/cover_image","title":"AI in Customer Experience: How AI Is Improving the Ways Companies Reach Consumers","topics":{"lvl0":["Marketing","Marketing","Marketing"],"lvl1":["Marketing > Marketing Tactics","Marketing > Consumer Attitudes on Marketing","Marketing > Marketing Technology"]},"type":"Report","url":"https://www.emarketer.com/content/ai-customer-experience","user_id":null,"user_name":null,"report_summary":"AI investments can improve customer experience. Here’s what companies are—and should—be doing to stay ahead."},{"author":"Sky Canaves","body":null,"companies":[],"deck":null,"blurb":"How 10 Key Retailers Stack Up on What Consumers Value the Most","demographics":{},"featured":false,"file_num":null,"geographies":{"lvl0":["North America"],"lvl1":["North America > United States"]},"industries":{"lvl2":["Ecommerce & Retail > Retail Categories > Apparel & Accessories","Ecommerce & Retail > Consumer Behavior > In-Store Shoppers & Buyers","Ecommerce & Retail > Consumer Behavior > Digital Shoppers & Buyers","Ecommerce & Retail > Consumer Behavior > Mobile Shoppers & Buyers"],"lvl0":["Ecommerce & Retail","Ecommerce & Retail","Ecommerce & Retail","Ecommerce & Retail","Ecommerce & Retail","Ecommerce & Retail","Ecommerce & Retail","Ecommerce & Retail","Ecommerce & Retail","Ecommerce & Retail","Ecommerce & Retail"],"lvl1":["Ecommerce & Retail > Retail Categories","Ecommerce & Retail > Omnichannel Retail","Ecommerce & Retail > Ecommerce Tactics","Ecommerce & Retail > Shipping & Delivery","Ecommerce & Retail > Customer Experience","Ecommerce & Retail > Coupons","Ecommerce & Retail > Loyalty","Ecommerce & Retail > Consumer Behavior","Ecommerce & Retail > Consumer Behavior","Ecommerce & Retail > Consumer Behavior","Ecommerce & Retail > Payments"]},"locked":true,"narrowest_demos":[],"narrowest_geos":["United States"],"narrowest_industries":["Apparel & Accessories","Omnichannel Retail","Ecommerce Tactics","Shipping & Delivery","Customer Experience","Coupons","Loyalty","In-Store Shoppers & Buyers","Digital Shoppers & Buyers","Mobile Shoppers & Buyers","Payments"],"narrowest_topics":[],"objectID":"18261ba5-d8fd-3cde-3fd3-008b41f7a85f","published_date":1648699200,"selection":null,"sources":[],"text":null,"thumbnail":"https://emnax1euselasticsearch.blob.core.windows.net/18261ba5d8fd3cde3fd3008b41f7a85f/cover_image","title":"US Apparel Retail Features Benchmark 2022: How 10 Key Retailers Stack Up on What Consumers Value the Most","topics":{},"type":"Report","url":"https://www.emarketer.com/content/us-apparel-retail-features-benchmark-2022","user_id":null,"user_name":null,"report_summary":"Here’s a breakdown of the online and in-store features that apparel retail shoppers value the most, and a ranking of how 10 leading retailers stack up."}],"numberOfResults":564,"numberOfPages":23,"initialSearchHappened":true},"facets":{"geographies.lvl0":{"Asia-Pacific":83,"Europe":146,"Latin America":45,"Middle East & Africa":25,"North America":384,"Worldwide":138},"type":{"Article":3403,"Audio":626,"Chart":20932,"Forecasts":593,"Interview":2,"Performance Metrics":8,"Report":564,"Video":340},"topics.lvl0":{"Ad Spending":135,"Advertising":115,"Marketing":132,"Media":223,"Social Media":159,"Video":169},"industries.lvl0":{"Automotive":17,"B2B":11,"Ecommerce & Retail":226,"Financial Services":117,"Health":39,"Media & Entertainment":9,"Politics":22,"Real Estate":1,"Restaurants & Dining":4,"Small Business (SMB)":3,"Sports":9,"Technology":229,"Telecom":9,"Travel":13},"demographics.lvl0":{"Age":39,"C-Level Executives":2,"Ethnicity & Race":6,"Gender":5,"Income":3,"LGBT":3,"Parents":4},"published_date":{"0":2180,"1":4487,"2":9781,"3":57626},"demographics.lvl1":{"Age > Adults":4,"Age > Baby Boomers":21,"Age > Children":7,"Age > College Students":1,"Age > Generation X":19,"Age > Generation Z":29,"Age > Millennials":28,"Age > Seniors":7,"Age > Teens":14,"Ethnicity & Race > Asian":2,"Ethnicity & Race > Black":3,"Ethnicity & Race > Hispanic":3,"Gender > Females":5,"Gender > Males":3,"Income > Affluent":2,"Parents > Fathers":1,"Parents > Mothers":1},"geographies.lvl1":{"Asia-Pacific > Australia":6,"Asia-Pacific > China":32,"Asia-Pacific > Hong Kong":3,"Asia-Pacific > India":12,"Asia-Pacific > Indonesia":7,"Asia-Pacific > Japan":7,"Asia-Pacific > Malaysia":6,"Asia-Pacific > New Zealand":3,"Asia-Pacific > Philippines":6,"Asia-Pacific > Singapore":6,"Asia-Pacific > South Korea":6,"Asia-Pacific > Taiwan":3,"Asia-Pacific > Thailand":6,"Asia-Pacific > Vietnam":6,"Europe > Central & Eastern Europe":25,"Europe > Western Europe":133,"Latin America > Argentina":14,"Latin America > Brazil":20,"Latin America > Chile":9,"Latin America > Colombia":10,"Latin America > Mexico":17,"Latin America > Peru":7,"Middle East & Africa > Egypt":2,"Middle East & Africa > Israel":2,"Middle East & Africa > Nigeria":2,"Middle East & Africa > Saudi Arabia":2,"Middle East & Africa > South Africa":2,"Middle East & Africa > United Arab Emirates":2,"North America > Canada":51,"North America > United States":333},"geographies.lvl2":{"Europe > Central & Eastern Europe > Czech Republic":1,"Europe > Central & Eastern Europe > Poland":3,"Europe > Central & Eastern Europe > Romania":2,"Europe > Central & Eastern Europe > Russia":6,"Europe > Central & Eastern Europe > Turkey":2,"Europe > Central & Eastern Europe > Ukraine":1,"Europe > Western Europe > Austria":2,"Europe > Western Europe > Belgium":3,"Europe > Western Europe > Denmark":3,"Europe > Western Europe > Finland":2,"Europe > Western Europe > France":22,"Europe > Western Europe > Germany":26,"Europe > Western Europe > Greece":1,"Europe > Western Europe > Ireland":2,"Europe > Western Europe > Italy":9,"Europe > Western Europe > Netherlands":2,"Europe > Western Europe > Norway":1,"Europe > Western Europe > Portugal":3,"Europe > Western Europe > Spain":9,"Europe > Western Europe > Sweden":6,"Europe > Western Europe > Switzerland":3,"Europe > Western Europe > United Kingdom":76},"industries.lvl1":{"B2B > B2B Marketing":9,"B2B > B2B Sales":5,"B2B > B2B Social Media":2,"Ecommerce & Retail > Consumer Behavior":124,"Ecommerce & Retail > Coupons":4,"Ecommerce & Retail > Cross-Border Ecommerce":13,"Ecommerce & Retail > Customer Experience":34,"Ecommerce & Retail > Ecommerce Sales":87,"Ecommerce & Retail > Ecommerce Tactics":48,"Ecommerce & Retail > Holiday & Seasonal Shopping":14,"Ecommerce & Retail > Loyalty":10,"Ecommerce & Retail > Mcommerce":40,"Ecommerce & Retail > Omnichannel Retail":50,"Ecommerce & Retail > Payment Methods":26,"Ecommerce & Retail > Payments":65,"Ecommerce & Retail > Promotions":1,"Ecommerce & Retail > Retail Categories":71,"Ecommerce & Retail > Retail Performance Metrics":13,"Ecommerce & Retail > Retail Sales":47,"Ecommerce & Retail > Sharing Economy":1,"Ecommerce & Retail > Shipping & Delivery":18,"Ecommerce & Retail > Social Commerce":56,"Financial Services > Consumer Banking":61,"Financial Services > Insurance":14,"Financial Services > Small Business (SMB) Banking":13,"Financial Services > Wealth & Asset Management":17,"Health > Digital Health":31,"Health > Healthcare Providers":20,"Health > Mobile Health":16,"Health > Prescription & OTC Drugs":4,"Technology > Artificial Intelligence (AI)":32,"Technology > Augmented & Virtual Reality":25,"Technology > Cybersecurity":2,"Technology > Internet of Things (IoT)":14,"Technology > Mobile":190,"Technology > Smart Speakers & Voice Assistants":56,"Telecom > Broadband":1,"Travel > Airlines":1,"Travel > Digital Travel":4,"Travel > Hotels & Lodging":1},"industries.lvl2":{"Ecommerce & Retail > Consumer Behavior > Digital Shoppers & Buyers":90,"Ecommerce & Retail > Consumer Behavior > In-Store Shoppers & Buyers":17,"Ecommerce & Retail > Consumer Behavior > Mobile Shoppers & Buyers":24,"Ecommerce & Retail > Coupons > Mobile Coupons":1,"Ecommerce & Retail > Ecommerce Sales > B2C Ecommerce Sales":71,"Ecommerce & Retail > Mcommerce > Retail Mcommerce Sales":30,"Ecommerce & Retail > Payment Methods > Transfers":26,"Ecommerce & Retail > Payments > Checkout":3,"Ecommerce & Retail > Payments > Credit & Debit":29,"Ecommerce & Retail > Payments > Digital Payments":45,"Ecommerce & Retail > Payments > Mobile Payments":35,"Ecommerce & Retail > Retail Categories > Apparel & Accessories":23,"Ecommerce & Retail > Retail Categories > Consumer Electronics":24,"Ecommerce & Retail > Retail Categories > Groceries & Consumer Products (CPG)":32,"Ecommerce & Retail > Retail Categories > Luxury Goods":1,"Ecommerce & Retail > Retail Categories > Toys & Games":2,"Financial Services > Consumer Banking > Branches":12,"Financial Services > Consumer Banking > Digital Banking":58,"Financial Services > Consumer Banking > Mobile Banking":54,"Financial Services > Insurance > Insurer":8,"Financial Services > Insurance > Insurtech":13,"Financial Services > Wealth & Asset Management > Asset Management":4,"Financial Services > Wealth & Asset Management > Robo-advisors":5,"Financial Services > Wealth & Asset Management > Wealth Management":12,"Health > Digital Health > Telehealth":21,"Technology > Mobile > 5G":4,"Technology > Mobile > Geolocation":3,"Technology > Mobile > Mobile Activities":74,"Technology > Mobile > Mobile Carriers":4,"Technology > Mobile > Mobile Devices":144,"Technology > Mobile > Mobile Search":5,"Technology > Mobile > Mobile Users":139},"industries.lvl3":{"Ecommerce & Retail > Ecommerce Sales > B2C Ecommerce Sales > Digital Travel Sales":2,"Ecommerce & Retail > Ecommerce Sales > B2C Ecommerce Sales > Retail Ecommerce Sales":69,"Ecommerce & Retail > Retail Categories > Groceries & Consumer Products (CPG) > Food & Beverage":15,"Ecommerce & Retail > Retail Categories > Groceries & Consumer Products (CPG) > Personal Care & Beauty":8,"Financial Services > Consumer Banking > Digital Banking > Neobanks":23,"Financial Services > Consumer Banking > Digital Banking > Open Banking":6,"Technology > Mobile > Mobile Activities > Mobile Apps":57,"Technology > Mobile > Mobile Activities > Mobile Games":15,"Technology > Mobile > Mobile Activities > Mobile Internet":22,"Technology > Mobile > Mobile Activities > Mobile Messaging":10,"Technology > Mobile > Mobile Devices > Smartphones":79,"Technology > Mobile > Mobile Devices > Tablets":57,"Technology > Mobile > Mobile Devices > Wearables":12,"Technology > Mobile > Mobile Users > Smartphone Users":121,"Technology > Mobile > Mobile Users > Tablet Users":84},"topics.lvl1":{"Ad Spending > Ad Spending by Media":134,"Ad Spending > Total Media Ad Spending":18,"Advertising > Advertising Agencies":4,"Advertising > Advertising Performance Metrics":4,"Advertising > Creative Advertising":3,"Advertising > Digital Advertising":93,"Advertising > Local Advertising":2,"Advertising > Media Buying":7,"Advertising > TV Advertising":18,"Advertising > Traditional Media Advertising":11,"Marketing > Big Data":8,"Marketing > Brand Marketing":24,"Marketing > Consumer Attitudes on Marketing":27,"Marketing > Consumer Privacy & Security":35,"Marketing > Content Marketing":7,"Marketing > Digital Transformation":18,"Marketing > Direct Marketing":7,"Marketing > Email Marketing":4,"Marketing > Lead Generation":3,"Marketing > Marketing Management Trends":8,"Marketing > Marketing Spending":2,"Marketing > Marketing Tactics":15,"Marketing > Marketing Technology":14,"Marketing > Multichannel Marketing":6,"Marketing > Personalization":5,"Marketing > Search Marketing":6,"Marketing > Social Media Marketing":55,"Marketing > Targeting":11,"Media > Books":2,"Media > Internet":139,"Media > Magazines":30,"Media > Media Consumption":132,"Media > Movies":2,"Media > Music":18,"Media > Newspapers":32,"Media > Podcasts":19,"Media > Radio":99,"Media > TV":155,"Media > Video Games":45,"Social Media > Mobile Social Media":41,"Social Media > Social Media Usage":63,"Social Media > Social Media Users":136,"Video > Digital Video":101,"Video > Mobile Video":44,"Video > Video-on-Demand (VOD)":125},"topics.lvl2":{"Ad Spending > Ad Spending by Media > Cinema Ad Spending":3,"Ad Spending > Ad Spending by Media > Classified Ad Spending":2,"Ad Spending > Ad Spending by Media > Digital Ad Spending":67,"Ad Spending > Ad Spending by Media > Digital Display Ad Spending":43,"Ad Spending > Ad Spending by Media > Digital Video Ad Spending":62,"Ad Spending > Ad Spending by Media > Directory Ad Spending":2,"Ad Spending > Ad Spending by Media > Email Ad Spending":1,"Ad Spending > Ad Spending by Media > Magazine Ad Spending":6,"Ad Spending > Ad Spending by Media > Mobile Ad Spending":34,"Ad Spending > Ad Spending by Media > Newspaper Ad Spending":6,"Ad Spending > Ad Spending by Media > Out-of-Home Ad Spending":22,"Ad Spending > Ad Spending by Media > Programmatic Ad Spending":18,"Ad Spending > Ad Spending by Media > Radio Ad Spending":10,"Ad Spending > Ad Spending by Media > Search Ad Spending":32,"Ad Spending > Ad Spending by Media > Social Media Ad Spending":42,"Ad Spending > Ad Spending by Media > TV Ad Spending":32,"Advertising > Digital Advertising > Display Advertising":9,"Advertising > Digital Advertising > Mobile Advertising":18,"Advertising > Digital Advertising > Native Advertising":3,"Advertising > Digital Advertising > Programmatic Advertising":25,"Advertising > Digital Advertising > Video Advertising":43,"Marketing > Search Marketing > Paid Search":3,"Marketing > Search Marketing > Search Engine Optimization (SEO)":1,"Marketing > Social Media Marketing > Influencer Marketing":32,"Media > Books > Ebooks":1,"Media > Internet > Browsers":1,"Media > Internet > Computers":47,"Media > Internet > Digital Content":20,"Media > Internet > Internet Access Devices":9,"Media > Internet > Internet Access Locations":3,"Media > Internet > Internet Activities":12,"Media > Internet > Internet Users":78,"Media > Internet > Search":9,"Media > Internet > Top Sites":1,"Media > Media Consumption > Time Spent with Media":109,"Media > Music > Digital Music":16,"Media > Music > Mobile Music":3,"Media > Radio > Internet Radio":64,"Media > TV > Connected TVs":140,"Media > TV > Pay TV":33},"topics.lvl3":{"Media > Internet > Digital Content > Paid Content":1}},"currentSearchQuery":"","submittedSearchQuery":"","sortingOption":"bestMatch","page":1,"weeklyAlerts":{"isOpen":false,"success":false,"lastSubscriptionId":null},"ads":{"adUnits":{},"topics":[],"loading":false,"loaded":false},"searchId":"97175549-eac8-49e8-8d57-f9c01c9ce479","source":{"app":"\"researchtopics\"","location":"\"mInterview-Cross-Border Ecommerce\""},"relatedQueries":{"results":[{"query":"rcs"},{"query":"cable subscribers"},{"query":"non-pay tv households"},{"query":"sports advertising"},{"query":"tv advertising spend"},{"query":"pay tv subscribers"},{"query":"sports marketing"},{"query":"ad spend by media"},{"query":"programmatic canada"},{"query":"movie and video distribution"}]}}
+    </script>
+  <script>window['__ADS_ENABLED']='true';window['__SOURCE_ENABLED']='false';window['__ALERTS_ENABLED']='false';window['__PREVIEWS_ENABLED']='false';window['__DEFAULT_DATE_FILTER_ENABLED']='true';window['__TYPEAHEAD_ENABLED']='true';window['__POD_REDIRECT_ENABLED']='true';window['__RELATED_QUERIES_ENABLED']='true';window['__AUDIENCE']='PUBLIC';window['__BRANDING_SERVICE_URL']='https://branding.emarketer.com/app/6.0/build/branding.js';window['__FOOTER_SERVICE_URL']='https://branding.emarketer.com/footer/3.0/build/footer.js';window['__ANALYTICS_SERVICE_URL']='https://analytics.emarketer.com/lib/1.2/dist/library.min.js';window['__EMARKETER_PRO_SERVICE_URL']='https://totalaccess.emarketer.com';window['__LINK_BASE_URL']='https://www.emarketer.com/search1';window['__NODE_ENV']='production';window['__PUBLIC_SITE_URL']='https://www.emarketer.com';window['__SEO_BASE_URL']='https://www.emarketer.com/search1';window['__MAX_MONTHS']='30';window['__QUERY_VERSION']='1.1233';window['__ELASTICSEARCH_HOST']='https://search1-es-nax.emarketer.com';window['__PUBLIC_PATH']='https://www.emarketer.com/search1/';window['__TYPEAHEAD_SERVICE_URL']='https://typeahead.emarketer.com/app/build/typeahead.js';window['__SEARCH_APP_NAME']='search';window['__SEARCH_INDEX_NAME']='universal-search';window['__SEARCH_MAJOR_VERSION']='2';window['__SEARCH_TEMPLATE_NAME']='universal-search';window['__SEARCH_BASE_URL']='https://www.emarketer.com/search1/';window['__AD_NETWORK_ID']='176831';window['__AD_SERVER_URL']='https://ads.emarketer.com';window['__AD_TAG_SPECS']='[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]';window['__RELATED_QUERIES_URL']='https://search1api-nax1.emarketer.com/api/related';</script>
+ </head> 
+ <body> 
+  <noscript>
+   JavaScript must be enabled to run this app.
+  </noscript> 
+  <div id="root">
+   <div id="emarketer-masthead-host" style="height:108px">
+    <span></span>
+   </div>
+   <div class="sc-iQKALj hbNQRN">
+    <div class="sc-bwCtUz dJoJAz">
+     <div class="sc-ibxdXY kuIfHG">
+      <div class="sc-RefOD gkjWKI"></div>
+     </div>
+    </div>
+    <div class="sc-iRbamj bYYpOa">
+     <form class="ais-SearchBox__root sc-jlyJG hVpLfl">
+      <div class="ais-SearchBox__wrapper sc-gipzik chqzHH" role="search">
+       <i class="fa sc-csuQGl bRFnsl" data-analytics="Search-Results-Icon-Submit"></i><button class="ais-SearchBox__submit sc-jAaTju hfiKJk" type="submit" aria-label="Submit Search"><span><span class="sc-jDwBTQ fYpDVb">Search</span><i class="fa sc-gPEVay gHwaYI"></i>
+         <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+          <symbol xmlns="http://www.w3.org/2000/svg" id="sbx-icon-search-13" viewbox="0 0 40 40">
+           <path d="M26.804 29.01c-2.832 2.34-6.465 3.746-10.426 3.746C7.333 32.756 0 25.424 0 16.378 0 7.333 7.333 0 16.378 0c9.046 0 16.378 7.333 16.378 16.378 0 3.96-1.406 7.594-3.746 10.426l10.534 10.534c.607.607.61 1.59-.004 2.202-.61.61-1.597.61-2.202.004L26.804 29.01zm-10.426.627c7.323 0 13.26-5.936 13.26-13.26 0-7.32-5.937-13.257-13.26-13.257C9.056 3.12 3.12 9.056 3.12 16.378c0 7.323 5.936 13.26 13.258 13.26z" fill-rule="evenodd" />
+          </symbol><symbol xmlns="http://www.w3.org/2000/svg" id="sbx-icon-clear-3" viewbox="0 0 20 20">
+           <path d="M8.114 10L.944 2.83 0 1.885 1.886 0l.943.943L10 8.113l7.17-7.17.944-.943L20 1.886l-.943.943-7.17 7.17 7.17 7.17.943.944L18.114 20l-.943-.943-7.17-7.17-7.17 7.17-.944.943L0 18.114l.943-.943L8.113 10z" fill-rule="evenodd" />
+          </symbol>
+         </svg></span></button>
+       <div id="emarketer-typeahead-host" style="height:45px">
+        <span><input class="input-search-box" value=""></span>
+       </div>
+       <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+        <symbol xmlns="http://www.w3.org/2000/svg" id="sbx-icon-search-13" viewbox="0 0 40 40">
+         <path d="M26.804 29.01c-2.832 2.34-6.465 3.746-10.426 3.746C7.333 32.756 0 25.424 0 16.378 0 7.333 7.333 0 16.378 0c9.046 0 16.378 7.333 16.378 16.378 0 3.96-1.406 7.594-3.746 10.426l10.534 10.534c.607.607.61 1.59-.004 2.202-.61.61-1.597.61-2.202.004L26.804 29.01zm-10.426.627c7.323 0 13.26-5.936 13.26-13.26 0-7.32-5.937-13.257-13.26-13.257C9.056 3.12 3.12 9.056 3.12 16.378c0 7.323 5.936 13.26 13.258 13.26z" fill-rule="evenodd" />
+        </symbol><symbol xmlns="http://www.w3.org/2000/svg" id="sbx-icon-clear-3" viewbox="0 0 20 20">
+         <path d="M8.114 10L.944 2.83 0 1.885 1.886 0l.943.943L10 8.113l7.17-7.17.944-.943L20 1.886l-.943.943-7.17 7.17 7.17 7.17.943.944L18.114 20l-.943-.943-7.17-7.17-7.17 7.17-.944.943L0 18.114l.943-.943L8.113 10z" fill-rule="evenodd" />
+        </symbol>
+       </svg>
+      </div>
+     </form>
+    </div>
+    <div class="sc-hrWEMg dKmHOi">
+     <div class="sc-jWBwVP ilmMtF">
+      <div class="sc-brqgnP lhlHbC">
+       <div class="sc-kpOJdX eqNFeB">
+        <div class="sc-dxgOiQ dgGylB">
+         Report<i class="fa sc-ckVGcZ hXfZMe"></i>
+        </div>
+       </div>
+      </div>
+      <div class="sc-cMljjf jSxzf"></div>
+     </div>
+    </div>
+    <div class="sc-hrWEMg dKmHOi">
+     <div class="sc-chPdSV dFzoAr">
+      <div class="sc-kGXeez kJeQgs">
+       <div>
+        <div class="sc-gqjmRU kbCQpH">
+         <div class="sc-VigVT lpbsUU">
+          <h3 class="sc-jzJRlG kaPdSD">Geography</h3><span class="fa fa-chevron-up sc-jTzLTM hgRExV"></span>
+         </div>
+         <div class="ReactCollapse--collapse" style="overflow:hidden;height:0">
+          <div class="ReactCollapse--content">
+           <div class="sc-gZMcBi irilpd">
+            <div style="display:inline-block" class="facet-search__input-wrapper">
+             <input class="facet-search__input" placeholder="Search geographies..." role="combobox" aria-autocomplete="list" aria-expanded="false" autocomplete="off" value="">
+            </div>
+           </div>
+           <div class="sc-fjdhpX OqFYp">
+            <div>
+             <div>
+              <div>
+               <div class="sc-dnqmqq czEaya">
+                <span class="sc-htoDjs gAJvXn">Asia-Pacific<!-- --> </span><span class="sc-iwsKbI hMITzd">(<!-- -->83<!-- -->)</span>
+               </div>
+              </div>
+              <div>
+               <div class="sc-dnqmqq czEaya">
+                <span class="sc-htoDjs gAJvXn">Europe<!-- --> </span><span class="sc-iwsKbI hMITzd">(<!-- -->146<!-- -->)</span>
+               </div>
+              </div>
+              <div>
+               <div class="sc-dnqmqq czEaya">
+                <span class="sc-htoDjs gAJvXn">Latin America<!-- --> </span><span class="sc-iwsKbI hMITzd">(<!-- -->45<!-- -->)</span>
+               </div>
+              </div>
+              <div>
+               <div class="sc-dnqmqq czEaya">
+                <span class="sc-htoDjs gAJvXn">Middle East &amp; Africa<!-- --> </span><span class="sc-iwsKbI hMITzd">(<!-- -->25<!-- -->)</span>
+               </div>
+              </div>
+              <div>
+               <div class="sc-dnqmqq czEaya">
+                <span class="sc-htoDjs gAJvXn">North America<!-- --> </span><span class="sc-iwsKbI hMITzd">(<!-- -->384<!-- -->)</span>
+               </div>
+              </div>
+              <div>
+               <div class="sc-dnqmqq czEaya">
+                <span class="sc-htoDjs gAJvXn">Worldwide<!-- --> </span><span class="sc-iwsKbI hMITzd">(<!-- -->138<!-- -->)</span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="sc-gqjmRU kbCQpH">
+         <div class="sc-VigVT lpbsUU">
+          <h3 class="sc-jzJRlG kaPdSD">Content Type</h3><span class="fa fa-chevron-up sc-jTzLTM hgRExV"></span>
+         </div>
+         <div class="ReactCollapse--collapse" style="overflow:hidden;height:0">
+          <div class="ReactCollapse--content">
+           <div class="sc-fjdhpX OqFYp">
+            <div class="sc-ifAKCX jtJCoh">
+             <div>
+              <span class="sc-EHOje kGXPhb" checked></span><label class="sc-bZQynM IAXmQ" for="Report">Report<span class="sc-gzVnrw igcadQ"> (564)</span></label>
+             </div>
+             <div>
+              <span class="sc-EHOje frKRsV"></span><label class="sc-bZQynM IAXmQ" for="Chart">Chart<span class="sc-gzVnrw igcadQ"> (20932)</span></label>
+             </div>
+             <div>
+              <span class="sc-EHOje frKRsV"></span><label class="sc-bZQynM IAXmQ" for="Article">Article<span class="sc-gzVnrw igcadQ"> (3403)</span></label>
+             </div>
+             <div>
+              <span class="sc-EHOje frKRsV"></span><label class="sc-bZQynM IAXmQ" for="Audio">Audio<span class="sc-gzVnrw igcadQ"> (626)</span></label>
+             </div>
+             <div>
+              <span class="sc-EHOje frKRsV"></span><label class="sc-bZQynM IAXmQ" for="Forecasts">Forecasts<span class="sc-gzVnrw igcadQ"> (593)</span></label>
+             </div>
+             <div>
+              <span class="sc-EHOje frKRsV"></span><label class="sc-bZQynM IAXmQ" for="Video">Video<span class="sc-gzVnrw igcadQ"> (340)</span></label>
+             </div>
+             <div>
+              <span class="sc-EHOje frKRsV"></span><label class="sc-bZQynM IAXmQ" for="Performance Metrics">Performance Metrics<span class="sc-gzVnrw igcadQ"> (8)</span></label>
+             </div>
+             <div>
+              <span class="sc-EHOje frKRsV"></span><label class="sc-bZQynM IAXmQ" for="Interview">Interview<span class="sc-gzVnrw igcadQ"> (2)</span></label>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="sc-gqjmRU kbCQpH">
+         <div class="sc-VigVT lpbsUU">
+          <h3 class="sc-jzJRlG kaPdSD">Topic</h3><span class="fa fa-chevron-up sc-jTzLTM cpQJPz"></span>
+         </div>
+        </div>
+        <div class="sc-gqjmRU kbCQpH">
+         <div class="sc-VigVT lpbsUU">
+          <h3 class="sc-jzJRlG kaPdSD">Industry</h3><span class="fa fa-chevron-up sc-jTzLTM cpQJPz"></span>
+         </div>
+        </div>
+        <div class="sc-gqjmRU kbCQpH">
+         <div class="sc-VigVT lpbsUU">
+          <h3 class="sc-jzJRlG kaPdSD">Demographics</h3><span class="fa fa-chevron-up sc-jTzLTM cpQJPz"></span>
+         </div>
+        </div>
+        <div class="sc-gqjmRU kbCQpH">
+         <div class="sc-VigVT lpbsUU">
+          <h3 class="sc-jzJRlG kaPdSD">Publication Date</h3><span class="fa fa-chevron-up sc-jTzLTM cpQJPz"></span>
+         </div>
+        </div>
+       </div>
+       <div class="sc-kgoBCf fUythD">
+        <div class="sc-cSHVUG hneALa">
+         <div class="sc-kAzzGY OXTjj"></div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="sc-kfGgVZ elACwI">
+      <div class="sc-gisBJw fCzKMV">
+       <div class="sc-Rmtcm YSGRw">
+        <div class="sc-bRBYWo fRDWRW" data-analytics="Tab-All">
+         All
+         <div class="sc-hzDkRC jeadZZ"></div>
+        </div>
+        <div class="sc-bRBYWo fRDWRW" data-analytics="Tab-Analysis">
+         Analysis
+         <div class="sc-hzDkRC jeadZZ"></div>
+        </div>
+        <div class="sc-bRBYWo fRDWRW" data-analytics="Tab-Charts">
+         Charts
+         <div class="sc-hzDkRC jeadZZ"></div>
+        </div>
+       </div>
+       <div class="sc-jhAzac cFizqq">
+        <div class="sc-eqIVtm dAVsSy">
+         564<!-- --> Results
+        </div>
+        <div class="sc-fMiknA gXuVlI">
+         <i class="fa fa-filter sc-dVhcbM bZIErY"></i> Filter
+        </div>
+        <div class="sc-fBuWsC jjzKgx"></div>
+        <div></div>
+       </div>
+       <div class="sc-fAjcbJ jTKCKv">
+        Sort by:&nbsp;<span class="sc-caSCKo kKuVrD">Relevance</span>&nbsp;|&nbsp;<span class="sc-caSCKo dKBvXu">Date</span>
+       </div>
+      </div>
+      <div class="sc-gxMtzJ jIShjW">
+       <ul class="sc-dfVpRl ddeCXr">
+        <li class="sc-fYxtnH bDLSLQ">
+         <div class="sc-kjoXOD flOUhI">
+          Report
+         </div>&nbsp;|&nbsp;
+         <div class="sc-jnlKLf kBJoqG">
+          MAY 17, 2022
+         </div>
+         <div class="sc-jqCOkK caqdLs">
+          <h2 class="sc-uJMKN fOriDk"><a href="https://www.emarketer.com/content/era-of-uncertainty" id="Report14f80f43-13b9-4051-096f-0a57cfe55243" data-analytics="Result-Link-Report14f80f43-13b9-4051-096f-0a57cfe55243--QUERY:"><span class="sc-bbmXgH imvWCf">The Era of Uncertainty<!-- -->: <span class="sc-gGBfsJ lbNcoW">12 Analysts Tackle Client Questions on Crashing Tech, Broken Supply Chains, War, and Inflation</span></span><span></span></a></h2>
+         </div><p class="sc-tilXH iDiGEo"></p>
+         <div>
+          How should businesses view these global trends and events? How are behaviors and spending changing? In this report, Insider Intelligence analysts weigh in on the questions they’re being asked by both clients and the media about the shifting landscape in key areas like digital advertising, retail and ecommerce, and financial services.
+         </div><p></p></li>
+        <li class="sc-fYxtnH bDLSLQ">
+         <div class="sc-kjoXOD flOUhI">
+          Report
+         </div>&nbsp;|&nbsp;
+         <div class="sc-jnlKLf kBJoqG">
+          MAY 16, 2022
+         </div>
+         <div class="sc-jqCOkK caqdLs">
+          <h2 class="sc-uJMKN fOriDk"><a href="https://www.emarketer.com/content/rise-of-esg-investing" id="Report89d034f0-eb8d-f441-9cab-c07cc04f954a" data-analytics="Result-Link-Report89d034f0-eb8d-f441-9cab-c07cc04f954a--QUERY:"><span class="sc-bbmXgH imvWCf">The Rise of ESG Investing<!-- -->: <span class="sc-gGBfsJ lbNcoW">How Investment Managers Can Seize a $50 Trillion AUM Opportunity</span></span><span></span></a></h2>
+         </div><p class="sc-tilXH iDiGEo"></p>
+         <div>
+          Spiking client demand for ESG-focused investment products will drive AUM growth over the next three years. Yet a lack of quality or public ESG data threatens investment managers’ ability to offer accurate products and might see them run afoul of rising ESG regulatory standards.
+         </div><p></p></li>
+        <li class="sc-fYxtnH bDLSLQ">
+         <div class="sc-kjoXOD flOUhI">
+          Report
+         </div>&nbsp;|&nbsp;
+         <div class="sc-jnlKLf kBJoqG">
+          MAY 12, 2022
+         </div>
+         <div class="sc-jqCOkK caqdLs">
+          <h2 class="sc-uJMKN fOriDk"><a href="https://www.emarketer.com/content/us-crypto-payments" id="Report968e512f-b568-c06d-5783-5d8d483b2ab5" data-analytics="Result-Link-Report968e512f-b568-c06d-5783-5d8d483b2ab5--QUERY:"><span class="sc-bbmXgH imvWCf">US Crypto Payments<!-- -->: <span class="sc-gGBfsJ lbNcoW">How $10.4 Billion in Transactions Is Upending B2B, Retail, and Remittances</span></span><span></span></a></h2>
+         </div><p class="sc-tilXH iDiGEo"></p>
+         <div>
+          Payment provider innovation across remittances, B2B payments, and retail card and noncard payments is setting a long-term growth runway. In the short term, providers must navigate a host of obstacles to enable more crypto users to become crypto payers—and so far they’re succeeding.
+         </div><p></p></li>
+        <li class="sc-fYxtnH bDLSLQ">
+         <div class="sc-kjoXOD flOUhI">
+          Report
+         </div>&nbsp;|&nbsp;
+         <div class="sc-jnlKLf kBJoqG">
+          MAY 12, 2022
+         </div>
+         <div class="sc-jqCOkK caqdLs">
+          <h2 class="sc-uJMKN fOriDk"><a href="https://www.emarketer.com/content/spotlight-us-bank-technology-spending" id="Reportcdf9218a-49ad-2ac9-febf-277dc7dd3615" data-analytics="Result-Link-Reportcdf9218a-49ad-2ac9-febf-277dc7dd3615--QUERY:"><span class="sc-bbmXgH imvWCf">Spotlight<!-- -->: <span class="sc-gGBfsJ lbNcoW">US Bank Technology Spending</span></span><span></span></a></h2>
+         </div><p class="sc-tilXH iDiGEo"></p>
+         <div>
+          Technology decision-makers within the banking industry will need to justify tech plans if spending growth is to remain steady.
+         </div><p></p></li>
+        <li class="sc-fYxtnH bDLSLQ">
+         <div class="sc-kjoXOD flOUhI">
+          Report
+         </div>&nbsp;|&nbsp;
+         <div class="sc-jnlKLf kBJoqG">
+          MAY 12, 2022
+         </div>
+         <div class="sc-jqCOkK caqdLs">
+          <h2 class="sc-uJMKN fOriDk"><a href="https://www.emarketer.com/content/spotlight-uk-bank-technology-spending" id="Reportb1b9b038-0f3e-f954-9f95-4e6dc3c55258" data-analytics="Result-Link-Reportb1b9b038-0f3e-f954-9f95-4e6dc3c55258--QUERY:"><span class="sc-bbmXgH imvWCf">Spotlight<!-- -->: <span class="sc-gGBfsJ lbNcoW">UK Bank Technology Spending</span></span><span></span></a></h2>
+         </div><p class="sc-tilXH iDiGEo"></p>
+         <div>
+          Technology decision-makers within the banking industry will need to balance high tech spending with the potential for regulatory disruptors.
+         </div><p></p></li>
+        <li class="sc-fYxtnH bDLSLQ">
+         <div class="sc-kjoXOD flOUhI">
+          Report
+         </div>&nbsp;|&nbsp;
+         <div class="sc-jnlKLf kBJoqG">
+          MAY 12, 2022
+         </div>
+         <div class="sc-jqCOkK caqdLs">
+          <h2 class="sc-uJMKN fOriDk"><a href="https://www.emarketer.com/content/spotlight-canada-bank-technology-spending" id="Report88309083-33e8-51ba-454d-f5097ef5f204" data-analytics="Result-Link-Report88309083-33e8-51ba-454d-f5097ef5f204--QUERY:"><span class="sc-bbmXgH imvWCf">Spotlight<!-- -->: <span class="sc-gGBfsJ lbNcoW">Canada Bank Technology Spending</span></span><span></span></a></h2>
+         </div><p class="sc-tilXH iDiGEo"></p>
+         <div>
+          Technology decision-makers within the banking industry will need to balance high tech spending with the potential for competitive disruptors.
+         </div><p></p></li>
+        <li class="sc-fYxtnH bDLSLQ">
+         <div class="sc-kjoXOD flOUhI">
+          Report
+         </div>&nbsp;|&nbsp;
+         <div class="sc-jnlKLf kBJoqG">
+          MAY 9, 2022
+         </div>
+         <div class="sc-jqCOkK caqdLs">
+          <h2 class="sc-uJMKN fOriDk"><a href="https://www.emarketer.com/content/southeast-asia-digital-users-forecast-2022" id="Reporta6c0921e-ec56-5f19-4780-07bc354a9bbb" data-analytics="Result-Link-Reporta6c0921e-ec56-5f19-4780-07bc354a9bbb--QUERY:"><span class="sc-bbmXgH imvWCf">Southeast Asia Digital Users Forecast 2022<!-- -->: <span class="sc-gGBfsJ lbNcoW">Rising Connectivity Is Driving Commerce Opportunities</span></span><span></span></a></h2>
+         </div><p class="sc-tilXH iDiGEo"></p>
+         <div>
+          Nearly 90% of internet users in Southeast Asia will access the internet via a smartphone this year, making mobile both ubiquitous and indispensable for the region’s flourishing digital economy.
+         </div><p></p></li>
+        <li class="sc-fYxtnH bDLSLQ">
+         <div class="sc-kjoXOD flOUhI">
+          Report
+         </div>&nbsp;|&nbsp;
+         <div class="sc-jnlKLf kBJoqG">
+          MAY 4, 2022
+         </div>
+         <div class="sc-jqCOkK caqdLs">
+          <h2 class="sc-uJMKN fOriDk"><a href="https://www.emarketer.com/content/canada-mobile-banking-emerging-features-benchmark-2022" id="Reportf5a32b2b-3866-ec05-11a7-bb41b6b77534" data-analytics="Result-Link-Reportf5a32b2b-3866-ec05-11a7-bb41b6b77534--QUERY:"><span class="sc-bbmXgH imvWCf">Canada Mobile Banking Emerging Features Benchmark 2022<!-- -->: <span class="sc-gGBfsJ lbNcoW">How 7 Top Financial Institutions’ Mobile Apps Meet Customer Demand</span></span><span></span></a></h2>
+         </div><p class="sc-tilXH iDiGEo"></p>
+         <div>
+          This second annual benchmark evaluates seven Canadian financial institutions across six feature categories and weights their scores according to the results of a survey of mobile banking users in Canada.
+         </div><p></p></li>
+        <li class="sc-fYxtnH bDLSLQ">
+         <div class="sc-kjoXOD flOUhI">
+          Report
+         </div>&nbsp;|&nbsp;
+         <div class="sc-jnlKLf kBJoqG">
+          APR 28, 2022
+         </div>
+         <div class="sc-jqCOkK caqdLs">
+          <h2 class="sc-uJMKN fOriDk"><a href="https://www.emarketer.com/content/d2c-brands-2022" id="Report88814cd0-4d12-018f-b130-d8e2ff8eac19" data-analytics="Result-Link-Report88814cd0-4d12-018f-b130-d8e2ff8eac19--QUERY:"><span class="sc-bbmXgH imvWCf">D2C Brands 2022<!-- -->: <span class="sc-gGBfsJ lbNcoW">How Established Brands and DNVBs Achieve Sustainable Growth with Direct Sales Strategies</span></span><span></span></a></h2>
+         </div><p class="sc-tilXH iDiGEo"></p>
+         <div>
+          Recent gains in direct-to-consumer (D2C) ecommerce sales are being driven more by incumbent brands than disruptors. What can they learn from each other about building brands in the digital age?
+         </div><p></p></li>
+        <li class="sc-fYxtnH bDLSLQ">
+         <div class="sc-kjoXOD flOUhI">
+          Report
+         </div>&nbsp;|&nbsp;
+         <div class="sc-jnlKLf kBJoqG">
+          APR 27, 2022
+         </div>
+         <div class="sc-jqCOkK caqdLs">
+          <h2 class="sc-uJMKN fOriDk"><a href="https://www.emarketer.com/content/demographic-spotlight-black-consumers-2022" id="Reportf67daf73-9336-9983-f016-4dd12576de4f" data-analytics="Result-Link-Reportf67daf73-9336-9983-f016-4dd12576de4f--QUERY:"><span class="sc-bbmXgH imvWCf">Demographic Spotlight<!-- -->: <span class="sc-gGBfsJ lbNcoW">Black Consumers 2022</span></span><span></span></a></h2>
+         </div><p class="sc-tilXH iDiGEo"></p>
+         <div>
+          Nearly 1 in 5 Black consumers in the US view brands as generally disingenuous for holding Black History Month promotions, recent research shows. A partnership with Black consumers should start with a deep understanding and appreciation of the elements that make them, as individuals and as a group, unique.
+         </div><p></p></li>
+        <li class="sc-fYxtnH bDLSLQ">
+         <div class="sc-kjoXOD flOUhI">
+          Report
+         </div>&nbsp;|&nbsp;
+         <div class="sc-jnlKLf kBJoqG">
+          APR 26, 2022
+         </div>
+         <div class="sc-jqCOkK caqdLs">
+          <h2 class="sc-uJMKN fOriDk"><a href="https://www.emarketer.com/content/spotlight-reinvigorating-voice-of-customer" id="Reportbf2e4eff-5123-1baf-9ded-330ce0fd8557" data-analytics="Result-Link-Reportbf2e4eff-5123-1baf-9ded-330ce0fd8557--QUERY:"><span class="sc-bbmXgH imvWCf">Spotlight<!-- -->: <span class="sc-gGBfsJ lbNcoW">Reinvigorating the Voice of the Customer</span></span><span></span></a></h2>
+         </div><p class="sc-tilXH iDiGEo"></p>
+         <div>
+          By upgrading and integrating voice of the customer strategies throughout the entire organization, businesses can improve the customer experience and boost financial results.
+         </div><p></p></li>
+        <li class="sc-fYxtnH bDLSLQ">
+         <div class="sc-kjoXOD flOUhI">
+          Report
+         </div>&nbsp;|&nbsp;
+         <div class="sc-jnlKLf kBJoqG">
+          APR 25, 2022
+         </div>
+         <div class="sc-jqCOkK caqdLs">
+          <h2 class="sc-uJMKN fOriDk"><a href="https://www.emarketer.com/content/us-podcast-advertising-2022" id="Report133ad792-2d2c-daf4-4ceb-31e24469df97" data-analytics="Result-Link-Report133ad792-2d2c-daf4-4ceb-31e24469df97--QUERY:"><span class="sc-bbmXgH imvWCf">US Podcast Advertising 2022<!-- -->: <span class="sc-gGBfsJ lbNcoW">More Listeners, More Marketing Attention</span></span><span></span></a></h2>
+         </div><p class="sc-tilXH iDiGEo"></p>
+         <div>
+          Podcast listening keeps making gains, and the medium is becoming a bigger part of marketers’ audio strategies.
+         </div><p></p></li>
+        <li class="sc-fYxtnH bDLSLQ">
+         <div class="sc-kjoXOD flOUhI">
+          Report
+         </div>&nbsp;|&nbsp;
+         <div class="sc-jnlKLf kBJoqG">
+          APR 19, 2022
+         </div>
+         <div class="sc-jqCOkK caqdLs">
+          <h2 class="sc-uJMKN fOriDk"><a href="https://www.emarketer.com/content/the-metaverse" id="Report31d4a0ff-883b-5cab-cad8-89535e8ff1da" data-analytics="Result-Link-Report31d4a0ff-883b-5cab-cad8-89535e8ff1da--QUERY:"><span class="sc-bbmXgH imvWCf">The Metaverse<!-- -->: <span class="sc-gGBfsJ lbNcoW">Our Coverage on Tech, Retail, Marketing, Crypto, Healthcare, and China in the Virtual World</span></span><span></span></a></h2>
+         </div><p class="sc-tilXH iDiGEo"></p>
+         <div>
+          The metaverse is expected to be a major disruptor across industries, but it's still early days for the emerging realm. In this report, we look at how different markets are embarking on their own metaverse business models.
+         </div><p></p></li>
+        <li class="sc-fYxtnH bDLSLQ">
+         <div class="sc-kjoXOD flOUhI">
+          Report
+         </div>&nbsp;|&nbsp;
+         <div class="sc-jnlKLf kBJoqG">
+          APR 15, 2022
+         </div>
+         <div class="sc-jqCOkK caqdLs">
+          <h2 class="sc-uJMKN fOriDk"><a href="https://www.emarketer.com/content/latin-america-retail-media-advertising-2022" id="Reportc94678ee-f96a-4c60-cd8a-5d85e3196398" data-analytics="Result-Link-Reportc94678ee-f96a-4c60-cd8a-5d85e3196398--QUERY:"><span class="sc-bbmXgH imvWCf">Latin America Retail Media Advertising 2022<!-- -->: <span class="sc-gGBfsJ lbNcoW">Double-Digit Gains in Digital Advertising and Retail Ecommerce Sales Spark New Opportunities for Brand Marketers</span></span><span></span></a></h2>
+         </div><p class="sc-tilXH iDiGEo"></p>
+         <div>
+          Retail media advertising sits at the intersection of two major digital disruptions unfolding in Latin America: the meteoric rise of ecommerce and reallocation of ad dollars toward digital formats. While still nascent, retail media will play a larger part of brands’ marketing strategies in 2022.
+         </div><p></p></li>
+        <li class="sc-fYxtnH bDLSLQ">
+         <div class="sc-kjoXOD flOUhI">
+          Report
+         </div>&nbsp;|&nbsp;
+         <div class="sc-jnlKLf kBJoqG">
+          APR 14, 2022
+         </div>
+         <div class="sc-jqCOkK caqdLs">
+          <h2 class="sc-uJMKN fOriDk"><a href="https://www.emarketer.com/content/branch-transformation" id="Reportf3d9b098-878f-394e-e9bc-a9a681d4b228" data-analytics="Result-Link-Reportf3d9b098-878f-394e-e9bc-a9a681d4b228--QUERY:"><span class="sc-bbmXgH imvWCf">Branch Transformation<!-- -->: <span class="sc-gGBfsJ lbNcoW">From Bricks to Clicks to the Metaverse and Beyond</span></span><span></span></a></h2>
+         </div><p class="sc-tilXH iDiGEo"></p>
+         <div>
+          Neobank and Big Tech competition, rising mobile adoption, and new touchpoints like the metaverse are pushing banks to rethink their branch footprints. They must react to evolving consumer banking preferences so they can future-proof their branches.
+         </div><p></p></li>
+        <li class="sc-fYxtnH bDLSLQ">
+         <div class="sc-kjoXOD flOUhI">
+          Report
+         </div>&nbsp;|&nbsp;
+         <div class="sc-jnlKLf kBJoqG">
+          APR 12, 2022
+         </div>
+         <div class="sc-jqCOkK caqdLs">
+          <h2 class="sc-uJMKN fOriDk"><a href="https://www.emarketer.com/content/rise-of-digital-therapeutics" id="Reportf39c5a5c-bb0e-33ee-44de-2594b1f9ddef" data-analytics="Result-Link-Reportf39c5a5c-bb0e-33ee-44de-2594b1f9ddef--QUERY:"><span class="sc-bbmXgH imvWCf">The Rise of Digital Therapeutics<!-- -->: <span class="sc-gGBfsJ lbNcoW">How Digital Therapies Can Help Reimagine Care and Treatment</span></span><span></span></a></h2>
+         </div><p class="sc-tilXH iDiGEo"></p>
+         <div>
+          Digital therapeutics (DTx) are becoming more prominent offerings in healthcare. Questions are now arising around which stakeholders will pay for these products and how accessible they’ll be for patients.
+         </div><p></p></li>
+        <li class="sc-fYxtnH bDLSLQ">
+         <div class="sc-kjoXOD flOUhI">
+          Report
+         </div>&nbsp;|&nbsp;
+         <div class="sc-jnlKLf kBJoqG">
+          APR 7, 2022
+         </div>
+         <div class="sc-jqCOkK caqdLs">
+          <h2 class="sc-uJMKN fOriDk"><a href="https://www.emarketer.com/content/digital-audio-canada-2022" id="Report10b05732-7140-b3d3-ded2-efdf0d2d138e" data-analytics="Result-Link-Report10b05732-7140-b3d3-ded2-efdf0d2d138e--QUERY:"><span class="sc-bbmXgH imvWCf">Digital Audio in Canada 2022<!-- -->: <span class="sc-gGBfsJ lbNcoW">Spotify’s the Top Platform for Brands as the Ad Market Matures</span></span><span></span></a></h2>
+         </div><p class="sc-tilXH iDiGEo"></p>
+         <div>
+          As digital audio consumption increases, the advertising market in Canada is developing rapidly to reach new listeners.
+         </div><p></p></li>
+        <li class="sc-fYxtnH bDLSLQ">
+         <div class="sc-kjoXOD flOUhI">
+          Report
+         </div>&nbsp;|&nbsp;
+         <div class="sc-jnlKLf kBJoqG">
+          APR 6, 2022
+         </div>
+         <div class="sc-jqCOkK caqdLs">
+          <h2 class="sc-uJMKN fOriDk"><a href="https://www.emarketer.com/content/small-business-payment-disruptors" id="Report0018e816-2b35-4697-91e6-bb4861c8edcc" data-analytics="Result-Link-Report0018e816-2b35-4697-91e6-bb4861c8edcc--QUERY:"><span class="sc-bbmXgH imvWCf">Small-Business Payment Disruptors<!-- -->: <span class="sc-gGBfsJ lbNcoW">How Merchant Services Players Can Tap Into Changing Competitive Dynamics and Tech Innovation</span></span><span></span></a></h2>
+         </div><p class="sc-tilXH iDiGEo"></p>
+         <div>
+          Increasing digitization among the 32 million US small businesses is changing the competitive landscape and forcing banks, acquirers, and fintechs to invest in next-generation features. These features range from payments and value-added services to outreach.
+         </div><p></p></li>
+        <li class="sc-fYxtnH bDLSLQ">
+         <div class="sc-kjoXOD flOUhI">
+          Report
+         </div>&nbsp;|&nbsp;
+         <div class="sc-jnlKLf kBJoqG">
+          APR 6, 2022
+         </div>
+         <div class="sc-jqCOkK caqdLs">
+          <h2 class="sc-uJMKN fOriDk"><a href="https://www.emarketer.com/content/technologies-drive-sustainability" id="Report26058391-9397-2695-bf08-d95c4a10795e" data-analytics="Result-Link-Report26058391-9397-2695-bf08-d95c4a10795e--QUERY:"><span class="sc-bbmXgH imvWCf">Technologies to Drive Sustainability<!-- -->: <span class="sc-gGBfsJ lbNcoW">As Businesses Strive to Adapt, Consumer-Facing Tech Can Make a Difference</span></span><span></span></a></h2>
+         </div><p class="sc-tilXH iDiGEo"></p>
+         <div>
+          Businesses know they need to become more sustainable. This report looks at how they can use technology to convince consumers—and employees—of their commitment.
+         </div><p></p></li>
+        <li class="sc-fYxtnH bDLSLQ">
+         <div class="sc-kjoXOD flOUhI">
+          Report
+         </div>&nbsp;|&nbsp;
+         <div class="sc-jnlKLf kBJoqG">
+          APR 5, 2022
+         </div>
+         <div class="sc-jqCOkK caqdLs">
+          <h2 class="sc-uJMKN fOriDk"><a href="https://www.emarketer.com/content/spotlight-private-label-brands-2022" id="Reportaa9ff552-a937-a2bc-a40c-7ec787ea4870" data-analytics="Result-Link-Reportaa9ff552-a937-a2bc-a40c-7ec787ea4870--QUERY:"><span class="sc-bbmXgH imvWCf">Spotlight<!-- -->: <span class="sc-gGBfsJ lbNcoW">Private Label Brands 2022</span></span><span></span></a></h2>
+         </div><p class="sc-tilXH iDiGEo"></p>
+         <div>
+          Private label brands have taken on increasing importance in retailers’ arsenals on the heels of positive consumer sentiment. This report looks at how retailers can use store brands to bolster their product assortment and thus increase their margins.
+         </div><p></p></li>
+        <li class="sc-fYxtnH bDLSLQ">
+         <div class="sc-kjoXOD flOUhI">
+          Report
+         </div>&nbsp;|&nbsp;
+         <div class="sc-jnlKLf kBJoqG">
+          APR 5, 2022
+         </div>
+         <div class="sc-jqCOkK caqdLs">
+          <h2 class="sc-uJMKN fOriDk"><a href="https://www.emarketer.com/content/super-apps-banking" id="Report34a59585-44ce-7a46-b7d7-262adc9e3db3" data-analytics="Result-Link-Report34a59585-44ce-7a46-b7d7-262adc9e3db3--QUERY:"><span class="sc-bbmXgH imvWCf">Super Apps in Banking<!-- -->: <span class="sc-gGBfsJ lbNcoW">Opportunities and Risks for Banks in the Age of Rebundling</span></span><span></span></a></h2>
+         </div><p class="sc-tilXH iDiGEo"></p>
+         <div>
+          The super app model is moving to the West and will upend how consumers interact with financial services. Banks must start preparing now to make the changing tide work to their advantage.
+         </div><p></p></li>
+        <li class="sc-fYxtnH bDLSLQ">
+         <div class="sc-kjoXOD flOUhI">
+          Report
+         </div>&nbsp;|&nbsp;
+         <div class="sc-jnlKLf kBJoqG">
+          APR 4, 2022
+         </div>
+         <div class="sc-jqCOkK caqdLs">
+          <h2 class="sc-uJMKN fOriDk"><a href="https://www.emarketer.com/content/us-augmented-virtual-reality-users-forecast-2022" id="Report07ffc8fc-7cb2-8d42-3ddf-8dd134835f51" data-analytics="Result-Link-Report07ffc8fc-7cb2-8d42-3ddf-8dd134835f51--QUERY:"><span class="sc-bbmXgH imvWCf">US Augmented and Virtual Reality Users Forecast 2022<!-- -->: <span class="sc-gGBfsJ lbNcoW">Social Media and Retail Continue to Drive Growth</span></span><span></span></a></h2>
+         </div><p class="sc-tilXH iDiGEo"></p>
+         <div>
+          Augmented and virtual reality (AR/VR) continue to expand their reach as new devices and applications make them more accessible to consumers.
+         </div><p></p></li>
+        <li class="sc-fYxtnH bDLSLQ">
+         <div class="sc-kjoXOD flOUhI">
+          Report
+         </div>&nbsp;|&nbsp;
+         <div class="sc-jnlKLf kBJoqG">
+          APR 1, 2022
+         </div>
+         <div class="sc-jqCOkK caqdLs">
+          <h2 class="sc-uJMKN fOriDk"><a href="https://www.emarketer.com/content/ad-measurement-2022" id="Report32b4c4a2-de7b-d30c-9f89-23e36743a253" data-analytics="Result-Link-Report32b4c4a2-de7b-d30c-9f89-23e36743a253--QUERY:"><span class="sc-bbmXgH imvWCf">Ad Measurement 2022<!-- -->: <span class="sc-gGBfsJ lbNcoW">The Start of a New Era Measuring Video</span></span><span></span></a></h2>
+         </div><p class="sc-tilXH iDiGEo"></p>
+         <div>
+          The advertising industry has yet to crack the code on cross-screen, cross-platform video measurement. This year, buyers will experiment with new and improved measurement solutions and a multicurrency upfront.
+         </div><p></p></li>
+        <li class="sc-fYxtnH bDLSLQ">
+         <div class="sc-kjoXOD flOUhI">
+          Report
+         </div>&nbsp;|&nbsp;
+         <div class="sc-jnlKLf kBJoqG">
+          MAR 31, 2022
+         </div>
+         <div class="sc-jqCOkK caqdLs">
+          <h2 class="sc-uJMKN fOriDk"><a href="https://www.emarketer.com/content/ai-customer-experience" id="Reportfaa7d4ce-75be-ad87-623d-a170273919f4" data-analytics="Result-Link-Reportfaa7d4ce-75be-ad87-623d-a170273919f4--QUERY:"><span class="sc-bbmXgH imvWCf">AI in Customer Experience<!-- -->: <span class="sc-gGBfsJ lbNcoW">How AI Is Improving the Ways Companies Reach Consumers</span></span><span></span></a></h2>
+         </div><p class="sc-tilXH iDiGEo"></p>
+         <div>
+          AI investments can improve customer experience. Here’s what companies are—and should—be doing to stay ahead.
+         </div><p></p></li>
+        <li class="sc-fYxtnH bDLSLQ">
+         <div class="sc-kjoXOD flOUhI">
+          Report
+         </div>&nbsp;|&nbsp;
+         <div class="sc-jnlKLf kBJoqG">
+          MAR 31, 2022
+         </div>
+         <div class="sc-jqCOkK caqdLs">
+          <h2 class="sc-uJMKN fOriDk"><a href="https://www.emarketer.com/content/us-apparel-retail-features-benchmark-2022" id="Report18261ba5-d8fd-3cde-3fd3-008b41f7a85f" data-analytics="Result-Link-Report18261ba5-d8fd-3cde-3fd3-008b41f7a85f--QUERY:"><span class="sc-bbmXgH imvWCf">US Apparel Retail Features Benchmark 2022<!-- -->: <span class="sc-gGBfsJ lbNcoW">How 10 Key Retailers Stack Up on What Consumers Value the Most</span></span><span></span></a></h2>
+         </div><p class="sc-tilXH iDiGEo"></p>
+         <div>
+          Here’s a breakdown of the online and in-store features that apparel retail shoppers value the most, and a ranking of how 10 leading retailers stack up.
+         </div><p></p></li>
+       </ul>
+      </div>
+      <div class="sc-gzOgki kVJAfu">
+       <ul class="pagination">
+        <li class="link disabled"><a class="hrefPrev" tabindex="0" role="button">‹</a></li>
+        <li class="link activePage"><a role="button" tabindex="0" aria-label="Page 1 is your current page" aria-current="page">1</a></li>
+        <li class="link"><a role="button" href="https://www.emarketer.com/search1?page=2&amp;sortBy=bestMatch&amp;refinementList%5Btype%5D=report" tabindex="0" aria-label="Page 2">2</a></li>
+        <li class="link"><a role="button" href="https://www.emarketer.com/search1?page=3&amp;sortBy=bestMatch&amp;refinementList%5Btype%5D=report" tabindex="0" aria-label="Page 3">3</a></li>
+        <li class="link"><a role="button" href="https://www.emarketer.com/search1?page=4&amp;sortBy=bestMatch&amp;refinementList%5Btype%5D=report" tabindex="0" aria-label="Page 4">4</a></li>
+        <li class="link"><a role="button" href="https://www.emarketer.com/search1?page=5&amp;sortBy=bestMatch&amp;refinementList%5Btype%5D=report" tabindex="0" aria-label="Page 5">5</a></li>
+        <li class="link"><a role="button" href="https://www.emarketer.com/search1?page=6&amp;sortBy=bestMatch&amp;refinementList%5Btype%5D=report" tabindex="0" aria-label="Page 6">6</a></li>
+        <li class="link"><a role="button" href="https://www.emarketer.com/search1?page=7&amp;sortBy=bestMatch&amp;refinementList%5Btype%5D=report" tabindex="0" aria-label="Page 7">7</a></li>
+        <li class="link"><a role="button" href="https://www.emarketer.com/search1?page=8&amp;sortBy=bestMatch&amp;refinementList%5Btype%5D=report" tabindex="0" aria-label="Page 8">8</a></li>
+        <li class="break">...</li>
+        <li class="link"><a role="button" href="https://www.emarketer.com/search1?page=23&amp;sortBy=bestMatch&amp;refinementList%5Btype%5D=report" tabindex="0" aria-label="Page 23">23</a></li>
+        <li class="link"><a class="hrefNext" href="https://www.emarketer.com/search1?page=2&amp;sortBy=bestMatch&amp;refinementList%5Btype%5D=report" tabindex="0" role="button">›</a></li>
+       </ul>
+      </div><span class="sc-iyvyFf dAjphc">Others also searched for</span>
+      <div class="sc-hwwEjo gKvXCM">
+       <a class="sc-kPVwWT cSpLvR" href="https://www.emarketer.com/search1/?query=rcs" data-analytics="RelatedSearches-Link-rcs">rcs</a><a class="sc-kPVwWT cSpLvR" href="https://www.emarketer.com/search1/?query=cable%20subscribers" data-analytics="RelatedSearches-Link-cable subscribers">cable subscribers</a><a class="sc-kPVwWT cSpLvR" href="https://www.emarketer.com/search1/?query=non-pay%20tv%20households" data-analytics="RelatedSearches-Link-non-pay tv households">non-pay tv households</a><a class="sc-kPVwWT cSpLvR" href="https://www.emarketer.com/search1/?query=sports%20advertising" data-analytics="RelatedSearches-Link-sports advertising">sports advertising</a><a class="sc-kPVwWT cSpLvR" href="https://www.emarketer.com/search1/?query=tv%20advertising%20spend" data-analytics="RelatedSearches-Link-tv advertising spend">tv advertising spend</a><a class="sc-kPVwWT cSpLvR" href="https://www.emarketer.com/search1/?query=pay%20tv%20subscribers" data-analytics="RelatedSearches-Link-pay tv subscribers">pay tv subscribers</a><a class="sc-kPVwWT cSpLvR" href="https://www.emarketer.com/search1/?query=sports%20marketing" data-analytics="RelatedSearches-Link-sports marketing">sports marketing</a><a class="sc-kPVwWT cSpLvR" href="https://www.emarketer.com/search1/?query=ad%20spend%20by%20media" data-analytics="RelatedSearches-Link-ad spend by media">ad spend by media</a><a class="sc-kPVwWT cSpLvR" href="https://www.emarketer.com/search1/?query=programmatic%20canada" data-analytics="RelatedSearches-Link-programmatic canada">programmatic canada</a><a class="sc-kPVwWT cSpLvR" href="https://www.emarketer.com/search1/?query=movie%20and%20video%20distribution" data-analytics="RelatedSearches-Link-movie and video distribution">movie and video distribution</a>
+      </div>
+     </div>
+    </div>
+   </div><span></span>
+  </div> 
+  <script type="text/javascript" src="./static/js/main.77cfd24c.js"></script> 
+ </body>
+</html>

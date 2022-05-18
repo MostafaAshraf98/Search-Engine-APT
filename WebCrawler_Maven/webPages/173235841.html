@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"> 
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <meta name="Description" content="Documentation on the Roundup issue tracker, version 2.1.0."> 
+  <title>Debugging Aids - Roundup 2.1.0 documentation</title> 
+  <link rel="stylesheet" href="../_static/style.css" type="text/css"> 
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css"> 
+  <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+          URL_ROOT:    '../',
+          VERSION:     '2.1.0',
+          COLLAPSE_MODINDEX: false,
+          FILE_SUFFIX: '.html'
+      };
+    </script> 
+  <script type="text/javascript" src="../_static/jquery.js"></script> 
+  <script type="text/javascript" src="../_static/underscore.js"></script> 
+  <script type="text/javascript" src="../_static/doctools.js"></script> 
+  <script type="text/javascript" src="../_static/language_data.js"></script> 
+  <link rel="canonical" href="https://www.roundup-tracker.org/docs/debugging.html"> 
+  <link rel="index" title="Index" href="../genindex.html"> 
+  <link rel="search" title="Search" href="../search.html"> 
+  <link rel="top" title="Roundup 2.1.0 documentation" href="../index.html"> 
+  <link rel="up" title="Docs" href="../docs.html"> 
+  <link rel="next" title="XML-RPC access to Roundup" href="xmlrpc.html"> 
+  <link rel="prev" title="Administration Guide" href="admin_guide.html"> 
+ </head> 
+ <body> 
+  <div class="header">
+   <h1>Roundup</h1> 
+   <div id="searchbox" style="display: none"> 
+    <form class="search" action="../search.html" method="get"> 
+     <input type="text" aria-label="Enter search terms" name="q" size="18"> 
+     <input type="submit" value="Search"> 
+     <input type="hidden" name="check_keywords" value="yes"> 
+     <input type="hidden" name="area" value="default"> 
+    </form> 
+   </div> 
+   <script type="text/javascript">$('#searchbox').show(0);</script> 
+  </div> 
+  <div class="navigation"> 
+   <div class="menu"> 
+    <ul class="current"> 
+     <li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a></li> 
+     <li class="toctree-l1"><a class="reference external" href="https://pypi.org/project/roundup/">Download</a></li> 
+     <li class="toctree-l1 current"><a class="reference internal" href="../docs.html">Docs</a>
+      <ul class="current"> 
+       <li class="toctree-l2"><a class="reference internal" href="features.html">Roundup Features</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="installation.html">Installing Roundup</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="upgrading.html">Upgrading to newer versions of Roundup</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="FAQ.html">Roundup FAQ</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="user_guide.html">User Guide</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="customizing.html">Customising Roundup</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="admin_guide.html">Administration Guide</a></li> 
+       <li class="toctree-l2 current"><a class="current reference internal" href="#">Debugging Aids</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="xmlrpc.html">XML-RPC access to Roundup</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="rest.html">REST API for Roundup</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="tracker_templates.html">Roundup Tracker Templates</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="glossary.html">Roundup Glossary</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="acknowledgements.html">Acknowledgements</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="license.html">License</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="overview.html">Design Overview</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="design.html">Design (original)</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="developers.html">Developing Roundup</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="mysql.html">Notes about the MySQL Database backend</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="postgresql.html">Notes about the PostgreSQL Database backend</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="implementation.html">Richard Jones implementation notes</a></li> 
+      </ul> </li> 
+     <li class="toctree-l1"><a class="reference external" href="https://issues.roundup-tracker.org">Issues</a></li> 
+     <li class="toctree-l1"><a class="reference internal" href="../contact.html">Contact</a></li> 
+     <li class="toctree-l1"><a class="reference external" href="https://wiki.roundup-tracker.org">Wiki</a></li> 
+     <li class="toctree-l1"><a class="reference internal" href="../code.html">Code</a></li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="content"> 
+   <div id="subnav"> <a title="Administration Guide" href="admin_guide.html"> Prev</a> <a title="XML-RPC access to Roundup" href="xmlrpc.html"> Next</a> <a title="Index" href="../genindex.html"> Index</a> 
+   </div> 
+   <div class="section" id="debugging-aids"> 
+    <h1>Debugging Aids</h1> 
+    <p>Try turning on logging of DEBUG level messages. This may be done a number of ways, depending on what it is you’re testing:</p> 
+    <ol class="arabic"> 
+     <li><p class="first">If you’re testing the database unit tests, then set the environment variable <code class="docutils literal notranslate"><span class="pre">LOGGING_LEVEL=DEBUG</span></code>. This may be done like so:</p> 
+      <blockquote> 
+       <div>
+        <p>LOGGING_LEVEL=DEBUG python -m pytest test/</p> 
+       </div>
+      </blockquote> <p>This variable replaces the older HYPERDBDEBUG environment var.</p> </li> 
+     <li><p class="first">If you’re testing a particular tracker, then set the logging level in your tracker’s <code class="docutils literal notranslate"><span class="pre">config.ini</span></code>.</p> </li> 
+    </ol> 
+    <div class="section" id="sendmaildebug"> 
+     <h2>SENDMAILDEBUG</h2> 
+     <p>Set to a filename and roundup will write each email message that it sends to that file instead to the internet. This environment variable is independent of the python -O flag.</p> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="footer"> 
+   <div> <span class="source">[<a href="../_sources/docs/debugging.txt" rel="nofollow">page source</a>]</span> © Copyright 2009-2021, Richard Jones, Roundup-Team. 
+   </div> 
+   <div>
+     Last updated on May 09, 2022. <span>Hosted by <a href="https://sourceforge.net"><img src="https://sflogo.sourceforge.net/sflogo.php?group_id=31577&amp;type=1" width="88" height="31" border="0" alt="SourceForge.net Logo"></a></span> 
+   </div> 
+  </div> 
+  <script>
+      /* locally hosted goatcounter https://www.goatcounter.com/ */
+      /* include site info in path url to allow multiple sites to be
+      tracked together */
+      window.goatcounter = {
+      path: function(p) { return location.host + p }
+      }
+    </script> 
+  <script data-goatcounter="https://stats.rouilj.dynamic-dns.net/count" integrity="sha384-QGgNMMRFTi8ul5kHJ+vXysPe8gySvSA/Y3rpXZiRLzKPIw8CWY+a3ObKmQsyDr+a" async src="/_static/goatcounter_count.v3.js">
+    </script>  
+ </body>
+</html>

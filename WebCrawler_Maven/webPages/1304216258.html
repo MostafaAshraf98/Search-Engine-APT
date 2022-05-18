@@ -1,0 +1,852 @@
+<!doctype html>
+<html lang="en" dir="ltr"> 
+ <head> 
+  <meta name="google-signin-client-id" content="721724668570-nbkv1cfusk7kk4eni4pjvepaus73b13t.apps.googleusercontent.com"> 
+  <meta name="google-signin-scope" content="profile email https://www.googleapis.com/auth/developerprofiles https://www.googleapis.com/auth/developerprofiles.award https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/webhistory"> 
+  <meta property="og:site_name" content="Google Cloud"> 
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#039be5">
+  <meta charset="utf-8"> 
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <link rel="manifest" href="/_pwa/cloud/manifest.json" crossorigin="use-credentials"> 
+  <link rel="preconnect" href="//www.gstatic.com" crossorigin> 
+  <link rel="preconnect" href="//fonts.gstatic.com" crossorigin> 
+  <link rel="preconnect" href="//fonts.googleapis.com" crossorigin> 
+  <link rel="preconnect" href="//apis.google.com" crossorigin> 
+  <link rel="preconnect" href="//www.google-analytics.com" crossorigin>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Google+Sans:400,500,700|Roboto:400,400italic,500,500italic,700,700italic|Roboto+Mono:400,500,700&amp;display=swap"> 
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Material+Icons&amp;display=block">
+  <link rel="stylesheet" href="https://www.gstatic.com/devrel-devsite/prod/v63b1ab83c7ef339d4047a8b2e39f4276b23993a7a27f52a95a4e519913214950/cloud/css/app.css"> 
+  <link rel="shortcut icon" href="https://www.gstatic.com/devrel-devsite/prod/v63b1ab83c7ef339d4047a8b2e39f4276b23993a7a27f52a95a4e519913214950/cloud/images/favicons/onecloud/favicon.ico"> 
+  <link rel="apple-touch-icon" href="https://www.gstatic.com/devrel-devsite/prod/v63b1ab83c7ef339d4047a8b2e39f4276b23993a7a27f52a95a4e519913214950/cloud/images/favicons/onecloud/super_cloud.png">
+  <link rel="canonical" href="https://cloud.google.com/solutions/open-banking-apix">
+  <link rel="search" type="application/opensearchdescription+xml" title="Google Cloud" href="https://cloud.google.com/s/opensearch.xml"> 
+  <title>Apigee Open Banking APIx &nbsp;|&nbsp; Google Cloud</title> 
+  <meta property="og:title" content="Apigee Open Banking APIx &nbsp;|&nbsp; Google Cloud">
+  <meta name="description" content="Enable the fast and secure delivery of PSD2-compliant APIs with Apigee open banking APIx."> 
+  <meta property="og:description" content="Enable the fast and secure delivery of PSD2-compliant APIs with Apigee open banking APIx.">
+  <meta property="og:url" content="https://cloud.google.com/solutions/open-banking-apix">
+  <meta property="og:image" content="https://cloud.google.com/_static/cloud/images/social-icon-google-cloud-1200-630.png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en">
+  <meta name="twitter:card" content="summary_large_image"> 
+  <meta name="track-metadata-page_template" content="Horizontal Solution Template"> 
+  <meta name="track-metadata-page_publishing_platform" content="bricks"> 
+ </head> 
+ <body class="cws-page-devsite" template="page" theme="cloud-theme" type="marketing" layout="full" free-trial pending> <devsite-progress type="indeterminate" id="app-progress"></devsite-progress> 
+  <section class="devsite-wrapper">
+   <cloudx-track></cloudx-track> <cloudx-utils-init></cloudx-utils-init> <devsite-header keep-tabs-visible> 
+    <div class="devsite-header--inner nocontent"> 
+     <div class="devsite-top-logo-row-wrapper-wrapper"> 
+      <div class="devsite-top-logo-row-wrapper"> 
+       <div class="devsite-top-logo-row"> <button type="button" id="devsite-hamburger-menu" class="devsite-header-icon-button button-flat material-icons gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Navigation menu button" visually-hidden aria-label="Open menu"> </button> 
+        <div class="devsite-product-name-wrapper"> <a href="/" class="devsite-site-logo-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav" track-name="googleCloud" track-metadata-position="nav" track-metadata-eventdetail="nav"> <img src="https://www.gstatic.com/devrel-devsite/prod/v63b1ab83c7ef339d4047a8b2e39f4276b23993a7a27f52a95a4e519913214950/cloud/images/cloud-logo.svg" class="devsite-site-logo" alt="Google Cloud"> </a> <span class="devsite-product-name"> 
+          <ul class="devsite-breadcrumb-list"> 
+           <li class="devsite-breadcrumb-item
+             devsite-has-google-wordmark"> </li> 
+          </ul> </span> 
+        </div> 
+        <div class="devsite-top-logo-row-middle"> 
+         <div class="devsite-header-upper-tabs"> 
+         </div> <devsite-search aria-expanded="false" aria-haspopup="listbox" enable-signin enable-search enable-suggestions enable-query-completion project-name="Google Cloud" tenant-name="Google Cloud" compact role="combobox"> 
+          <form class="devsite-search-form" action="https://cloud.google.com/s/results" method="GET"> 
+           <div class="devsite-search-container"> 
+            <div class="devsite-searchbox"> 
+             <input aria-activedescendant="" aria-autocomplete="list" aria-label="Search" aria-haspopup="false" aria-multiline="false" aria-label="Search box" autocomplete="off" class="devsite-search-field devsite-search-query" name="q" placeholder="Search" role="searchbox" type="text" value=""> 
+             <div class="devsite-search-image material-icons" aria-hidden="true"></div> 
+            </div> <button type="button" search-open class="devsite-search-button devsite-header-icon-button button-flat material-icons" aria-label="Open search"></button> 
+           </div> 
+          </form> 
+          <button type="button" search-close class="devsite-search-button devsite-header-icon-button button-flat material-icons" aria-label="Close search"></button> 
+         </devsite-search> 
+        </div> <devsite-language-selector> 
+         <devsite-select class="devsite-language-selector-menu"> 
+          <select aria-label="Select your language preference." class="devsite-language-selector-select" name="language" track-name="click" track-type="languageSelector"> <option>Language</option> <option value="en" lang="en"> English </option> <option value="de" lang="de"> Deutsch </option> <option value="es" lang="es"> Español </option> <option value="es_419" lang="es_419"> Español – América Latina </option> <option value="fr" lang="fr"> Français </option> <option value="it" lang="it"> Italiano </option> <option value="pt_br" lang="pt_br"> Português – Brasil </option> <option value="zh_cn" lang="zh_cn"> ?? – ?? </option> <option value="zh_tw" lang="zh_tw"> ?? – ?? </option> <option value="ja" lang="ja"> ??? </option> <option value="ko" lang="ko"> ??? </option> </select> 
+         </devsite-select> 
+        </devsite-language-selector> <devsite-user enable-profiles fp-auth id="devsite-user"> 
+         <span class="button devsite-top-button" aria-hidden="true" visually-hidden>Sign in</span> 
+        </devsite-user> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="devsite-collapsible-section
+    "> 
+      <div class="devsite-header-background"> 
+       <div class="devsite-product-id-row" hidden> 
+        <div class="devsite-product-description-row"> 
+        </div> 
+       </div> 
+       <div class="devsite-doc-set-nav-row"> 
+        <div class="devsite-product-button-row"> <a href="https://cloud.google.com/contact/?direct=true&amp;pre_product=apigee" class="cta-button-secondary button
+      " track-type="contact" track-name="sales" track-metadata-eventdetail="nav" track-metadata-position="nav">Contact Us</a> <a href="https://apigee.google.com/setup/eval" class="cta-button-primary button-primary button
+      " track-metadata-position="nav" target="_blank" track-metadata-eventdetail="nav" track-type="freeTrial" track-name="apigeeCta">Try it free</a> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </devsite-header> <devsite-book-nav scrollbars hidden> 
+    <div class="devsite-book-nav-filter
+            hidden"> 
+     <input type="text" placeholder="Filter" aria-label="Type to filter" role="searchbox"> <span class="filter-clear-button hidden" data-title="Clear filter" aria-label="Clear filter" role="button" tabindex="0"></span> 
+    </div> 
+    <nav class="devsite-book-nav devsite-nav nocontent" aria-label="Side menu"> 
+     <div class="devsite-mobile-header"> <button type="button" id="devsite-close-nav" class="devsite-header-icon-button button-flat material-icons gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Close navigation" aria-label="Close navigation"> </button> 
+      <div class="devsite-product-name-wrapper"> <a href="/" class="devsite-site-logo-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav" track-name="googleCloud" track-metadata-position="nav" track-metadata-eventdetail="nav"> <img src="https://www.gstatic.com/devrel-devsite/prod/v63b1ab83c7ef339d4047a8b2e39f4276b23993a7a27f52a95a4e519913214950/cloud/images/cloud-logo.svg" class="devsite-site-logo" alt="Google Cloud"> </a> <span class="devsite-product-name"> 
+        <ul class="devsite-breadcrumb-list"> 
+         <li class="devsite-breadcrumb-item
+             devsite-has-google-wordmark"> </li> 
+        </ul> </span> 
+      </div> 
+     </div> 
+     <div class="devsite-book-nav-wrapper"> 
+      <div class="devsite-mobile-nav-top"> 
+       <ul class="devsite-nav-list"> 
+        <li class="devsite-nav-item"> <a href="/apigee" class="devsite-nav-title gc-analytics-event
+              
+              " data-category="Site-Wide Custom Events" data-label="Tab: Apigee" track-name="apigee" track-type="globalNav" track-metadata-eventdetail="globalMenu" track-metadata-position="nav"> <span class="devsite-nav-text" tooltip> Apigee </span> </a> </li> 
+        <li class="devsite-nav-item"> <a href="//console.cloud.google.com/" class="devsite-nav-title gc-analytics-event
+              
+              " track-metadata-position="nav" referrerpolicy="no-referrer-when-downgrade" track-name="console" track-metadata-eventdetail="nav" track-type="globalNav" data-category="Site-Wide Custom Events" data-label="Responsive Tab: Console"> <span class="devsite-nav-text" tooltip> Console </span> </a> </li> 
+        <li class="devsite-nav-item"> <a href="/contact/?direct=true&amp;pre_product=apigee" class="cta-button-secondary button" track-type="contact" track-name="sales" track-metadata-eventdetail="nav" track-metadata-position="nav" data-category="Site-Wide Custom Events" data-label="Responsive Tab: Contact Us"> <span class="devsite-nav-text" tooltip> Contact Us </span> </a> </li> 
+        <li class="devsite-nav-item"> <a href="https://apigee.google.com/setup/eval" class="cta-button-primary button-primary button" track-metadata-position="nav" target="_blank" track-metadata-eventdetail="nav" track-type="freeTrial" track-name="apigeeCta" data-category="Site-Wide Custom Events" data-label="Responsive Tab: Try it free"> <span class="devsite-nav-text" tooltip> Try it free </span> </a> </li> 
+       </ul> 
+      </div> 
+     </div> 
+    </nav> 
+   </devsite-book-nav> 
+   <section id="gc-wrapper"> 
+    <main role="main" class="devsite-main-content"> 
+     <div class="devsite-sidebar"> 
+      <div class="devsite-sidebar-content"> <devsite-toc class="devsite-nav" role="navigation" aria-label="On this page" depth="2" scrollbars disabled></devsite-toc> <devsite-recommendations-sidebar class="nocontent devsite-nav"> 
+       </devsite-recommendations-sidebar> 
+      </div> 
+     </div> <devsite-content> 
+      <article class="devsite-article"> 
+       <div class="devsite-article-meta nocontent" role="navigation"> 
+        <ul class="devsite-breadcrumb-list"> 
+         <li class="devsite-breadcrumb-item
+             "> <a href="https://cloud.google.com/" class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Breadcrumbs" data-value="1" track-type="globalNav" track-name="breadcrumb" track-metadata-position="1" track-metadata-eventdetail="Google Cloud"> Home </a> </li> 
+        </ul> 
+       </div> <devsite-bookmark></devsite-bookmark> <devsite-toc class="devsite-nav" depth="2" devsite-toc-embedded disabled> 
+       </devsite-toc> 
+       <div class="devsite-article-body clearfix
+    devsite-no-page-title"> 
+        <style>
+  body[layout='full'] {
+    background: #fff;
+  }
+</style> 
+        <article id="cloud-site"> 
+         <style>
+      .module-section:first-child {
+        margin-top: 48px;
+      }
+
+      .module-section:empty {
+        display: none;
+      }
+
+      .module-section:not(:empty) {
+        margin-bottom: 48px;
+      }
+
+      div.richtext {
+        color: #5f6368;
+      }
+
+      .richtext p {
+        color: inherit;
+        font: inherit;
+        margin-bottom: 0;
+      }
+
+      .cloud-jump-content {
+        padding-top: 72px;
+      }
+
+      .cloud-module__description p {
+        margin: 0;
+      }
+
+      .cloud-module__description p+p {
+        margin-top: 16px;
+      }
+
+      @media(min-width: 1024px) {
+        .module-section:first-child {
+          margin-top: 60px;
+        }
+
+        .module-section:not(:empty) {
+          margin-bottom: 60px;
+        }
+      }
+
+      @media(min-width: 1280px) {
+        .cloud-jump-content {
+          padding-top: 0;
+        }
+      }
+
+      .cloud-block__image {
+        width: 100%;
+      }
+    </style> 
+         <style>
+      .horizontal-solution-template__hero-block:not(:empty) {
+        margin-top: 36px;
+      }
+    </style> 
+         <section class="module-section"> <!----> 
+         </section> 
+         <style>
+      .in-page-navigation-module cloudx-jump-menu[mixed],
+      .in-page-navigation-module .cloud-jump-menu {
+        padding-top: 0
+      }
+
+      .in-page-navigation-module .bricks-jump-menu {
+        background-color: #f8f9fa;
+      }
+
+      @media(min-width: 1024px) {
+        .in-page-navigation-module .bricks-jump-menu {
+          margin-top: 60px;
+        }
+
+        .in-page-navigation-module .bricks-jump-menu--has-banner {
+          margin-top: 0;
+        }
+      }
+
+      #cloud-site cloudx-jump-menu .in-page-navigation-module__headline {
+        margin-top: 0;
+      }
+    </style> 
+         <div class="in-page-navigation-module"> <cloudx-jump-menu label="Jump to" label-hidden-large="" mixed="" class="  "> 
+           <div class="cloud-menu-content"> <a href="#" class="cloud-jump-menu__toggle cloud-jump-menu__toggle--hide-large">Jump to<i class="material-icons" aria-hidden="true" translate="no"><span></span></i></a> 
+            <div class="cloud-jump-menu__links"> <span class="cloud-subhead in-page-navigation-module__headline"> Open banking APIx </span> 
+             <div class="cloud-jump-menu__active-page"></div> 
+             <li> <a href="https://cloud.google.com/apigee" track-name="apigee" track-type="left nav" track-metadata-eventdetail="cloud.google.com/apigee" track-metadata-position="left nav" track-metadata-module="left nav"> Apigee </a> </li> 
+            </div> 
+           </div> 
+          </cloudx-jump-menu> 
+         </div> 
+         <div class="cloud-jump-content horizontal-solution-template"> 
+          <section class="module-section"> 
+           <div class="cloud-jump-section" data-cloud-main-text="Overview"> 
+            <style>
+            .hero-module__title {
+              color: #4185f4;
+            }
+
+            .hero-module__title+.richtext,
+            .hero-module__title+.richtext>p:first-child {
+              margin-top: 0;
+            }
+
+            .hero-module__checkmarks {
+              list-style: none;
+              padding-left: 0;
+            }
+
+            .hero-module__checkmarks li:last-child {
+              margin-bottom: 0;
+            }
+
+            .hero-module__checkmark {
+              align-items: baseline;
+              display: flex;
+              margin: 0;
+            }
+
+            .hero-module__checkmark p {
+              display: inline;
+              margin: 8px 0 0;
+            }
+
+            .hero-module__checkmark-check {
+              margin-right: 16px;
+            }
+
+            .hero-module__right-rail:not(:empty) {
+              margin-top: 36px;
+            }
+
+            .hero-module__button-wrapper {
+              align-items: center;
+              display: flex;
+              flex-wrap: wrap;
+              gap: 16px;
+            }
+
+            .hero-module__buttons {
+              margin-right: 36px;
+            }
+
+            .hero-module__richtext-cta {
+              line-height: 40px;
+            }
+
+            .hero-module__richtext-cta p {
+              margin-top: 0;
+            }
+
+            .hero-module--centered.hero-module--no-hero-asset .hero-module__content {
+              text-align: center;
+            }
+
+            .hero-module--centered.hero-module--no-hero-asset .hero-module__button-wrapper {
+              justify-content: center;
+            }
+
+            .hero-module--centered.hero-module--no-hero-asset .hero-module__button-wrapper .hero-module__buttons {
+              margin-right: 0;
+            }
+
+            @media(min-width: 1024px) {
+              .hero-module__right-rail:not(:empty) {
+                margin-top: 0;
+              }
+            }
+
+            @media(max-width: 1024px) {
+              .hero-module--centered .hero-module__content {
+                text-align: center;
+              }
+
+              .hero-module__buttons {
+                margin-right: 0;
+              }
+            }
+
+            @media(min-width: 601px) and (max-width: 1024px) {
+              .hero-module .cws-button {
+                margin-right: 16px;
+              }
+
+              .hero-module .cws-button__set {
+                gap: 0px;
+              }
+            }
+          </style> 
+            <div class=" hero-module " track-metadata-position="hero" track-metadata-module="hero" track-metadata-module_headline="open banking and embedded finance"> 
+             <div class="cws-grid cws-grid__no-gap--row"> 
+              <div class=" cws-grid__col--span-12 "> 
+              </div> 
+              <div class="hero-module__content cws-grid__col--span-8"> 
+               <div class=" cws-spacer-4--bottom "> 
+                <h1 class="cws-headline--headline-3" id="open-banking-and-embedded-finance" data-text=" Open banking and                     embedded finance "> Open banking and embedded finance </h1> 
+               </div> 
+               <div class="cws-spacer-3--bottom"> 
+                <div class="cws-body--large cws-spacer-2--top cws-spacer-2--bottom richtext"> 
+                 <p>Simplify and accelerate the process of delivering open banking as required by PSD2 by enabling speedy and secure delivery of APIs. Embed your financial services in the non-financial products consumers already use.</p> 
+                </div> 
+               </div> 
+               <div class="hero-module__button-wrapper"> 
+                <div class="hero-module__buttons cws-button__set"> <cloudx-free-trial-eligible-content> 
+                  <slot slot="eligible"> 
+                   <a class=" cws-button cws-button--high-emphasis " href="https://cloud.google.com/contact?direct=true&amp;pre_product=apigee" track-name="contact us" track-type="button" track-metadata-eventdetail="cloud.google.com/contact" track-metadata-modifier="high-emphasis"> Contact us </a> 
+                  </slot> 
+                  <slot slot="ineligible"> 
+                   <a class=" cws-button cws-button--high-emphasis " href="https://cloud.google.com/contact?direct=true&amp;pre_product=apigee" track-name="contact us" track-type="button" track-metadata-eventdetail="cloud.google.com/contact" track-metadata-modifier="high-emphasis"> Contact us </a> 
+                  </slot> 
+                 </cloudx-free-trial-eligible-content> 
+                </div> 
+               </div> 
+              </div> 
+              <div class="hero-module__right-rail cws-grid__col--span-4"> <a class="cws-card" href="https://cloud.google.com/apigee/resources/ebook/2021-gartner-mq-full-life-cycle-api-management-register" track-name="gartner recognizes google apigee as a leader in the magic quadrant for full life cycle api management" track-type="card" track-metadata-eventdetail="cloud.google.com/apigee/resources/ebook/2021-gartner-mq-full-life-cycle-api-management-register" track-metadata-position="hero" track-metadata-module="hero" track-metadata-module_headline="open banking and embedded finance" track-metadata-child_headline="gartner recognizes google apigee as a leader in the magic quadrant for full life cycle api management"> 
+                <div class="cws-card__inner"> 
+                 <div class=" cws-card__asset cws-card__asset--logo "> 
+                  <img alt="Gartner logo" class="" src="https://lh3.googleusercontent.com/bR-OzrEFU13HNlygbpXutUHeetHgK969AzoTp_KBKA1l-duWZdJkeTmggs4qcnTz-AkIwFfNJNLqcw=e14-rj-sc0xffffff-h36-w120" srcset="https://lh3.googleusercontent.com/bR-OzrEFU13HNlygbpXutUHeetHgK969AzoTp_KBKA1l-duWZdJkeTmggs4qcnTz-AkIwFfNJNLqcw=e14-rj-sc0xffffff-h72-w240 2x"> 
+                 </div> 
+                 <div class="cws-card__content"> 
+                  <p class="cws-headline cws-headline--headline-5">Gartner recognizes Google (Apigee) as a Leader in the Magic Quadrant for Full Life Cycle API Management</p> 
+                 </div> 
+                 <div class=" cws-card__cta "> <span class="cws-button cws-button--low-emphasis"> Get the report </span> 
+                 </div> 
+                </div> </a> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <div class="horizontal-solution-template__hero-block"> <!----> 
+           </div> 
+           <div class="horizontal-solution-template__hero-block"> 
+            <div> 
+             <div class="cloud-jump-section" data-cloud-main-text="Benefits"> 
+              <p class="cws-label" style="margin-bottom: 16px;">Benefits</p> 
+              <style>
+                .benefits-module__headline {
+                  margin-bottom: 36px;
+                }
+              </style> 
+              <div class="benefits-module cloud-copy" track-metadata-module="benefits" track-metadata-module_headline="simplify and accelerate secure delivery of open banking compliant apis"> 
+               <div class="benefits-module__headline"> 
+                <div class="cws-grid"> 
+                 <div class="cws-grid__col--span-8"> 
+                  <h3 class="cws-headline--headline-4" id="simplify-and-accelerate-secure-delivery-of-open-banking-compliant-apis" data-text=" Simplify and                         accelerate secure delivery of open banking compliant                         APIs "> Simplify and accelerate secure delivery of open banking compliant APIs </h3> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="benefits-module__copy-block cws-grid"> 
+                <div class="cloud-copy__text cws-grid__col--span-6 cws-grid__col--span-4-lg"> 
+                 <h5 class="cws-headline--headline-6" id="accelerate-open-banking-compliance" data-text="Accelerate open banking                       compliance">Accelerate open banking compliance</h5> 
+                 <p><span class="cws-body richtext"> </span></p>
+                 <p>Use preconfigured API proxies to authenticate and secure financial communications.</p> 
+                 <p></p> 
+                </div> 
+                <div class="cloud-copy__text cws-grid__col--span-6 cws-grid__col--span-4-lg"> 
+                 <h5 class="cws-headline--headline-6" id="grow-an-ecosystem-of-partners-and-customers" data-text="Grow an ecosystem of                       partners and customers">Grow an ecosystem of partners and customers</h5> 
+                 <p><span class="cws-body richtext"> </span></p>
+                 <p>Quickly and securely share data with the Apigee open banking APIx developer portal.</p> 
+                 <p></p> 
+                </div> 
+                <div class="cloud-copy__text cws-grid__col--span-6 cws-grid__col--span-4-lg"> 
+                 <h5 class="cws-headline--headline-6" id="promote-internal-and-external-innovation" data-text="Promote internal and                       external innovation">Promote internal and external innovation</h5> 
+                 <p><span class="cws-body richtext"> </span></p>
+                 <p>Enable different access models for internal apps or third-party providers with the pre-integrated OAuth security framework.</p> 
+                 <p></p> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <style>
+              .footnote_block p {
+                margin-bottom: 0;
+              }
+            </style> 
+             <div class="cws-grid footnote_block"> 
+              <div class="cws-grid__col--span-12"> 
+               <hr class="cloud-divider cloud-divider--no-spacing" style="margin-top: 36px; margin-bottom: 24px;"> 
+               <p><span class="cws-body richtext"> </span></p>
+               <p>Learn more about how Apigee can help with your open banking initiatives with our video, <a href="https://www.youtube.com/watch?v=ItOU5oarm4o" class="cws-link lb" data-lightbox-height="506" data-lightbox-width="900" target="_blank" rel="noopener" track-name="open banking powered by apigee api management" track-type="inline link" track-metadata-eventdetail="www.youtube.com/watch">Open Banking, powered by Apigee API Management</a>. </p> 
+               <p></p> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </section> 
+          <section class="module-section"> <!----> 
+          </section> 
+          <section class="module-section"> 
+           <div class="cloud-jump-section" data-cloud-main-text="Key features"> 
+            <p class="cws-label" style="margin-bottom: 16px;">Key features</p> 
+            <style>
+            .key-features-module__headline {
+              margin: 0 0 36px;
+            }
+
+            .key-features-module__key-feature {
+              margin-bottom: 36px;
+            }
+
+            .key-features-module__key-feature:last-of-type {
+              margin-bottom: 24px;
+            }
+
+            .key-features-module__key-feature-image {
+              overflow: auto;
+              margin-bottom: 36px;
+            }
+          </style> 
+            <div class="key-features-module" track-metadata-module="key features" track-metadata-module_headline="compliance accelerators"> 
+             <div class="cws-grid cws-grid__no-gap--row"> 
+              <div class="cws-grid__col--span-8"> 
+               <div class="key-features-module__headline"> 
+                <h3 class="cws-headline--headline-4 cloud-section__spacer--xsmall" id="compliance-accelerators" data-text="                     Compliance accelerators "> Compliance accelerators </h3> 
+                <p class="cloud-module__description cws-body--large"> <span class="richtext"> </span></p>
+                <p>Regulators are mandating that financial institutions open programmatic access to financial data and payments capabilities. Our accelerators can help.</p>  
+                <p></p> 
+               </div> 
+              </div> 
+              <div class="cws-grid__col--span-8"> 
+               <h5 class="cws-headline--headline-6" id="api-accelerator-for-open-banking-uk-and-psd2-eu-compliance" data-text="API accelerator for open                   banking (UK) and PSD2 (EU) compliance">API accelerator for open banking (UK) and PSD2 (EU) compliance</h5> 
+               <div class="key-features-module__key-feature"> <span class="cws-body richtext"> <p>Provides preconfigured proxies for banking APIs according to CMA’s open banking specification; an integrated OAuth security framework to support various access models; a banking-specific developer portal with API docs, tools, and an API sandbox with test cases; and other features to help accelerate regulated entities towards offering compliant APIs.</p> </span> 
+               </div> 
+               <h5 class="cws-headline--headline-6" id="api-accelerator-for-australia-and-cdr-compliance" data-text="API accelerator for                   Australia and CDR compliance">API accelerator for Australia and CDR compliance</h5> 
+               <div class="key-features-module__key-feature"> <span class="cws-body richtext"> <p>With an Open Data Sandbox (mock data), reusable logic that can be used for implementing CDS compliant APIs, and the ability to authenticate and authorize, including consent, with a mock OIDC provider, it helps simplify and accelerate secure delivery of open banking compliant APIs. </p> </span> 
+               </div> 
+               <h5 class="cws-headline--headline-6" id="api-accelerator-for-brazil-sistema-financeiro-aberto" data-text="API accelerator for Brazil                   (Sistema Financeiro Aberto)">API accelerator for Brazil (Sistema Financeiro Aberto)</h5> 
+               <div class="key-features-module__key-feature"> <span class="cws-body richtext"> <p>Provides a reference implementation of the specification as required by the Central Bank of Brazil and defined by the Open Banking governance structure. It provides technical representations, preconfigured APIs with mock data, and leverages reusable logic to speed up the delivery of compliant APIs.</p> </span> 
+               </div> 
+               <div class="key-features-module__footernote"> 
+                <hr class="cloud-divider cloud-divider--no-spacing"> <span class="cws-body richtext"> <p>Ready to get started? <a href="/contact/?direct=true&amp;pre_product=apigee" class="cws-link" track-name="contact us" track-type="inline link" track-metadata-eventdetail="cloud.google.com/contact/" track-metadata-module="key features" track-metadata-module_headline="compliance accelerators">Contact us</a> </p> </span> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </section> 
+          <section class="module-section"> <!----> 
+          </section> 
+          <section class="module-section"> 
+           <div class="cloud-jump-section" data-cloud-main-text="Customers"> 
+            <p class="cws-label" style="margin-bottom: 16px;">Customers</p> 
+            <style>
+            .customer-module__carousel .cloud-carousel {
+              padding: 0;
+            }
+
+            .customer-module__carousel,
+            .customer-module__headline {
+              margin-bottom: 36px;
+            }
+
+            @media(max-width: 768px) {
+              .customer-module__headline {
+                margin-bottom: 0;
+              }
+            }
+          </style> 
+            <div class="customer-module" track-metadata-module="customers" track-metadata-module_headline="see how customers are transforming their business with apigee open banking apix"> 
+             <div class="cws-grid"> 
+              <div class="cws-grid__col--span-8"> 
+               <div class="customer-module__headline"> 
+                <h3 class="cws-headline--headline-4" id="see-how-customers-are-transforming-their-business-with-apigee-open-banking-apix" data-text="See how customers are                     transforming their business with Apigee open banking APIx                   ">See how customers are transforming their business with Apigee open banking APIx </h3> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="customer-module__carousel"> 
+              <style>
+                @media (max-width: 480px) {
+                  .cloud-carousel--bleed-right {
+                    margin-right: 0;
+                  }
+
+                  .cloud-carousel__slide {
+                    margin-right: 16px;
+                  }
+                }
+              </style> 
+              <div class=" cloud-carousel cloud-carousel--3up cloud-carousel--margin-tight "> 
+               <div class="cloud-carousel__slide-deck-container"> 
+                <div class="cloud-carousel__slide-deck" role="group"> 
+                 <div class="cloud-carousel__slide cws-cards"> <a class="cws-card lb" href="https://www.youtube.com/watch?v=OPCFEypX_Uc" data-lightbox-height="506" data-lightbox-width="900" target="_blank" rel="noopener" track-name="abn amro is transforming their banking model with apis" track-type="card" track-metadata-eventdetail="www.youtube.com/watch" track-metadata-module="customers" track-metadata-module_headline="see how customers are transforming their business with apigee open banking apix" track-metadata-child_headline="abn amro is transforming their banking model with apis" track-metadata-child_eyebrow="video" track-metadata-child_index="1" track-metadata-child_total="3"> 
+                   <div class="cws-card__inner"> 
+                    <div class=" cws-card__asset cws-card__asset--logo "> 
+                     <img alt="ABN Amro logo" class="" src="https://lh3.googleusercontent.com/zixx2Ogy00b4GzjO-3CkJrYpFFixR2GQeZg1am2BpxYXlFZdrYJGMcMibcIncDtP4XjwIsZt460l=e14-rj-sc0xffffff-h36" srcset="https://lh3.googleusercontent.com/zixx2Ogy00b4GzjO-3CkJrYpFFixR2GQeZg1am2BpxYXlFZdrYJGMcMibcIncDtP4XjwIsZt460l=e14-rj-sc0xffffff-h72 2x"> 
+                    </div> 
+                    <div class="cws-card__content"> 
+                     <p class="cws-label">Video</p> 
+                     <p class="cws-headline cws-headline--headline-5">ABN Amro is transforming their banking model with APIs.</p> 
+                     <p class="cws-small-text">03:25</p> 
+                    </div> 
+                   </div> </a> 
+                 </div> 
+                 <div class="cloud-carousel__slide cws-cards"> <a class="cws-card" href="https://cloud.google.com/customers/bank-bri/" track-name="bank rakyat indonesia bank bri increases financial inclusion through award-winning digital banking" track-type="card" track-metadata-eventdetail="cloud.google.com/customers/bank-bri/" track-metadata-module="customers" track-metadata-module_headline="see how customers are transforming their business with apigee open banking apix" track-metadata-child_headline="bank rakyat indonesia bank bri increases financial inclusion through award-winning digital banking" track-metadata-child_eyebrow="case study" track-metadata-child_index="2" track-metadata-child_total="3"> 
+                   <div class="cws-card__inner"> 
+                    <div class=" cws-card__asset cws-card__asset--logo "> 
+                     <img alt="Bank BRI logo" class="" src="https://lh3.googleusercontent.com/N1opc3xvvZvuqoiI4G_r30WP84FFzyPt21eLb1r_wyaeIyUkQGPrjwYFlQysG-P7sL7J4iiL-3zU=e14-rj-sc0xffffff-h36" srcset="https://lh3.googleusercontent.com/N1opc3xvvZvuqoiI4G_r30WP84FFzyPt21eLb1r_wyaeIyUkQGPrjwYFlQysG-P7sL7J4iiL-3zU=e14-rj-sc0xffffff-h72 2x"> 
+                    </div> 
+                    <div class="cws-card__content"> 
+                     <p class="cws-label">Case study</p> 
+                     <p class="cws-headline cws-headline--headline-5">Bank Rakyat Indonesia (Bank BRI) increases financial inclusion through award-winning digital banking.</p> 
+                     <p class="cws-small-text">5-min read</p> 
+                    </div> 
+                   </div> </a> 
+                 </div> 
+                 <div class="cloud-carousel__slide cws-cards"> <a class="cws-card" href="https://www.youtube.com/watch?&amp;v=4lqZgpuv1-o" target="_blank" rel="noopener" track-name="macquarie group uses open apis for banking innovation" track-type="card" track-metadata-eventdetail="www.youtube.com/watch" track-metadata-module="customers" track-metadata-module_headline="see how customers are transforming their business with apigee open banking apix" track-metadata-child_headline="macquarie group uses open apis for banking innovation" track-metadata-child_eyebrow="video" track-metadata-child_index="3" track-metadata-child_total="3"> 
+                   <div class="cws-card__inner"> 
+                    <div class=" cws-card__asset cws-card__asset--logo "> 
+                     <img alt="Macquarie Group logo" class="" src="https://lh3.googleusercontent.com/CYCXgjG2kU0o7Cft3ks_Q3_a7SNi89kvKmQFHOOFrZbAOoKC9AzkQcIKIDO0KpgUqG7xqrlHKXmx=e14-rj-sc0xffffff-h36" srcset="https://lh3.googleusercontent.com/CYCXgjG2kU0o7Cft3ks_Q3_a7SNi89kvKmQFHOOFrZbAOoKC9AzkQcIKIDO0KpgUqG7xqrlHKXmx=e14-rj-sc0xffffff-h72 2x"> 
+                    </div> 
+                    <div class="cws-card__content"> 
+                     <p class="cws-label">Video</p> 
+                     <p class="cws-headline cws-headline--headline-5">Macquarie Group uses open APIs for banking innovation.</p> 
+                     <p class="cws-small-text">02:55</p> 
+                    </div> 
+                   </div> </a> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class=" cloud-carousel__controls cloud-carousel__controls--hide-nuggets "> 
+                <div class="cloud-carousel__arrow left-arrow"> <i class="material-icons" aria-hidden="true" translate="no">keyboard_arrow_left</i> 
+                </div> 
+                <div class="cloud-carousel__arrow right-arrow"> <i class="material-icons" aria-hidden="true" translate="no">keyboard_arrow_right</i> 
+                </div> 
+                <div class="cloud-carousel__nuggets"> 
+                 <div class="cloud-carousel__nugget"></div> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div> <a class=" cws-button cws-button--low-emphasis cws-button--align-left " href="https://cloud.google.com/customers#/industries=Financial_Services&amp;products=API_Management" track-name="see all customers" track-type="button" track-metadata-eventdetail="cloud.google.com/customers" track-metadata-modifier="low-emphasis"> See all customers </a> 
+             </div> 
+            </div> 
+           </div> 
+          </section> 
+          <section class="module-section"> <!----> 
+          </section> 
+          <section class="module-section"> <!----> 
+          </section> 
+          <section class="module-section"> <!----> 
+          </section> 
+          <section class="module-section"> <!----> 
+          </section> 
+          <section class="module-section"> <!----> 
+          </section> 
+         </div> 
+         <section class="cloud-content-footer"> 
+          <div class="cloud-jump-section" data-cloud-main-text="Take the next step"> 
+           <style>
+          .ankle-module__headline {
+            margin-bottom: 28px;
+          }
+
+          .ankle-module__description {
+            margin-bottom: 48px;
+          }
+
+          .ankle-module__buttons-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+          }
+
+          .ankle-module__buttons {
+            display: inline-block;
+          }
+
+          .ankle-module__richtext-cta {
+            align-self: center;
+            display: inline-block;
+          }
+
+          .ankle-module__richtext-cta p {
+            margin-top: 0;
+          }
+
+          .ankle-module__content {
+            padding: 60px 0;
+          }
+
+          .ankle-module__link-list {
+            list-style: none;
+            padding: 0;
+          }
+
+          .ankle-module__link-list-item:first-child {
+            margin: 0;
+          }
+
+          .ankle-module__link-list-item {
+            margin: 24px 0 0;
+          }
+
+          .ankle-module__link-list-item-label {
+            margin-bottom: 8px;
+          }
+
+          @media (min-width: 767px) {
+            .ankle-module__links {
+              border-left: 1px solid #dadce0;
+            }
+
+            .ankle-module__link-list {
+              padding: 4px 24px;
+            }
+          }
+
+          @media (min-width: 1280px) {
+            .ankle-module__link-list-item {
+              margin: 36px 0 0;
+            }
+          }
+
+          @media (max-width: 600px) {
+            .ankle-module__links {
+              margin-top: 24px;
+            }
+          }
+        </style> 
+           <div class=" ankle-module cws-fullbleed cloud-background-color-grey-50 " track-metadata-module="take the next step"> 
+            <div class="cws-page"> 
+             <div class=" ankle-module__content cloud-jump-content cws-grid "> 
+              <div class=" cws-grid__col--span-6 "> <cloudx-free-trial-eligible-content> 
+                <slot slot="eligible"> 
+                 <h3 class="cws-headline--headline-4 ankle-module__headline" id="take-the-next-step" data-text="                       Take the next step "> Take the next step </h3> 
+                 <p class="cws-body--large ankle-module__description"> Tell us what you’re solving for. A Google Cloud expert will help you find the best solution. </p> 
+                 <div class="ankle-module__buttons-wrap"> 
+                  <div class="ankle-module__buttons"> <a class=" cws-button cws-button--high-emphasis " href="https://cloud.google.com/contact/?direct=true&amp;pre_product=apigee" track-name="contact sales" track-type="button" track-metadata-eventdetail="cloud.google.com/contact/" track-metadata-modifier="high-emphasis"> Contact sales </a> 
+                  </div> 
+                 </div> 
+                </slot> 
+                <slot slot="ineligible"> 
+                 <h3 class="cws-headline--headline-4 ankle-module__headline" id="take-the-next-step_1" data-text="                       Take the next step "> Take the next step </h3> 
+                 <p class="cws-body--large ankle-module__description"> Tell us what you’re solving for. A Google Cloud expert will help you find the best solution. </p> 
+                 <div class="ankle-module__buttons-wrap"> 
+                  <div class="ankle-module__buttons"> <a class=" cws-button cws-button--high-emphasis " href="https://cloud.google.com/contact/?direct=true&amp;pre_product=apigee" track-name="contact sales" track-type="button" track-metadata-eventdetail="cloud.google.com/contact/" track-metadata-modifier="high-emphasis"> Contact sales </a> 
+                  </div> 
+                 </div> 
+                </slot> 
+               </cloudx-free-trial-eligible-content> 
+              </div> 
+              <div class=" cws-grid__col--span-4 cws-grid__col--offset-7 ankle-module__links "> <cloudx-free-trial-eligible-content> 
+                <slot slot="eligible"> 
+                 <ul class="ankle-module__link-list"> 
+                  <li class="ankle-module__link-list-item"> 
+                   <div class="cws-headline--headline-6 ankle-module__link-list-item-label">
+                     Work with a trusted partner 
+                   </div> <a href="https://cloud.withgoogle.com/partners/" target="_blank" rel="noopener" track-name="find a partner" track-type="ankle link" track-metadata-eventdetail="cloud.withgoogle.com/partners/" track-metadata-module="take the next step" track-metadata-child_index="1" track-metadata-child_total="3" class="cws-link-independent cws-link-independent"> Find a partner </a> </li> 
+                  <li class="ankle-module__link-list-item"> 
+                   <div class="cws-headline--headline-6 ankle-module__link-list-item-label">
+                     Start using Google Cloud 
+                   </div> <a href="https://console.cloud.google.com/freetrial" target="_blank" rel="noopener" referrerpolicy="no-referrer-when-downgrade" track-name="try it free" track-type="ankle link" track-metadata-eventdetail="console.cloud.google.com/freetrial" track-metadata-module="take the next step" track-metadata-child_index="2" track-metadata-child_total="3" class="cws-link-independent cws-link-independent"> Try it free </a> </li> 
+                  <li class="ankle-module__link-list-item"> 
+                   <div class="cws-headline--headline-6 ankle-module__link-list-item-label">
+                     Deploy ready-to-go solutions 
+                   </div> <a href="https://cloud.google.com/marketplace/" track-name="explore marketplace" track-type="ankle link" track-metadata-eventdetail="cloud.google.com/marketplace/" track-metadata-module="take the next step" track-metadata-child_index="3" track-metadata-child_total="3" class="cws-link-independent cws-link-independent"> Explore marketplace </a> </li> 
+                 </ul> 
+                </slot> 
+                <slot slot="ineligible"> 
+                 <ul class="ankle-module__link-list"> 
+                  <li class="ankle-module__link-list-item"> 
+                   <div class="cws-headline--headline-6 ankle-module__link-list-item-label">
+                     Work with a trusted partner 
+                   </div> <a href="https://cloud.withgoogle.com/partners/" target="_blank" rel="noopener" track-name="find a partner" track-type="ankle link" track-metadata-eventdetail="cloud.withgoogle.com/partners/" track-metadata-module="take the next step" track-metadata-child_index="1" track-metadata-child_total="3" class="cws-link-independent cws-link-independent"> Find a partner </a> </li> 
+                  <li class="ankle-module__link-list-item"> 
+                   <div class="cws-headline--headline-6 ankle-module__link-list-item-label">
+                     Start using Google Cloud 
+                   </div> <a href="https://console.cloud.google.com/" target="_blank" rel="noopener" referrerpolicy="no-referrer-when-downgrade" track-name="go to console" track-type="ankle link" track-metadata-eventdetail="console.cloud.google.com/" track-metadata-module="take the next step" track-metadata-child_index="2" track-metadata-child_total="3" class="cws-link-independent cws-link-independent"> Go to console </a> </li> 
+                  <li class="ankle-module__link-list-item"> 
+                   <div class="cws-headline--headline-6 ankle-module__link-list-item-label">
+                     Deploy ready-to-go solutions 
+                   </div> <a href="https://cloud.google.com/marketplace/" track-name="explore marketplace" track-type="ankle link" track-metadata-eventdetail="cloud.google.com/marketplace/" track-metadata-module="take the next step" track-metadata-child_index="3" track-metadata-child_total="3" class="cws-link-independent cws-link-independent"> Explore marketplace </a> </li> 
+                 </ul> 
+                </slot> 
+               </cloudx-free-trial-eligible-content> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </section> 
+        </article> <!--&#123;# Page published by Bricks, request id 1659388509372566565} #}--> <devsite-hats-survey class="nocontent" hats-id="mwETRvWii0eU5NUYprb0Y9z5GVbc" listnr-id="83405"></devsite-hats-survey> 
+       </div> 
+      </article> 
+      <devsite-notification> 
+      </devsite-notification> 
+      <div class="devsite-content-data"> 
+       <template class="devsite-thumb-rating-down-categories">
+         [{ "type": "thumb-down", "id": "hardToUnderstand", "label":"Hard to understand" },{ "type": "thumb-down", "id": "incorrectInformationOrSampleCode", "label":"Incorrect information or sample code" },{ "type": "thumb-down", "id": "missingTheInformationSamplesINeed", "label":"Missing the information/samples I need" },{ "type": "thumb-down", "id": "otherDown", "label":"Other" }] 
+       </template> 
+       <template class="devsite-thumb-rating-up-categories">
+         [{ "type": "thumb-up", "id": "easyToUnderstand", "label":"Easy to understand" },{ "type": "thumb-up", "id": "solvedMyProblem", "label":"Solved my problem" },{ "type": "thumb-up", "id": "otherUp", "label":"Other" }] 
+       </template> 
+      </div> 
+     </devsite-content> 
+    </main> <devsite-footer-promos class="devsite-footer"> 
+    </devsite-footer-promos> <devsite-footer-linkboxes class="devsite-footer"> 
+     <nav class="devsite-footer-linkboxes nocontent" aria-label="Footer links"> 
+      <ul class="devsite-footer-linkboxes-list"> 
+       <li class="devsite-footer-linkbox "> <h3 class="devsite-footer-linkbox-heading no-link">Why Google</h3> 
+        <ul class="devsite-footer-linkbox-list"> 
+         <li class="devsite-footer-linkbox-item"> <a href="/why-google-cloud/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 1)" track-type="footer link" track-metadata-child_headline="why google" track-name="choosing google cloud" track-metadata-position="footer" track-metadata-eventdetail="cloud.google.com/why-google-cloud/" track-metadata-module="footer"> Choosing Google Cloud </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/security/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 2)" track-name="trust and security" track-type="footer link" track-metadata-position="footer" track-metadata-child_headline="why google" track-metadata-eventdetail="cloud.google.com/security/" track-metadata-module="footer"> Trust and security </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/open-cloud/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 3)" track-metadata-child_headline="why google" track-type="footer link" track-metadata-module="footer" track-name="open cloud" track-metadata-eventdetail="cloud.google.com/open-cloud/" track-metadata-position="footer"> Open cloud </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/multicloud/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 4)" track-name="multicloud" track-metadata-module="footer" track-metadata-child_headline="why google" track-metadata-eventdetail="cloud.google.com/multicloud/" track-type="footer link" track-metadata-position="footer"> Multicloud </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/infrastructure/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 5)" track-metadata-eventdetail="cloud.google.com/infrastructure/" track-type="footer link" track-name="global infrastructure" track-metadata-child_headline="why google" track-metadata-position="footer" track-metadata-module="footer"> Global infrastructure </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/customers/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 6)" track-metadata-position="footer" track-metadata-eventdetail="cloud.google.com/customers/" track-type="footer link" track-metadata-module="footer" track-name="customers and case studies" track-metadata-child_headline="why google"> Customers and case studies </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/analyst-reports/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 7)" track-metadata-position="footer" track-metadata-module="footer" track-type="footer link" track-metadata-child_headline="why google" track-name="analyst reports" track-metadata-eventdetail="cloud.google.com/analyst-reports/"> Analyst reports </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/whitepapers/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 8)" track-metadata-eventdetail="cloud.google.com/whitepapers/" track-metadata-module="footer" track-metadata-position="footer" track-type="footer link" track-metadata-child_headline="why google" track-name="whitepapers"> Whitepapers </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/blog/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 9)" track-metadata-position="footer" track-metadata-child_headline="engage" track-name="blog" track-metadata-eventdetail="cloud.google.com/blog/" track-type="footer link" track-metadata-module="footer"> Blog </a> </li> 
+        </ul> </li> 
+       <li class="devsite-footer-linkbox "> <h3 class="devsite-footer-linkbox-heading no-link">Products and pricing</h3> 
+        <ul class="devsite-footer-linkbox-list"> 
+         <li class="devsite-footer-linkbox-item"> <a href="/pricing/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 1)" track-name="google cloud pricing" track-type="footer link" track-metadata-child_headline="products and pricing" track-metadata-eventdetail="cloud.google.com/pricing/" track-metadata-position="footer" track-metadata-module="footer"> Google Cloud pricing </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="//workspace.google.com/pricing.html" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 2)" track-metadata-child_headline="products and pricing" track-name="google workspace pricing" track-metadata-position="footer" track-metadata-module="footer" target="_blank" track-type="footer link" track-metadata-eventdetail="workspace.google.com/pricing.html"> Google Workspace pricing </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/products/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 3)" track-metadata-position="footer" track-name="see all products" track-type="footer link" track-metadata-module="footer" track-metadata-child_headline="products and pricing" track-metadata-eventdetail="cloud.google.com/products/"> See all products </a> </li> 
+        </ul> </li> 
+       <li class="devsite-footer-linkbox "> <h3 class="devsite-footer-linkbox-heading no-link">Solutions</h3> 
+        <ul class="devsite-footer-linkbox-list"> 
+         <li class="devsite-footer-linkbox-item"> <a href="/solutions/infrastructure-modernization/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 1)" track-metadata-child_headline="solutions" track-name="infrastructure modernization" track-metadata-eventdetail="cloud.google.com/solutions/infrastructure-modernization/" track-metadata-position="footer" track-metadata-module="footer" track-type="footer link"> Infrastructure modernization </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/solutions/databases/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 2)" track-type="footer link" track-name="databases" track-metadata-position="footer" track-metadata-child_headline="solutions" track-metadata-module="footer" track-metadata-eventdetail="cloud.google.com/solutions/databases"> Databases </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/solutions/application-modernization/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 3)" track-type="footer link" track-metadata-module="footer" track-metadata-position="footer" track-name="application development" track-metadata-child_headline="solutions" track-metadata-eventdetail="cloud.google.com/solutions/application-modernization/"> Application modernization </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/solutions/smart-analytics/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 4)" track-name="smart analytics" track-type="footer link" track-metadata-eventdetail="cloud.google.com/solutions/smart-analytics/" track-metadata-position="footer" track-metadata-module="footer" track-metadata-child_headline="solutions"> Smart analytics </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/solutions/ai/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 5)" track-metadata-child_headline="solutions" track-name="artificial intelligence" track-metadata-module="footer" track-type="footer link" track-metadata-eventdetail="cloud.google.com/solutions/ai/" track-metadata-position="footer"> Artificial Intelligence </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/solutions/security/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 6)" track-type="footer link" track-metadata-eventdetail="cloud.google.com/solutions/security/" track-name="security" track-metadata-child_headline="solutions" track-metadata-position="footer" track-metadata-module="footer"> Security </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="https://workspace.google.com/enterprise/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 7)" track-metadata-eventdetail="workspace.google.com/enterprise/" track-type="footer link" track-metadata-position="footer" target="_blank" track-metadata-child_headline="solutions" track-metadata-module="footer" track-name="productivity and work transformation"> Productivity &amp; work transformation </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/solutions/#industry-solutions" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 8)" track-metadata-position="footer" track-metadata-eventdetail="cloud.google.com/solutions/#industry-solutions" track-type="footer link" track-metadata-child_headline="solutions" track-metadata-module="footer" track-name="industry solutions"> Industry solutions </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/solutions/devops/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 9)" track-metadata-module="footer" track-metadata-eventdetail="cloud.google.com/solutions/devops/" track-name="devops solutions" track-metadata-position="footer" track-metadata-child_headline="solutions" track-type="footer link"> DevOps solutions </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/solutions/#role-based-solutions-smb" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 10)" track-type="footer link" track-metadata-module="footer" track-metadata-eventdetail="cloud.google.com/solutions/#role-based-solutions-smb" track-metadata-position="footer" track-metadata-child_headline="solutions" track-name="small business solutions"> Small business solutions </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/solutions/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 11)" track-metadata-child_headline="solutions" track-name="see all solutions" track-metadata-eventdetail="cloud.google.com/solutions/" track-metadata-position="footer" track-type="footer link" track-metadata-module="footer"> See all solutions </a> </li> 
+        </ul> </li> 
+       <li class="devsite-footer-linkbox "> <h3 class="devsite-footer-linkbox-heading no-link">Resources</h3> 
+        <ul class="devsite-footer-linkbox-list"> 
+         <li class="devsite-footer-linkbox-item"> <a href="/docs/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 1)" track-metadata-eventdetail="cloud.google.com/docs/" track-metadata-position="footer" track-name="google cloud documentation" track-type="footer link" track-metadata-child_headline="resources" track-metadata-module="footer"> Google Cloud documentation </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/docs/get-started/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 2)" track-type="footer link" track-name="google cloud quickstarts" track-metadata-child_headline="resources" track-metadata-module="footer" track-metadata-position="footer" track-metadata-eventdetail="cloud.google.com/docs/get-started/"> Google Cloud quickstarts </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/marketplace/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 3)" track-type="footer link" track-metadata-module="footer" track-metadata-position="footer" track-name="google cloud marketplace" track-metadata-child_headline="resources" track-metadata-eventdetail="cloud.google.com/marketplace/"> Google Cloud Marketplace </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/learn/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 4)" track-name="learn about cloud computing" track-metadata-child_headline="resources" track-metadata-position="footer" track-type="footer link" track-metadata-eventdetail="learn/" track-metadata-module="footer"> Learn about cloud computing </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/support-hub/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 5)" track-metadata-module="footer" track-metadata-child_headline="resources" track-metadata-position="footer" track-name="support" track-metadata-eventdetail="cloud.google.com/support-hub/" track-type="footer link"> Support </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/docs/samples" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 6)" track-metadata-eventdetail="cloud.google.com/docs/samples" track-metadata-child_headline="resources" track-metadata-module="footer" track-metadata-position="footer" track-type="footer link" track-name="code samples"> Code samples </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/architecture/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 7)" track-type="footer link" track-metadata-position="footer" track-metadata-child_headline="resources" track-metadata-module="footer" track-name="cloud architecture center" track-metadata-eventdetail="cloud.google.com/architecture/"> Cloud Architecture Center </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/training/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 8)" track-type="footer link" track-metadata-module="footer" track-metadata-child_headline="resources" track-metadata-position="footer" track-metadata-eventdetail="cloud.google.com/training/" track-name="training"> Training </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/certification" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 9)" track-metadata-child_headline="resources" track-metadata-eventdetail="cloud.google.com/certification" track-metadata-position="footer" track-name="certifications" track-metadata-module="footer" track-type="footer link"> Certifications </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="//developers.google.com" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 10)" track-metadata-position="footer" target="_blank" track-metadata-module="footer" track-type="footer link" track-name="google developers" track-metadata-child_headline="resources" track-metadata-eventdetail="developers.google.com"> Google Developers </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/startup/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 11)" track-metadata-eventdetail="cloud.google.com/startup/" track-metadata-position="footer" track-name="google cloud for startups" track-metadata-child_headline="resources" track-metadata-module="footer" track-type="footer link"> Google Cloud for Startups </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="//status.cloud.google.com" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 12)" track-metadata-child_headline="resources" track-metadata-module="footer" target="_blank" track-type="footer link" track-name="system status" track-metadata-position="footer" track-metadata-eventdetail="status.cloud.google.com"> System status </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/release-notes" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 13)" track-metadata-module="footer" track-type="footer link" track-metadata-child_headline="resources" track-name="release notes" track-metadata-position="footer" track-metadata-eventdetail="cloud.google.com/release-notes/"> Release Notes </a> </li> 
+        </ul> </li> 
+       <li class="devsite-footer-linkbox "> <h3 class="devsite-footer-linkbox-heading no-link">Engage</h3> 
+        <ul class="devsite-footer-linkbox-list"> 
+         <li class="devsite-footer-linkbox-item"> <a href="/contact/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 1)" track-metadata-child_headline="engage" track-metadata-eventdetail="cloud.google.com/contact/" track-metadata-position="footer" track-type="footer link" track-metadata-module="footer" track-name="contact sales"> Contact sales </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="//cloud.google.com/find-a-partner" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 2)" track-metadata-position="footer" track-name="find a partner" track-metadata-eventdetail="cloud.google.com/find-a-partner" target="_blank" track-metadata-module="footer" track-type="footer link" track-metadata-child_headline="engage"> Find a Partner </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/partners/become-a-partner/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 3)" track-metadata-eventdetail="cloud.google.com/partners/become-a-partner/" track-metadata-module="footer" track-metadata-position="footer" track-name="become a partner" track-type="footer link" track-metadata-child_headline="engage"> Become a Partner </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/events/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 4)" track-metadata-child_headline="engage" track-metadata-position="footer" track-metadata-module="footer" track-name="events" track-type="footer link" track-metadata-eventdetail="cloud.withgoogle.com/events"> Events </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/podcasts/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 5)" track-metadata-eventdetail="cloud.google.com/podcasts/" track-metadata-child_headline="engage" track-name="podcasts" target="_blank" track-metadata-position="footer" track-metadata-module="footer" rel="noopener" track-type="footer link"> Podcasts </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/developers/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 6)" track-metadata-module="footer" track-type="footer link" track-metadata-position="footer" track-metadata-eventdetail="cloud.google.com/developers/" track-name="developer center" track-metadata-child_headline="engage"> Developer Center </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="https://www.googlecloudpresscorner.com/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 7)" track-metadata-position="footer" track-metadata-child_headline="engage" track-metadata-eventdetail="www.googlecloudpresscorner.com" track-metadata-module="footer" track-name="press corner" target="_blank" rel="noopener" track-type="footer link"> Press Corner </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="//www.youtube.com/googlecloud" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 8)" rel="noopener" track-metadata-position="footer" track-metadata-child_headline="engage" track-name="google cloud on youtube" track-metadata-module="footer" track-metadata-eventdetail="www.youtube.com/googlecloud" target="_blank" track-type="footer link"> Google Cloud on YouTube </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="//www.youtube.com/googlecloudplatform" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 9)" track-metadata-child_headline="engage" rel="noopener" track-metadata-eventdetail="www.youtube.com/googlecloudplatform" target="_blank" track-type="footer link" track-name="google cloud tech on youtube" track-metadata-position="footer" track-metadata-module="footer"> Google Cloud Tech on YouTube </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="//twitter.com/googlecloud" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 10)" track-metadata-position="footer" track-name="follow on twitter" rel="noopener" track-type="footer link" target="_blank" track-metadata-child_headline="engage" track-metadata-module="footer" track-metadata-eventdetail="twitter.com/googlecloud"> Follow on Twitter </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="//userresearch.google.com/?reserved=1&amp;utm_source=website&amp;Q_Language=en&amp;utm_medium=own_srch&amp;utm_campaign=CloudWebFooter&amp;utm_term=0&amp;utm_content=0&amp;productTag=clou&amp;campaignDate=jul19&amp;pType=devel&amp;referral_code=jk212693" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 11)" track-metadata-eventdetail="userresearch.google.com/?reserved=1&amp;utm_source=website&amp;Q_Language=en&amp;utm_medium=own_srch&amp;utm_campaign=CloudWebFooter&amp;utm_term=0&amp;utm_content=0&amp;productTag=clou&amp;campaignDate=jul19&amp;pType=devel&amp;referral_code=jk212693" target="_blank" track-type="footer link" track-name="join user research" track-metadata-module="footer" track-metadata-child_headline="engage" track-metadata-position="footer"> Join User Research </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="//careers.google.com/cloud" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 12)" track-metadata-position="footer" track-name="we are hiring join google cloud" target="_blank" track-metadata-module="footer" track-type="footer link" track-metadata-eventdetail="careers.google.com/cloud" track-metadata-child_headline="engage"> We're hiring. Join Google Cloud! </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="https://www.googlecloudcommunity.com/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 13)" track-metadata-position="footer" track-name="google cloud community" track-type="footer link" track-metadata-eventdetail="www.googlecloudcommunity.com" track-metadata-child_headline="engage" target="_blank" track-metadata-module="footer" rel="noopener"> Google Cloud Community </a> </li> 
+        </ul> </li> 
+      </ul> 
+     </nav> 
+    </devsite-footer-linkboxes> <devsite-footer-utility class="devsite-footer"> 
+     <div class="devsite-footer-utility nocontent"> 
+      <nav class="devsite-footer-utility-links" aria-label="Utility links"> 
+       <ul class="devsite-footer-utility-list"> 
+        <li class="devsite-footer-utility-item
+                 cloudx-cookie-footer-button"> <a class="devsite-footer-utility-link gc-analytics-event" href="#" data-category="Site-Wide Custom Events" data-label="Footer Cookie Settings link" track-metadata-position="footer" data-modal-dialog-id="cloudx-cookie-settings" track-type="footer link" track-name="cookie settings" track-metadata-module="utility footer"> Cookie Settings </a> </li> 
+        <li class="devsite-footer-utility-item
+                 "> <a class="devsite-footer-utility-link gc-analytics-event" href="//about.google/" data-category="Site-Wide Custom Events" data-label="Footer About Google link" track-metadata-position="footer" track-type="footer link" track-metadata-module="utility footer" track-metadata-eventdetail="//about.google/" target="_blank" track-name="about google"> About Google </a> </li> 
+        <li class="devsite-footer-utility-item
+                 devsite-footer-privacy-link"> <a class="devsite-footer-utility-link gc-analytics-event" href="//policies.google.com/privacy" data-category="Site-Wide Custom Events" data-label="Footer Privacy link" track-name="privacy" target="_blank" track-metadata-module="utility footer" track-type="footer link" track-metadata-eventdetail="//policies.google.com/privacy" track-metadata-position="footer"> Privacy </a> </li> 
+        <li class="devsite-footer-utility-item
+                 "> <a class="devsite-footer-utility-link gc-analytics-event" href="//www.google.com/intl/en/policies/terms/regional.html" data-category="Site-Wide Custom Events" data-label="Footer Site terms link" track-metadata-module="utility footer" track-type="footer link" track-metadata-position="footer" target="_blank" track-metadata-eventdetail="//www.google.com/intl/en/policies/terms/regional.html" track-name="site terms"> Site terms </a> </li> 
+        <li class="devsite-footer-utility-item
+                 "> <a class="devsite-footer-utility-link gc-analytics-event" href="/product-terms/" data-category="Site-Wide Custom Events" data-label="Footer Google Cloud terms link" track-metadata-eventdetail="/product-terms/" track-metadata-module="utility footer" track-type="footer link" track-metadata-position="footer" track-name="google cloud terms"> Google Cloud terms </a> </li> 
+        <li class="devsite-footer-utility-item
+                 devsite-footer-carbon-button"> <a class="devsite-footer-utility-link gc-analytics-event" href="/sustainability" data-category="Site-Wide Custom Events" data-label="Footer Carbon neutral since 2007 link" track-type="footer link" track-metadata-module="utility footer" track-metadata-position="footer" track-name="Carbon neutral since 2007" track-metadata-eventdetail="/sustainability/"> Carbon neutral since 2007 </a> </li> 
+        <li class="devsite-footer-utility-item
+                 devsite-footer-utility-button"> <span class="devsite-footer-utility-description">Sign up for the Google Cloud newsletter</span> <a class="devsite-footer-utility-link gc-analytics-event" href="/newsletter/" data-category="Site-Wide Custom Events" data-label="Footer Subscribe link" track-name="subscribe" track-metadata-module="utility footer" track-metadata-position="footer" track-metadata-eventdetail="/newsletter/" track-type="footer link"> Subscribe </a> </li> 
+       </ul> <devsite-language-selector> 
+        <devsite-select class="devsite-language-selector-menu"> 
+         <select aria-label="Select your language preference." class="devsite-language-selector-select" name="language" track-name="click" track-type="languageSelector"> <option>Language</option> <option value="en" lang="en"> English </option> <option value="de" lang="de"> Deutsch </option> <option value="es" lang="es"> Español </option> <option value="es_419" lang="es_419"> Español – América Latina </option> <option value="fr" lang="fr"> Français </option> <option value="it" lang="it"> Italiano </option> <option value="pt_br" lang="pt_br"> Português – Brasil </option> <option value="zh_cn" lang="zh_cn"> ?? – ?? </option> <option value="zh_tw" lang="zh_tw"> ?? – ?? </option> <option value="ja" lang="ja"> ??? </option> <option value="ko" lang="ko"> ??? </option> </select> 
+        </devsite-select> 
+       </devsite-language-selector> 
+      </nav> 
+     </div> 
+    </devsite-footer-utility> <devsite-panel></devsite-panel> 
+   </section>
+  </section> <devsite-sitemask></devsite-sitemask> <devsite-snackbar></devsite-snackbar> <devsite-tooltip></devsite-tooltip> <devsite-heading-link></devsite-heading-link> <devsite-analytics analytics-iframe> 
+   <script type="application/json" analytics>[]</script> 
+   <script type="application/json" gtm>{"parameters": {"freeTrialEligibleUser": "True", "internalUser": "False", "language": {"machineTranslated": "False", "requested": "en", "served": "en"}, "pageType": "marketing", "projectName": "Google Cloud", "signedIn": "False", "tenant": "cloud", "recommendations": {"sourcePage": "", "sourceType": 0, "sourceRank": 0, "sourceIdenticalDescriptions": 0, "sourceTitleWords": 0, "sourceDescriptionWords": 0, "experiment": ""}}, "tags": ["GTM-5CVQBG"]}</script> 
+  </devsite-analytics> <devsite-badger></devsite-badger> <cloudx-user></cloudx-user> <cloudx-pricing-socket></cloudx-pricing-socket> 
+  <script nonce="nD5sd+wI3ma4SheRxmD/vicAgjV6rw">
+  
+  (function(d,e,v,s,i,t,E){d['GoogleDevelopersObject']=i;
+    t=e.createElement(v);t.async=1;t.src=s;E=e.getElementsByTagName(v)[0];
+    E.parentNode.insertBefore(t,E);})(window, document, 'script',
+    'https://www.gstatic.com/devrel-devsite/prod/v63b1ab83c7ef339d4047a8b2e39f4276b23993a7a27f52a95a4e519913214950/cloud/js/app_loader.js', '[2,"en",null,"/js/devsite_app_module.js","https://www.gstatic.com/devrel-devsite/prod/v63b1ab83c7ef339d4047a8b2e39f4276b23993a7a27f52a95a4e519913214950","https://www.gstatic.com/devrel-devsite/prod/v63b1ab83c7ef339d4047a8b2e39f4276b23993a7a27f52a95a4e519913214950/cloud","https://cloud-dot-devsite-v2-prod.appspot.com",1,null,["/_pwa/cloud/manifest.json","https://www.gstatic.com/devrel-devsite/prod/v63b1ab83c7ef339d4047a8b2e39f4276b23993a7a27f52a95a4e519913214950/images/video-placeholder.svg","https://www.gstatic.com/devrel-devsite/prod/v63b1ab83c7ef339d4047a8b2e39f4276b23993a7a27f52a95a4e519913214950/cloud/images/favicons/onecloud/favicon.ico","https://www.gstatic.com/devrel-devsite/prod/v63b1ab83c7ef339d4047a8b2e39f4276b23993a7a27f52a95a4e519913214950/cloud/images/cloud-logo.svg","https://fonts.googleapis.com/css?family=Google+Sans:400,500,700|Roboto:400,400italic,500,500italic,700,700italic|Roboto+Mono:400,500,700&display=swap"],1,null,[1,6,8,12,14,17,21,25,40,50,63,70,75,76,80,87,91,92,93,97,98,100,101,102,103,104,105,107,108,109,110,111,112,113,115,117,118,120,122,123,124,125,126,127,129,130,131,132,133,134,135,136,138,140,141,144,147,148,149,150,151,152,154,155,156,157,158,159,161,163,164,165,168,169,170,173,179,180,182,183,186,191,193],"AIzaSyAP-jjEJBzmIyKR4F-3XITp8yM9T1gEEI8","AIzaSyB6xiKGDR5O3Ak2okS4rLkauxGUG7XP0hg","cloud.google.com","AIzaSyAQk0fBONSGUqCNznf6Krs82Ap1-NV6J4o","AIzaSyCCxcqdrZ_7QMeLCRY20bh_SXdAYqy70KY"]')
+  
+</script> <devsite-a11y-announce></devsite-a11y-announce>  
+ </body>
+</html>

@@ -1,0 +1,744 @@
+<!doctype html><!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en" ng-app="bccom"> <![endif]--><!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en" ng-app="bccom"> <![endif]--><!--[if IE 8]>    <html class="no-js lt-ie9" lang="en" ng-app="bccom"> <![endif]--><!--[if gt IE 8]><!-->
+<html class="no-js" lang="en" ng-app="bccom"> <!--<![endif]--> 
+ <head> 
+  <meta charset="utf-8"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  <title>
+		Customer Stories Archives - The BigCommerce Blog	</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <meta class="foundation-mq"> <!-- Google Tag Manager --> 
+  <script>
+		(function(w, d, s, l, i) {
+			w[l] = w[l] || [];
+			w[l].push({
+				'gtm.start': new Date().getTime(),
+				event: 'gtm.js'
+			});
+			var f = d.getElementsByTagName(s)[0],
+				j = d.createElement(s),
+				dl = l != 'dataLayer' ? '&l=' + l : '';
+			j.async = true;
+			j.src =
+				'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+			f.parentNode.insertBefore(j, f);
+		})(window, document, 'script', 'dataLayer', 'GTM-D9S9');
+	</script> <!-- End Google Tag Manager --> <!-- If Site Icon isn't set in customizer --> 
+  <link rel="pingback" href="https://www.bigcommerce.com/blog/xmlrpc.php"> 
+  <meta name="environment" content="production"> <!-- Load analytics.js --> 
+  <script>
+  ! function() {
+    var analytics = window.analytics = window.analytics || [];
+    if (!analytics.initialize)
+      if (analytics.invoked) window.console && console.error && console.error("Segment snippet included twice.");
+      else {
+        analytics.invoked = !0;
+        analytics.methods = ["trackSubmit", "trackClick", "trackLink", "trackForm", "pageview", "identify", "reset", "group", "track", "ready", "alias", "debug", "page", "once", "off", "on"];
+        analytics.factory = function(t) {
+          return function() {
+            var e = Array.prototype.slice.call(arguments);
+            e.unshift(t);
+            analytics.push(e);
+            return analytics
+          }
+        };
+        for (var t = 0; t < analytics.methods.length; t++) {
+          var e = analytics.methods[t];
+          analytics[e] = analytics.factory(e)
+        }
+        analytics.load = function(t, e) {
+          var n = document.createElement("script");
+          n.type = "text/javascript";
+          n.async = !0;
+          n.src = "https://cdn.segment.com/analytics.js/v1/" + t + "/analytics.min.js";
+          var a = document.getElementsByTagName("script")[0];
+          a.parentNode.insertBefore(n, a);
+          analytics._loadOptions = e
+        };
+        analytics.SNIPPET_VERSION = "4.1.0";
+        analytics.page();
+      }
+  }();
+</script> 
+  <script type="application/javascript">
+  function getCookie(cookieName) {
+    var cookie = document.cookie.match('(^|[^;]+)\\s*' + cookieName + '\\s*=\\s*([^;]+)');
+    var cookieVal = cookie ? cookie.pop() : '';
+    return cookieVal;
+  }
+
+  function initLoad() {
+    window.consentManagerConfig = function(exports) {
+      var React = exports.React;
+      var inEU = exports.inEU;
+      var inCA = window.inCA;
+
+      // console.log("inCA", inCA);
+
+      var writeKeySegment = "zEvwxXJWb3m1YY4SUrCC17Xjz0cQV3OH";
+
+
+      var otherWriteKeys = [
+        'BTmUWLubCbJjBopJwsDTxC0594E6Z5ex', // Developer Documentation
+        'pcIxZ9NO06csZFSFyDQ0akcPcQadO4M5', // Developer Portal
+        'Hk5ZBVORHL7NP3CfOXSyFXuYVuk6tv1j', // Impartner
+        'facRwgayTgyKQCya6Y3ykhpfYVHSkKNf', // segment_support
+        '8z6A0VG5UxD5lvVNAJXGuEvFxdeqLsKY', // Android
+        'rQ7w49xyp8c3AXdjrxsFo9HK4JikVYJm' // iOS
+      ];
+
+      var initialPreferences = {
+        'Functional': true,
+        'Analytics': true,
+        'Targeting and Advertising': true
+      }
+      if (inEU()) {
+        initialPreferences = {
+          'Functional': true
+        }
+      }
+
+      var customCategories = {
+        'Targeting and Advertising': {
+          purpose: 'Used to create profiles or personalize content to enhance your shopping experience.',
+          integrations: ['Google Ads (Classic)', 'Facebook Pixel', 'Personas Facebook Custom Audiences', 'Facebook Conversions API']
+        },
+        'Analytics': {
+          purpose: 'Provide statistical information on site usage, e.g., web analytics so we can improve this website over time.',
+          integrations: ['Google Universal Analytics', 'Marketplace App Event Forwarding (Bigcommerce)', 'Amplitude']
+        },
+        'Functional': {
+          purpose: 'Enables enhanced functionality, such as videos and live chat. If you do not allow these, then some or all of these functions may not work properly.',
+          integrations: ['Optimizely Web', 'Marketo V2', 'Salesforce', 'Natero', 'Pendo', 'Optimizely Customer Profiles (Bigcommerce)', 'Drift Contacts API (Bigcommerce)', 'Amazon Kinesis Firehose'],
+        },
+      }
+
+      var onOptionsClick = function() {
+        exports.openConsentManager();
+      }
+
+      var shouldRequireConsent = function() {
+        return inEU() || inCA;
+      };
+
+      var bannerContent = React.createElement(
+        'div', {
+          class: 'consentBannerText',
+          style: 'display: flex; align-items: center; justify-content: flex-end; padding: 10px 10px;'
+        },
+        React.createElement(
+          'span', {
+            style: 'flex-grow: 1; text-align: left;'
+          },
+          'We use cookies (and other similar technologies) to improve your experience on our site and to serve you better. By using our website, you are agreeing to the collection of data as described in our',
+          '\u00a0',
+          React.createElement(
+            'a', {
+              href: '/privacy/',
+              target: '_blank'
+            },
+            'Privacy Policy'
+          ),
+          '. You can',
+          '\u00a0',
+          React.createElement(
+            'a', {
+              onClick: function() {
+                onOptionsClick()
+              }
+            },
+            'change your preferences'
+          ),
+          '\u00a0',
+          'at any time.'
+        ),
+      );
+
+      var prefs = {
+        container: '#consent-manager',
+        writeKey: writeKeySegment,
+        otherWriteKeys: otherWriteKeys,
+        initialPreferences: initialPreferences,
+        shouldRequireConsent: shouldRequireConsent,
+        bannerContent: bannerContent,
+        bannerSubContent: null,
+        bannerBackgroundColor: '#313441',
+        preferencesDialogTitle: 'Website Data Collection Preferences',
+        preferencesDialogContent: 'We use data collected by cookies and JavaScript libraries, which are necessary for website functioning, to improve user’s browsing experience, analyze site traffic, deliver personalized advertisements, and increase the overall performance of our site.',
+        cancelDialogTitle: 'Are you sure you want to cancel?',
+        cancelDialogContent: 'Your preferences have not been saved. By continuing to use our website, you are agreeing to our Website Data Collection Policy',
+        customCategories: customCategories,
+        closeBehavior: 'accept',
+        implyConsentOnInteraction: false
+      }
+      return prefs;
+    }
+
+    function loadScripts(scriptType) {
+      // console.log('loadScripts ' + scriptType);
+
+      // Load functional scripts
+      if (scriptType === 'functional' || scriptType === 'all') {
+        // Optimizely
+        var optimizely_script = document.createElement('script');
+        optimizely_script.setAttribute('type', 'text/javascript');
+        optimizely_script.setAttribute('src', '//cdn.optimizely.com/js/134769299.js');
+        document.head.appendChild(optimizely_script);
+      }
+
+      // Load advertising scripts
+      if (scriptType === 'advertising' || scriptType === 'all') {}
+
+      // Load marketing and analytics scripts
+      if (scriptType === 'analytics' || scriptType === 'all') {}
+
+    }
+
+    // Fire an event passing users tracking preferences and locale
+    analytics.ready(function() {
+
+      var trackingPreferences = getCookie('tracking-preferences');
+      if (trackingPreferences !== '') {
+        trackingPreferences = JSON.parse(decodeURIComponent(trackingPreferences));
+        if (trackingPreferences.custom['Functional']) loadScripts('functional');
+        if (trackingPreferences.custom['Targeting and Advertising']) loadScripts('advertising');
+        if (trackingPreferences.custom['Analytics']) loadScripts('analytics');
+      } else {
+        loadScripts('all');
+      }
+
+      // console.log('Fire "Consent Preferences" event');
+      analytics.track('Consent Preferences', {
+        trackingPreferences: trackingPreferences,
+        inEU: window.consentManager.inEU(),
+        inCA: window.inCA
+      });
+    });
+
+    // Load Segment Consent Manager
+    // console.log("Load Segment Consent Manager");
+    var segment_script = document.createElement('script');
+    segment_script.setAttribute('type', 'text/javascript');
+    segment_script.setAttribute('src', '//unpkg.com/@segment/consent-manager@4.1.0/standalone/consent-manager.js');
+    segment_script.setAttribute('defer', '');
+    document.head.appendChild(segment_script);
+  }
+
+  var bcLocTime = 0;
+  var bcLocTimeout = 3000;
+
+  function awaitBCLocation() {
+    if (window.inCA == undefined && bcLocTime < bcLocTimeout) {
+      // console.log("inCA is undefined, total time elapsed:" + bcLocTime);
+      var bcLocation = getCookie('bcLocation');
+      if (bcLocation !== '') {
+        bcLocation = JSON.parse(decodeURIComponent(bcLocation));
+        window.inCA = bcLocation.state && bcLocation.state == 'CA';
+      }
+      bcLocTime += 100;
+      setTimeout(awaitBCLocation, 100);
+    } else {
+      // console.log("inCA is set:" + window.inCA);
+      initLoad()
+    }
+  }
+  setTimeout(awaitBCLocation, 100);
+</script> 
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"> 
+  <link rel="alternate" hreflang="en-us" href="https://www.bigcommerce.com/blog/category/customer-stories/"> 
+  <link rel="alternate" hreflang="en-au" href="https://www.bigcommerce.com.au/blog/category/customer-stories/"> 
+  <link rel="alternate" hreflang="en-gb" href="https://bigcommerce.co.uk/blog/category/customer-stories/"> 
+  <link rel="alternate" hreflang="x-default" href="https://www.bigcommerce.com/blog/category/customer-stories/"> <!-- This site is optimized with the Yoast SEO plugin v18.6 - https://yoast.com/wordpress/plugins/seo/ --> 
+  <meta name="description" content="Learn how BigCommerce customers have managed their businesses on our platform and how it has helped them move their online stores to the next level."> 
+  <link rel="canonical" href="https://www.bigcommerce.com/blog/category/customer-stories/"> 
+  <link rel="next" href="https://www.bigcommerce.com/blog/category/customer-stories/page/2/"> 
+  <meta property="og:locale" content="en_US"> 
+  <meta property="og:type" content="article"> 
+  <meta property="og:title" content="Customer Stories Archives - The BigCommerce Blog"> 
+  <meta property="og:description" content="Learn how BigCommerce customers have managed their businesses on our platform and how it has helped them move their online stores to the next level."> 
+  <meta property="og:url" content="https://www.bigcommerce.com/blog/category/customer-stories/"> 
+  <meta property="og:site_name" content="The BigCommerce Blog"> 
+  <meta name="twitter:card" content="summary_large_image"> 
+  <meta name="twitter:site" content="@bigcommerce"> 
+  <script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.bigcommerce.nl/blog/#organization","name":"Bigcommerce Ltd Pty","url":"https://www.bigcommerce.nl/blog/","sameAs":["https://www.facebook.com/bigcommerce","https://www.instagram.com/bigcommerce/","https://www.linkedin.com/company/bigcommerce/","https://www.youtube.com/user/bigcommercedotcom","https://twitter.com/bigcommerce"],"logo":{"@type":"ImageObject","@id":"https://www.bigcommerce.nl/blog/#logo","inLanguage":"en-US","url":"https://www.bigcommerce.com/blog/wp-content/uploads/2018/05/BigCommerce-Logo.png","contentUrl":"https://www.bigcommerce.com/blog/wp-content/uploads/2018/05/BigCommerce-Logo.png","width":1920,"height":1080,"caption":"Bigcommerce Ltd Pty"},"image":{"@id":"https://www.bigcommerce.nl/blog/#logo"}},{"@type":"WebSite","@id":"https://www.bigcommerce.nl/blog/#website","url":"https://www.bigcommerce.nl/blog/","name":"The BigCommerce Blog","description":"Ecommerce Blog delivering news, strategy and success stories to power 2x growth for scaling brands.","publisher":{"@id":"https://www.bigcommerce.nl/blog/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.bigcommerce.nl/blog/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"CollectionPage","@id":"https://www.bigcommerce.com/blog/category/customer-stories/#webpage","url":"https://www.bigcommerce.com/blog/category/customer-stories/","name":"Customer Stories Archives - The BigCommerce Blog","isPartOf":{"@id":"https://www.bigcommerce.nl/blog/#website"},"description":"Learn how BigCommerce customers have managed their businesses on our platform and how it has helped them move their online stores to the next level.","breadcrumb":{"@id":"https://www.bigcommerce.com/blog/category/customer-stories/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.bigcommerce.com/blog/category/customer-stories/"]}]},{"@type":"BreadcrumbList","@id":"https://www.bigcommerce.com/blog/category/customer-stories/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.bigcommerce.nl/blog/"},{"@type":"ListItem","position":2,"name":"Customer Stories"}]}]}</script> <!-- / Yoast SEO plugin. --> 
+  <link rel="dns-prefetch" href="//app-ab15.marketo.com"> 
+  <link rel="alternate" type="application/rss+xml" title="The BigCommerce Blog » Feed" href="https://www.bigcommerce.com/blog/feed/"> 
+  <link data-minify="1" rel="stylesheet" id="ultimate-tables-style-css" href="https://www.bigcommerce.com/blog/wp-content/cache/min/1/blog/wp-content/plugins/ultimate-tables/css/ultimate-tables.css?ver=1651084242" type="text/css" media="all"> 
+  <link data-minify="1" rel="stylesheet" id="ultimate-datatables-style-css" href="https://www.bigcommerce.com/blog/wp-content/cache/min/1/blog/wp-content/plugins/ultimate-tables/css/jquery.dataTables.css?ver=1651084242" type="text/css" media="all"> 
+  <link rel="stylesheet" id="wp-block-library-css" href="https://www.bigcommerce.com/blog/wp-includes/css/dist/block-library/style.min.css?ver=5.9.3" type="text/css" media="all"> 
+  <link rel="stylesheet" id="wp-components-css" href="https://www.bigcommerce.com/blog/wp-includes/css/dist/components/style.min.css?ver=5.9.3" type="text/css" media="all"> 
+  <link rel="stylesheet" id="wp-block-editor-css" href="https://www.bigcommerce.com/blog/wp-includes/css/dist/block-editor/style.min.css?ver=5.9.3" type="text/css" media="all"> 
+  <link rel="stylesheet" id="wp-nux-css" href="https://www.bigcommerce.com/blog/wp-includes/css/dist/nux/style.min.css?ver=5.9.3" type="text/css" media="all"> 
+  <link rel="stylesheet" id="wp-reusable-blocks-css" href="https://www.bigcommerce.com/blog/wp-includes/css/dist/reusable-blocks/style.min.css?ver=5.9.3" type="text/css" media="all"> 
+  <link rel="stylesheet" id="wp-editor-css" href="https://www.bigcommerce.com/blog/wp-includes/css/dist/editor/style.min.css?ver=5.9.3" type="text/css" media="all"> 
+  <link data-minify="1" rel="stylesheet" id="drop_shadow_block-style-css-css" href="https://www.bigcommerce.com/blog/wp-content/cache/min/1/blog/wp-content/plugins/drop-shadow-boxes/block/blocks.style.build.css?ver=1651084242" type="text/css" media="all"> 
+  <style id="global-styles-inline-css" type="text/css">
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style> 
+  <link data-minify="1" rel="stylesheet" id="tm_clicktotweet-css" href="https://www.bigcommerce.com/blog/wp-content/cache/min/1/blog/wp-content/plugins/click-to-tweet-by-todaymade/assets/css/styles.css?ver=1651084242" type="text/css" media="all"> 
+  <link data-minify="1" rel="stylesheet" id="cta-front-css-css" href="https://www.bigcommerce.com/blog/wp-content/cache/min/1/blog/wp-content/plugins/cta-mat-plugin/assets/css/frontend.css?ver=1651084242" type="text/css" media="all"> 
+  <link data-minify="1" rel="stylesheet" id="theme-style-css" href="https://www.bigcommerce.com/blog/wp-content/cache/min/1/blog/wp-content/themes/bigcommerce/css/style.min.css?ver=1651084242" type="text/css" media="all"> 
+  <style id="rocket-lazyload-inline-css" type="text/css">
+.rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;cursor:pointer;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:72px;width:72px;left:50%;top:50%;margin-left:-36px;margin-top:-36px;position:absolute;background:url(https://www.bigcommerce.com/blog/wp-content/plugins/wp-rocket/assets/img/youtube.png) no-repeat;cursor:pointer}
+</style> 
+  <script type="text/javascript" src="https://www.bigcommerce.com/blog/wp-includes/js/jquery/jquery.min.js?ver=3.6.0" id="jquery-core-js" defer></script> 
+  <script type="text/javascript" src="https://www.bigcommerce.com/blog/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2" id="jquery-migrate-js" defer></script> 
+  <script type="text/javascript" id="wpml-cookie-js-extra">
+/* <![CDATA[ */
+var wpml_cookies = {"wp-wpml_current_language":{"value":"en","expires":1,"path":"\/"}};
+var wpml_cookies = {"wp-wpml_current_language":{"value":"en","expires":1,"path":"\/"}};
+/* ]]> */
+</script> 
+  <script data-minify="1" type="text/javascript" src="https://www.bigcommerce.com/blog/wp-content/cache/min/1/blog/wp-content/plugins/sitepress-multilingual-cms/res/js/cookies/language-cookie.js?ver=1651084242" id="wpml-cookie-js" defer></script> 
+  <script data-minify="1" type="text/javascript" src="https://www.bigcommerce.com/blog/wp-content/cache/min/1/js/forms2/js/forms2.min.js?ver=1651084243" id="forms2-js" defer></script> 
+  <script type="text/javascript" id="wpml-xdomain-data-js-extra">
+/* <![CDATA[ */
+var wpml_xdomain_data = {"css_selector":"wpml-ls-item","ajax_url":"https:\/\/www.bigcommerce.com\/blog\/wp-admin\/admin-ajax.php","current_lang":"en"};
+/* ]]> */
+</script> 
+  <script data-minify="1" type="text/javascript" src="https://www.bigcommerce.com/blog/wp-content/cache/min/1/blog/wp-content/plugins/sitepress-multilingual-cms/res/js/xdomain-data.js?ver=1651084243" id="wpml-xdomain-data-js" defer></script> 
+  <script type="text/javascript" id="ajax-test-js-extra">
+/* <![CDATA[ */
+var the_ajax_script = {"ajaxurl":"https:\/\/www.bigcommerce.com\/blog\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script> 
+  <script data-minify="1" type="text/javascript" src="https://www.bigcommerce.com/blog/wp-content/cache/min/1/blog/wp-content/plugins/google-site-verification-using-meta-tag/verification.js?ver=1651084243" id="ajax-test-js" defer></script> 
+  <link rel="https://api.w.org/" href="https://www.bigcommerce.com/blog/wp-json/">
+  <link rel="alternate" type="application/json" href="https://www.bigcommerce.com/blog/wp-json/wp/v2/categories/1042">
+  <meta name="generator" content="WPML ver:4.5.5 stt:1,65,64;"> 
+  <script data-minify="1" async src="https://www.bigcommerce.com/blog/wp-content/cache/min/1/analytics_e3e564133bb14fcb8086e62d228ed2c9.js?ver=1651084243"></script>
+  <link rel="icon" href="https://www.bigcommerce.com/blog/wp-content/uploads/2016/05/cropped-e8d7fa0a-3b0e-4069-91b1-78460a4d4af1-150x150.png" sizes="32x32"> 
+  <link rel="icon" href="https://www.bigcommerce.com/blog/wp-content/uploads/2016/05/cropped-e8d7fa0a-3b0e-4069-91b1-78460a4d4af1-300x300.png" sizes="192x192"> 
+  <link rel="apple-touch-icon" href="https://www.bigcommerce.com/blog/wp-content/uploads/2016/05/cropped-e8d7fa0a-3b0e-4069-91b1-78460a4d4af1-300x300.png"> 
+  <meta name="msapplication-TileImage" content="https://www.bigcommerce.com/blog/wp-content/uploads/2016/05/cropped-e8d7fa0a-3b0e-4069-91b1-78460a4d4af1-300x300.png"> 
+  <style type="text/css" id="wp-custom-css">
+			/*
+You can add your own CSS here.
+
+Click the help icon above to learn more.
+*/
+
+h6.snippet {font-size: 22px; font-weight:bold; margin-top:0px;}
+
+table.blog-table {
+  border: 1px solid #333333;
+  background-color: #FFFFFF;
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+}
+table.blog-table td, table.blog-table th {
+  border: 1px solid #333333;
+  padding: 3px 2px;
+}
+table.blog-table tbody td {
+  font-size: 16px;
+  color: #330000;
+}
+table.blog-table thead {
+  background: -moz-linear-gradient(top, #f8f9fa 0%, #f7f7f9 66%, #F6F7F9 100%);
+  background: -webkit-linear-gradient(top, #f8f9fa 0%, #f7f7f9 66%, #F6F7F9 100%);
+  background: linear-gradient(to bottom, #f8f9fa 0%, #f7f7f9 66%, #F6F7F9 100%);
+  border-bottom: 1px solid #333333;
+}
+table.blog-table thead th {
+  background: #3f5cd6;
+font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  border-left: 1px solid #333333;
+width: 33%;
+}
+table.blog-table thead th:first-child {
+  border-left: none;
+}
+
+table.blog-table tfoot {
+  font-size: 14px;
+  font-weight: bold;
+  color: #FFFFFF;
+  background: #D0E4F5;
+  background: -moz-linear-gradient(top, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
+  background: -webkit-linear-gradient(top, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
+  background: linear-gradient(to bottom, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
+  border-top: 2px solid #444444;
+}
+table.blog-table tfoot td {
+  font-size: 14px;
+}
+table.blog-table tfoot .links {
+  text-align: right;
+}
+table.blog-table tfoot .links a{
+  display: inline-block;
+  background: #1C6EA4;
+  color: #FFFFFF;
+  padding: 2px 8px;
+  border-radius: 5px;
+}		</style> <!--
+Plugin: Google meta tag Site Verification Plugin
+Tracking Code.
+
+--> 
+  <meta name="google-site-verification" content="google631fa914ea26a44b.html">
+  <noscript>
+   <style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style>
+  </noscript> 
+  <meta name="host" value="www.bigcommerce.com"> 
+  <meta name="home_url" value="https://www.bigcommerce.com/blog"> 
+  <meta name="site_url" value="https://www.bigcommerce.com/blog"> 
+  <meta name="rest_url" value="https://www.bigcommerce.com/blog/wp-json/"> 
+ </head> 
+ <body class="archive category category-customer-stories category-1042 bigcommerce-blog"> 
+  <div class="off-canvas position-right" id="menu" data-off-canvas> <!-- Your menu or Off-canvas content goes here --> 
+   <ul id="menu-main-navigation" class="menuItems">
+    <li id="menu-item-50968" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50968"><a href="/blog/">Latest Articles</a></li> 
+    <li id="menu-item-62282" class="menu-item menu-item-type-taxonomy menu-item-object-category current-menu-item menu-item-62282"><a href="https://www.bigcommerce.com/blog/category/customer-stories/" aria-current="page">Success Stories</a></li> 
+    <li id="menu-item-50971" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50971"><a href="/resources/">Resources</a></li> 
+    <li id="menu-item-62871" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-62871"><a href="https://www.bigcommerce.com/blog/category/ecommerce-holiday-ideas/">Holiday Ideas &amp; Strategies</a></li> 
+   </ul> 
+   <div class="menu-actions"> <a href="/start-your-trial/" class="button button--action button--small">Get Started</a> 
+   </div> 
+  </div> 
+  <div id="bodyWrapper" class="wrapper off-canvas-content" data-off-canvas-content> 
+   <div id="consent-manager"></div> <!-- <button
+  type="button"
+  onclick="event.stopPropagation(); window.consentManager.openConsentManager()"
+>
+  Data Collection and Cookie Preferences
+</button> --> 
+   <div class="siteStyleBar-container"> 
+    <div class="siteStyleBar"> 
+     <ul class="siteStyleBar-list siteStyleBar-tabs"> 
+      <li class="tabs-tab"><a class="tab-link" href="/" title="Enterprise">Enterprise</a></li> 
+      <li class="tabs-tab"><a class="tab-link" href="/essentials/" title="Essentials">Essentials</a></li> 
+     </ul> 
+     <ul class="siteStyleBar-list siteStyleBar-linksList"> 
+      <li class="linksList-item"><a class="linksList-link" href="tel:+1-888-248-9325" title="1-888-248-9325">1-888-248-9325</a></li> 
+      <li class="linksList-item"><a class="linksList-link" href="https://support.bigcommerce.com/" title="Help Center">Help Center</a></li> 
+      <li class="linksList-item"><a class="linksList-link" href="https://login.bigcommerce.com/login" title="Log In">Log In</a></li> 
+     </ul> 
+    </div> 
+   </div> 
+   <header class="header"> 
+    <div class="header__inner"> 
+     <div class="topBar-container headerColorScheme-transparentWhite topBar-container title-bar" role="menu"> 
+      <div class="title-bar-left"> 
+       <div class="top-bar"> 
+        <ul class="title-area menu"> 
+         <li class="name"> <a href="/"> <img class="lazyload" class="title-area-logo--hover" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20132%2030'%3E%3C/svg%3E" alt="bc-logo-dark" scale="0" width="132" height="30" data-lazy-src="https://www.bigcommerce.com/blog/wp-content/themes/bigcommerce/assets/images/bc-logo-bright.svg">
+           <noscript>
+            <img class="lazyload" class="title-area-logo--hover" src="https://www.bigcommerce.com/blog/wp-content/themes/bigcommerce/assets/images/bc-logo-bright.svg" alt="bc-logo-dark" scale="0" width="132" height="30">
+           </noscript> <!-- <img class="title-area-logo" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="bc-logo-dark" scale="0" data-lazy-src="https://www.bigcommerce.com/blog/wp-content/themes/bigcommerce/assets/images/bc-logo-dark.svg"><noscript><img class="title-area-logo" src="https://www.bigcommerce.com/blog/wp-content/themes/bigcommerce/assets/images/bc-logo-dark.svg" alt="bc-logo-dark" scale="0"></noscript> --> </a> </li> 
+        </ul> 
+        <section class="top-bar-section"> 
+         <ul id="menu-main-navigation-1" class="menuItems">
+          <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50968"><a href="/blog/">Latest Articles</a></li> 
+          <li class="menu-item menu-item-type-taxonomy menu-item-object-category current-menu-item menu-item-62282"><a href="https://www.bigcommerce.com/blog/category/customer-stories/" aria-current="page">Success Stories</a></li> 
+          <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50971"><a href="/resources/">Resources</a></li> 
+          <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-62871"><a href="https://www.bigcommerce.com/blog/category/ecommerce-holiday-ideas/">Holiday Ideas &amp; Strategies</a></li> 
+         </ul> <button id="menu-toggle" class="menu-icon" type="button" data-toggle="menu" data-open="offCanvasRight"> <i class="icon icon-hamburger"></i> </button> 
+        </section> 
+        <div class="top-bar-actions"> <a href="/start-your-trial/" class="button button--action button--small">Get Started</a> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="header__content"> 
+     <div class="header__content-title"> 
+      <h1 itemprop="headline">Customer Stories</h1> 
+     </div> 
+     <div class="header__content-description"> 
+      <h4><p>Learn from BigCommerce customers how they have managed their businesses on the BC platform.&nbsp;</p> </h4> 
+     </div> 
+     <div class="header__content-subscription"> 
+      <form class="mktoForm" data-formid="2142" data-forminstance="blog-header" ng-non-bindable></form> 
+     </div> 
+    </div> 
+   </header> 
+   <div id="content"> 
+    <div class="archive-page" itemprop="mainContentOfPage"> 
+     <div class="blog__header"> 
+      <div class="blog__header-home"> <a href="https://www.bigcommerce.com/blog/"><span class="arrow-left-link"></span> BLOG HOME</a> 
+      </div> 
+      <div class="blog__header-nav clearfix"> 
+       <div class="blog__header-nav-categories"> <a class="blog__header-nav-trigger"> Customer Stories </a> 
+        <div class="blog__header-nav-dropdown"> 
+         <ul> 
+          <li><a href="https://www.bigcommerce.com/blog/category/customer-stories/">Customer Stories</a></li> 
+          <li><a href="https://www.bigcommerce.com/blog/category/ecommerce-research/">Ecommerce Research</a></li> 
+          <li><a href="https://www.bigcommerce.com/blog/category/enterprise-ecommerce/">Enterprise Ecommerce</a></li> 
+          <li><a href="https://www.bigcommerce.com/blog/category/enterprise-ecommerce/b2b-ecommerce/">B2B Ecommerce</a></li> 
+          <li><a href="https://www.bigcommerce.com/blog/category/how-to-sell-online/">How to Sell Online</a></li> 
+          <li><a href="https://www.bigcommerce.com/blog/category/omnichannel/">Omnichannel Strategies</a></li> 
+          <li><a href="https://www.bigcommerce.com/blog/category/product-news/">Product News</a></li> 
+         </ul> 
+        </div> 
+       </div> 
+       <div class="blog__header-nav-label">
+         CATEGORY 
+       </div> 
+       <div class="blog__header-nav-search"> <a class="search-trigger blog__header-search-trigger">Search</a> 
+       </div> 
+       <div class="blog__header-search archive-page__search"> 
+        <div class="archive-page__search-inner"> 
+         <form method="get" id="searchform" action="https://www.bigcommerce.com/blog/"> 
+          <input type="text" value="" name="s" id="s"> <a class="archive-page__search-close">Close</a> 
+         </form> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="category__top"> 
+      <div class="category__picks"> 
+       <h4>Featured Posts</h4> 
+       <ul> 
+        <li> <a href="https://www.bigcommerce.com/blog/caseys-distributing/">50,000 SKUs Later, Here Are the Lessons We’ve Learned About B2B Ecommerce</a> </li> 
+        <li> <a href="https://www.bigcommerce.com/blog/headless-commerce-helps-businesses-adapt/">How Headless Commerce Helps Businesses Adapt to Current Ecommerce Challenges</a> </li> 
+        <li> <a href="https://www.bigcommerce.com/blog/amazon-success-stories/">How Rollie Shoes’ Amazon Channel Manager Hit Amazon Selling Success in Less Than 7 Months</a> </li> 
+        <li> <a href="https://www.bigcommerce.com/blog/benefits-of-embracing-b2b-ecommerce/">The Benefits of B2B Ecommerce: “We Now Have a Thriving Business Thanks to the Internet”</a> </li> 
+        <li> <a href="https://www.bigcommerce.com/blog/?p=16982">The Economics of Direct to Consumer Selling (Hint: Manufacturing Ingenuity Required)</a> </li> 
+       </ul> 
+      </div> 
+     </div> 
+     <div id="ajax-load-more" class="ajax-load-more-wrap default" data-alm-id="" data-canonical-url="https://www.bigcommerce.com/blog/category/customer-stories/" data-slug="customer-stories" data-post-id="1042" data-localized="ajax_load_more_vars">
+      <div aria-live="polite" aria-atomic="true" class="alm-listing alm-ajax" data-preloaded="true" data-preloaded-amount="6" data-seo="true" data-seo-start-page="0" data-seo-scroll="false" data-seo-scrolltop="50" data-seo-controls="1" data-seo-permalink="pretty" data-seo-pageview="true" data-container-type="div" data-loading-style="default" data-theme-repeater="archive-post.php" data-post-type="post" data-category="customer-stories" data-meta-key="chapter_post:chapter_overview_parent" data-meta-value="yes:yes" data-meta-compare="NOT EXISTS:NOT EXISTS" data-meta-relation="OR" data-meta-type="CHAR:CHAR" data-order="DESC" data-orderby="date" data-offset="0" data-posts-per-page="6" data-lang="en" data-scroll="true" data-scroll-distance="100" data-max-pages="0" data-pause-override="false" data-pause="false" data-button-label="See More Articles" data-button-loading-label="Loading..." data-transition="none">
+       <div class="alm-reveal alm-seo alm-preloaded" data-page="1" data-url="https://www.bigcommerce.com/blog/category/customer-stories/" data-total-posts="8">
+        <div class="archive-page__post 
+  " href="https://www.bigcommerce.com/blog/muniq-marc-washington/"> <a data-bg="https://www.bigcommerce.com/blog/wp-content/uploads/2022/02/Untitled-design-3-1280x467.jpg" class="archive-page__thumbnail rocket-lazyload" href="https://www.bigcommerce.com/blog/muniq-marc-washington/" style="" data-rjs="https://www.bigcommerce.com/blog/wp-content/uploads/2022/02/Untitled-design-3.jpg"></a> 
+         <div class="archive-page__info"> 
+          <div class="archive-page__info-inner"> 
+           <div class="archive-page__info-table"> 
+            <div class="archive-page__info-table-cell"> 
+             <p class="post-detail__categories">Customer Stories</p> 
+             <h2 itemprop="headline"><a href="https://www.bigcommerce.com/blog/muniq-marc-washington/">Exploring Black Health, Wellness and Entrepreneurship with Muniq Founder and CEO Marc Washington</a></h2> 
+             <p class="post-detail__meta">Leah Spector<span class="sep">/</span> 8 min read</p> <!-- <p class="post-detail__excerpt">Black History Month is a dedicated time to remember, reflect and honor African-American history and achievements. At BigCommerce, we’re honored&hellip;</p> --> <a class="button read-more" href="https://www.bigcommerce.com/blog/muniq-marc-washington/">Read More <span class="arrow-right-link"></span></a> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="archive-page__post 
+  archive-page__post--alt" href="https://www.bigcommerce.com/blog/trinity-terpenes-success-story/"> <a data-bg="https://www.bigcommerce.com/blog/wp-content/uploads/2022/02/CD3966-R1-V2-1280x467.jpg" class="archive-page__thumbnail rocket-lazyload" href="https://www.bigcommerce.com/blog/trinity-terpenes-success-story/" style="" data-rjs="https://www.bigcommerce.com/blog/wp-content/uploads/2022/02/CD3966-R1-V2-2560x934.jpg"></a> 
+         <div class="archive-page__info"> 
+          <div class="archive-page__info-inner"> 
+           <div class="archive-page__info-table"> 
+            <div class="archive-page__info-table-cell"> 
+             <p class="post-detail__categories">CBD</p> 
+             <h2 itemprop="headline"><a href="https://www.bigcommerce.com/blog/trinity-terpenes-success-story/">Trinity Terpenes Finds Good Vibes for High-Risk Verticals on BigCommerce</a></h2> 
+             <p class="post-detail__meta">Krystin Gresham<span class="sep">/</span> 3 min read</p> <!-- <p class="post-detail__excerpt">Have you ever received a message that stopped you in your tracks?  That’s exactly what happened to Trinity Terpenes one&hellip;</p> --> <a class="button read-more" href="https://www.bigcommerce.com/blog/trinity-terpenes-success-story/">Read More <span class="arrow-right-link"></span></a> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="archive-page__post 
+  " href="https://www.bigcommerce.com/blog/farmer-boy-replatform-bigcommerce/"> <a data-bg="https://www.bigcommerce.com/blog/wp-content/uploads/2021/05/Farmer-Boy-Customer-Story-1280x467.jpg" class="archive-page__thumbnail rocket-lazyload" href="https://www.bigcommerce.com/blog/farmer-boy-replatform-bigcommerce/" style="" data-rjs="https://www.bigcommerce.com/blog/wp-content/uploads/2021/05/Farmer-Boy-Customer-Story.jpg"></a> 
+         <div class="archive-page__info"> 
+          <div class="archive-page__info-inner"> 
+           <div class="archive-page__info-table"> 
+            <div class="archive-page__info-table-cell"> 
+             <p class="post-detail__categories">Customer Stories</p> 
+             <h2 itemprop="headline"><a href="https://www.bigcommerce.com/blog/farmer-boy-replatform-bigcommerce/">Farmer Boy Builds on Tradition While Preparing for the Future by Replatforming to BigCommerce</a></h2> 
+             <p class="post-detail__meta">Shelley Kilpatrick<span class="sep">/</span> 4 min read</p> <!-- <p class="post-detail__excerpt">For over 30 years, Farmer Boy has been one of the leading companies in the agricultural industry, offering animal handling&hellip;</p> --> <a class="button read-more" href="https://www.bigcommerce.com/blog/farmer-boy-replatform-bigcommerce/">Read More <span class="arrow-right-link"></span></a> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="archive-page__post 
+  archive-page__post--alt" href="https://www.bigcommerce.com/blog/headless-commerce-helps-businesses-adapt/"> <a data-bg="https://www.bigcommerce.com/blog/wp-content/uploads/2021/03/1874CD_CSuiteWhitepaper_Blog-Hero_2000x730_NN-1280x467.jpg" class="archive-page__thumbnail rocket-lazyload" href="https://www.bigcommerce.com/blog/headless-commerce-helps-businesses-adapt/" style="" data-rjs="https://www.bigcommerce.com/blog/wp-content/uploads/2021/03/1874CD_CSuiteWhitepaper_Blog-Hero_2000x730_NN.jpg"></a> 
+         <div class="archive-page__info"> 
+          <div class="archive-page__info-inner"> 
+           <div class="archive-page__info-table"> 
+            <div class="archive-page__info-table-cell"> 
+             <p class="post-detail__categories">Customer Stories</p> 
+             <h2 itemprop="headline"><a href="https://www.bigcommerce.com/blog/headless-commerce-helps-businesses-adapt/">How Headless Commerce Helps Businesses Adapt to Current Ecommerce Challenges</a></h2> 
+             <p class="post-detail__meta">Susan Meyer<span class="sep">/</span> 3 min read</p> <!-- <p class="post-detail__excerpt">Ecommerce was an industry already in flux when the events of 2020 really turned things on their head. Here are&hellip;</p> --> <a class="button read-more" href="https://www.bigcommerce.com/blog/headless-commerce-helps-businesses-adapt/">Read More <span class="arrow-right-link"></span></a> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="archive-page__post 
+  " href="https://www.bigcommerce.com/blog/caseys-distributing/"> <a data-bg="https://www.bigcommerce.com/blog/wp-content/uploads/2019/08/19CD-2019-MIB-Pre_Event-Blog-Headers-RS-1280x467.jpg" class="archive-page__thumbnail rocket-lazyload" href="https://www.bigcommerce.com/blog/caseys-distributing/" style="" data-rjs="https://www.bigcommerce.com/blog/wp-content/uploads/2019/08/19CD-2019-MIB-Pre_Event-Blog-Headers-RS.jpg"></a> 
+         <div class="archive-page__info"> 
+          <div class="archive-page__info-inner"> 
+           <div class="archive-page__info-table"> 
+            <div class="archive-page__info-table-cell"> 
+             <p class="post-detail__categories">Customer Stories</p> 
+             <h2 itemprop="headline"><a href="https://www.bigcommerce.com/blog/caseys-distributing/">50,000 SKUs Later, Here Are the Lessons We’ve Learned About B2B Ecommerce</a></h2> 
+             <p class="post-detail__meta">Ben Johnson<span class="sep">/</span> 3 min read</p> <!-- <p class="post-detail__excerpt">Over the past 30 years, our company has served thousands of retailers. But, to grow our business, it became more&hellip;</p> --> <a class="button read-more" href="https://www.bigcommerce.com/blog/caseys-distributing/">Read More <span class="arrow-right-link"></span></a> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="archive-page__post 
+  archive-page__post--alt" href="https://www.bigcommerce.com/blog/benefits-of-embracing-b2b-ecommerce/"> <a data-bg="https://www.bigcommerce.com/blog/wp-content/uploads/2018/03/b2b-ecommerce-benefits-hero.jpg" class="archive-page__thumbnail rocket-lazyload" href="https://www.bigcommerce.com/blog/benefits-of-embracing-b2b-ecommerce/" style="" data-rjs="https://www.bigcommerce.com/blog/wp-content/uploads/2018/03/b2b-ecommerce-benefits-hero.jpg"></a> 
+         <div class="archive-page__info"> 
+          <div class="archive-page__info-inner"> 
+           <div class="archive-page__info-table"> 
+            <div class="archive-page__info-table-cell"> 
+             <p class="post-detail__categories">Customer Stories</p> 
+             <h2 itemprop="headline"><a href="https://www.bigcommerce.com/blog/benefits-of-embracing-b2b-ecommerce/">The Benefits of B2B Ecommerce: “We Now Have a Thriving Business Thanks to the Internet”</a></h2> 
+             <p class="post-detail__meta">Tracey Wallace<span class="sep">/</span> 6 min read</p> <!-- <p class="post-detail__excerpt">It’s no secret that the rise of the internet heavily disrupted nearly all industries. Suddenly, earning customers wasn’t just about&hellip;</p> --> <a class="button read-more" href="https://www.bigcommerce.com/blog/benefits-of-embracing-b2b-ecommerce/">Read More <span class="arrow-right-link"></span></a> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div>
+      </div>
+      <noscript>
+       <div class="alm-paging">
+        Pages: <span class="page"><a href="https://www.bigcommerce.com/blog/category/customer-stories/">1</a></span><span class="page"><a href="https://www.bigcommerce.com/blog/category/customer-stories/page/2/">2</a></span>
+       </div>
+      </noscript>
+      <div class="alm-btn-wrap" style="visibility: hidden;">
+       <button class="alm-load-more-btn more button" rel="next" type="button">See More Articles</button>
+      </div>
+     </div> 
+    </div> 
+   </div> <!--</END CONTENT>--> 
+   <footer class=""> 
+    <div class="footer">
+     <div class="footer-nav">
+      <div class="footer-nav-column footer-nav-column--legacy">
+       <h4 class="footer-nav-heading">Product</h4>
+       <ul class="footer-links">
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/product/" title="Features" class="footer-links-link ">Features</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/services/" title="Services" class="footer-links-link ">Services</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/enterprise-pricing/" title="Enterprise Pricing" class="footer-links-link ">Enterprise Pricing</a></li>
+       </ul>
+      </div><!--//Footer Column -->
+      <div class="footer-nav-column footer-nav-column--legacy">
+       <h4 class="footer-nav-heading">Partners</h4>
+       <ul class="footer-links">
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/partners/" title="Overview" class="footer-links-link ">Overview</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/partners/become-a-partner/" title="Become a Partner" class="footer-links-link ">Become a Partner</a></li>
+        <li class="footer-links-item"><a href="https://partners.bigcommerce.com/directory/home.aspx" title="Find a Partner" target="_blank" class="footer-links-link ">Find a Partner</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/partners/become-a-partner/affiliate/" title="Affiliates" class="footer-links-link ">Affiliates</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/offers/" title="Partner Offers" class="footer-links-link ">Partner Offers</a></li>
+       </ul>
+      </div><!--//Footer Column -->
+      <div class="footer-nav-column footer-nav-column--legacy">
+       <h4 class="footer-nav-heading">Customers</h4>
+       <ul class="footer-links">
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/case-study/" title="Case Studies" class="footer-links-link ">Case Studies</a></li>
+        <li class="footer-links-item"><a href="/showcase/" title="Store Examples" class="footer-links-link ">Store Examples</a></li>
+       </ul>
+      </div><!--//Footer Column -->
+      <div class="footer-nav-column footer-nav-column--legacy">
+       <h4 class="footer-nav-heading">Resources</h4>
+       <ul class="footer-links">
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/resources/" title="Overview" class="footer-links-link ">Overview</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/articles/" title="Articles" class="footer-links-link ">Articles</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/resources/guides/" title="Guides &amp; White Papers" class="footer-links-link ">Guides &amp; White Papers</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/resources/webinars/" title="Webinars" class="footer-links-link ">Webinars</a></li>
+        <li class="footer-links-item"><a href="/events/" title="Events" class="footer-links-link ">Events</a></li>
+        <li class="footer-links-item"><a href="/blog/" title="Ecommerce Blog" class="footer-links-link ">Ecommerce Blog</a></li>
+        <li class="footer-links-item"><a href="https://medium.com/bigcommerce-developer-blog" title="Developer Blog" target="_blank" class="footer-links-link ">Developer Blog</a></li>
+       </ul>
+      </div><!--//Footer Column -->
+      <div class="footer-nav-column footer-nav-column--legacy">
+       <h4 class="footer-nav-heading">Use Case Solutions</h4>
+       <ul class="footer-links">
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/solutions/headless-commerce/" title="Headless Commerce" class="footer-links-link ">Headless Commerce</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/solutions/b2b-ecommerce-platform/" title="B2B" class="footer-links-link ">B2B</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/solutions/wholesale-ecommerce-platform/" title="Wholesale" class="footer-links-link ">Wholesale</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/solutions/multi-channel/" title="Multi-Channel" class="footer-links-link ">Multi-Channel</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/solutions/international/" title="International" class="footer-links-link ">International</a></li>
+       </ul>
+      </div><!--//Footer Column -->
+      <div class="footer-nav-column footer-nav-column--legacy">
+       <h4 class="footer-nav-heading">Industry Solutions</h4>
+       <ul class="footer-links">
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/solutions/fashion/" title="Apparel &amp; Fashion" class="footer-links-link ">Apparel &amp; Fashion</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/solutions/health-beauty/" title="Health &amp; Beauty" class="footer-links-link ">Health &amp; Beauty</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/solutions/food-beverage/" title="Food &amp; Beverage" class="footer-links-link ">Food &amp; Beverage</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/solutions/manufacturing/" title="Manufacturing" class="footer-links-link ">Manufacturing</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/solutions/automotive/" title="Automotive" class="footer-links-link ">Automotive</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/solutions/cbd/" title="CBD" class="footer-links-link ">CBD</a></li>
+       </ul>
+      </div><!--//Footer Column -->
+      <div class="footer-nav-column footer-nav-column--legacy">
+       <h4 class="footer-nav-heading">Company</h4>
+       <ul class="footer-links">
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/company/leaders/" title="Leaders" class="footer-links-link ">Leaders</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/company/" title="About Us" class="footer-links-link ">About Us</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/press/" title="Press" class="footer-links-link ">Press</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/company/awards/" title="Awards" class="footer-links-link ">Awards</a></li>
+        <li class="footer-links-item"><a href="https://investors.bigcommerce.com/" title="Investor Relations" target="_blank" class="footer-links-link ">Investor Relations</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/terms/" title="Terms of Service" class="footer-links-link ">Terms of Service</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/privacy/" title="Privacy Policy" class="footer-links-link ">Privacy Policy</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/contact/" title="Contact Us" class="footer-links-link ">Contact Us</a></li>
+       </ul>
+      </div><!--//Footer Column -->
+      <div class="footer-nav-column footer-nav-column--legacy">
+       <h4 class="footer-nav-heading">Help Center</h4>
+       <ul class="footer-links">
+        <li class="footer-links-item"><a href="https://support.bigcommerce.com/s/community" title="BigCommerce Community" target="_blank" class="footer-links-link ">BigCommerce Community</a></li>
+        <li class="footer-links-item"><a href="https://support.bigcommerce.com/s/knowledge" title="Knowledge Base" target="_blank" class="footer-links-link ">Knowledge Base</a></li>
+        <li class="footer-links-item"><a href="https://support.bigcommerce.com/s/videos" title="Videos" target="_blank" class="footer-links-link ">Videos</a></li>
+        <li class="footer-links-item"><a href="https://support.bigcommerce.com/s/contact" title="Contact Tech Support" target="_blank" class="footer-links-link ">Contact Tech Support</a></li>
+        <li class="footer-links-item"><a href="https://developer.bigcommerce.com/" title="Developer Center" target="_blank" class="footer-links-link ">Developer Center</a></li>
+        <li class="footer-links-item"><a href="https://developer.bigcommerce.com/api-docs" title="API Documentation" target="_blank" class="footer-links-link ">API Documentation</a></li>
+        <li class="footer-links-item"><a href="https://developer.bigcommerce.com/stencil-docs" title="Theme Documentation" target="_blank" class="footer-links-link ">Theme Documentation</a></li>
+       </ul>
+      </div><!--//Footer Column -->
+     </div><!-- //Footer Nav -->
+     <div class="footer-bottom">
+      <div class="footer-bottom-copyright">
+       <a href="/"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="footer-bottom-logo" data-lazy-src="/assets/svg/bc-logo-bright.svg">
+        <noscript>
+         <img src="/assets/svg/bc-logo-bright.svg" class="footer-bottom-logo">
+        </noscript></a> © Copyright 2003 - 2022 BigCommerce Pty. Ltd. <a href="/" class="footer-links-link">Ecommerce Platform</a>
+      </div>
+      <div class="footer-bottom-social">
+       <ul class="footer-links footer-links--horizontal">
+        <li class="footer-links-item"><a href="http://twitter.com/Bigcommerce" title="Twitter" target="_blank" class="footer-links-link">Twitter</a></li>
+        <li class="footer-links-item"><a href="http://www.facebook.com/Bigcommerce" title="Facebook" target="_blank" class="footer-links-link">Facebook</a></li>
+        <li class="footer-links-item"><a href="http://www.linkedin.com/company/bigcommerce" title="LinkedIn" target="_blank" class="footer-links-link">LinkedIn</a></li>
+        <li class="footer-links-item"><a href="https://www.youtube.com/c/bigcommerce" title="YouTube" target="_blank" class="footer-links-link">YouTube</a></li>
+        <li class="footer-links-item"><a href="http://pinterest.com/bigcommerce/" title="Pinterest" target="_blank" class="footer-links-link">Pinterest</a></li>
+        <li class="footer-links-item"><a href="https://www.instagram.com/bigcommerce/" title="Instagram" target="_blank" class="footer-links-link">Instagram</a></li>
+       </ul>
+      </div>
+     </div><!-- //Footer Bottom --><a href="tel:1-888-699-8911" class="footer-mobileCta">Call us toll-free at 1-888-699-8911</a>
+    </div> 
+   </footer> 
+  </div> 
+  <script type="text/javascript" src="https://www.bigcommerce.com/blog/wp-content/plugins/ultimate-tables/js/jquery.dataTables.min.js?ver=1.0" id="ultimatetables-js" defer></script> 
+  <script type="text/javascript" id="rocket-browser-checker-js-after">
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script> 
+  <script type="text/javascript" id="rocket-preload-links-js-extra">
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/blog(\/(.+\/)?feed\/?.+\/?|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$))|\/wp-admin\/|\/logout\/|\/wp-login.php","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|php|pdf|html|htm","siteUrl":"https:\/\/www.bigcommerce.com\/blog","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script> 
+  <script type="text/javascript" id="rocket-preload-links-js-after">
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script> 
+  <script type="text/javascript" src="https://www.bigcommerce.com/blog/wp-content/themes/bigcommerce/js/theme.min.js?ver=5.9.3" id="site-js-js" defer></script> 
+  <script data-minify="1" type="text/javascript" src="https://www.bigcommerce.com/blog/wp-content/cache/min/1/blog/wp-content/themes/bigcommerce/js/devicepx-jetpack.js?ver=1651084243" id="devicepx-js" defer></script> 
+  <script type="text/javascript" id="ajax-load-more-js-extra">
+/* <![CDATA[ */
+var alm_localize = {"ajaxurl":"https:\/\/www.bigcommerce.com\/blog\/wp-admin\/admin-ajax.php","alm_nonce":"ff1e4fdee2","rest_api":"https:\/\/www.bigcommerce.com\/blog\/wp-json\/","rest_nonce":"f56050eede","pluginurl":"https:\/\/www.bigcommerce.com\/blog\/wp-content\/plugins\/ajax-load-more","speed":"200","ga_debug":"false","results_text":"Viewing {post_count} of {total_posts} results.","no_results_text":"No results found.","alm_debug":"","a11y_focus":"1","site_title":"The BigCommerce Blog","site_tagline":"Ecommerce Blog delivering news, strategy and success stories to power 2x growth for scaling brands."};
+var ajax_load_more_vars = {"total_posts":"8","post_count":"6","id":"ajax-load-more"};
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="https://www.bigcommerce.com/blog/wp-content/plugins/ajax-load-more/core/dist/js/ajax-load-more.min.js?ver=5.5.2" id="ajax-load-more-js" defer></script> 
+  <script type="text/javascript" src="https://www.bigcommerce.com/blog/wp-content/plugins/ajax-load-more-seo/js/alm-seo.min.js?ver=1.9.4" id="ajax-load-more-seo-js" defer></script> 
+  <script>window.lazyLoadOptions={elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}};window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script>
+  <script data-no-minify="1" async src="https://www.bigcommerce.com/blog/wp-content/plugins/wp-rocket/assets/js/lazyload/16.1/lazyload.min.js"></script>
+  <script>function lazyLoadThumb(e){var t='<img loading="lazy" data-lazy-src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"><noscript><img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"></noscript>',a='<div class="play"></div>';return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.dataset.query.length?'':'&'+this.dataset.query;e.setAttribute("src",t.replace("ID",this.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.replaceChild(e,this)}document.addEventListener("DOMContentLoaded",function(){var e,t,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)e=document.createElement("div"),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query", a[t].dataset.query),e.setAttribute("data-src", a[t].dataset.src),e.innerHTML=lazyLoadThumb(a[t].dataset.id),e.onclick=lazyLoadYoutubeIframe,a[t].appendChild(e)});</script>  <!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1652827631 -->
+ </body>
+</html>

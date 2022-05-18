@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+ <head> 
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge"> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>Support IPython Development — IPython</title> 
+  <link rel="stylesheet" href="_static/agogo.css" type="text/css"> 
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css"> 
+  <link rel="stylesheet" type="text/css" href="_static/ipython.css"> 
+  <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script> 
+  <script type="text/javascript" src="_static/jquery.js"></script> 
+  <script type="text/javascript" src="_static/underscore.js"></script> 
+  <script type="text/javascript" src="_static/doctools.js"></script> 
+  <script type="text/javascript" src="_static/language_data.js"></script> 
+  <link rel="shortcut icon" href="_static/favicon.ico"> 
+  <link rel="search" title="Search" href="search.html"> 
+  <link rel="next" title="FAQ" href="faq.html"> 
+  <link rel="prev" title="Documentation" href="documentation.html"> 
+ </head>
+ <body> 
+  <div class="header-wrapper"> 
+   <div class="header"> 
+    <div class="logo">
+     <a href="index.html"> <img class="logo" src="_static/IPy_header.png" alt="Logo"> </a>
+    </div> 
+    <div class="rel"> <a href="https://jupyter.readthedocs.io/en/latest/install.html" target="_blank">Install</a> · <a href="documentation.html">Documentation</a> · <a href="project.html">Project</a> · <a href="https://jupyter.org/" target="_blank">Jupyter</a> · <a href="news.html">News</a> · <a href="citing.html">Cite</a> · <a href="#">Donate</a> · <a href="books.html">Books</a> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="content-wrapper"> 
+   <div class="content"> 
+    <div class="sphinxsidebar" role="navigation" aria-label="main navigation"> 
+     <div class="sphinxsidebarwrapper"> 
+      <div class="sidebarblock"> 
+       <div id="cse-search-form" style="width: 100%;">
+        Loading
+       </div> 
+       <script src="https://www.google.com/jsapi" type="text/javascript"></script> 
+       <script type="text/javascript">
+        google.load('search', '1', {language : 'en'});
+        google.setOnLoadCallback(function() {
+            var customSearchControl = new google.search.CustomSearchControl(
+                    '017950022472296044740:wfr9nyfshwo');
+
+            customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+            var options = new google.search.DrawOptions();
+            options.enableSearchboxOnly("searchresults.html");
+            customSearchControl.draw('cse-search-form', options);
+        }, true);
+    </script> 
+       <link rel="stylesheet" href="https://www.google.com/cse/style/look/default.css" type="text/css"> 
+       <style type="text/css">
+        input.gsc-input {
+            border-color: #BCCDF0;
+        }
+        input.gsc-search-button {
+            border-color: #666666;
+            background-color: #CECECE;
+            padding: 0;
+        }
+        div.sphinxsidebar input[type="text"] {
+            width: 100%;
+        }
+        div.sphinxsidebar input[type="submit"] {
+            width: 100%;
+        }
+    </style> 
+      </div> 
+      <div class="sidebarblock"> 
+       <h3>JupyterCon</h3> <a href="http://jupytercon.com"> <img src="_static/jupytercon-logo.svg" width="180px" alt="JupyterCon 2017"> </a> 
+      </div> 
+      <div class="sidebarblock"> 
+       <h3>Notebook Viewer</h3> Share your notebooks 
+       <div class="nbviewer-thm-random"> 
+        <script src="_static/nbviewer_thm.js"></script> 
+        <script type="text/javascript">
+    nbviewer_random_thumbnail();
+  </script> 
+       </div> 
+      </div> 
+      <div class="sidebarblock"> 
+       <h3>Community</h3> 
+       <ul class="simple"> 
+        <li><a class="reference external" href="https://stackoverflow.com/questions/tagged/ipython"> Stack Overflow</a></li> 
+        <li><a class="reference external" href="https://mail.python.org/mailman/listinfo/ipython-dev"> Mailing list</a></li> 
+        <li><a class="reference external" href="https://github.com/ipython/ipython/issues"> File a bug</a></li> 
+        <li><a class="reference external" href="https://www.reddit.com/r/IPython"> Reddit</a></li> 
+       </ul> 
+       <div style="margin-top:10px"> <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://ipython.org" data-text="IPython - interactive computing." data-via="ipythondev" data-hashtags="ipython" data-dnt="true">Tweet</a> 
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script> <g:plusone size="medium" annotation="none"></g:plusone> 
+       </div> 
+      </div> 
+      <div class="sidebarblock"> 
+       <h3>For developers</h3> 
+       <ul class="simple"> 
+        <li><a class="reference external" href="https://mail.python.org/mailman/listinfo/ipython-dev">Mailing list</a></li> 
+        <li><a class="reference external" href="https://gitter.im/ipython/ipython"> Development Chat Room</a></li> 
+        <li><a class="reference external" href="https://github.com/ipython/ipython/wiki/Dev:-Index">Development information</a></li> 
+        <li><a class="reference external" href="https://travis-ci.org/#!/ipython/ipython"> Travis CI</a></li> 
+        <li><a class="reference external" href="https://github.com/ipython/ipython/wiki">Wiki</a></li> 
+       </ul> 
+      </div> 
+      <div class="sidebarblock"> 
+       <h3>Book</h3> <a href="books.html"><img title="Packt Publishing donates a portion of the proceeds from this book to
+support IPython's development." width="160" height="200" id="sidebar-book-cover" style="margin-bottom: 10px;"></a> 
+       <script language="javascript">
+  // most recent at the end
+  var urls = [
+      "_static/ipython-book.jpg",
+      "_static/learning-jupyter-book.png",
+      "_static/mastering-ipython-book.png",
+      "_static/jupyter-notebook-for-all-I.jpg",
+      "_static/jupyter-notebook-for-all-II.jpg",
+      "_static/jupyter-in-depth.png",
+      "_static/jupyter-for-ds.png",
+      "_static/ipython-cookbook-2nd.png",
+  ]
+
+  function pick(){
+    var len = urls.length;
+    var num = Math.floor(Math.sqrt(Math.random()*len*len));
+    return urls[num];
+  }
+
+  function repick(){
+    $("#sidebar-book-cover").attr("src", pick());
+  }
+
+  window.onload = repick ;
+
+  var seconds = 1000;
+  setInterval(repick, 60*seconds)
+</script> 
+      </div> 
+      <div class="sidebarblock"> 
+       <div class="tile" id="donate"> 
+        <h4>Support IPython</h4> <a style="background: #34677c;
+    border-radius:0px 0px 0px 0px;
+    font-weight:normal;
+    font-family:Arial, Helvetica, sans-serif;
+    border:none;
+    box-shadow:none;
+    left: 50%;
+    margin-left:-72.5px; margin-top: 1em; margin-bottom: 1em;
+    clear: both; display: block;
+    width:145px; height:45px;
+    line-height:2.8;
+    position:relative;
+    font-size:16px;
+    text-align:center;
+    cursor:pointer;
+    color:#fff;
+    text-decoration: none;
+    z-index:1" href="https://numfocus.salsalabs.org/donate-to-ipython/index.html">Donate Now</a> <a href="#">Find out more...</a> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="document"> 
+     <div class="documentwrapper"> 
+      <div class="bodywrapper"> 
+       <div class="body" role="main"> 
+        <div class="section" id="support-ipython-development"> 
+         <h1>Support IPython Development<a class="headerlink" href="#support-ipython-development" title="Permalink to this headline">¶</a></h1> 
+         <p>IPython will always be 100% open source software, free for all to use and released under the liberal terms of the modified BSD license. But while the whole team does its best to work efficiently, and we actively try to find funding from multiple sources, the reality is that we have limited resources and this fact hinders our development capabilities.</p> 
+         <p>If you have found IPython to be useful in your work, research or company, please consider making a donation to the project commensurate with your resources. Any amount helps!</p> <a style="background: #34677c;
+    border-radius:0px 0px 0px 0px;
+    font-weight:normal;
+    font-family:Arial, Helvetica, sans-serif;
+    border:none;
+    box-shadow:none;
+    left: 50%;
+    margin-left:-72.5px; margin-top: 1em; margin-bottom: 1em;
+    display: block;
+    width:145px; height:45px;
+    line-height:2.8;
+    position:relative;
+    font-size:16px;
+    text-align:center;
+    cursor:pointer;
+    color:#fff;
+    text-decoration: none;
+    z-index:1" href="https://numfocus.salsalabs.org/donate-to-ipython/index.html">Donate Now</a>
+         <p>All donations will be used strictly to fund IPython development, by supporting tasks such as developer sprints, better installers, improved documentation and paying for hosting costs for services such as the <a class="reference external" href="http://nbviewer.ipython.org">IPython Notebook Viewer</a>.</p> 
+         <p>Our donations are managed by the <a class="reference external" href="http://numfocus.org">NumFOCUS</a> foundation, which passes 100% of your contribution to the IPython project. NumFOCUS is a 501(c)3 non-profit foundation, so if you are subject to US Tax law, your contributions will be tax-deductible.</p> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="clearer"></div> 
+   </div> 
+  </div> 
+  <div class="footer-wrapper"> 
+   <div class="footer" role="contentinfo">
+     © Copyright the IPython development team. Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 1.8.5. 
+   </div> 
+  </div>  
+ </body>
+</html>

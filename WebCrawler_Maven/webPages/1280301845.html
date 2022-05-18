@@ -1,0 +1,411 @@
+<!doctype html><!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]--><!--[if gt IE 8]><!-->
+<html class="no-js" lang="en"> <!--<![endif]--> 
+ <head> 
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Coroutines — Tornado 6.1 documentation</title> 
+  <link rel="shortcut icon" href="../_static/favicon.ico"> 
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script> 
+  <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script> 
+  <script type="text/javascript" src="../_static/jquery.js"></script> 
+  <script type="text/javascript" src="../_static/underscore.js"></script> 
+  <script type="text/javascript" src="../_static/doctools.js"></script> 
+  <script type="text/javascript" src="../_static/language_data.js"></script> 
+  <script async type="text/javascript" src="https://assets.readthedocs.org/static/javascript/readthedocs-doc-embed.js"></script> 
+  <script type="text/javascript" src="../_static/js/theme.js"></script> 
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css"> 
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css"> 
+  <link rel="index" title="Index" href="../genindex.html"> 
+  <link rel="search" title="Search" href="../search.html"> 
+  <link rel="next" title="Queue example - a concurrent web spider" href="queues.html"> 
+  <link rel="prev" title="Asynchronous and non-Blocking I/O" href="async.html"> <!-- RTD Extra Head --> <!-- 
+Always link to the latest version, as canonical.
+http://docs.readthedocs.org/en/latest/canonical.html
+--> 
+  <link rel="canonical" href="https://www.tornadoweb.org/en/stable/guide/coroutines.html"> 
+  <link rel="stylesheet" href="https://assets.readthedocs.org/static/css/readthedocs-doc-embed.css" type="text/css"> 
+  <script type="application/json" id="READTHEDOCS_DATA">{"ad_free": true, "api_host": "https://readthedocs.org", "build_date": "2020-10-31T00:02:56Z", "builder": "sphinx", "canonical_url": "https://www.tornadoweb.org/en/stable/", "commit": "2047e7ae", "docroot": "/docs/", "features": {"docsearch_disabled": false}, "global_analytics_code": "UA-17997319-1", "language": "en", "page": "guide/coroutines", "programming_language": "py", "project": "tornado", "proxied_api_host": "/_", "source_suffix": ".rst", "subprojects": {}, "theme": "sphinx_rtd_theme", "user_analytics_code": "UA-39143969-1", "version": "stable"}</script> <!--
+Using this variable directly instead of using `JSON.parse` is deprecated.
+The READTHEDOCS_DATA global variable will be removed in the future.
+--> 
+  <script type="text/javascript">
+READTHEDOCS_DATA = JSON.parse(document.getElementById('READTHEDOCS_DATA').innerHTML);
+</script> 
+  <script type="text/javascript" src="https://assets.readthedocs.org/static/javascript/readthedocs-analytics.js" async></script> <!-- end RTD <extrahead> --> 
+ </head> 
+ <body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav"> 
+   <nav data-toggle="wy-nav-shift" class="wy-nav-side"> 
+    <div class="wy-side-scroll"> 
+     <div class="wy-side-nav-search"> <a href="../index.html" class="icon icon-home"> Tornado </a> 
+      <div class="version">
+        stable 
+      </div> 
+      <div role="search"> 
+       <form id="rtd-search-form" class="wy-form" action="../search.html" method="get"> 
+        <input type="text" name="q" placeholder="Search docs"> 
+        <input type="hidden" name="check_keywords" value="yes"> 
+        <input type="hidden" name="area" value="default"> 
+       </form> 
+      </div> 
+     </div> 
+     <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation"> 
+      <ul class="current"> 
+       <li class="toctree-l1 current"><a class="reference internal" href="../guide.html">User’s guide</a>
+        <ul class="current"> 
+         <li class="toctree-l2"><a class="reference internal" href="intro.html">Introduction</a></li> 
+         <li class="toctree-l2"><a class="reference internal" href="async.html">Asynchronous and non-Blocking I/O</a></li> 
+         <li class="toctree-l2 current"><a class="current reference internal" href="#">Coroutines</a></li> 
+         <li class="toctree-l2"><a class="reference internal" href="queues.html"><code class="docutils literal notranslate"><span class="pre">Queue</span></code> example - a concurrent web spider</a></li> 
+         <li class="toctree-l2"><a class="reference internal" href="structure.html">Structure of a Tornado web application</a></li> 
+         <li class="toctree-l2"><a class="reference internal" href="templates.html">Templates and UI</a></li> 
+         <li class="toctree-l2"><a class="reference internal" href="security.html">Authentication and security</a></li> 
+         <li class="toctree-l2"><a class="reference internal" href="running.html">Running and deploying</a></li> 
+        </ul> </li> 
+       <li class="toctree-l1"><a class="reference internal" href="../webframework.html">Web framework</a></li> 
+       <li class="toctree-l1"><a class="reference internal" href="../http.html">HTTP servers and clients</a></li> 
+       <li class="toctree-l1"><a class="reference internal" href="../networking.html">Asynchronous networking</a></li> 
+       <li class="toctree-l1"><a class="reference internal" href="../coroutine.html">Coroutines and concurrency</a></li> 
+       <li class="toctree-l1"><a class="reference internal" href="../integration.html">Integration with other services</a></li> 
+       <li class="toctree-l1"><a class="reference internal" href="../utilities.html">Utilities</a></li> 
+       <li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li> 
+       <li class="toctree-l1"><a class="reference internal" href="../releases.html">Release notes</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </nav> 
+   <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"> 
+    <nav class="wy-nav-top" aria-label="top navigation"> <i data-toggle="wy-nav-top" class="fa fa-bars"></i> <a href="../index.html">Tornado</a> 
+    </nav> 
+    <div class="wy-nav-content"> 
+     <div class="rst-content"> 
+      <div role="navigation" aria-label="breadcrumbs navigation"> 
+       <ul class="wy-breadcrumbs"> 
+        <li><a href="../index.html">Docs</a> »</li> 
+        <li><a href="../guide.html">User’s guide</a> »</li> 
+        <li>Coroutines</li> 
+        <li class="wy-breadcrumbs-aside"> <a href="https://github.com/tornadoweb/tornado/blob/stable/docs/guide/coroutines.rst" class="fa fa-github"> Edit on GitHub</a> </li> 
+       </ul> 
+       <hr> 
+      </div> 
+      <div role="main" class="document" itemscope itemtype="http://schema.org/Article"> 
+       <div itemprop="articleBody"> 
+        <div class="section" id="coroutines"> 
+         <h1>Coroutines<a class="headerlink" href="#coroutines" title="Permalink to this headline">¶</a></h1> 
+         <p><strong>Coroutines</strong> are the recommended way to write asynchronous code in Tornado. Coroutines use the Python <code class="docutils literal notranslate"><span class="pre">await</span></code> or <code class="docutils literal notranslate"><span class="pre">yield</span></code> keyword to suspend and resume execution instead of a chain of callbacks (cooperative lightweight threads as seen in frameworks like <a class="reference external" href="http://www.gevent.org">gevent</a> are sometimes called coroutines as well, but in Tornado all coroutines use explicit context switches and are called as asynchronous functions).</p> 
+         <p>Coroutines are almost as simple as synchronous code, but without the expense of a thread. They also <a class="reference external" href="https://glyph.twistedmatrix.com/2014/02/unyielding.html">make concurrency easier</a> to reason about by reducing the number of places where a context switch can happen.</p> 
+         <p>Example:</p> 
+         <div class="highlight-default notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="k">async</span> <span class="k">def</span> <span class="nf">fetch_coroutine</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+    <span class="n">http_client</span> <span class="o">=</span> <span class="n">AsyncHTTPClient</span><span class="p">()</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">http_client</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">body</span>
+</pre>
+          </div> 
+         </div> 
+         <div class="section" id="native-vs-decorated-coroutines"> <span id="native-coroutines"></span>
+          <h2>Native vs decorated coroutines<a class="headerlink" href="#native-vs-decorated-coroutines" title="Permalink to this headline">¶</a></h2> 
+          <p>Python 3.5 introduced the <code class="docutils literal notranslate"><span class="pre">async</span></code> and <code class="docutils literal notranslate"><span class="pre">await</span></code> keywords (functions using these keywords are also called “native coroutines”). For compatibility with older versions of Python, you can use “decorated” or “yield-based” coroutines using the <a class="reference internal" href="../gen.html#tornado.gen.coroutine" title="tornado.gen.coroutine"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tornado.gen.coroutine</span></code></a> decorator.</p> 
+          <p>Native coroutines are the recommended form whenever possible. Only use decorated coroutines when compatibility with older versions of Python is required. Examples in the Tornado documentation will generally use the native form.</p> 
+          <p>Translation between the two forms is generally straightforward:</p> 
+          <div class="highlight-default notranslate">
+           <div class="highlight">
+            <pre><span></span><span class="c1"># Decorated:                    # Native:</span>
+
+<span class="c1"># Normal function declaration</span>
+<span class="c1"># with decorator                # "async def" keywords</span>
+<span class="nd">@gen</span><span class="o">.</span><span class="n">coroutine</span>
+<span class="k">def</span> <span class="nf">a</span><span class="p">():</span>                        <span class="k">async</span> <span class="k">def</span> <span class="nf">a</span><span class="p">():</span>
+    <span class="c1"># "yield" all async funcs       # "await" all async funcs</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="k">yield</span> <span class="n">c</span><span class="p">()</span>                   <span class="n">b</span> <span class="o">=</span> <span class="k">await</span> <span class="n">c</span><span class="p">()</span>
+    <span class="c1"># "return" and "yield"</span>
+    <span class="c1"># cannot be mixed in</span>
+    <span class="c1"># Python 2, so raise a</span>
+    <span class="c1"># special exception.            # Return normally</span>
+    <span class="k">raise</span> <span class="n">gen</span><span class="o">.</span><span class="n">Return</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>             <span class="k">return</span> <span class="n">b</span>
+</pre>
+           </div> 
+          </div> 
+          <p>Other differences between the two forms of coroutine are outlined below.</p> 
+          <ul class="simple"> 
+           <li>Native coroutines:
+            <ul> 
+             <li>are generally faster.</li> 
+             <li>can use <code class="docutils literal notranslate"><span class="pre">async</span> <span class="pre">for</span></code> and <code class="docutils literal notranslate"><span class="pre">async</span> <span class="pre">with</span></code> statements which make some patterns much simpler.</li> 
+             <li>do not run at all unless you <code class="docutils literal notranslate"><span class="pre">await</span></code> or <code class="docutils literal notranslate"><span class="pre">yield</span></code> them. Decorated coroutines can start running “in the background” as soon as they are called. Note that for both kinds of coroutines it is important to use <code class="docutils literal notranslate"><span class="pre">await</span></code> or <code class="docutils literal notranslate"><span class="pre">yield</span></code> so that any exceptions have somewhere to go.</li> 
+            </ul> </li> 
+           <li>Decorated coroutines:
+            <ul> 
+             <li>have additional integration with the <a class="reference external" href="https://docs.python.org/3.6/library/concurrent.futures.html#module-concurrent.futures" title="(in Python v3.6)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">concurrent.futures</span></code></a> package, allowing the result of <code class="docutils literal notranslate"><span class="pre">executor.submit</span></code> to be yielded directly. For native coroutines, use <a class="reference internal" href="../ioloop.html#tornado.ioloop.IOLoop.run_in_executor" title="tornado.ioloop.IOLoop.run_in_executor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IOLoop.run_in_executor</span></code></a> instead.</li> 
+             <li>support some shorthand for waiting on multiple objects by yielding a list or dict. Use <a class="reference internal" href="../gen.html#tornado.gen.multi" title="tornado.gen.multi"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tornado.gen.multi</span></code></a> to do this in native coroutines.</li> 
+             <li>can support integration with other packages including Twisted via a registry of conversion functions. To access this functionality in native coroutines, use <a class="reference internal" href="../gen.html#tornado.gen.convert_yielded" title="tornado.gen.convert_yielded"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tornado.gen.convert_yielded</span></code></a>.</li> 
+             <li>always return a <a class="reference internal" href="../concurrent.html#tornado.concurrent.Future" title="tornado.concurrent.Future"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Future</span></code></a> object. Native coroutines return an <em>awaitable</em> object that is not a <a class="reference internal" href="../concurrent.html#tornado.concurrent.Future" title="tornado.concurrent.Future"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Future</span></code></a>. In Tornado the two are mostly interchangeable.</li> 
+            </ul> </li> 
+          </ul> 
+         </div> 
+         <div class="section" id="how-it-works"> 
+          <h2>How it works<a class="headerlink" href="#how-it-works" title="Permalink to this headline">¶</a></h2> 
+          <p>This section explains the operation of decorated coroutines. Native coroutines are conceptually similar, but a little more complicated because of the extra integration with the Python runtime.</p> 
+          <p>A function containing <code class="docutils literal notranslate"><span class="pre">yield</span></code> is a <strong>generator</strong>. All generators are asynchronous; when called they return a generator object instead of running to completion. The <code class="docutils literal notranslate"><span class="pre">@gen.coroutine</span></code> decorator communicates with the generator via the <code class="docutils literal notranslate"><span class="pre">yield</span></code> expressions, and with the coroutine’s caller by returning a <a class="reference internal" href="../concurrent.html#tornado.concurrent.Future" title="tornado.concurrent.Future"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Future</span></code></a>.</p> 
+          <p>Here is a simplified version of the coroutine decorator’s inner loop:</p> 
+          <div class="highlight-default notranslate">
+           <div class="highlight">
+            <pre><span></span><span class="c1"># Simplified inner loop of tornado.gen.Runner</span>
+<span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="c1"># send(x) makes the current yield return x.</span>
+    <span class="c1"># It returns when the next yield is reached</span>
+    <span class="n">future</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">gen</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">next</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">callback</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+    <span class="n">future</span><span class="o">.</span><span class="n">add_done_callback</span><span class="p">(</span><span class="n">callback</span><span class="p">)</span>
+</pre>
+           </div> 
+          </div> 
+          <p>The decorator receives a <a class="reference internal" href="../concurrent.html#tornado.concurrent.Future" title="tornado.concurrent.Future"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Future</span></code></a> from the generator, waits (without blocking) for that <a class="reference internal" href="../concurrent.html#tornado.concurrent.Future" title="tornado.concurrent.Future"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Future</span></code></a> to complete, then “unwraps” the <a class="reference internal" href="../concurrent.html#tornado.concurrent.Future" title="tornado.concurrent.Future"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Future</span></code></a> and sends the result back into the generator as the result of the <code class="docutils literal notranslate"><span class="pre">yield</span></code> expression. Most asynchronous code never touches the <a class="reference internal" href="../concurrent.html#tornado.concurrent.Future" title="tornado.concurrent.Future"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Future</span></code></a> class directly except to immediately pass the <a class="reference internal" href="../concurrent.html#tornado.concurrent.Future" title="tornado.concurrent.Future"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Future</span></code></a> returned by an asynchronous function to a <code class="docutils literal notranslate"><span class="pre">yield</span></code> expression.</p> 
+         </div> 
+         <div class="section" id="how-to-call-a-coroutine"> 
+          <h2>How to call a coroutine<a class="headerlink" href="#how-to-call-a-coroutine" title="Permalink to this headline">¶</a></h2> 
+          <p>Coroutines do not raise exceptions in the normal way: any exception they raise will be trapped in the awaitable object until it is yielded. This means it is important to call coroutines in the right way, or you may have errors that go unnoticed:</p> 
+          <div class="highlight-default notranslate">
+           <div class="highlight">
+            <pre><span></span><span class="k">async</span> <span class="k">def</span> <span class="nf">divide</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">/</span> <span class="n">y</span>
+
+<span class="k">def</span> <span class="nf">bad_call</span><span class="p">():</span>
+    <span class="c1"># This should raise a ZeroDivisionError, but it won't because</span>
+    <span class="c1"># the coroutine is called incorrectly.</span>
+    <span class="n">divide</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre>
+           </div> 
+          </div> 
+          <p>In nearly all cases, any function that calls a coroutine must be a coroutine itself, and use the <code class="docutils literal notranslate"><span class="pre">await</span></code> or <code class="docutils literal notranslate"><span class="pre">yield</span></code> keyword in the call. When you are overriding a method defined in a superclass, consult the documentation to see if coroutines are allowed (the documentation should say that the method “may be a coroutine” or “may return a <a class="reference internal" href="../concurrent.html#tornado.concurrent.Future" title="tornado.concurrent.Future"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Future</span></code></a>”):</p> 
+          <div class="highlight-default notranslate">
+           <div class="highlight">
+            <pre><span></span><span class="k">async</span> <span class="k">def</span> <span class="nf">good_call</span><span class="p">():</span>
+    <span class="c1"># await will unwrap the object returned by divide() and raise</span>
+    <span class="c1"># the exception.</span>
+    <span class="k">await</span> <span class="n">divide</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre>
+           </div> 
+          </div> 
+          <p>Sometimes you may want to “fire and forget” a coroutine without waiting for its result. In this case it is recommended to use <a class="reference internal" href="../ioloop.html#tornado.ioloop.IOLoop.spawn_callback" title="tornado.ioloop.IOLoop.spawn_callback"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IOLoop.spawn_callback</span></code></a>, which makes the <a class="reference internal" href="../ioloop.html#tornado.ioloop.IOLoop" title="tornado.ioloop.IOLoop"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IOLoop</span></code></a> responsible for the call. If it fails, the <a class="reference internal" href="../ioloop.html#tornado.ioloop.IOLoop" title="tornado.ioloop.IOLoop"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IOLoop</span></code></a> will log a stack trace:</p> 
+          <div class="highlight-default notranslate">
+           <div class="highlight">
+            <pre><span></span><span class="c1"># The IOLoop will catch the exception and print a stack trace in</span>
+<span class="c1"># the logs. Note that this doesn't look like a normal call, since</span>
+<span class="c1"># we pass the function object to be called by the IOLoop.</span>
+<span class="n">IOLoop</span><span class="o">.</span><span class="n">current</span><span class="p">()</span><span class="o">.</span><span class="n">spawn_callback</span><span class="p">(</span><span class="n">divide</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre>
+           </div> 
+          </div> 
+          <p>Using <a class="reference internal" href="../ioloop.html#tornado.ioloop.IOLoop.spawn_callback" title="tornado.ioloop.IOLoop.spawn_callback"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IOLoop.spawn_callback</span></code></a> in this way is <em>recommended</em> for functions using <code class="docutils literal notranslate"><span class="pre">@gen.coroutine</span></code>, but it is <em>required</em> for functions using <code class="docutils literal notranslate"><span class="pre">async</span> <span class="pre">def</span></code> (otherwise the coroutine runner will not start).</p> 
+          <p>Finally, at the top level of a program, <em>if the IOLoop is not yet running,</em> you can start the <a class="reference internal" href="../ioloop.html#tornado.ioloop.IOLoop" title="tornado.ioloop.IOLoop"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IOLoop</span></code></a>, run the coroutine, and then stop the <a class="reference internal" href="../ioloop.html#tornado.ioloop.IOLoop" title="tornado.ioloop.IOLoop"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IOLoop</span></code></a> with the <a class="reference internal" href="../ioloop.html#tornado.ioloop.IOLoop.run_sync" title="tornado.ioloop.IOLoop.run_sync"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IOLoop.run_sync</span></code></a> method. This is often used to start the <code class="docutils literal notranslate"><span class="pre">main</span></code> function of a batch-oriented program:</p> 
+          <div class="highlight-default notranslate">
+           <div class="highlight">
+            <pre><span></span><span class="c1"># run_sync() doesn't take arguments, so we must wrap the</span>
+<span class="c1"># call in a lambda.</span>
+<span class="n">IOLoop</span><span class="o">.</span><span class="n">current</span><span class="p">()</span><span class="o">.</span><span class="n">run_sync</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="n">divide</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+</pre>
+           </div> 
+          </div> 
+         </div> 
+         <div class="section" id="coroutine-patterns"> 
+          <h2>Coroutine patterns<a class="headerlink" href="#coroutine-patterns" title="Permalink to this headline">¶</a></h2> 
+          <div class="section" id="calling-blocking-functions"> 
+           <h3>Calling blocking functions<a class="headerlink" href="#calling-blocking-functions" title="Permalink to this headline">¶</a></h3> 
+           <p>The simplest way to call a blocking function from a coroutine is to use <a class="reference internal" href="../ioloop.html#tornado.ioloop.IOLoop.run_in_executor" title="tornado.ioloop.IOLoop.run_in_executor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IOLoop.run_in_executor</span></code></a>, which returns <code class="docutils literal notranslate"><span class="pre">Futures</span></code> that are compatible with coroutines:</p> 
+           <div class="highlight-default notranslate">
+            <div class="highlight">
+             <pre><span></span><span class="k">async</span> <span class="k">def</span> <span class="nf">call_blocking</span><span class="p">():</span>
+    <span class="k">await</span> <span class="n">IOLoop</span><span class="o">.</span><span class="n">current</span><span class="p">()</span><span class="o">.</span><span class="n">run_in_executor</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">blocking_func</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>
+</pre>
+            </div> 
+           </div> 
+          </div> 
+          <div class="section" id="parallelism"> 
+           <h3>Parallelism<a class="headerlink" href="#parallelism" title="Permalink to this headline">¶</a></h3> 
+           <p>The <a class="reference internal" href="../gen.html#tornado.gen.multi" title="tornado.gen.multi"><code class="xref py py-obj docutils literal notranslate"><span class="pre">multi</span></code></a> function accepts lists and dicts whose values are <code class="docutils literal notranslate"><span class="pre">Futures</span></code>, and waits for all of those <code class="docutils literal notranslate"><span class="pre">Futures</span></code> in parallel:</p> 
+           <div class="highlight-python notranslate">
+            <div class="highlight">
+             <pre><span></span><span class="kn">from</span> <span class="nn">tornado.gen</span> <span class="kn">import</span> <span class="n">multi</span>
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">parallel_fetch</span><span class="p">(</span><span class="n">url1</span><span class="p">,</span> <span class="n">url2</span><span class="p">):</span>
+    <span class="n">resp1</span><span class="p">,</span> <span class="n">resp2</span> <span class="o">=</span> <span class="k">await</span> <span class="n">multi</span><span class="p">([</span><span class="n">http_client</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="n">url1</span><span class="p">),</span>
+                                <span class="n">http_client</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="n">url2</span><span class="p">)])</span>
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">parallel_fetch_many</span><span class="p">(</span><span class="n">urls</span><span class="p">):</span>
+    <span class="n">responses</span> <span class="o">=</span> <span class="k">await</span> <span class="n">multi</span> <span class="p">([</span><span class="n">http_client</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">urls</span><span class="p">])</span>
+    <span class="c1"># responses is a list of HTTPResponses in the same order</span>
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">parallel_fetch_dict</span><span class="p">(</span><span class="n">urls</span><span class="p">):</span>
+    <span class="n">responses</span> <span class="o">=</span> <span class="k">await</span> <span class="n">multi</span><span class="p">({</span><span class="n">url</span><span class="p">:</span> <span class="n">http_client</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+                             <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">urls</span><span class="p">})</span>
+    <span class="c1"># responses is a dict {url: HTTPResponse}</span>
+</pre>
+            </div> 
+           </div> 
+           <p>In decorated coroutines, it is possible to <code class="docutils literal notranslate"><span class="pre">yield</span></code> the list or dict directly:</p> 
+           <div class="highlight-default notranslate">
+            <div class="highlight">
+             <pre><span></span><span class="nd">@gen</span><span class="o">.</span><span class="n">coroutine</span>
+<span class="k">def</span> <span class="nf">parallel_fetch_decorated</span><span class="p">(</span><span class="n">url1</span><span class="p">,</span> <span class="n">url2</span><span class="p">):</span>
+    <span class="n">resp1</span><span class="p">,</span> <span class="n">resp2</span> <span class="o">=</span> <span class="k">yield</span> <span class="p">[</span><span class="n">http_client</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="n">url1</span><span class="p">),</span>
+                          <span class="n">http_client</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="n">url2</span><span class="p">)]</span>
+</pre>
+            </div> 
+           </div> 
+          </div> 
+          <div class="section" id="interleaving"> 
+           <h3>Interleaving<a class="headerlink" href="#interleaving" title="Permalink to this headline">¶</a></h3> 
+           <p>Sometimes it is useful to save a <a class="reference internal" href="../concurrent.html#tornado.concurrent.Future" title="tornado.concurrent.Future"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Future</span></code></a> instead of yielding it immediately, so you can start another operation before waiting.</p> 
+           <div class="highlight-python notranslate">
+            <div class="highlight">
+             <pre><span></span><span class="kn">from</span> <span class="nn">tornado.gen</span> <span class="kn">import</span> <span class="n">convert_yielded</span>
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="c1"># convert_yielded() starts the native coroutine in the background.</span>
+    <span class="c1"># This is equivalent to asyncio.ensure_future() (both work in Tornado).</span>
+    <span class="n">fetch_future</span> <span class="o">=</span> <span class="n">convert_yielded</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fetch_next_chunk</span><span class="p">())</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">chunk</span> <span class="o">=</span> <span class="k">yield</span> <span class="n">fetch_future</span>
+        <span class="k">if</span> <span class="n">chunk</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> <span class="k">break</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">chunk</span><span class="p">)</span>
+        <span class="n">fetch_future</span> <span class="o">=</span> <span class="n">convert_yielded</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fetch_next_chunk</span><span class="p">())</span>
+        <span class="k">yield</span> <span class="bp">self</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+</pre>
+            </div> 
+           </div> 
+           <p>This is a little easier to do with decorated coroutines, because they start immediately when called:</p> 
+           <div class="highlight-python notranslate">
+            <div class="highlight">
+             <pre><span></span><span class="nd">@gen</span><span class="o">.</span><span class="n">coroutine</span>
+<span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">fetch_future</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fetch_next_chunk</span><span class="p">()</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">chunk</span> <span class="o">=</span> <span class="k">yield</span> <span class="n">fetch_future</span>
+        <span class="k">if</span> <span class="n">chunk</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> <span class="k">break</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">chunk</span><span class="p">)</span>
+        <span class="n">fetch_future</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fetch_next_chunk</span><span class="p">()</span>
+        <span class="k">yield</span> <span class="bp">self</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+</pre>
+            </div> 
+           </div> 
+          </div> 
+          <div class="section" id="looping"> 
+           <h3>Looping<a class="headerlink" href="#looping" title="Permalink to this headline">¶</a></h3> 
+           <p>In native coroutines, <code class="docutils literal notranslate"><span class="pre">async</span> <span class="pre">for</span></code> can be used. In older versions of Python, looping is tricky with coroutines since there is no way to <code class="docutils literal notranslate"><span class="pre">yield</span></code> on every iteration of a <code class="docutils literal notranslate"><span class="pre">for</span></code> or <code class="docutils literal notranslate"><span class="pre">while</span></code> loop and capture the result of the yield. Instead, you’ll need to separate the loop condition from accessing the results, as in this example from <a class="reference external" href="https://motor.readthedocs.io/en/stable/">Motor</a>:</p> 
+           <div class="highlight-default notranslate">
+            <div class="highlight">
+             <pre><span></span><span class="kn">import</span> <span class="nn">motor</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">motor</span><span class="o">.</span><span class="n">MotorClient</span><span class="p">()</span><span class="o">.</span><span class="n">test</span>
+
+<span class="nd">@gen</span><span class="o">.</span><span class="n">coroutine</span>
+<span class="k">def</span> <span class="nf">loop_example</span><span class="p">(</span><span class="n">collection</span><span class="p">):</span>
+    <span class="n">cursor</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">collection</span><span class="o">.</span><span class="n">find</span><span class="p">()</span>
+    <span class="k">while</span> <span class="p">(</span><span class="k">yield</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetch_next</span><span class="p">):</span>
+        <span class="n">doc</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">next_object</span><span class="p">()</span>
+</pre>
+            </div> 
+           </div> 
+          </div> 
+          <div class="section" id="running-in-the-background"> 
+           <h3>Running in the background<a class="headerlink" href="#running-in-the-background" title="Permalink to this headline">¶</a></h3> 
+           <p><a class="reference internal" href="../ioloop.html#tornado.ioloop.PeriodicCallback" title="tornado.ioloop.PeriodicCallback"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PeriodicCallback</span></code></a> is not normally used with coroutines. Instead, a coroutine can contain a <code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">True:</span></code> loop and use <a class="reference internal" href="../gen.html#tornado.gen.sleep" title="tornado.gen.sleep"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tornado.gen.sleep</span></code></a>:</p> 
+           <div class="highlight-default notranslate">
+            <div class="highlight">
+             <pre><span></span><span class="k">async</span> <span class="k">def</span> <span class="nf">minute_loop</span><span class="p">():</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">await</span> <span class="n">do_something</span><span class="p">()</span>
+        <span class="k">await</span> <span class="n">gen</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+
+<span class="c1"># Coroutines that loop forever are generally started with</span>
+<span class="c1"># spawn_callback().</span>
+<span class="n">IOLoop</span><span class="o">.</span><span class="n">current</span><span class="p">()</span><span class="o">.</span><span class="n">spawn_callback</span><span class="p">(</span><span class="n">minute_loop</span><span class="p">)</span>
+</pre>
+            </div> 
+           </div> 
+           <p>Sometimes a more complicated loop may be desirable. For example, the previous loop runs every <code class="docutils literal notranslate"><span class="pre">60+N</span></code> seconds, where <code class="docutils literal notranslate"><span class="pre">N</span></code> is the running time of <code class="docutils literal notranslate"><span class="pre">do_something()</span></code>. To run exactly every 60 seconds, use the interleaving pattern from above:</p> 
+           <div class="highlight-default notranslate">
+            <div class="highlight">
+             <pre><span></span><span class="k">async</span> <span class="k">def</span> <span class="nf">minute_loop2</span><span class="p">():</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">nxt</span> <span class="o">=</span> <span class="n">gen</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>   <span class="c1"># Start the clock.</span>
+        <span class="k">await</span> <span class="n">do_something</span><span class="p">()</span>  <span class="c1"># Run while the clock is ticking.</span>
+        <span class="k">await</span> <span class="n">nxt</span>             <span class="c1"># Wait for the timer to run out.</span>
+</pre>
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <footer> 
+       <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation"> <a href="queues.html" class="btn btn-neutral float-right" title="Queue example - a concurrent web spider" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a> <a href="async.html" class="btn btn-neutral float-left" title="Asynchronous and non-Blocking I/O" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a> 
+       </div> 
+       <hr> 
+       <div role="contentinfo"> 
+        <p> © Copyright The Tornado Authors <span class="commit"> Revision <code>2047e7ae</code>. </span> </p> 
+       </div> Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+      </footer> 
+     </div> 
+    </div> 
+   </section> 
+  </div> 
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions"> <span class="rst-current-version" data-toggle="rst-current-version"> <span class="fa fa-book"> Read the Docs</span> v: stable <span class="fa fa-caret-down"></span> </span> 
+   <div class="rst-other-versions"> 
+    <dl> 
+     <dt>
+      Versions
+     </dt> 
+     <dd>
+      <a href="/en/latest/">latest</a>
+     </dd> 
+     <dd>
+      <a href="/en/stable/">stable</a>
+     </dd> 
+     <dd>
+      <a href="/en/branch6.0/">branch6.0</a>
+     </dd> 
+     <dd>
+      <a href="/en/branch5.1/">branch5.1</a>
+     </dd> 
+     <dd>
+      <a href="/en/branch4.5/">branch4.5</a>
+     </dd> 
+    </dl> 
+    <dl> 
+     <dt>
+      Downloads
+     </dt> 
+     <dd>
+      <a href="//www.tornadoweb.org/_/downloads/en/stable/pdf/">pdf</a>
+     </dd> 
+     <dd>
+      <a href="//www.tornadoweb.org/_/downloads/en/stable/htmlzip/">html</a>
+     </dd> 
+     <dd>
+      <a href="//www.tornadoweb.org/_/downloads/en/stable/epub/">epub</a>
+     </dd> 
+    </dl> 
+    <dl> 
+     <dt>
+      On Read the Docs
+     </dt> 
+     <dd> <a href="//readthedocs.org/projects/tornado/?fromdocs=tornado">Project Home</a> 
+     </dd> 
+     <dd> <a href="//readthedocs.org/builds/tornado/?fromdocs=tornado">Builds</a> 
+     </dd> 
+    </dl> 
+    <hr> Free document hosting provided by <a href="http://www.readthedocs.org">Read the Docs</a>. 
+   </div> 
+  </div> 
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+ </body>
+</html>

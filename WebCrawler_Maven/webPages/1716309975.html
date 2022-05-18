@@ -1,0 +1,631 @@
+<!doctype html>
+<html lang="en-US"> 
+ <head> 
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"> 
+  <title>Create Your Own Filters &amp; Lenses • Snapchat</title> <!-- Style --> 
+  <link rel="stylesheet" href="/static/style-guide/styles/semantic.min.css"> 
+  <link rel="stylesheet" href="/static/style-guide/styles/snapchat.css"> <!-- Scripts --> 
+  <script src="/static/js/utils.js" type="module"></script> 
+  <script src="/static/style-guide/scripts/jquery-2.1.4.min.js"></script> 
+  <script src="/static/style-guide/scripts/jquery.cookie.js"></script> 
+  <script src="/static/style-guide/scripts/semantic.min.js"></script> 
+  <script src="/static/style-guide/home/scripts/jquery.scrollTo.min.js"></script> 
+  <script async src="/static/js/autotrack.js"></script> 
+  <script src="/static/js/country.js"></script> 
+  <meta name="twitter:card" content="app"> 
+  <meta name="twitter:site" content="@Snapchat"> 
+  <meta name="twitter:description" content="Create your own Snapchat Filters and Lenses! Whether it’s a Filter that frames the moments at a friend’s wedding, or a Lens that makes birthdays even more hilarious, your custom creations will make any event more special."> 
+  <meta name="twitter:app:id:iphone" content="447188370"> 
+  <meta name="twitter:app:id:ipad" content="447188370"> 
+  <meta name="twitter:app:id:googleplay" content="com.snapchat.android"> 
+  <meta name="description" content="Create your own Snapchat Filters and Lenses! Whether it’s a Filter that frames the moments at a friend’s wedding, or a Lens that makes birthdays even more hilarious, your custom creations will make any event more special."> 
+  <meta name="keywords" content="Snapchat, Geofilters, Filters, Lenses, Bitmoji, Lens Studio, Creative Tools, Create Your Own, AR, Augmented Reality"> 
+  <link rel="stylesheet" href="/create/css/create.css"> 
+  <link rel="stylesheet" href="/static/style-guide/styles/semantic.min.css"> 
+  <link rel="stylesheet" href="/_assets/main.css"> 
+  <script src="/_assets/main.js"></script> <!-- Geofilter Carousel --> <!-- Requires jQuery --> 
+  <link rel="stylesheet" type="text/css" href="/static/css/slick.css"> 
+  <script src="/static/style-guide/scripts/jquery-2.1.4.min.js"></script> 
+  <script src="/static/style-guide/scripts/jquery.cookie.js"></script> 
+  <script src="/static/style-guide/scripts/semantic.min.js"></script> 
+  <script src="/static/style-guide/home/scripts/jquery.scrollTo.min.js"></script> 
+  <script src="/create/src/geofilters.js"></script> 
+  <link rel="shortcut icon" type="image/png" href="/favicon.png"> 
+  <link rel="apple-touch-icon" sizes="100x100" href="/static/assets/icon_100.png"> 
+ </head> 
+ <body class="sc-header-replace-ghost-home-with-text sc-header-selected-create sc-header-white"> 
+  <div id="cookie-popup"></div> 
+  <script src="/sentry/sentry.js/"></script> 
+  <script src="/cookie-settings/src/cookiePopup.js/"></script> 
+  <div style="height:46px;">
+   <style>
+      .header-container {
+        position: fixed;
+        width: 100%;
+        font-size: 14px;
+        background-color: #FFFC00;
+        height: 46px;
+        line-height: 46px;
+        z-index: 1000;
+      }
+
+      .globalnav-container {
+        width: 92.3%;
+        max-width: 1070px;
+        margin: auto;
+        white-space: nowrap;
+      }
+
+      .globalnav-container .globalnav-item {
+        margin-right: 24px;
+        display: inline;
+        padding: 2px;
+      }
+
+      .globalnav-container .globalnav-item:hover {
+        border-bottom: 2px solid rgba(38, 38, 38, 0.5);
+      }
+
+      .sc-header-selected-home .globalnav-home-link,
+      .sc-header-selected-create .globalnav-create-link,
+      .sc-header-selected-live .globalnav-live-link,
+      .sc-header-selected-snapcodes .globalnav-snapcodes-link,
+      .sc-header-selected-ads .globalnav-ads-link,
+      .sc-header-selected-download .globalnav-download-link {
+        border-bottom: 2px solid rgb(38, 38, 38);
+      }
+
+      .globalnav-container .globalnav-link {
+        color: rgb(38, 38, 38);
+        font-weight: 500;
+        text-decoration: none;
+        line-height: 22px;
+        font-size: 14px;
+        letter-spacing: .05px;
+      }
+
+      .globalnav-container .globalnav-ghost-icon-link {
+        position: absolute;
+        top: 9px;
+      }
+
+      .globalnav-container .globalnav-home-link {
+        visibility: hidden;
+      }
+
+      .header-hamburger {
+        display: none;
+      }
+
+      .sc-header-replace-ghost-home-with-text .globalnav-container .globalnav-ghost-icon-link {
+        display: none;
+      }
+      .sc-header-replace-ghost-home-with-text .globalnav-container .globalnav-home-link {
+        visibility: inherit;
+      }
+      .sc-header-white .header-container,
+      .sc-header-white.header-container {
+        background-color: white;
+      }
+
+      @media (min-width: 1070px) {
+        .sc-header-white .header-container,
+        .sc-header-white.header-container {
+          border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+      }
+
+      @media (max-width: 1070px) {
+        .globalnav-container {
+          position: absolute;
+          top: 46px;
+          width: 100%;
+          border-top: 1px solid #D4D4D4;
+          border-radius: 2px;
+          max-height: 0;
+          transition: max-height .25s ease-in-out;
+          overflow: hidden;
+        }
+        .globalnav-container .globalnav-ghost-icon-link {
+          display: none;
+        }
+
+        .hamburger-expanded .globalnav-container {
+          border-bottom: 1px solid #D4D4D4;
+          max-height: 620px;
+        }
+
+        .globalnav-container .globalnav-home-link {
+          visibility: inherit;
+        }
+
+        /* a hover selector to overwrite desktop hover hightlight */
+        .globalnav-container .globalnav-item,
+        .globalnav-container .globalnav-item:hover {
+          display: block;
+          width: 100%;
+          padding: 0;
+          text-align: right;
+          background-color: white;
+          border-bottom: 1px solid #F8F9FB;
+        }
+
+        .globalnav-container .globalnav-item:hover {
+          background-color: #F8F9FB;
+        }
+
+        .globalnav-container .globalnav-item .globalnav-link {
+          display: block;
+          padding-right: 13px;
+          line-height: 46px;
+        }
+
+        .sc-header-selected-home .globalnav-home-link,
+        .sc-header-selected-create .globalnav-create-link,
+        .sc-header-selected-live .globalnav-live-link,
+        .sc-header-selected-snapcodes .globalnav-snapcodes-link,
+        .sc-header-selected-ads .globalnav-ads-link,
+        .sc-header-selected-download .globalnav-download-link {
+          background-color: #F8F9FB;
+        }
+
+        .header-hamburger {
+          display: block;
+          width: 20px;
+          height: 15px;
+          line-height: 15px;
+          position: relative;
+          top: 14px;
+          right: 15px;
+          float: right;
+          margin: 0;
+          transform: rotate(0deg);
+          cursor: pointer;
+        }
+
+        .header-hamburger span {
+          display: block;
+          position: absolute;
+          height: 2.5px;
+          width: 100%;
+          background: rgb(38, 38, 38);
+          box-sizing: border-box;
+          border-radius: 1px;
+          opacity: 1;
+          left: 0;
+          transform: rotate(0deg);
+          transition: .25s ease-in-out;
+          transition-property: transform, opacity;
+        }
+
+        .header-hamburger span:nth-child(1) {
+          top: 0px;
+          transform-origin: left center;
+        }
+
+        .header-hamburger span:nth-child(2) {
+          top: 6px;
+          transform-origin: left center;
+        }
+
+        .header-hamburger span:nth-child(3) {
+          top: 12px;
+          transform-origin: left center;
+        }
+
+        .hamburger-expanded .header-hamburger span:nth-child(1) {
+          transform: rotate(45deg) translateY(-1.5px);
+        }
+
+        .hamburger-expanded .header-hamburger span:nth-child(2) {
+          transform: scaleX(0);
+          opacity: 0;
+        }
+
+        .hamburger-expanded .header-hamburger span:nth-child(3) {
+          transform: rotate(-45deg) translateY(1px);
+        }
+      }
+    </style>
+   <div class="header-container">
+    <div class="header-hamburger" id="headerHamburger">
+     <span></span><span></span><span></span>
+    </div>
+    <div class="globalnav-container">
+     <a href="https://www.snapchat.com/" class="globalnav-ghost-icon-link"><img src="https://www.snapchat.com/static/style-guide/images/ghost/ghost.svg" alt="Snapchat" style="height:64px;"></a>
+     <div class="globalnav-item globalnav-home-link">
+      <a class="globalnav-link" href="https://www.snapchat.com/">Home</a>
+     </div>
+     <div class="globalnav-item globalnav-download-link">
+      <a class="globalnav-link" href="https://www.snapchat.com/download">Download</a>
+     </div>
+     <div class="globalnav-item globalnav-snapcodes-link">
+      <a class="globalnav-link" href="https://story.snapchat.com/spotlight">Spotlight</a>
+     </div>
+     <div class="globalnav-item globalnav-stories-link">
+      <a class="globalnav-link" href="https://story.snapchat.com">Stories</a>
+     </div>
+     <div class="globalnav-item globalnav-map-link">
+      <a class="globalnav-link" href="https://map.snapchat.com">Map</a>
+     </div>
+     <div class="globalnav-item globalnav-ads-link">
+      <a class="globalnav-link" href="https://www.snapchat.com/ads">Ads</a>
+     </div>
+     <div class="globalnav-item globalnav-spectacles-link">
+      <a class="globalnav-link" href="https://www.spectacles.com">Spectacles</a>
+     </div>
+     <div class="globalnav-item globalnav-create-link">
+      <a class="globalnav-link" href="https://www.snapchat.com/create">Filters &amp; Lenses</a>
+     </div>
+     <div class="globalnav-item globalnav-lensstudio-link">
+      <a class="globalnav-link" href="https://lensstudio.snapchat.com">Lens Studio</a>
+     </div>
+     <div class="globalnav-item globalnav-kit-link">
+      <a class="globalnav-link" href="https://kit.snapchat.com">Kit</a>
+     </div>
+     <div class="globalnav-item globalnav-snapcodes-link">
+      <a class="globalnav-link" href="https://snapcodes.snapchat.com">Snapcodes</a>
+     </div>
+     <div class="globalnav-item globalnav-snapcodes-link">
+      <a class="globalnav-link" href="https://support.snapchat.com">Support</a>
+     </div>
+     <div class="globalnav-item globalnav-store-link">
+      <a class="globalnav-link" href="https://store.snapchat.com">Store</a>
+     </div>
+    </div>
+   </div>
+  </div> <!-- Content --> 
+  <section class="splash"> 
+   <div class="splash-video-wrapper"> 
+    <video class="splash-video" playsinline="" autoplay="" muted loop="" poster="/images/create/geofilters_ambient.jpg" id="bgvid"> 
+     <source src="https://storage.googleapis.com/snapchat-web/geofilters/splash-video/63fc2a7e-a18c-4e2f-9ab8-b46980013bbc.mp4" type="video/mp4"> 
+     <source src="https://storage.googleapis.com/snapchat-web/geofilters/splash-video/63fc2a7e-a18c-4e2f-9ab8-b46980013bbc.webm" type="video/webm"> 
+    </video> 
+   </div> 
+   <div class="splash-overlay"> 
+    <div class="splash-headline"> 
+     <h1>Create Your Own</h1> 
+     <p>Personalize your own Filters and Lenses! Whether it's a Filter that frames the moments at a friend's wedding, or a Lens that makes birthdays even more hilarious, your custom creations will make any event more special.</p> 
+     <p class="button-container"> <a class="slide-link button button-pill button-yellow" href="#geofilters-products">Get Started</a> </p> 
+    </div> 
+    <div class="splash-bottom"> 
+     <div class="splash-actions"> <a href="#geofilters-products" class="slide-link button button-pill button-transparent">LEARN MORE 
+       <div class="caret"></div> </a> 
+     </div> 
+     <div> 
+      <div class="splash-ghost"></div> 
+     </div> 
+    </div> 
+   </div> 
+  </section> 
+  <section class="section" id="geofilters-products"> 
+   <h2 class="product-types-title"><span class="section-title">Creative Tools</span></h2> 
+   <div class="geofilters-product-container"> 
+    <div id="product-community" class="geofilters-product"> <a class="utm-geofilters-product-link" href="/create/submit.html?utm_source=snapchat&amp;utm_medium=site&amp;utm_campaign=community"> 
+      <div class="tile"> 
+       <div class="icon icon-community"></div> 
+       <div class="bottom"> 
+        <p class="name">Community Filters</p> 
+        <p class="description">Create a free filter for a location or moment that is special to you!</p> 
+       </div> 
+      </div> </a> 
+     <p class="button-container"> <a class="slide-link button button-pill button-secondary-yellow utm-geofilters-product-btn-link" href="/create/submit.html?utm_source=snapchat&amp;utm_medium=site&amp;utm_campaign=community">Submit Now</a> </p> 
+    </div> 
+    <div id="product-filter" class="geofilters-product"> <a class="utm-geofilters-product-link" href="/create?product_type=filter&amp;utm_source=snapchat&amp;utm_medium=site&amp;utm_campaign=filter"> 
+      <div class="tile"> 
+       <div class="icon icon-filter"></div> 
+       <div class="bottom"> 
+        <p class="name">Filters</p> 
+        <p class="description">Frames and artwork friends can add to their Snaps.</p> 
+       </div> 
+      </div> </a> 
+     <p class="button-container"> <a class="slide-link button button-pill button-secondary-yellow utm-geofilters-product-btn-link" href="#section-filter">Learn more</a> </p> 
+    </div> 
+    <div id="product-lens" class="geofilters-product"> <a class="utm-geofilters-product-link" href="https://lensstudio.snapchat.com"> 
+      <div class="tile"> 
+       <div class="icon icon-lens"></div> 
+       <div class="bottom"> 
+        <p class="name">Lenses</p> 
+        <p class="description">Augmented reality experiences friends can play with.</p> 
+       </div> 
+      </div> </a> 
+     <p class="button-container"> <a class="slide-link button button-pill button-secondary-yellow utm-geofilters-product-btn-link" href="#section-lens">Learn more</a> </p> 
+    </div> 
+    <div id="product-ads" class="geofilters-product"> <a class="utm-geofilters-product-link" href="/ads"> 
+      <div class="tile"> 
+       <div class="icon icon-ads"></div> 
+       <div class="bottom"> 
+        <p class="name">Advertise on Snapchat</p> 
+        <p class="description">Promote your website, app, or products with ads on Snapchat.</p> 
+       </div> 
+      </div> </a> 
+     <p class="button-container"> <a class="slide-link button button-pill button-secondary-yellow utm-geofilters-product-btn-link" href="/ads">Learn more</a> </p> 
+    </div> 
+   </div> 
+  </section> 
+  <section id="section-community" class="section section-yellow-pattern"> 
+   <div class="geofilter-type-container "> 
+    <figure class="phone right"> 
+     <div class="image community"></div> 
+    </figure> 
+    <div class="content left"> 
+     <h2 class="product-name">Community Filters<span class="emoji house"></span></h2> 
+     <div class="description">
+      Share some pride in your city, university, a local landmark, or any public location. Community Filters are free to create, so anyone can submit one and help spread the love!
+     </div> 
+     <p class="button-container"> <a href="/create/submit.html?utm_source=snapchat&amp;utm_medium=site&amp;utm_campaign=community_section" class="button button-pill button-pink"> Submit Now </a> </p> 
+    </div> 
+   </div> 
+  </section> 
+  <section id="section-filter" class="section "> 
+   <div class="geofilter-type-container wrap"> 
+    <figure class="phone left"> 
+     <div class="image filter"></div> 
+    </figure> 
+    <div class="content right"> 
+     <h2 class="product-name">Filters</h2> 
+     <div class="description">
+      Create and purchase your own Filter to frame birthdays, weddings, and any other event. It's the perfect way to make any occasion even more special!
+     </div> 
+     <p class="button-container"> <a href="/create?product_type=filter&amp;utm_source=snapchat&amp;utm_medium=site&amp;utm_campaign=filter_section" class="button button-pill button-pink"> Create Now </a> </p> 
+    </div> 
+   </div> 
+  </section> 
+  <section id="section-lens" class="section section-yellow-pattern"> 
+   <div class="geofilter-type-container "> 
+    <figure class="phone right"> 
+     <div class="image lens"></div> 
+    </figure> 
+    <div class="content left"> 
+     <h2 class="product-name">Lenses</h2> 
+     <div class="description">
+      Start with a template, or design your Lens from scratch with Lens Studio.
+     </div> 
+     <p class="button-container"> <a href="https://lensstudio.snapchat.com" class="button button-pill button-pink"> Create Now </a> </p> 
+    </div> 
+   </div> 
+  </section> 
+  <section class="section"> 
+   <h2 class="carousel-title">Get Inspired!</h2> 
+   <div id="carousel-container"></div> 
+   <script src="/create/src/carousel.js"></script> 
+  </section> 
+  <style>
+  iframe[name="google_conversion_frame"] {
+    display: none;
+  }
+</style> 
+  <script src="/static/js/google-remark.js"></script> 
+  <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script> 
+  <noscript> 
+   <div style="display:inline;"> 
+    <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/866629025/?guid=ON&amp;script=0"> 
+   </div> 
+  </noscript> <!-- End Content --> 
+  <div style="background-color:#F8F9FB;font-size:14px;line-height:17px;">
+   <style>
+      .footer-container,
+      .footer-bottom-bar {
+        width: 92.3%;
+        max-width: 1070px;
+        margin: auto;
+      }
+
+      .footer-container {
+        box-sizing: content-box;
+        position: relative;
+        padding: 30px 0 30px;
+        min-height: 195px;
+      }
+
+      .footer-container .footer-column {
+        position: relative;
+        box-sizing: border-box;
+        float: left;
+        width: 25%;
+        padding-right: 6.25%;
+      }
+
+      .footer-container .footer-column .footer-column-header {
+        box-sizing: content-box;
+        color: rgba(0,0,0,.87);
+        line-height: 23px;
+        font-weight: 500;
+      }
+
+      .footer-container .footer-column .footer-column-expand-caret {
+        display: none;
+      }
+
+      .footer-container .footer-column a {
+        display: table;
+        color: rgba(0,0,0,.87);
+        text-decoration: none;
+        line-height: 17px;
+        margin-top: 6px;
+      }
+      .footer-container .footer-column a:hover {
+        color: black;
+      }
+
+      .footer-container .langue-selection-block {
+        position: absolute;
+        box-sizing: border-box;
+        padding: 0 6.25% 15px 0;
+        bottom: 15px;
+        width: 25%;
+      }
+      .footer-container .langue-selection-block .langue-header {
+        color: rgba(0,0,0,.87);
+        font-weight: 500;
+      }
+
+      .footer-bottom-bar a {
+        line-height: 56px;
+        margin-right: 40px;
+        color: white;
+        text-decoration: none;
+      }
+
+      @media (max-width: 767px) {
+        .footer-container,
+        .footer-bottom-bar {
+          width: 100%;
+          padding: 0;
+          max-width: none;
+        }
+
+        .footer-container .footer-column {
+          padding: 0;
+          width: 100%;
+        }
+
+        .footer-container .footer-column a,
+        .footer-container .footer-column .footer-column-header {
+          margin-top: 0;
+          padding: 10px 40px;
+          width: calc(100% - 80px);
+          line-height: 25px;
+        }
+
+        .footer-container .footer-column .footer-column-header,
+        .footer-container .langue-selection-block {
+          border-top: solid 1px #D4D4D4;
+        }
+
+        .footer-container .footer-column .footer-column-header {
+          cursor: pointer;
+          background-color: #F8F9FB;
+        }
+
+        .footer-container .footer-column .footer-column-expand-caret {
+          display: block;
+          position: absolute;
+          left: 16px;
+          top: 15px;
+          width: 15px;
+          height: 20px;
+          transform-origin: 55% 45%;
+          cursor: pointer;
+        }
+        .footer-container .footer-column.expanded .footer-column-expand-caret {
+          transform: rotate(90deg);
+          -webkit-transform: rotate(90deg);
+        }
+
+        .footer-container .footer-column a {
+          font-weight: 600;
+          color: rgba(0,0,0,.87);
+          border-top: solid 1px #E5E5E5;
+          display: none;
+        }
+        .footer-container .footer-column.expanded a {
+          display: block;
+          box-sizing: content-box;
+        }
+
+        .footer-container .langue-selection-block {
+          position: static;
+          width: 100%;
+          height: inherit;
+          top: inherit;
+          padding: 14px 20px 15px;
+        }
+
+        .footer-bottom-bar a {
+          display: block;
+          line-height: 45px;
+          margin-right: 0;
+          padding-left: 20px;
+          border-bottom: solid 1px #D4D4D4;
+        }
+      }
+    </style>
+   <div class="footer-container" id="footerContainer">
+    <div class="footer-column">
+     <div class="footer-column-expand-caret">
+      <svg width="15" height="20" fill="rgba(0,0,0,.87)">
+       <g>
+        <rect stroke="rgba(0,0,0,.87)" transform="rotate(45 0,0)" rx="1" id="1" height="1.5" width="10" y="-2" x="5" stroke-width="1"></rect>
+        <rect stroke="rgba(0,0,0,.87)" transform="rotate(-45 0,0)" rx="1" id="2" height="1.5" width="10" y="13.5" x="-8" stroke-width="1"></rect>
+       </g>
+      </svg>
+     </div>
+     <div class="footer-column-header">
+      Company
+     </div>
+     <div>
+      <a href="https://snap.com/en-US">Snap Inc.</a><a href="https://careers.snap.com">Careers</a><a href="https://newsroom.snap.com">News</a>
+     </div>
+    </div>
+    <div class="footer-column">
+     <div class="footer-column-expand-caret">
+      <svg width="15" height="20" fill="rgba(0,0,0,.87)">
+       <g>
+        <rect stroke="rgba(0,0,0,.87)" transform="rotate(45 0,0)" rx="1" id="1" height="1.5" width="10" y="-2" x="5" stroke-width="1"></rect>
+        <rect stroke="rgba(0,0,0,.87)" transform="rotate(-45 0,0)" rx="1" id="2" height="1.5" width="10" y="13.5" x="-8" stroke-width="1"></rect>
+       </g>
+      </svg>
+     </div>
+     <div class="footer-column-header">
+      Community
+     </div>
+     <div>
+      <a href="https://support.snapchat.com/">Support</a><a href="https://snap.com/en-US/community-guidelines">Community Guidelines</a><a href="https://snap.com/en-US/safety/safety-center">Safety Center</a>
+     </div>
+    </div>
+    <div class="footer-column">
+     <div class="footer-column-expand-caret">
+      <svg width="15" height="20" fill="rgba(0,0,0,.87)">
+       <g>
+        <rect stroke="rgba(0,0,0,.87)" transform="rotate(45 0,0)" rx="1" id="1" height="1.5" width="10" y="-2" x="5" stroke-width="1"></rect>
+        <rect stroke="rgba(0,0,0,.87)" transform="rotate(-45 0,0)" rx="1" id="2" height="1.5" width="10" y="13.5" x="-8" stroke-width="1"></rect>
+       </g>
+      </svg>
+     </div>
+     <div class="footer-column-header">
+      Advertising
+     </div>
+     <div>
+      <a href="https://snapchat.com/ads">Buy Ads</a><a href="https://snap.com/en-US/ad-policies/">Advertising Policies</a><a href="https://snap.com/en-US/political-ads/">Political Ads Library</a><a href="https://snap.com/en-US/brand-guidelines/">Brand Guidelines</a><a href="https://support.snapchat.com/a/promotions-rules">Promotions Rules</a>
+     </div>
+    </div>
+    <div class="footer-column">
+     <div class="footer-column-expand-caret">
+      <svg width="15" height="20" fill="rgba(0,0,0,.87)">
+       <g>
+        <rect stroke="rgba(0,0,0,.87)" transform="rotate(45 0,0)" rx="1" id="1" height="1.5" width="10" y="-2" x="5" stroke-width="1"></rect>
+        <rect stroke="rgba(0,0,0,.87)" transform="rotate(-45 0,0)" rx="1" id="2" height="1.5" width="10" y="13.5" x="-8" stroke-width="1"></rect>
+       </g>
+      </svg>
+     </div>
+     <div class="footer-column-header">
+      Legal
+     </div>
+     <div>
+      <a href="https://snap.com/en-US/privacy/privacy-center/">Privacy Center</a><a href="https://snap.com/en-US/cookie-policy/">Cookie Policy</a><a href="https://support.snapchat.com/article/infringement-reporting-about">Report Infringement</a><a href="https://snap.com/en-US/terms/custom-creative-tools/">Custom Creative Tools Terms</a><a href="https://snapchat.com/create/terms.html">Community Geofilter Terms</a><a href="https://snap.com/en-US/terms/lens-studio-terms/">Lens Studio Terms</a>
+     </div>
+    </div>
+    <div style="clear:both;"></div>
+    <div class="langue-selection-block">
+     <div class="langue-header">
+      Language
+     </div>
+     <div style="position:relative;">
+      <select id="sc-global-locale-selector" style="-webkit-appearance:none;-moz-appearance:none;appearance:none;border:1px solid #CCCCCC;border-radius:5px;background:white;width:100%;margin-top:10px;padding:5px 10px;font-size:14px;font-family:inherit;color:rgba(0, 0, 0, 0.6);height:34px;cursor:pointer;"><option selected value="en-US">English (US)</option><option value="da-DK">Dansk</option><option value="de-DE">Deutsch</option><option value="en-GB">English (UK)</option><option value="es">Español</option><option value="fr-FR">Français</option><option value="it-IT">Italiano</option><option value="nl-NL">Nederlands</option><option value="ja-JP">???</option><option value="nb-NO">Norsk</option><option value="pt-BR">Português (Brasil)</option><option value="fi-FI">Suomi</option><option value="sv-SE">Svenska</option></select>
+      <div style="position:absolute;right:10px;width:0;height:0;pointer-events:none;border-style:solid;bottom:18px;border-width:0 3px 5px 3px;border-color:transparent transparent #666666 transparent;"></div>
+      <div style="position:absolute;right:10px;width:0;height:0;pointer-events:none;border-style:solid;bottom:10px;border-width:5px 3px 0 3px;border-color:#666666 transparent transparent transparent;"></div>
+     </div>
+    </div>
+   </div>
+   <div style="background-color:#262626;">
+    <div class="footer-bottom-bar">
+     <a href="https://snap.com/en-US/privacy/privacy-policy/">Privacy Policy</a><a href="https://snap.com/en-US/terms/">Terms of Service</a><a href="https://support.snapchat.com/a/impressum" class="impressum">Impressum</a>
+     <div style="clear:both;"></div>
+    </div>
+   </div>
+  </div>  
+ </body>
+</html>

@@ -1,0 +1,1669 @@
+<!doctype html>
+<html lang="en"> 
+ <head> <!-- Required meta tags --> 
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+  <meta name="format-detection" content="telephone=no"> 
+  <link rel="icon" href="https://assets.emagazines.com/MagazineNewsstand_FavIcon.ico"> 
+  <title>Allrecipes Digital Magazine</title> 
+  <base href="/"> <!-- Plugins CSS --> 
+  <link href="/css/bootstrap.min.css?v=eXtC1C_oWmn9Jzp7pyjT-jzmhRDF1s1pFxx2g3MONb8" rel="stylesheet"> 
+  <link href="/css/plugins.css?v=Pg1tRqXQMIyPxEK0NHat--FeN0xs1bA_JS4CvP4eYBw" rel="stylesheet"> 
+  <link href="/css/fonts.css?v=2y7U-HXQUx7UApXMTRey5k7_dORHOWPdKpwvjAORSs8" rel="stylesheet"> 
+  <link href="/css/style.css?v=A7ckAzNJevbnEe-zpmJpt7xylCVfu8H7pT11QG7mgD4" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"> 
+  <script async src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script> 
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,700,700i&amp;display=swap" rel="stylesheet"> 
+  <link href="/css/fontawesome-all.min.css" rel="stylesheet"> 
+  <link href="/css/line-icons.css" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplebar/5.2.1/simplebar.css"> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/simplebar/5.2.1/simplebar.js"></script> <!--Icons--> 
+  <link href="assets/fonts/iconsmind/iconsmind.css" rel="stylesheet"> 
+  <link href="assets/fonts/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"> <!--Google fonts--> 
+  <link rel="preconnect" href="https://fonts.googleapis.com"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Poppins:wght@200;300;400;500;600;700&amp;display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"> 
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
+  <style type="text/css">
+
+        @import url("https://fast.fonts.net/t/1.css?apiType=css&projectid=beb5b704-ca5d-4859-8e8e-17746c336b08");
+
+        @font-face {
+            font-family: "Avenir Next W05";
+            src: url("https://assets.emagazines.com/uploads/86df2caf-2588-4bb9-a9a9-5290fb6bd63d_da92a44f-8e1d-4248-ba7b-b12c91a118a9.woff2") format("woff2"), url("https://assets.emagazines.com/uploads/ae824335-a7f0-425a-81b5-436dc22ea039_b679252b-1f50-49c3-9b2e-002bb8827c2e.woff") format("woff");
+            font-weight: 200;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: "Avenir Next W05";
+            src: url("https://assets.emagazines.com/uploads/2a916cb0-7c05-48ce-a11f-851a3d5a7292_f64c3634-1027-4aec-8bd4-d96f2444f559.woff2") format("woff2"), url("https://assets.emagazines.com/uploads/3a215542-78db-4c56-bc1c-729471ec83bd_91f23395-35b5-470e-9680-45d860e84f5b.woff") format("woff");
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: "Avenir Next W05";
+            src: url("https://assets.emagazines.com/uploads/8e00a826-1fba-4c4b-968f-01c4b067ba6e_a1049d00-54ad-4589-95b8-d353f7ab52f0.woff2") format("woff2"), url("https://assets.emagazines.com/uploads/9d66ae23-0e78-41c1-ac26-2a985a92cc05_13faf0ae-dcab-4d1c-9c08-f9ca339b6023.woff") format("woff");
+            font-weight: 500;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: "Avenir Next W05";
+            src: url("https://assets.emagazines.com/uploads/28e6049e-b528-4c30-9ff9-a3ee6f96a154_8c6d7851-9978-4520-8c8f-dc1b38b36eb6.woff2") format("woff2"), url("https://assets.emagazines.com/uploads/92d7f2ef-17b1-4ef5-bfbc-b633fbe4e68e_73fd8503-a80c-4965-97ae-a1178b2caad0.woff") format("woff");
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: "Avenir Next W05";
+            src: url("https://assets.emagazines.com/uploads/918bf6de-7721-41f8-91e7-ae06649ce7b2_9544095b-fbf6-4d50-870f-a5102776eae4.woff2") format("woff2"), url("https://assets.emagazines.com/uploads/918bf6de-7721-41f8-91e7-ae06649ce7b2_9544095b-fbf6-4d50-870f-a5102776eae4.woff2") format("woff");
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: "Avenir Next W05";
+            src: url("https://assets.emagazines.com/uploads/918bf6de-7721-41f8-91e7-ae06649ce7b2_9544095b-fbf6-4d50-870f-a5102776eae4.woff2") format("woff2"), url("https://assets.emagazines.com/uploads/2c48580a-b3ab-46ab-af0a-aa48d007e363_888f1b57-0692-499d-91f0-718136703ef4.woff") format("woff");
+            font-weight: 900;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: "Avenir Next Bold";
+            src: url("/assets/fonts/avenir/AvenirNext-Bold-01.ttf");
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: "Avenir Next Bold";
+            src: url("/assets/fonts/avenir/AvenirNext-BoldItalic-02.ttf");
+            font-style: italic;
+        }
+
+        @font-face {
+            font-family: "Avenir Next DemiBold";
+            src: url("/assets/fonts/avenir/AvenirNext-DemiBold-03.ttf");
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: "Avenir Next DemiBold";
+            src: url("/assets/fonts/avenir/AvenirNext-DemiBoldItalic-04.ttf");
+            font-style: italic;
+        }
+
+        @font-face {
+            font-family: "Avenir Next Heavy";
+            src: url("/assets/fonts/avenir/AvenirNext-Heavy-09.ttf");
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: "Avenir Next Heavy";
+            src: url("/assets/fonts/avenir/AvenirNext-HeavyItalic-10.ttf");
+            font-style: italic;
+        }
+
+        @font-face {
+            font-family: "Avenir Next Medium";
+            src: url("/assets/fonts/avenir/AvenirNext-Medium-06.ttf");
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: "Avenir Next Medium";
+            src: url("/assets/fonts/avenir/AvenirNext-MediumItalic-07.ttf");
+            font-style: italic;
+        }
+
+        
+        @font-face {
+            font-family: "Avenir Next";
+            src: url("/assets/fonts/avenir/AvenirNext-Regular-08.ttf");
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: "Avenir Next";
+            src: url("/assets/fonts/avenir/AvenirNext-Italic-05.ttf");
+            font-style: italic;
+        }
+
+        @font-face {
+            font-family: "Avenir Next UltraLight";
+            src: url("/assets/fonts/avenir/AvenirNext-UltraLight-11.ttf");
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: "Avenir Next UltraLight";
+            src: url("/assets/fonts/avenir/AvenirNext-UltraLightItalic-12.ttf");
+            font-style: italic;
+        }
+    </style> 
+  <link rel="stylesheet" href="https://use.typekit.net/ivx6tzt.css"> 
+ </head> 
+ <body data-spy="scroll" data-target="#landingkit-navbar"> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script> 
+  <div id="preloader"> 
+   <div id="preloader-inner"></div> 
+  </div> <!--/preloader--> 
+  <div class="container" style="position: absolute; top: 0; left: 0; right: 0; /*background-color: white;*/ z-index: 999; min-height: 90px;  "> 
+   <div class="row"> 
+    <div class="d-flex w-100"> 
+     <div class="ml-auto ml-lg-0 mr-auto"> <a href="https://magazinenewsstand.com"> <img style="max-height: 60px;" class="mt-3 pb-2" src="https://assets.emagazines.com/uploads/eMags_MagazineNewsstand_Logo_Final_af2e2cad-0308-4484-ab18-930ac855e5d6.png" alt="Logo"> </a> 
+     </div> 
+     <div class="ml-auto ml-md-auto d-flex mx-auto mx-md-0 mr-md-0"> 
+      <div class="mt-auto mb-0 pb-2"> <a href="https://emagazines.com/Account/ExpressLogin?plid=226" style="text-decoration: none; color: #44403B; font-size: 12px;"> <span>Sign In</span> </a> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="row my-3 border-top border-bottom" style="height: 40px;    border-color: #E5E5E5 !important;"> 
+    <div class="d-flex justify-content-center align-items-center w-100" style="font-size: 14px; letter-spacing: .5px;" id="headerFlexArea"> 
+     <div class="ml-4 ml-md-auto mr-auto d-none d-md-block p-1 headerLink text-truncate " style="font-family: 'Avenir Next' !important;"> <a style="text-decoration: none; color: #44403B !important;" data-scroll href="/digital-a-z">MAGAZINES A-Z</a> 
+     </div> 
+     <div class="ml-4 ml-md-auto mr-auto d-none d-md-block p-1 headerLink text-truncate " style="font-family: 'Avenir Next' !important;"> <a style="text-decoration: none; color: #44403B !important;" data-scroll href="/digital-specialty">SPECIALTY MAGAZINES</a> 
+     </div> 
+     <div class="ml-4 ml-md-auto mr-auto d-none d-md-block p-1 headerLink text-truncate " style="font-family: 'Avenir Next' !important;"> <a style="text-decoration: none; color: #44403B !important;" data-scroll href="/most-popular">MOST POPULAR</a> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <style type="text/css">
+	.headerLink {
+		cursor: pointer;
+		user-select: none;
+		color: #44403B !important;
+	}
+
+	.selectedNavOption {
+		background-color: rgba(29,155,214,.2);
+		border-radius: 0;
+	}
+
+	#headerFlexArea > div:first-child {
+        display: block !important;
+    }
+</style> 
+  <main class="main-content"> 
+   <div class="bg-white border-btm1 container-fluid pt90 pb50"> 
+    <div class="container-fluid" style="max-width: 900px;"> 
+     <div class="row align-items-center justify-content-center"> 
+      <div id="Feature" class="col-12 order-1 order-sm-1 order-md-1 order-lg-1 order-xl-1" style="max-width: 900px; margin-top: 65px;"> 
+       <div class="row align-items-center justify-content-start"> 
+        <div class="col-12"> 
+         <div class="row align-items-center justify-content-center mx-auto my-2 my-sm-0" style="width: 575px"> 
+         </div> 
+         <div class="row align-items-start justify-content-center justify-content-sm-start"> 
+          <div class="col-sm-5 col-12" style="max-width: 400px;"> 
+           <img style="width: 100%; object-fit: contain; " class="issue-image img-fluid" src="https://cdn.emags.com/digital/allrecipes/large.jpg"> 
+           <div style="display: flex; justify-content: center; height: 25px; margin-top: 10px;"> 
+            <img style="height: 100%;" src="https://assets.emagazines.com/uploads/digital_burst2_9c14052a-6030-4ec0-af56-f0ab4a87a5e8.png"> 
+           </div> 
+          </div> 
+          <div class="col-sm-7 col-12" style="max-width: 575px;"> 
+           <div class="row align-items-start justify-content-start mt-4 mt-sm-0"> 
+            <div class="col-12"> 
+             <div style="font-family: 'Avenir Next DemiBold'; color: #44403B; font-size: 26px;">
+              Allrecipes - Digital
+             </div> 
+            </div> 
+           </div> 
+           <div class="row align-items-start justify-content-start" style="padding-top: 8px;"> 
+            <div class="col-12"> 
+             <div style="width: 100%; background: #F8F5F2; padding: 18px 16px 16px 40px"> 
+              <input class="form-check-input" name="productDescription" type="radio" checked style="width: 24px; height: 24px; margin-top: 10px;"> 
+              <div style="padding-left: 20px;">
+               <div style="font-family: 'Avenir Next'; font-size: 18px; color: #44403B;" class="row d-flex justify-content-around"> 
+                <div class="product-price-convertible" style="font-size:24px;font-weight:600;color:#353535;margin-top:1px;">
+                 $11.99 USD
+                </div> 
+                <div class="align-top d-flex justify-content-center" style="max-width:35%;font-size:15px;"> 
+                 <div class="mx-auto"> 
+                  <div style="color:#353535;font-weight:600;padding-top:5px;width:fit-content;" class="mx-auto">
+                   1 Year (6 Issues)
+                  </div> 
+                  <div style="line-height:1.25;">
+                   Bi-Monthly Digital
+                   <br>Subscription
+                  </div> 
+                 </div> 
+                </div> 
+                <div style="margin-top:7px;"> 
+                 <img src="https://assets.emagazines.com/uploads/Instant_Start_Tag_NoBG_0f4d706d-94c3-45b3-b009-f4e3174d7145.png" style="width: 30px;"> <span style="color: #353535;font-weight: 600;font-size: 15px;">Instant Start</span> 
+                </div> 
+               </div>
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <div class="row align-items-start justify-content-start my-2 my-sm-0" style="padding-top: 14px;"> 
+            <div class="col-12"> 
+             <div style="color: #444444;">
+              <div style="font-family: 'Avenir Next'; font-size: 14px; color: #000;"> 
+               <div style="font-family: 'Avenir Next'; font-size: 14px; color: #44403B;" class="mb-3"> <span>Language: English, Country: United States</span> 
+               </div> 
+               <dl class="row"> 
+                <dd class="col-1">
+                 <img src="https://assets.emagazines.com/uploads/Checkmark-Icon_3577f672-08a7-491e-a0c3-423ecb31f8b5.svg">
+                </dd> 
+                <dt class="col-5 pl-0" style="font-weight:500 !important;">
+                 No Auto Renewal
+                </dt> 
+                <dd class="col-1">
+                 <img src="https://assets.emagazines.com/uploads/Checkmark-Icon_3577f672-08a7-491e-a0c3-423ecb31f8b5.svg">
+                </dd> 
+                <dt class="col-5 pl-0" style="font-weight:500 !important;">
+                 Read on Any Device
+                </dt> 
+                <dd class="col-1">
+                 <img src="https://assets.emagazines.com/uploads/Checkmark-Icon_3577f672-08a7-491e-a0c3-423ecb31f8b5.svg">
+                </dd> 
+                <dt class="col-5 pl-0" style="font-weight:500 !important;">
+                 Listen to Articles
+                </dt> 
+                <dd class="col-1">
+                 <img src="https://assets.emagazines.com/uploads/Checkmark-Icon_3577f672-08a7-491e-a0c3-423ecb31f8b5.svg">
+                </dd> 
+                <dt class="col-5 pl-0" style="font-weight:500 !important;">
+                 Download for Offline Access
+                </dt> 
+               </dl>
+              </div>
+             </div> 
+            </div> 
+           </div> 
+           <div class="row my-2 my-sm-0"> 
+            <div class="col-12 col-sm-4 my-3"> <button class="btn btn-primary w-100" style="background-color: #1A9AD6;" onclick="document.location.hash = 'Form';">CHECKOUT</button> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="col-12" style="max-width: 900px; padding: 0px; margin: 25px 0px;"> 
+          <div style="width: 100%; padding: 1px; background: #E5E5E5; "></div> 
+         </div> 
+         <div class="row align-items-center justify-content-center"> 
+          <div class="col-12" style="max-width: 900px;"> 
+           <div class="text-primary">
+            <div style="color: #44403B; text-align: center; padding-bottom: 3px; font-size:18px; font-family:'Avenir Next DemiBold' !important;"> 
+             <div class="text-center"> 
+              <h6>About Allrecipes</h6> 
+             </div> 
+             <div class="text-left"> 
+              <p style="color: #44403B; font-size:16px; font-family:'Avenir Next' !important;"> Allrecipes combines the best recipes from their extensive network of home cooks with the latest tips &amp; tools to help you thrive in the kitchen year-round. Inside each issue you'll find quick &amp; easy weeknight meals; simple side dishes to pair with seasonal favorites; and even what to make with your kids! Anyone who loves to cook will feel right at home with Allrecipes.<br><br>Allrecipes Magazine, published by Meredith, currently publishes 6 times annually. Frequency of all magazines subject to change without notice. Additional double issues may be published, which count as 2 issues. Applicable sales tax will be added. </p> 
+             </div> 
+            </div>
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="col-12 order-2 order-md-1" style="max-width: 575px px;"> 
+       <div class="col-12 order-2 order-md-1" style="max-width: 575px px;"> 
+        <div class="row align-items-center justify-content-center"> 
+         <div class="col-12"> <!--Blazor:{"sequence":0,"type":"server","descriptor":"CfDJ8FzjItsPIfRLl30GkmV8Mz\u002BbB8ImyCONtdJSaqxtBHzLhSr\u002Bc\u002BRfLh6sNI0\u002B1n3cbUT3akPlBC7tc5xpzbG01qm\u002BEYhoIP6x054W8lVlUHi7F1dLpq05h9AZVuCKIFs5WaRNmCO9gIVdUcSfWsQgXInkP200q4LdVqpctveuz7btqeOHZmc6WPhnU/VjOuBMrfbAjAGl9FgBODhZqJleHTqUBKSOgRAkVPYh0BQBKq3TVUkP9TPdSXC/LGZAenlxmo28CZcLvwpY8jN4\u002B5PC6wXOKQV92rc007KwWVZF8UDbd7bVHmW8kCAzzyQsFFFp2oOcifqg9FQ6PnIaPCJqvzvxR9x\u002Bf1EmkwQ78qcnrgNorF5kOvlKNArfj28LAnaXOZAa4O2fJH04NwVa2Wj7ddSEvUExJWmUiJbSspenxV62BDHafe8TUnfB39RrcXqCcAfQ12wjeMf2SACxkpexDe\u002BMnFc2RyK9U0MDNH81HyjnboeCL59ADL8dhek4hBE2cMYYTBbsLy0z/mSoTHAlJfz1mc9UW40gjI/dnLtQ/nz789VopwmX631D\u002B/lia63V7nan9qNFQ6c9BDZyzTuLqiLvUyTdXPWpdLWmuMEXzRDK2aTJrY894ZhMUa3WV0ZfeMKID26915LOCI\u002B34wgOfJnlOSTOSOBYiLDSz7LAKXp\u002B\u002B/0f/xhvgk\u002BH/EQEk3t6DQ=="}--> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div id="cartContainer" class="col-12 order-3 order-sm-1 order-md-1 order-lg-1 order-xl-1" style="margin-top: 15px;"> 
+       <div id="Cart" style="max-width: 900px;" class="mx-auto"> <!--Blazor:{"sequence":1,"type":"server","descriptor":"CfDJ8FzjItsPIfRLl30GkmV8Mz9N/aDfpOcygVSwKZWQRD\u002BrMAuDpoVLI1ERvwT38FxHX2/NRir/eewPORtDEgnCnZbe9VGoN\u002BGiZAJUN97HijGlyEvoiSRRuVTOi2jeN0T7Uh7NjoUN9OvHG3JSLULW1iI2qDHPfRQrQhShjUSSLb9EsLTE/vzhorewk3cfafQeGjP2Vr1Kd4tauUkS4BVy6KB0K1sJ0uc\u002BacFrH0HtacHpRyjSW0ToYkXTAjjJ\u002BIRQqm3tUMqMIQ9DPxspAnuXVyqOeZUc3IjQbdCmLnfr8B5S5DvBMfvXuMPaEsQgEO81pJCil2qXF4iGxKoMV44MGcje88ue4Rn6g5stEh0M9aAzWiTvQ0YQDwm2G\u002BukCaHfLtTEBkkxcEuf\u002B9jjydSBQtg0IcYZG/VSxVSAe6qkBDJ2OSnn1xmFik3fNZA0jxp0yJu4jahuzLagNsBbTO3WKx9M75LRX/gB/APpV1B0C8Z8zmTIvJQh4qqSroGah\u002B\u002BdKU\u002BxSioi4hGF55XsUkPBacjB/vs42ruMw8Kj04eghctk"}--> 
+       </div> 
+      </div> 
+      <div id="Form" class="col-12 order-4 order-sm-1 order-md-1 order-lg-1 order-xl-1" style="margin-top: 20px;"> 
+       <div style="max-width: 575px;" class="mx-auto"> 
+        <style>
+    .emagsSubmit:hover {  }
+</style> 
+        <div class="row justify-content-center"> 
+         <div class="col"> 
+          <div class="hero-form" style="background-color: white;"> 
+           <h6 id="formTitle" style="font-size: 1.1rem;" class="font-weight-bold text-dark mb20">Payment Information <br> <span style="font-weight:400 !important;font-size:15px !important;color: #8b98a9 !important">Charges will appear in USD</span></h6> 
+           <h5 id="orderError" style="display: none;" class="mb20 text-danger"></h5> 
+           <form id="orderForm" action="/LandingPageV2/ProcessOrder" method="post"> 
+            <div style="display: none;"> 
+             <input value="" type="text" id="Order_Source" name="Order.Source"> 
+             <input value="" type="text" id="Order_Channel" name="Order.Channel"> 
+             <input value="" type="text" id="Order_S1" name="Order.S1"> 
+             <input value="" type="text" id="Order_S2" name="Order.S2"> 
+             <input value="" type="text" id="Order_S3" name="Order.S3"> 
+             <input value="" type="text" id="Order_Aid" name="Order.Aid"> 
+             <input value="" type="text" id="Order_Tid" name="Order.Tid"> 
+             <input type="number" data-val="true" data-val-required="The LandingPageId field is required." id="LandingPage_LandingPageId" name="LandingPage.LandingPageId" value="1837"> 
+             <input id="stripeToken" type="text" name="StripeToken" value=""> 
+             <input data-val="true" data-val-required="The CartSessionId field is required." id="CartSessionId" name="CartSessionId" type="hidden" value="eca183dd-50cf-4329-a571-9ddf668a7643">; 
+             <input data-val="true" data-val-required="The UserForcedDupes field is required." id="UserForcedDupes" name="UserForcedDupes" type="hidden" value="False">; 
+             <input data-val="true" data-val-required="The UserConfirmedAddressValidation field is required." id="UserConfirmedAddressValidation" name="UserConfirmedAddressValidation" type="hidden" value="False"> 
+            </div> 
+            <div class="row"> 
+             <style>
+    select[readonly] option, select[readonly] optgroup {
+        display: none;
+    }
+</style> 
+             <div class="col-12 form-field-col mb20 px-1"> 
+              <input id="Email" value="" type="email" class="form-control" placeholder="Email *" name="Consumer.Email"> 
+             </div> 
+             <script>
+    // Hack for blazor or now, this is needed for tax purposes
+    window.getShippingState = () => {
+        let shippingState = "";
+
+        try {
+            shippingState = document.getElementById("ShippingState").value;
+        } catch (err) {
+
+        }
+
+        return shippingState;
+    };
+</script> 
+             <style>
+    select[readonly] option, select[readonly] optgroup {
+        display: none;
+    }
+</style> 
+             <div class="col-6 form-field-col mb20 px-1"> 
+              <input id="BillingFirstName" value="" type="text" class="form-control" placeholder="First Name *" name="BillingAddress.FirstName"> 
+             </div> 
+             <script>
+    // Hack for blazor or now, this is needed for tax purposes
+    window.getShippingState = () => {
+        let shippingState = "";
+
+        try {
+            shippingState = document.getElementById("ShippingState").value;
+        } catch (err) {
+
+        }
+
+        return shippingState;
+    };
+</script> 
+             <style>
+    select[readonly] option, select[readonly] optgroup {
+        display: none;
+    }
+</style> 
+             <div class="col-6 form-field-col mb20 px-1"> 
+              <input id="BillingLastName" value="" type="text" class="form-control" placeholder="Last Name *" name="BillingAddress.LastName"> 
+             </div> 
+             <script>
+    // Hack for blazor or now, this is needed for tax purposes
+    window.getShippingState = () => {
+        let shippingState = "";
+
+        try {
+            shippingState = document.getElementById("ShippingState").value;
+        } catch (err) {
+
+        }
+
+        return shippingState;
+    };
+</script> 
+             <style>
+    select[readonly] option, select[readonly] optgroup {
+        display: none;
+    }
+</style> 
+             <div class="col-8 form-field-col mb20 px-1"> 
+              <input id="BillingAddress1" type="text" class="form-control" placeholder="Address 1 *" name="BillingAddress.Address1" value=""> 
+             </div> 
+             <script>
+    // Hack for blazor or now, this is needed for tax purposes
+    window.getShippingState = () => {
+        let shippingState = "";
+
+        try {
+            shippingState = document.getElementById("ShippingState").value;
+        } catch (err) {
+
+        }
+
+        return shippingState;
+    };
+</script> 
+             <style>
+    select[readonly] option, select[readonly] optgroup {
+        display: none;
+    }
+</style> 
+             <div class="col-4 form-field-col mb20 px-1"> 
+              <input id="BillingAddress2" type="text" class="form-control" placeholder="Address 2" name="BillingAddress.Address2" value=""> 
+             </div> 
+             <script>
+    // Hack for blazor or now, this is needed for tax purposes
+    window.getShippingState = () => {
+        let shippingState = "";
+
+        try {
+            shippingState = document.getElementById("ShippingState").value;
+        } catch (err) {
+
+        }
+
+        return shippingState;
+    };
+</script> 
+             <style>
+    select[readonly] option, select[readonly] optgroup {
+        display: none;
+    }
+</style> 
+             <div class="col-4 form-field-col mb20 px-1"> 
+              <input id="BillingCity" type="text" class="form-control" placeholder="City *" name="BillingAddress.City" value=""> 
+             </div> 
+             <script>
+    // Hack for blazor or now, this is needed for tax purposes
+    window.getShippingState = () => {
+        let shippingState = "";
+
+        try {
+            shippingState = document.getElementById("ShippingState").value;
+        } catch (err) {
+
+        }
+
+        return shippingState;
+    };
+</script> 
+             <style>
+    select[readonly] option, select[readonly] optgroup {
+        display: none;
+    }
+</style> 
+             <div class="col-4 form-field-col mb20 px-1"> 
+              <input id="BillingState" type="text" class="form-control" placeholder="State *" name="BillingAddress.State" value=""> 
+             </div> 
+             <script>
+    // Hack for blazor or now, this is needed for tax purposes
+    window.getShippingState = () => {
+        let shippingState = "";
+
+        try {
+            shippingState = document.getElementById("ShippingState").value;
+        } catch (err) {
+
+        }
+
+        return shippingState;
+    };
+</script> 
+             <style>
+    select[readonly] option, select[readonly] optgroup {
+        display: none;
+    }
+</style> 
+             <div class="col-4 form-field-col mb20 px-1"> 
+              <input id="BillingZipCode" type="text" class="form-control" placeholder="Postal Code" name="BillingAddress.Zip" value=""> 
+             </div> 
+             <script>
+    // Hack for blazor or now, this is needed for tax purposes
+    window.getShippingState = () => {
+        let shippingState = "";
+
+        try {
+            shippingState = document.getElementById("ShippingState").value;
+        } catch (err) {
+
+        }
+
+        return shippingState;
+    };
+</script> 
+             <style>
+    select[readonly] option, select[readonly] optgroup {
+        display: none;
+    }
+</style> 
+             <div class="col-12 form-field-col mb20 px-1"> <select id="BillingCountry" class="form-control" placeholder="Country *" name="BillingAddress.Country"> <option value="">Country *</option> <option value="United States">United States</option> <option value="Albania">Albania</option> <option value="Algeria">Algeria</option> <option value="Argentina">Argentina</option> <option value="Armenia">Armenia</option> <option value="Australia">Australia</option> <option value="Austria">Austria</option> <option value="Azerbaijan">Azerbaijan</option> <option value="Bahamas">Bahamas</option> <option value="Bahrain">Bahrain</option> <option value="Bangladesh">Bangladesh</option> <option value="Belarus">Belarus</option> <option value="Belgium">Belgium</option> <option value="Belize">Belize</option> <option value="Bhutan">Bhutan</option> <option value="Bolivia">Bolivia</option> <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option> <option value="Botswana">Botswana</option> <option value="Brazil">Brazil</option> <option value="Brunei">Brunei</option> <option value="Bulgaria">Bulgaria</option> <option value="Cambodia">Cambodia</option> <option value="Cameroon">Cameroon</option> <option value="Canada">Canada</option> <option value="Chile">Chile</option> <option value="China">China</option> <option value="Colombia">Colombia</option> <option value="Congo (DRC)">Congo (DRC)</option> <option value="Costa Rica">Costa Rica</option> <option value="Côte d’Ivoire">Côte d’Ivoire</option> <option value="Croatia">Croatia</option> <option value="Czechia">Czechia</option> <option value="Denmark">Denmark</option> <option value="Djibouti">Djibouti</option> <option value="Dominican Republic">Dominican Republic</option> <option value="Ecuador">Ecuador</option> <option value="Egypt">Egypt</option> <option value="El Salvador">El Salvador</option> <option value="Eritrea">Eritrea</option> <option value="Estonia">Estonia</option> <option value="Ethiopia">Ethiopia</option> <option value="Faroe Islands">Faroe Islands</option> <option value="Finland">Finland</option> <option value="France">France</option> <option value="Georgia">Georgia</option> <option value="Germany">Germany</option> <option value="Greece">Greece</option> <option value="Greenland">Greenland</option> <option value="Guatemala">Guatemala</option> <option value="Haiti">Haiti</option> <option value="Honduras">Honduras</option> <option value="Hong Kong SAR">Hong Kong SAR</option> <option value="Hungary">Hungary</option> <option value="Iceland">Iceland</option> <option value="India">India</option> <option value="Indonesia">Indonesia</option> <option value="Ireland">Ireland</option> <option value="Israel">Israel</option> <option value="Italy">Italy</option> <option value="Jamaica">Jamaica</option> <option value="Japan">Japan</option> <option value="Jordan">Jordan</option> <option value="Kazakhstan">Kazakhstan</option> <option value="Kenya">Kenya</option> <option value="Kuwait">Kuwait</option> <option value="Kyrgyzstan">Kyrgyzstan</option> <option value="Laos">Laos</option> <option value="Latvia">Latvia</option> <option value="Lebanon">Lebanon</option> <option value="Libya">Libya</option> <option value="Liechtenstein">Liechtenstein</option> <option value="Lithuania">Lithuania</option> <option value="Luxembourg">Luxembourg</option> <option value="Macao SAR">Macao SAR</option> <option value="Macedonia, FYRO">Macedonia, FYRO</option> <option value="Malaysia">Malaysia</option> <option value="Maldives">Maldives</option> <option value="Mali">Mali</option> <option value="Malta">Malta</option> <option value="Mexico">Mexico</option> <option value="Moldova">Moldova</option> <option value="Monaco">Monaco</option> <option value="Mongolia">Mongolia</option> <option value="Montenegro">Montenegro</option> <option value="Morocco">Morocco</option> <option value="Netherlands">Netherlands</option> <option value="New Zealand">New Zealand</option> <option value="Nicaragua">Nicaragua</option> <option value="Norway">Norway</option> <option value="Oman">Oman</option> <option value="Pakistan">Pakistan</option> <option value="Panama">Panama</option> <option value="Paraguay">Paraguay</option> <option value="Peru">Peru</option> <option value="Poland">Poland</option> <option value="Portugal">Portugal</option> <option value="Puerto Rico">Puerto Rico</option> <option value="Qatar">Qatar</option> <option value="Réunion">Réunion</option> <option value="Romania">Romania</option> <option value="Russia">Russia</option> <option value="Rwanda">Rwanda</option> <option value="Saudi Arabia">Saudi Arabia</option> <option value="Senegal">Senegal</option> <option value="Serbia">Serbia</option> <option value="Singapore">Singapore</option> <option value="Slovakia">Slovakia</option> <option value="Slovenia">Slovenia</option> <option value="Somalia">Somalia</option> <option value="South Africa">South Africa</option> <option value="Spain">Spain</option> <option value="Sri Lanka">Sri Lanka</option> <option value="Sweden">Sweden</option> <option value="Switzerland">Switzerland</option> <option value="Taiwan">Taiwan</option> <option value="Tajikistan">Tajikistan</option> <option value="Thailand">Thailand</option> <option value="Trinidad and Tobago">Trinidad and Tobago</option> <option value="Tunisia">Tunisia</option> <option value="Turkey">Turkey</option> <option value="Turkmenistan">Turkmenistan</option> <option value="United Arab Emirates">United Arab Emirates</option> <option value="United Kingdom">United Kingdom</option> <option value="Uruguay">Uruguay</option> <option value="Uzbekistan">Uzbekistan</option> <option value="Zimbabwe">Zimbabwe</option> </select> 
+             </div> 
+             <script>
+    // Hack for blazor or now, this is needed for tax purposes
+    window.getShippingState = () => {
+        let shippingState = "";
+
+        try {
+            shippingState = document.getElementById("ShippingState").value;
+        } catch (err) {
+
+        }
+
+        return shippingState;
+    };
+</script> 
+             <div class="col"> 
+              <div id="shippingAddressContainer" style="display:none;"> 
+               <div class="row"> 
+                <style>
+    select[readonly] option, select[readonly] optgroup {
+        display: none;
+    }
+</style> 
+                <div class="col-12 form-field-col mb20 px-1"> 
+                 <input id="ShippingEmail" value="" type="Email" class="form-control" placeholder="Email *" name="ShippingAddress.ShippingEmail"> 
+                </div> 
+                <script>
+    // Hack for blazor or now, this is needed for tax purposes
+    window.getShippingState = () => {
+        let shippingState = "";
+
+        try {
+            shippingState = document.getElementById("ShippingState").value;
+        } catch (err) {
+
+        }
+
+        return shippingState;
+    };
+</script> 
+                <style>
+    select[readonly] option, select[readonly] optgroup {
+        display: none;
+    }
+</style> 
+                <div class="col-6 form-field-col mb20 px-1"> 
+                 <input id="ShippingFirstName" value="" type="text" class="form-control" placeholder="First Name *" name="ShippingAddress.FirstName"> 
+                </div> 
+                <script>
+    // Hack for blazor or now, this is needed for tax purposes
+    window.getShippingState = () => {
+        let shippingState = "";
+
+        try {
+            shippingState = document.getElementById("ShippingState").value;
+        } catch (err) {
+
+        }
+
+        return shippingState;
+    };
+</script> 
+                <style>
+    select[readonly] option, select[readonly] optgroup {
+        display: none;
+    }
+</style> 
+                <div class="col-6 form-field-col mb20 px-1"> 
+                 <input id="ShippingLastName" value="" type="text" class="form-control" placeholder="Last Name *" name="ShippingAddress.LastName"> 
+                </div> 
+                <script>
+    // Hack for blazor or now, this is needed for tax purposes
+    window.getShippingState = () => {
+        let shippingState = "";
+
+        try {
+            shippingState = document.getElementById("ShippingState").value;
+        } catch (err) {
+
+        }
+
+        return shippingState;
+    };
+</script> 
+                <style>
+    select[readonly] option, select[readonly] optgroup {
+        display: none;
+    }
+</style> 
+                <div class="col-8 form-field-col mb20 px-1"> 
+                 <input id="ShippingAddress1" type="text" class="form-control" placeholder="Address 1 *" name="ShippingAddress.Address1" value=""> 
+                </div> 
+                <script>
+    // Hack for blazor or now, this is needed for tax purposes
+    window.getShippingState = () => {
+        let shippingState = "";
+
+        try {
+            shippingState = document.getElementById("ShippingState").value;
+        } catch (err) {
+
+        }
+
+        return shippingState;
+    };
+</script> 
+                <style>
+    select[readonly] option, select[readonly] optgroup {
+        display: none;
+    }
+</style> 
+                <div class="col-4 form-field-col mb20 px-1"> 
+                 <input id="ShippingAddress2" type="text" class="form-control" placeholder="Address 2" name="ShippingAddress.Address2" value=""> 
+                </div> 
+                <script>
+    // Hack for blazor or now, this is needed for tax purposes
+    window.getShippingState = () => {
+        let shippingState = "";
+
+        try {
+            shippingState = document.getElementById("ShippingState").value;
+        } catch (err) {
+
+        }
+
+        return shippingState;
+    };
+</script> 
+                <style>
+    select[readonly] option, select[readonly] optgroup {
+        display: none;
+    }
+</style> 
+                <div class="col-4 form-field-col mb20 px-1"> 
+                 <input id="ShippingCity" type="text" class="form-control" placeholder="City *" name="ShippingAddress.City" value=""> 
+                </div> 
+                <script>
+    // Hack for blazor or now, this is needed for tax purposes
+    window.getShippingState = () => {
+        let shippingState = "";
+
+        try {
+            shippingState = document.getElementById("ShippingState").value;
+        } catch (err) {
+
+        }
+
+        return shippingState;
+    };
+</script> 
+                <style>
+    select[readonly] option, select[readonly] optgroup {
+        display: none;
+    }
+</style> 
+                <div class="col-4 form-field-col mb20 px-1"> 
+                 <input id="ShippingState" type="text" class="form-control" placeholder="State *" name="ShippingAddress.State" value=""> 
+                </div> 
+                <script>
+    // Hack for blazor or now, this is needed for tax purposes
+    window.getShippingState = () => {
+        let shippingState = "";
+
+        try {
+            shippingState = document.getElementById("ShippingState").value;
+        } catch (err) {
+
+        }
+
+        return shippingState;
+    };
+</script> 
+                <style>
+    select[readonly] option, select[readonly] optgroup {
+        display: none;
+    }
+</style> 
+                <div class="col-4 form-field-col mb20 px-1"> 
+                 <input id="ShippingZipCode" type="text" class="form-control" placeholder="Postal Code" name="ShippingAddress.Zip" value=""> 
+                </div> 
+                <script>
+    // Hack for blazor or now, this is needed for tax purposes
+    window.getShippingState = () => {
+        let shippingState = "";
+
+        try {
+            shippingState = document.getElementById("ShippingState").value;
+        } catch (err) {
+
+        }
+
+        return shippingState;
+    };
+</script> 
+                <style>
+    select[readonly] option, select[readonly] optgroup {
+        display: none;
+    }
+</style> 
+                <div class="col-12 form-field-col mb20 px-1"> <select id="ShippingCountry" placeholder="Country *" class="form-control" name="ShippingAddress.Country"> <option value="">Country *</option> <option value="United States">United States</option> <option value="Albania">Albania</option> <option value="Algeria">Algeria</option> <option value="Argentina">Argentina</option> <option value="Armenia">Armenia</option> <option value="Australia">Australia</option> <option value="Austria">Austria</option> <option value="Azerbaijan">Azerbaijan</option> <option value="Bahamas">Bahamas</option> <option value="Bahrain">Bahrain</option> <option value="Bangladesh">Bangladesh</option> <option value="Belarus">Belarus</option> <option value="Belgium">Belgium</option> <option value="Belize">Belize</option> <option value="Bhutan">Bhutan</option> <option value="Bolivia">Bolivia</option> <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option> <option value="Botswana">Botswana</option> <option value="Brazil">Brazil</option> <option value="Brunei">Brunei</option> <option value="Bulgaria">Bulgaria</option> <option value="Cambodia">Cambodia</option> <option value="Cameroon">Cameroon</option> <option value="Canada">Canada</option> <option value="Chile">Chile</option> <option value="China">China</option> <option value="Colombia">Colombia</option> <option value="Congo (DRC)">Congo (DRC)</option> <option value="Costa Rica">Costa Rica</option> <option value="Côte d’Ivoire">Côte d’Ivoire</option> <option value="Croatia">Croatia</option> <option value="Czechia">Czechia</option> <option value="Denmark">Denmark</option> <option value="Djibouti">Djibouti</option> <option value="Dominican Republic">Dominican Republic</option> <option value="Ecuador">Ecuador</option> <option value="Egypt">Egypt</option> <option value="El Salvador">El Salvador</option> <option value="Eritrea">Eritrea</option> <option value="Estonia">Estonia</option> <option value="Ethiopia">Ethiopia</option> <option value="Faroe Islands">Faroe Islands</option> <option value="Finland">Finland</option> <option value="France">France</option> <option value="Georgia">Georgia</option> <option value="Germany">Germany</option> <option value="Greece">Greece</option> <option value="Greenland">Greenland</option> <option value="Guatemala">Guatemala</option> <option value="Haiti">Haiti</option> <option value="Honduras">Honduras</option> <option value="Hong Kong SAR">Hong Kong SAR</option> <option value="Hungary">Hungary</option> <option value="Iceland">Iceland</option> <option value="India">India</option> <option value="Indonesia">Indonesia</option> <option value="Ireland">Ireland</option> <option value="Israel">Israel</option> <option value="Italy">Italy</option> <option value="Jamaica">Jamaica</option> <option value="Japan">Japan</option> <option value="Jordan">Jordan</option> <option value="Kazakhstan">Kazakhstan</option> <option value="Kenya">Kenya</option> <option value="Kuwait">Kuwait</option> <option value="Kyrgyzstan">Kyrgyzstan</option> <option value="Laos">Laos</option> <option value="Latvia">Latvia</option> <option value="Lebanon">Lebanon</option> <option value="Libya">Libya</option> <option value="Liechtenstein">Liechtenstein</option> <option value="Lithuania">Lithuania</option> <option value="Luxembourg">Luxembourg</option> <option value="Macao SAR">Macao SAR</option> <option value="Macedonia, FYRO">Macedonia, FYRO</option> <option value="Malaysia">Malaysia</option> <option value="Maldives">Maldives</option> <option value="Mali">Mali</option> <option value="Malta">Malta</option> <option value="Mexico">Mexico</option> <option value="Moldova">Moldova</option> <option value="Monaco">Monaco</option> <option value="Mongolia">Mongolia</option> <option value="Montenegro">Montenegro</option> <option value="Morocco">Morocco</option> <option value="Netherlands">Netherlands</option> <option value="New Zealand">New Zealand</option> <option value="Nicaragua">Nicaragua</option> <option value="Norway">Norway</option> <option value="Oman">Oman</option> <option value="Pakistan">Pakistan</option> <option value="Panama">Panama</option> <option value="Paraguay">Paraguay</option> <option value="Peru">Peru</option> <option value="Poland">Poland</option> <option value="Portugal">Portugal</option> <option value="Puerto Rico">Puerto Rico</option> <option value="Qatar">Qatar</option> <option value="Réunion">Réunion</option> <option value="Romania">Romania</option> <option value="Russia">Russia</option> <option value="Rwanda">Rwanda</option> <option value="Saudi Arabia">Saudi Arabia</option> <option value="Senegal">Senegal</option> <option value="Serbia">Serbia</option> <option value="Singapore">Singapore</option> <option value="Slovakia">Slovakia</option> <option value="Slovenia">Slovenia</option> <option value="Somalia">Somalia</option> <option value="South Africa">South Africa</option> <option value="Spain">Spain</option> <option value="Sri Lanka">Sri Lanka</option> <option value="Sweden">Sweden</option> <option value="Switzerland">Switzerland</option> <option value="Taiwan">Taiwan</option> <option value="Tajikistan">Tajikistan</option> <option value="Thailand">Thailand</option> <option value="Trinidad and Tobago">Trinidad and Tobago</option> <option value="Tunisia">Tunisia</option> <option value="Turkey">Turkey</option> <option value="Turkmenistan">Turkmenistan</option> <option value="United Arab Emirates">United Arab Emirates</option> <option value="United Kingdom">United Kingdom</option> <option value="Uruguay">Uruguay</option> <option value="Uzbekistan">Uzbekistan</option> <option value="Zimbabwe">Zimbabwe</option> </select> 
+                </div> 
+                <script>
+    // Hack for blazor or now, this is needed for tax purposes
+    window.getShippingState = () => {
+        let shippingState = "";
+
+        try {
+            shippingState = document.getElementById("ShippingState").value;
+        } catch (err) {
+
+        }
+
+        return shippingState;
+    };
+</script> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="mb-30 mt-30"> 
+              <div class="col-12"> 
+               <div class="card border-left-0 border-right-0 border-bottom-0 rounded-0"> 
+                <div class="card-body px-1"> 
+                 <div class="form-row w-100 flex px-2"> 
+                  <div class="col-12 w-100"> <label for="card-element" style="font-size: 1.1rem;" class="font-weight-bold text-dark"> Payment information </label> 
+                  </div> 
+                  <div class="col-12 w-100"> <label for="card-element" style="font-size: 1rem;"> Please enter your card details and billing zip code. </label> 
+                  </div> 
+                 </div> 
+                 <div class="form-row w-100"> 
+                  <div class="col-12 col-md-12"> 
+                   <div id="card-number" class="w-100 shadow-sm border"> <!-- A Stripe Element will be inserted here. --> 
+                   </div> 
+                  </div> 
+                  <div class="col-12 col-md-4 pt-1"> 
+                   <div id="card-expiry" class="w-100 shadow-sm border"> <!-- A Stripe Element will be inserted here. --> 
+                   </div> 
+                  </div> 
+                  <div class="col-12 col-md-4 pt-1"> 
+                   <div id="card-cvc" class="w-100 shadow-sm border"> <!-- A Stripe Element will be inserted here. --> 
+                   </div> 
+                  </div> 
+                  <div class="col-12 col-md-4 pt-1"> 
+                   <div id="card-zipcode" class="w-100 shadow-sm border"> <!-- A Stripe Element will be inserted here. --> 
+                   </div> 
+                  </div> 
+                 </div> 
+                </div> <!-- Used to display form errors. --> 
+                <div id="card-errors" role="alert"></div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="col-12 mb20"> <button id="submitOrderButton" type="submit" class="btn btn-primary btn-block emagsSubmit mt-2 w-auto ml-auto mr-auto" style="padding: 9px 30px 10px 30px;">SUBMIT ORDER</button> 
+             </div> 
+             <div class="col-12 border-top pt-3">
+              All transactions are secure and encrypted.
+             </div> 
+            </div> 
+            <input name="__RequestVerificationToken" type="hidden" value="CfDJ8FzjItsPIfRLl30GkmV8Mz-DHKJzSlXemqLqcBuCWspMM20K5Mo7bnQ0h_fXaHhRSs8BarDwWZZj4UJTXsEryFg9t5QhWExRPNOh_XuHou1B2sNIg8tmgysAUl_3BZx_9jDpwlzLTvS_cW5mm7-eEa0">
+           </form> 
+          </div> 
+         </div> 
+        </div> 
+        <script>
+
+
+    var shippingAddressContainer = document.getElementById("shippingAddressContainer");
+    var useShippingAddress = document.getElementById("UseShippingAddress")
+    if(useShippingAddress){
+        useShippingAddress.addEventListener("change", useShippingClicked);
+    }
+
+    $("#submitOrderButton").mousedown(function (e) {
+        //if the shipping checkbox is not there or remains unchecked, copy over all billing fields to shipping
+        if(!useShippingAddress || (useShippingAddress && !useShippingAddress.checked))
+        {
+            var orderForm = document.getElementById("orderForm");
+            if(!orderForm) {
+                return;
+            }
+            var inputs = orderForm.getElementsByTagName("input");
+            for(var i = 0; i < inputs.length; ++i){
+                var input = inputs[i];
+                CopyBillingToShipping(input);
+            }
+            var selects = orderForm.getElementsByTagName("select");
+            for(var i = 0; i < selects.length; ++i){
+                var select = selects[i];
+                CopyBillingToShipping(select);
+            }
+        }
+        //e.preventDefault(); //for testing only
+    });
+
+    function CopyBillingToShipping(element){
+        if(!element.id || (!element.id.toLowerCase().startsWith("billing") && element.id.toLowerCase() !== "email")){
+            return;
+        }
+        var shippingFieldId = "Shipping" + element.id.substring(7);
+        if(element.id.toLowerCase() == "email"){
+            shippingFieldId = "ShippingEmail";
+        }
+        var shippingElement = document.getElementById(shippingFieldId);
+        if(!shippingElement){
+            return;
+        }
+        if(element.tagName.toUpperCase() == "INPUT"){
+            shippingElement.value = element.value;
+        }
+        else if(element.tagName.toUpperCase() == "SELECT"){
+            $('#' + shippingFieldId).val($('#' + element.id + ' option:selected').val())
+        }
+    }
+
+    function useShippingClicked(evt){
+        if(shippingAddressContainer){
+            if(useShippingAddress.checked){
+                shippingAddressContainer.style.display = "block";
+            }
+            else{
+                shippingAddressContainer.style.display = "none";
+            }
+        }
+    }
+</script> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </main> 
+  <footer class="footer" style="padding-top: 25px;"> 
+   <div class="container-fluid"> 
+    <div class="container w-100"> 
+     <div class="row d-flex flex-column"> 
+      <div id="digitalRiverComplianceContainer" class="mx-auto my-1 text-center"></div> 
+      <div class="mx-auto my-1">
+       <img src="https://assets.emagazines.com/uploads/eMags_MagazineNewsstand_Logo_Final_f929de56-b751-47ae-8a0b-038427c7c127.png" width="130" alt="Magazine Newsstand Logo">
+      </div> 
+      <div class="mx-auto my-1 text-center"> <span> Powered by <a href="https://eMagazines.com">eMagazines</a> <br> © Copyright 2022, Contrail Inc. dba Magazine Newsstand. All rights reserved <br> <a href="https://emagazines.com/digital/magazinenewsstand-com-privacy-policy/}">Privacy Statement</a>&nbsp;|&nbsp; <a href="https://emagazines.com/digital/cookies-and-web-beacons/">Cookies</a>&nbsp;|&nbsp; <a href="https://emagazines.com/digital/emags-terms">Terms of Use</a> <br> <p style="font-size: 1rem;">For questions please contact support <a href="https://magazinenewsstand.com/support-form">here</a>.</p> </span> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </footer> <!--back to top--> <a href="#" class="back-to-top" id="back-to-top"> <i class="icon-chevron-up"></i> </a> <!-- jQuery first, then Tether, then Bootstrap JS. --> 
+  <script src="/js/plugins.js"></script> 
+  <script src="/js/landing.custom.js"></script> <!-- Popper JS --> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script> 
+  <script src="/js/PaymentServiceProviders/Common/common.js?v=V8evTrhMOu8oqClt9zc3AixojU1gw5F2nFPk7bMniVc"></script> 
+  <script src="https://js.stripe.com/v3/"></script> 
+  <script>
+                window.stripeInstance = Stripe('pk_live_SPLlsCm7cH7UmquaorCt3oUv');
+            </script> 
+  <script src="/js/PaymentServiceProviders/Stripe/stripe.js?v=NGE1j5P5KvCF03dLukDwIggYSuZrjqak6Q31BY9afGs"></script> 
+  <script>
+            $("#ShippingState").change(function () { refreshCart(); });
+
+        function refreshCart() {
+            let cartRefreshFlag = $("#cartRefreshFlag");
+            if (cartRefreshFlag) {
+                cartRefreshFlag.click();
+            }
+        }
+
+        </script> 
+  <script>
+        var countryCode = '';
+$.get('https://www.cdnjs.com/cdn-cgi/trace', function(d) {
+    var data = d.replace(/[\r\n]+/g, '","').replace(/\=+/g, '":"');
+    data = '{"' + data.slice(0, data.lastIndexOf('","')) + '"}';
+    var jsondata = $.parseJSON(data);
+    countryCode = jsondata.loc
+    console.log(countryCode);
+	convertCurrency();
+});
+
+
+var currencySymbolMap = {
+  "AED": '?.?',
+  "AFN": '?',
+  "ALL": 'L',
+  "AMD": '?',
+  "ANG": 'ƒ',
+  "AOA": 'Kz',
+  "ARS": '$',
+  "AUD": '$',
+  "AWG": 'ƒ',
+  "AZN": '?',
+  "BAM": 'KM',
+  "BBD": '$',
+  "BDT": '?',
+  "BGN": '??',
+  "BHD": '.?.?',
+  "BIF": 'FBu',
+  "BMD": '$',
+  "BND": '$',
+  "BOB": '$b',
+  "BOV": 'BOV',
+  "BRL": 'R$',
+  "BSD": '$',
+  "BTC": '?',
+  "BTN": 'Nu.',
+  "BWP": 'P',
+  "BYN": 'Br',
+  "BYR": 'Br',
+  "BZD": 'BZ$',
+  "CAD": '$',
+  "CDF": 'FC',
+  "CHE": 'CHE',
+  "CHF": 'CHF',
+  "CHW": 'CHW',
+  "CLF": 'CLF',
+  "CLP": '$',
+  "CNY": '¥',
+  "COP": '$',
+  "COU": 'COU',
+  "CRC": '?',
+  "CUC": '$',
+  "CUP": '?',
+  "CVE": '$',
+  "CZK": 'K?',
+  "DJF": 'Fdj',
+  "DKK": 'kr',
+  "DOP": 'RD$',
+  "DZD": '??',
+  "EEK": 'kr',
+  "EGP": '£',
+  "ERN": 'Nfk',
+  "ETB": 'Br',
+  "ETH": '?',
+  "EUR": '€',
+  "FJD": '$',
+  "FKP": '£',
+  "GBP": '£',
+  "GEL": '?',
+  "GGP": '£',
+  "GHC": '?',
+  "GHS": 'GH?',
+  "GIP": '£',
+  "GMD": 'D',
+  "GNF": 'FG',
+  "GTQ": 'Q',
+  "GYD": '$',
+  "HKD": '$',
+  "HNL": 'L',
+  "HRK": 'kn',
+  "HTG": 'G',
+  "HUF": 'Ft',
+  "IDR": 'Rp',
+  "ILS": '?',
+  "IMP": '£',
+  "INR": '?',
+  "IQD": '?.?',
+  "IRR": '?',
+  "ISK": 'kr',
+  "JEP": '£',
+  "JMD": 'J$',
+  "JOD": 'JD',
+  "JPY": '¥',
+  "KES": 'KSh',
+  "KGS": '??',
+  "KHR": '?',
+  "KMF": 'CF',
+  "KPW": '?',
+  "KRW": '?',
+  "KWD": 'KD',
+  "KYD": '$',
+  "KZT": '?',
+  "LAK": '?',
+  "LBP": '£',
+  "LKR": '?',
+  "LRD": '$',
+  "LSL": 'M',
+  "LTC": '?',
+  "LTL": 'Lt',
+  "LVL": 'Ls',
+  "LYD": 'LD',
+  "MAD": 'MAD',
+  "MDL": 'lei',
+  "MGA": 'Ar',
+  "MKD": '???',
+  "MMK": 'K',
+  "MNT": '?',
+  "MOP": 'MOP$',
+  "MRO": 'UM',
+  "MRU": 'UM',
+  "MUR": '?',
+  "MVR": 'Rf',
+  "MWK": 'MK',
+  "MXN": '$',
+  "MXV": 'MXV',
+  "MYR": 'RM',
+  "MZN": 'MT',
+  "NAD": '$',
+  "NGN": '?',
+  "NIO": 'C$',
+  "NOK": 'kr',
+  "NPR": '?',
+  "NZD": '$',
+  "OMR": '?',
+  "PAB": 'B/.',
+  "PEN": 'S/.',
+  "PGK": 'K',
+  "PHP": '?',
+  "PKR": '?',
+  "PLN": 'z?',
+  "PYG": 'Gs',
+  "QAR": '?',
+  "RMB": '?',
+  "RON": 'lei',
+  "RSD": '???.',
+  "RUB": '?',
+  "RWF": 'R?',
+  "SAR": '?',
+  "SBD": '$',
+  "SCR": '?',
+  "SDG": '?.?.',
+  "SEK": 'kr',
+  "SGD": 'S$',
+  "SHP": '£',
+  "SLL": 'Le',
+  "SOS": 'S',
+  "SRD": '$',
+  "SSP": '£',
+  "STD": 'Db',
+  "STN": 'Db',
+  "SVC": '$',
+  "SYP": '£',
+  "SZL": 'E',
+  "THB": '?',
+  "TJS": 'SM',
+  "TMT": 'T',
+  "TND": '?.?',
+  "TOP": 'T$',
+  "TRL": '?',
+  "TRY": '?',
+  "TTD": 'TT$',
+  "TVD": '$',
+  "TWD": 'NT$',
+  "TZS": 'TSh',
+  "UAH": '?',
+  "UGX": 'USh',
+  "USD": '$',
+  "UYI": 'UYI',
+  "UYU": '$U',
+  "UYW": 'UYW',
+  "UZS": '??',
+  "VEF": 'Bs',
+  "VES": 'Bs.S',
+  "VND": '?',
+  "VUV": 'VT',
+  "WST": 'WS$',
+  "XAF": 'FCFA',
+  "XBT": '?',
+  "XCD": '$',
+  "XOF": 'CFA',
+  "XPF": '?',
+  "XSU": 'Sucre',
+  "XUA": 'XUA',
+  "YER": '?',
+  "ZAR": 'R',
+  "ZMW": 'ZK',
+  "ZWD": 'Z$',
+  "ZWL": '$'
+}
+
+var countryCurrencies = {
+    "BD": "BDT",
+    "BE": "EUR",
+    "BF": "XOF",
+    "BG": "BGN",
+    "BA": "BAM",
+    "BB": "BBD",
+    "WF": "XPF",
+    "BL": "EUR",
+    "BM": "BMD",
+    "BN": "BND",
+    "BO": "BOB",
+    "BH": "BHD",
+    "BI": "BIF",
+    "BJ": "XOF",
+    "BT": "BTN",
+    "JM": "JMD",
+    "BV": "NOK",
+    "BW": "BWP",
+    "WS": "WST",
+    "BQ": "USD",
+    "BR": "BRL",
+    "BS": "BSD",
+    "JE": "GBP",
+    "BY": "BYR",
+    "BZ": "BZD",
+    "RU": "RUB",
+    "RW": "RWF",
+    "RS": "RSD",
+    "TL": "USD",
+    "RE": "EUR",
+    "TM": "TMT",
+    "TJ": "TJS",
+    "RO": "RON",
+    "TK": "NZD",
+    "GW": "XOF",
+    "GU": "USD",
+    "GT": "GTQ",
+    "GS": "GBP",
+    "GR": "EUR",
+    "GQ": "XAF",
+    "GP": "EUR",
+    "JP": "JPY",
+    "GY": "GYD",
+    "GG": "GBP",
+    "GF": "EUR",
+    "GE": "GEL",
+    "GD": "XCD",
+    "GB": "GBP",
+    "GA": "XAF",
+    "SV": "USD",
+    "GN": "GNF",
+    "GM": "GMD",
+    "GL": "DKK",
+    "GI": "GIP",
+    "GH": "GHS",
+    "OM": "OMR",
+    "TN": "TND",
+    "JO": "JOD",
+    "HR": "HRK",
+    "HT": "HTG",
+    "HU": "HUF",
+    "HK": "HKD",
+    "HN": "HNL",
+    "HM": "AUD",
+    "VE": "VEF",
+    "PR": "USD",
+    "PS": "ILS",
+    "PW": "USD",
+    "PT": "EUR",
+    "SJ": "NOK",
+    "PY": "PYG",
+    "IQ": "IQD",
+    "PA": "PAB",
+    "PF": "XPF",
+    "PG": "PGK",
+    "PE": "PEN",
+    "PK": "PKR",
+    "PH": "PHP",
+    "PN": "NZD",
+    "PL": "PLN",
+    "PM": "EUR",
+    "ZM": "ZMK",
+    "EH": "MAD",
+    "EE": "EUR",
+    "EG": "EGP",
+    "ZA": "ZAR",
+    "EC": "USD",
+    "IT": "EUR",
+    "VN": "VND",
+    "SB": "SBD",
+    "ET": "ETB",
+    "SO": "SOS",
+    "ZW": "ZWL",
+    "SA": "SAR",
+    "ES": "EUR",
+    "ER": "ERN",
+    "ME": "EUR",
+    "MD": "MDL",
+    "MG": "MGA",
+    "MF": "EUR",
+    "MA": "MAD",
+    "MC": "EUR",
+    "UZ": "UZS",
+    "MM": "MMK",
+    "ML": "XOF",
+    "MO": "MOP",
+    "MN": "MNT",
+    "MH": "USD",
+    "MK": "MKD",
+    "MU": "MUR",
+    "MT": "EUR",
+    "MW": "MWK",
+    "MV": "MVR",
+    "MQ": "EUR",
+    "MP": "USD",
+    "MS": "XCD",
+    "MR": "MRO",
+    "IM": "GBP",
+    "UG": "UGX",
+    "TZ": "TZS",
+    "MY": "MYR",
+    "MX": "MXN",
+    "IL": "ILS",
+    "FR": "EUR",
+    "IO": "USD",
+    "SH": "SHP",
+    "FI": "EUR",
+    "FJ": "FJD",
+    "FK": "FKP",
+    "FM": "USD",
+    "FO": "DKK",
+    "NI": "NIO",
+    "NL": "EUR",
+    "NO": "NOK",
+    "NA": "NAD",
+    "VU": "VUV",
+    "NC": "XPF",
+    "NE": "XOF",
+    "NF": "AUD",
+    "NG": "NGN",
+    "NZ": "NZD",
+    "NP": "NPR",
+    "NR": "AUD",
+    "NU": "NZD",
+    "CK": "NZD",
+    "XK": "EUR",
+    "CI": "XOF",
+    "CH": "CHF",
+    "CO": "COP",
+    "CN": "CNY",
+    "CM": "XAF",
+    "CL": "CLP",
+    "CC": "AUD",
+    "CA": "CAD",
+    "CG": "XAF",
+    "CF": "XAF",
+    "CD": "CDF",
+    "CZ": "CZK",
+    "CY": "EUR",
+    "CX": "AUD",
+    "CR": "CRC",
+    "CW": "ANG",
+    "CV": "CVE",
+    "CU": "CUP",
+    "SZ": "SZL",
+    "SY": "SYP",
+    "SX": "ANG",
+    "KG": "KGS",
+    "KE": "KES",
+    "SS": "SSP",
+    "SR": "SRD",
+    "KI": "AUD",
+    "KH": "KHR",
+    "KN": "XCD",
+    "KM": "KMF",
+    "ST": "STD",
+    "SK": "EUR",
+    "KR": "KRW",
+    "SI": "EUR",
+    "KP": "KPW",
+    "KW": "KWD",
+    "SN": "XOF",
+    "SM": "EUR",
+    "SL": "SLL",
+    "SC": "SCR",
+    "KZ": "KZT",
+    "KY": "KYD",
+    "SG": "SGD",
+    "SE": "SEK",
+    "SD": "SDG",
+    "DO": "DOP",
+    "DM": "XCD",
+    "DJ": "DJF",
+    "DK": "DKK",
+    "VG": "USD",
+    "DE": "EUR",
+    "YE": "YER",
+    "DZ": "DZD",
+    "US": "USD",
+    "UY": "UYU",
+    "YT": "EUR",
+    "UM": "USD",
+    "LB": "LBP",
+    "LC": "XCD",
+    "LA": "LAK",
+    "TV": "AUD",
+    "TW": "TWD",
+    "TT": "TTD",
+    "TR": "TRY",
+    "LK": "LKR",
+    "LI": "CHF",
+    "LV": "EUR",
+    "TO": "TOP",
+    "LT": "LTL",
+    "LU": "EUR",
+    "LR": "LRD",
+    "LS": "LSL",
+    "TH": "THB",
+    "TF": "EUR",
+    "TG": "XOF",
+    "TD": "XAF",
+    "TC": "USD",
+    "LY": "LYD",
+    "VA": "EUR",
+    "VC": "XCD",
+    "AE": "AED",
+    "AD": "EUR",
+    "AG": "XCD",
+    "AF": "AFN",
+    "AI": "XCD",
+    "VI": "USD",
+    "IS": "ISK",
+    "IR": "IRR",
+    "AM": "AMD",
+    "AL": "ALL",
+    "AO": "AOA",
+    "AS": "USD",
+    "AR": "ARS",
+    "AU": "AUD",
+    "AT": "EUR",
+    "AW": "AWG",
+    "IN": "INR",
+    "AX": "EUR",
+    "AZ": "AZN",
+    "IE": "EUR",
+    "ID": "IDR",
+    "UA": "UAH",
+    "QA": "QAR",
+    "MZ": "MZN"
+};
+
+function convertCurrency() {
+
+    var currency = countryCurrencies.hasOwnProperty(countryCode.toUpperCase()) ? countryCurrencies[countryCode.toUpperCase()] : null;
+
+    const from_currency = "USD";
+    const to_currency = currency;
+    if (to_currency == null || to_currency == 'USD')
+        return;
+		
+	let currency_symbol = "";
+	currency_symbol = currencySymbolMap.hasOwnProperty(to_currency.toUpperCase()) ? currencySymbolMap[to_currency.toUpperCase()] : "";
+	
+	if (currency_symbol == to_currency)
+		currency_symbol = "";
+		
+	let to_currency_label = to_currency;
+	if (currency_symbol != "")
+		to_currency_label = "";
+	else
+		to_currency_label = " " + to_currency_label;
+		
+	if ($('.product-price-convertible').length = 0)
+		return;
+
+    fetch(`https://freecurrencyapi.net/api/v2/latest?apikey=2abefe40-88ef-11ec-834d-a565f46de39b&base_currency=${from_currency}`)
+        .then(res => res.json())
+        .then(res => {
+            const rate = res.data[to_currency];
+			
+			if (rate == null)
+				return;
+
+            $('.product-price-convertible').each(function() {
+                let fulltext = $(this).text();
+                let amount = Number(fulltext.replace('$', '').replace(' USD', ''));
+                if (isNaN(amount) || to_currency == 'USD')
+                    return true;
+                let convertedAmount = (amount * rate).toFixed(2);
+                $(this).text(`${currency_symbol}${convertedAmount}${to_currency_label}`)
+            });
+
+        });
+}
+    </script> 
+  <script>
+    function addValidation(fieldName, required, editable) {
+        let field = $(`#${fieldName}`);
+
+        if (required) {
+            field.attr("required", "required");
+        }
+
+        if (!editable) {
+            field.attr("readonly", "readonly");
+        }
+    }
+</script> 
+  <script>
+        $(function() {
+            let required = true;
+            let editable = true;
+            let fieldName = "Email";
+            addValidation(fieldName, required, editable);
+        });
+    </script> 
+  <script>
+        $(function() {
+            let required = true;
+            let editable = true;
+            let fieldName = "BillingCountry";
+            addValidation(fieldName, required, editable);
+        });
+    </script> 
+  <script>
+        $(function() {
+            let required = true;
+            let editable = true;
+            let fieldName = "ShippingCountry";
+            addValidation(fieldName, required, editable);
+        });
+    </script> 
+  <script>
+        $(function() {
+            let required = true;
+            let editable = true;
+            let fieldName = "ShippingFirstName";
+            addValidation(fieldName, required, editable);
+        });
+    </script> 
+  <script>
+        $(function() {
+            let required = true;
+            let editable = true;
+            let fieldName = "ShippingLastName";
+            addValidation(fieldName, required, editable);
+        });
+    </script> 
+  <script>
+        $(function() {
+            let required = true;
+            let editable = true;
+            let fieldName = "ShippingAddress1";
+            addValidation(fieldName, required, editable);
+        });
+    </script> 
+  <script>
+        $(function() {
+            let required = false;
+            let editable = true;
+            let fieldName = "ShippingAddress2";
+            addValidation(fieldName, required, editable);
+        });
+    </script> 
+  <script>
+        $(function() {
+            let required = true;
+            let editable = true;
+            let fieldName = "ShippingCity";
+            addValidation(fieldName, required, editable);
+        });
+    </script> 
+  <script>
+        $(function() {
+            let required = true;
+            let editable = true;
+            let fieldName = "ShippingState";
+            addValidation(fieldName, required, editable);
+        });
+    </script> 
+  <script>
+        $(function() {
+            let required = false;
+            let editable = true;
+            let fieldName = "ShippingZipCode";
+            addValidation(fieldName, required, editable);
+        });
+    </script> 
+  <script>
+        $(function() {
+            let required = true;
+            let editable = true;
+            let fieldName = "BillingLastName";
+            addValidation(fieldName, required, editable);
+        });
+    </script> 
+  <script>
+        $(function() {
+            let required = true;
+            let editable = true;
+            let fieldName = "BillingAddress1";
+            addValidation(fieldName, required, editable);
+        });
+    </script> 
+  <script>
+        $(function() {
+            let required = false;
+            let editable = true;
+            let fieldName = "BillingAddress2";
+            addValidation(fieldName, required, editable);
+        });
+    </script> 
+  <script>
+        $(function() {
+            let required = true;
+            let editable = true;
+            let fieldName = "BillingCity";
+            addValidation(fieldName, required, editable);
+        });
+    </script> 
+  <script>
+        $(function() {
+            let required = true;
+            let editable = true;
+            let fieldName = "BillingState";
+            addValidation(fieldName, required, editable);
+        });
+    </script> 
+  <script>
+        $(function() {
+            let required = false;
+            let editable = true;
+            let fieldName = "BillingZipCode";
+            addValidation(fieldName, required, editable);
+        });
+    </script> 
+  <script>
+        $(function() {
+            let required = true;
+            let editable = true;
+            let fieldName = "BillingFirstName";
+            addValidation(fieldName, required, editable);
+        });
+    </script> 
+  <script>
+        $(function() {
+            let required = true;
+            let editable = true;
+            let fieldName = "ShippingEmail";
+            addValidation(fieldName, required, editable);
+        });
+    </script> 
+  <style>
+
+    /* This is not quite right it will apply to all buttons not just form button */
+    .btn-primary, .btn-primary:hover, .btn-primary.disabled, .btn-primary.disabled:hover { background-color: #4A90E2 !important; }
+</style> 
+  <style>
+    * { font-family: "Avenir Next W05"; }
+</style> 
+  <style>
+        main.main-content {      box-shadow: none !important;  }    .footer {      background-color: #F8F5F2 !important;      font-family: 'Avenir Next';      font-size: 12px !important;  } 
+    </style> 
+  <style>
+    .icon-cart-item { border-radius: 3px; }
+
+    .catalog-product-image { border-radius: 3px; }
+</style> 
+  <style>
+        .icon-cart-item { box-shadow: 4px 4px 6px 0px rgba(0, 0, 0, 0.2); }
+
+        .catalog-product-image { box-shadow: 4px 4px 6px 0px rgba(0, 0, 0, 0.2); }
+    </style> 
+  <div id="modal-container" class="modal hidden-print" tabindex="-1" role="dialog"> 
+   <div class="modal-dialog modal-dialog-centered modal-lg"> 
+    <div class="modal-content"> 
+     <div class="modal-body"> 
+     </div> 
+     <div class="modal-footer"> <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <script autostart="false" src="_framework/blazor.server.js"></script> 
+  <script>
+
+        Blazor.start({
+            reconnectionOptions: {
+                maxRetries: 10,
+                retryIntervalMilliseconds: 1000,
+            },
+
+            reconnectionHandler: {
+                onConnectionDown: (options, error) => {
+
+                    console.log("Blazor SignalR Disconnected");
+
+                    // Lost state refresh page to get new terminal SignalR Connection
+                    if (navigator.onLine) {
+                        if (navigator.userAgent.indexOf("Firefox") != -1) {
+                            setTimeout(function() {
+                                    window.location.href = window.location.href;
+                                },
+                                5000);
+                        } else {
+                            window.location.href = window.location.href;
+                        }
+                    } else {
+                        Swal.fire({
+                            title: 'Session Expired',
+                            text: "Would you like to try and refresh your session?",
+                            icon: 'warning',
+                            showCancelButton: true,
+                            confirmButtonColor: '#3085d6',
+                            cancelButtonColor: '#d33',
+                            confirmButtonText: 'Yes'
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                window.location.href = window.location.href;
+                            } else {
+                                // Do nothing
+                                //window.location.href = "https://store.emagazines.com/error";
+                            }
+                        });
+                    }
+                }
+            }
+        });
+
+    </script> 
+  <script>
+    $(function() {
+        AOS.init();
+    });
+</script> 
+  <script>
+    window.loadGoogleTagManager = function () {
+        $.getScript('https://www.googletagmanager.com/gtag/js?id=UA-27751422-2', function(data, textStatus, jqxhr) {
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'UA-27751422-2');
+        });
+    }
+</script> 
+  <div id="cookieConsentContainer" style="width: 325px;" class="fixed-bottom"> 
+   <div id="cookieConsent" class="alert alert-info alert-dismissible fade show mb-0" role="alert"> 
+    <div class="text-center">
+      This site uses cookies. <a href="https://emagazines.com/digital/magazinenewsstand-com-privacy-policy/" target="_blank">Learn More</a>. 
+    </div> 
+    <div class="row mt-2 mx-auto" style="width: 200px;"> 
+     <div class="col"> <button type="button" class="d-block btn btn-outline-primary p-1" data-dismiss="alert" aria-label="Close" data-cookie-string=".AspNet.Consent=yes; expires=Thu, 18 May 2023 00:52:31 GMT; path=/; secure; samesite=none"> <span aria-hidden="true">Accept</span> </button> 
+     </div> 
+     <div class="col"> <button id="cookieCloseButton" type="button" class="d-block btn btn-outline-danger p-1" data-dismiss="alert" aria-label="Close"> <span style="" aria-hidden="true">Reject</span> </button> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <script>
+
+        $(function() {
+            $("#cookieCloseButton").click(function() {
+                $("#cookieConsentContainer").hide();
+            });
+        });
+
+        (function () {
+            var button = document.querySelector("#cookieConsent button[data-cookie-string]");
+            button.addEventListener("click", function (event) {
+                document.cookie = button.dataset.cookieString;
+                window.loadGoogleTagManager();
+            }, false);
+        })();
+    </script> 
+  <script src="js/animate-intersection-observer.js?v=xg40odPC_aMRGSSN4FDYvwLZgI-0RPaO_j24H9y0Df4"></script>  
+ </body>
+</html>

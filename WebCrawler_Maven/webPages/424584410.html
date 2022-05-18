@@ -1,0 +1,219 @@
+<!doctype html>
+<html class="writer-html5" lang="en"> 
+ <head> 
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Warehouse codebase — Warehouse  documentation</title> 
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css"> 
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css"> 
+  <link rel="canonical" href="https://warehouse.pypa.io/application.html"> <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]--> 
+  <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script> 
+  <script src="_static/jquery.js"></script> 
+  <script src="_static/underscore.js"></script> 
+  <script src="_static/doctools.js"></script> 
+  <script async src="https://assets.readthedocs.org/static/javascript/readthedocs-doc-embed.js"></script> 
+  <script src="_static/js/theme.js"></script> 
+  <link rel="index" title="Index" href="genindex.html"> 
+  <link rel="search" title="Search" href="search.html"> 
+  <link rel="next" title="API reference" href="api-reference/index.html"> 
+  <link rel="prev" title="Token Scanning" href="development/token-scanning.html"> <!-- RTD Extra Head --> 
+  <link rel="stylesheet" href="https://assets.readthedocs.org/static/css/readthedocs-doc-embed.css" type="text/css"> 
+  <script type="application/json" id="READTHEDOCS_DATA">{"ad_free": false, "api_host": "https://readthedocs.org", "build_date": "2022-05-16T21:16:41Z", "builder": "sphinx", "canonical_url": null, "commit": "140a2cc3", "docroot": "/docs/", "features": {"docsearch_disabled": false}, "global_analytics_code": "UA-17997319-1", "language": "en", "page": "application", "programming_language": "py", "project": "warehouse", "proxied_api_host": "/_", "source_suffix": ".rst", "subprojects": {}, "theme": "sphinx_rtd_theme", "user_analytics_code": "", "version": "latest"}</script> <!--
+Using this variable directly instead of using `JSON.parse` is deprecated.
+The READTHEDOCS_DATA global variable will be removed in the future.
+--> 
+  <script type="text/javascript">
+READTHEDOCS_DATA = JSON.parse(document.getElementById('READTHEDOCS_DATA').innerHTML);
+</script> 
+  <script type="text/javascript" src="https://assets.readthedocs.org/static/javascript/readthedocs-analytics.js" async></script> <!-- end RTD <extrahead> --> 
+ </head> 
+ <body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav"> 
+   <nav data-toggle="wy-nav-shift" class="wy-nav-side"> 
+    <div class="wy-side-scroll"> 
+     <div class="wy-side-nav-search"> <a href="index.html" class="icon icon-home"> Warehouse </a> 
+      <div class="version">
+        latest 
+      </div> 
+      <div role="search"> 
+       <form id="rtd-search-form" class="wy-form" action="search.html" method="get"> 
+        <input type="text" name="q" placeholder="Search docs"> 
+        <input type="hidden" name="check_keywords" value="yes"> 
+        <input type="hidden" name="area" value="default"> 
+       </form> 
+      </div> 
+     </div>
+     <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu"> 
+      <ul class="current"> 
+       <li class="toctree-l1"><a class="reference internal" href="development/index.html">Development</a></li> 
+       <li class="toctree-l1 current"><a class="current reference internal" href="#">Warehouse codebase</a>
+        <ul> 
+         <li class="toctree-l2"><a class="reference internal" href="#usage-assumptions-and-concepts">Usage assumptions and concepts</a></li> 
+         <li class="toctree-l2"><a class="reference internal" href="#file-and-directory-structure">File and directory structure</a></li> 
+         <li class="toctree-l2"><a class="reference internal" href="#historical-context-deprecations">Historical context &amp; deprecations</a></li> 
+        </ul> </li> 
+       <li class="toctree-l1"><a class="reference internal" href="api-reference/index.html">API reference</a></li> 
+       <li class="toctree-l1"><a class="reference internal" href="ui-principles.html">UI principles</a></li> 
+       <li class="toctree-l1"><a class="reference internal" href="security.html">Security</a></li> 
+       <li class="toctree-l1"><a class="reference internal" href="translations.html">Translations</a></li> 
+       <li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap and Sprints</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </nav> 
+   <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+    <nav class="wy-nav-top" aria-label="Mobile navigation menu"> <i data-toggle="wy-nav-top" class="fa fa-bars"></i> <a href="index.html">Warehouse</a> 
+    </nav> 
+    <div class="wy-nav-content"> 
+     <div class="rst-content"> 
+      <div role="navigation" aria-label="Page navigation"> 
+       <ul class="wy-breadcrumbs"> 
+        <li><a href="index.html" class="icon icon-home"></a> »</li> 
+        <li>Warehouse codebase</li> 
+        <li class="wy-breadcrumbs-aside"> <a href="https://github.com/pypa/warehouse/blob/main/docs/application.rst" class="fa fa-github"> Edit on GitHub</a> </li> 
+       </ul> 
+       <hr> 
+      </div> 
+      <div role="main" class="document" itemscope itemtype="http://schema.org/Article"> 
+       <div itemprop="articleBody"> 
+        <section id="warehouse-codebase"> 
+         <h1>Warehouse codebase<a class="headerlink" href="#warehouse-codebase" title="Permalink to this headline">¶</a></h1> 
+         <p>Warehouse uses the <a class="reference external" href="https://docs.pylonsproject.org/projects/pyramid/en/latest/index.html">Pyramid</a> web framework, the <a class="reference external" href="https://docs.sqlalchemy.org/en/latest/">SQLAlchemy</a> ORM, and <a class="reference external" href="https://www.postgresql.org/docs/">Postgres</a> for its database. Warehouse’s front end uses <a class="reference external" href="http://jinja.pocoo.org/">Jinja2</a> templates.</p> 
+         <p>The production deployment for Warehouse is deployed using <a class="reference external" href="https://github.com/cabotage/cabotage-app">Cabotage</a>, which manages <a class="reference external" href="https://docs.docker.com/">Docker</a> containers deployed via <a class="reference external" href="https://kubernetes.io">Kubernetes</a>.</p> 
+         <p>In the development environment, we use several <a class="reference external" href="https://docs.docker.com/">Docker</a> containers orchestrated by <a class="reference external" href="https://docs.docker.com/compose/overview/">Docker Compose</a> to <a class="reference external" href="https://github.com/pypa/warehouse/blob/master/docker-compose.yml#L3">manage</a> running the containers and the connections between them.</p> 
+         <p>Since Warehouse was built on top of an existing database (for legacy PyPI) and developers had to fit our ORM to the existing tables, some of the code in the ORM may not look like code from the SQLAlchemy documentation. There are some places where joins are done using name-based logic instead of a foreign key (but this may change in the future).</p> 
+         <p>Warehouse also uses <a class="reference external" href="https://docs.pylonsproject.org/projects/pyramid/en/latest/narr/hybrid.html">hybrid URL traversal and dispatch</a>. Using factory classes, resources are provided directly to the views based on the URL pattern. This method of handling URLs may be unfamiliar to developers used to other web frameworks, such as Django or Flask. <a class="reference external" href="https://docs.pylonsproject.org/projects/pyramid/en/latest/narr/muchadoabouttraversal.html">This article</a> has a helpful discussion of the differences between URL dispatch and traversal in Pyramid.</p> 
+         <section id="usage-assumptions-and-concepts"> 
+          <h2>Usage assumptions and concepts<a class="headerlink" href="#usage-assumptions-and-concepts" title="Permalink to this headline">¶</a></h2> 
+          <p>See <a class="reference external" href="https://pypi.org/help/#packages">PyPI help</a> and the glossary section of <a class="reference internal" href="ui-principles.html"><span class="doc">UI principles</span></a> to understand projects, releases, packages, maintainers, authors, and owners.</p> 
+          <p>Warehouse is specifically the codebase for the official Python Package Index, and thus focuses on architecture and features for PyPI and Test PyPI. People and groups who want to run their own package indexes usually use other tools, like <a class="reference external" href="https://pypi.org/project/devpi-server/">devpi</a>.</p> 
+          <p>Warehouse serves four main classes of users:</p> 
+          <ol class="arabic simple"> 
+           <li><p><em>People who are not logged in.</em> This accounts for the majority of browser traffic and all API download traffic.</p></li> 
+           <li><p><em>Owners/maintainers of one or more projects.</em> This accounts for almost all writes. A user must create and use a PyPI account to maintain or own a project, and there is no particular functionality available to a logged-in user other than to manage projects they own/maintain. As of March 2018, PyPI had about 270,000 users, and Test PyPI had about 30,000 users.</p></li> 
+           <li><p><em>PyPI application moderators</em>. These users have a subset of the permissions of <em>PyPI application administrators</em> to assist in some routine administration tasks such as adding new trove classifiers, adjusting upload limits for distribution packages, and reviewing malware verdicts.</p></li> 
+           <li><p><em>PyPI application administrators</em>, e.g., Ee W. Durbin III, Dustin Ingram, and Donald Stufft, who can ban spam/malware projects, help users with account recovery, and so on. There are under ten such admins.</p></li> 
+          </ol> 
+          <p>Since reads are <em>much</em> more common than writes (much more goes out than goes in), we try to cache as much as possible.</p> 
+         </section> 
+         <section id="file-and-directory-structure"> 
+          <h2>File and directory structure<a class="headerlink" href="#file-and-directory-structure" title="Permalink to this headline">¶</a></h2> 
+          <p>The top-level directory of the Warehouse repo contains files including:</p> 
+          <ul class="simple"> 
+           <li><p><code class="docutils literal notranslate"><span class="pre">LICENSE</span></code></p></li> 
+           <li><p><code class="docutils literal notranslate"><span class="pre">CONTRIBUTING.rst</span></code> (the contribution guide)</p></li> 
+           <li><p><code class="docutils literal notranslate"><span class="pre">README.rst</span></code></p></li> 
+           <li><p><code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> for the Warehouse virtual environment</p></li> 
+           <li><p><code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code>: creates the Docker containers that Warehouse runs in</p></li> 
+           <li><p><code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> file configures Docker Compose</p></li> 
+           <li><p><code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code> for test configuration</p></li> 
+           <li><p><code class="docutils literal notranslate"><span class="pre">Makefile</span></code>: commands to spin up Docker Compose and the Docker containers, run the linter and other tests, etc.</p></li> 
+           <li><p>files associated with Warehouse’s front end, e.g., <code class="docutils literal notranslate"><span class="pre">Gulpfile.babel.js</span></code></p></li> 
+          </ul> 
+          <p>Directories within the repository:</p> 
+          <ul class="simple"> 
+           <li><p><a class="reference external" href="https://github.com/pypa/warehouse/tree/master/bin">bin/</a> - high-level scripts for Docker, Continuous Integration, and Makefile commands</p></li> 
+           <li><p><a class="reference external" href="https://github.com/pypa/warehouse/tree/master/dev">dev/</a> - assets for developer environment</p></li> 
+           <li><p><a class="reference external" href="https://github.com/pypa/warehouse/tree/master/tests">tests/</a> - tests</p></li> 
+           <li><p><a class="reference external" href="https://github.com/pypa/warehouse/tree/master/warehouse">warehouse/</a> - code in modules</p> 
+            <ul> 
+             <li><p><a class="reference external" href="https://github.com/pypa/warehouse/tree/master/warehouse/accounts">accounts/</a> - user accounts</p></li> 
+             <li><p><a class="reference external" href="https://github.com/pypa/warehouse/tree/master/warehouse/admin">admin/</a> - application-administrator-specific</p></li> 
+             <li><p><a class="reference external" href="https://github.com/pypa/warehouse/tree/master/warehouse/banners">banners/</a> - notification banners</p></li> 
+             <li><p><a class="reference external" href="https://github.com/pypa/warehouse/tree/master/warehouse/cache">cache/</a> - caching</p></li> 
+             <li><p><a class="reference external" href="https://github.com/pypa/warehouse/tree/master/warehouse/classifiers">classifiers/</a> - frame trove classifiers</p></li> 
+             <li><p><a class="reference external" href="https://github.com/pypa/warehouse/tree/master/warehouse/cli">cli/</a> - entry scripts and <a class="reference external" href="https://warehouse.readthedocs.io/development/getting-started/#running-the-interactive-shell">the interactive shell</a></p></li> 
+             <li><p><a class="reference external" href="https://github.com/pypa/warehouse/tree/master/warehouse/email">email/</a> - services for sending emails</p></li> 
+             <li><p><a class="reference external" href="https://github.com/pypa/warehouse/tree/master/warehouse/forklift">forklift/</a> - <a class="reference internal" href="api-reference/legacy.html#upload-api-forklift"><span class="std std-ref">Upload API</span></a></p></li> 
+             <li><p><a class="reference external" href="https://github.com/pypa/warehouse/tree/master/warehouse/i18n">i18n/</a> - internationalization</p></li> 
+             <li><p><a class="reference external" href="https://github.com/pypa/warehouse/tree/master/warehouse/integrations">integrations/</a> - integrations with other services</p></li> 
+             <li><p><a class="reference external" href="https://github.com/pypa/warehouse/tree/master/warehouse/legacy">legacy/</a> - most of the read-only APIs implemented here</p></li> 
+             <li><p><a class="reference external" href="https://github.com/pypa/warehouse/tree/master/warehouse/locale">locale/</a> - internationalization</p></li> 
+             <li><p><a class="reference external" href="https://github.com/pypa/warehouse/tree/master/warehouse/macaroons">macaroons/</a> - API token support</p></li> 
+             <li><p><a class="reference external" href="https://github.com/pypa/warehouse/tree/master/warehouse/malware">malware/</a> - automated malware checks</p></li> 
+             <li><p><a class="reference external" href="https://github.com/pypa/warehouse/tree/master/warehouse/manage">manage/</a> - logged-in user functionality (i.e., manage account &amp; owned/maintained projects)</p></li> 
+             <li><p><a class="reference external" href="https://github.com/pypa/warehouse/tree/master/warehouse/metrics">metrics/</a> - services for recording metrics</p></li> 
+             <li><p><a class="reference external" href="https://github.com/pypa/warehouse/tree/master/warehouse/migrations">migrations/</a> - changes to the database schema</p></li> 
+             <li><p><a class="reference external" href="https://github.com/pypa/warehouse/tree/master/warehouse/packaging">packaging/</a> - models</p></li> 
+             <li><p><a class="reference external" href="https://github.com/pypa/warehouse/tree/master/warehouse/rate_limiting">rate_limiting/</a> - rate limiting to prevent abuse</p></li> 
+             <li><p><a class="reference external" href="https://github.com/pypa/warehouse/tree/master/warehouse/rss">rss/</a> - RSS feeds: <a class="reference internal" href="api-reference/feeds.html"><span class="doc">Feeds</span></a></p></li> 
+             <li><p><a class="reference external" href="https://github.com/pypa/warehouse/tree/master/warehouse/search">search/</a> - utilities for building and querying the search index</p></li> 
+             <li><p><a class="reference external" href="https://github.com/pypa/warehouse/tree/master/warehouse/sitemap">sitemap/</a> - site maps</p></li> 
+             <li><p><a class="reference external" href="https://github.com/pypa/warehouse/tree/master/warehouse/sponsors">sponsors/</a> - sponsors management</p></li> 
+             <li><p><a class="reference external" href="https://github.com/pypa/warehouse/tree/master/warehouse/static">static/</a> - static site assets</p></li> 
+             <li><p><a class="reference external" href="https://github.com/pypa/warehouse/tree/master/warehouse/templates">templates/</a> - Jinja templates for web pages, emails, etc.</p></li> 
+             <li><p><a class="reference external" href="https://github.com/pypa/warehouse/tree/master/warehouse/utils">utils/</a> - various utilities Warehouse uses</p></li> 
+            </ul> </li> 
+          </ul> 
+         </section> 
+         <section id="historical-context-deprecations"> 
+          <h2>Historical context &amp; deprecations<a class="headerlink" href="#historical-context-deprecations" title="Permalink to this headline">¶</a></h2> 
+          <p>For the history of Python packaging and distribution, see <a class="reference external" href="https://www.pypa.io/en/latest/history/">the PyPA history page</a>.</p> 
+          <p>From the early 2000s till April 2018, <a class="reference external" href="https://github.com/pypa/pypi-legacy">the legacy PyPI codebase</a>, not Warehouse, powered PyPI. Warehouse deliberately does not provide some features that users may be used to from the legacy site, such as:</p> 
+          <ul class="simple"> 
+           <li><p>“hidden releases”</p></li> 
+           <li><p>uploading to pythonhosted.com documentation hosting (<a class="reference external" href="https://github.com/pypa/warehouse/issues/582">discussion and plans</a>)</p></li> 
+           <li><p><a class="reference external" href="https://warehouse.readthedocs.io/api-reference/xml-rpc/#changes-to-legacy-api">download counts visible in the API</a> (instead, use <a class="reference external" href="https://packaging.python.org/guides/analyzing-pypi-package-downloads/">the Google BigQuery service</a>)</p></li> 
+           <li><p>key management: PyPI no longer has a UI for users to manage GPG or SSH public keys</p></li> 
+           <li><p>uploading new releases via the web UI: instead, maintainers should use the command-line tool <a class="reference external" href="http://twine.readthedocs.io/">Twine</a></p></li> 
+           <li><p>updating release descriptions via the web UI: instead, to update release metadata, you need to upload a new release (<a class="reference external" href="https://mail.python.org/pipermail/distutils-sig/2017-December/031826.html">discussion</a>)</p></li> 
+           <li><p><a class="reference external" href="https://status.python.org/incidents/mgjw1g5yjy5j">uploading a package without first verifying an email address</a></p></li> 
+           <li><p><a class="reference external" href="https://mail.python.org/pipermail/distutils-sig/2017-October/031712.html">HTTP access to APIs; now it’s HTTPS-only</a></p></li> 
+           <li><p>GPG/PGP signatures for packages (still visible in the <a class="reference internal" href="api-reference/legacy.html"><span class="doc">Legacy API</span></a> per <a class="reference external" href="https://www.python.org/dev/peps/pep-0503/">PEP 503</a>, but no longer visible in the web UI)</p></li> 
+           <li><p><a class="reference external" href="https://mail.python.org/pipermail/distutils-sig/2018-January/031855.html">OpenID and Google auth login</a> are no longer supported.</p></li> 
+          </ul> 
+         </section> 
+        </section> 
+       </div> 
+      </div> 
+      <footer>
+       <div class="rst-footer-buttons" role="navigation" aria-label="Footer"> <a href="development/token-scanning.html" class="btn btn-neutral float-left" title="Token Scanning" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a> <a href="api-reference/index.html" class="btn btn-neutral float-right" title="API reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a> 
+       </div> 
+       <hr> 
+       <div role="contentinfo"> 
+        <p>© Copyright 2022. <span class="commit">Revision <code>140a2cc3</code>. </span></p> 
+       </div> Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+      </footer> 
+     </div> 
+    </div> 
+   </section> 
+  </div> 
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="Versions"> <span class="rst-current-version" data-toggle="rst-current-version"> <span class="fa fa-book"> Read the Docs</span> v: latest <span class="fa fa-caret-down"></span> </span> 
+   <div class="rst-other-versions"> 
+    <dl> 
+     <dt>
+      Versions
+     </dt> 
+     <dd>
+      <a href="/en/latest/">latest</a>
+     </dd> 
+     <dd>
+      <a href="/en/stable/">stable</a>
+     </dd> 
+    </dl> 
+    <dl> 
+     <dt>
+      Downloads
+     </dt> 
+    </dl> 
+    <dl> 
+     <dt>
+      On Read the Docs
+     </dt> 
+     <dd> <a href="//readthedocs.org/projects/warehouse/?fromdocs=warehouse">Project Home</a> 
+     </dd> 
+     <dd> <a href="//readthedocs.org/builds/warehouse/?fromdocs=warehouse">Builds</a> 
+     </dd> 
+    </dl> 
+   </div> 
+  </div> 
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+ </body>
+</html>

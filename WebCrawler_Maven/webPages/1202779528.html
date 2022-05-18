@@ -1,0 +1,369 @@
+<!doctype html>
+<html class="writer-html5" lang="en"> 
+ <head> 
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>IPython Documentation — IPython 8.3.0 documentation</title> 
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css"> 
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css"> 
+  <link rel="stylesheet" href="_static/graphviz.css" type="text/css"> 
+  <link rel="shortcut icon" href="_static/favicon.ico"> 
+  <link rel="canonical" href="https://ipython.readthedocs.io/en/stable/index.html"> <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]--> 
+  <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script> 
+  <script src="_static/jquery.js"></script> 
+  <script src="_static/underscore.js"></script> 
+  <script src="_static/doctools.js"></script> 
+  <script async src="https://assets.readthedocs.org/static/javascript/readthedocs-doc-embed.js"></script> 
+  <script src="_static/js/theme.js"></script> 
+  <link rel="index" title="Index" href="genindex.html"> 
+  <link rel="search" title="Search" href="search.html"> 
+  <link rel="next" title="Overview" href="overview.html"> <!-- RTD Extra Head --> 
+  <link rel="stylesheet" href="https://assets.readthedocs.org/static/css/readthedocs-doc-embed.css" type="text/css"> 
+  <script type="application/json" id="READTHEDOCS_DATA">{"ad_free": false, "api_host": "https://readthedocs.org", "build_date": "2022-04-29T13:10:42Z", "builder": "sphinx", "canonical_url": null, "commit": "55e81b92", "docroot": "/docs/source/", "features": {"docsearch_disabled": false}, "global_analytics_code": "UA-17997319-1", "language": "en", "page": "index", "programming_language": "py", "project": "ipython", "proxied_api_host": "/_", "source_suffix": ".rst", "subprojects": {}, "theme": "sphinx_rtd_theme", "user_analytics_code": "UA-52617120-6", "version": "stable"}</script> <!--
+Using this variable directly instead of using `JSON.parse` is deprecated.
+The READTHEDOCS_DATA global variable will be removed in the future.
+--> 
+  <script type="text/javascript">
+READTHEDOCS_DATA = JSON.parse(document.getElementById('READTHEDOCS_DATA').innerHTML);
+</script> 
+  <script type="text/javascript" src="https://assets.readthedocs.org/static/javascript/readthedocs-analytics.js" async></script> <!-- end RTD <extrahead> --> 
+ </head> 
+ <body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav"> 
+   <nav data-toggle="wy-nav-shift" class="wy-nav-side"> 
+    <div class="wy-side-scroll"> 
+     <div class="wy-side-nav-search"> <a href="#" class="icon icon-home"> IPython </a> 
+      <div class="version">
+        stable 
+      </div> 
+      <div role="search"> 
+       <form id="rtd-search-form" class="wy-form" action="search.html" method="get"> 
+        <input type="text" name="q" placeholder="Search docs"> 
+        <input type="hidden" name="check_keywords" value="yes"> 
+        <input type="hidden" name="area" value="default"> 
+       </form> 
+      </div> 
+     </div>
+     <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu"> 
+      <ul class="current"> 
+       <li class="toctree-l1 current"><a class="current reference internal" href="#">IPython Documentation</a></li> 
+       <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li> 
+       <li class="toctree-l1"><a class="reference internal" href="whatsnew/index.html">What’s new in IPython</a></li> 
+       <li class="toctree-l1"><a class="reference internal" href="install/index.html">Installation</a></li> 
+       <li class="toctree-l1"><a class="reference internal" href="interactive/index.html">Tutorial</a></li> 
+       <li class="toctree-l1"><a class="reference internal" href="config/index.html">Configuration and customization</a></li> 
+       <li class="toctree-l1"><a class="reference internal" href="development/index.html">Developer’s guide for third party tools and libraries</a></li> 
+       <li class="toctree-l1"><a class="reference internal" href="coredev/index.html">Guide for IPython core Developers</a></li> 
+       <li class="toctree-l1"><a class="reference internal" href="api/index.html">The IPython API</a></li> 
+       <li class="toctree-l1"><a class="reference internal" href="sphinxext.html">IPython Sphinx Directive</a></li> 
+       <li class="toctree-l1"><a class="reference internal" href="about/index.html">About IPython</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </nav> 
+   <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+    <nav class="wy-nav-top" aria-label="Mobile navigation menu"> <i data-toggle="wy-nav-top" class="fa fa-bars"></i> <a href="#">IPython</a> 
+    </nav> 
+    <div class="wy-nav-content"> 
+     <div class="rst-content"> 
+      <div role="navigation" aria-label="Page navigation"> 
+       <ul class="wy-breadcrumbs"> 
+        <li><a href="#" class="icon icon-home"></a> »</li> 
+        <li>IPython Documentation</li> 
+        <li class="wy-breadcrumbs-aside"> <a href="https://github.com/ipython/ipython/blob/55e81b920d19c6f7ca4588f1b85f2c3b11b209d3/docs/source/index.rst" class="fa fa-github"> Edit on GitHub</a> </li> 
+       </ul> 
+       <hr> 
+      </div> 
+      <div role="main" class="document" itemscope itemtype="http://schema.org/Article"> 
+       <div itemprop="articleBody"> 
+        <div class="admonition important"> 
+         <p class="admonition-title">Important</p> 
+         <p>This documentation covers IPython versions 6.0 and higher. Beginning with version 6.0, IPython stopped supporting compatibility with Python versions lower than 3.3 including all versions of Python 2.7.</p> 
+         <p>If you are looking for an IPython version compatible with Python 2.7, please use the IPython 5.x LTS release and refer to its documentation (LTS is the long term support release).</p> 
+        </div> 
+        <section id="ipython-documentation"> <span id="introduction"></span>
+         <h1>IPython Documentation<a class="headerlink" href="#ipython-documentation" title="Permalink to this headline">¶</a></h1> 
+         <dl class="field-list simple"> 
+          <dt class="field-odd">
+           Release
+          </dt> 
+          <dd class="field-odd">
+           <p>8.3.0</p> 
+          </dd> 
+          <dt class="field-even">
+           Date
+          </dt> 
+          <dd class="field-even">
+           <p>April 29, 2022</p> 
+          </dd> 
+         </dl> 
+         <p>Welcome to the official IPython documentation.</p> 
+         <p>IPython provides a rich toolkit to help you make the most of using Python interactively. Its main components are:</p> 
+         <ul> 
+          <li><p>A powerful interactive Python shell.</p> 
+           <blockquote> 
+            <div>
+             <img alt="Screenshot of IPython 6.0" class="align-center" src="_images/ipython-6-screenshot.png"> 
+            </div>
+           </blockquote> </li> 
+          <li><p>A <a class="reference external" href="https://jupyter.org/">Jupyter</a> kernel to work with Python code in Jupyter notebooks and other interactive frontends.</p></li> 
+         </ul> 
+         <p>The enhanced interactive Python shells and kernel have the following main features:</p> 
+         <ul class="simple"> 
+          <li><p>Comprehensive object introspection.</p></li> 
+          <li><p>Input history, persistent across sessions.</p></li> 
+          <li><p>Caching of output results during a session with automatically generated references.</p></li> 
+          <li><p>Extensible tab completion, with support by default for completion of python variables and keywords, filenames and function keywords.</p></li> 
+          <li><p>Extensible system of ‘magic’ commands for controlling the environment and performing many tasks related to IPython or the operating system.</p></li> 
+          <li><p>A rich configuration system with easy switching between different setups (simpler than changing <code class="docutils literal notranslate"><span class="pre">$PYTHONSTARTUP</span></code> environment variables every time).</p></li> 
+          <li><p>Session logging and reloading.</p></li> 
+          <li><p>Extensible syntax processing for special purpose situations.</p></li> 
+          <li><p>Access to the system shell with user-extensible alias system.</p></li> 
+          <li><p>Easily embeddable in other Python programs and GUIs.</p></li> 
+          <li><p>Integrated access to the pdb debugger and the Python profiler.</p></li> 
+         </ul> 
+         <p>The Command line interface inherits the above functionality and adds</p> 
+         <ul class="simple"> 
+          <li><p>real multi-line editing thanks to <a class="reference external" href="https://python-prompt-toolkit.readthedocs.io/en/stable/">prompt_toolkit</a>.</p></li> 
+          <li><p>syntax highlighting as you type.</p></li> 
+          <li><p>integration with command line editor for a better workflow.</p></li> 
+         </ul> 
+         <p>The kernel also has its share of features. When used with a compatible frontend, it allows:</p> 
+         <ul class="simple"> 
+          <li><p>the object to create a rich display of Html, Images, Latex, Sound and Video.</p></li> 
+          <li><p>interactive widgets with the use of the <a class="reference external" href="https://ipywidgets.readthedocs.io/en/stable/">ipywidgets</a> package.</p></li> 
+         </ul> 
+         <p>This documentation will walk you through most of the features of the IPython command line and kernel, as well as describe the internal mechanisms in order to improve your Python workflow.</p> 
+         <p>You can find the table of content for this documentation in the left sidebar, allowing you to come back to previous sections or skip ahead, if needed.</p> 
+         <p>The latest development version is always available from IPython’s <a class="reference external" href="http://github.com/ipython/ipython">GitHub repository</a>.</p> 
+         <div class="toctree-wrapper compound"> 
+         </div> 
+         <div class="admonition seealso"> 
+          <p class="admonition-title">See also</p> 
+          <dl class="simple"> 
+           <dt>
+            <a class="reference external" href="https://jupyter.readthedocs.io/en/latest/">Jupyter documentation</a>
+           </dt>
+           <dd>
+            <p>The Jupyter documentation provides information about the Notebook code and other Jupyter sub-projects.</p> 
+           </dd> 
+           <dt>
+            <a class="reference external" href="https://ipyparallel.readthedocs.io/en/latest/">ipyparallel documentation</a>
+           </dt>
+           <dd>
+            <p>Formerly <code class="docutils literal notranslate"><span class="pre">IPython.parallel</span></code>.</p> 
+           </dd> 
+          </dl> 
+         </div> 
+         <ul class="simple"> 
+          <li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li> 
+          <li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li> 
+          <li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li> 
+         </ul> 
+        </section> 
+       </div> 
+      </div> 
+      <footer>
+       <div class="rst-footer-buttons" role="navigation" aria-label="Footer"> <a href="overview.html" class="btn btn-neutral float-right" title="Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a> 
+       </div> 
+       <hr> 
+       <div role="contentinfo"> 
+        <p>© Copyright The IPython Development Team. <span class="commit">Revision <code>55e81b92</code>. </span> <span class="lastupdated">Last updated on Apr 29, 2022. </span></p> 
+       </div> Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+      </footer> 
+     </div> 
+    </div> 
+   </section> 
+  </div> 
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="Versions"> <span class="rst-current-version" data-toggle="rst-current-version"> <span class="fa fa-book"> Read the Docs</span> v: stable <span class="fa fa-caret-down"></span> </span> 
+   <div class="rst-other-versions"> 
+    <dl> 
+     <dt>
+      Versions
+     </dt> 
+     <dd>
+      <a href="/en/latest/">latest</a>
+     </dd> 
+     <dd>
+      <a href="/en/stable/">stable</a>
+     </dd> 
+     <dd>
+      <a href="/en/8.3.0/">8.3.0</a>
+     </dd> 
+     <dd>
+      <a href="/en/8.2.0/">8.2.0</a>
+     </dd> 
+     <dd>
+      <a href="/en/8.1.1/">8.1.1</a>
+     </dd> 
+     <dd>
+      <a href="/en/8.1.0/">8.1.0</a>
+     </dd> 
+     <dd>
+      <a href="/en/8.0.1/">8.0.1</a>
+     </dd> 
+     <dd>
+      <a href="/en/8.0.0/">8.0.0</a>
+     </dd> 
+     <dd>
+      <a href="/en/7.31.0/">7.31.0</a>
+     </dd> 
+     <dd>
+      <a href="/en/7.30.1/">7.30.1</a>
+     </dd> 
+     <dd>
+      <a href="/en/7.30.0/">7.30.0</a>
+     </dd> 
+     <dd>
+      <a href="/en/7.29.0/">7.29.0</a>
+     </dd> 
+     <dd>
+      <a href="/en/7.28.0/">7.28.0</a>
+     </dd> 
+     <dd>
+      <a href="/en/7.27.0/">7.27.0</a>
+     </dd> 
+     <dd>
+      <a href="/en/7.26.0/">7.26.0</a>
+     </dd> 
+     <dd>
+      <a href="/en/7.25.0/">7.25.0</a>
+     </dd> 
+     <dd>
+      <a href="/en/7.24.1/">7.24.1</a>
+     </dd> 
+     <dd>
+      <a href="/en/7.24.0/">7.24.0</a>
+     </dd> 
+     <dd>
+      <a href="/en/7.23.1/">7.23.1</a>
+     </dd> 
+     <dd>
+      <a href="/en/7.23.0/">7.23.0</a>
+     </dd> 
+     <dd>
+      <a href="/en/7.22.0/">7.22.0</a>
+     </dd> 
+     <dd>
+      <a href="/en/7.21.0/">7.21.0</a>
+     </dd> 
+     <dd>
+      <a href="/en/7.20.0/">7.20.0</a>
+     </dd> 
+     <dd>
+      <a href="/en/7.19.0/">7.19.0</a>
+     </dd> 
+     <dd>
+      <a href="/en/7.18.1/">7.18.1</a>
+     </dd> 
+     <dd>
+      <a href="/en/7.18.0/">7.18.0</a>
+     </dd> 
+     <dd>
+      <a href="/en/7.17.0/">7.17.0</a>
+     </dd> 
+     <dd>
+      <a href="/en/7.16.1/">7.16.1</a>
+     </dd> 
+     <dd>
+      <a href="/en/7.16.0/">7.16.0</a>
+     </dd> 
+     <dd>
+      <a href="/en/7.15.0/">7.15.0</a>
+     </dd> 
+     <dd>
+      <a href="/en/7.14.0/">7.14.0</a>
+     </dd> 
+     <dd>
+      <a href="/en/7.13.0/">7.13.0</a>
+     </dd> 
+     <dd>
+      <a href="/en/7.12.0/">7.12.0</a>
+     </dd> 
+     <dd>
+      <a href="/en/7.11.1/">7.11.1</a>
+     </dd> 
+     <dd>
+      <a href="/en/7.10.2/">7.10.2</a>
+     </dd> 
+     <dd>
+      <a href="/en/7.9.0/">7.9.0</a>
+     </dd> 
+     <dd>
+      <a href="/en/7.8.0/">7.8.0</a>
+     </dd> 
+     <dd>
+      <a href="/en/7.7.0/">7.7.0</a>
+     </dd> 
+     <dd>
+      <a href="/en/7.6.1/">7.6.1</a>
+     </dd> 
+     <dd>
+      <a href="/en/7.5.0/">7.5.0</a>
+     </dd> 
+     <dd>
+      <a href="/en/7.4.0/">7.4.0</a>
+     </dd> 
+     <dd>
+      <a href="/en/7.3.0/">7.3.0</a>
+     </dd> 
+     <dd>
+      <a href="/en/7.2.0/">7.2.0</a>
+     </dd> 
+     <dd>
+      <a href="/en/7.1.1/">7.1.1</a>
+     </dd> 
+     <dd>
+      <a href="/en/7.x/">7.x</a>
+     </dd> 
+     <dd>
+      <a href="/en/6.5.0/">6.5.0</a>
+     </dd> 
+     <dd>
+      <a href="/en/6.x/">6.x</a>
+     </dd> 
+     <dd>
+      <a href="/en/5.x/">5.x</a>
+     </dd> 
+     <dd>
+      <a href="/en/4.x/">4.x</a>
+     </dd> 
+     <dd>
+      <a href="/en/3.x/">3.x</a>
+     </dd> 
+     <dd>
+      <a href="/en/2.x/">2.x</a>
+     </dd> 
+     <dd>
+      <a href="/en/1.x/">1.x</a>
+     </dd> 
+    </dl> 
+    <dl> 
+     <dt>
+      Downloads
+     </dt> 
+     <dd>
+      <a href="//ipython.readthedocs.io/_/downloads/en/stable/htmlzip/">html</a>
+     </dd> 
+    </dl> 
+    <dl> 
+     <dt>
+      On Read the Docs
+     </dt> 
+     <dd> <a href="//readthedocs.org/projects/ipython/?fromdocs=ipython">Project Home</a> 
+     </dd> 
+     <dd> <a href="//readthedocs.org/builds/ipython/?fromdocs=ipython">Builds</a> 
+     </dd> 
+    </dl> 
+   </div> 
+  </div> 
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+ </body>
+</html>

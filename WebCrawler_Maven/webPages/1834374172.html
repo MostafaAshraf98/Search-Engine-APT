@@ -1,0 +1,405 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en_US"> 
+ <head> 
+  <base href="https://www.openstack.org/"><!--[if lte IE 6]></base><![endif]--> 
+  <title>Open Source Cloud Computing Platform Software - OpenStack</title> 
+  <meta charset="utf-8"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <meta name="globalsign-domain-verification" content="tWFOHNAA_WMHmHfBMq38uTgupHFugV_dZ2rqyRxNMx"> 
+  <meta name="title" content="Open Source Cloud Computing Platform Software - OpenStack"> 
+  <meta name="generator" content="SilverStripe - http://silverstripe.org"> 
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8"> 
+  <meta name="description" content="OpenStack is a an open source cloud operating system managing compute, storage, and networking resources throughout a datacenter using APIs"> 
+  <meta property="og:title" content="Open Source Cloud Computing Platform Software - OpenStack"> 
+  <meta property="og:type" content="website"> 
+  <meta property="og:url" content="https://www.openstack.org/software/"> 
+  <link rel="image_src" href="https://object-storage-ca-ymq-1.vexxhost.net/swift/v1/6e4619c416ff4bd19e1c087f27a43eea/www-assets-prod/Uploads/openstack-vert.jpg" type="image/jpeg"> 
+  <meta property="og:image" content="http://object-storage-ca-ymq-1.vexxhost.net/swift/v1/6e4619c416ff4bd19e1c087f27a43eea/www-assets-prod/Uploads/openstack-vert.jpg"> 
+  <meta property="og:image:secure_url" content="https://object-storage-ca-ymq-1.vexxhost.net/swift/v1/6e4619c416ff4bd19e1c087f27a43eea/www-assets-prod/Uploads/openstack-vert.jpg"> 
+  <meta property="og:image:type" content="image/jpeg"> 
+  <meta property="og:image:height" content="135"> 
+  <meta property="og:image:width" content="240"> 
+  <meta property="og:description" content="OpenStack is a an open source cloud operating system managing compute, storage, and networking resources throughout a datacenter using APIs"> 
+  <meta property="og:site_name" content="OpenStack"> 
+  <meta property="og:locale" content="en_US"> 
+  <meta property="fb:app_id" content="209869746011654"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:site" content="@openstack"> 
+  <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="https://www.openstack.org/blog/feed/"> <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries --> <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]--> 
+  <script type="text/javascript">
+
+// Used to record outbound links before the browser resets to the new site
+
+function recordOutboundLink(link, category, action) {
+  try {
+      ga('send', 'event', {
+          eventCategory: category,
+          eventAction: 'click',
+          eventLabel: link.href
+      });
+      setTimeout('document.location = "' + link.href + '"', 100)
+  }
+  catch(err){}
+}
+</script> 
+  <style>.async-hide { opacity: 0 !important} </style> 
+  <script>
+// Used to minimize flickering during GA A/B testing
+  (function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+  h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+  (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+  })(window,document.documentElement,'async-hide','dataLayer',4000,
+  {'GTM-5F7R6N4':true});
+</script> 
+  <script>
+// Google Analytics tracking script
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-17511903-1', 'auto');
+    ga('require', 'linker');
+    ga('linker:autoLink', ['openstack.org', 'eventbrite.com'] );
+    ga('require', 'GTM-5F7R6N4');
+    ga('send', 'pageview');
+
+    ga(function(tracker) {
+        var googleClientID = tracker.get('clientId');
+
+        $("a.eventbrite-register-link").each(function() {
+            var href = $(this).attr("href");
+            $(this).attr("href", href + '&_eboga=' + googleClientID);
+        });
+    });
+
+</script> 
+  <script>(function(w,d,t,r,u){var f,n,i;w[u]=w[u]||[],f=function(){var o={ti:"56279414"};o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")},n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function(){var s=this.readyState;s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null)},i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i)})(window,document,"script","//bat.bing.com/bat.js","uetq");</script> 
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,700"> 
+  <link rel="stylesheet" type="text/css" href="/node_modules/font-awesome/css/font-awesome.min.css?m=1477344801"> 
+  <link rel="stylesheet" type="text/css" href="/node_modules/@fortawesome/fontawesome-pro/css/all.min.css?m=499162500"> 
+  <link rel="stylesheet" type="text/css" href="/node_modules/bootstrap/dist/css/bootstrap.min.css?m=499162500"> 
+  <link rel="stylesheet" type="text/css" href="/themes/openstack/css/combined.css?m=1652799531"> 
+  <link rel="stylesheet" type="text/css" href="/themes/openstack/css/navigation_menu.css?m=1652799532"> 
+  <link rel="stylesheet" type="text/css" href="/themes/openstack/css/dropdown.css?m=1652799531"> 
+  <link rel="stylesheet" type="text/css" href="/themes/openstack/javascript/shadowbox/shadowbox.css?m=1652799044"> 
+  <link rel="stylesheet" type="text/css" href="/node_modules/webui-popover/dist/jquery.webui-popover.min.css?m=1484882759"> 
+  <link rel="stylesheet" type="text/css" href="/software/css/software.css?m=1652799537"> 
+  <link rel="stylesheet" type="text/css" href="/themes/openstack/javascript/seiyria-bootstrap-slider/dist/css/bootstrap-slider.min.css?m=1652799044"> 
+  <link rel="stylesheet" type="text/css" href="https://www.openstack.org/software/ui/production/css/software_all_projects.css"> 
+ </head> 
+ <body id="software" lang="en_US"> <!-- Top Site Banner --> 
+  <div class="top-site-banner"> 
+   <div class="container"> 
+    <div class="logo"> 
+     <img src="/themes/openstack/home_images/Logos/OpenInfra-Berlin2022.svg"> 
+    </div> 
+    <div class="text">
+      Join the global OpenStack community to meet around best practices, user stories, integrations, collaboration and more June 7-9 in Berlin! 
+    </div> 
+    <div class="button"> <a href="https://openinfra.dev/summit/" class="btn btn-default">REGISTER NOW!</a> 
+    </div> 
+   </div> 
+  </div> <!-- End Site Banner --> 
+  <nav class="navbar navbar-default global-nav" role="navigation"> 
+   <div class="container"> <!-- Brand and toggle get grouped for better mobile display --> 
+    <div class="navbar-header"> <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <div class="brand-wrapper"> <a class="navbar-brand" href="/"></a> 
+     </div> 
+     <div class="search-icon show">
+      <i class="fa fa-search"></i> <span class="header-search-text">Search</span>
+     </div> 
+    </div> <!-- Collect the nav links, forms, and other content for toggling --> 
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> 
+     <div class="search-container tiny"> 
+      <div class="openstack-search-bar" data-baseurl="search.openstack.org" data-context="www-openstack"></div> 
+     </div> 
+     <ul class="nav navbar-nav navbar-main show"> 
+      <li> 
+       <div class="openstack-search-bar ossw-mobile" data-baseurl="search.openstack.org" data-context="www-openstack"></div> </li> 
+      <li> <a href="https://www.openstack.org/software/" class="drop" id="dropdownMenuSoftware">Software <i class="fa fa-caret-down"></i></a><i class="mobile-expand"></i> 
+       <ul class="dropdown-menu dropdown-hover" role="menu" aria-labelledby="dropdownMenuSoftware"> 
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/software/">Overview</a></li> 
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/software/project-navigator/openstack-components">OpenStack Components</a></li> 
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/software/project-navigator/sdks">SDKs</a></li> 
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/software/project-navigator/deployment-tools">Deployment Tools</a></li> 
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/openstack-map" target="_blank">OpenStack Map</a></li> 
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/software/sample-configs/">Sample Configs</a></li> 
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://security.openstack.org" target="_blank">Security</a></li> 
+       </ul> </li> 
+      <li> <a href="https://www.openstack.org/use-cases/" class="drop" id="dropdownMenuUsers">Use Cases <i class="fa fa-caret-down"></i></a><i class="mobile-expand"></i> 
+       <ul class="dropdown-menu dropdown-hover" role="menu" aria-labelledby="dropdownMenuUsers"> 
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/use-cases/">Users in Production</a></li> 
+        <li role="presentation" class="divider"></li> 
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/use-cases/bare-metal/">Ironic Bare Metal</a></li> 
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/use-cases/edge-computing/">Edge Computing</a></li> 
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/use-cases/telecoms-and-nfv/">Telecom &amp; NFV</a></li> 
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/use-cases/science/">Science and HPC</a></li> 
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/use-cases/containers/">Containers</a></li> 
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/use-cases/enterprise/">Enterprise</a></li> 
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/surveys/landing">User Survey</a></li> 
+       </ul> </li> 
+      <li> <a class="drop" id="dropdownMenuEvents">Events <i class="fa fa-caret-down"></i></a><i class="mobile-expand"></i> 
+       <ul class="dropdown-menu dropdown-hover" role="menu" aria-labelledby="dropdownMenuEvents"> 
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="//openinfra.dev/summit/">OpenInfra Summit</a></li> 
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/ptg/">Project Teams Gathering</a></li> 
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/events/opendev-2020/">OpenDev</a></li> 
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/events/community-events/">Community Events</a></li> 
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/events/openstackdays">OpenStack &amp; OpenInfra Days</a></li> 
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/videos/">Summit Videos</a></li> 
+       </ul> </li> 
+      <li> <a href="https://www.openstack.org/community/" class="drop" id="dropdownMenuCommunity">Community <i class="fa fa-caret-down"></i></a><i class="mobile-expand"></i> 
+       <ul class="dropdown-menu dropdown-hover" role="menu" aria-labelledby="dropdownMenuCommunity"> 
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/community/">Welcome! Start Here</a></li> 
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/community/tech-committee">OpenStack Technical Committee</a></li> 
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/community/speakers/">Speakers Bureau</a></li> 
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/community/members/">Community Members</a></li> 
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://wiki.openstack.org">OpenStack Wiki</a></li> 
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/coa/">Get Certified (COA)</a></li> 
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/community/jobs/">Jobs</a></li> 
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/marketing/">Marketing Resources</a></li> 
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/news/">Community News</a></li> 
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org">Superuser Magazine</a></li> 
+        <li role="presentation" class="divider"></li> 
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/community/supporting-organizations/">OpenInfra Foundation Supporting Organizations</a></li> 
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://openinfra.dev">Open Infrastructure Foundation (OpenInfra Foundation)</a></li> 
+       </ul> </li> 
+      <li> <a href="https://www.openstack.org/marketplace/" class="drop" id="dropdownMenuCommunity">Marketplace <i class="fa fa-caret-down"></i></a><i class="mobile-expand"></i> 
+       <ul class="dropdown-menu dropdown-hover" role="menu" aria-labelledby="dropdownMenuEvents"> 
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/marketplace/training/">Training</a></li> 
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/marketplace/distros/">Distros &amp; Appliances</a></li> 
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/marketplace/public-clouds/">Public Clouds</a></li> 
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/marketplace/hosted-private-clouds/">Hosted Private Clouds</a></li> 
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/marketplace/remotely-managed-private-clouds/">Remotely Managed Private Clouds</a></li> 
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/marketplace/consulting/">Consulting &amp; Integrators</a></li> 
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/marketplace/drivers/">Drivers</a></li> 
+       </ul> </li> 
+      <li> <a href="https://www.openstack.org/blog/">Blog</a> </li> 
+      <li> <a href="http://docs.openstack.org/">Docs</a> </li> 
+      <li> </li> 
+      <li> </li>
+      <li class="join-nav-section"> <a href="#" id="dropdownMenuJoin">Join <i class="fa fa-caret-down"></i></a> 
+       <ul class="dropdown-menu dropdown-hover" role="menu" aria-labelledby="dropdownMenuJoin" style="display: none;"> 
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://openinfra.dev/join">Sign up for Foundation Membership</a></li> 
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://openinfra.dev/join">Sponsor the Foundation</a></li> 
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://openinfra.dev">More about the Foundation</a></li> 
+       </ul> </li> 
+      <li> <a href="/Security/login/?BackURL=/software/" class="sign-in-btn">Log In</a> </li>  
+     </ul> 
+    </div> <!-- /.navbar-collapse --> 
+   </div> <!-- /.container --> 
+  </nav> <!-- Page Content --> 
+  <div class="container software"> 
+   <div class="row"> 
+    <div class="col-sm-12"> 
+     <h1>Software</h1> 
+    </div> 
+   </div> 
+  </div> 
+  <script type="text/javascript" src="/node_modules/jquery/dist/jquery.min.js?m=1465497172"></script>
+  <script type="text/javascript" src="/node_modules/jquery-migrate-legacy/dist/jquery-migrate.min.js?m=1463707066"></script>
+  <script type="text/javascript" src="/node_modules/jquery-migrate/dist/jquery-migrate.min.js?m=499162500"></script>
+  <script type="text/javascript" src="/framework/thirdparty/jquery-entwine/dist/jquery.entwine-dist.js?m=1557447099"></script>
+  <script type="text/javascript" src="/node_modules/bootstrap/dist/js/bootstrap.min.js?m=499162500"></script>
+  <script type="text/javascript" src="/node_modules/js-cookie/src/js.cookie.js?m=1509169675"></script>
+  <script type="text/javascript" src="/themes/openstack/javascript/querystring.jquery.js?m=1652799044"></script>
+  <script type="text/javascript" src="/themes/openstack/javascript/shadowbox/shadowbox.js?m=1652799044"></script>
+  <script type="text/javascript" src="/themes/openstack/javascript/jquery.ticker.js?m=1652799044"></script>
+  <script type="text/javascript" src="/themes/openstack/javascript/jquery.tools.min.js?m=1652799044"></script>
+  <script type="text/javascript" src="/themes/openstack/javascript/jcarousellite.min.js?m=1652799044"></script>
+  <script type="text/javascript" src="/themes/openstack/javascript/navigation.js?m=1652799044"></script>
+  <script type="text/javascript" src="/themes/openstack/javascript/filetracking.jquery.js?m=1652799044"></script>
+  <script type="text/javascript" src="/themes/openstack/javascript/updateProfileModal.js?m=1652799044"></script>
+  <script type="text/javascript" src="/framework/javascript/i18n.js?m=1557447099"></script>
+  <script type="text/javascript" src="/node_modules/webui-popover/dist/jquery.webui-popover.min.js?m=1484882760"></script>
+  <script type="text/javascript" src="/software/js/software.js?m=1652799044"></script>
+  <script type="text/javascript" src="/themes/openstack/javascript/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js?m=1652799044"></script>
+  <script type="text/javascript">//<![CDATA[
+jQuery(document).ready(function($) {
+
+    var d         = new Date();
+    var user_date = d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();
+    Cookies.set('user_date', user_date, { expires: 360, path: '/' });
+
+    $('body').filetracking();
+
+    $(document).on("click", ".outbound-link", function(event){
+        var href = $(this).attr('href');
+        recordOutboundLink(this,'Outbound Links',href);
+        event.preventDefault();
+        event.stopPropagation()
+        return false;
+    });
+
+    var use_shadow_box = true;
+    if(use_shadow_box)
+        Shadowbox.init();
+});
+
+//]]></script>
+  <script>
+    var components = {"category":{"ClassName":"OpenStackComponentCategory","LastEdited":"2022-05-16 23:00:04","Created":"2018-08-13 10:17:05","Name":"Client tools","Label":"Client tools","Description":"Client-side tools and libraries for interacting with OpenStack APIs.","Slug":"sdks","Order":2,"Enabled":1,"HideSubnav":1,"ParentCategoryID":0,"ID":34,"RecordClassName":"OpenStackComponentCategory"},"subcategories":{"clis":{"category":{"ClassName":"OpenStackComponentCategory","LastEdited":"2022-05-16 23:00:04","Created":"2020-07-20 23:00:07","Name":"CLIs","Label":"CLIs","Slug":"clis","Order":1,"Enabled":1,"HideSubnav":0,"ParentCategoryID":34,"ID":70,"RecordClassName":"OpenStackComponentCategory"},"components":[{"id":58,"name":"Command-line interface for all OpenStack services","description":"Single command-line interface for OpenStack services with a uniform command set and format.","code_name":"Openstackclient","slug":"openstackclient","adoption":null,"age":12,"maturity_points":null,"grouped_capability_tags":[],"capability_tags":[]}]},"sdks":{"category":{"ClassName":"OpenStackComponentCategory","LastEdited":"2022-05-16 23:00:04","Created":"2019-01-04 23:00:03","Name":"SDKs","Label":"SDKs","Description":"SDKs are language-specific wrappers around the OpenStack HTTP API.","Slug":"sdks","Order":2,"Enabled":1,"HideSubnav":0,"ParentCategoryID":34,"ID":60,"RecordClassName":"OpenStackComponentCategory"},"components":[{"id":69,"name":"Official Python SDK for OpenStack APIs","description":"Multi-cloud aware Python SDK for the OpenStack REST API exposing both the full set of low-level APIs as well as curated higher level business logic.","code_name":"Openstacksdk","slug":"openstacksdk","adoption":null,"age":12,"maturity_points":null,"grouped_capability_tags":[],"capability_tags":[]}]}}};
+    var capabilities = [{"id":3,"name":"components","tags":[{"id":78,"name":"adjutant"},{"id":55,"name":"aodh"},{"id":31,"name":"barbican"},{"id":56,"name":"blazar"},{"id":27,"name":"cache"},{"id":59,"name":"ceilometer"},{"id":40,"name":"cinder"},{"id":66,"name":"cloudkitty"},{"id":38,"name":"cyborg"},{"id":24,"name":"database"},{"id":36,"name":"designate"},{"id":58,"name":"ec2api"},{"id":26,"name":"etcd"},{"id":49,"name":"freezer"},{"id":30,"name":"glance"},{"id":22,"name":"heat"},{"id":57,"name":"horizon"},{"id":37,"name":"ironic"},{"id":28,"name":"keystone"},{"id":45,"name":"magnum"},{"id":41,"name":"manila"},{"id":51,"name":"masakari"},{"id":23,"name":"message-queue"},{"id":52,"name":"mistral"},{"id":60,"name":"monasca"},{"id":48,"name":"murano"},{"id":34,"name":"neutron"},{"id":42,"name":"nova"},{"id":35,"name":"octavia"},{"id":61,"name":"panko"},{"id":29,"name":"placement"},{"id":65,"name":"rally"},{"id":47,"name":"sahara"},{"id":25,"name":"secrets-storage"},{"id":53,"name":"senlin"},{"id":50,"name":"solum"},{"id":39,"name":"swift"},{"id":46,"name":"trove"},{"id":63,"name":"vitrage"},{"id":62,"name":"watcher"},{"id":54,"name":"zaqar"},{"id":43,"name":"zun"}]},{"id":5,"name":"features","tags":[{"id":76,"name":"all-in-one"},{"id":75,"name":"encrypted-local-comms"},{"id":77,"name":"nova-cells"},{"id":73,"name":"offline-installation"},{"id":74,"name":"supports-heterogeneous-versions"}]},{"id":1,"name":"starts-from","tags":[{"id":1,"name":"bare-metal"},{"id":3,"name":"env-bootstrap"},{"id":4,"name":"kubernetes-cluster"},{"id":2,"name":"os-installed"}]},{"id":2,"name":"technology","tags":[{"id":18,"name":"ansible"},{"id":17,"name":"chef"},{"id":5,"name":"deb-packages"},{"id":13,"name":"debian"},{"id":11,"name":"fedora"},{"id":9,"name":"git"},{"id":20,"name":"helm"},{"id":19,"name":"juju"},{"id":21,"name":"kubernetes"},{"id":7,"name":"oci-containers"},{"id":15,"name":"oraclelinux"},{"id":16,"name":"puppet"},{"id":10,"name":"redhat-centos"},{"id":6,"name":"rpm-packages"},{"id":12,"name":"sles-opensuse"},{"id":8,"name":"source-tarballs"},{"id":14,"name":"ubuntu"}]},{"id":4,"name":"upgrade","tags":[{"id":71,"name":"fast-forward"},{"id":68,"name":"offline"},{"id":69,"name":"online"},{"id":70,"name":"per-version"},{"id":72,"name":"skip-level"}]}];
+    var releases   = [{"id":37,"name":"Yoga"},{"id":36,"name":"Xena"},{"id":35,"name":"Wallaby"},{"id":33,"name":"Victoria"},{"id":31,"name":"Ussuri"},{"id":30,"name":"Train"},{"id":27,"name":"Stein"},{"id":24,"name":"Rocky"},{"id":22,"name":"Queens"},{"id":20,"name":"Pike"},{"id":18,"name":"Ocata"},{"id":16,"name":"Newton"},{"id":15,"name":"Mitaka"},{"id":13,"name":"Liberty"},{"id":12,"name":"Kilo"},{"id":11,"name":"Juno"},{"id":9,"name":"Icehouse"},{"id":8,"name":"Havana"},{"id":7,"name":"Grizzly"},{"id":6,"name":"Folsom"},{"id":5,"name":"Essex"},{"id":4,"name":"Diablo"},{"id":3,"name":"Cactus"},{"id":2,"name":"Bexar"},{"id":1,"name":"Austin"},{"id":10,"name":"Trunk"}];
+    var releaseId  = 'yoga';
+    components.max_maturity_points = 7;
+    var tileMode = (window.location.hash == '#tiles');
+
+</script> <!-- Projects Tabs --> 
+  <div class="software-tab-wrapper"> 
+   <div class="container"> 
+    <ul class="nav nav-tabs project-tabs"> 
+     <li><a href="/software/">Overview</a></li> 
+     <li><a href="/software/project-navigator/openstack-components">OpenStack Components</a></li> 
+     <li class="active"><a href="/software/project-navigator/sdks">Client tools</a></li> 
+     <li><a href="/software/project-navigator/deployment-tools">Deployment Tools</a></li> 
+     <li><a href="/software/sample-configs">Sample Configurations</a></li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="software-tab-dropdown"> 
+   <div class="dropdown"> <button aria-expanded="true" aria-haspopup="true" data-toggle="dropdown" id="dropdownMenu1" type="button" class="dropdown-toggle projects-dropdown-btn"> Select a Page <i class="fa fa-caret-down"></i> </button> 
+    <ul class="dropdown-menu"> 
+     <li><a href="/software/">Overview</a></li> 
+     <li><a href="/software/project-navigator/openstack-components">OpenStack Components</a></li> 
+     <li><a href="/software/project-navigator/sdks">Client tools</a></li> 
+     <li><a href="/software/project-navigator/deployment-tools">Deployment Tools</a></li> 
+     <li><a href="/software/sample-configs">Sample Configurations</a></li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="software-main-wrapper"> <!-- Begin Page Content --> 
+   <div class="container inner-software"> <project-services base_url="/software/" groups="{ components.subcategories }" category="{ components.category }" release_id="{ releaseId }"></project-services> 
+   </div> <!-- End Page Content --> 
+  </div> 
+  <script type="text/javascript" src="https://www.openstack.org/software/ui/production/js/__common__.js"></script> 
+  <script type="text/javascript" src="https://www.openstack.org/software/ui/production/js/software_all_projects.js"></script> <!-- Software Tabs UI --> 
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script> 
+  <script>
+       function onSubmit(token) {
+         document.getElementById("e2ma_signup").submit();
+       }
+</script> 
+  <div class="footer-bottom"> 
+   <h3 style="color:#fff;">Subscribe to News About OpenStack</h3> 
+   <p>Stay up to date on OpenStack and the Open Infrastructure community.</p> 
+   <div class="container"> 
+    <div class="form-group"> 
+     <form method="post" id="e2ma_signup" onsubmit="return signupFormObj.checkForm(this)" action="https://app.e2ma.net/app2/audience/signup/1900249/1771360/"> 
+      <input id="id_prev_member_email" name="prev_member_email" type="hidden"> 
+      <input id="id_source" name="source" type="hidden"> 
+      <input id="id_group_4036448" name="group_4036448" type="hidden" value="4036448"> 
+      <input type="hidden" name="private_set" value="{num_private}"> 
+      <input placeholder="Email Address" id="id_email" name="email" type="email" required class="feedback-input" size="is-large"> <a href="#" class="feedback-btn" onclick="document.getElementById('e2ma_signup').submit();" data-sitekey="6LeKvr0UAAAAAItxLgobGpatgngglauCXrZw2Yw4" data-callback="onSubmit"> <span>SUBMIT</span> <i class="fa fa-chevron-right"></i> </a> 
+     </form> 
+    </div> 
+   </div> 
+  </div> 
+  <footer> 
+   <div class="container"> 
+    <div class="row footer-links"> 
+     <div class="col-lg-2 col-sm-2"> 
+      <h3>OpenStack</h3> 
+      <ul> 
+       <li><a href="//openstack.org/software/project-navigator/">Projects</a></li> 
+       <li><a href="https://security.openstack.org" target="_blank">Security</a></li> 
+       <li><a href="//openstack.org/software/">Software</a></li> 
+       <li><a href="https://openstack.org/blog/">Blog</a></li> 
+       <li><a href="//openstack.org/news/">News</a></li> 
+      </ul> 
+     </div> 
+     <div class="col-lg-2 col-sm-2"> 
+      <h3>Community</h3> 
+      <ul> 
+       <li><a href="https://www.meetup.com/pro/openinfradev">User Groups</a></li> 
+       <li><a href="//openstack.org/community/events/">Events</a></li> 
+       <li><a href="//openstack.org/community/jobs/">Jobs</a></li> 
+       <li><a href="//openstack.org/foundation/companies/">Companies</a></li> 
+       <li><a href="http://docs.openstack.org/infra/manual/developers.html">Contribute</a></li> 
+      </ul> 
+     </div> 
+     <div class="col-lg-2 col-sm-2"> 
+      <h3>Documentation</h3> 
+      <ul> 
+       <li><a href="http://docs.openstack.org">OpenStack Manuals</a></li> 
+       <li><a href="//openstack.org/software/start/">Getting Started</a></li> 
+       <li><a href="http://developer.openstack.org">API Documentation</a></li> 
+       <li><a href="https://wiki.openstack.org">Wiki</a></li> 
+      </ul> 
+     </div> 
+     <div class="col-lg-2 col-sm-2"> 
+      <h3>Branding &amp; Legal</h3> 
+      <ul> 
+       <li><a href="//openstack.org/legal/">Legal Docs</a></li> 
+       <li><a href="//openstack.org/brand/">Logos &amp; Guidelines</a></li> 
+       <li><a href="//openstack.org/brand/openstack-trademark-policy/">Trademark Policy</a></li> 
+       <li><a href="//openstack.org/privacy/">Privacy Policy</a></li> 
+       <li><a href="https://docs.openstack.org/contributors/common/setup-gerrit.html#individual-contributor-license-agreement">OpenStack CLA</a></li> 
+      </ul> 
+     </div> 
+     <div class="col-lg-4 col-sm-4"> 
+      <h3>Stay In Touch</h3> <a href="https://twitter.com/OpenStack" target="_blank"><i class="fab fa-twitter-square" style="font-size: 36px;color:#eaeaea;padding-right:10px;"></i></a> <a href="https://www.facebook.com/openinfradev/" target="_blank"><i class="fab fa-facebook-square" style="font-size: 36px;color:#eaeaea;padding-right:10px;"></i></a> <a href="https://www.linkedin.com/groups/3239106/" target="_blank"><i class="fab fa-linkedin" style="font-size: 36px;color:#eaeaea;padding-right:10px;"></i></a> <a href="https://www.youtube.com/user/OpenStackFoundation" target="_blank"><i class="fab fa-youtube-square" style="font-size: 36px;color:#eaeaea;padding-right:10px;"></i></a> <a href="" data-toggle="modal" data-target="#wechat-modal"><i style="font-size: 36px;color:#eaeaea;padding-right:10px;" class="fab fa-weixin"></i></a> <!-- <form class="form-inline">
+                    <div class="form-group newsletter-form">
+                        <label>Join Our Newsletter</label>
+                        <input class="newsletter-input" type="input" placeholder="Email">
+                        <button type="submit" class="newsletter-btn">Join</button>
+                    </div>
+                </form> --> 
+      <p class="fine-print"> The OpenStack project is provided under the Apache 2.0 license. The project is supported by the <a href="https://openinfra.dev">OpenInfra Foundation</a>. openstack.org is powered by <a href="https://vexxhost.com" target="_blank">VEXXHOST</a>. </p> 
+     </div> 
+    </div> 
+   </div> 
+   <div id="wechat-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"> 
+    <div class="modal-dialog modal-sm" role="document"> 
+     <div class="modal-content"> 
+      <img width="150" src="https://object-storage-ca-ymq-1.vexxhost.net/swift/v1/6e4619c416ff4bd19e1c087f27a43eea/www-assets-prod/summits/shanghai/qrcode-for-gh-5cc38c749efd-1280.jpg"> 
+     </div> 
+    </div> 
+   </div> 
+  </footer> <!-- Quantcast Tag --> 
+  <script type="text/javascript">
+var _qevents = _qevents || [];
+
+(function() {
+var elem = document.createElement('script');
+elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+elem.async = true;
+elem.type = "text/javascript";
+var scpt = document.getElementsByTagName('script')[0];
+scpt.parentNode.insertBefore(elem, scpt);
+})();
+
+_qevents.push({
+qacct:"p-fM0cfazHHeyRH"
+});
+</script> 
+  <noscript> 
+   <div style="display:none;"> 
+    <img src="//pixel.quantserve.com/pixel/p-fM0cfazHHeyRH.gif" border="0" height="1" width="1" alt="Quantcast"> 
+   </div> 
+  </noscript> <!-- End Quantcast tag --> <!-- Twitter universal website tag code --> 
+  <script>
+    !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+    },s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='//static.ads-twitter.com/uwt.js',
+            a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+    // Insert Twitter Pixel ID and Standard Event data below
+    twq('init','nxuu6');
+    twq('track','PageView');
+</script> <!-- End Twitter universal website tag code --> 
+  <script src="//search.openstack.org/widget/embed.min.js"></script>  
+  <script type="text/javascript">
+    _linkedin_data_partner_id = "36268";
+</script>
+  <script type="text/javascript">
+    (function(){var s = document.getElementsByTagName("script")[0];
+        var b = document.createElement("script");
+        b.type = "text/javascript";b.async = true;
+        b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+        s.parentNode.insertBefore(b, s);})();
+</script> 
+ </body>
+</html>

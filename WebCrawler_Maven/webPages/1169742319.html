@@ -1,0 +1,495 @@
+<!doctype html><!--[if lt IE 7]>   <html class="no-js ie6 lt-ie7 lt-ie8 lt-ie9">   <![endif]--><!--[if IE 7]>      <html class="no-js ie7 lt-ie8 lt-ie9">          <![endif]--><!--[if IE 8]>      <html class="no-js ie8 lt-ie9">                 <![endif]--><!--[if gt IE 8]><!-->
+<html class="no-js" lang="en" dir="ltr"> <!--<![endif]--> 
+ <head> 
+  <meta charset="utf-8"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  <link rel="prefetch" href="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"> 
+  <link rel="prefetch" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"> 
+  <meta name="application-name" content="Python.org"> 
+  <meta name="msapplication-tooltip" content="The official home of the Python Programming Language"> 
+  <meta name="apple-mobile-web-app-title" content="Python.org"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta name="HandheldFriendly" content="True"> 
+  <meta name="format-detection" content="telephone=no"> 
+  <meta http-equiv="cleartype" content="on"> 
+  <meta http-equiv="imagetoolbar" content="false"> 
+  <script async src="https://media.ethicalads.io/media/client/v1.4.0/ethicalads.min.js" integrity="sha256-U3hKDidudIaxBDEzwGJApJgPEf2mWk6cfMWghrAa6i0= sha384-UcmsCqcNRSLW/dV3Lo1oCi2/VaurXbib6p4HyUEOeIa/4OpsrnucrugAefzVZJfI sha512-q4t1L4xEjGV2R4hzqCa41P8jrgFUS8xTb8rdNv4FGvw7FpydVj/kkxBJHOiaoxHa8olCcx1Slk9K+3sNbsM4ug==" crossorigin="anonymous"></script> 
+  <script src="/static/js/libs/modernizr.js"></script> 
+  <link href="/static/stylesheets/style.a193d3b62d35.css" rel="stylesheet" type="text/css" media="all" title="default"> 
+  <link href="/static/stylesheets/mq.f9187444a4a1.css" rel="stylesheet" type="text/css" media="not print, braille, embossed, speech, tty"> <!--[if (lte IE 8)&(!IEMobile)]>
+    <link href="/static/stylesheets/no-mq.bf0c425cdb73.css" rel="stylesheet" type="text/css" media="screen" />
+    
+    
+    <![endif]--> 
+  <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css"> 
+  <link rel="icon" type="image/x-icon" href="/static/favicon.ico"> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/static/apple-touch-icon-144x144-precomposed.png"> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/static/apple-touch-icon-114x114-precomposed.png"> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/static/apple-touch-icon-72x72-precomposed.png"> 
+  <link rel="apple-touch-icon-precomposed" href="/static/apple-touch-icon-precomposed.png"> 
+  <link rel="apple-touch-icon" href="/static/apple-touch-icon-precomposed.png"> 
+  <meta name="msapplication-TileImage" content="/static/metro-icon-144x144-precomposed.png"><!-- white shape --> 
+  <meta name="msapplication-TileColor" content="#3673a5"><!-- python blue --> 
+  <meta name="msapplication-navbutton-color" content="#3673a5"> 
+  <title>Python Job Board | Python.org</title> 
+  <meta name="description" content="The official home of the Python Programming Language"> 
+  <meta name="keywords" content="Python programming language object oriented web free open source software license documentation download community"> 
+  <meta property="og:type" content="website"> 
+  <meta property="og:site_name" content="Python.org"> 
+  <meta property="og:title" content="Welcome to Python.org"> 
+  <meta property="og:description" content="The official home of the Python Programming Language"> 
+  <meta property="og:image" content="https://www.python.org/static/opengraph-icon-200x200.png"> 
+  <meta property="og:image:secure_url" content="https://www.python.org/static/opengraph-icon-200x200.png"> 
+  <meta property="og:url" content="https://www.python.org/jobs/location/fislisbach-aargau-schweiz/"> 
+  <link rel="author" href="/static/humans.txt"> 
+  <link rel="alternate" type="application/rss+xml" title="Python Enhancement Proposals" href="https://www.python.org/dev/peps/peps.rss/"> 
+  <link rel="alternate" type="application/rss+xml" title="Python Job Opportunities" href="https://www.python.org/jobs/feed/rss/"> 
+  <link rel="alternate" type="application/rss+xml" title="Python Software Foundation News" href="https://feeds.feedburner.com/PythonSoftwareFoundationNews"> 
+  <link rel="alternate" type="application/rss+xml" title="Python Insider" href="https://feeds.feedburner.com/PythonInsider"> 
+  <script type="application/ld+json">
+     {
+       "@context": "https://schema.org",
+       "@type": "WebSite",
+       "url": "https://www.python.org/",
+       "potentialAction": {
+         "@type": "SearchAction",
+         "target": "https://www.python.org/search/?q={search_term_string}",
+         "query-input": "required name=search_term_string"
+       }
+     }
+    </script> 
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-39055973-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script> 
+ </head> 
+ <body class="jobs"> 
+  <div id="touchnav-wrapper"> 
+   <div id="nojs" class="do-not-print"> 
+    <p><strong>Notice:</strong> While JavaScript is not essential for this website, your interaction with the content will be limited. Please turn JavaScript on for the full experience. </p> 
+   </div> <!--[if lte IE 8]>
+        <div id="oldie-warning" class="do-not-print">
+            <p>
+                <strong>Notice:</strong> Your browser is <em>ancient</em>. Please
+                <a href="http://browsehappy.com/">upgrade to a different browser</a> to experience a better web.
+            </p>
+        </div>
+        <![endif]--> <!-- Sister Site Links --> 
+   <div id="top" class="top-bar do-not-print"> 
+    <nav class="meta-navigation container" role="navigation"> 
+     <div class="skip-link screen-reader-text"> <a href="#content" title="Skip to content">Skip to content</a> 
+     </div> <a id="close-python-network" class="jump-link" href="#python-network" aria-hidden="true"> <span aria-hidden="true" class="icon-arrow-down"><span>?</span></span> Close </a> 
+     <ul class="menu" role="tree"> 
+      <li class="python-meta "> <a href="/" title="The Python Programming Language">Python</a> </li> 
+      <li class="psf-meta "> <a href="/psf-landing/" title="The Python Software Foundation">PSF</a> </li> 
+      <li class="docs-meta "> <a href="https://docs.python.org" title="Python Documentation">Docs</a> </li> 
+      <li class="pypi-meta "> <a href="https://pypi.org/" title="Python Package Index">PyPI</a> </li> 
+      <li class="jobs-meta "> <a href="/jobs/" title="Python Job Board">Jobs</a> </li> 
+      <li class="shop-meta "> <a href="/community-landing/">Community</a> </li> 
+     </ul> <a id="python-network" class="jump-link" href="#top" aria-hidden="true"> <span aria-hidden="true" class="icon-arrow-up"><span>?</span></span> The Python Network </a> 
+    </nav> 
+   </div> <!-- Header elements --> 
+   <header class="main-header" role="banner"> 
+    <div class="container"> 
+     <h1 class="site-headline"> <a href="/"><img class="python-logo" src="/static/img/python-logo.png" alt="python™"></a> </h1> 
+     <div class="options-bar-container do-not-print"> <a href="https://psfmember.org/civicrm/contribute/transact?reset=1&amp;id=2" class="donate-button">Donate</a> 
+      <div class="options-bar"> <a id="site-map-link" class="jump-to-menu" href="#site-map"><span class="menu-icon">?</span> Menu</a>
+       <form class="search-the-site" action="/search/" method="get"> 
+        <fieldset title="Search Python.org"> <span aria-hidden="true" class="icon-search"></span> <label class="screen-reader-text" for="id-search-field">Search This Site</label> 
+         <input id="id-search-field" name="q" type="search" role="textbox" class="search-field" placeholder="Search" value="" tabindex="1"> <button type="submit" name="submit" id="submit" class="search-button" title="Submit this Search" tabindex="3"> GO </button> <!--[if IE]><input type="text" style="display: none;" disabled="disabled" size="1" tabindex="4"><![endif]--> 
+        </fieldset> 
+       </form><span class="breaker"></span>
+       <div class="adjust-font-size" aria-hidden="true"> 
+        <ul class="navigation menu" aria-label="Adjust Text Size on Page"> 
+         <li class="tier-1 last" aria-haspopup="true"> <a href="#" class="action-trigger"><strong><small>A</small> A</strong></a> 
+          <ul class="subnav menu"> 
+           <li class="tier-2 element-1" role="treeitem"><a class="text-shrink" title="Make Text Smaller" href="javascript:;">Smaller</a></li> 
+           <li class="tier-2 element-2" role="treeitem"><a class="text-grow" title="Make Text Larger" href="javascript:;">Larger</a></li> 
+           <li class="tier-2 element-3" role="treeitem"><a class="text-reset" title="Reset any font size changes I have made" href="javascript:;">Reset</a></li> 
+          </ul> </li> 
+        </ul> 
+       </div>
+       <div class="winkwink-nudgenudge"> 
+        <ul class="navigation menu" aria-label="Social Media Navigation"> 
+         <li class="tier-1 last" aria-haspopup="true"> <a href="#" class="action-trigger">Socialize</a> 
+          <ul class="subnav menu"> 
+           <li class="tier-2 element-1" role="treeitem"><a href="https://www.facebook.com/pythonlang?fref=ts"><span aria-hidden="true" class="icon-facebook"></span>Facebook</a></li> 
+           <li class="tier-2 element-2" role="treeitem"><a href="https://twitter.com/ThePSF"><span aria-hidden="true" class="icon-twitter"></span>Twitter</a></li> 
+           <li class="tier-2 element-3" role="treeitem"><a href="/community/irc/"><span aria-hidden="true" class="icon-freenode"></span>Chat on IRC</a></li> 
+          </ul> </li> 
+        </ul> 
+       </div> <span data-html-include="/authenticated"></span> 
+      </div><!-- end options-bar --> 
+     </div> 
+     <nav id="mainnav" class="jobs-navigation main-navigation do-not-print" role="navigation"> 
+      <ul class="navigation menu" role="menubar" aria-label="Main Navigation"> 
+       <li class="tier-1 element-1 "> <a href="/jobs/">Jobs</a> </li> 
+       <li class="tier-1 element-2 " aria-haspopup="true"> <a href="/jobs/types/">Types</a> 
+        <ul class="subnav menu" role="menu" aria-hidden="true"> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/type/back-end/">Back end</a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/type/big-data/">Big Data</a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/type/cloud/">Cloud</a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/type/database/">Database</a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/type/evangelism/">Evangelism</a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/type/finance/">Finance</a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/type/front-end/">Front end</a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/type/image-processing/">Image Processing</a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/type/integration/">Integration</a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/type/lead/">Lead</a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/type/machine-learning/">Machine Learning</a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/type/management/">Management</a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/type/numeric-processing/">Numeric processing</a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/type/operations/">Operations</a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/type/systems/">Systems</a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/type/testing/">Testing</a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/type/text-processing/">Text Processing</a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/type/web/">Web</a></li> 
+        </ul> </li> 
+       <li class="tier-1 element-3 " aria-haspopup="true"> <a href="/jobs/categories/">Categories</a> 
+        <ul class="subnav menu" role="menu" aria-hidden="true"> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/category/data-analyst/">Data Analyst</a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/category/developer-engineer/">Developer / Engineer</a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/category/manager-executive/">Manager / Executive</a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/category/other/">Other</a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/category/researcher-scientist/">Researcher / Scientist</a></li> 
+        </ul> </li> 
+       <li class="tier-1 element-4 current_item selected"> <a href="/jobs/locations/">Locations</a> 
+        <ul class="subnav menu" role="menu" aria-hidden="true"> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/telecommute/">Telecommute</a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/abingdon-oxfordshire-united-kingdom/"> Abingdon, Oxfordshire – United Kingdom </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/ann-arbor-michigan-usa/"> Ann Arbor, Michigan – USA </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/any-city-worldwide/"> Any city – Worldwide </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/anywhere-fully-remote/"> Anywhere – Fully remote </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/austin-houston-portland-me-remote-us/"> Austin / Houston / Portland, ME / Remote – US </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/barcelona-or-full-remote-spain/"> Barcelona or Full-remote – Spain </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/bengaluru-karnataka-india/"> Bengaluru, Karnataka – India </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/berlin-remote-berlin-germany/"> Berlin (remote), Berlin – Germany </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/boston-ma-usa/"> Boston, MA – USA </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/boston-new-york-city-london-uk-or-remote-ma-ny-uk-united-states/"> Boston, New York City, London (UK) or Remote, MA, NY, UK – United States </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/boston-new-york-or-remote-remote-uscanada/"> Boston, New York, or Remote – Remote, US/Canada </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/brentwood-tennessee-united-states/"> Brentwood, Tennessee – United States </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/brisbane-australia/"> Brisbane – Australia </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/butwal-rupandehi-nepal-lumbini-state-5-nepal/"> Butwal, Rupandehi, Nepal, Lumbini (State 5) – Nepal </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/cambridge-massachusetts-usa/"> Cambridge, Massachusetts – USA </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/chicago-illinois-united-states/"> Chicago, Illinois – United States </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/cologneaachenremote-north-rhine-westphalia-germany/"> Cologne/Aachen/Remote, North Rhine-Westphalia – Germany </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/cologne-nrw-germany/"> Cologne, NRW – Germany </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/columbia-md-united-states/"> Columbia, MD – United States </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/dallas-texas-usa/"> Dallas, Texas – USA </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/dallas-tx-united-states/"> Dallas, TX – United states </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/deerfield-illinois-united-states/"> Deerfield, Illinois – United States </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/delray-beach-florida-united-states/"> Delray Beach, Florida – United States </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/denver-co-united-states/"> Denver, CO – United States </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/dublin-dublin-ireland/"> Dublin – Ireland </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/dublin-ireland/"> Dublin – Ireland </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/edinburgh-uk/"> Edinburgh – UK </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/fislisbach-aargau-schweiz/"> Fislisbach, Aargau – Schweiz </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/fully-remote/"> FULLY REMOTE – :) </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/gaithersburg-md-maryland-usa/"> Gaithersburg, MD, Maryland – USA </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/galway-ireland/"> Galway – Ireland </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/gdynia-poland/"> Gdynia – Poland </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/gdynia-redlowo-poland/"> Gdynia, Redlowo – Poland </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/geesthacht-near-hamburg-schleswig-holstein-germany/"> Geesthacht (near Hamburg), Schleswig-Holstein – Germany </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/hilo-hi-usa/"> Hilo, HI – USA </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/indianapolis-indiana-usa/"> Indianapolis, Indiana – USA </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/kirkland-wa-united-states/"> Kirkland, WA – United States </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/leeds-remote-west-yorkshire-united-kingdom/"> Leeds (Remote), West Yorkshire – United Kingdom </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/lisbon-krakow-zagreb-budapest-ljubljana-remote-remote-portugal-poland-croatia-hungary-slovenia-remote/"> Lisbon, Krakow, Zagreb, Budapest, Ljubljana - Remote, Remote – Portugal, Poland, Croatia, Hungary, Slovenia - Remote </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/londoneurope-england/"> London/Europe – England </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/london-or-manchester-greater-manchester-united-kingdom/"> London or Manchester, Greater Manchester – United Kingdom </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/london-uk/"> London – Uk </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/london-united-kingdom/"> London – United Kingdom </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/london-usa/"> London – USA </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/los-alamos-nm-united-states/"> Los Alamos, NM – United States </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/los-angeles-san-francisco-irvine-ca-or-remote-united-states/"> Los Angeles, San Francisco, Irvine, CA or Remote – United States </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/lyon-rhone-alpes-france/"> Lyon, Rhône-Alpes – France </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/manhattan-new-york-city-us/"> Manhattan, New York City – US </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/mclean-va-us/"> McLean, VA – U.S. </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/miami-florida-united-states/"> Miami, Florida – United States </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/milford-ma-united-states/"> Milford, MA – United States </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/minneapolis-remote-minnesota-us/"> Minneapolis - Remote, Minnesota – US </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/multiple-california-northern-or-colorado-boulder-united-states/"> Multiple, California (Northern) or Colorado (Boulder) – United States </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/munich-bavaria-germany/"> Munich, Bavaria – Germany </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/newport-beach-ca-usa/"> Newport Beach, CA – USA </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/new-york-city-new-jersey-areas-new-york-usa/"> New York City, New Jersey areas, New York – USA </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/new-york-new-york-united-states/"> New York – United States </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/new-york-ny-united-states/"> New York, NY – United States </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/new-york-ny-usa/"> New York, NY – USA </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/new-york-remote-ny-usa/"> New York (Remote), NY – USA </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/nycdallastampa-and-remote-usa/"> NYC/Dallas/Tampa and Remote – USA </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/open-to-remote-california-united-states/"> Open to Remote, California – United States </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/ottawa-on-canada/"> Ottawa, ON – Canada </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/palo-alto-california-united-states-of-america/"> Palo Alto, California – United States of America </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/paris-berlin-madrid-remote-france-spain-germany-remote/"> Paris, Berlin, Madrid, Remote – France, Spain, Germany, Remote </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/paris-madrid-berlin-remote-france-germany-spain-remote/"> Paris, Madrid, Berlin, remote – France, Germany, Spain, Remote </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/paris-madrid-berlin-remote-france-spain-germany-remote/"> Paris, Madrid, Berlin, Remote – France, Spain, Germany, Remote </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/paris-madrid-berlin-remote-germany-france-spain-remote/"> Paris, Madrid, Berlin, remote – Germany, France, Spain, Remote </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/paris-or-anywhere-else-france/"> Paris (or anywhere else) – France </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/pittsburgh-pennsylvania-united-states/"> Pittsburgh, Pennsylvania – United States </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/plano-texas-usa/"> Plano, Texas – USA </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/reading-uk/"> Reading – UK </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/redwood-city-california-united-states/"> Redwood City, California – United States </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/remote-4-hours-from-gmt/"> Remote – +/- 4 hours from GMT </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/remote-anywhere-anywhere/"> Remote, Anywhere – Anywhere </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/remote-anywhere-united-states/"> Remote, Anywhere – United States </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/remote-anywhere-worldwide/"> Remote, Anywhere – Worldwide </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/remote-arizona-usa/"> Remote, Arizona – USA </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/remote-canada/"> Remote – Canada </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/remote-european-timezone-germany-uk-spain-france-romania-poland-portugal-etc/"> Remote, European timezone – Germany, Uk, Spain, France, Romania, Poland, Portugal, etc </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/remote-hq-in-denver-usa/"> Remote (HQ in Denver) – USA </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/remote-in-uk-and-europe-remote-in-uk-and-europe-remote-in-uk-and-europe/"> Remote in UK and Europe – Remote in UK and Europe </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/remote-nashville-new-york-united-states/"> Remote, Nashville, New York – United States </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/remote-remote/"> Remote – Remote </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/remote-remote-argentina/"> Remote – Argentina </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/remote-remote-india/"> Remote – India </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/remote-remote-remote/"> remote – remote </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/remote-remote-united-states/"> Remote – United States </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/remote-u/"> Remote – U </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/remote-uk/"> Remote – UK </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/remote-uk-germany-netherlands-romania-spain-denmark/"> Remote – UK, Germany, Netherlands, Romania, Spain, Denmark </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/remote-united-states/"> Remote – United States </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/remote-usa/"> Remote – USA </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/remote-usa-only-united-states/"> Remote (USA only) – United States </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/remote-uscanada/"> Remote – US/Canada </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/remote-work-in-the-uk-united-kingdom/"> Remote Work in the UK – United Kingdom </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/san-francisco-california-united-states/"> San Francisco, California – United States </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/san-francisco-ca-los-angeles-ca-new-york-ny-remote-usa/"> San Francisco, CA | Los Angeles, CA | New York, NY | REMOTE – USA </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/sao-paulo-remote-sao-paulo-region-and-remote-brazil/"> São Paulo &amp; Remote, São Paulo region and Remote – Brazil </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/seattle-los-angeles-irvine-or-san-antonio-wa-ca-tx-united-states/"> Seattle, Los Angeles, Irvine, or San Antonio, WA, CA, TX – United States </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/seattle-washington-remote-australia-europe-north-america-south-america/"> Seattle, Washington – Remote Australia, Europe, North America, South America </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/singapore-singapore/"> Singapore – Singapore </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/storrs-ct-us/"> Storrs, CT – US </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/sydney-new-south-wales-australia/"> Sydney, New South Wales – Australia </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/toronto-ontario-canada/"> Toronto, Ontario – Canada </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/troy-ny-usa/"> Troy, NY – USA </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/virtual-in-us-united-states/"> Virtual in U.S. – United States </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/virtual-united-states/"> Virtual – United States </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/warsaw-fully-remote-poland/"> Warsaw (fully remote) – Poland </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/warsaw-mazowieckie-poland/"> Warsaw, Mazowieckie – Poland </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/washington-dc-district-of-columbia-united-states/"> Washington, DC, District of Columbia – United States </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/washington-dc-usa/"> Washington, DC – USA </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/washington-district-of-columbia-usa/"> Washington, District of Columbia – USA </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/white-rock-british-columbia-canada/"> White Rock, British Columbia – Canada </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/worldwide-worldwide/"> Worldwide – Worldwide </a></li> 
+         <li class="tier-2" role="treeitem"><a href="/jobs/location/zurich-switzerland/"> Zurich – Switzerland </a></li> 
+        </ul> </li> 
+       <li class="tier-1 element-5 last"><a href="/jobs/create/">Submit</a></li> 
+      </ul> 
+     </nav> 
+     <div class="header-banner "> <!-- for optional "do-not-print" class --> 
+      <div class="jobs-intro"> 
+       <h2 class="welcome-message"> Fislisbach, Aargau – Schweiz </h2> 
+       <h1 class="call-to-action"> 1 Python job in Fislisbach, Aargau – Schweiz </h1> <!--
+    <p class="excerpt"><strong>Have a job to post?</strong> Please <a href="/jobs/create/">fill out this form</a>, or returning Job Board users may <a href="/accounts/login/?next=/jobs/location/fislisbach-aargau-schweiz/">log in here</a> to update job postings and create new ones.</p>
+--> 
+      </div> 
+     </div> 
+    </div><!-- end .container --> 
+   </header> 
+   <div id="content" class="content-wrapper"> <!-- Main Content Column --> 
+    <div class="container"> 
+     <section class="main-content with-right-sidebar" role="main"> 
+      <div class="row"> 
+       <ol class="list-recent-jobs list-row-container menu"> 
+        <li> <h2 class="listing-company"> <span class="listing-company-name"> <a href="/jobs/6384/">Entwicklungskapazität Python</a><br> bmc consulting AG </span> <span class="listing-location"><a href="/jobs/location/fislisbach-aargau-schweiz/" title="More jobs in Fislisbach, Aargau, Schweiz">Fislisbach, Aargau, Schweiz</a></span> </h2> <span class="listing-job-type"> Django / Angular </span> <span class="listing-posted">Posted: <time datetime="2022-03-29T08:58:25.456171+00:00">29 March 2022</time></span> <span class="listing-company-category"><a href="/jobs/category/manager-executive/" title="More jobs in Manager / Executive">Manager / Executive</a></span> </li> 
+       </ol> <!-- Pagination --> 
+      </div> 
+     </section> 
+     <aside class="right-sidebar"> 
+      <div class="sidebar-widget"> 
+       <h3 class="widget-title">Submit a Job</h3> 
+       <p>Have a job that our community would be interested in? <b>Please check our <a href="/community/jobs/howto/">job submission how-to</a> for details on how to file a job posting.</b></p> 
+       <p>After you have reviewed our <a href="/community/jobs/howto/">how-to document</a>, please <a href="/accounts/login/?next=/jobs/create/">login and use this form</a> to create a new job posting</p> 
+       <p>If you have submitted jobs previously under your login, you can view them by <a href="/accounts/login/?next=/jobs/mine/">logging in now</a>.</p> 
+       <p>In case of questions, please contact the <a href="mailto:jobs@python.org">PSF Python Job Board team</a>. Thank you.</p> 
+      </div> 
+      <div class="sidebar-widget"> 
+       <h3 class="widget-title">Stay up-to-date</h3> 
+       <p><a href="/jobs/feed/rss/"><span aria-hidden="true" class="icon-feed"></span>Subscribe via RSS</a></p> 
+       <p><a href="https://twitter.com/ThePSF"><span aria-hidden="true" class="icon-twitter"></span>Follow The PSF via Twitter</a></p> 
+      </div> 
+      <div class="sidebar-widget"> 
+       <h3 class="widget-title">Job Board Sponsors</h3> 
+       <div style="display: grid; grid-gap: 1em; grid-template-columns: repeat(auto-fit, minmax(100px, 0fr)); grid-template-rows: repeat(1, minmax(50px, 0fr)); align-items: center; justify-content: center; margin-top: 1em;"> 
+        <div> 
+         <img src="https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/cache/4d/73/4d73dbb9c4bf8e61ad4f6a798c7b5a9d.png" alt="Bloomberg logo" style="max-height:100px;max-width:100px;height:auto;width:auto;"> 
+        </div> 
+        <div> 
+         <img src="https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/cache/a2/a9/a2a9c0076eb661b58c625737dcb7b4b8.png" alt="Meta logo" style="max-height:100px;max-width:100px;height:auto;width:auto;"> 
+        </div> 
+        <div> 
+         <img src="https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/cache/3f/81/3f81a40e9bde0a3757baea268d175c08.png" alt="Google logo" style="max-height:100px;max-width:100px;height:auto;width:auto;"> 
+        </div> 
+        <div> 
+         <img src="https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/cache/1b/2f/1b2f2ae5e270f39175fda50b2e3764cb.png" alt="Microsoft logo" style="max-height:100px;max-width:100px;height:auto;width:auto;"> 
+        </div> 
+        <div> 
+         <img src="https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/cache/b1/2e/b12e6d3312aa976aecc561c6f5a2ea0f.png" alt="NVIDIA logo" style="max-height:100px;max-width:100px;height:auto;width:auto;"> 
+        </div> 
+        <div> 
+         <img src="https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/cache/4f/c9/4fc91166b088c6cba352150617231040.png" alt="AWS logo" style="max-height:100px;max-width:100px;height:auto;width:auto;"> 
+        </div> 
+        <div> 
+         <img src="https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/cache/e0/00/e00026ea8e9cf050aea90647d11801c3.png" alt="Qube Research &amp; Technologies Limited logo" style="max-height:100px;max-width:100px;height:auto;width:auto;"> 
+        </div> 
+        <div> 
+         <img src="https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/cache/a3/23/a323780d0fe4848a084209e51e22622d.png" alt="Corning Incorporated logo" style="max-height:100px;max-width:100px;height:auto;width:auto;"> 
+        </div> 
+        <div> 
+         <img src="https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/cache/a7/87/a787d30b99a9bf172c4d0aa8e45ee5b4.png" alt="Capital One logo" style="max-height:100px;max-width:100px;height:auto;width:auto;"> 
+        </div> 
+        <div> 
+         <img src="https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/cache/64/1c/641c194b258bd3505befb69d59fbffd4.png" alt="Salesforce logo" style="max-height:100px;max-width:100px;height:auto;width:auto;"> 
+        </div> 
+        <div> 
+         <img src="https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/cache/45/42/4542ffe9c051651eb18052ba17e4ad40.png" alt="Ramp logo" style="max-height:100px;max-width:100px;height:auto;width:auto;"> 
+        </div> 
+        <div> 
+         <img src="https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/cache/0c/94/0c948d3ae0bc912585ad7eeea5206394.png" alt="Anaconda, Inc logo" style="max-height:100px;max-width:100px;height:auto;width:auto;"> 
+        </div> 
+        <div> 
+         <img src="https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/cache/9a/06/9a06dae6da2cc1235c87690b1f9ffa28.png" alt="Coiled logo" style="max-height:100px;max-width:100px;height:auto;width:auto;"> 
+        </div> 
+        <div> 
+         <img src="https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/cache/b4/5f/b45fcf8ea6eb9ac3119e90c80249924e.png" alt="Motional logo" style="max-height:100px;max-width:100px;height:auto;width:auto;"> 
+        </div> 
+        <div> 
+         <img src="https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/cache/e9/16/e916ba7b4d2ff6b192484ecf73a1fcd1.png" alt="Red Hat logo" style="max-height:100px;max-width:100px;height:auto;width:auto;"> 
+        </div> 
+        <div> 
+         <img src="https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/cache/4f/39/4f390af1f708449d9eb1692ceacc5550.png" alt="IBM logo" style="max-height:100px;max-width:100px;height:auto;width:auto;"> 
+        </div> 
+       </div> 
+      </div> 
+     </aside> 
+    </div><!-- end .container --> 
+   </div><!-- end #content .content-wrapper --> <!-- Footer and social media list --> 
+   <footer id="site-map" class="main-footer" role="contentinfo"> 
+    <div class="main-footer-links"> 
+     <div class="container"> <a id="back-to-top-1" class="jump-link" href="#python-network"><span aria-hidden="true" class="icon-arrow-up"><span>?</span></span> Back to Top</a> 
+      <ul class="sitemap navigation menu do-not-print" role="tree" id="container"> 
+       <li class="tier-1 element-1"> <a href="/about/">About</a> 
+        <ul class="subnav menu"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="/about/apps/" title="">Applications</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="/about/quotes/" title="">Quotes</a></li> 
+         <li class="tier-2 element-3" role="treeitem"><a href="/about/gettingstarted/" title="">Getting Started</a></li> 
+         <li class="tier-2 element-4" role="treeitem"><a href="/about/help/" title="">Help</a></li> 
+         <li class="tier-2 element-5" role="treeitem"><a href="http://brochure.getpython.info/" title="">Python Brochure</a></li> 
+        </ul> </li> 
+       <li class="tier-1 element-2"> <a href="/downloads/">Downloads</a> 
+        <ul class="subnav menu"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="/downloads/" title="">All releases</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="/downloads/source/" title="">Source code</a></li> 
+         <li class="tier-2 element-3" role="treeitem"><a href="/downloads/windows/" title="">Windows</a></li> 
+         <li class="tier-2 element-4" role="treeitem"><a href="/downloads/macos/" title="">macOS</a></li> 
+         <li class="tier-2 element-5" role="treeitem"><a href="/download/other/" title="">Other Platforms</a></li> 
+         <li class="tier-2 element-6" role="treeitem"><a href="https://docs.python.org/3/license.html" title="">License</a></li> 
+         <li class="tier-2 element-7" role="treeitem"><a href="/download/alternatives" title="">Alternative Implementations</a></li> 
+        </ul> </li> 
+       <li class="tier-1 element-3"> <a href="/doc/">Documentation</a> 
+        <ul class="subnav menu"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="/doc/" title="">Docs</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="/doc/av" title="">Audio/Visual Talks</a></li> 
+         <li class="tier-2 element-3" role="treeitem"><a href="https://wiki.python.org/moin/BeginnersGuide" title="">Beginner's Guide</a></li> 
+         <li class="tier-2 element-4" role="treeitem"><a href="https://devguide.python.org/" title="">Developer's Guide</a></li> 
+         <li class="tier-2 element-5" role="treeitem"><a href="https://docs.python.org/faq/" title="">FAQ</a></li> 
+         <li class="tier-2 element-6" role="treeitem"><a href="http://wiki.python.org/moin/Languages" title="">Non-English Docs</a></li> 
+         <li class="tier-2 element-7" role="treeitem"><a href="http://python.org/dev/peps/" title="">PEP Index</a></li> 
+         <li class="tier-2 element-8" role="treeitem"><a href="https://wiki.python.org/moin/PythonBooks" title="">Python Books</a></li> 
+         <li class="tier-2 element-9" role="treeitem"><a href="/doc/essays/" title="">Python Essays</a></li> 
+        </ul> </li> 
+       <li class="tier-1 element-4"> <a href="/community/">Community</a> 
+        <ul class="subnav menu"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="/community/diversity/" title="">Diversity</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="/community/lists/" title="">Mailing Lists</a></li> 
+         <li class="tier-2 element-3" role="treeitem"><a href="/community/irc/" title="">IRC</a></li> 
+         <li class="tier-2 element-4" role="treeitem"><a href="/community/forums/" title="">Forums</a></li> 
+         <li class="tier-2 element-5" role="treeitem"><a href="/psf/annual-report/2021/" title="">PSF Annual Impact Report</a></li> 
+         <li class="tier-2 element-6" role="treeitem"><a href="/community/workshops/" title="">Python Conferences</a></li> 
+         <li class="tier-2 element-7" role="treeitem"><a href="/community/sigs/" title="">Special Interest Groups</a></li> 
+         <li class="tier-2 element-8" role="treeitem"><a href="/community/logos/" title="">Python Logo</a></li> 
+         <li class="tier-2 element-9" role="treeitem"><a href="https://wiki.python.org/moin/" title="">Python Wiki</a></li> 
+         <li class="tier-2 element-10" role="treeitem"><a href="/community/merchandise/" title="">Merchandise</a></li> 
+         <li class="tier-2 element-11" role="treeitem"><a href="/community/awards" title="">Community Awards</a></li> 
+         <li class="tier-2 element-12" role="treeitem"><a href="/psf/conduct/" title="">Code of Conduct</a></li> 
+         <li class="tier-2 element-13" role="treeitem"><a href="/psf/get-involved/" title="">Get Involved</a></li> 
+         <li class="tier-2 element-14" role="treeitem"><a href="/psf/community-stories/" title="">Shared Stories</a></li> 
+        </ul> </li> 
+       <li class="tier-1 element-5"> <a href="/success-stories/" title="success-stories">Success Stories</a> 
+        <ul class="subnav menu"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="/success-stories/category/arts/" title="">Arts</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="/success-stories/category/business/" title="">Business</a></li> 
+         <li class="tier-2 element-3" role="treeitem"><a href="/success-stories/category/education/" title="">Education</a></li> 
+         <li class="tier-2 element-4" role="treeitem"><a href="/success-stories/category/engineering/" title="">Engineering</a></li> 
+         <li class="tier-2 element-5" role="treeitem"><a href="/success-stories/category/government/" title="">Government</a></li> 
+         <li class="tier-2 element-6" role="treeitem"><a href="/success-stories/category/scientific/" title="">Scientific</a></li> 
+         <li class="tier-2 element-7" role="treeitem"><a href="/success-stories/category/software-development/" title="">Software Development</a></li> 
+        </ul> </li> 
+       <li class="tier-1 element-6"> <a href="/blogs/" title="News from around the Python world">News</a> 
+        <ul class="subnav menu"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="/blogs/" title="Python Insider Blog Posts">Python News</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="/psf/newsletter/" title="Python Software Foundation Newsletter">PSF Newsletter</a></li> 
+         <li class="tier-2 element-3" role="treeitem"><a href="http://planetpython.org/" title="Planet Python">Community News</a></li> 
+         <li class="tier-2 element-4" role="treeitem"><a href="http://pyfound.blogspot.com/" title="PSF Blog">PSF News</a></li> 
+         <li class="tier-2 element-5" role="treeitem"><a href="http://pycon.blogspot.com/" title="PyCon Blog">PyCon News</a></li> 
+        </ul> </li> 
+       <li class="tier-1 element-7"> <a href="/events/">Events</a> 
+        <ul class="subnav menu"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="/events/python-events/" title="">Python Events</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="/events/python-user-group/" title="">User Group Events</a></li> 
+         <li class="tier-2 element-3" role="treeitem"><a href="/events/python-events/past/" title="">Python Events Archive</a></li> 
+         <li class="tier-2 element-4" role="treeitem"><a href="/events/python-user-group/past/" title="">User Group Events Archive</a></li> 
+         <li class="tier-2 element-5" role="treeitem"><a href="https://wiki.python.org/moin/PythonEventsCalendar#Submitting_an_Event" title="">Submit an Event</a></li> 
+        </ul> </li> 
+       <li class="tier-1 element-8"> <a href="/dev/">Contributing</a> 
+        <ul class="subnav menu"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="https://devguide.python.org/" title="">Developer's Guide</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="https://bugs.python.org/" title="">Issue Tracker</a></li> 
+         <li class="tier-2 element-3" role="treeitem"><a href="https://mail.python.org/mailman/listinfo/python-dev" title="">python-dev list</a></li> 
+         <li class="tier-2 element-4" role="treeitem"><a href="/dev/core-mentorship/" title="">Core Mentorship</a></li> 
+         <li class="tier-2 element-5" role="treeitem"><a href="/dev/security/" title="">Report a Security Issue</a></li> 
+        </ul> </li> 
+      </ul> <a id="back-to-top-2" class="jump-link" href="#python-network"><span aria-hidden="true" class="icon-arrow-up"><span>?</span></span> Back to Top</a> 
+     </div><!-- end .container --> 
+    </div> <!-- end .main-footer-links --> 
+    <div class="site-base"> 
+     <div class="container"> 
+      <ul class="footer-links navigation menu do-not-print" role="tree"> 
+       <li class="tier-1 element-1"><a href="/about/help/">Help &amp; <span class="say-no-more">General</span> Contact</a></li> 
+       <li class="tier-1 element-2"><a href="/community/diversity/">Diversity <span class="say-no-more">Initiatives</span></a></li> 
+       <li class="tier-1 element-3"><a href="https://github.com/python/pythondotorg/issues">Submit Website Bug</a></li> 
+       <li class="tier-1 element-4"> <a href="https://status.python.org/">Status <span class="python-status-indicator-default" id="python-status-indicator"></span></a> </li> 
+      </ul> 
+      <div class="copyright"> 
+       <p><small> <span class="pre">Copyright ©2001-2022.</span> &nbsp;<span class="pre"><a href="/psf-landing/">Python Software Foundation</a></span> &nbsp;<span class="pre"><a href="/about/legal/">Legal Statements</a></span> &nbsp;<span class="pre"><a href="/privacy/">Privacy Policy</a></span> &nbsp;<span class="pre"><a href="/psf/sponsorship/sponsors/#heroku">Powered by Heroku</a></span> </small></p> 
+      </div> 
+     </div><!-- end .container --> 
+    </div><!-- end .site-base --> 
+   </footer> 
+  </div><!-- end #touchnav-wrapper --> 
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script> 
+  <script>window.jQuery || document.write('<script src="/static/js/libs/jquery-1.8.2.min.js"><\/script>')</script> 
+  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script> 
+  <script>window.jQuery || document.write('<script src="/static/js/libs/jquery-ui-1.12.1.min.js"><\/script>')</script> 
+  <script src="/static/js/libs/masonry.pkgd.min.js"></script> 
+  <script src="/static/js/libs/html-includes.js"></script> 
+  <script type="text/javascript" src="/static/js/main-min.dd72c1659644.js" charset="utf-8"></script> <!--[if lte IE 7]>
+    <script type="text/javascript" src="/static/js/plugins/IE8-min.8af6e26c7a3b.js" charset="utf-8"></script>
+    
+    
+    <![endif]--> <!--[if lte IE 8]>
+    <script type="text/javascript" src="/static/js/plugins/getComputedStyle-min.d41d8cd98f00.js" charset="utf-8"></script>
+    
+    
+    <![endif]-->  
+ </body>
+</html>

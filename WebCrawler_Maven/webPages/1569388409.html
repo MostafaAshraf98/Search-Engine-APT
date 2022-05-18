@@ -1,0 +1,916 @@
+<!doctype html><!--[if lt IE 7]>   <html class="no-js ie6 lt-ie7 lt-ie8 lt-ie9">   <![endif]--><!--[if IE 7]>      <html class="no-js ie7 lt-ie8 lt-ie9">          <![endif]--><!--[if IE 8]>      <html class="no-js ie8 lt-ie9">                 <![endif]--><!--[if gt IE 8]><!-->
+<html class="no-js" lang="en" dir="ltr"> <!--<![endif]--> 
+ <head> 
+  <meta charset="utf-8"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  <link rel="prefetch" href="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"> 
+  <link rel="prefetch" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"> 
+  <meta name="application-name" content="Python.org"> 
+  <meta name="msapplication-tooltip" content="The official home of the Python Programming Language"> 
+  <meta name="apple-mobile-web-app-title" content="Python.org"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta name="HandheldFriendly" content="True"> 
+  <meta name="format-detection" content="telephone=no"> 
+  <meta http-equiv="cleartype" content="on"> 
+  <meta http-equiv="imagetoolbar" content="false"> 
+  <script async src="https://media.ethicalads.io/media/client/v1.4.0/ethicalads.min.js" integrity="sha256-U3hKDidudIaxBDEzwGJApJgPEf2mWk6cfMWghrAa6i0= sha384-UcmsCqcNRSLW/dV3Lo1oCi2/VaurXbib6p4HyUEOeIa/4OpsrnucrugAefzVZJfI sha512-q4t1L4xEjGV2R4hzqCa41P8jrgFUS8xTb8rdNv4FGvw7FpydVj/kkxBJHOiaoxHa8olCcx1Slk9K+3sNbsM4ug==" crossorigin="anonymous"></script> 
+  <script src="/static/js/libs/modernizr.js"></script> 
+  <link href="/static/stylesheets/style.a193d3b62d35.css" rel="stylesheet" type="text/css" media="all" title="default"> 
+  <link href="/static/stylesheets/mq.f9187444a4a1.css" rel="stylesheet" type="text/css" media="not print, braille, embossed, speech, tty"> <!--[if (lte IE 8)&(!IEMobile)]>
+    <link href="/static/stylesheets/no-mq.bf0c425cdb73.css" rel="stylesheet" type="text/css" media="screen" />
+    
+    
+    <![endif]--> 
+  <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css"> 
+  <link rel="icon" type="image/x-icon" href="/static/favicon.ico"> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/static/apple-touch-icon-144x144-precomposed.png"> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/static/apple-touch-icon-114x114-precomposed.png"> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/static/apple-touch-icon-72x72-precomposed.png"> 
+  <link rel="apple-touch-icon-precomposed" href="/static/apple-touch-icon-precomposed.png"> 
+  <link rel="apple-touch-icon" href="/static/apple-touch-icon-precomposed.png"> 
+  <meta name="msapplication-TileImage" content="/static/metro-icon-144x144-precomposed.png"><!-- white shape --> 
+  <meta name="msapplication-TileColor" content="#3673a5"><!-- python blue --> 
+  <meta name="msapplication-navbutton-color" content="#3673a5"> 
+  <title>Workgroups of the Python Software Foundation | Python Software Foundation</title> 
+  <meta name="description" content="The official home of the Python Programming Language"> 
+  <meta name="keywords" content="Python programming language object oriented web free open source software license documentation download community"> 
+  <meta property="og:type" content="website"> 
+  <meta property="og:site_name" content="Python.org"> 
+  <meta property="og:title" content="Workgroups of the Python Software Foundation"> 
+  <meta property="og:description" content="The official home of the Python Programming Language"> 
+  <meta property="og:image" content="https://www.python.org/static/opengraph-icon-200x200.png"> 
+  <meta property="og:image:secure_url" content="https://www.python.org/static/opengraph-icon-200x200.png"> 
+  <meta property="og:url" content="https://www.python.org/psf/committees/"> 
+  <link rel="author" href="/static/humans.txt"> 
+  <link rel="alternate" type="application/rss+xml" title="Python Enhancement Proposals" href="https://www.python.org/dev/peps/peps.rss/"> 
+  <link rel="alternate" type="application/rss+xml" title="Python Job Opportunities" href="https://www.python.org/jobs/feed/rss/"> 
+  <link rel="alternate" type="application/rss+xml" title="Python Software Foundation News" href="https://feeds.feedburner.com/PythonSoftwareFoundationNews"> 
+  <link rel="alternate" type="application/rss+xml" title="Python Insider" href="https://feeds.feedburner.com/PythonInsider"> 
+  <script type="application/ld+json">
+     {
+       "@context": "https://schema.org",
+       "@type": "WebSite",
+       "url": "https://www.python.org/",
+       "potentialAction": {
+         "@type": "SearchAction",
+         "target": "https://www.python.org/search/?q={search_term_string}",
+         "query-input": "required name=search_term_string"
+       }
+     }
+    </script> 
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-39055973-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script> 
+ </head> 
+ <body class="psf pages default-page"> 
+  <div id="touchnav-wrapper"> 
+   <div id="nojs" class="do-not-print"> 
+    <p><strong>Notice:</strong> While JavaScript is not essential for this website, your interaction with the content will be limited. Please turn JavaScript on for the full experience. </p> 
+   </div> <!--[if lte IE 8]>
+        <div id="oldie-warning" class="do-not-print">
+            <p>
+                <strong>Notice:</strong> Your browser is <em>ancient</em>. Please
+                <a href="http://browsehappy.com/">upgrade to a different browser</a> to experience a better web.
+            </p>
+        </div>
+        <![endif]--> <!-- Sister Site Links --> 
+   <div id="top" class="top-bar do-not-print"> 
+    <nav class="meta-navigation container" role="navigation"> 
+     <div class="skip-link screen-reader-text"> <a href="#content" title="Skip to content">Skip to content</a> 
+     </div> <a id="close-python-network" class="jump-link" href="#python-network" aria-hidden="true"> <span aria-hidden="true" class="icon-arrow-down"><span>?</span></span> Close </a> 
+     <ul class="menu" role="tree"> 
+      <li class="python-meta "> <a href="/" title="The Python Programming Language">Python</a> </li> 
+      <li class="psf-meta current_branch selected"> <a href="/psf-landing/" title="The Python Software Foundation" class="current_branch selected">PSF</a> </li> 
+      <li class="docs-meta "> <a href="https://docs.python.org" title="Python Documentation">Docs</a> </li> 
+      <li class="pypi-meta "> <a href="https://pypi.org/" title="Python Package Index">PyPI</a> </li> 
+      <li class="jobs-meta "> <a href="/jobs/" title="Python Job Board">Jobs</a> </li> 
+      <li class="shop-meta "> <a href="/community-landing/">Community</a> </li> 
+     </ul> <a id="python-network" class="jump-link" href="#top" aria-hidden="true"> <span aria-hidden="true" class="icon-arrow-up"><span>?</span></span> The Python Network </a> 
+    </nav> 
+   </div> <!-- Header elements --> 
+   <header class="main-header" role="banner"> 
+    <div class="container"> 
+     <h1 class="site-headline"> <a href="/psf-landing/"><img class="psf-logo" src="/static/img/psf-logo.png" alt="Python Software Foundation"></a> </h1> 
+     <div class="options-bar-container do-not-print"> <a href="https://psfmember.org/civicrm/contribute/transact?reset=1&amp;id=2" class="donate-button">Donate</a> 
+      <div class="options-bar"> <a id="site-map-link" class="jump-to-menu" href="#site-map"><span class="menu-icon">?</span> Menu</a>
+       <form class="search-the-site" action="/search/" method="get"> 
+        <fieldset title="Search Python.org"> <span aria-hidden="true" class="icon-search"></span> <label class="screen-reader-text" for="id-search-field">Search This Site</label> 
+         <input id="id-search-field" name="q" type="search" role="textbox" class="search-field" placeholder="Search" value="" tabindex="1"> <button type="submit" name="submit" id="submit" class="search-button" title="Submit this Search" tabindex="3"> GO </button> <!--[if IE]><input type="text" style="display: none;" disabled="disabled" size="1" tabindex="4"><![endif]--> 
+        </fieldset> 
+       </form><span class="breaker"></span>
+       <div class="adjust-font-size" aria-hidden="true"> 
+        <ul class="navigation menu" aria-label="Adjust Text Size on Page"> 
+         <li class="tier-1 last" aria-haspopup="true"> <a href="#" class="action-trigger"><strong><small>A</small> A</strong></a> 
+          <ul class="subnav menu"> 
+           <li class="tier-2 element-1" role="treeitem"><a class="text-shrink" title="Make Text Smaller" href="javascript:;">Smaller</a></li> 
+           <li class="tier-2 element-2" role="treeitem"><a class="text-grow" title="Make Text Larger" href="javascript:;">Larger</a></li> 
+           <li class="tier-2 element-3" role="treeitem"><a class="text-reset" title="Reset any font size changes I have made" href="javascript:;">Reset</a></li> 
+          </ul> </li> 
+        </ul> 
+       </div>
+       <div class="winkwink-nudgenudge"> 
+        <ul class="navigation menu" aria-label="Social Media Navigation"> 
+         <li class="tier-1 last" aria-haspopup="true"> <a href="#" class="action-trigger">Socialize</a> 
+          <ul class="subnav menu"> 
+           <li class="tier-2 element-1" role="treeitem"><a href="https://www.facebook.com/pythonlang?fref=ts"><span aria-hidden="true" class="icon-facebook"></span>Facebook</a></li> 
+           <li class="tier-2 element-2" role="treeitem"><a href="https://twitter.com/ThePSF"><span aria-hidden="true" class="icon-twitter"></span>Twitter</a></li> 
+           <li class="tier-2 element-3" role="treeitem"><a href="/community/irc/"><span aria-hidden="true" class="icon-freenode"></span>Chat on IRC</a></li> 
+          </ul> </li> 
+        </ul> 
+       </div> <span data-html-include="/authenticated"></span> 
+      </div><!-- end options-bar --> 
+     </div> 
+     <nav id="mainnav" class="psf-navigation main-navigation do-not-print" role="navigation"> 
+      <ul class="navigation menu" role="menubar" aria-label="Main Navigation"> 
+       <li id="about" class="tier-1 element-1  " aria-haspopup="true"> <a href="/psf/about/" title="" class=" selected">About</a> 
+        <ul class="subnav menu" role="menu" aria-hidden="true"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="/psf/mission/" title="">Mission statement</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="/psf/records/" title="">Public records</a></li> 
+         <li class="tier-2 element-3" role="treeitem"><a href="/psf/committees/" title="">PSF Workgroups</a></li> 
+         <li class="tier-2 element-4" role="treeitem"><a href="/psf/annual-report/2021/" title="">Annual Impact Report</a></li> 
+         <li class="tier-2 element-5" role="treeitem"><a href="/nominations/elections/" title="">Elections</a></li> 
+        </ul> </li> 
+       <li id="sponsorship" class="tier-1 element-2  " aria-haspopup="true"> <a href="/psf/sponsorship/" title="" class="">Sponsorship</a> 
+        <ul class="subnav menu" role="menu" aria-hidden="true"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="/psf/sponsors/" title="">PSF Sponsors</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="/psf/sponsorship/" title="">How to become a sponsor</a></li> 
+         <li class="tier-2 element-3" role="treeitem"><a href="/sponsors/application/" title="">Apply to Sponsor</a></li> 
+        </ul> </li> 
+       <li id="membership" class="tier-1 element-3  " aria-haspopup="true"> <a href="/psf/membership/" title="" class="">Membership</a> 
+        <ul class="subnav menu" role="menu" aria-hidden="true"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="/psf/membership/" title="">Membership FAQ</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="/psf/members/" title="">Membership roster</a></li> 
+         <li class="tier-2 element-3" role="treeitem"><a href="/users/membership/" title="">Sign up as member</a></li> 
+         <li class="tier-2 element-4" role="treeitem"><a href="/community/awards/" title="">Community Awards</a></li> 
+         <li class="tier-2 element-5" role="treeitem"><a href="http://pyfound.blogspot.de/2015/02/enroll-as-psf-voting-member.html" title="">Self-certify as voting member</a></li> 
+         <li class="tier-2 element-6" role="treeitem"><a href="/psf/conduct/" title="">Python Community Code of Conduct</a></li> 
+         <li class="tier-2 element-7" role="treeitem"><a href="/psf/newsletter/" title="">Newsletter</a></li> 
+        </ul> </li> 
+       <li id="donations" class="tier-1 element-4  " aria-haspopup="true"> <a href="/psf/donations/" title="" class="">Donations </a> 
+        <ul class="subnav menu" role="menu" aria-hidden="true"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="/psf/donations/" title="">Donations</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="/psf/contrib/" title="">Contribution forms</a></li> 
+         <li class="tier-2 element-3" role="treeitem"><a href="/psf/fraud/" title="">Suspicious checks</a></li> 
+         <li class="tier-2 element-4" role="treeitem"><a href="https://www.python.org/psf/donations/matching-gifts/" title="">PSF Matching Donations</a></li> 
+        </ul> </li> 
+       <li id="volunteer" class="tier-1 element-5  " aria-haspopup="true"> <a href="/psf/volunteer/" title="" class="">Volunteer</a> 
+        <ul class="subnav menu" role="menu" aria-hidden="true"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="/psf/volunteer/" title="">PSF</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="/psf/volunteer/pycon/" title="">PyCon US</a></li> 
+        </ul> </li> 
+       <li id="grants" class="tier-1 element-6  " aria-haspopup="true"> <a href="/psf/grants/" title="" class="">Grants</a> 
+        <ul class="subnav menu" role="menu" aria-hidden="true"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="/psf/grants/" title="">Grants program</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="/psf/grants/faq/" title="">Grants Program FAQ</a></li> 
+        </ul> </li> 
+       <li id="vendor-info" class="tier-1 element-7  " aria-haspopup="true"> <a href="/psf/accounts-payable" title="" class="">Vendor Info</a> 
+        <ul class="subnav menu" role="menu" aria-hidden="true"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="/psf/vendorpolicies/" title="">Vendor Policies</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="/psf/paymentoptions/" title="">Payment Options</a></li> 
+        </ul> </li> 
+       <li id="legal" class="tier-1 element-8  " aria-haspopup="true"> <a href="/about/legal/" title="" class="">Legal</a> 
+        <ul class="subnav menu" role="menu" aria-hidden="true"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="/psf/bylaws/" title="">Bylaws</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="/psf/trademarks/" title="">Trademark policy</a></li> 
+         <li class="tier-2 element-3" role="treeitem"><a href="/psf/weblog-policy/" title="">Weblog policy</a></li> 
+         <li class="tier-2 element-4" role="treeitem"><a href="/psf/license" title="">License</a></li> 
+        </ul> </li> 
+       <li id="media" class="tier-1 element-9  " aria-haspopup="true"> <a href="https://www.python.org/psf/press-release/" title="" class="">Media</a> 
+        <ul class="subnav menu" role="menu" aria-hidden="true"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="/psf/press-release/" title="">Press releases</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="/community/logos/" title="">Logo</a></li> 
+        </ul> </li> 
+       <li id="psf-blog" class="tier-1 element-10  last" aria-haspopup="true"> <a href="http://pyfound.blogspot.com/" title="" class="">PSF Blog</a> </li> 
+      </ul> 
+     </nav> 
+     <div class="header-banner "> <!-- for optional "do-not-print" class --> 
+     </div> 
+    </div><!-- end .container --> 
+   </header> 
+   <div id="content" class="content-wrapper"> <!-- Main Content Column --> 
+    <div class="container"> 
+     <section class="main-content with-left-sidebar" role="main"> 
+      <div class="notification-bar notification-bar--survey" style="background-color: #ffdf76; color: #664e04; border-color: #004d7a; text-align: center; background-color: #004d7a; color: #fff; padding: 10px; margin: .5em; position: relative; width: 95%; background-color: #ffdf76; color: #664e04; border-color: #004d7a; border-radius: 1em;"> <span class="notification-bar__icon"> <i class="fa fa-chart-line" aria-hidden="true"></i> </span> <span class="notification-bar__message">Contribute today to the ?thon PSF Spring Fundraiser and show your love for Python! &nbsp;&nbsp;<a class="button button--dark button--small button--primary" style="color: #606060; border-color: #006dad; background-color: #006dad;" href="https://psfmember.org/civicrm/contribute/transact?reset=1&amp;id=37" target="_blank" rel="noopener">Donate Now</a> </span> 
+      </div> 
+      <ul class="breadcrumbs menu"> 
+       <li> <a href="/psf-landing/" title="The Python Software Foundation">PSF</a><span class="prompt">&gt;&gt;&gt;</span> </li> 
+       <li> <a href="/psf/about/">About</a><span class="prompt">&gt;&gt;&gt;</span> </li> 
+       <li>PSF Workgroups</li> 
+      </ul> 
+      <article class="text"> 
+       <header class="article-header"> 
+        <h1 class="page-title">Workgroups of the Python Software Foundation</h1> 
+       </header> 
+       <div class="contents local topic" id="contents"> 
+        <ul class="simple"> 
+         <li><a class="reference internal" href="#active-work-groups" id="id2">Active Work Groups</a>
+          <ul> 
+           <li><a class="reference internal" href="#infrastructure-work-group" id="id3">Infrastructure Work Group</a></li> 
+           <li><a class="reference internal" href="#trademarks-work-group" id="id4">Trademarks Work Group</a></li> 
+           <li><a class="reference internal" href="#sponsor-work-group" id="id5">Sponsor Work Group</a></li> 
+           <li><a class="reference internal" href="#marketing-work-group" id="id6">Marketing Work Group</a></li> 
+           <li><a class="reference internal" href="#grants-work-group" id="id7">Grants Work Group</a></li> 
+           <li><a class="reference internal" href="#bylaws-work-group" id="id8">Bylaws Work Group</a></li> 
+           <li><a class="reference internal" href="#scientific-python-work-group" id="id9">Scientific Python Work Group</a></li> 
+           <li><a class="reference internal" href="#sponsorship-bundle-work-group" id="id10">Sponsorship Bundle Work Group</a></li> 
+           <li><a class="reference internal" href="#education-work-group" id="id11">Education Work Group</a></li> 
+           <li><a class="reference internal" href="#packaging-work-group" id="id12">Packaging Work Group</a></li> 
+           <li><a class="reference internal" href="#python-job-board-work-group" id="id13">Python Job Board Work Group</a></li> 
+           <li><a class="reference internal" href="#code-of-conduct-work-group" id="id14">Code of Conduct Work Group</a></li> 
+           <li><a class="reference internal" href="#project-funding-work-group" id="id15">Project Funding Work Group</a></li> 
+           <li><a class="reference internal" href="#diversity-and-inclusion-work-group" id="id16">Diversity and Inclusion Work Group</a></li> 
+          </ul> </li> 
+         <li><a class="reference internal" href="#inactive-committees" id="id17">Inactive Committees</a>
+          <ul> 
+           <li><a class="reference internal" href="#outreach-education-work-group" id="id18">Outreach &amp; Education Work Group</a></li> 
+           <li><a class="reference internal" href="#sprint-work-group" id="id19">Sprint Work Group</a></li> 
+           <li><a class="reference internal" href="#public-support-committee-psc" id="id20">Public Support Committee (PSC)</a></li> 
+           <li><a class="reference internal" href="#public-relations-committee-prc" id="id21">Public Relations Committee (PRC)</a></li> 
+           <li><a class="reference internal" href="#python-conference-committee-pcc" id="id22">Python Conference Committee (PCC)</a></li> 
+           <li><a class="reference internal" href="#cuban-pythonistas-work-group" id="id23">Cuban Pythonistas Work Group</a></li> 
+          </ul> </li> 
+        </ul> 
+       </div> 
+       <div class="section" id="active-work-groups"> 
+        <h1><a class="toc-backref" href="#id2">Active Work Groups</a></h1> 
+        <div class="section" id="infrastructure-work-group"> 
+         <h2><a class="toc-backref" href="#id3">Infrastructure Work Group</a></h2> 
+         <table class="docutils field-list" frame="void" rules="none"> 
+          <colgroup>
+           <col class="field-name"> 
+           <col class="field-body"> 
+          </colgroup>
+          <tbody valign="top"> 
+           <tr class="field">
+            <th class="field-name">Formed:</th>
+            <td class="field-body">April 2010</td> 
+           </tr> 
+           <tr class="field">
+            <th class="field-name">Mailing List:</th>
+            <td class="field-body"><a class="reference external" href="http://mail.python.org/mailman/listinfo/infrastructure">infrastructure at python.org</a></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <p>This committee works on making concrete plans for improving python.org infrastructure and to address technical infrastructure broadly. The board created this committee at a special meeting on March 24 2005.</p> 
+         <p>In June 2013, this committee was formed into a PSF Working Group. The charter for this working group can be found <a class="reference external" href="https://wiki.python.org/psf/InfrastructureWG">here</a>.</p> 
+        </div> 
+        <div class="section" id="trademarks-work-group"> 
+         <h2><a class="toc-backref" href="#id4">Trademarks Work Group</a></h2> 
+         <table class="docutils field-list" frame="void" rules="none"> 
+          <colgroup>
+           <col class="field-name"> 
+           <col class="field-body"> 
+          </colgroup>
+          <tbody valign="top"> 
+           <tr class="field">
+            <th class="field-name">Formed:</th>
+            <td class="field-body">November 2008</td> 
+           </tr> 
+           <tr class="field">
+            <th class="field-name">Mailing List:</th>
+            <td class="field-body"><a class="reference external" href="http://mail.python.org/mailman/listinfo/psf-trademarks">psf-trademarks at python.org</a></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <p>This committee assesses actual and proposed uses of the Python trademarks. See the <a class="reference external" href="/psf/trademarks/">PSF Trademark Usage Policy</a>.</p> 
+         <p>Work group resolution:</p> 
+         <blockquote> <strong>RESOLVED</strong>, that the Trademark Committee shall be a working group of the Python Software Foundation, co-chaired by David Mertz and Marc-André Lemburg. Membership shall consist of co-chairs and additionally Carl Trachte, Doug Napoleone, David Goodger, Van Lindberg. Co-chairs shall, by joint agreement, have the power to add or remove committee members, with the current membership roster to be approved by the Python Software Foundation Board of Directors at least once per year
+         </blockquote> 
+         <p>Approved 7-0-1 by IRC vote, 16 August, 2013.</p> 
+         <p>Establishing resolution:</p> 
+         <blockquote> <strong>RESOLVED</strong>, that a Project Management Committee designated the "Trademarks Committee" (TMC) be formed with David Goodger, Marc-Andre Lemburg, Van Lindberg, David Mertz, Doug Napoleone, James Tauber and Trevor Toenjes as initial members, and James Tauber as the initial chairman, and that the Trademarks Committee shall, when so instructed by the PSF Board, assess trademarks for compliance with the current PSF Trademark Usage Policy and advise the PSF Board on what action, if any, to take.
+         </blockquote> 
+        </div> 
+        <div class="section" id="sponsor-work-group"> 
+         <h2><a class="toc-backref" href="#id5">Sponsor Work Group</a></h2> 
+         <table class="docutils field-list" frame="void" rules="none"> 
+          <colgroup>
+           <col class="field-name"> 
+           <col class="field-body"> 
+          </colgroup>
+          <tbody valign="top"> 
+           <tr class="field">
+            <th class="field-name">Formed:</th>
+            <td class="field-body">June 2016</td> 
+           </tr> 
+           <tr class="field">
+            <th class="field-name">Mailing list:</th>
+            <td class="field-body"><a class="reference external" href="http://mail.python.org/mailman/listinfo/psf-sponsors-wg">sponsors at python.org</a></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <p>Establishing resolution:</p> 
+        </div> 
+        <div class="section" id="marketing-work-group"> 
+         <h2><a class="toc-backref" href="#id6">Marketing Work Group</a></h2> 
+         <table class="docutils field-list" frame="void" rules="none"> 
+          <colgroup>
+           <col class="field-name"> 
+           <col class="field-body"> 
+          </colgroup>
+          <tbody valign="top"> 
+           <tr class="field">
+            <th class="field-name">Formed:</th>
+            <td class="field-body">August 2015</td> 
+           </tr> 
+           <tr class="field">
+            <th class="field-name">Mailing list:</th>
+            <td class="field-body"><a class="reference external" href="http://mail.python.org/mailman/listinfo/psf-marketing-wg">psf-marketing-wg at python.org</a></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <p>Establishing resolution:</p> 
+         <blockquote> <strong>RESOLVED</strong>, that the Python Software Foundation acknowledge the creation of the PSF Grants Workgroup to review proposals to the PSF for grants in support of conferences, training workshops, and related projects.
+         </blockquote> 
+        </div> 
+        <div class="section" id="grants-work-group"> 
+         <h2><a class="toc-backref" href="#id7">Grants Work Group</a></h2> 
+         <table class="docutils field-list" frame="void" rules="none"> 
+          <colgroup>
+           <col class="field-name"> 
+           <col class="field-body"> 
+          </colgroup>
+          <tbody valign="top"> 
+           <tr class="field">
+            <th class="field-name">Formed:</th>
+            <td class="field-body">August 2015</td> 
+           </tr> 
+           <tr class="field">
+            <th class="field-name">Mailing List:</th>
+            <td class="field-body"><a class="reference external" href="http://mail.python.org/mailman/listinfo/psf-grants">psf-grants at python.org</a></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <p>Establishing resolution:</p> 
+         <blockquote> <strong>RESOLVED</strong>, that the Python Software Foundation acknowledge the creation of the PSF Grants Workgroup to review proposals to the PSF for grants in support of conferences, training workshops, and related projects.
+         </blockquote> 
+        </div> 
+        <div class="section" id="bylaws-work-group"> 
+         <h2><a class="toc-backref" href="#id8">Bylaws Work Group</a></h2> 
+         <table class="docutils field-list" frame="void" rules="none"> 
+          <colgroup>
+           <col class="field-name"> 
+           <col class="field-body"> 
+          </colgroup>
+          <tbody valign="top"> 
+           <tr class="field">
+            <th class="field-name">Formed:</th>
+            <td class="field-body">June 2013</td> 
+           </tr> 
+           <tr class="field">
+            <th class="field-name">Mailing List:</th>
+            <td class="field-body"><a class="reference external" href="http://mail.python.org/mailman/listinfo/psf-bylaws-wg">psf-bylaws-wg at python.org</a></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <p>The purpose of this workgroup is to agree on a set of bylaws for the approval by the PSF Board. Common goals include providing constructive feedback and helping implement ideas for the bylaws.</p> 
+         <p>Establishing resolution:</p> 
+         <blockquote> <strong>RESOLVED</strong>, that the PSF charter a bylaws working group based upon the charter at <a class="reference external" href="https://wiki.python.org/psf/BylawsWG/Charter">https://wiki.python.org/psf/BylawsWG/Charter</a>
+         </blockquote> 
+         <p>Approved 11-0-0 by IRC vote, 14 June, 2013.</p> 
+        </div> 
+        <div class="section" id="scientific-python-work-group"> 
+         <h2><a class="toc-backref" href="#id9">Scientific Python Work Group</a></h2> 
+         <table class="docutils field-list" frame="void" rules="none"> 
+          <colgroup>
+           <col class="field-name"> 
+           <col class="field-body"> 
+          </colgroup>
+          <tbody valign="top"> 
+           <tr class="field">
+            <th class="field-name">Formed:</th>
+            <td class="field-body">April 2015</td> 
+           </tr> 
+           <tr class="field">
+            <th class="field-name">Mailing List:</th>
+            <td class="field-body"><a class="reference external" href="http://mail.python.org/mailman/listinfo/scientific">scientific at python.org</a></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <p>This working group shall draw on the expertise of both the PSF and NumFOCUS, and on the broader scientific Python community in general, to select the best use of its budgeted funds to advance the scope, breadth, and utility of Python for scientific work. In essence, the purpose of the group is to grant funds allocated to it by PSF and/or NumFOCUS towards conferences, user groups, educational, and development efforts.</p> 
+         <p>Current resolution June 2015:</p> 
+         <blockquote> <strong>RESOLVED</strong>, that the Python Software Foundation recognize the Scientific Python Workgroup as an official PSF workgroup.
+         </blockquote> 
+        </div> 
+        <div class="section" id="sponsorship-bundle-work-group"> 
+         <h2><a class="toc-backref" href="#id10">Sponsorship Bundle Work Group</a></h2> 
+         <table class="docutils field-list" frame="void" rules="none"> 
+          <colgroup>
+           <col class="field-name"> 
+           <col class="field-body"> 
+          </colgroup>
+          <tbody valign="top"> 
+           <tr class="field">
+            <th class="field-name">Formed:</th>
+            <td class="field-body">August 2015</td> 
+           </tr> 
+           <tr class="field">
+            <th class="field-name">Mailing List:</th>
+            <td class="field-body"><a class="reference external" href="http://mail.python.org/mailman/listinfo/bundle-sponsorship-wg">bundle-sponsorship-wg at python.org</a></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <p>The initial purpose of this workgroup is to pick up where we left off for the International Sponsorship Bundle that we created in early 2015. We want to make it easy for companies to provide "minimal strings attached" funding globally. Sponsors would only engage more directly when they happen to have a local team interested in driving that engagement directly with the conference organizers.</p> 
+        </div> 
+        <div class="section" id="education-work-group"> 
+         <h2><a class="toc-backref" href="#id11">Education Work Group</a></h2> 
+         <table class="docutils field-list" frame="void" rules="none"> 
+          <colgroup>
+           <col class="field-name"> 
+           <col class="field-body"> 
+          </colgroup>
+          <tbody valign="top"> 
+           <tr class="field">
+            <th class="field-name">Formed:</th>
+            <td class="field-body">July 2015</td> 
+           </tr> 
+           <tr class="field">
+            <th class="field-name">Moderator:</th>
+            <td class="field-body">Carrie Anne Philbin</td> 
+           </tr> 
+           <tr class="field">
+            <th class="field-name">Mailing List:</th>
+            <td class="field-body"><a class="reference external" href="http://mail.python.org/mailman/listinfo/pythonedu-wg">pythonedu-wg at python.org</a></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <p>The working group's initial purpose is foster and guide projects that further the PSF's education mission.</p> 
+         <p>Establishing resolution:</p> 
+         <blockquote> <strong>RESOLVED</strong>, that the Python Software Foundation recognize the Python Education Workgroup as an official PSF workgroup.
+         </blockquote> 
+        </div> 
+        <div class="section" id="packaging-work-group"> 
+         <h2><a class="toc-backref" href="#id12">Packaging Work Group</a></h2> 
+         <table class="docutils field-list" frame="void" rules="none"> 
+          <colgroup>
+           <col class="field-name"> 
+           <col class="field-body"> 
+          </colgroup>
+          <tbody valign="top"> 
+           <tr class="field">
+            <th class="field-name">Formed:</th>
+            <td class="field-body">May 2016</td> 
+           </tr> 
+           <tr class="field">
+            <th class="field-name">Notes:</th>
+            <td class="field-body"><a class="reference external" href="https://wiki.python.org/psf/PackagingWG">https://wiki.python.org/psf/PackagingWG</a></td> 
+           </tr> 
+           <tr class="field">
+            <th class="field-name">Mailing List:</th>
+            <td class="field-body"><a class="reference external" href="https://mail.python.org/mailman/listinfo/packaging-wg">packaging-wg at python.org</a></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <p>The purpose of this working group is to support the larger efforts of improving and maintaining the packaging ecosystem in Python through fundraising and disbursement of raised funds. It will largely focus on efforts such as PyPI, pip, packaging.python.org, setuptools, and cross project efforts.</p> 
+         <p>Establishing resolution:</p> 
+         <blockquote> <strong>RESOLVED</strong>, that the Python Software Foundation acknowledge the creation of the PSF Packaging WG to support the larger efforts of improving and maintaining the packaging ecosystem in Python through fundraising and disbursement of raised funds <a class="reference external" href="https://wiki.python.org/psf/PackagingWG/Charter">https://wiki.python.org/psf/PackagingWG/Charter</a>
+         </blockquote> 
+        </div> 
+        <div class="section" id="python-job-board-work-group"> 
+         <h2><a class="toc-backref" href="#id13">Python Job Board Work Group</a></h2> 
+         <table class="docutils field-list" frame="void" rules="none"> 
+          <colgroup>
+           <col class="field-name"> 
+           <col class="field-body"> 
+          </colgroup>
+          <tbody valign="top"> 
+           <tr class="field">
+            <th class="field-name">Formed:</th>
+            <td class="field-body">July 2018</td> 
+           </tr> 
+           <tr class="field">
+            <th class="field-name">Mailing List:</th>
+            <td class="field-body"><a class="reference external" href="https://mail.python.org/mailman/listinfo/jobs">jobs at python.org</a></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <p>This working group was created to help manage the job board with the support of PSF staff.</p> 
+         <p>Current resolution July 2018:</p> 
+         <blockquote> <strong>RESOLVED</strong>, that the Python Software Foundation acknowledge the creation of the Python Software Foundation Jobs Work Group to manage, review, and approve job postings.
+         </blockquote> 
+        </div> 
+        <div class="section" id="code-of-conduct-work-group"> 
+         <h2><a class="toc-backref" href="#id14">Code of Conduct Work Group</a></h2> 
+         <table class="docutils field-list" frame="void" rules="none"> 
+          <colgroup>
+           <col class="field-name"> 
+           <col class="field-body"> 
+          </colgroup>
+          <tbody valign="top"> 
+           <tr class="field">
+            <th class="field-name">Formed:</th>
+            <td class="field-body">May 2018</td> 
+           </tr> 
+           <tr class="field">
+            <th class="field-name">Mailing List:</th>
+            <td class="field-body"><a class="reference external" href="https://mail.python.org/mm3/mailman3/lists/conduct-wg.python.org/">conduct-wg at python.org</a></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <p>The workgroup's purpose is to foster a diverse and inclusive Python community by enforcing the PSF code of conduct, along with providing guidance and recommendations to the Python community on codes of conduct, that supports the PSF mission of “ongoing development of Python-related technology and educational resources”.</p> 
+         <p>Establishing resolution:</p> 
+         <blockquote> <strong>RESOLVED</strong>, that the Python Software Foundation add the following new members to the code of conduct work group: Anwesha Das, Brett Cannon, Jeff Triplett, Kenneth Reitz, Maricela Sanchez Miranda, Philip James, Rami Chowdhury, Sasha Romijn, Thomas Wouters. Approved May 31, 2018
+         </blockquote> 
+         <p>Since the workgroup has started, Kenneth Reitz has resigned.</p> 
+        </div> 
+        <div class="section" id="project-funding-work-group"> 
+         <h2><a class="toc-backref" href="#id15">Project Funding Work Group</a></h2> 
+         <table class="docutils field-list" frame="void" rules="none"> 
+          <colgroup>
+           <col class="field-name"> 
+           <col class="field-body"> 
+          </colgroup>
+          <tbody valign="top"> 
+           <tr class="field">
+            <th class="field-name">Formed:</th>
+            <td class="field-body">June 2020</td> 
+           </tr> 
+           <tr class="field">
+            <th class="field-name">Notes:</th>
+            <td class="field-body"><a class="reference external" href="https://wiki.python.org/psf/ProjectFundingWG">https://wiki.python.org/psf/ProjectFundingWG</a></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <p>This Working Group researches, and advises Python community volunteers on applying for external grants and similar funding to advance the mission of the PSF, which includes, but is not limited to, things such as advancing the Python core, Python-related infrastructure, key Python projects, and Python education and awareness.</p> 
+         <p>Establishing resolution:</p> 
+         <blockquote> <strong>RESOLVED</strong>, that the Python Software Foundation approve the creation of the PSF Project Funding Working Group to research and advise the Python community on applying for external grants and similar funding to advance the mission of the PSF under the charter at <a class="reference external" href="https://wiki.python.org/psf/PackagingWG/Charter">https://wiki.python.org/psf/PackagingWG/Charter</a>. Approved June 11th, 2020.
+         </blockquote> 
+        </div> 
+        <div class="section" id="diversity-and-inclusion-work-group"> 
+         <h2><a class="toc-backref" href="#id16">Diversity and Inclusion Work Group</a></h2> 
+         <table class="docutils field-list" frame="void" rules="none"> 
+          <colgroup>
+           <col class="field-name"> 
+           <col class="field-body"> 
+          </colgroup>
+          <tbody valign="top"> 
+           <tr class="field">
+            <th class="field-name">Formed:</th>
+            <td class="field-body">November 2020</td> 
+           </tr> 
+           <tr class="field">
+            <th class="field-name">Notes:</th>
+            <td class="field-body"><a class="reference external" href="https://wiki.python.org/psf/DiversityandInclusionWG">https://wiki.python.org/psf/DiversityandInclusionWG</a></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <p>The workgroup's purpose is to further the PSF’s mission to ‘support and facilitate the growth of a diverse and international community of Python programmers.’ We also aim to provide guidance to the PSF Board of Directors in line with this mandate.</p> 
+         <p>Establishing resolution:</p> 
+         <blockquote>
+           RESOLVED, that the Python Software Foundation approve the creation of the PSF Diversity and Inclusion Working Group to actively further the PSF’s mission to ‘support and facilitate the growth of a diverse and international community of Python programmers.’ The group will be formed under this charter: <a class="reference external" href="https://docs.google.com/document/d/1uvIztyTLr6Cq4yQpNCjPlIl5pYlUjYYYqWCG1ZQrkHE/edit?usp=sharing">https://docs.google.com/document/d/1uvIztyTLr6Cq4yQpNCjPlIl5pYlUjYYYqWCG1ZQrkHE/edit?usp=sharing</a>
+         </blockquote> 
+        </div> 
+       </div> 
+       <div class="section" id="inactive-committees"> 
+        <h1><a class="toc-backref" href="#id17">Inactive Committees</a></h1> 
+        <div class="section" id="outreach-education-work-group"> 
+         <h2><a class="toc-backref" href="#id18">Outreach &amp; Education Work Group</a></h2> 
+         <table class="docutils field-list" frame="void" rules="none"> 
+          <colgroup>
+           <col class="field-name"> 
+           <col class="field-body"> 
+          </colgroup>
+          <tbody valign="top"> 
+           <tr class="field">
+            <th class="field-name">Formed:</th>
+            <td class="field-body">June 2011</td> 
+           </tr> 
+           <tr class="field">
+            <th class="field-name">Mailing List:</th>
+            <td class="field-body"><a class="reference external" href="http://mail.python.org/mailman/listinfo/outreach-and-education">outreach-and-education at python.org</a></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <p>Establishing resolution:</p> 
+         <blockquote> <strong>RESOLVED</strong>, that the PSF form an official "Outreach and Education" project management committee with the goals of identifying key initiatives, programs and subjects in this domain that the PSF can assist, fund or help guide. This committee will make recommendations to the membership, the board and its committees and act as a guiding hand for the PSF in this domain. The committee will be chaired by David Mertz (PSF Director). The initial membership will be the following individuals: Gloria Jacobs (PSF Director), Jessica McKellar, Daniel Greenfeld, Audrey Roy, Ned Batchelder, Asheesh Laroia, Simon Law and Yannick Gingras.
+         </blockquote> 
+         <p>Work Group Resolution:</p> 
+         <blockquote> <strong>RESOLVED</strong>, that the Outreach and Education Committee shall be a working group of the Python Software Foundation, co-chaired by David Mertz and Jessica McKellar. Membership shall consist of co-chairs, in addition to Aahz, Alex Gaynor, Anna Ravenscroft, Brian Curtin, Chris Calloway, Lynn Root, and Jesse Noller. Co-chairs shall, by joint agreement, have the power to add or remove committee members, with the current membership roster to be approved by the Python Software Foundation Board of Directors at least once per year
+         </blockquote> 
+         <p>Approved 10-0-1 by IRC vote, 26 July, 2013.</p> 
+        </div> 
+        <div class="section" id="sprint-work-group"> 
+         <h2><a class="toc-backref" href="#id19">Sprint Work Group</a></h2> 
+         <table class="docutils field-list" frame="void" rules="none"> 
+          <colgroup>
+           <col class="field-name"> 
+           <col class="field-body"> 
+          </colgroup>
+          <tbody valign="top"> 
+           <tr class="field">
+            <th class="field-name">Formed:</th>
+            <td class="field-body">May 2010</td> 
+           </tr> 
+           <tr class="field">
+            <th class="field-name">Mailing List:</th>
+            <td class="field-body"><a class="reference external" href="http://mail.python.org/mailman/listinfo/sprints">sprints at python.org</a></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <p>The committee will be responsible for the coordination and review and approval of sprint proposals. For more information, see the <a class="reference external" href="http://pythonsprints.com/about/">sprints website</a>.</p> 
+         <p>Establishing resolution:</p> 
+         <blockquote> <strong>RESOLVED</strong>, that the Board approves the creation of a specific "Targeted Sprint Committee" and allocates a yearly budget of 5000 USD for the funding of targeted, community based sprints with Jesse Noller as the initial Chairman, and additional members as needed per project requirements and approved by the board.
+         </blockquote> 
+        </div> 
+        <div class="section" id="public-support-committee-psc"> 
+         <h2><a class="toc-backref" href="#id20">Public Support Committee (PSC)</a></h2> 
+         <table class="docutils field-list" frame="void" rules="none"> 
+          <colgroup>
+           <col class="field-name"> 
+           <col class="field-body"> 
+          </colgroup>
+          <tbody valign="top"> 
+           <tr class="field">
+            <th class="field-name">Dissolved:</th>
+            <td class="field-body">February 25, 2007</td> 
+           </tr> 
+           <tr class="field">
+            <th class="field-name">Formed:</th>
+            <td class="field-body">August 13, 2002</td> 
+           </tr> 
+           <tr class="field">
+            <th class="field-name">Chairman:</th>
+            <td class="field-body">Stephan Deibel</td> 
+           </tr> 
+           <tr class="field">
+            <th class="field-name">Members:</th>
+            <td class="field-body">Steve Holden, Neil Norwitz, David Goodger, and Stephan Deibel</td> 
+           </tr> 
+           <tr class="field">
+            <th class="field-name">Mailing List:</th>
+            <td class="field-body"><a class="reference external" href="http://mail.python.org/mailman/listinfo/psc">http://mail.python.org/mailman/listinfo/psc</a></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <p>The Public Support Committee (PSC) is charged with fund raising for the PSF, which it does by creating fund raising messages, ads, and materials, soliciting donations from private and commercial contributors, and managing the PSF's fund raising infrastructure.</p> 
+         <div class="section" id="charter"> 
+          <h3>Charter</h3> 
+          <p>RESOLVED, That the Public Support Committee (PSC) be made up of the following initial members: Stephan Deibel, Jeremy Hylton, Marc-Andre Lemburg, Tim Peters, Aahz, Alex Martelli, Neil Norwitz and Greg Ward, that the committee follows rules analog to those set forth in the PSF bylaws for the PSF board with respect to voting and meetings, and that Marc-Andre Lemburg will be the initial chairman of the PSC.</p> 
+         </div> 
+         <div class="section" id="amended-charter-2004-04-13"> 
+          <h3>Amended Charter (2004-04-13)</h3> 
+          <p>RESOLVED, that the Public Support Committee formed in August 2002 shall continue under current membership and leadership, and that the committee's activities shall now be constrained to all aspects of fund raising for the PSF, including but not limited to (1) creation of fund raising messages, ads, and materials, (2) soliciting of donations from private and company contributors, and (3) management of fund raising infrastructure.</p> 
+         </div> 
+        </div> 
+        <div class="section" id="public-relations-committee-prc"> 
+         <h2><a class="toc-backref" href="#id21">Public Relations Committee (PRC)</a></h2> 
+         <table class="docutils field-list" frame="void" rules="none"> 
+          <colgroup>
+           <col class="field-name"> 
+           <col class="field-body"> 
+          </colgroup>
+          <tbody valign="top"> 
+           <tr class="field">
+            <th class="field-name">Dissolved:</th>
+            <td class="field-body">April 12, 2005</td> 
+           </tr> 
+           <tr class="field">
+            <th class="field-name">Formed:</th>
+            <td class="field-body">April 13, 2004</td> 
+           </tr> 
+           <tr class="field">
+            <th class="field-name">Chairman:</th>
+            <td class="field-body">Steve Holden</td> 
+           </tr> 
+           <tr class="field">
+            <th class="field-name">Members:</th>
+            <td class="field-body">Aahz, Kevin Altis, Steve Holden, Andrew Kuchling, Tim Parkin, Barry Warsaw</td> 
+           </tr> 
+           <tr class="field">
+            <th class="field-name">Mailing List:</th>
+            <td class="field-body"><a class="reference external" href="http://mail.python.org/mailman/listinfo/psf-prc">http://mail.python.org/mailman/listinfo/psf-prc</a></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <p>The Public Relations Committee (PRC) is responsible for the development of official informational, marketing, and advocacy materials for the Python programming language. This includes the python.org website and brand identities associated with the PSF and Python, among other things. The PRC also promotes Python in commercial, governmental and educational contexts, in order to facilitate the recruitment of new users and contributors to the language.</p> 
+         <div class="section" id="establishing-resolution"> 
+          <h3>Establishing Resolution</h3> 
+          <p>RESOLVED, that a Public Relations (PR) Committee is formed, with Tim Parkin, Kevin Altis, Aahz, Barry Warsaw, Andrew Kuchling, and Steve Holden as initial members, and Steve Holden as the initial chairman and Vice President of Public Relations, that the PR Committee replaces and subsumes the activities of the previously disbanded Web Committee, and that the PR Committee shall:</p> 
+          <ol class="arabic simple"> 
+           <li>Facilitate and oversee the development and maintenance of the official informational, marketing, and advocacy materials for the Python programming language, including but not limited to those appearing on python.org, brochures, and press releases.</li> 
+           <li>Ensure that content and design for such materials is consistent and appropriate with the mission and requirements of the Python Software Foundation and the needs and ideals of the Python open source community.</li> 
+           <li>Develop and manage brand identities associated with the Python Software Foundation and Python.</li> 
+           <li>Actively promote Python in commercial, governmental and educational contexts, in order to facilitate the recruitment of new users and contributors to Python.</li> 
+          </ol> 
+         </div> 
+        </div> 
+        <div class="section" id="python-conference-committee-pcc"> 
+         <h2><a class="toc-backref" href="#id22">Python Conference Committee (PCC)</a></h2> 
+         <table class="docutils field-list" frame="void" rules="none"> 
+          <colgroup>
+           <col class="field-name"> 
+           <col class="field-body"> 
+          </colgroup>
+          <tbody valign="top"> 
+           <tr class="field">
+            <th class="field-name">Dissolved:</th>
+            <td class="field-body">March 14, 2008</td> 
+           </tr> 
+           <tr class="field">
+            <th class="field-name">Formed:</th>
+            <td class="field-body">Oct 14, 2003</td> 
+           </tr> 
+           <tr class="field">
+            <th class="field-name">Chairman:</th>
+            <td class="field-body">Andrew Kuchling</td> 
+           </tr> 
+           <tr class="field">
+            <th class="field-name">Members:</th>
+            <td class="field-body">David Ascher, David Goodger, Steve Holden (secretary), Andrew Kuchling (chair)</td> 
+           </tr> 
+           <tr class="field">
+            <th class="field-name">Mailing List:</th>
+            <td class="field-body"><a class="reference external" href="http://mail.python.org/mailman/listinfo/pycon-organizers">http://mail.python.org/mailman/listinfo/pycon-organizers</a></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <p>The PyCon Committee runs <a class="reference external" href="http://pycon.org/">PyCon</a>, the annual developer-oriented conference for the Python programming language.</p> 
+         <div class="section" id="id1"> 
+          <h3>Establishing Resolution</h3> 
+          <p>RESOLVED, that the Foundation establish a Project Management Committee, the Python Conference Committee, responsible for organizing and sponsoring conferences that advance the Foundation's mission. The committee is authorized to incur expenses up to a limit establish by the board for a specific conference. The chairman of the committee shall be Vice President of the Corporation. The initial members of the committee shall be David Ascher, Steve Holden, and Jeremy Hylton. Ascher will be its initial chairman.</p> 
+         </div> 
+         <div class="section" id="amending-resolution-2005-05-06"> 
+          <h3>Amending Resolution (2005-05-06)</h3> 
+          <p>RESOLVED, that Andrew Kuchling be appointed a member of the Python Conference Committee, and that he be appointed the new chair of this Committee. By this resolution, the membership of the Committee will be David Ascher, Steve Holden (secretary), Jeremy Hylton, Andrew Kuchling (chair).</p> 
+         </div> 
+         <div class="section" id="amending-resolution-2007-01-08"> 
+          <h3>Amending Resolution (2007-01-08)</h3> 
+          <p>RESOLVED, that the Conference Committee chair be authorized to appoint and dismiss committee members, subject to prompt reporting to the Board.</p> 
+         </div> 
+        </div> 
+        <div class="section" id="cuban-pythonistas-work-group"> 
+         <h2><a class="toc-backref" href="#id23">Cuban Pythonistas Work Group</a></h2> 
+         <table class="docutils field-list" frame="void" rules="none"> 
+          <colgroup>
+           <col class="field-name"> 
+           <col class="field-body"> 
+          </colgroup>
+          <tbody valign="top"> 
+           <tr class="field">
+            <th class="field-name">Formed:</th>
+            <td class="field-body">March 2015</td> 
+           </tr> 
+           <tr class="field">
+            <th class="field-name">Moderator:</th>
+            <td class="field-body">David Mertz</td> 
+           </tr> 
+           <tr class="field">
+            <th class="field-name">Mailing List:</th>
+            <td class="field-body"><a class="reference external" href="http://mail.python.org/mailman/listinfo/python-cuba">python-cuba at python.org</a></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <p>Current resolution June 2015:</p> 
+         <blockquote> <strong>RESOLVED</strong>, that the Python Software Foundation recognize the Python Cuba Workgroup as an official PSF workgroup.
+         </blockquote> <!-- Local Variables:
+coding: utf-8
+mode: indented-text
+indent-tabs-mode: nil
+sentence-end-double-space: t
+fill-column: 70
+End: --> 
+        </div> 
+       </div> 
+      </article> 
+     </section> 
+     <aside class="left-sidebar" role="secondary"> 
+      <div class="psf-sidebar-widget sidebar-widget"> 
+       <h3 class="widget-title">The PSF</h3> 
+       <p>The Python Software Foundation is the organization behind Python. Become a member of the PSF and help advance the software and our mission. </p> 
+      </div> 
+      <div class="twitter-widget sidebar-widget"> <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/ThePSF" data-widget-id="434113224703610882">Tweets by @ThePSF</a> 
+       <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script> 
+      </div> 
+     </aside> 
+    </div><!-- end .container --> 
+   </div><!-- end #content .content-wrapper --> <!-- Footer and social media list --> 
+   <footer id="site-map" class="main-footer" role="contentinfo"> 
+    <div class="main-footer-links"> 
+     <div class="container"> <a id="back-to-top-1" class="jump-link" href="#python-network"><span aria-hidden="true" class="icon-arrow-up"><span>?</span></span> Back to Top</a> 
+      <ul class="sitemap navigation menu do-not-print" role="tree" id="container"> 
+       <li class="tier-1 element-1"> <a href="/about/">About</a> 
+        <ul class="subnav menu"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="/about/apps/" title="">Applications</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="/about/quotes/" title="">Quotes</a></li> 
+         <li class="tier-2 element-3" role="treeitem"><a href="/about/gettingstarted/" title="">Getting Started</a></li> 
+         <li class="tier-2 element-4" role="treeitem"><a href="/about/help/" title="">Help</a></li> 
+         <li class="tier-2 element-5" role="treeitem"><a href="http://brochure.getpython.info/" title="">Python Brochure</a></li> 
+        </ul> </li> 
+       <li class="tier-1 element-2"> <a href="/downloads/">Downloads</a> 
+        <ul class="subnav menu"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="/downloads/" title="">All releases</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="/downloads/source/" title="">Source code</a></li> 
+         <li class="tier-2 element-3" role="treeitem"><a href="/downloads/windows/" title="">Windows</a></li> 
+         <li class="tier-2 element-4" role="treeitem"><a href="/downloads/macos/" title="">macOS</a></li> 
+         <li class="tier-2 element-5" role="treeitem"><a href="/download/other/" title="">Other Platforms</a></li> 
+         <li class="tier-2 element-6" role="treeitem"><a href="https://docs.python.org/3/license.html" title="">License</a></li> 
+         <li class="tier-2 element-7" role="treeitem"><a href="/download/alternatives" title="">Alternative Implementations</a></li> 
+        </ul> </li> 
+       <li class="tier-1 element-3"> <a href="/doc/">Documentation</a> 
+        <ul class="subnav menu"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="/doc/" title="">Docs</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="/doc/av" title="">Audio/Visual Talks</a></li> 
+         <li class="tier-2 element-3" role="treeitem"><a href="https://wiki.python.org/moin/BeginnersGuide" title="">Beginner's Guide</a></li> 
+         <li class="tier-2 element-4" role="treeitem"><a href="https://devguide.python.org/" title="">Developer's Guide</a></li> 
+         <li class="tier-2 element-5" role="treeitem"><a href="https://docs.python.org/faq/" title="">FAQ</a></li> 
+         <li class="tier-2 element-6" role="treeitem"><a href="http://wiki.python.org/moin/Languages" title="">Non-English Docs</a></li> 
+         <li class="tier-2 element-7" role="treeitem"><a href="http://python.org/dev/peps/" title="">PEP Index</a></li> 
+         <li class="tier-2 element-8" role="treeitem"><a href="https://wiki.python.org/moin/PythonBooks" title="">Python Books</a></li> 
+         <li class="tier-2 element-9" role="treeitem"><a href="/doc/essays/" title="">Python Essays</a></li> 
+        </ul> </li> 
+       <li class="tier-1 element-4"> <a href="/community/">Community</a> 
+        <ul class="subnav menu"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="/community/diversity/" title="">Diversity</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="/community/lists/" title="">Mailing Lists</a></li> 
+         <li class="tier-2 element-3" role="treeitem"><a href="/community/irc/" title="">IRC</a></li> 
+         <li class="tier-2 element-4" role="treeitem"><a href="/community/forums/" title="">Forums</a></li> 
+         <li class="tier-2 element-5" role="treeitem"><a href="/psf/annual-report/2021/" title="">PSF Annual Impact Report</a></li> 
+         <li class="tier-2 element-6" role="treeitem"><a href="/community/workshops/" title="">Python Conferences</a></li> 
+         <li class="tier-2 element-7" role="treeitem"><a href="/community/sigs/" title="">Special Interest Groups</a></li> 
+         <li class="tier-2 element-8" role="treeitem"><a href="/community/logos/" title="">Python Logo</a></li> 
+         <li class="tier-2 element-9" role="treeitem"><a href="https://wiki.python.org/moin/" title="">Python Wiki</a></li> 
+         <li class="tier-2 element-10" role="treeitem"><a href="/community/merchandise/" title="">Merchandise</a></li> 
+         <li class="tier-2 element-11" role="treeitem"><a href="/community/awards" title="">Community Awards</a></li> 
+         <li class="tier-2 element-12" role="treeitem"><a href="/psf/conduct/" title="">Code of Conduct</a></li> 
+         <li class="tier-2 element-13" role="treeitem"><a href="/psf/get-involved/" title="">Get Involved</a></li> 
+         <li class="tier-2 element-14" role="treeitem"><a href="/psf/community-stories/" title="">Shared Stories</a></li> 
+        </ul> </li> 
+       <li class="tier-1 element-5"> <a href="/success-stories/" title="success-stories">Success Stories</a> 
+        <ul class="subnav menu"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="/success-stories/category/arts/" title="">Arts</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="/success-stories/category/business/" title="">Business</a></li> 
+         <li class="tier-2 element-3" role="treeitem"><a href="/success-stories/category/education/" title="">Education</a></li> 
+         <li class="tier-2 element-4" role="treeitem"><a href="/success-stories/category/engineering/" title="">Engineering</a></li> 
+         <li class="tier-2 element-5" role="treeitem"><a href="/success-stories/category/government/" title="">Government</a></li> 
+         <li class="tier-2 element-6" role="treeitem"><a href="/success-stories/category/scientific/" title="">Scientific</a></li> 
+         <li class="tier-2 element-7" role="treeitem"><a href="/success-stories/category/software-development/" title="">Software Development</a></li> 
+        </ul> </li> 
+       <li class="tier-1 element-6"> <a href="/blogs/" title="News from around the Python world">News</a> 
+        <ul class="subnav menu"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="/blogs/" title="Python Insider Blog Posts">Python News</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="/psf/newsletter/" title="Python Software Foundation Newsletter">PSF Newsletter</a></li> 
+         <li class="tier-2 element-3" role="treeitem"><a href="http://planetpython.org/" title="Planet Python">Community News</a></li> 
+         <li class="tier-2 element-4" role="treeitem"><a href="http://pyfound.blogspot.com/" title="PSF Blog">PSF News</a></li> 
+         <li class="tier-2 element-5" role="treeitem"><a href="http://pycon.blogspot.com/" title="PyCon Blog">PyCon News</a></li> 
+        </ul> </li> 
+       <li class="tier-1 element-7"> <a href="/events/">Events</a> 
+        <ul class="subnav menu"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="/events/python-events/" title="">Python Events</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="/events/python-user-group/" title="">User Group Events</a></li> 
+         <li class="tier-2 element-3" role="treeitem"><a href="/events/python-events/past/" title="">Python Events Archive</a></li> 
+         <li class="tier-2 element-4" role="treeitem"><a href="/events/python-user-group/past/" title="">User Group Events Archive</a></li> 
+         <li class="tier-2 element-5" role="treeitem"><a href="https://wiki.python.org/moin/PythonEventsCalendar#Submitting_an_Event" title="">Submit an Event</a></li> 
+        </ul> </li> 
+       <li class="tier-1 element-8"> <a href="/dev/">Contributing</a> 
+        <ul class="subnav menu"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="https://devguide.python.org/" title="">Developer's Guide</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="https://bugs.python.org/" title="">Issue Tracker</a></li> 
+         <li class="tier-2 element-3" role="treeitem"><a href="https://mail.python.org/mailman/listinfo/python-dev" title="">python-dev list</a></li> 
+         <li class="tier-2 element-4" role="treeitem"><a href="/dev/core-mentorship/" title="">Core Mentorship</a></li> 
+         <li class="tier-2 element-5" role="treeitem"><a href="/dev/security/" title="">Report a Security Issue</a></li> 
+        </ul> </li> 
+      </ul> <a id="back-to-top-2" class="jump-link" href="#python-network"><span aria-hidden="true" class="icon-arrow-up"><span>?</span></span> Back to Top</a> 
+     </div><!-- end .container --> 
+    </div> <!-- end .main-footer-links --> 
+    <div class="site-base"> 
+     <div class="container"> 
+      <ul class="footer-links navigation menu do-not-print" role="tree"> 
+       <li class="tier-1 element-1"><a href="/about/help/">Help &amp; <span class="say-no-more">General</span> Contact</a></li> 
+       <li class="tier-1 element-2"><a href="/community/diversity/">Diversity <span class="say-no-more">Initiatives</span></a></li> 
+       <li class="tier-1 element-3"><a href="https://github.com/python/pythondotorg/issues">Submit Website Bug</a></li> 
+       <li class="tier-1 element-4"> <a href="https://status.python.org/">Status <span class="python-status-indicator-default" id="python-status-indicator"></span></a> </li> 
+      </ul> 
+      <div class="copyright"> 
+       <p><small> <span class="pre">Copyright ©2001-2022.</span> &nbsp;<span class="pre"><a href="/psf-landing/">Python Software Foundation</a></span> &nbsp;<span class="pre"><a href="/about/legal/">Legal Statements</a></span> &nbsp;<span class="pre"><a href="/privacy/">Privacy Policy</a></span> &nbsp;<span class="pre"><a href="/psf/sponsorship/sponsors/#heroku">Powered by Heroku</a></span> </small></p> 
+      </div> 
+     </div><!-- end .container --> 
+    </div><!-- end .site-base --> 
+   </footer> 
+  </div><!-- end #touchnav-wrapper --> 
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script> 
+  <script>window.jQuery || document.write('<script src="/static/js/libs/jquery-1.8.2.min.js"><\/script>')</script> 
+  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script> 
+  <script>window.jQuery || document.write('<script src="/static/js/libs/jquery-ui-1.12.1.min.js"><\/script>')</script> 
+  <script src="/static/js/libs/masonry.pkgd.min.js"></script> 
+  <script src="/static/js/libs/html-includes.js"></script> 
+  <script type="text/javascript" src="/static/js/main-min.dd72c1659644.js" charset="utf-8"></script> <!--[if lte IE 7]>
+    <script type="text/javascript" src="/static/js/plugins/IE8-min.8af6e26c7a3b.js" charset="utf-8"></script>
+    
+    
+    <![endif]--> <!--[if lte IE 8]>
+    <script type="text/javascript" src="/static/js/plugins/getComputedStyle-min.d41d8cd98f00.js" charset="utf-8"></script>
+    
+    
+    <![endif]-->  
+ </body>
+</html>

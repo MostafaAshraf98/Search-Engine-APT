@@ -1,0 +1,1336 @@
+<!doctype html><!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en-us" > <![endif]--><!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en-us" >        <![endif]--><!--[if IE 8]>    <html class="no-js lt-ie9" lang="en-us" >               <![endif]--><!--[if gt IE 8]><!-->
+<html class="no-js" lang="en-us">
+ <!--<![endif]-->
+ <head> 
+  <meta charset="utf-8"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+  <meta name="author" content="Ansible, Red Hat"> 
+  <meta name="description" content="Infrastructure Automation with Ansible: Ansible can help you automate all your infrastructure from bare metal to virtualization."> 
+  <meta name="generator" content="HubSpot"> 
+  <title>Infrastructure Automation with Ansible</title> 
+  <link rel="shortcut icon" href="https://www.ansible.com/hs-fs/hub/330046/file-448313641.png"> 
+  <script src="/hs/hsstatic/jquery-libs/static-1.4/jquery/jquery-1.11.2.js"></script> 
+  <script>hsjQuery = window['jQuery'];</script> 
+  <meta property="og:description" content="Infrastructure Automation with Ansible: Ansible can help you automate all your infrastructure from bare metal to virtualization."> 
+  <meta property="og:title" content="Infrastructure Automation with Ansible"> 
+  <meta name="twitter:description" content="Infrastructure Automation with Ansible: Ansible can help you automate all your infrastructure from bare metal to virtualization."> 
+  <meta name="twitter:title" content="Infrastructure Automation with Ansible"> 
+  <style>
+a.cta_button{-moz-box-sizing:content-box !important;-webkit-box-sizing:content-box !important;box-sizing:content-box !important;vertical-align:middle}.hs-breadcrumb-menu{list-style-type:none;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px}.hs-breadcrumb-menu-item{float:left;padding:10px 0px 10px 10px}.hs-breadcrumb-menu-divider:before{content:'›';padding-left:10px}.hs-featured-image-link{border:0}.hs-featured-image{float:right;margin:0 0 20px 20px;max-width:50%}@media (max-width: 568px){.hs-featured-image{float:none;margin:0;width:100%;max-width:100%}}.hs-screen-reader-text{clip:rect(1px, 1px, 1px, 1px);height:1px;overflow:hidden;position:absolute !important;width:1px}
+</style> 
+  <link rel="canonical" href="https://www.ansible.com/integrations/infrastructure"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- not docs footer --> 
+  <script src="https://static.redhat.com/libs/redhat/marketing/latest/trustarc/trustarc.js"></script> 
+  <script type="text/javascript" src="https://www.redhat.com/dtm.js"></script> <!-- <meta property="og:image" content="https://www.ansible.com/hubfs/Images/Red-Hat-Ansible_OG_1200x630.png" /> --> 
+  <meta property="og:image" content="https://www.ansible.com/hubfs/Images/Red-Hat-Ansible_OG_1200x630.png"> 
+  <meta name="facebook-domain-verification" content="dumc1bw5r2l058ukeo1yruziiralde"> 
+  <link rel="stylesheet" href="//www.redhat.com/sites/all/libraries/webrh/dist/css/webrh.webcomponents.min.css"> 
+  <link rel="stylesheet" href="//static.redhat.com/libs/redhat/redhat-theme/latest/advanced-theme.css"> 
+  <link href="https://static.redhat.com/libs/redhat/redhat-font/2.0.0/webfonts/red-hat-font.css" rel="stylesheet"> 
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css?family=Overpass:300,400,600,700,800" rel="stylesheet"> 
+  <meta name="google-site-verification" content="QlPj-u1lcS_ywAhI9jOLaG81ZOVq1ou6uD8AXZDgGeQ"> <!-- GET WINDOW SIZE GLOBAL VARIABLES FOR VARIOUS SCRIPTS --> 
+  <script>
+$(function() {
+  windowSizeCheck = function() {
+    mainWindowHeight = $(window).outerHeight();
+    mainWindowWidth = $(window).outerWidth();
+  }
+});
+</script> <!-- <script src="//fast.wistia.com/assets/external/E-v1.js" async></script> --> 
+  <script src="https://www.ansible.com/hubfs/Scripts/js.cookie.js"></script> 
+  <meta property="og:url" content="https://www.ansible.com/integrations/infrastructure"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta http-equiv="content-language" content="en-us"> 
+  <link rel="stylesheet" href="//cdn2.hubspot.net/hub/7052064/hub_generated/template_assets/1652457099874/hubspot/hubspot_default/shared/responsive/layout.min.css"> 
+  <link rel="stylesheet" href="https://www.ansible.com/hs-fs/hub/330046/hub_generated/template_assets/919788665/1569741865142/Coded_files/Custom/system/default/Hs_Default_Custom_Style.css"> 
+  <link rel="stylesheet" href="https://www.ansible.com/hs-fs/hub/330046/hub_generated/template_assets/452173885/1576716695208/Coded_files/Custom/system/css/Ansible_Website_Open.css"> 
+  <link rel="stylesheet" href="https://www.ansible.com/hs-fs/hub/330046/hub_generated/template_assets/4171148056/1569741873761/Coded_files/Custom/page/web_page_basic/Bootstrap-3.3.6.min.css"> 
+  <link rel="stylesheet" href="https://www.ansible.com/hs-fs/hub/330046/hub_generated/template_assets/4246329618/1569741893037/Coded_files/Custom/page/web_page_basic/Ansible-bootstrap-3-resets.min.css"> 
+  <link rel="stylesheet" href="https://www.ansible.com/hs-fs/hub/330046/hub_generated/template_assets/3616281880/1588876749793/Coded_files/Custom/page/-2015-/2015-partners.min.css"> 
+  <link rel="stylesheet" href="https://www.ansible.com/hs-fs/hub/330046/hub_generated/template_assets/3460274585/1632114813388/Coded_files/Custom/page/-2015-/2015-overview.min.css"> 
+  <script src="https://www.ansible.com/hs-fs/hub/330046/hub_generated/template_assets/1458023208958/custom/page/-2015-/2016-expandable-resource-floats.min.js"></script> 
+ </head> 
+ <body class="   hs-content-id-4210801330 hs-site-page page hs-content-path-integrations-infrastructure hs-content-name--2016-integrations-infrastructure  " style=""> 
+  <div class="header-container-wrapper"> 
+   <div class="header-container container-fluid"> 
+    <div class="row-fluid-wrapper row-depth-1 row-number-1 "> 
+     <div class="row-fluid "> 
+      <div class="span12 widget-span widget-type-global_group " style="" data-widget-type="global_group" data-x="0" data-w="12"> 
+       <div class="" data-global-widget-path="generated_global_groups/3852127341.html">
+        <div class="row-fluid-wrapper row-depth-1 row-number-1 "> 
+         <div class="row-fluid "> 
+          <div class="span12 widget-span widget-type-raw_html " style="" data-widget-type="raw_html" data-x="0" data-w="12"> 
+           <div class="cell-wrapper layout-widget-wrapper"> <span id="hs_cos_wrapper_module_14551907202068594" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_raw_html" style="" data-hs-cos-general-type="widget" data-hs-cos-type="raw_html"><!-- legacy global nav --> <style>
+.header-container section {
+padding: 60px 0px;
+}
+.d-flex{
+display: flex;
+}
+/* this was breaking justify-space-between */
+.d-flex:before,
+.d-flex:after,
+.d-sm-flex:before,
+.d-sm-flex:after{
+content: none;
+}
+.justify-content-between{
+justify-content: space-between;
+}
+.align-items-center{
+align-items: center;
+}
+/* override .hidden in ansible_website_open */
+.visible-xs, .visible-sm, .visible-md, .visible-lg{
+visibility: visible !important;
+}
+.container{
+max-width: none;
+text-align: left;
+}
+.header-container nav#main{
+color: #fff;
+border: none;
+border-radius: 0px;
+margin-bottom: 0px;
+text-align: left;
+z-index: 999;
+/*overflow: hidden;*/
+display: flex;
+flex-wrap: wrap;
+height: 65px;
+background: #000;
+}
+.header-container .navbar {
+margin: 0 -15px;
+max-width: none;
+border: 0px;
+background: #000;
+}
+.header-container .navbar-header{
+height: 65px;
+display: flex;
+align-items: center;
+}
+.header-container .navbar-brand{
+width: 110px;
+padding: 0;
+margin: 0 0 0 15px;
+height: auto;
+}
+.header-container .navbar-collapse{
+clear: both;
+background: #000;
+border: none;
+z-index: 9999;
+position: relative;
+padding: 0px;
+}
+.header-container .navbar-toggle{
+position: absolute;
+top: 0px;
+right: 0px;
+border: 0px;
+margin: 0px;
+padding: 15px 20px;
+}
+.header-container .navbar-toggle:hover, 
+.header-container .navbar-toggle:focus {
+background-color: transparent;
+}
+.header-container .navbar-toggle .icon-bar{
+background-color: #fff;
+transition: all 300ms ease-in-out;
+opacity: 1;
+height: 2px;
+width: 27px;
+background-color: #fff;
+border-radius: 0;
+margin-top: 6px;
+}
+/*
+.header-container .navbar-toggle .icon-bar.top{
+margin-top: 10px;
+transform: rotate(45deg);
+}
+.header-container .navbar-toggle .icon-bar.center{
+opacity: 0;
+}
+.header-container .navbar-toggle .icon-bar.bottom{
+margin-top: -8px;
+transform: rotate(-45deg);
+}
+*/
+.header-container .navbar-toggle.collapsed .icon-bar{
+transform: rotate(0);
+opacity: 1;
+}
+.header-container .btn-default{
+color: #fff !important;
+border-color: #fff;
+margin: 0px;
+font-size: 15px;
+}
+.header-container .navbar-nav {
+margin: 0px;
+}
+.header-container .navbar-nav:before,
+.header-container .navbar-nav:after{
+display: none;
+}
+.header-container .navbar-nav li{
+border-bottom: 1px solid #5a5b5b;
+margin: 0px 15px;
+}
+.header-container .navbar-nav h3{
+margin-top: 0px;
+font-weight: bold;
+font-size: 18px;
+color: #888;
+text-transform: uppercase;
+}
+.header-container .navbar-nav p{
+margin: 10px 0px;
+text-align: left;
+}
+.header-container .navbar-nav > li.dropdown {
+overflow: hidden;
+}
+/*
+.header-container .navbar-nav > li.dropdown:after {
+content: " ";
+border-bottom: 16px dashed;
+border-right: 16px solid transparent;
+border-left: 16px solid transparent;
+position: absolute;
+bottom: -20px;
+left: 50%;
+transform: translateX(-50%);
+transition: bottom 200ms ease-in-out;
+}
+.header-container .navbar-nav > li.dropdown.open:after {
+bottom: 0px;
+}
+*/
+.header-container .navbar-nav > li > a {
+padding: 18px 0px;
+}
+.header-container .navbar-nav li a{
+font-size: 15px;
+margin: 0px;
+text-transform: uppercase;
+color: #fff;
+transition: all 300ms ease-in-out;
+}
+.header-container .navbar-nav li a span.fa{
+pointer-events: none;
+}
+.header-container .navbar-nav > li.active > a,
+.navbar-default .navbar-nav > .active > a{
+background: #000;
+color: #fff;
+}
+.header-container .navbar-nav > li.active > a:hover
+.header-container .navbar-nav > li.active > a:focus,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus{
+background: #000;
+/*color: #5bbdbf;*/
+}
+.header-container .navbar-nav li a:hover,
+.header-container .navbar-nav li a:focus{
+color: #fff;
+text-decoration: none;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:focus,
+.navbar-default .navbar-nav > .open > a:hover{
+background: transparent;
+color: #fff;
+}
+.header-container .navbar-nav .dropdown-menu{
+position: fixed;
+top: 90px;
+width: 100%;
+z-index: 100;
+padding: 0px;
+font-size: 15px;
+border: none;
+border-radius: 0px;
+color: #767676;
+box-shadow: 0px 6px 6px rgba(0,0,0,.175);
+}
+.header-container .navbar-nav .dropdown-menu a{
+color: #333;
+font-weight: 600;
+text-transform: initial;
+}
+.header-container .navbar-nav .dropdown-menu ul{
+list-style: none;
+padding-left: 0px;
+}
+.header-container .navbar-nav .dropdown-menu ul li a{
+padding: 8px 0px;
+display: block;
+text-align: left;
+}
+.header-container .navbar-nav .dropdown-menu ul li a:hover,
+.header-container .navbar-nav .dropdown-menu ul li a:focus{
+text-decoration: none;
+color: #06c;
+}
+.header-container .navbar-nav .dropdown-menu ul ul li a{
+font-weight: 400;
+padding-left: 4px;
+}
+.header-container .navbar-nav .dropdown-menu #integration-toggles ul ul li a{
+background-image: url("https://www.ansible.com/hubfs/Images/icons/arrow_gray-light.svg");
+background-repeat: no-repeat;
+background-position: 55% center;
+background-size: auto 14px;
+}
+.header-container .navbar-nav .dropdown-menu #integration-toggles ul ul li a:hover{
+background-image: url("https://www.ansible.com/hubfs/Images/icons/arrow_blue.svg");
+}
+.header-container .navbar-nav .dropdown-menu ul ul li.active a{
+background: #f2f2f2;
+pointer-events: none;
+}
+.header-container .navbar-nav .dropdown-menu #integration-toggles ul ul li.active a{
+background-image: url("https://www.ansible.com/hubfs/Images/icons/arrow_blue.svg");
+}
+.header-container .navbar-nav .dropdown-menu .row{
+display: flex;
+align-items: stretch;
+}
+.header-container .navbar-nav .dropdown-menu .row [class*="col-sm-"]{
+padding: 15px 30px;
+margin: 45px 0px;
+border-left: 1px solid #ced0d3;
+}
+.header-container .navbar-nav .dropdown-menu .row [class*="col-sm-"]:first-child{
+border-left: none;
+/*padding-right: 35px;*/
+}
+.header-container .navbar-nav .dropdown-menu .row [class*="col-"]:last-child {
+/*border-left: none;
+/*margin: 0px;
+padding-top: 55px;
+padding-bottom: 55px;*/
+}
+.navbar-nav #overview #integration-toggles ul ul{
+margin: 0px -30px;
+}
+.navbar-nav #overview #integration-toggles ul ul a{
+padding-left: 34px;
+}
+.navbar-nav #overview #integrations{
+background: #f2f2f2;
+margin: 0px;
+padding-top: 60px;
+}
+.navbar-nav #overview #integrations,
+.navbar-nav #resources #tower-demo,
+.navbar-nav #community #fest-description{
+border-left: 0px;
+}
+.navbar-nav #products #training-consulting hr{
+margin: 40px 0px;
+border-top: 1px solid #ccc;
+}
+.navbar-nav #community .fest-wrapper{
+background: #5bbdbf;
+padding: 30px 15px;
+}
+/* this fixes an issue in IE */
+.header-container img.fest-logo{
+height: 10px !important;
+}
+@media (max-width: 768px){
+.container{
+width: 100%;
+}
+}
+@media (min-width: 768px){
+.d-sm-flex{
+display: flex;
+}
+.header-container nav#main{
+height: 70px;
+}
+.header-container .navbar-default{
+height: 70px;
+display: flex;
+flex-flow: row nowrap;
+align-items: center;
+}
+.header-container .navbar-nav{
+display: flex;
+width: 100%;
+justify-content: space-between;
+}
+.header-container .container .navbar-brand{
+margin: 0 38px 0 0;
+}
+.header-container .container #main-menu{
+flex-grow: 1;
+}
+body.ansible-home .header-container .navbar-default,
+body.ansible-home .header-container .navbar-collapse{
+background: transparent;
+}
+body.ansible-home .navbar-default .navbar-nav > .open > a,
+body.ansible-home .header-container .navbar-nav > li > a:hover,
+body.ansible-home .header-container .navbar-nav > li > a:focus {
+color: #fff;
+}
+.header-container #products #features {
+border-left: 0px;
+}
+.header-container #resource-library #webinars {
+margin-top: 20px;
+}
+.header-container .navbar-nav li{
+border-bottom: 0px;
+margin: 0px;
+}
+.header-container .navbar-nav li a{
+font-size: 14px;
+line-height: 1.45;
+}
+.header-container .navbar-nav li a.nav-sign-up{
+border-left: 1px solid rgba(255,255,255,.5);
+border-right: 1px solid rgba(255,255,255,.5);
+}
+.header-container .navbar-nav > li > a {
+/*padding: 22px 15px 23px;*/
+padding: 10px 8px;
+white-space: nowrap;
+}
+.header-container .navbar-nav .dropdown-menu #integration-toggles ul ul li a{
+background-position: 85% center;
+}
+.header-container .navbar-nav .dropdown-menu #integration-toggles ul ul li a:hover{
+background-position: 90% center;
+}
+/* this fixes an issue in IE */
+.header-container img.fest-logo{
+height: 10px !important;
+}
+}
+@media (min-width: 992px){
+.header-container nav#main,
+.header-container .navbar-default {
+height: 90px;
+}
+.header-container .container .navbar-brand{
+margin: 0 140px 0 0;
+width: 140px;
+}
+.header-container .navbar-nav li a{
+font-size: 15px;
+padding: 10px 15px;
+}
+.header-container .navbar-nav li a.nav-sign-up{
+padding-left: 24px;
+padding-right: 24px;
+}
+.header-container .navbar-nav .dropdown-menu a{
+font-size: 18px;
+}
+.header-container .navbar-nav .dropdown-menu ul ul li a{
+font-size: 16px;
+}
+.header-container .navbar-nav .dropdown-menu #integration-toggles ul ul li a{
+background-position: 65% center;
+}
+.header-container .navbar-nav .dropdown-menu #integration-toggles ul ul li a:hover{
+background-position: 70% center;
+}
+.header-container img.fest-logo{
+height: 14px !important;
+}
+}
+@media (min-width: 1200px){
+.header-container .container .navbar-brand{
+margin-right: 200px;
+}
+.header-container .navbar-nav .dropdown-menu #integration-toggles ul ul li a{
+background-position: 55% center;
+}
+.header-container .navbar-nav .dropdown-menu #integration-toggles ul ul li a:hover{
+background-position: 60% center;
+}
+.header-container img.fest-logo{
+height: 18px !important;
+}
+}
+</style> <script>
+$(document).ready(function(){
+$(".dropdown").on("click.bs.dropdown",function(e){
+//e.preventDefault();
+$target = $(e.target);
+if($(window).width() < 768){
+window.location = $target.attr("href");
+closeOpenDropdowns();
+e.stopPropagation();
+}
+// stop dropdown from closing if clicked inside of the dropdown menu
+if(!$target.hasClass("dropdown-toggle")){
+e.stopPropagation();
+}
+if($target.data("toggle") == "collapse"){
+$(".collapse").collapse("hide");
+var collapsible = $target.data("target");
+$(collapsible).collapse("show");
+$("#integration-toggles li").removeClass("active");
+$target.closest("li").addClass("active");
+e.stopPropagation();
+}
+//e.preventDefault();
+});
+// Add fadeIn animation to Bootstrap dropdown when displaying.
+$('.dropdown').on('show.bs.dropdown', function() {
+var h = $(".navbar-default").outerHeight();
+var navTop = $(".navbar-default").offset().top;
+var top = -$(window).scrollTop() + h + navTop;
+var $dropdown = $(this).find('.dropdown-menu').first();
+console.log("top: " + top);
+$dropdown.css("top",top);
+$dropdown.stop(true, true).fadeIn();
+//$(this).find('.dropdown-menu').first().stop(true, true).fadeIn();
+});
+// Add fadeOut animation to Bootstrap dropdown when hiding.
+$('.dropdown').on('hide.bs.dropdown', function() {
+$(this).find('.dropdown-menu').first().stop(true, true).fadeOut();
+});
+$(window).on("scroll", function(){
+closeOpenDropdowns();
+});
+$(window).on("resize", function(){
+if($(this).width() < 768){
+closeOpenDropdowns();
+}
+});
+function closeOpenDropdowns(){
+$(".dropdown.open").find(".dropdown-toggle").dropdown('toggle');
+}
+});
+</script> 
+             <nav id="main"> 
+              <div class="container"> 
+               <div class="navbar navbar-default"> 
+                <div class="navbar-header"> <a class="navbar-brand" href="https://www.ansible.com/?hsLang=en-us" title="Red Hat Ansible"><img class="img-responsive" src="https://www.ansible.com/hubfs/Logo-Red_Hat-Ansible-A-Reverse-SVG.svg" title="Red Hat Ansible" alt="Red Hat Ansible"></a> <button type="button" class="collapsed navbar-toggle" data-toggle="collapse" data-target="#main-menu" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top"></span> <span class="icon-bar center"></span> <span class="icon-bar bottom"></span> </button> 
+                </div> 
+                <div class="collapse navbar-collapse" id="main-menu"> 
+                 <ul id="menu-top-nav" class="nav navbar-nav"> <!-- OVERVIEW MENU --> 
+                  <li class="dropdown" id="overview"> <a href="https://www.ansible.com/overview/it-automation?hsLang=en-us" class="dropdown-toggle" data-toggle="dropdown">Overview <span class="fa fa-angle-down hidden-xs"></span></a> 
+                   <div class="dropdown-menu"> 
+                    <div class="container"> 
+                     <div class="row"> 
+                      <div id="quickstart" class="col-sm-3"> 
+                       <ul> 
+                        <li> <a href="https://www.ansible.com/overview/it-automation?hsLang=en-us">Why Ansible?</a> <p>Ansible delivers simple IT automation that ends repetitive tasks and frees up DevOps teams for more strategic work.</p> 
+                         <ul> 
+                          <li><a href="https://www.ansible.com/overview/how-ansible-works?hsLang=en-us">How Ansible Works</a></li> 
+                          <li><a href="https://www.ansible.com/products/automation-platform?hsLang=en-us">Ansible Automation&nbsp;Platform</a></li> 
+                         </ul> </li> 
+                       </ul> 
+                      </div> 
+                      <div id="use-cases" class="col-sm-3"> 
+                       <ul> 
+                        <li> <a href="https://www.ansible.com/use-cases?hsLang=en-us">Use Cases</a> <!-- old Use Cases nav --> <!-- <ul>
+<li><a href="https://www.ansible.com/use-cases/provisioning">Provisioning</a></li>
+<li><a href="https://www.ansible.com/use-cases/configuration-management">Configuration Management</a></li>
+<li><a href="https://www.ansible.com/use-cases/application-deployment">App Deployment</a></li>
+<li><a href="https://www.ansible.com/use-cases/continuous-delivery">Continuous Delivery</a></li>
+<li><a href="https://www.ansible.com/use-cases/network-automation">Network Automation</a></li>  
+<li><a href="https://www.ansible.com/use-cases/security-automation">Security Automation</a></li>
+<li><a href="https://www.ansible.com/integrations/cloud?hsLang=en-us">Cloud Automation</a></li>
+<li><a href="https://www.ansible.com/use-cases/orchestration">Orchestration</a></li>
+<li><a href="https://www.ansible.com/use-cases/endpoint-protection">Endpoint Protection</a></li>
+</ul>
+  --> <!-- updated Use Cases nav --> 
+                         <ul> 
+                          <li><a href="https://www.ansible.com/integrations/cloud?hsLang=en-us">Cloud Automation</a></li> 
+                          <li><a href="https://www.ansible.com/use-cases/edge?hsLang=en-us">Edge Automation</a></li> 
+                          <li><a href="https://www.ansible.com/use-cases/network-automation?hsLang=en-us">Network Automation</a></li> 
+                          <li><a href="https://www.ansible.com/use-cases/?hsLang=en-us">See all</a></li> 
+                         </ul> </li> 
+                       </ul> 
+                      </div> 
+                      <div id="integration-toggles" class="col-sm-3"> 
+                       <ul> 
+                        <li> <a href="https://www.ansible.com/integrations?hsLang=en-us">Integrations</a> 
+                         <ul> 
+                          <li class="active"><a href="#" data-toggle="collapse" data-target="#infrastructure">Infrastructure</a></li> 
+                          <li><a href="#" data-toggle="collapse" data-target="#networks">Networks</a></li> 
+                          <li><a href="#" data-toggle="collapse" data-target="#containers">Containers</a></li> 
+                          <li><a href="#" data-toggle="collapse" data-target="#cloud">Cloud</a></li> 
+                          <li><a href="#" data-toggle="collapse" data-target="#devops">DevOps Tools</a> </li>
+                          <li><a href="#" data-toggle="collapse" data-target="#security">Security</a> </li> 
+                         </ul> </li> 
+                       </ul> 
+                      </div> 
+                      <div id="integrations" class="col-sm-3" style="background: #f2f2f2;"> 
+                       <ul> 
+                        <li> 
+                         <ul id="infrastructure" class="collapse in"> 
+                          <li><a href="https://www.ansible.com/integrations/infrastructure"><strong>All Infrastructure Integrations</strong></a></li> 
+                          <li><a href="https://www.ansible.com/integrations/infrastructure/dell-emc-storage?hsLang=en-us">Dell EMC</a></li> 
+                          <li><a href="https://www.ansible.com/integrations/infrastructure/ibm-storage?hsLang=en-us">IBM Storage</a></li> 
+                          <li><a href="https://www.ansible.com/integrations/infrastructure/ibm-zos?hsLang=en-us">IBM z/OS</a></li> 
+                          <li><a href="https://www.ansible.com/integrations/it-service-management/servicenow?hsLang=en-us">ServiceNow</a></li> 
+                          <li><a href="https://www.ansible.com/integrations/infrastructure/vmware?hsLang=en-us">VMware</a></li> 
+                          <li><a href="https://www.ansible.com/integrations/infrastructure/windows?hsLang=en-us">Windows</a></li> 
+                         </ul> 
+                         <ul id="networks" class="collapse"> 
+                          <li><a href="https://www.ansible.com/integrations/networks?hsLang=en-us"><strong>All Network Integrations</strong></a></li> 
+                          <li><a href="https://www.ansible.com/integrations/networks/arista?hsLang=en-us">Arista</a></li> 
+                          <li><a href="https://www.ansible.com/integrations/networks/cisco?hsLang=en-us">Cisco</a></li> 
+                          <li><a href="https://www.ansible.com/integrations/networks/dell?hsLang=en-us">Dell EMC Networking</a></li> 
+                          <li><a href="https://www.ansible.com/integrations/networks/f5?hsLang=en-us">F5 Networks</a></li> 
+                          <li><a href="https://www.ansible.com/integrations/networks/infoblox?hsLang=en-us">Infoblox</a></li> 
+                          <li><a href="https://www.ansible.com/integrations/networks/juniper?hsLang=en-us">Juniper</a></li> 
+                         </ul> 
+                         <ul id="containers" class="collapse"> 
+                          <li><a href="https://www.ansible.com/integrations/containers?hsLang=en-us"><strong>All Container Integrations</strong></a></li> 
+                          <li><a href="https://www.ansible.com/integrations/containers/operators?hsLang=en-us">Operators</a></li> 
+                         </ul> 
+                         <ul id="cloud" class="collapse"> 
+                          <li><a href="https://www.ansible.com/integrations/cloud?hsLang=en-us"><strong>All Cloud Integrations</strong></a></li> 
+                          <li><a href="https://www.ansible.com/integrations/cloud/amazon-web-services?hsLang=en-us">Amazon Web Services</a></li> 
+                          <li><a href="https://www.ansible.com/integrations/cloud/microsoft-azure?hsLang=en-us">Azure</a></li> 
+                          <li><a href="https://www.ansible.com/integrations/cloud/google-cloud-platform?hsLang=en-us">Google Cloud Platform</a></li> 
+                          <li><a href="https://www.ansible.com/integrations/cloud/openstack?hsLang=en-us">OpenStack</a></li> 
+                         </ul> 
+                         <ul id="devops" class="collapse"> 
+                          <li><a href="https://www.ansible.com/integrations/devops-tools?hsLang=en-us"><strong>All DevOps Tools Integrations</strong></a></li> 
+                          <li><a href="https://www.ansible.com/integrations/devops-tools/atlassian?hsLang=en-us">Atlassian</a></li> 
+                          <li><a href="https://www.ansible.com/integrations/devops-tools/datadog?hsLang=en-us">Datadog</a></li> 
+                          <li><a href="https://www.ansible.com/integrations/devops-tools/chocolatey?hsLang=en-us">Chocolatey</a></li> 
+                          <li><a href="https://www.ansible.com/integrations/devops-tools/splunk?hsLang=en-us">Splunk</a></li> 
+                         </ul> 
+                         <ul id="security" class="collapse"> 
+                          <li><a href="https://www.ansible.com/integrations/security?hsLang=en-us"><strong>All Security Integrations</strong></a></li> 
+                          <li><a href="https://www.ansible.com/integrations/security/checkpoint?hsLang=en-us">Check Point</a></li> 
+                          <li><a href="https://www.ansible.com/integrations/devops-tools/cyberark?hsLang=en-us">CyberArk</a></li> 
+                          <li><a href="https://www.ansible.com/integrations/security/fortinet?hsLang=en-us">Fortinet</a></li> 
+                          <li><a href="https://www.ansible.com/integrations/security/ibm-qradar?hsLang=en-us">IBM Security</a></li> 
+                          <li><a href="https://www.ansible.com/integrations/networks/palo-alto?hsLang=en-us">Palo Alto</a></li> 
+                          <li><a href="https://www.ansible.com/integrations/security/splunk?hsLang=en-us">Splunk</a></li> 
+                         </ul> </li>
+                       </ul>
+                      </div> 
+                     </div> 
+                    </div> 
+                   </div> </li> <!-- PRODUCTS MENU --> 
+                  <li class="dropdown" id="products"> <a href="https://www.ansible.com/products/automation-platform?hsLang=en-us" class="dropdown-toggle" data-toggle="dropdown">Product <span class="fa fa-angle-down hidden-xs"></span></a> 
+                   <div class="dropdown-menu"> 
+                    <div class="container"> 
+                     <div class="row"> 
+                      <div id="platform" class="col-sm-4"> 
+                       <ul> 
+                        <li> <a href="https://www.ansible.com/products/automation-platform?hsLang=en-us">Red Hat Ansible Automation&nbsp;Platform</a> <p>Leverage powerful automation across entire IT teams no matter where you are in your automation journey.</p> 
+                         <ul> 
+                          <li><a href="https://www.ansible.com/products/automation-platform?hsLang=en-us">Overview</a></li> 
+                          <li><a href="https://www.ansible.com/products/pricing?hsLang=en-us">Pricing</a></li> 
+                         </ul> </li> 
+                       </ul> 
+                      </div> 
+                      <div id="features" class="col-sm-3"> 
+                       <ul> 
+                        <li> <a href="https://www.ansible.com/products/automation-platform?hsLang=en-us">Features</a> 
+                         <ul> 
+                          <li><a href="https://www.ansible.com/products/execution-environments?hsLang=en-us">Automation Execution Environments</a></li> 
+                          <li><a href="https://www.ansible.com/products/controller?hsLang=en-us">Automation Controller</a></li> 
+                          <li><a href="https://www.ansible.com/products/automation-hub?hsLang=en-us">Automation Hub</a></li> 
+                          <li><a href="https://www.ansible.com/products/insights-for-ansible?hsLang=en-us">Red Hat Insights for Red Hat Ansible Automation Platform </a></li> 
+                          <li><a href="https://www.ansible.com/products/content-collections?hsLang=en-us">Ansible Content Collections</a></li> 
+                          <li><a href="https://www.ansible.com/products/automation-services-catalog?hsLang=en-us">Automation Services Catalog</a></li> 
+                         </ul> </li> 
+                       </ul> 
+                      </div> 
+                      <div id="training-consulting" class="col-sm-4"> 
+                       <ul> 
+                        <li> <a href="https://www.ansible.com/products/training-certification?hsLang=en-us">Training &amp; Certification</a> <p>Hone your Ansible skills in lab-intensive, real-world training with any of our Ansible focused courses.</p> <p>&nbsp;</p> </li> 
+                        <li> <a href="https://www.ansible.com/products/consulting?hsLang=en-us">Consulting for Ansible</a> <p>Adopt and integrate Ansible to create and standardize centralized automation practices.</p> </li> 
+                       </ul> 
+                      </div> 
+                     </div> 
+                    </div> 
+                   </div> </li> <!-- RESOURCES MENU --> 
+                  <li class="dropdown" id="resources"> <a href="https://www.ansible.com/resources?hsLang=en-us" class="dropdown-toggle" data-toggle="dropdown">Learn <span class="fa fa-angle-down hidden-xs"></span></a> 
+                   <div class="dropdown-menu"> 
+                    <div class="container"> 
+                     <div class="row"> 
+                      <div id="get-started" class="col-sm-3"> 
+                       <ul> 
+                        <li> <a href="https://www.ansible.com/resources/get-started?hsLang=en-us">Get Started</a> <p>Ansible is powerful IT automation that you can learn quickly.</p> 
+                         <ul> 
+                          <li><a href="https://www.ansible.com/resources/videos/quick-start-video?hsLang=en-us">Quick Start Video</a></li> 
+                         </ul> </li> 
+                       </ul> 
+                      </div> 
+                      <div id="resource-library" class="col-sm-3"> 
+                       <ul> 
+                        <li> <a href="https://www.ansible.com/resources?hsLang=en-us">Resource Library</a> 
+                         <ul> 
+                          <li><a href="https://www.ansible.com/resources/videos?hsLang=en-us">Videos</a></li> 
+                          <li><a href="https://www.ansible.com/resources/ebooks?hsLang=en-us">E-books</a></li> 
+                          <li><a href="https://www.ansible.com/resources/whitepapers?hsLang=en-us">Whitepapers</a></li> 
+                          <li><a href="https://www.ansible.com/resources/case-studies?hsLang=en-us">Case Studies</a></li> 
+                          <li><a href="https://www.ansible.com/resources/analyst-reports?hsLang=en-us">Analyst Reports</a></li> 
+                         </ul> </li> 
+                       </ul> 
+                       <ul id="webinars"> 
+                        <li> <a href="https://www.ansible.com/resources/webinars-training?hsLang=en-us">Webinars &amp; Training</a> 
+                         <ul> 
+                          <li><a href="https://www.ansible.com/resources/webinars-training/introduction-to-ansible?hsLang=en-us">Intro to Ansible Webinar</a></li> 
+                          <li></li> 
+                         </ul> </li> 
+                       </ul> 
+                      </div> 
+                      <div id="events" class="col-sm-3"> 
+                       <ul> 
+                        <li> <a href="https://www.ansible.com/community/events?hsLang=en-us">Ansible Events</a> 
+                         <ul> 
+                          <li><a href="https://www.ansible.com/ansiblefest?hsLang=en-us">AnsibleFest</a></li> 
+                          <li><a href="https://www.ansible.com/community/events/automates?hsLang=en-us">Ansible Automates</a></li> 
+                          <li><a href="https://www.ansible.com/community/events/workshops?hsLang=en-us">Workshops</a></li> 
+                          <li><a href="https://www.ansible.com/community/events?hsLang=en-us">All upcoming events</a></li> 
+                         </ul> </li> 
+                       </ul> 
+                      </div> 
+                      <div class="col-sm-3"> 
+                       <ul> 
+                        <li><a href="https://www.ansible.com/blog?hsLang=en-us">Ansible Blog</a></li> 
+                        <li><a href="http://docs.ansible.com/">Ansible Docs</a></li> 
+                        <li><a href="https://www.ansible.com/partners?hsLang=en-us">Partners</a></li> 
+                        <li><a href="https://www.redhat.com/en/engage/redhat-ansible-automation-202108061218">Self-Paced Labs </a></li> 
+                       </ul> 
+                      </div> 
+                     </div> 
+                    </div> 
+                   </div> </li> <!-- COMMUNITY MENU --> 
+                  <li class="dropdown" id="community"> <a href="https://www.ansible.com/community?hsLang=en-us" class="dropdown-toggle" data-toggle="dropdown">Community <span class="fa fa-angle-down hidden-xs"></span></a> 
+                   <div class="dropdown-menu"> 
+                    <div class="container"> 
+                     <div class="row"> 
+                      <div id="community" class="col-sm-3"> 
+                       <ul> 
+                        <li> <a href="https://www.ansible.com/community?hsLang=en-us">Join the Community</a> <p>Ansible is open source and created by contributions from an active open source community.</p> </li> 
+                       </ul> 
+                      </div> 
+                      <div id="meetups" class="col-sm-3"> 
+                       <ul> 
+                        <li> <a class="external-link" href="http://ansible.meetup.com/" target="_blank">Ansible Meetups</a> <p>Find out what's happening in global Ansible Meetups and find one near you.</p> </li> 
+                       </ul> 
+                      </div> 
+                      <div class="col-sm-3"> 
+                       <ul> 
+                        <li><a class="external-link" href="https://github.com/ansible/ansible" target="_blank">Ansible on GitHub</a></li> 
+                        <li><a class="external-link" href="https://github.com/ansible/awx" target="_blank">AWX on GitHub</a></li> 
+                       </ul> 
+                      </div> 
+                      <div class="col-sm-3"> 
+                       <ul> 
+                        <li> <a class="external-link" href="https://www.ansible.com/community/galaxy?hsLang=en-us" target="_blank">Ansible Galaxy</a> <p>The Ansible community hub for sharing automation with everyone.</p> </li> 
+                       </ul> 
+                      </div> 
+                     </div> 
+                    </div> 
+                   </div> </li> 
+                  <li> <a class="nav-sign-up" href="https://www.redhat.com/en/technologies/management/ansible/try-it" title="Try Tower Free">Free Trial</a> </li> <!-- mobile-only nav --> 
+                  <li class="hidden visible-xs"><a href="https://www.ansible.com/blog?hsLang=en-us">Ansible Blog</a></li> 
+                  <li class="hidden visible-xs"><a href="https://www.ansible.com/ansiblefest?hsLang=en-us">AnsibleFest</a></li> 
+                  <li class="hidden visible-xs"><a href="https://www.ansible.com/contact-us?hsLang=en-us">Contact Us</a></li> 
+                 </ul> 
+                </div> 
+               </div> 
+              </div> 
+             </nav></span> 
+           </div><!--end layout-widget-wrapper --> 
+          </div><!--end widget-span --> 
+         </div><!--end row--> 
+        </div><!--end row-wrapper --> 
+       </div> 
+      </div><!--end widget-span --> 
+     </div><!--end row--> 
+    </div><!--end row-wrapper --> 
+   </div><!--end header --> 
+  </div><!--end header wrapper --> 
+  <div class="body-container-wrapper"> 
+   <div class="body-container container-fluid"> 
+    <div class="row-fluid-wrapper row-depth-1 row-number-1 "> 
+     <div class="row-fluid "> 
+      <div class="span12 widget-span widget-type-cell integration-lander-banner-section-wrapper text-left" style="background: #000 url('https://www.ansible.com/hubfs/Ansible%202.0%20Heros/AAP2_hero_A-from-bottom_dark_1170x255.svg') center bottom no-repeat; background-size: auto; " data-widget-type="cell" data-x="0" data-w="12"> 
+       <div class="row-fluid-wrapper row-depth-1 row-number-2 "> 
+        <div class="row-fluid "> 
+         <div class="span12 widget-span widget-type-cell integration-lander-banner-section inner-wrapper responsive-full" style="" data-widget-type="cell" data-x="0" data-w="12"> 
+          <div class="row-fluid-wrapper row-depth-1 row-number-3 "> 
+           <div class="row-fluid "> 
+            <div class="span12 widget-span widget-type-rich_text networks-banner-header" style="" data-widget-type="rich_text" data-x="0" data-w="12"> 
+             <div class="cell-wrapper layout-widget-wrapper"> <span id="hs_cos_wrapper_module_14450258434841810" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text"><h3>INTEGRATION:</h3> <h1>Infrastructure automation with Ansible</h1></span> 
+             </div><!--end layout-widget-wrapper --> 
+            </div><!--end widget-span --> 
+           </div><!--end row--> 
+          </div><!--end row-wrapper --> 
+         </div><!--end widget-span --> 
+        </div><!--end row--> 
+       </div><!--end row-wrapper --> 
+      </div><!--end widget-span --> 
+     </div><!--end row--> 
+    </div><!--end row-wrapper --> 
+    <div class="row-fluid-wrapper row-depth-1 row-number-4 "> 
+     <div class="row-fluid "> 
+      <div class="span12 widget-span widget-type-cell integrations-section-wrapper outer-wrapper" style="" data-widget-type="cell" data-x="0" data-w="12"> 
+       <div class="row-fluid-wrapper row-depth-1 row-number-5 "> 
+        <div class="row-fluid "> 
+         <div class="span12 widget-span widget-type-cell main-section inner-wrapper responsive-full" style="" data-widget-type="cell" data-x="0" data-w="12"> 
+          <div class="row-fluid-wrapper row-depth-1 row-number-6 "> 
+           <div class="row-fluid "> 
+            <div class="span7 widget-span widget-type-cell left-column" style="" data-widget-type="cell" data-x="0" data-w="7"> 
+             <div class="row-fluid-wrapper row-depth-1 row-number-7 "> 
+              <div class="row-fluid "> 
+               <div class="span12 widget-span widget-type-cell left-column-top" style="" data-widget-type="cell" data-x="0" data-w="12"> 
+                <div class="row-fluid-wrapper row-depth-2 row-number-1 "> 
+                 <div class="row-fluid "> 
+                  <div class="span12 widget-span widget-type-rich_text " style="" data-widget-type="rich_text" data-x="0" data-w="12"> 
+                   <div class="cell-wrapper layout-widget-wrapper"> <span id="hs_cos_wrapper_module_13892079309161998" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text"><p>Historically, “infrastructure” typically meant “Linux servers.” Ansible’s beginnings were forged with automating Linux, but has quickly evolved to many other mediums and domains. Today, the IT environment is much more complex, adding the likes of Network, Cloud, Security, Windows and more. But regardless, whatever is being deployed, some kind of foundational infrastructure components are still required. No longer just about automating physical Linux endpoints, Ansible now provides support for automating across private clouds (physical and virtual endpoints) and containerized workloads. So no matter what your applications require to run on, Ansible has the means to build, provision, manage, and maintain them.</p> <p>&nbsp;</p> <h3>Private Cloud Automation (including physical and virtual platforms)</h3> <p>Ansible is simple and powerful, allowing users to easily manage various physical devices - including the provisioning of bare metal servers, network devices or even storage devices. Using Ansible’s Playbook-based automation is easy, and integrates into your current provisioning infrastructure.</p> 
+                     <ul> 
+                      <li aria-level="1">Red Hat Enterprise Linux Management</li> 
+                      <ul> 
+                       <li aria-level="2"><a href="https://access.redhat.com/articles/3050101"><span>Red Hat Enterprise Linux</span></a></li> 
+                       <li aria-level="2"><a href="https://www.ansible.com/blog/automating-red-hat-satellite-with-ansible?hsLang=en-us"><span>Red Hat Satellite</span></a></li> 
+                       <li aria-level="2"><span style="color: #000000;">Red Hat Smart Management</span></li> 
+                       <li aria-level="2"><a href="https://www.ansible.com/blog/manage-red-hat-enterprise-linux-like-a-boss-with-red-hat-ansible-content-collection-for-red-hat-insights?hsLang=en-us"><span>Red Hat Insights</span></a></li> 
+                      </ul> 
+                      <li aria-level="1">Other Linux Operating Systems: CentOS, Fedora, Ubuntu, and others</li> 
+                      <li aria-level="1">IBM Operating Systems: <a href="https://www.ansible.com/integrations/infrastructure/ibm-zos?hsLang=en-us" style="color: #337ab7;"><span>IBM z/OS</span></a>, <a href="https://www.ansible.com/integrations/infrastructure/ibm-power-systems?hsLang=en-us" style="color: #337ab7;"><span>IBM Power Systems</span></a>, IBM AIX and more</li> 
+                      <li aria-level="1">Microsoft <a href="https://www.ansible.com/windows?hsLang=en-us" style="color: #337ab7;"><span>Windows and Windows Server</span></a>&nbsp;</li> 
+                      <li aria-level="1">Linux Management including <a href="https://www.ansible.com/integrations/infrastructure/hpe?hsLang=en-us" style="color: #337ab7;"><span>Hewlett Packard Enterprise</span></a>, Cisco UCS</li> 
+                      <li aria-level="1">Infrastructure as a Service: Red Hat OpenStack Platform</li> 
+                     </ul> <h3>Virtualization Automation</h3> <p>Moved to virtualized infrastructure? No problem. Ansible supports all the industry-leading virtualization platforms, including:</p> 
+                     <ul> 
+                      <li aria-level="1"><a href="https://www.ansible.com/vmware?hsLang=en-us" style="color: #337ab7;"><span>VMware</span></a><span style="color: #337ab7;"> vSphere</span></li> 
+                      <li aria-level="1">Red Hat Virtualization (RHV)</li> 
+                      <li aria-level="1">Vagrant</li> 
+                     </ul> <p>With Ansible, you can easily provision, destroy, take inventory, and manage your virtual environments. Plus, Ansible’s extensive support allows you to then deploy and orchestrate across all of your virtual environments once you’ve provisioned them. When you add Red Hat® Automation Controller to your environment, non-administrative users can safely request and manage virtual resources using the Playbooks you provide them-- all without needing access to sensitive credentials.</p> <p>&nbsp;</p> <h3>Container Automation</h3> <p>Finally, Ansible also provides robust container and native Kubernetes management, expanding to Red Hat OpenShift Container Platform and other container technologies. Ansible supports many of the most popular Kubernetes frameworks and tooling, including:</p> 
+                     <ul> 
+                      <li aria-level="1">Red Hat OpenShift Platform, OKD</li> 
+                      <li aria-level="1"><a href="https://www.ansible.com/integrations/containers/operators?hsLang=en-us"><span>Native</span></a> Kubernetes management and automation</li> 
+                      <li aria-level="1">Container Developer Tooling: Buildah, Podman, Knative</li> 
+                     </ul> 
+                     <div class="hs-embed-wrapper" data-service="youtube" data-responsive="true" style="position: relative; overflow: hidden; width: 100%; height: auto; padding: 0; max-width: 560px; max-height: 315px; min-width: 256px; display: block; margin: auto;">
+                      <div class="hs-embed-content-wrapper">
+                       <div style="position: relative; overflow: hidden; max-width: 100%; padding-bottom: 56.25%; margin: 0px;" data-mce-style="position: relative; overflow: hidden; max-width: 100%; padding-bottom: 56.25%; margin: 0px;">
+                        <iframe style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; border: none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" xml="lang" src="https://www.youtube.com/embed/h5cCf5g4nBo" width="560" height="315" frameborder="0" allowfullscreen data-mce-src="https://www.youtube.com/embed/h5cCf5g4nBo" data-mce-style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; border: none;"></iframe>
+                       </div>
+                      </div>
+                     </div> <p>&nbsp;</p> <p>No matter your platform, Ansible modules exist for managing the installation of software, updates, system configuration, and the managing of system features. And if you’ve got more specific requirements, Ansible will wrap native commands on any of these platforms, allowing you to automate anything you can imagine.</p> <p>&nbsp;</p> <h3>IT Service Management</h3> <p>By automating actions on service requests and providing a “single source of truth” about IT asset configurations, you can modernize service processes faster and more efficiently. Ansible Automation Platform includes:</p> 
+                     <ul> 
+                      <li aria-level="1"><a href="/integrations/it-service-management/servicenow?hsLang=en-us" rel="noopener">Red Hat Ansible Certified Content Collection for ServiceNow&nbsp;</a> <br><br></li> 
+                     </ul> <h3>Infrastructure Integrations</h3> 
+                     <ul> 
+                      <li><span style="color: #3d85c6;"><a href="https://www.ansible.com/integrations/infrastructure/ibm-power-systems?hsLang=en-us" style="color: #3d85c6;">IBM Power Systems</a></span></li> 
+                      <li><span style="color: #3d85c6;"><a href="https://www.ansible.com/integrations/infrastructure/ibm-storage?hsLang=en-us" style="color: #3d85c6;">IBM FlashSystem Storage</a></span></li> 
+                      <li><span style="color: #3d85c6;"><a href="https://www.ansible.com/integrations/infrastructure/ibm-storage?hsLang=en-us" style="color: #3d85c6;">IBM Spectrum Virtualize</a></span></li> 
+                      <li><span style="color: #3d85c6;"><a href="https://www.ansible.com/integrations/infrastructure/ibm-zos?hsLang=en-us" style="color: #3d85c6;">IBM z/OS</a></span></li> 
+                      <li><span style="color: #3d85c6;"><a href="https://www.ansible.com/integrations/infrastructure/hpe?hsLang=en-us" style="color: #3d85c6;">HPE</a></span></li> 
+                      <li><span style="color: #3d85c6;"><a href="https://www.ansible.com/integrations/infrastructure/red-hat?hsLang=en-us" style="color: #3d85c6;">Red Hat</a></span></li> 
+                      <li><span style="color: #3d85c6;"><a href="https://www.ansible.com/integrations/infrastructure/stacki?hsLang=en-us" style="color: #3d85c6;">Stacki</a></span></li> 
+                      <li><span style="color: #3d85c6;">ServiceNow</span></li> 
+                      <li><span style="color: #3d85c6;"><a href="https://www.ansible.com/integrations/infrastructure/vmware?hsLang=en-us" style="color: #3d85c6;">VMware</a></span></li> 
+                      <li><span style="color: #3d85c6;"><a href="https://www.ansible.com/integrations/infrastructure/windows?hsLang=en-us" style="color: #3d85c6;">Window</a>s</span></li> 
+                     </ul></span> 
+                   </div><!--end layout-widget-wrapper --> 
+                  </div><!--end widget-span --> 
+                 </div><!--end row--> 
+                </div><!--end row-wrapper --> 
+               </div><!--end widget-span --> 
+              </div><!--end row--> 
+             </div><!--end row-wrapper --> 
+            </div><!--end widget-span --> 
+            <div class="span1 widget-span widget-type-space " style="" data-widget-type="space" data-x="7" data-w="1"> 
+             <div class="cell-wrapper layout-widget-wrapper"> <span id="hs_cos_wrapper_module_144502680069322845" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_space" style="" data-hs-cos-general-type="widget" data-hs-cos-type="space"></span>
+             </div><!--end layout-widget-wrapper --> 
+            </div><!--end widget-span --> 
+            <div class="span4 widget-span widget-type-cell right-column" style="" data-widget-type="cell" data-x="8" data-w="4"> 
+             <div class="row-fluid-wrapper row-depth-1 row-number-1 "> 
+              <div class="row-fluid "> 
+               <div class="span12 widget-span widget-type-custom_widget " style="" data-widget-type="custom_widget" data-x="0" data-w="12"> 
+                <div id="hs_cos_wrapper_module_1602615381903380" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+                 <ul class="sidebar-menu-wrapper"> 
+                  <li class="sidebar-menu"> <a href="https://www.ansible.com/use-cases?hsLang=en-us"><span class="sidebar-menu-header">Ansible Use Cases</span></a> 
+                   <ul class="sidebar-submenu"> 
+                    <li><a href="https://www.ansible.com/use-cases/provisioning?hsLang=en-us">Provisioning</a></li> 
+                    <li><a href="https://www.ansible.com/use-cases/configuration-management?hsLang=en-us">Configuration Management</a></li> 
+                    <li><a href="https://www.ansible.com/use-cases/application-deployment?hsLang=en-us">App Deployment</a></li> 
+                    <li><a href="https://www.ansible.com/use-cases/continuous-delivery?hsLang=en-us">Continuous Delivery</a></li> 
+                    <li><a href="https://www.ansible.com/use-cases/security-automation?hsLang=en-us">Security Automation</a></li> 
+                    <li><a href="https://www.ansible.com/integrations/cloud?hsLang=en-us">Cloud Automation</a></li> 
+                    <li><a href="https://www.ansible.com/use-cases/orchestration?hsLang=en-us">Orchestration</a></li> 
+                    <li><a href="https://www.ansible.com/use-cases/endpoint-protection?hsLang=en-us">Endpoint Protection</a></li> 
+                   </ul> </li> 
+                  <li class="sidebar-menu"> <a href="https://www.ansible.com/integrations?hsLang=en-us"><span class="sidebar-menu-header">Ansible Integrations</span></a> 
+                   <ul class="sidebar-submenu"> 
+                    <li class="sidebar-box"> <a href="https://www.ansible.com/integrations/infrastructure">Infrastructure</a> 
+                     <ul> 
+                      <li><a href="https://www.ansible.com/integrations/infrastructure/ibm-power-systems?hsLang=en-us">IBM Power Systems</a></li> 
+                      <li><a href="https://www.ansible.com/integrations/infrastructure/ibm-storage?hsLang=en-us">IBM FlashSystem Storage</a></li> 
+                      <li><a href="https://www.ansible.com/integrations/infrastructure/ibm-storage?hsLang=en-us">IBM Spectrum Virtualize</a></li> 
+                      <li><a href="https://www.ansible.com/integrations/infrastructure/ibm-zos?hsLang=en-us">IBM z/OS</a></li> 
+                      <li><a href="https://www.ansible.com/integrations/infrastructure/hpe?hsLang=en-us">HPE</a></li> 
+                      <li><a href="https://www.ansible.com/integrations/infrastructure/infinidat?hsLang=en-us">Infinidat</a></li> 
+                      <li><a href="https://www.ansible.com/integrations/infrastructure/netapp?hsLang=en-us">NetApp</a></li> 
+                      <li><a href="https://www.ansible.com/integrations/infrastructure/pure-storage?hsLang=en-us">Pure Storage</a></li> 
+                      <li><a href="https://www.ansible.com/integrations/infrastructure/red-hat?hsLang=en-us">Red Hat</a></li> 
+                      <li><a href="https://www.ansible.com/integrations/it-service-management/servicenow?hsLang=en-us">ServiceNow</a></li> 
+                      <li><a href="https://www.ansible.com/integrations/infrastructure/stacki?hsLang=en-us">Stacki</a></li> 
+                      <li><a href="https://www.ansible.com/integrations/infrastructure/vmware?hsLang=en-us">VMware</a></li> 
+                      <li><a href="https://www.ansible.com/integrations/infrastructure/windows?hsLang=en-us">Windows</a></li> 
+                     </ul> </li> 
+                    <li class="sidebar-box"> <a href="https://www.ansible.com/integrations/networks?hsLang=en-us">Networks</a> 
+                     <ul> 
+                      <li><a href="https://www.ansible.com/integrations/networks/a10?hsLang=en-us">A10 Networks</a></li> 
+                      <li><a href="https://www.ansible.com/integrations/networks/arista?hsLang=en-us">Arista</a></li> 
+                      <li><a href="https://www.ansible.com/integrations/networks/aruba?hsLang=en-us">Aruba</a></li> 
+                      <li><a href="https://www.ansible.com/integrations/networks/avi?hsLang=en-us">Avi Networks</a></li> 
+                      <li><a href="https://www.ansible.com/integrations/networks/cisco?hsLang=en-us">Cisco</a></li> 
+                      <li><a href="https://www.ansible.com/integrations/networks/citrixadc?hsLang=en-us">Citrix ADC</a></li> 
+                      <li><a href="https://www.ansible.com/integrations/networks/culumus?hsLang=en-us">Cumulus</a></li> 
+                      <li><a href="https://www.ansible.com/integrations/networks/dell?hsLang=en-us">Dell Technologies</a></li> 
+                      <li><a href="https://www.ansible.com/integrations/networks/extreme-networks?hsLang=en-us">Extreme Networks </a></li> 
+                      <li><a href="https://www.ansible.com/integrations/networks/f5?hsLang=en-us">F5</a></li> 
+                      <li><a href="https://www.ansible.com/integrations/networks/huawei?hsLang=en-us">Huawei</a></li> 
+                      <li><a href="https://www.ansible.com/integrations/networks/infoblox?hsLang=en-us">Infoblox</a></li> 
+                      <li><a href="https://www.ansible.com/integrations/networks/juniper?hsLang=en-us">Juniper</a></li> 
+                      <li><a href="https://www.ansible.com/integrations/networks/nokia?hsLang=en-us">Nokia</a></li> 
+                      <li><a href="https://www.ansible.com/integrations/networks/mellanox?hsLang=en-us">Mellanox</a></li> 
+                      <li><a href="https://www.ansible.com/integrations/networks/lenovo?hsLang=en-us">Lenovo</a></li> 
+                      <li><a href="https://www.ansible.com/integrations/networks/palo-alto?hsLang=en-us">Palo Alto Networks</a></li> 
+                      <li><a href="https://www.ansible.com/integrations/networks/pluribus?hsLang=en-us">Pluribus</a></li> 
+                     </ul> </li> 
+                    <li class="sidebar-box"> <a href="https://www.ansible.com/integrations/containers?hsLang=en-us">Containers</a> 
+                     <ul> 
+                      <li><a href="https://www.ansible.com/integrations/containers/operators?hsLang=en-us">Operators</a></li> 
+                     </ul> </li> 
+                    <li class="sidebar-box"> <a href="https://www.ansible.com/integrations/cloud?hsLang=en-us">Cloud</a> 
+                     <ul> 
+                      <li><a href="https://www.ansible.com/integrations/cloud/amazon-web-services?hsLang=en-us">Amazon Web Services</a></li> 
+                      <li><a href="https://www.ansible.com/integrations/cloud/google-cloud-platform?hsLang=en-us">Google Cloud Platform</a></li> 
+                      <li><a href="https://www.ansible.com/integrations/cloud/openstack?hsLang=en-us">OpenStack</a></li> 
+                      <li><a href="https://www.ansible.com/integrations/cloud/microsoft-azure?hsLang=en-us">Microsoft Azure</a></li> 
+                     </ul> </li> 
+                    <li class="sidebar-box"> <a href="https://www.ansible.com/integrations/devops-tools?hsLang=en-us">DevOps Tools</a> 
+                     <ul> 
+                      <li><a href="https://www.ansible.com/integrations/devops-tools/atlassian?hsLang=en-us">Atlassian</a></li> 
+                      <li><a href="https://www.ansible.com/integrations/devops-tools/datadog?hsLang=en-us">Datadog</a></li> 
+                      <li><a href="https://www.ansible.com/integrations/devops-tools/chocolatey?hsLang=en-us">Chocolatey</a></li> 
+                      <li><a href="https://www.ansible.com/integrations/devops-tools/sensu?hsLang=en-us">Sensu</a></li> 
+                      <li><a href="https://www.ansible.com/integrations/devops-tools/splunk?hsLang=en-us">Splunk</a></li> 
+                      <li><a href="https://www.ansible.com/integrations/devops-tools/cyberark?hsLang=en-us">CyberArk</a></li> 
+                      <li><a href="https://www.ansible.com/integrations/devops-tools/dynatrace?hsLang=en-us">Dynatrace</a></li> 
+                     </ul> </li> 
+                    <li class="sidebar-box"> <a href="https://www.ansible.com/integrations/security?hsLang=en-us">Security</a> 
+                     <ul> 
+                      <li><a href="https://www.ansible.com/integrations/security/cisco-asa?hsLang=en-us">Cisco ASA</a></li> 
+                      <li><a href="https://www.ansible.com/integrations/security/checkpoint?hsLang=en-us">Check Point</a></li> 
+                      <li><a href="https://www.ansible.com/integrations/devops-tools/cyberark?hsLang=en-us">CyberArk</a></li> 
+                      <li><a href="https://www.ansible.com/integrations/security/fortinet?hsLang=en-us">Fortinet</a></li> 
+                      <li><a href="https://www.ansible.com/integrations/security/ibm-qradar?hsLang=en-us">IBM Security</a></li> 
+                      <li><a href="https://www.ansible.com/integrations/networks/palo-alto?hsLang=en-us">Palo Alto</a></li> 
+                      <li><a href="https://www.ansible.com/integrations/security/splunk?hsLang=en-us">Splunk</a></li> 
+                     </ul> </li> 
+                   </ul> </li> 
+                 </ul>
+                </div> 
+               </div><!--end widget-span --> 
+              </div><!--end row--> 
+             </div><!--end row-wrapper --> 
+             <div class="row-fluid-wrapper row-depth-1 row-number-2 "> 
+              <div class="row-fluid "> 
+               <div class="span12 widget-span widget-type-custom_widget " style="" data-widget-type="custom_widget" data-x="0" data-w="12"> 
+                <div id="hs_cos_wrapper_module_1511549432576197" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+                 <div class="gray-module"> 
+                  <p class="mb-3"><img src="https://www.ansible.com/hubfs/Logo-Red_Hat-Ansible_Automation_Platform-A-Standard.svg" alt="Red Hat Ansible Network Automation logo" class="img-fluid" width="230"></p> 
+                  <h3>Extend the power of Ansible to your entire team</h3> 
+                  <p><a class="btn btn-primary" href="https://www.redhat.com/en/technologies/management/ansible/try-it">Try it free</a></p> 
+                 </div>
+                </div> 
+               </div><!--end widget-span --> 
+              </div><!--end row--> 
+             </div><!--end row-wrapper --> 
+            </div><!--end widget-span --> 
+           </div><!--end row--> 
+          </div><!--end row-wrapper --> 
+         </div><!--end widget-span --> 
+        </div><!--end row--> 
+       </div><!--end row-wrapper --> 
+      </div><!--end widget-span --> 
+     </div><!--end row--> 
+    </div><!--end row-wrapper --> 
+    <div class="row-fluid-wrapper row-depth-1 row-number-3 "> 
+     <div class="row-fluid "> 
+      <div class="span12 widget-span widget-type-cell networks-resources-section-wrapper" style="background: #e7e7e7;" data-widget-type="cell" data-x="0" data-w="12"> 
+       <div class="row-fluid-wrapper row-depth-1 row-number-4 "> 
+        <div class="row-fluid "> 
+         <div class="span12 widget-span widget-type-cell inner-wrapper responsive-full" style="" data-widget-type="cell" data-x="0" data-w="12"> 
+          <div class="row-fluid-wrapper row-depth-1 row-number-5 "> 
+           <div class="row-fluid "> 
+            <div class="span12 widget-span widget-type-space " style="" data-widget-type="space" data-x="0" data-w="12"> 
+             <div class="cell-wrapper layout-widget-wrapper"> <span id="hs_cos_wrapper_module_14551564410662440" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_space" style="" data-hs-cos-general-type="widget" data-hs-cos-type="space"></span>
+             </div><!--end layout-widget-wrapper --> 
+            </div><!--end widget-span --> 
+           </div><!--end row--> 
+          </div><!--end row-wrapper --> 
+          <div class="row-fluid-wrapper row-depth-1 row-number-6 "> 
+           <div class="row-fluid "> 
+            <div class="span12 widget-span widget-type-rich_text " style="" data-widget-type="rich_text" data-x="0" data-w="12"> 
+             <div class="cell-wrapper layout-widget-wrapper"> <span id="hs_cos_wrapper_module_14551547031714667" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text"><h3><strong>RELATED RESOURCES</strong></h3></span> 
+             </div><!--end layout-widget-wrapper --> 
+            </div><!--end widget-span --> 
+           </div><!--end row--> 
+          </div><!--end row-wrapper --> 
+          <div class="row-fluid-wrapper row-depth-1 row-number-7 "> 
+           <div class="row-fluid "> 
+            <div class="span12 widget-span widget-type-widget_container " style="" data-widget-type="widget_container" data-x="0" data-w="12"> <span id="hs_cos_wrapper_module_14580205692687437" class="hs_cos_wrapper hs_cos_wrapper_widget_container hs_cos_wrapper_type_widget_container" style="" data-hs-cos-general-type="widget_container" data-hs-cos-type="widget_container">
+              <div id="hs_cos_wrapper_widget_4210801335" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_custom_widget" style="" data-hs-cos-general-type="widget" data-hs-cos-type="custom_widget"> 
+               <div class="err-wrapper"> 
+                <div class="sean-aws-square"> 
+                 <div class="err-description-wrapper"> 
+                  <div class="err-title"> 
+                   <h3 class="underline-heading">Blog Post</h3> 
+                  </div> 
+                  <div class="err-description"> 
+                   <p><strong>Ansible: Being the Glue So You Don't Have To</strong><br>by Bill Nottingham, Director of Product</p> 
+                   <p><a href="https://www.ansible.com/blog/ansible-it-infrastructure?hsLang=en-us">Read More</a></p> 
+                  </div> 
+                 </div> 
+                 <div class="clear:both !important;"></div> 
+                </div> 
+               </div> 
+              </div> 
+              <div id="hs_cos_wrapper_widget_1460773728264" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_custom_widget" style="" data-hs-cos-general-type="widget" data-hs-cos-type="custom_widget"> 
+               <div class="err-wrapper"> 
+                <div class="sean-aws-square"> 
+                 <div class="err-has-thumbnail"> 
+                  <div class="err-thumbnail "> <a class="err-resource-cta" href="https://www.ansible.com/blog/ansible-it-automation-glue?hsLang=en-us"><img src="//www.ansible.com/hs-fs/hubfs/2016_Images/Overview/ansible-glue-300.png?width=300&amp;height=200&amp;name=ansible-glue-300.png" width="300" height="200" alt="Ansible as IT automation glue" srcset="//www.ansible.com/hs-fs/hubfs/2016_Images/Overview/ansible-glue-300.png?width=150&amp;height=100&amp;name=ansible-glue-300.png 150w, //www.ansible.com/hs-fs/hubfs/2016_Images/Overview/ansible-glue-300.png?width=300&amp;height=200&amp;name=ansible-glue-300.png 300w, //www.ansible.com/hs-fs/hubfs/2016_Images/Overview/ansible-glue-300.png?width=450&amp;height=300&amp;name=ansible-glue-300.png 450w, //www.ansible.com/hs-fs/hubfs/2016_Images/Overview/ansible-glue-300.png?width=600&amp;height=400&amp;name=ansible-glue-300.png 600w, //www.ansible.com/hs-fs/hubfs/2016_Images/Overview/ansible-glue-300.png?width=750&amp;height=500&amp;name=ansible-glue-300.png 750w, //www.ansible.com/hs-fs/hubfs/2016_Images/Overview/ansible-glue-300.png?width=900&amp;height=600&amp;name=ansible-glue-300.png 900w" sizes="(max-width: 300px) 100vw, 300px"></a> 
+                  </div> 
+                  <div class="err-description-wrapper"> 
+                   <div class="err-title"> 
+                    <h3 class="underline-heading">Blog Post</h3> 
+                   </div> 
+                   <div class="err-description"> 
+                    <p><strong>Ansible as IT Automation&nbsp;Glue</strong><br>by Mark Phillips, Product&nbsp;Manager</p> 
+                    <p><a href="//www.ansible.com/blog/ansible-automation-glue?hsLang=en-us">Read More</a></p> 
+                   </div> 
+                  </div> 
+                  <div class="clear:both !important;"></div> 
+                 </div> 
+                </div> 
+               </div> 
+              </div> 
+              <div id="hs_cos_wrapper_widget_1484256947204" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_custom_widget" style="" data-hs-cos-general-type="widget" data-hs-cos-type="custom_widget"> 
+               <div class="err-wrapper"> 
+                <div class="sean-aws-square"> 
+                 <div class="err-has-thumbnail"> 
+                  <div class="err-thumbnail "> <a class="err-resource-cta" href="https://www.ansible.com/control-with-ansible-tower?hsLang=en-us"><img src="//www.ansible.com/hs-fs/hubfs/2016_Images/Resources/Whitepaper-Tower-Control-Thumb.png?width=300&amp;height=200&amp;name=Whitepaper-Tower-Control-Thumb.png" width="300" height="200" alt="Whitepaper-Control-with-Red-Hat-Ansible-Tower" srcset="//www.ansible.com/hs-fs/hubfs/2016_Images/Resources/Whitepaper-Tower-Control-Thumb.png?width=150&amp;height=100&amp;name=Whitepaper-Tower-Control-Thumb.png 150w, //www.ansible.com/hs-fs/hubfs/2016_Images/Resources/Whitepaper-Tower-Control-Thumb.png?width=300&amp;height=200&amp;name=Whitepaper-Tower-Control-Thumb.png 300w, //www.ansible.com/hs-fs/hubfs/2016_Images/Resources/Whitepaper-Tower-Control-Thumb.png?width=450&amp;height=300&amp;name=Whitepaper-Tower-Control-Thumb.png 450w, //www.ansible.com/hs-fs/hubfs/2016_Images/Resources/Whitepaper-Tower-Control-Thumb.png?width=600&amp;height=400&amp;name=Whitepaper-Tower-Control-Thumb.png 600w, //www.ansible.com/hs-fs/hubfs/2016_Images/Resources/Whitepaper-Tower-Control-Thumb.png?width=750&amp;height=500&amp;name=Whitepaper-Tower-Control-Thumb.png 750w, //www.ansible.com/hs-fs/hubfs/2016_Images/Resources/Whitepaper-Tower-Control-Thumb.png?width=900&amp;height=600&amp;name=Whitepaper-Tower-Control-Thumb.png 900w" sizes="(max-width: 300px) 100vw, 300px"></a> 
+                  </div> 
+                  <div class="err-description-wrapper"> 
+                   <div class="err-title"> 
+                    <h3 class="underline-heading">Whitepaper</h3> 
+                   </div> 
+                   <div class="err-description"> 
+                    <p><strong>Control with Red Hat Automation controller</strong></p> 
+                    <p><a href="https://www.ansible.com/control-with-ansible-tower?hsLang=en-us">Download Whitepaper</a></p> 
+                   </div> 
+                  </div> 
+                  <div class="clear:both !important;"></div> 
+                 </div> 
+                </div> 
+               </div> 
+              </div> 
+              <div id="hs_cos_wrapper_widget_1599231360802" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_custom_widget" style="" data-hs-cos-general-type="widget" data-hs-cos-type="custom_widget"> 
+               <div class="err-wrapper"> 
+                <div class="sean-aws-square"> 
+                 <div class="err-description-wrapper"> 
+                  <div class="err-title"> 
+                   <h3 class="underline-heading">EBOOK</h3> 
+                  </div> 
+                  <div class="err-description"> 
+                   <p><strong>Automate Infrastructure Workflows</strong></p> 
+                   <p><a href="https://www.redhat.com/en/resources/infrastructure-automation-ebook" rel=" noopener">Download</a></p> 
+                  </div> 
+                 </div> 
+                 <div class="clear:both !important;"></div> 
+                </div> 
+               </div> 
+              </div></span> 
+            </div><!--end widget-span --> 
+           </div><!--end row--> 
+          </div><!--end row-wrapper --> 
+          <div class="row-fluid-wrapper row-depth-1 row-number-8 "> 
+           <div class="row-fluid "> 
+            <div class="span12 widget-span widget-type-space " style="" data-widget-type="space" data-x="0" data-w="12"> 
+             <div class="cell-wrapper layout-widget-wrapper"> <span id="hs_cos_wrapper_module_145515865872113624" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_space" style="" data-hs-cos-general-type="widget" data-hs-cos-type="space"></span>
+             </div><!--end layout-widget-wrapper --> 
+            </div><!--end widget-span --> 
+           </div><!--end row--> 
+          </div><!--end row-wrapper --> 
+         </div><!--end widget-span --> 
+        </div><!--end row--> 
+       </div><!--end row-wrapper --> 
+      </div><!--end widget-span --> 
+     </div><!--end row--> 
+    </div><!--end row-wrapper --> 
+   </div><!--end body --> 
+  </div><!--end body wrapper --> 
+  <div class="footer-container-wrapper"> 
+   <div class="footer-container container-fluid"> 
+    <div class="row-fluid-wrapper row-depth-1 row-number-1 "> 
+     <div class="row-fluid "> 
+      <div class="span12 widget-span widget-type-global_group " style="" data-widget-type="global_group" data-x="0" data-w="12"> 
+       <div class="" data-global-widget-path="generated_global_groups/4192643515.html">
+        <div class="row-fluid-wrapper row-depth-1 row-number-1 "> 
+         <div class="row-fluid "> 
+          <div class="span12 widget-span widget-type-custom_widget " style="" data-widget-type="custom_widget" data-x="0" data-w="12"> 
+           <div id="hs_cos_wrapper_module_153799158694799" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+            <!-- legacy BS3 --> 
+            <footer id="ans-footer"> 
+             <div class="container"> 
+              <div class="row d-flex"> 
+               <div class="nav-extended col-sm-6 col-md-8 py-5"> 
+                <div class="row d-flex flex-wrap"> 
+                 <div class="col-xs-12 col-md-3"> 
+                  <h6 data-toggle="collapse" data-target="#quick-nav">Quick links</h6> 
+                  <div id="quick-nav" class="collapse"> 
+                   <ul class="nav nav-stacked"> 
+                    <li><a href="https://www.ansible.com/it-automation?hsLang=en-us">Why Ansible?</a></li> 
+                    <li><a href="https://www.ansible.com/how-ansible-works?hsLang=en-us">How Ansible Works</a></li> 
+                    <li><a href="https://www.ansible.com/devops?hsLang=en-us">Ansible for DevOps</a></li> 
+                    <li><a href="https://www.ansible.com/networking?hsLang=en-us">Network Automation</a></li> 
+                    <li><a href="https://access.redhat.com/products/ansible-tower-red-hat/">Ansible Support</a></li> 
+                    <li><a href="https://www.ansible.com/contact-us?hsLang=en-us">Contact Us</a></li> 
+                   </ul> 
+                  </div> 
+                 </div> 
+                 <div class="col-xs-12 col-md-3"> 
+                  <h6 data-toggle="collapse" data-target="#product-nav">Products</h6> 
+                  <div id="product-nav" class="collapse"> 
+                   <ul class="nav nav-stacked"> 
+                    <li><a href="https://www.redhat.com/en/technologies/management/ansible/try-it">Free product trial</a></li> 
+                    <li><a href="https://www.ansible.com/products/automation-platform?hsLang=en-us">Red Hat Ansible Automation Platform</a></li> 
+                    <li><a href="https://www.ansible.com/products/network-automation?hsLang=en-us">Network Automation</a></li> 
+                    <li><a href="https://www.ansible.com/training-certification?hsLang=en-us">Training &amp; Certification</a></li> 
+                    <li><a href="https://www.ansible.com/consulting?hsLang=en-us">Consulting for Ansible</a></li> 
+                   </ul> 
+                  </div> 
+                 </div> 
+                 <div class="col-xs-12 col-md-3"> 
+                  <h6 data-toggle="collapse" data-target="#usecases-nav">Use Cases</h6> 
+                  <div id="usecases-nav" class="collapse"> 
+                   <ul class="nav nav-stacked"> 
+                    <li><a href="https://www.ansible.com/provisioning?hsLang=en-us">Provisioning</a></li> 
+                    <li><a href="https://www.ansible.com/configuration-management?hsLang=en-us">Config Management</a></li> 
+                    <li><a href="https://www.ansible.com/application-deployment?hsLang=en-us">App Deployment</a></li> 
+                    <li><a href="https://www.ansible.com/continuous-delivery?hsLang=en-us">Continuous Delivery</a></li> 
+                    <li><a href="https://www.ansible.com/security-and-compliance?hsLang=en-us">Security &amp; Compliance</a></li> 
+                    <li><a href="https://www.ansible.com/orchestration?hsLang=en-us">Orchestration</a></li> 
+                   </ul> 
+                  </div> 
+                 </div> 
+                 <div class="col-xs-12 col-md-3"> 
+                  <h6 data-toggle="collapse" data-target="#integrations-nav">Integrations</h6> 
+                  <div id="integrations-nav" class="collapse"> 
+                   <ul class="nav nav-stacked"> 
+                    <li><a href="//www.ansible.com/infrastructure?hsLang=en-us">Infrastructure</a></li> 
+                    <li><a href="//www.ansible.com/network-automation?hsLang=en-us">Networks</a></li> 
+                    <li><a href="//www.ansible.com/containers?hsLang=en-us">Containers</a></li> 
+                    <li><a href="//www.ansible.com/cloud?hsLang=en-us">Cloud</a></li> 
+                    <li><a href="//www.ansible.com/devops-tools?hsLang=en-us">DevOps Tools</a></li> 
+                   </ul> 
+                  </div> 
+                 </div> 
+                 <div class="col-xs-12 col-md-3 hidden-xs">
+                   &nbsp; 
+                 </div> 
+                 <div class="col-xs-12 col-md-3"> 
+                  <h6 data-toggle="collapse" data-target="#support-nav">Resources</h6> 
+                  <div id="support-nav" class="collapse"> 
+                   <ul class="nav nav-stacked"> 
+                    <li><a href="https://www.ansible.com/get-started?hsLang=en-us">Quick Start Guide</a></li> 
+                    <li><a href="https://www.ansible.com/resources/videos?hsLang=en-us">Videos</a></li> 
+                    <li><a href="https://www.ansible.com/resources/webinars-training?hsLang=en-us">Webinars &amp; Training</a></li> 
+                    <li><a href="https://www.ansible.com/resources/ebooks?hsLang=en-us">E-books</a></li> 
+                    <li><a href="https://www.ansible.com/resources/whitepapers?hsLang=en-us">Whitepapers</a></li> 
+                    <li><a href="https://www.ansible.com/resources/case-studies?hsLang=en-us">Case Studies</a></li> 
+                    <li><a href="https://www.ansible.com/partners?hsLang=en-us">Partners</a></li> 
+                   </ul> 
+                  </div> 
+                 </div> 
+                 <div class="col-xs-12 col-md-3"> 
+                  <h6 data-toggle="collapse" data-target="#community-nav">Community</h6> 
+                  <div id="community-nav" class="collapse"> 
+                   <ul class="nav nav-stacked"> 
+                    <li><a href="https://www.ansible.com/events?hsLang=en-us">Upcoming Events</a></li> 
+                    <li><a href="https://www.ansible.com/ansiblefest?hsLang=en-us">AnsibleFest</a></li> 
+                    <li><a href="http://ansible.meetup.com" target="_blank">Ansible on Meetup</a></li> 
+                    <li><a href="https://github.com/ansible/ansible" target="_blank">Ansible on GitHub</a></li> 
+                    <li><a href="https://github.com/ansible/awx" target="_blank">AWX on GitHub</a></li> 
+                   </ul> 
+                  </div> 
+                 </div> 
+                 <div class="col-xs-12 col-md-3"> 
+                  <h6 data-toggle="collapse" data-target="#related-nav">Related sites</h6> 
+                  <div id="related-nav" class="collapse"> 
+                   <ul class="nav nav-stacked"> 
+                    <li><a href="https://docs.ansible.com/">Ansible Docs</a></li> 
+                    <li><a href="https://galaxy.ansible.com/">Ansible Galaxy</a></li> 
+                    <li><a href="https://www.ansible.com/blog?hsLang=en-us">Ansible Blog</a></li> 
+                   </ul> 
+                  </div> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="nav-about col-sm-6 col-md-4 pt-5 px-4 bg-gray-dark"> 
+                <h5>Red Hat Ansible</h5> 
+                <p class="mb-4">Ansible is an open source community project sponsored by Red Hat, it's the simplest way to automate IT. Ansible is the only automation language that can be used across entire IT teams from systems and network administrators to developers and managers.</p> 
+                <ul class="nav nav-stacked"> 
+                 <li><a href="https://www.ansible.com/about?hsLang=en-us">About Us</a></li> 
+                 <li><a href="https://www.ansible.com/about?hsLang=en-us">Our Story</a></li> 
+                 <li><a href="https://www.ansible.com/press-center?hsLang=en-us">Press Center</a></li> 
+                 <li><a href="https://www.redhat.com/en/jobs">Careers</a></li> 
+                </ul> 
+                <ul class="nav social"> 
+                 <li><a href="https://twitter.com/ansible" target="_blank"><i class="fa fa-twitter"></i></a></li> 
+                 <li><a href="https://www.facebook.com/ansibleautomation" target="_blank"><i class="fa fa-facebook"></i></a></li> 
+                 <li><a href="https://www.linkedin.com/company/3545/" target="_blank"><i class="fa fa-linkedin"></i></a></li> 
+                 <li><a href="https://github.com/ansible/ansible" target="_blank"><i class="fa fa-github"></i></a></li> 
+                </ul> 
+               </div> 
+              </div> 
+             </div> 
+            </footer> 
+            <footer id="rh"> 
+             <div class="container"> 
+              <div class="row"> 
+               <div class="col-sm-3 col-lg-2"> <a href="https://www.redhat.com"><img src="https://www.ansible.com/hubfs/Images/logos/redhat_logo_white-text.svg" class="logo img-responsive" alt="Red Hat" width="140"></a> 
+               </div> 
+               <div class="col-sm-7 col-lg-9"> 
+                <div class="row"> 
+                 <div class="col-12 col-lg-3"> 
+                  <p>Copyright © 2020 <span class="text-nowrap">Red Hat, Inc.</span></p> 
+                 </div> 
+                 <div class="col-12 col-lg-9"> 
+                  <nav class="nav"> <a href="https://www.redhat.com/en/about/privacy-policy">Privacy statement</a> <a href="https://www.ansible.com/security?hsLang=en-us">Security disclosure</a> <a href="https://www.redhat.com/en/about/all-policies-guidelines">All policies and guidelines</a> <span id="teconsent" style="line-height: 1.1;"></span> 
+                  </nav> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="col-sm-2 col-lg-1" style="padding-right: 0px;"> <a href="https://www.redhat.com/summit" style="float:right;"><img src="https://www.ansible.com/hubfs/images/Logo-Red_Hat-Summit-A-Standard-RGB-02.svg" alt="Red Hat Summit" width="72"></a> 
+               </div> 
+              </div> 
+             </div> 
+            </footer>
+           </div> 
+          </div><!--end widget-span --> 
+         </div><!--end row--> 
+        </div><!--end row-wrapper --> 
+       </div> 
+      </div><!--end widget-span --> 
+     </div><!--end row--> 
+    </div><!--end row-wrapper --> 
+   </div><!--end footer --> 
+  </div><!--end footer wrapper --> 
+  <script>
+(function () {
+    window.addEventListener('load', function () {
+        setTimeout(function () {
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/_hcms/perf', true /*async*/);
+            xhr.setRequestHeader("Content-type", "application/json");
+            xhr.onreadystatechange = function () {
+                // do nothing.
+            };
+            var connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+            function populateNetworkInfo(name, connection, info) {
+                if (name in connection) {
+                    info[name] = connection[name];
+                }
+            }
+            var networkInfo = {};
+            if (connection) {
+                ['type', 'effectiveType', 'downlink', 'rtt'].forEach(function(name) {
+                    populateNetworkInfo(name, connection, networkInfo);
+                });
+            }
+            var perfData = {
+                url: location.href,
+                portal: 330046,
+                content: 4210801330,
+                group: -1,
+                connection: networkInfo,
+                timing: performance.timing
+            };
+            xhr.send(JSON.stringify(perfData));
+        }, 3000);  // Execute this 3 seconds after onload.
+    });
+})();
+</script> 
+  <script>
+var hsVars = hsVars || {}; hsVars['language'] = 'en-us';
+</script> 
+  <script src="/hs/hsstatic/cos-i18n/static-1.53/bundles/project.js"></script> 
+  <script src="https://www.ansible.com/hs-fs/hub/330046/hub_generated/module_assets/36015799807/1649967495664/module_36015799807_2020_Overview_Sidebar_Nav.min.js"></script> <!-- Start of HubSpot Analytics Code --> 
+  <script type="text/javascript">
+var _hsq = _hsq || [];
+_hsq.push(["setContentType", "standard-page"]);
+_hsq.push(["setCanonicalUrl", "https:\/\/www.ansible.com\/integrations\/infrastructure"]);
+_hsq.push(["setPageId", "4210801330"]);
+_hsq.push(["setContentMetadata", {
+    "contentPageId": 4210801330,
+    "legacyPageId": "4210801330",
+    "contentFolderId": null,
+    "contentGroupId": null,
+    "abTestId": null,
+    "languageVariantId": 4210801330,
+    "languageCode": "en-us",
+    
+}]);
+</script> 
+  <script type="text/javascript" id="hs-script-loader" async defer src="/hs/scriptloader/330046.js"></script> <!-- End of HubSpot Analytics Code --> 
+  <script type="text/javascript">
+var hsVars = {
+    ticks: 1652515597215,
+    page_id: 4210801330,
+    
+    content_group_id: 0,
+    portal_id: 330046,
+    app_hs_base_url: "https://app.hubspot.com",
+    cp_hs_base_url: "https://cp.hubspot.com",
+    language: "en",
+    analytics_page_type: "standard-page",
+    analytics_page_id: "4210801330",
+    category_id: 1,
+    folder_id: 0,
+    is_hubspot_user: false
+}
+</script> 
+  <script defer src="/hs/hsstatic/HubspotToolsMenu/static-1.128/js/index.js"></script> 
+  <div id="consent_blackbar" style="position: fixed;bottom: 0;width: 100%;z-index: 5;padding: 10px;"></div> 
+  <script src="//www.redhat.com/sites/all/libraries/webrh/dist/js/webrh.webcomponents.js"></script> 
+  <script type="text/javascript" src="https://www.ansible.com/hs-fs/hub/330046/hub_generated/template_assets/2773198633/1649780654607/Coded_files/Custom/page/web_page_basic/Twitter-bootstrap3.min.js"></script> 
+  <script src="https://www.ansible.com/hs-fs/hub/330046/hub_generated/template_assets/3083783208/1569741901127/Coded_files/Custom/page/-2015-/2015-main-scripts.js"></script> <!-- Adobe DTM Tracking --> 
+  <script type="text/javascript">
+if (("undefined" !== typeof _satellite) && ("function" === typeof _satellite.pageBottom)) {
+_satellite.pageBottom();
+}
+</script> 
+  <script type="module">
+await import('https://unpkg.com/prismjs@1.28.0/components/prism-yaml.js').then(() => Prism.highlightAll())
+</script> <!-- Generated by the HubSpot Template Builder - template version 1.03 --> 
+ </body>
+</html>

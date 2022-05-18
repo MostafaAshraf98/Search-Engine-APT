@@ -1,0 +1,481 @@
+<!doctype html>
+<html> 
+ <head> 
+  <script type="text/javascript">
+            var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-27880019-2']); _gaq.push(['_trackPageview']);
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script> 
+  <title>pandas - Python Data Analysis Library</title> 
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+  <link rel="shortcut icon" type="image/x-icon" id="favicon-tag" href="/static/img/favicon.ico"> 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous"> 
+  <link rel="stylesheet" href="/static/css/pandas.css"> 
+  <script src="https://kit.fontawesome.com/79e5369384.js" crossorigin="anonymous"></script> 
+ </head> 
+ <body> 
+  <header> 
+   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark"> 
+    <div class="container"> <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-content" aria-controls="nav-content" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button> <a class="navbar-brand" href="/"><img alt="" src="/static/img/pandas_white.svg"></a> 
+     <div class="collapse navbar-collapse" id="nav-content"> 
+      <ul class="navbar-nav ms-auto"> 
+       <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" id="about-us" href="#" role="button" aria-haspopup="true" aria-expanded="false">About us</a> 
+        <div class="dropdown-menu" aria-labelledby="about-us"> <a class="dropdown-item" href="/about/">About pandas</a> <a class="dropdown-item" href="/about/roadmap.html">Project roadmap</a> <a class="dropdown-item" href="/about/team.html">Team</a> <a class="dropdown-item" href="/about/sponsors.html">Sponsors</a> <a class="dropdown-item" href="/about/citing.html">Citing and logo</a> 
+        </div> </li> 
+       <li class="nav-item"> <a class="nav-link" href="/getting_started.html">Getting started</a> </li> 
+       <li class="nav-item"> <a class="nav-link" href="/docs/">Documentation</a> </li> 
+       <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" id="community" href="#" role="button" aria-haspopup="true" aria-expanded="false">Community</a> 
+        <div class="dropdown-menu" aria-labelledby="community"> <a class="dropdown-item" href="/community/blog/">Blog</a> <a class="dropdown-item" href="https://stackoverflow.com/questions/tagged/pandas">Ask a question (StackOverflow)</a> <a class="dropdown-item" href="/community/coc.html">Code of conduct</a> <a class="dropdown-item" href="/community/ecosystem.html">Ecosystem</a> 
+        </div> </li> 
+       <li class="nav-item"> <a class="nav-link" href="/contribute.html">Contribute</a> </li> 
+      </ul> 
+     </div> 
+    </div> 
+   </nav> 
+  </header> 
+  <main role="main"> 
+   <div class="container"> 
+    <div class="card"> 
+     <div class="card-body"> 
+      <h5 class="card-title"><a href="https://jorisvandenbossche.github.io/blog/2022/04/07/pandas-copy-views/" target="_blank">On copies and views: getting rid of the SettingWithCopyWarning</a></h5> 
+      <h6 class="card-subtitle text-muted small mb-4">Source: Joris Van den Bossche - pandas | Author: Joris Van den Bossche | Published: Apr 07, 2022</h6> 
+      <div class="card-text mb-2">
+       Pandas' current behavior on whether indexing returns a view or copy is confusing, even for experienced users. But it doesn’t have to be this way. We can make this aspect of pandas easier to grasp by simplifying the copy/view rules, and at the same time make pandas more memory-efficient. And get rid of the SettingWithCopyWarning.
+      </div> <a class="card-link small" href="https://jorisvandenbossche.github.io/blog/2022/04/07/pandas-copy-views/" target="_blank">Read more</a> 
+     </div> 
+    </div> 
+    <div class="card"> 
+     <div class="card-body"> 
+      <h5 class="card-title"><a href="/community/blog/asv-pandas-grant.html" target="_blank">Write up of the NumFOCUS grant to improve pandas benchmarks and diversity</a></h5> 
+      <h6 class="card-subtitle text-muted small mb-4">Source: pandas blog | Author: pandas team | Published: Apr 01, 2022</h6> 
+      <div class="card-text mb-2">
+        By Lucy Jiménez and Dorothy Kabarozi B. We want to share our experience working on Improvements to the ASV benchmarking framework and diversity efforts sponsored by NumFOCUS to the pandas project. This grant focused on
+      </div> <a class="card-link small" href="/community/blog/asv-pandas-grant.html" target="_blank">Read more</a> 
+     </div> 
+    </div> 
+    <div class="card"> 
+     <div class="card-body"> 
+      <h5 class="card-title"><a href="https://tomaugspurger.github.io/whats-next.html" target="_blank">What's Next?</a></h5> 
+      <h6 class="card-subtitle text-muted small mb-4">Source: datasframe | Author: Tom Augspurger | Published: Nov 11, 2020</h6> 
+      <div class="card-text mb-2">
+       Some personal news: Last Friday was my last day at Anaconda. Next week, I'm joining Microsoft's AI for Earth team. This is a very bittersweet transition. While I loved working at Anaconda and all the great people there, I'm extremely excited about what I'll be working on at Microsoft. Reflections …
+      </div> <a class="card-link small" href="https://tomaugspurger.github.io/whats-next.html" target="_blank">Read more</a> 
+     </div> 
+    </div> 
+    <div class="card"> 
+     <div class="card-body"> 
+      <h5 class="card-title"><a href="https://tomaugspurger.github.io/maintaing-performance.html" target="_blank">Maintaing Performance</a></h5> 
+      <h6 class="card-subtitle text-muted small mb-4">Source: datasframe | Author: Tom Augspurger | Published: Apr 01, 2020</h6> 
+      <div class="card-text mb-2">
+       As pandas' documentation claims: pandas provides high-performance data structures. But how do we verify that the claim is correct? And how do we ensure that it stays correct over many releases. This post describes pandas' current setup for monitoring performance My personal debugging strategy for understanding and fixing performance regressions …
+      </div> <a class="card-link small" href="https://tomaugspurger.github.io/maintaing-performance.html" target="_blank">Read more</a> 
+     </div> 
+    </div> 
+    <div class="card"> 
+     <div class="card-body"> 
+      <h5 class="card-title"><a href="/community/blog/pandas-1.0.html" target="_blank">pandas 1.0</a></h5> 
+      <h6 class="card-subtitle text-muted small mb-4">Source: pandas blog | Author: pandas team | Published: Jan 29, 2020</h6> 
+      <div class="card-text mb-2">
+        Today pandas celebrates its 1.0.0 release. In many ways this is just a normal release with a host of new features, performance improvements, and bug fixes, which are documented in
+      </div> <a class="card-link small" href="/community/blog/pandas-1.0.html" target="_blank">Read more</a> 
+     </div> 
+    </div> 
+    <div class="card"> 
+     <div class="card-body"> 
+      <h5 class="card-title"><a href="https://jorisvandenbossche.github.io/blog/2019/11/30/pandas-consistent-missing-values/" target="_blank">Towards consistent missing value handling in Pandas</a></h5> 
+      <h6 class="card-subtitle text-muted small mb-4">Source: Joris Van den Bossche - pandas | Author: Joris Van den Bossche | Published: Nov 30, 2019</h6> 
+      <div class="card-text mb-2">
+       This blogpost gives some background and motivation for my proposal on better missing value support in pandas, and the changes that have been merged in the development version (to be released in pandas 1.0): a new pd.NA scalar is introduced that can be used consistently across all data types..
+      </div> <a class="card-link small" href="https://jorisvandenbossche.github.io/blog/2019/11/30/pandas-consistent-missing-values/" target="_blank">Read more</a> 
+     </div> 
+    </div> 
+    <div class="card"> 
+     <div class="card-body"> 
+      <h5 class="card-title"><a href="https://numfocus.org/blog/2019-numfocus-awards?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=2019-numfocus-awards" target="_blank">2019 NumFOCUS Awards and New Contributor Recognition</a></h5> 
+      <h6 class="card-subtitle text-muted small mb-4">Source: pandas Archives - NumFOCUS | Author: Admin | Published: Nov 15, 2019</h6> 
+      <div class="card-text mb-2">
+       The post 2019 NumFOCUS Awards and New Contributor Recognition appeared first on NumFOCUS.
+      </div> <a class="card-link small" href="https://numfocus.org/blog/2019-numfocus-awards?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=2019-numfocus-awards" target="_blank">Read more</a> 
+     </div> 
+    </div> 
+    <div class="card"> 
+     <div class="card-body"> 
+      <h5 class="card-title"><a href="https://numfocus.org/blog/chan-zuckerberg-initiative-funds-numfocus-projects?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=chan-zuckerberg-initiative-funds-numfocus-projects" target="_blank">Chan Zuckerberg Initiative Funds Maintenance of NumFOCUS Projects</a></h5> 
+      <h6 class="card-subtitle text-muted small mb-4">Source: pandas Archives - NumFOCUS | Author: Admin | Published: Nov 14, 2019</h6> 
+      <div class="card-text mb-2">
+       The post Chan Zuckerberg Initiative Funds Maintenance of NumFOCUS Projects appeared first on NumFOCUS.
+      </div> <a class="card-link small" href="https://numfocus.org/blog/chan-zuckerberg-initiative-funds-numfocus-projects?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=chan-zuckerberg-initiative-funds-numfocus-projects" target="_blank">Read more</a> 
+     </div> 
+    </div> 
+    <div class="card"> 
+     <div class="card-body"> 
+      <h5 class="card-title"><a href="https://numfocus.org/blog/highlights-from-the-2019-pandas-hack?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=highlights-from-the-2019-pandas-hack" target="_blank">Highlights From The 2019 Pandas Hack</a></h5> 
+      <h6 class="card-subtitle text-muted small mb-4">Source: pandas Archives - NumFOCUS | Author: nf-admin | Published: Sep 13, 2019</h6> 
+      <div class="card-text mb-2">
+       The post Highlights From The 2019 Pandas Hack appeared first on NumFOCUS.
+      </div> <a class="card-link small" href="https://numfocus.org/blog/highlights-from-the-2019-pandas-hack?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=highlights-from-the-2019-pandas-hack" target="_blank">Read more</a> 
+     </div> 
+    </div> 
+    <div class="card"> 
+     <div class="card-body"> 
+      <h5 class="card-title"><a href="/community/blog/2019-user-survey.html" target="_blank">2019 pandas user survey</a></h5> 
+      <h6 class="card-subtitle text-muted small mb-4">Source: pandas blog | Author: pandas team | Published: Aug 22, 2019</h6> 
+      <div class="card-text mb-2">
+        Pandas recently conducted a user survey to help guide future development. Thanks to everyone who participated! This post presents the high-level results. This analysis and the raw data can be found on
+      </div> <a class="card-link small" href="/community/blog/2019-user-survey.html" target="_blank">Read more</a> 
+     </div> 
+    </div> 
+    <div class="card"> 
+     <div class="card-body"> 
+      <h5 class="card-title"><a href="https://jorisvandenbossche.github.io/blog/2019/08/13/geopandas-extension-array-refactor/" target="_blank">GeoPandas now uses the pandas ExtensionArray interface</a></h5> 
+      <h6 class="card-subtitle text-muted small mb-4">Source: Joris Van den Bossche - pandas | Author: Joris Van den Bossche | Published: Aug 13, 2019</h6> 
+      <div class="card-text mb-2">
+        Short summary: the upcoming 0.6.0 release of GeoPandas will feature a refactor based on the pandas ExtensionArray interface. Although this change should keep the user interface mostly stable, it enables more robust integration with pandas and allows for more upcoming changes in the future. And given the invasive code changes under the hood, testing is very welcome! 
+      </div> <a class="card-link small" href="https://jorisvandenbossche.github.io/blog/2019/08/13/geopandas-extension-array-refactor/" target="_blank">Read more</a> 
+     </div> 
+    </div> 
+    <div class="card"> 
+     <div class="card-body"> 
+      <h5 class="card-title"><a href="https://tomaugspurger.github.io/pandas-binder.html" target="_blank">pandas + binder</a></h5> 
+      <h6 class="card-subtitle text-muted small mb-4">Source: datasframe | Author: Tom Augspurger | Published: Jul 21, 2019</h6> 
+      <div class="card-text mb-2">
+       This post describes the start of a journey to get pandas' documentation running on Binder. The end result is this nice button: For a while now I've been jealous of Dask's examples repository. That's a repository containing a collection of Jupyter notebooks demonstrating Dask in action. It stitches together some …
+      </div> <a class="card-link small" href="https://tomaugspurger.github.io/pandas-binder.html" target="_blank">Read more</a> 
+     </div> 
+    </div> 
+    <div class="card"> 
+     <div class="card-body"> 
+      <h5 class="card-title"><a href="/community/blog/extension-arrays.html" target="_blank">pandas extension arrays</a></h5> 
+      <h6 class="card-subtitle text-muted small mb-4">Source: pandas blog | Author: pandas team | Published: Jan 04, 2019</h6> 
+      <div class="card-text mb-2">
+        Extensibility was a major theme in pandas development over the last couple of releases. This post introduces the pandas extension array interface: the motivation behind it and how it might affect you
+      </div> <a class="card-link small" href="/community/blog/extension-arrays.html" target="_blank">Read more</a> 
+     </div> 
+    </div> 
+    <div class="card"> 
+     <div class="card-body"> 
+      <h5 class="card-title"><a href="https://numfocus.org/blog/inaugural-numfocus-awards-and-new-contributor-recognition?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=inaugural-numfocus-awards-and-new-contributor-recognition" target="_blank">Inaugural NumFOCUS Awards and New Contributor Recognition</a></h5> 
+      <h6 class="card-subtitle text-muted small mb-4">Source: pandas Archives - NumFOCUS | Author: Admin | Published: Sep 27, 2018</h6> 
+      <div class="card-text mb-2">
+       The post Inaugural NumFOCUS Awards and New Contributor Recognition appeared first on NumFOCUS.
+      </div> <a class="card-link small" href="https://numfocus.org/blog/inaugural-numfocus-awards-and-new-contributor-recognition?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=inaugural-numfocus-awards-and-new-contributor-recognition" target="_blank">Read more</a> 
+     </div> 
+    </div> 
+    <div class="card"> 
+     <div class="card-body"> 
+      <h5 class="card-title"><a href="https://tomaugspurger.github.io/sklearn-dask-tabular.html" target="_blank">Tabular Data in Scikit-Learn and Dask-ML</a></h5> 
+      <h6 class="card-subtitle text-muted small mb-4">Source: datasframe | Author: Tom Augspurger | Published: Sep 17, 2018</h6> 
+      <div class="card-text mb-2">
+       Scikit-Learn 0.20.0 will contain some nice new features for working with tabular data. This blogpost will introduce those improvements with a small demo. We'll then see how Dask-ML was able to piggyback on the work done by scikit-learn to offer a version that works well with Dask Arrays …
+      </div> <a class="card-link small" href="https://tomaugspurger.github.io/sklearn-dask-tabular.html" target="_blank">Read more</a> 
+     </div> 
+    </div> 
+    <div class="card"> 
+     <div class="card-body"> 
+      <h5 class="card-title"><a href="https://tomaugspurger.github.io/distributed-tpot.html" target="_blank">Distributed Auto-ML with TPOT with Dask</a></h5> 
+      <h6 class="card-subtitle text-muted small mb-4">Source: datasframe | Author: Tom Augspurger | Published: Aug 30, 2018</h6> 
+      <div class="card-text mb-2">
+       This work is supported by Anaconda Inc. This post describes a recent improvement made to TPOT. TPOT is an automated machine learning library for Python. It does some feature engineering and hyper-parameter optimization for you. TPOT uses genetic algorithms to evaluate which models are performing well and how to choose …
+      </div> <a class="card-link small" href="https://tomaugspurger.github.io/distributed-tpot.html" target="_blank">Read more</a> 
+     </div> 
+    </div> 
+    <div class="card"> 
+     <div class="card-body"> 
+      <h5 class="card-title"><a href="https://tomaugspurger.github.io/pandas-moral-philosophy.html" target="_blank">Moral Philosophy for pandas or: What is .values?</a></h5> 
+      <h6 class="card-subtitle text-muted small mb-4">Source: datasframe | Author: Tom Augspurger | Published: Aug 14, 2018</h6> 
+      <div class="card-text mb-2">
+       The other day, I put up a Twitter poll asking a simple question: What's the type of series.values? Pop Quiz! What are the possible results for the following:&gt;&gt;&gt; type(pandas.Series.values)— Tom Augspurger (@TomAugspurger) August 6, 2018 I was a bit limited for space, so I'll expand on …
+      </div> <a class="card-link small" href="https://tomaugspurger.github.io/pandas-moral-philosophy.html" target="_blank">Read more</a> 
+     </div> 
+    </div> 
+    <div class="card"> 
+     <div class="card-body"> 
+      <h5 class="card-title"><a href="https://tomaugspurger.github.io/modern-8-scaling.html" target="_blank">Modern Pandas (Part 8): Scaling</a></h5> 
+      <h6 class="card-subtitle text-muted small mb-4">Source: datasframe | Author: Tom Augspurger | Published: Apr 23, 2018</h6> 
+      <div class="card-text mb-2">
+        This is part 1 in my series on writing modern idiomatic pandas. Modern Pandas Method Chaining Indexes Fast Pandas Tidy Data Visualization Time Series Scaling As I sit down to write this, the third-most popular pandas question on StackOverflow covers how to use pandas for large datasets. This is in …
+      </div> <a class="card-link small" href="https://tomaugspurger.github.io/modern-8-scaling.html" target="_blank">Read more</a> 
+     </div> 
+    </div> 
+    <div class="card"> 
+     <div class="card-body"> 
+      <h5 class="card-title"><a href="https://numfocus.org/blog/worldwide-pandas-sprint?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=worldwide-pandas-sprint" target="_blank">The Worldwide Pandas Documentation Sprint: A Closer Look</a></h5> 
+      <h6 class="card-subtitle text-muted small mb-4">Source: pandas Archives - NumFOCUS | Author: Admin | Published: Mar 27, 2018</h6> 
+      <div class="card-text mb-2">
+       The post The Worldwide Pandas Documentation Sprint: A Closer Look appeared first on NumFOCUS.
+      </div> <a class="card-link small" href="https://numfocus.org/blog/worldwide-pandas-sprint?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=worldwide-pandas-sprint" target="_blank">Read more</a> 
+     </div> 
+    </div> 
+    <div class="card"> 
+     <div class="card-body"> 
+      <h5 class="card-title"><a href="https://jorisvandenbossche.github.io/blog/2018/03/13/pandas-sprint-activity/" target="_blank">Activity on the pandas github repo during the March 10 documentation sprint</a></h5> 
+      <h6 class="card-subtitle text-muted small mb-4">Source: Joris Van den Bossche - pandas | Author: Joris Van den Bossche | Published: Mar 13, 2018</h6> 
+      <div class="card-text mb-2">
+        Last weekend, Marc Garcia and many others organised a world-wide pandas documentation sprint (https://python-sprints.github.io/pandas/). The goal was to improve the pandas API documentation, and I have to say, it was a great success! 
+      </div> <a class="card-link small" href="https://jorisvandenbossche.github.io/blog/2018/03/13/pandas-sprint-activity/" target="_blank">Read more</a> 
+     </div> 
+    </div> 
+    <div class="card"> 
+     <div class="card-body"> 
+      <h5 class="card-title"><a href="https://tomaugspurger.github.io/dask-ml-041.html" target="_blank">dask-ml 0.4.1 Released</a></h5> 
+      <h6 class="card-subtitle text-muted small mb-4">Source: datasframe | Author: Tom Augspurger | Published: Feb 13, 2018</h6> 
+      <div class="card-text mb-2">
+       This work is supported by Anaconda Inc and the Data Driven Discovery Initiative from the Moore Foundation. dask-ml 0.4.1 was released today with a few enhancements. See the changelog for all the changes from 0.4.0. Conda packages are available on conda-forge $ conda install -c conda-forge dask-ml …
+      </div> <a class="card-link small" href="https://tomaugspurger.github.io/dask-ml-041.html" target="_blank">Read more</a> 
+     </div> 
+    </div> 
+    <div class="card"> 
+     <div class="card-body"> 
+      <h5 class="card-title"><a href="https://tomaugspurger.github.io/pandas-extension-arrays.html" target="_blank">Extension Arrays for Pandas</a></h5> 
+      <h6 class="card-subtitle text-muted small mb-4">Source: datasframe | Author: Tom Augspurger | Published: Feb 12, 2018</h6> 
+      <div class="card-text mb-2">
+       This is a status update on some enhancements for pandas. The goal of the work is to store things that are sufficiently array-like in a pandas DataFrame, even if they aren't a regular NumPy array. Pandas already does this in a few places for some blessed types (like Categorical); we'd …
+      </div> <a class="card-link small" href="https://tomaugspurger.github.io/pandas-extension-arrays.html" target="_blank">Read more</a> 
+     </div> 
+    </div> 
+    <div class="card"> 
+     <div class="card-body"> 
+      <h5 class="card-title"><a href="https://tomaugspurger.github.io/distributed-joblib.html" target="_blank">Easy distributed training with Joblib and dask</a></h5> 
+      <h6 class="card-subtitle text-muted small mb-4">Source: datasframe | Author: Tom Augspurger | Published: Feb 05, 2018</h6> 
+      <div class="card-text mb-2">
+       This work is supported by Anaconda Inc and the Data Driven Discovery Initiative from the Moore Foundation. This past week, I had a chance to visit some of the scikit-learn developers at Inria in Paris. It was a fun and productive week, and I'm thankful to them for hosting me …
+      </div> <a class="card-link small" href="https://tomaugspurger.github.io/distributed-joblib.html" target="_blank">Read more</a> 
+     </div> 
+    </div> 
+    <div class="card"> 
+     <div class="card-body"> 
+      <h5 class="card-title"><a href="https://tomaugspurger.github.io/dask-ml-announce.html" target="_blank">dask-ml</a></h5> 
+      <h6 class="card-subtitle text-muted small mb-4">Source: datasframe | Author: Tom Augspurger | Published: Oct 26, 2017</h6> 
+      <div class="card-text mb-2">
+       Today we released the first version of dask-ml, a library for parallel and distributed machine learning. Read the documentation or install it with pip install dask-ml Packages are currently building for conda-forge, and will be up later today. conda install -c conda-forge dask-ml The Goals dask is, to quote the …
+      </div> <a class="card-link small" href="https://tomaugspurger.github.io/dask-ml-announce.html" target="_blank">Read more</a> 
+     </div> 
+    </div> 
+    <div class="card"> 
+     <div class="card-body"> 
+      <h5 class="card-title"><a href="https://tomaugspurger.github.io/scalable-ml-02.html" target="_blank">Scalable Machine Learning (Part 2): Partial Fit</a></h5> 
+      <h6 class="card-subtitle text-muted small mb-4">Source: datasframe | Author: Tom Augspurger | Published: Sep 15, 2017</h6> 
+      <div class="card-text mb-2">
+       This work is supported by Anaconda, Inc. and the Data Driven Discovery Initiative from the Moore Foundation. This is part two of my series on scalable machine learning. Small Fit, Big Predict Scikit-Learn Partial Fit You can download a notebook of this post here. Scikit-learn supports out-of-core learning (fitting a …
+      </div> <a class="card-link small" href="https://tomaugspurger.github.io/scalable-ml-02.html" target="_blank">Read more</a> 
+     </div> 
+    </div> 
+    <div class="card"> 
+     <div class="card-body"> 
+      <h5 class="card-title"><a href="https://tomaugspurger.github.io/scalable-ml-01.html" target="_blank">Scalable Machine Learning (Part 1)</a></h5> 
+      <h6 class="card-subtitle text-muted small mb-4">Source: datasframe | Author: Tom Augspurger | Published: Sep 11, 2017</h6> 
+      <div class="card-text mb-2">
+       This work is supported by Anaconda Inc. and the Data Driven Discovery Initiative from the Moore Foundation. Anaconda is interested in scaling the scientific python ecosystem. My current focus is on out-of-core, parallel, and distributed machine learning. This series of posts will introduce those concepts, explore what we have available …
+      </div> <a class="card-link small" href="https://tomaugspurger.github.io/scalable-ml-01.html" target="_blank">Read more</a> 
+     </div> 
+    </div> 
+    <div class="card"> 
+     <div class="card-body"> 
+      <h5 class="card-title"><a href="https://tomaugspurger.github.io/introducing-stitch.html" target="_blank">Introducing Stitch</a></h5> 
+      <h6 class="card-subtitle text-muted small mb-4">Source: datasframe | Author: Tom Augspurger | Published: Aug 30, 2016</h6> 
+      <div class="card-text mb-2">
+       Today I released stitch into the wild. If you haven't yet, check out the examples page to see an example of what stitch does, and the Github repo for how to install. I'm using this post to explain why I wrote stitch, and some issues it tries to solve. Why …
+      </div> <a class="card-link small" href="https://tomaugspurger.github.io/introducing-stitch.html" target="_blank">Read more</a> 
+     </div> 
+    </div> 
+    <div class="card"> 
+     <div class="card-body"> 
+      <h5 class="card-title"><a href="https://tomaugspurger.github.io/modern-7-timeseries.html" target="_blank">Modern Pandas (Part 7): Timeseries</a></h5> 
+      <h6 class="card-subtitle text-muted small mb-4">Source: datasframe | Author: Tom Augspurger | Published: May 13, 2016</h6> 
+      <div class="card-text mb-2">
+        This is part 7 in my series on writing modern idiomatic pandas. Modern Pandas Method Chaining Indexes Fast Pandas Tidy Data Visualization Time Series Scaling Timeseries Pandas started out in the financial world, so naturally it has strong timeseries support. The first half of this post will look at pandas' …
+      </div> <a class="card-link small" href="https://tomaugspurger.github.io/modern-7-timeseries.html" target="_blank">Read more</a> 
+     </div> 
+    </div> 
+    <div class="card"> 
+     <div class="card-body"> 
+      <h5 class="card-title"><a href="https://tomaugspurger.github.io/modern-6-visualization.html" target="_blank">Modern Pandas (Part 6): Visualization</a></h5> 
+      <h6 class="card-subtitle text-muted small mb-4">Source: datasframe | Author: Tom Augspurger | Published: Apr 28, 2016</h6> 
+      <div class="card-text mb-2">
+        This is part 6 in my series on writing modern idiomatic pandas. Modern Pandas Method Chaining Indexes Fast Pandas Tidy Data Visualization Time Series Scaling Visualization and Exploratory Analysis A few weeks ago, the R community went through some hand-wringing about plotting packages. For outsiders (like me) the details aren't …
+      </div> <a class="card-link small" href="https://tomaugspurger.github.io/modern-6-visualization.html" target="_blank">Read more</a> 
+     </div> 
+    </div> 
+    <div class="card"> 
+     <div class="card-body"> 
+      <h5 class="card-title"><a href="https://tomaugspurger.github.io/modern-5-tidy.html" target="_blank">Modern Pandas (Part 5): Tidy Data</a></h5> 
+      <h6 class="card-subtitle text-muted small mb-4">Source: datasframe | Author: Tom Augspurger | Published: Apr 22, 2016</h6> 
+      <div class="card-text mb-2">
+        This is part 5 in my series on writing modern idiomatic pandas. Modern Pandas Method Chaining Indexes Fast Pandas Tidy Data Visualization Time Series Scaling Reshaping &amp; Tidy Data Structuring datasets to facilitate analysis (Wickham 2014) So, you've sat down to analyze a new dataset. What do you do first? In …
+      </div> <a class="card-link small" href="https://tomaugspurger.github.io/modern-5-tidy.html" target="_blank">Read more</a> 
+     </div> 
+    </div> 
+    <div class="card"> 
+     <div class="card-body"> 
+      <h5 class="card-title"><a href="https://tomaugspurger.github.io/modern-3-indexes.html" target="_blank">Modern Panadas (Part 3): Indexes</a></h5> 
+      <h6 class="card-subtitle text-muted small mb-4">Source: datasframe | Author: Tom Augspurger | Published: Apr 11, 2016</h6> 
+      <div class="card-text mb-2">
+        This is part 3 in my series on writing modern idiomatic pandas. Modern Pandas Method Chaining Indexes Fast Pandas Tidy Data Visualization Time Series Scaling Indexes can be a difficult concept to grasp at first. I suspect this is partly becuase they're somewhat peculiar to pandas. These aren't like the …
+      </div> <a class="card-link small" href="https://tomaugspurger.github.io/modern-3-indexes.html" target="_blank">Read more</a> 
+     </div> 
+    </div> 
+    <div class="card"> 
+     <div class="card-body"> 
+      <h5 class="card-title"><a href="https://tomaugspurger.github.io/modern-4-performance.html" target="_blank">Modern Pandas (Part 4): Performance</a></h5> 
+      <h6 class="card-subtitle text-muted small mb-4">Source: datasframe | Author: Tom Augspurger | Published: Apr 08, 2016</h6> 
+      <div class="card-text mb-2">
+        This is part 4 in my series on writing modern idiomatic pandas. Modern Pandas Method Chaining Indexes Fast Pandas Tidy Data Visualization Time Series Scaling Wes McKinney, the creator of pandas, is kind of obsessed with performance. From micro-optimizations for element access, to embedding a fast hash table inside pandas …
+      </div> <a class="card-link small" href="https://tomaugspurger.github.io/modern-4-performance.html" target="_blank">Read more</a> 
+     </div> 
+    </div> 
+    <div class="card"> 
+     <div class="card-body"> 
+      <h5 class="card-title"><a href="https://tomaugspurger.github.io/method-chaining.html" target="_blank">Modern Pandas (Part 2): Method Chaining</a></h5> 
+      <h6 class="card-subtitle text-muted small mb-4">Source: datasframe | Author: Tom Augspurger | Published: Apr 04, 2016</h6> 
+      <div class="card-text mb-2">
+        This is part 2 in my series on writing modern idiomatic pandas. Modern Pandas Method Chaining Indexes Fast Pandas Tidy Data Visualization Time Series Scaling Method Chaining Method chaining, where you call methods on an object one after another, is in vogue at the moment. It's always been a style …
+      </div> <a class="card-link small" href="https://tomaugspurger.github.io/method-chaining.html" target="_blank">Read more</a> 
+     </div> 
+    </div> 
+    <div class="card"> 
+     <div class="card-body"> 
+      <h5 class="card-title"><a href="https://tomaugspurger.github.io/modern-1-intro.html" target="_blank">Modern Pandas (Part 1)</a></h5> 
+      <h6 class="card-subtitle text-muted small mb-4">Source: datasframe | Author: Tom Augspurger | Published: Mar 21, 2016</h6> 
+      <div class="card-text mb-2">
+        This is part 1 in my series on writing modern idiomatic pandas. Modern Pandas Method Chaining Indexes Fast Pandas Tidy Data Visualization Time Series Scaling Effective Pandas Introduction This series is about how to make effective use of pandas, a data analysis library for the Python programming language. It's targeted …
+      </div> <a class="card-link small" href="https://tomaugspurger.github.io/modern-1-intro.html" target="_blank">Read more</a> 
+     </div> 
+    </div> 
+    <div class="card"> 
+     <div class="card-body"> 
+      <h5 class="card-title"><a href="https://wesmckinney.com/blog/pandas-and-apache-arrow/" target="_blank">Why pandas users should be excited about Apache Arrow</a></h5> 
+      <h6 class="card-subtitle text-muted small mb-4">Source: Wes McKinney - pandas | Author: Wes McKinney | Published: Feb 22, 2016</h6> 
+      <div class="card-text mb-2">
+       I'm super excited to be involved in the new open source Apache Arrow community initiative. For Python (and R, too!), it will help enable Substantially improved data access speeds Closer to native performance Python extensions for big data systems like Apache Spark New in-memory analytics functionality for nested / JSON-like data There's plenty of places you can learn more about Arrow, but this post is about how it's specifically relevant to pandas users. See, for example: "Python and Hadoop: A State of the Union" "Introducing Apache Arrow: A Fast, Interoperable In-Memory Columnar Data Structure Standard" "Introducing Apache Arrow: Columnar In-Memory Analytics" 
+      </div> <a class="card-link small" href="https://wesmckinney.com/blog/pandas-and-apache-arrow/" target="_blank">Read more</a> 
+     </div> 
+    </div> 
+    <div class="card"> 
+     <div class="card-body"> 
+      <h5 class="card-title"><a href="https://numfocus.org/uncategorized/numfocus-announces-new-fiscally-sponsored-project-pandas?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=numfocus-announces-new-fiscally-sponsored-project-pandas" target="_blank">NumFOCUS Announces New Fiscally Sponsored Project:&nbsp;pandas</a></h5> 
+      <h6 class="card-subtitle text-muted small mb-4">Source: pandas Archives - NumFOCUS | Author: nf-admin | Published: Oct 09, 2015</h6> 
+      <div class="card-text mb-2">
+       by Gina Helfrich NumFOCUS is pleased to announce&nbsp;pandas&nbsp;as our newest fiscally sponsored project. pandas is an open source,&nbsp;BSD-licensed library providing high-performance, easy-to-use data structures and data analysis tools for the Python programming&nbsp;language. pandas enables users to carry out their entire data analysis workflow in Python without having to switch to a more domain-specific language like […] The post NumFOCUS Announces New Fiscally Sponsored Project:&nbsp;pandas appeared first on NumFOCUS.
+      </div> <a class="card-link small" href="https://numfocus.org/uncategorized/numfocus-announces-new-fiscally-sponsored-project-pandas?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=numfocus-announces-new-fiscally-sponsored-project-pandas" target="_blank">Read more</a> 
+     </div> 
+    </div> 
+    <div class="card"> 
+     <div class="card-body"> 
+      <h5 class="card-title"><a href="https://tomaugspurger.github.io/dplry-pandas.html" target="_blank">dplyr and pandas</a></h5> 
+      <h6 class="card-subtitle text-muted small mb-4">Source: datasframe | Author: Tom Augspurger | Published: Oct 16, 2014</h6> 
+      <div class="card-text mb-2">
+       This notebook compares pandas and dplyr. The comparison is just on syntax (verbage), not performance. Whether you're an R user looking to switch to pandas (or the other way around), I hope this guide will help ease the transition. We'll work through the introductory dplyr vignette to analyze some flight …
+      </div> <a class="card-link small" href="https://tomaugspurger.github.io/dplry-pandas.html" target="_blank">Read more</a> 
+     </div> 
+    </div> 
+    <div class="card"> 
+     <div class="card-body"> 
+      <h5 class="card-title"><a href="https://tomaugspurger.github.io/practical-pandas-part-3-exploratory-data-analysis.html" target="_blank">Practical Pandas Part 3 - Exploratory Data Analysis</a></h5> 
+      <h6 class="card-subtitle text-muted small mb-4">Source: datasframe | Author: Tom Augspurger | Published: Sep 16, 2014</h6> 
+      <div class="card-text mb-2">
+       Welcome back. As a reminder: In part 1 we got dataset with my cycling data from last year merged and stored in an HDF5 store In part 2 we did some cleaning and augmented the cycling data with data from http://forecast.io. You can find the full source code …
+      </div> <a class="card-link small" href="https://tomaugspurger.github.io/practical-pandas-part-3-exploratory-data-analysis.html" target="_blank">Read more</a> 
+     </div> 
+    </div> 
+    <div class="card"> 
+     <div class="card-body"> 
+      <h5 class="card-title"><a href="https://tomaugspurger.github.io/practical-pandas-part-2-more-tidying-more-data-and-merging.html" target="_blank">Practical Pandas Part 2 - More Tidying, More Data, and Merging</a></h5> 
+      <h6 class="card-subtitle text-muted small mb-4">Source: datasframe | Author: Tom Augspurger | Published: Sep 04, 2014</h6> 
+      <div class="card-text mb-2">
+       This is Part 2 in the Practical Pandas Series, where I work through a data analysis problem from start to finish. It's a misconception that we can cleanly separate the data analysis pipeline into a linear sequence of steps from data acqusition data tidying exploratory analysis model building production As …
+      </div> <a class="card-link small" href="https://tomaugspurger.github.io/practical-pandas-part-2-more-tidying-more-data-and-merging.html" target="_blank">Read more</a> 
+     </div> 
+    </div> 
+    <div class="card"> 
+     <div class="card-body"> 
+      <h5 class="card-title"><a href="https://tomaugspurger.github.io/practical-pandas-part-1-reading-the-data.html" target="_blank">Practical Pandas Part 1 - Reading the Data</a></h5> 
+      <h6 class="card-subtitle text-muted small mb-4">Source: datasframe | Author: Tom Augspurger | Published: Aug 26, 2014</h6> 
+      <div class="card-text mb-2">
+       This is the first post in a series where I'll show how I use pandas on real-world datasets. For this post, we'll look at data I collected with Cyclemeter on my daily bike ride to and from school last year. I had to manually start and stop the tracking at …
+      </div> <a class="card-link small" href="https://tomaugspurger.github.io/practical-pandas-part-1-reading-the-data.html" target="_blank">Read more</a> 
+     </div> 
+    </div> 
+    <div class="card"> 
+     <div class="card-body"> 
+      <h5 class="card-title"><a href="https://tomaugspurger.github.io/tackling%20the%20cps%20(part%204).html" target="_blank">Using Python to tackle the CPS (Part 4)</a></h5> 
+      <h6 class="card-subtitle text-muted small mb-4">Source: datasframe | Author: Tom Augspurger | Published: May 19, 2014</h6> 
+      <div class="card-text mb-2">
+       Last time, we got to where we'd like to have started: One file per month, with each month laid out the same. As a reminder, the CPS interviews households 8 times over the course of 16 months. They're interviewed for 4 months, take 8 months off, and are interviewed four …
+      </div> <a class="card-link small" href="https://tomaugspurger.github.io/tackling%20the%20cps%20(part%204).html" target="_blank">Read more</a> 
+     </div> 
+    </div> 
+    <div class="card"> 
+     <div class="card-body"> 
+      <h5 class="card-title"><a href="https://tomaugspurger.github.io/tackling%20the%20cps%20(part%203).html" target="_blank">Using Python to tackle the CPS (Part 3)</a></h5> 
+      <h6 class="card-subtitle text-muted small mb-4">Source: datasframe | Author: Tom Augspurger | Published: May 19, 2014</h6> 
+      <div class="card-text mb-2">
+       In part 2 of this series, we set the stage to parse the data files themselves. As a reminder, we have a dictionary that looks like id length start end 0 HRHHID 15 1 15 1 HRMONTH 2 16 17 2 HRYEAR4 4 18 21 3 HURESPLI 2 22 23 …
+      </div> <a class="card-link small" href="https://tomaugspurger.github.io/tackling%20the%20cps%20(part%203).html" target="_blank">Read more</a> 
+     </div> 
+    </div> 
+    <div class="card"> 
+     <div class="card-body"> 
+      <h5 class="card-title"><a href="https://tomaugspurger.github.io/Tidy%20Data%20in%20Action.html" target="_blank">Tidy Data in Action</a></h5> 
+      <h6 class="card-subtitle text-muted small mb-4">Source: datasframe | Author: Tom Augspurger | Published: Mar 27, 2014</h6> 
+      <div class="card-text mb-2">
+       Hadley Whickham wrote a famous paper (for a certain definition of famous) about the importance of tidy data when doing data analysis. I want to talk a bit about that, using an example from a StackOverflow post, with a solution using pandas. The principles of tidy data aren't language specific …
+      </div> <a class="card-link small" href="https://tomaugspurger.github.io/Tidy%20Data%20in%20Action.html" target="_blank">Read more</a> 
+     </div> 
+    </div> 
+    <div class="card"> 
+     <div class="card-body"> 
+      <h5 class="card-title"><a href="https://tomaugspurger.github.io/Organizing%20Papers.html" target="_blank">Organizing Papers</a></h5> 
+      <h6 class="card-subtitle text-muted small mb-4">Source: datasframe | Author: Tom Augspurger | Published: Feb 13, 2014</h6> 
+      <div class="card-text mb-2">
+       As a graduate student, you read a lot of journal articles... a lot. With the material in the articles being as difficult as it is, I didn't want to worry about organizing everything as well. That's why I wrote this script to help (I may have also been procrastinating from …
+      </div> <a class="card-link small" href="https://tomaugspurger.github.io/Organizing%20Papers.html" target="_blank">Read more</a> 
+     </div> 
+    </div> 
+    <div class="card"> 
+     <div class="card-body"> 
+      <h5 class="card-title"><a href="https://tomaugspurger.github.io/tackling%20the%20cps%20(part%202).html" target="_blank">Using Python to tackle the CPS (Part 2)</a></h5> 
+      <h6 class="card-subtitle text-muted small mb-4">Source: datasframe | Author: Tom Augspurger | Published: Feb 04, 2014</h6> 
+      <div class="card-text mb-2">
+       Last time, we used Python to fetch some data from the Current Population Survey. Today, we'll work on parsing the files we just downloaded. We downloaded two types of files last time: CPS monthly tables: a fixed-width format text file with the actual data Data Dictionaries: a text file describing …
+      </div> <a class="card-link small" href="https://tomaugspurger.github.io/tackling%20the%20cps%20(part%202).html" target="_blank">Read more</a> 
+     </div> 
+    </div> 
+    <div class="card"> 
+     <div class="card-body"> 
+      <h5 class="card-title"><a href="https://tomaugspurger.github.io/tackling%20the%20cps.html" target="_blank">Using Python to tackle the CPS</a></h5> 
+      <h6 class="card-subtitle text-muted small mb-4">Source: datasframe | Author: Tom Augspurger | Published: Jan 27, 2014</h6> 
+      <div class="card-text mb-2">
+       The Current Population Survey is an important source of data for economists. It's modern form took shape in the 70's and unfortunately the data format and distribution shows its age. Some centers like IPUMS have attempted to put a nicer face on accessing the data, but they haven't done everything …
+      </div> <a class="card-link small" href="https://tomaugspurger.github.io/tackling%20the%20cps.html" target="_blank">Read more</a> 
+     </div> 
+    </div> 
+   </div> 
+  </main> 
+  <footer class="container pt-4 pt-md-5 border-top"> 
+   <ul class="list-inline social-buttons float-end"> 
+    <li class="list-inline-item"> <a href="https://twitter.com/pandas_dev/"> <i class="fab fa-twitter"></i> </a> </li> 
+    <li class="list-inline-item"> <a href="https://github.com/pandas-dev/pandas/"> <i class="fab fa-github"></i> </a> </li> 
+    <li class="list-inline-item"> <a href="https://stackoverflow.com/questions/tagged/pandas"> <i class="fab fa-stack-overflow"></i> </a> </li> 
+   </ul> 
+   <p> pandas is a fiscally sponsored project of <a href="https://numfocus.org">NumFOCUS.</a> </p> 
+  </footer> 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script> 
+  <script type="text/javascript">
+            const faviconTag = document.getElementById('favicon-tag');
+            const matcher = window.matchMedia('(prefers-color-scheme:dark)');
+            
+            const onUpdate = () => {
+                if (matcher.matches) faviconTag.href = "/static/img/favicon_white.ico";
+                else faviconTag.href = "/static/img/favicon.ico";
+            };
+            
+            onUpdate();
+            
+            matcher.addEventListener('change', onUpdate);
+        </script>  
+ </body>
+</html>

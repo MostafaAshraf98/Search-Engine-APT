@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en"> 
+ <head> 
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/"> 
+  <title>Packaging binary extensions — Python Packaging User Guide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="stylesheet" type="text/css" href="../../_static/pygments.css"> 
+  <link rel="stylesheet" type="text/css" href="../../_static/pypa.css"> 
+  <link rel="stylesheet" type="text/css" href="../../_static/tabs.css"> 
+  <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css"> 
+  <link rel="stylesheet" type="text/css" href="https://assets.readthedocs.org/static/css/badge_only.css"> 
+  <link rel="stylesheet" type="text/css" href="../../_static/overrides.css"> 
+  <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script> 
+  <script src="../../_static/jquery.js"></script> 
+  <script src="../../_static/underscore.js"></script> 
+  <script src="../../_static/doctools.js"></script> 
+  <script src="../../_static/tabs.js"></script> 
+  <script src="../../_static/clipboard.min.js"></script> 
+  <script src="../../_static/copybutton.js"></script> 
+  <script async src="https://assets.readthedocs.org/static/javascript/readthedocs-doc-embed.js"></script> 
+  <script src="../../_static/sidebar.js"></script> 
+  <link rel="canonical" href="https://packaging.python.org/en/latest/guides/packaging-binary-extensions.html"> 
+  <link rel="index" title="Index" href="../../genindex/"> 
+  <link rel="search" title="Search" href="../../search/"> 
+  <link rel="next" title="Supporting Windows using Appveyor" href="../supporting-windows-using-appveyor/"> 
+  <link rel="prev" title="Dropping support for older Python versions" href="../dropping-older-python-versions/">
+  <link rel="shortcut icon" type="image/png" href="../../_static/py.svg"> 
+  <script type="text/javascript" src="../../_static/copybutton.js"></script> 
+  <script type="text/javascript" src="../../_static/menu.js"></script> <!-- RTD Extra Head --> 
+  <link rel="stylesheet" href="https://assets.readthedocs.org/static/css/readthedocs-doc-embed.css" type="text/css"> 
+  <script type="application/json" id="READTHEDOCS_DATA">{"ad_free": false, "api_host": "https://readthedocs.org", "build_date": "2022-05-09T12:23:51Z", "builder": "sphinx", "canonical_url": null, "commit": "eb42238e", "docroot": "/source/", "features": {"docsearch_disabled": false}, "global_analytics_code": "UA-17997319-1", "language": "en", "page": "guides/packaging-binary-extensions", "programming_language": "py", "project": "python-packaging-user-guide", "proxied_api_host": "/_", "source_suffix": ".rst", "subprojects": {}, "theme": "pypa_theme", "user_analytics_code": "", "version": "latest"}</script> <!--
+Using this variable directly instead of using `JSON.parse` is deprecated.
+The READTHEDOCS_DATA global variable will be removed in the future.
+--> 
+  <script type="text/javascript">
+READTHEDOCS_DATA = JSON.parse(document.getElementById('READTHEDOCS_DATA').innerHTML);
+</script> 
+  <script type="text/javascript" src="https://assets.readthedocs.org/static/javascript/readthedocs-analytics.js" async></script> <!-- end RTD <extrahead> --> 
+ </head> 
+ <body> 
+  <div class="mobile-nav"> 
+   <input type="checkbox" id="menuToggler" class="toggler__input" aria-controls="navigation" aria-pressed="false" aria-expanded="false" role="button" aria-label="Menu"> <label for="menuToggler" class="toggler__label"> <span></span> </label> 
+   <nav class="nav-content" role="navigation"> <a href="https://pypa.io" class="nav-logo"> <img src="../../_static/py.svg" alt="Logo"> </a> 
+    <div class="version_switcher_placeholder"></div> 
+    <form id="searchbox" role="search" class="search" action="../../search/" method="get"> 
+     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" class="search-icon"> <path fill-rule="nonzero" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" fill="#444"></path> 
+     </svg> 
+     <input type="text" name="q" aria-label="Quick search"> 
+     <input type="submit" value="Go"> 
+    </form> 
+   </nav> 
+   <div class="menu-wrapper"> 
+    <nav class="menu" role="navigation" aria-label="main navigation"> 
+     <div class="language_switcher_placeholder"></div> 
+     <h3><a href="../../">Table of Contents</a></h3> 
+     <ul class="current"> 
+      <li class="toctree-l1"><a class="reference internal" href="../../overview/">An Overview of Packaging for Python</a></li> 
+      <li class="toctree-l1"><a class="reference internal" href="../../tutorials/">Tutorials</a></li> 
+      <li class="toctree-l1 current"><a class="reference internal" href="../">Guides</a>
+       <ul class="current"> 
+        <li class="toctree-l2"><a class="reference internal" href="../installing-using-pip-and-virtual-environments/">Installing packages using pip and virtual environments</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../installing-stand-alone-command-line-tools/">Installing stand alone command line tools</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../installing-using-linux-tools/">Installing pip/setuptools/wheel with Linux Package Managers</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../installing-scientific-packages/">Installing scientific packages</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../multi-version-installs/">Multi-version installs</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../index-mirrors-and-caches/">Package index mirrors and caches</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../hosting-your-own-index/">Hosting your own simple repository</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../distributing-packages-using-setuptools/">Packaging and distributing projects</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../using-manifest-in/">Including files in source distributions with <code class="docutils literal notranslate"><span class="pre">MANIFEST.in</span></code></a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../single-sourcing-package-version/">Single-sourcing the package version</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../supporting-multiple-python-versions/">Supporting multiple Python versions</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../dropping-older-python-versions/">Dropping support for older Python versions</a></li> 
+        <li class="toctree-l2 current"><a class="current reference internal" href="#">Packaging binary extensions</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../supporting-windows-using-appveyor/">Supporting Windows using Appveyor</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../packaging-namespace-packages/">Packaging namespace packages</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../creating-and-discovering-plugins/">Creating and discovering plugins</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../migrating-to-pypi-org/">Migrating to PyPI.org</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../using-testpypi/">Using TestPyPI</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../making-a-pypi-friendly-readme/">Making a PyPI-friendly README</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../publishing-package-distribution-releases-using-github-actions-ci-cd-workflows/">Publishing package distribution releases using GitHub Actions CI/CD workflows</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../tool-recommendations/">Tool recommendations</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../analyzing-pypi-package-downloads/">Analyzing PyPI package downloads</a></li> 
+       </ul> </li> 
+      <li class="toctree-l1"><a class="reference internal" href="../../discussions/">Discussions</a></li> 
+      <li class="toctree-l1"><a class="reference internal" href="../../specifications/">PyPA specifications</a></li> 
+      <li class="toctree-l1"><a class="reference internal" href="../../key_projects/">Project Summaries</a></li> 
+      <li class="toctree-l1"><a class="reference internal" href="../../glossary/">Glossary</a></li> 
+      <li class="toctree-l1"><a class="reference internal" href="../../support/">How to Get Support</a></li> 
+      <li class="toctree-l1"><a class="reference internal" href="../../contribute/">Contribute to this guide</a></li> 
+      <li class="toctree-l1"><a class="reference internal" href="../../news/">News</a></li> 
+     </ul> 
+     <h4>Previous topic</h4> 
+     <p class="topless"><a href="../dropping-older-python-versions/" title="previous chapter">Dropping support for older Python versions</a></p> 
+     <h4>Next topic</h4> 
+     <p class="topless"><a href="../supporting-windows-using-appveyor/" title="next chapter">Supporting Windows using Appveyor</a></p> 
+    </nav> 
+   </div> 
+  </div> 
+  <div class="related" role="navigation" aria-label="related navigation"> 
+   <h3>Navigation</h3> 
+   <ul> 
+    <li class="right" style="margin-right: 10px"> <a href="../../genindex/" title="General Index" accesskey="I">index</a></li> 
+    <li class="right"> <a href="../supporting-windows-using-appveyor/" title="Supporting Windows using Appveyor" accesskey="N">next</a> |</li> 
+    <li class="right"> <a href="../dropping-older-python-versions/" title="Dropping support for older Python versions" accesskey="P">previous</a> |</li> 
+    <li><img src="../../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"></li> 
+    <li><a href="https://pypa.io">PyPA</a> »</li> 
+    <li class="switchers"> 
+     <div class="language_switcher_placeholder"></div> 
+     <div class="version_switcher_placeholder"></div> </li> 
+    <li> <a href="../../">Python Packaging User Guide</a> » </li> 
+    <li class="nav-item nav-item-1"><a href="../" accesskey="U">Guides</a> »</li> 
+    <li class="nav-item nav-item-this"><a href="">Packaging binary extensions</a></li> 
+    <li class="right"> 
+     <div class="inline-search" role="search"> 
+      <form class="inline-search" action="../../search/" method="get"> 
+       <input placeholder="Quick search" aria-label="Quick search" type="text" name="q"> 
+       <input type="submit" value="Go"> 
+       <input type="hidden" name="check_keywords" value="yes"> 
+       <input type="hidden" name="area" value="default"> 
+      </form> 
+     </div> | </li> 
+   </ul> 
+  </div> 
+  <div class="document"> 
+   <div class="documentwrapper"> 
+    <div class="bodywrapper"> 
+     <div class="body" role="main"> 
+      <section id="packaging-binary-extensions"> <span id="binary-extensions"></span>
+       <h1>Packaging binary extensions<a class="headerlink" href="#packaging-binary-extensions" title="Permalink to this headline">¶</a></h1> 
+       <dl class="field-list simple"> 
+        <dt class="field-odd">
+         Page Status
+        </dt> 
+        <dd class="field-odd">
+         <p>Incomplete</p> 
+        </dd> 
+        <dt class="field-even">
+         Last Reviewed
+        </dt> 
+        <dd class="field-even">
+         <p>2013-12-08</p> 
+        </dd> 
+       </dl> 
+       <p>One of the features of the CPython reference interpreter is that, in addition to allowing the execution of Python code, it also exposes a rich C API for use by other software. One of the most common uses of this C API is to create importable C extensions that allow things which aren’t always easy to achieve in pure Python code.</p> 
+       <div class="contents local topic" id="contents"> 
+        <p class="topic-title">Contents</p> 
+        <ul class="simple"> 
+         <li><p><a class="reference internal" href="#an-overview-of-binary-extensions" id="id1">An overview of binary extensions</a></p> 
+          <ul> 
+           <li><p><a class="reference internal" href="#use-cases" id="id2">Use cases</a></p></li> 
+           <li><p><a class="reference internal" href="#disadvantages" id="id3">Disadvantages</a></p></li> 
+           <li><p><a class="reference internal" href="#alternatives-to-handcoded-accelerator-modules" id="id4">Alternatives to handcoded accelerator modules</a></p></li> 
+           <li><p><a class="reference internal" href="#alternatives-to-handcoded-wrapper-modules" id="id5">Alternatives to handcoded wrapper modules</a></p></li> 
+           <li><p><a class="reference internal" href="#alternatives-for-low-level-system-access" id="id6">Alternatives for low level system access</a></p></li> 
+          </ul> </li> 
+         <li><p><a class="reference internal" href="#implementing-binary-extensions" id="id7">Implementing binary extensions</a></p></li> 
+         <li><p><a class="reference internal" href="#building-binary-extensions" id="id8">Building binary extensions</a></p> 
+          <ul> 
+           <li><p><a class="reference internal" href="#building-extensions-for-multiple-platforms" id="id9">Building extensions for multiple platforms</a></p></li> 
+           <li><p><a class="reference internal" href="#binary-extensions-for-windows" id="id10">Binary extensions for Windows</a></p></li> 
+           <li><p><a class="reference internal" href="#binary-extensions-for-linux" id="id11">Binary extensions for Linux</a></p></li> 
+           <li><p><a class="reference internal" href="#binary-extensions-for-macos" id="id12">Binary extensions for macOS</a></p></li> 
+          </ul> </li> 
+         <li><p><a class="reference internal" href="#publishing-binary-extensions" id="id13">Publishing binary extensions</a></p></li> 
+         <li><p><a class="reference internal" href="#additional-resources" id="id14">Additional resources</a></p> 
+          <ul> 
+           <li><p><a class="reference internal" href="#cross-platform-wheel-generation-with-scikit-build" id="id15">Cross-platform wheel generation with scikit-build</a></p></li> 
+           <li><p><a class="reference internal" href="#introduction-to-c-c-extension-modules" id="id16">Introduction to C/C++ extension modules</a></p></li> 
+          </ul> </li> 
+        </ul> 
+       </div> 
+       <section id="an-overview-of-binary-extensions"> 
+        <h2><a class="toc-backref" href="#id1">An overview of binary extensions</a><a class="headerlink" href="#an-overview-of-binary-extensions" title="Permalink to this headline">¶</a></h2> 
+        <section id="use-cases"> 
+         <h3><a class="toc-backref" href="#id2">Use cases</a><a class="headerlink" href="#use-cases" title="Permalink to this headline">¶</a></h3> 
+         <p>The typical use cases for binary extensions break down into just three conventional categories:</p> 
+         <ul> 
+          <li><p><strong>accelerator modules</strong>: these modules are completely self-contained, and are created solely to run faster than the equivalent pure Python code runs in CPython. Ideally, accelerator modules will always have a pure Python equivalent to use as a fallback if the accelerated version isn’t available on a given system. The CPython standard library makes extensive use of accelerator modules. <em>Example</em>: When importing <code class="docutils literal notranslate"><span class="pre">datetime</span></code>, Python falls back to the <a class="reference external" href="https://github.com/python/cpython/blob/main/Lib/datetime.py">datetime.py</a> module if the C implementation ( <a class="reference external" href="https://github.com/python/cpython/blob/main/Modules/_datetimemodule.c">_datetimemodule.c</a>) is not available.</p></li> 
+          <li><p><strong>wrapper modules</strong>: these modules are created to expose existing C interfaces to Python code. They may either expose the underlying C interface directly, or else expose a more “Pythonic” API that makes use of Python language features to make the API easier to use. The CPython standard library makes extensive use of wrapper modules. <em>Example</em>: <a class="reference external" href="https://github.com/python/cpython/blob/main/Lib/functools.py">functools.py</a> is a Python module wrapper for <a class="reference external" href="https://github.com/python/cpython/blob/main/Modules/_functoolsmodule.c">_functoolsmodule.c</a>.</p></li> 
+          <li><p><strong>low-level system access</strong>: these modules are created to access lower level features of the CPython runtime, the operating system, or the underlying hardware. Through platform specific code, extension modules may achieve things that aren’t possible in pure Python code. A number of CPython standard library modules are written in C in order to access interpreter internals that aren’t exposed at the language level. <em>Example</em>: <code class="docutils literal notranslate"><span class="pre">sys</span></code>, which comes from <a class="reference external" href="https://github.com/python/cpython/blob/main/Python/sysmodule.c">sysmodule.c</a>.</p> <p>One particularly notable feature of C extensions is that, when they don’t need to call back into the interpreter runtime, they can release CPython’s global interpreter lock around long-running operations (regardless of whether those operations are CPU or IO bound).</p> </li> 
+         </ul> 
+         <p>Not all extension modules will fit neatly into the above categories. The extension modules included with NumPy, for example, span all three use cases - they move inner loops to C for speed reasons, wrap external libraries written in C, FORTRAN and other languages, and use low level system interfaces for both CPython and the underlying operation system to support concurrent execution of vectorised operations and to tightly control the exact memory layout of created objects.</p> 
+        </section> 
+        <section id="disadvantages"> 
+         <h3><a class="toc-backref" href="#id3">Disadvantages</a><a class="headerlink" href="#disadvantages" title="Permalink to this headline">¶</a></h3> 
+         <p>The main disadvantage of using binary extensions is the fact that it makes subsequent distribution of the software more difficult. One of the advantages of using Python is that it is largely cross platform, and the languages used to write extension modules (typically C or C++, but really any language that can bind to the CPython C API) typically require that custom binaries be created for different platforms.</p> 
+         <p>This means that binary extensions:</p> 
+         <ul class="simple"> 
+          <li><p>require that end users be able to either build them from source, or else that someone publish pre-built binaries for common platforms</p></li> 
+          <li><p>may not be compatible with different builds of the CPython reference interpreter</p></li> 
+          <li><p>often will not work correctly with alternative interpreters such as PyPy, IronPython or Jython</p></li> 
+          <li><p>if handcoded, make maintenance more difficult by requiring that maintainers be familiar not only with Python, but also with the language used to create the binary extension, as well as with the details of the CPython C API.</p></li> 
+          <li><p>if a pure Python fallback implementation is provided, make maintenance more difficult by requiring that changes be implemented in two places, and introducing additional complexity in the test suite to ensure both versions are always executed.</p></li> 
+         </ul> 
+         <p>Another disadvantage of relying on binary extensions is that alternative import mechanisms (such as the ability to import modules directly from zipfiles) often won’t work for extension modules (as the dynamic loading mechanisms on most platforms can only load libraries from disk).</p> 
+        </section> 
+        <section id="alternatives-to-handcoded-accelerator-modules"> 
+         <h3><a class="toc-backref" href="#id4">Alternatives to handcoded accelerator modules</a><a class="headerlink" href="#alternatives-to-handcoded-accelerator-modules" title="Permalink to this headline">¶</a></h3> 
+         <p>When extension modules are just being used to make code run faster (after profiling has identified the code where the speed increase is worth additional maintenance effort), a number of other alternatives should also be considered:</p> 
+         <ul class="simple"> 
+          <li><p>look for existing optimised alternatives. The CPython standard library includes a number of optimised data structures and algorithms (especially in the builtins and the <code class="docutils literal notranslate"><span class="pre">collections</span></code> and <code class="docutils literal notranslate"><span class="pre">itertools</span></code> modules). The Python Package Index also offers additional alternatives. Sometimes, the appropriate choice of standard library or third party module can avoid the need to create your own accelerator module.</p></li> 
+          <li><p>for long running applications, the JIT compiled <a class="reference external" href="https://www.pypy.org/">PyPy interpreter</a> may offer a suitable alternative to the standard CPython runtime. The main barrier to adopting PyPy is typically reliance on other binary extension modules - while PyPy does emulate the CPython C API, modules that rely on that cause problems for the PyPy JIT, and the emulation layer can often expose latent defects in extension modules that CPython currently tolerates (frequently around reference counting errors - an object having one live reference instead of two often won’t break anything, but no references instead of one is a major problem).</p></li> 
+          <li><p><a class="reference external" href="https://cython.org/">Cython</a> is a mature static compiler that can compile most Python code to C extension modules. The initial compilation provides some speed increases (by bypassing the CPython interpreter layer), and Cython’s optional static typing features can offer additional opportunities for speed increases. Using Cython still carries the <a class="reference internal" href="#disadvantages">disadvantages</a> associated with using binary extensions, but has the benefit of having a reduced barrier to entry for Python programmers (relative to other languages like C or C++).</p></li> 
+          <li><p><a class="reference external" href="http://numba.pydata.org/">Numba</a> is a newer tool, created by members of the scientific Python community, that aims to leverage LLVM to allow selective compilation of pieces of a Python application to native machine code at runtime. It requires that LLVM be available on the system where the code is running, but can provide significant speed increases, especially for operations that are amenable to vectorisation.</p></li> 
+         </ul> 
+        </section> 
+        <section id="alternatives-to-handcoded-wrapper-modules"> 
+         <h3><a class="toc-backref" href="#id5">Alternatives to handcoded wrapper modules</a><a class="headerlink" href="#alternatives-to-handcoded-wrapper-modules" title="Permalink to this headline">¶</a></h3> 
+         <p>The C ABI (Application Binary Interface) is a common standard for sharing functionality between multiple applications. One of the strengths of the CPython C API (Application Programming Interface) is allowing Python users to tap into that functionality. However, wrapping modules by hand is quite tedious, so a number of other alternative approaches should be considered.</p> 
+         <p>The approaches described below don’t simplify the distribution case at all, but they <em>can</em> significantly reduce the maintenance burden of keeping wrapper modules up to date.</p> 
+         <ul> 
+          <li><p>In addition to being useful for the creation of accelerator modules, <a class="reference external" href="https://cython.org/">Cython</a> is also widely used for creating wrapper modules for C or C++ APIs. It involves wrapping the interfaces by hand, which gives a wide range of freedom in designing and optimising the wrapper code, but may not be a good choice for wrapping very large APIs quickly. See the <a class="reference external" href="https://github.com/cython/cython/wiki/AutoPxd">list of third-party tools</a> for automatic wrapping with Cython. It also supports performance-oriented Python implementations that provide a CPython-like C-API, such as PyPy and Pyston.</p></li> 
+          <li><p><a class="reference external" href="https://pybind11.readthedocs.io/en/stable/index.html" title="(in pybind11 v2.9.1)"><span class="xref std std-doc">pybind11</span></a> is a pure C++11 library that provides a clean C++ interface to the CPython (and PyPy) C API. It does not require a pre-processing step; it is written entirely in templated C++. Helpers are included for Setuptools or CMake builds. It was based on <a class="reference external" href="https://www.boost.org/doc/libs/1_76_0/libs/python/doc/html/index.html">Boost.Python</a>, but doesn’t require the Boost libraries or BJam.</p></li> 
+          <li><p><a class="reference external" href="https://cffi.readthedocs.io/en/latest/index.html" title="(in CFFI v1.15)"><span class="xref std std-doc">cffi</span></a> is a project created by some of the PyPy developers to make it straightforward for developers that already know both Python and C to expose their C modules to Python applications. It also makes it relatively straightforward to wrap a C module based on its header files, even if you don’t know C yourself.</p> <p>One of the key advantages of <code class="docutils literal notranslate"><span class="pre">cffi</span></code> is that it is compatible with the PyPy JIT, allowing CFFI wrapper modules to participate fully in PyPy’s tracing JIT optimisations.</p> </li> 
+          <li><p><a class="reference external" href="http://www.swig.org/">SWIG</a> is a wrapper interface generator that allows a variety of programming languages, including Python, to interface with C and C++ code.</p></li> 
+          <li><p>The standard library’s <code class="docutils literal notranslate"><span class="pre">ctypes</span></code> module, while useful for getting access to C level interfaces when header information isn’t available, suffers from the fact that it operates solely at the C ABI level, and thus has no automatic consistency checking between the interface actually being exported by the library and the one declared in the Python code. By contrast, the above alternatives are all able to operate at the C <em>API</em> level, using C header files to ensure consistency between the interface exported by the library being wrapped and the one expected by the Python wrapper module. While <code class="docutils literal notranslate"><span class="pre">cffi</span></code> <em>can</em> operate directly at the C ABI level, it suffers from the same interface inconsistency problems as <code class="docutils literal notranslate"><span class="pre">ctypes</span></code> when it is used that way.</p></li> 
+         </ul> 
+        </section> 
+        <section id="alternatives-for-low-level-system-access"> 
+         <h3><a class="toc-backref" href="#id6">Alternatives for low level system access</a><a class="headerlink" href="#alternatives-for-low-level-system-access" title="Permalink to this headline">¶</a></h3> 
+         <p>For applications that need low level system access (regardless of the reason), a binary extension module often <em>is</em> the best way to go about it. This is particularly true for low level access to the CPython runtime itself, since some operations (like releasing the Global Interpreter Lock) are simply invalid when the interpreter is running code, even if a module like <code class="docutils literal notranslate"><span class="pre">ctypes</span></code> or <code class="docutils literal notranslate"><span class="pre">cffi</span></code> is used to obtain access to the relevant C API interfaces.</p> 
+         <p>For cases where the extension module is manipulating the underlying operating system or hardware (rather than the CPython runtime), it may sometimes be better to just write an ordinary C library (or a library in another systems programming language like C++ or Rust that can export a C compatible ABI), and then use one of the wrapping techniques described above to make the interface available as an importable Python module.</p> 
+        </section> 
+       </section> 
+       <section id="implementing-binary-extensions"> 
+        <h2><a class="toc-backref" href="#id7">Implementing binary extensions</a><a class="headerlink" href="#implementing-binary-extensions" title="Permalink to this headline">¶</a></h2> 
+        <p>The CPython <a class="reference external" href="https://docs.python.org/3/extending/index.html" title="(in Python v3.10)"><span class="xref std std-doc">Extending and Embedding</span></a> guide includes an introduction to writing a <a class="reference external" href="https://docs.python.org/3/extending/extending.html" title="(in Python v3.10)"><span class="xref std std-doc">custom extension module in C</span></a>.</p> 
+        <div class="highlight-default notranslate">
+         <div class="highlight">
+          <pre><span></span><span class="n">mention</span> <span class="n">the</span> <span class="n">stable</span> <span class="n">ABI</span> <span class="p">(</span><span class="mf">3.2</span><span class="o">+</span><span class="p">,</span> <span class="n">link</span> <span class="n">to</span> <span class="n">the</span> <span class="n">CPython</span> <span class="n">C</span> <span class="n">API</span> <span class="n">docs</span><span class="p">)</span>
+<span class="n">mention</span> <span class="n">the</span> <span class="n">module</span> <span class="n">lifecycle</span>
+<span class="n">mention</span> <span class="n">the</span> <span class="n">challenges</span> <span class="n">of</span> <span class="n">shared</span> <span class="n">static</span> <span class="n">state</span> <span class="ow">and</span> <span class="n">subinterpreters</span>
+<span class="n">mention</span> <span class="n">the</span> <span class="n">implications</span> <span class="n">of</span> <span class="n">the</span> <span class="n">GIL</span> <span class="k">for</span> <span class="n">extension</span> <span class="n">modules</span>
+<span class="n">mention</span> <span class="n">the</span> <span class="n">memory</span> <span class="n">allocation</span> <span class="n">APIs</span> <span class="ow">in</span> <span class="mf">3.4</span><span class="o">+</span>
+
+<span class="n">mention</span> <span class="n">again</span> <span class="n">that</span> <span class="nb">all</span> <span class="n">this</span> <span class="ow">is</span> <span class="n">one</span> <span class="n">of</span> <span class="n">the</span> <span class="n">reasons</span> <span class="n">why</span> <span class="n">you</span> <span class="n">probably</span>
+<span class="o">*</span><span class="n">don</span><span class="s1">'t* want to handcode your extension modules :)</span>
+</pre>
+         </div> 
+        </div> 
+       </section> 
+       <section id="building-binary-extensions"> 
+        <h2><a class="toc-backref" href="#id8">Building binary extensions</a><a class="headerlink" href="#building-binary-extensions" title="Permalink to this headline">¶</a></h2> 
+        <section id="building-extensions-for-multiple-platforms"> 
+         <h3><a class="toc-backref" href="#id9">Building extensions for multiple platforms</a><a class="headerlink" href="#building-extensions-for-multiple-platforms" title="Permalink to this headline">¶</a></h3> 
+         <p>If you plan to distribute your extension, you should provide <a class="reference internal" href="../../glossary/#term-Wheel"><span class="xref std std-term">wheels</span></a> for all the platforms you intend to support. For most extensions, this is at least one package per Python version times the number of OS and architectures you support. These are usually built on continuous integration (CI) systems. There are tools to help you build highly redistributable binaries from CI; these include <a class="reference internal" href="../../key_projects/#cibuildwheel"><span class="std std-ref">cibuildwheel</span></a> and <a class="reference internal" href="../../key_projects/#multibuild"><span class="std std-ref">multibuild</span></a>.</p> 
+        </section> 
+        <section id="binary-extensions-for-windows"> 
+         <h3><a class="toc-backref" href="#id10">Binary extensions for Windows</a><a class="headerlink" href="#binary-extensions-for-windows" title="Permalink to this headline">¶</a></h3> 
+         <p>Before it is possible to build a binary extension, it is necessary to ensure that you have a suitable compiler available. On Windows, Visual C is used to build the official CPython interpreter, and should be used to build compatible binary extensions. To set up a build environment for binary extensions, install <a class="reference external" href="https://visualstudio.microsoft.com/downloads/">Visual Studio Community Edition</a> - any recent version is fine.</p> 
+         <p>One caveat: if you use Visual Studio 2019 or later, your extension will depend on an “extra” file, <code class="docutils literal notranslate"><span class="pre">VCRUNTIME140_1.dll</span></code>, in addition to the <code class="docutils literal notranslate"><span class="pre">VCRUNTIME140.dll</span></code> that all previous versions back to 2015 depend on. This will add an extra requirement to using your extension on versions of CPython that do not include this extra file. To avoid this, you can add the compile-time argument <code class="docutils literal notranslate"><span class="pre">/d2FH4-</span></code>. Recent versions of Python may include this file.</p> 
+         <p>Building for Python prior to 3.5 is discouraged, because older versions of Visual Studio are no longer available from Microsoft. If you do need to build for older versions, you can set <code class="docutils literal notranslate"><span class="pre">DISTUTILS_USE_SDK=1</span></code> and <code class="docutils literal notranslate"><span class="pre">MSSdk=1</span></code> to force a the currently activated version of MSVC to be found, and you should exercise care when designing your extension not to malloc/free memory across different libraries, avoid relying on changed data structures, and so on. Tools for generating extension modules usually avoid these things for you.</p> 
+        </section> 
+        <section id="binary-extensions-for-linux"> 
+         <h3><a class="toc-backref" href="#id11">Binary extensions for Linux</a><a class="headerlink" href="#binary-extensions-for-linux" title="Permalink to this headline">¶</a></h3> 
+         <p>Linux binaries must use a sufficiently old glibc to be compatible with older distributions. The <a class="reference external" href="https://github.com/pypa/manylinux">manylinux</a> Docker images provide a build environment with a glibc old enough to support most current Linux distributions on common architectures.</p> 
+        </section> 
+        <section id="binary-extensions-for-macos"> 
+         <h3><a class="toc-backref" href="#id12">Binary extensions for macOS</a><a class="headerlink" href="#binary-extensions-for-macos" title="Permalink to this headline">¶</a></h3> 
+         <p>Binary compatibility on macOS is determined by the target minimum deployment system, e.g. <em>10.9</em>, which is often specified with the <code class="docutils literal notranslate"><span class="pre">MACOSX_DEPLOYMENT_TARGET</span></code> environmental variable when building binaries on macOS. When building with setuptools / distutils, the deployment target is specified with the flag <code class="docutils literal notranslate"><span class="pre">--plat-name</span></code>, e.g. <code class="docutils literal notranslate"><span class="pre">macosx-10.9-x86_64</span></code>. For common deployment targets for macOS Python distributions, see the <a class="reference external" href="https://github.com/MacPython/wiki/wiki/Spinning-wheels">MacPython Spinning Wheels wiki</a>.</p> 
+        </section> 
+       </section> 
+       <section id="publishing-binary-extensions"> 
+        <h2><a class="toc-backref" href="#id13">Publishing binary extensions</a><a class="headerlink" href="#publishing-binary-extensions" title="Permalink to this headline">¶</a></h2> 
+        <p>For interim guidance on this topic, see the discussion in <a class="reference external" href="https://github.com/pypa/packaging.python.org/issues/284">this issue</a>.</p> 
+        <div class="highlight-default notranslate">
+         <div class="highlight">
+          <pre><span></span><span class="n">FIXME</span>
+
+<span class="n">cover</span> <span class="n">publishing</span> <span class="k">as</span> <span class="n">wheel</span> <span class="n">files</span> <span class="n">on</span> <span class="n">PyPI</span> <span class="ow">or</span> <span class="n">a</span> <span class="n">custom</span> <span class="n">index</span> <span class="n">server</span>
+<span class="n">cover</span> <span class="n">creation</span> <span class="n">of</span> <span class="n">Windows</span> <span class="ow">and</span> <span class="n">macOS</span> <span class="n">installers</span>
+<span class="n">cover</span> <span class="n">weak</span> <span class="n">linking</span>
+<span class="n">mention</span> <span class="n">the</span> <span class="n">fact</span> <span class="n">that</span> <span class="n">Linux</span> <span class="n">distros</span> <span class="n">have</span> <span class="n">a</span> <span class="n">requirement</span> <span class="n">to</span> <span class="n">build</span> <span class="kn">from</span>
+<span class="nn">source</span> <span class="ow">in</span> <span class="n">their</span> <span class="n">own</span> <span class="n">build</span> <span class="n">systems</span><span class="p">,</span> <span class="n">so</span> <span class="n">binary</span><span class="o">-</span><span class="n">only</span> <span class="n">releases</span> <span class="n">are</span> <span class="n">strongly</span>
+<span class="n">discouraged</span>
+</pre>
+         </div> 
+        </div> 
+       </section> 
+       <section id="additional-resources"> 
+        <h2><a class="toc-backref" href="#id14">Additional resources</a><a class="headerlink" href="#additional-resources" title="Permalink to this headline">¶</a></h2> 
+        <p>Cross-platform development and distribution of extension modules is a complex topic, so this guide focuses primarily on providing pointers to various tools that automate dealing with the underlying technical challenges. The additional resources in this section are instead intended for developers looking to understand more about the underlying binary interfaces that those systems rely on at runtime.</p> 
+        <section id="cross-platform-wheel-generation-with-scikit-build"> 
+         <h3><a class="toc-backref" href="#id15">Cross-platform wheel generation with scikit-build</a><a class="headerlink" href="#cross-platform-wheel-generation-with-scikit-build" title="Permalink to this headline">¶</a></h3> 
+         <p>The <a class="reference external" href="https://scikit-build.readthedocs.io/en/latest/">scikit-build</a> package helps abstract cross-platform build operations and provides additional capabilities when creating binary extension packages. Additional documentation is also available on the <a class="reference external" href="https://scikit-build.readthedocs.io/en/latest/generators.html">C runtime, compiler, and build system generator</a> for Python binary extension modules.</p> 
+        </section> 
+        <section id="introduction-to-c-c-extension-modules"> 
+         <h3><a class="toc-backref" href="#id16">Introduction to C/C++ extension modules</a><a class="headerlink" href="#introduction-to-c-c-extension-modules" title="Permalink to this headline">¶</a></h3> 
+         <p>For a more in depth explanation of how extension modules are used by CPython on a Debian system, see the following articles:</p> 
+         <ul class="simple"> 
+          <li><p><a class="reference external" href="https://thomasnyberg.com/what_are_extension_modules.html">What are (c)python extension modules?</a></p></li> 
+          <li><p><a class="reference external" href="https://thomasnyberg.com/releasing_the_gil.html">Releasing the gil</a></p></li> 
+          <li><p><a class="reference external" href="https://thomasnyberg.com/cpp_extension_modules.html">Writing cpython extension modules using C++</a></p></li> 
+         </ul> 
+        </section> 
+       </section> 
+      </section> 
+      <div class="clearer"></div> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="sphinxsidebar" role="navigation" aria-label="main navigation"> 
+    <div class="sphinxsidebarwrapper"> 
+     <h3><a href="../../">Table of Contents</a></h3> 
+     <ul class="current"> 
+      <li class="toctree-l1"><a class="reference internal" href="../../overview/">An Overview of Packaging for Python</a></li> 
+      <li class="toctree-l1"><a class="reference internal" href="../../tutorials/">Tutorials</a></li> 
+      <li class="toctree-l1 current"><a class="reference internal" href="../">Guides</a>
+       <ul class="current"> 
+        <li class="toctree-l2"><a class="reference internal" href="../installing-using-pip-and-virtual-environments/">Installing packages using pip and virtual environments</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../installing-stand-alone-command-line-tools/">Installing stand alone command line tools</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../installing-using-linux-tools/">Installing pip/setuptools/wheel with Linux Package Managers</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../installing-scientific-packages/">Installing scientific packages</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../multi-version-installs/">Multi-version installs</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../index-mirrors-and-caches/">Package index mirrors and caches</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../hosting-your-own-index/">Hosting your own simple repository</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../distributing-packages-using-setuptools/">Packaging and distributing projects</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../using-manifest-in/">Including files in source distributions with <code class="docutils literal notranslate"><span class="pre">MANIFEST.in</span></code></a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../single-sourcing-package-version/">Single-sourcing the package version</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../supporting-multiple-python-versions/">Supporting multiple Python versions</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../dropping-older-python-versions/">Dropping support for older Python versions</a></li> 
+        <li class="toctree-l2 current"><a class="current reference internal" href="#">Packaging binary extensions</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../supporting-windows-using-appveyor/">Supporting Windows using Appveyor</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../packaging-namespace-packages/">Packaging namespace packages</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../creating-and-discovering-plugins/">Creating and discovering plugins</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../migrating-to-pypi-org/">Migrating to PyPI.org</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../using-testpypi/">Using TestPyPI</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../making-a-pypi-friendly-readme/">Making a PyPI-friendly README</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../publishing-package-distribution-releases-using-github-actions-ci-cd-workflows/">Publishing package distribution releases using GitHub Actions CI/CD workflows</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../tool-recommendations/">Tool recommendations</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../analyzing-pypi-package-downloads/">Analyzing PyPI package downloads</a></li> 
+       </ul> </li> 
+      <li class="toctree-l1"><a class="reference internal" href="../../discussions/">Discussions</a></li> 
+      <li class="toctree-l1"><a class="reference internal" href="../../specifications/">PyPA specifications</a></li> 
+      <li class="toctree-l1"><a class="reference internal" href="../../key_projects/">Project Summaries</a></li> 
+      <li class="toctree-l1"><a class="reference internal" href="../../glossary/">Glossary</a></li> 
+      <li class="toctree-l1"><a class="reference internal" href="../../support/">How to Get Support</a></li> 
+      <li class="toctree-l1"><a class="reference internal" href="../../contribute/">Contribute to this guide</a></li> 
+      <li class="toctree-l1"><a class="reference internal" href="../../news/">News</a></li> 
+     </ul> 
+     <h4>Previous topic</h4> 
+     <p class="topless"><a href="../dropping-older-python-versions/" title="previous chapter">Dropping support for older Python versions</a></p> 
+     <h4>Next topic</h4> 
+     <p class="topless"><a href="../supporting-windows-using-appveyor/" title="next chapter">Supporting Windows using Appveyor</a></p> 
+    </div> 
+   </div> 
+   <div class="clearer"></div> 
+  </div> 
+  <div class="related" role="navigation" aria-label="related navigation"> 
+   <h3>Navigation</h3> 
+   <ul> 
+    <li class="right" style="margin-right: 10px"> <a href="../../genindex/" title="General Index">index</a></li> 
+    <li class="right"> <a href="../supporting-windows-using-appveyor/" title="Supporting Windows using Appveyor">next</a> |</li> 
+    <li class="right"> <a href="../dropping-older-python-versions/" title="Dropping support for older Python versions">previous</a> |</li> 
+    <li><img src="../../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"></li> 
+    <li><a href="https://pypa.io">PyPA</a> »</li> 
+    <li class="switchers"> 
+     <div class="language_switcher_placeholder"></div> 
+     <div class="version_switcher_placeholder"></div> </li> 
+    <li> <a href="../../">Python Packaging User Guide</a> » </li> 
+    <li class="nav-item nav-item-1"><a href="../">Guides</a> »</li> 
+    <li class="nav-item nav-item-this"><a href="">Packaging binary extensions</a></li> 
+    <li class="right"> 
+     <div class="inline-search" role="search"> 
+      <form class="inline-search" action="../../search/" method="get"> 
+       <input placeholder="Quick search" aria-label="Quick search" type="text" name="q"> 
+       <input type="submit" value="Go"> 
+       <input type="hidden" name="check_keywords" value="yes"> 
+       <input type="hidden" name="area" value="default"> 
+      </form> 
+     </div> | </li> 
+   </ul> 
+  </div> 
+  <div class="footer">
+    © <a href="../../copyright/">Copyright</a> 2013–2020, PyPA. 
+   <br> This page is licensed under the Python Software Foundation License Version 2. 
+   <br> Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License. 
+   <br> See <a href="">History and License</a> for more information. 
+   <br>
+   <br> The Python Software Foundation is a non-profit corporation. <a href="https://www.python.org/psf/donations/">Please donate.</a> 
+   <br> 
+   <br> Last updated on May 09, 2022. <a href="https://github.com/pypa/packaging.python.org/issues">Found a bug</a>? 
+   <br> Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.3.1. 
+  </div>  
+ </body>
+</html>

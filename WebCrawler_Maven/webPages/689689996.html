@@ -1,0 +1,531 @@
+<!doctype html><!--[if lt IE 7]>   <html class="no-js ie6 lt-ie7 lt-ie8 lt-ie9">   <![endif]--><!--[if IE 7]>      <html class="no-js ie7 lt-ie8 lt-ie9">          <![endif]--><!--[if IE 8]>      <html class="no-js ie8 lt-ie9">                 <![endif]--><!--[if gt IE 8]><!-->
+<html class="no-js" lang="en" dir="ltr"> <!--<![endif]--> 
+ <head> 
+  <meta charset="utf-8"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  <link rel="prefetch" href="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"> 
+  <link rel="prefetch" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"> 
+  <meta name="application-name" content="Python.org"> 
+  <meta name="msapplication-tooltip" content="The official home of the Python Programming Language"> 
+  <meta name="apple-mobile-web-app-title" content="Python.org"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta name="HandheldFriendly" content="True"> 
+  <meta name="format-detection" content="telephone=no"> 
+  <meta http-equiv="cleartype" content="on"> 
+  <meta http-equiv="imagetoolbar" content="false"> 
+  <script async src="https://media.ethicalads.io/media/client/v1.4.0/ethicalads.min.js" integrity="sha256-U3hKDidudIaxBDEzwGJApJgPEf2mWk6cfMWghrAa6i0= sha384-UcmsCqcNRSLW/dV3Lo1oCi2/VaurXbib6p4HyUEOeIa/4OpsrnucrugAefzVZJfI sha512-q4t1L4xEjGV2R4hzqCa41P8jrgFUS8xTb8rdNv4FGvw7FpydVj/kkxBJHOiaoxHa8olCcx1Slk9K+3sNbsM4ug==" crossorigin="anonymous"></script> 
+  <script src="/static/js/libs/modernizr.js"></script> 
+  <link href="/static/stylesheets/style.a193d3b62d35.css" rel="stylesheet" type="text/css" media="all" title="default"> 
+  <link href="/static/stylesheets/mq.f9187444a4a1.css" rel="stylesheet" type="text/css" media="not print, braille, embossed, speech, tty"> <!--[if (lte IE 8)&(!IEMobile)]>
+    <link href="/static/stylesheets/no-mq.bf0c425cdb73.css" rel="stylesheet" type="text/css" media="screen" />
+    
+    
+    <![endif]--> 
+  <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css"> 
+  <link rel="icon" type="image/x-icon" href="/static/favicon.ico"> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/static/apple-touch-icon-144x144-precomposed.png"> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/static/apple-touch-icon-114x114-precomposed.png"> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/static/apple-touch-icon-72x72-precomposed.png"> 
+  <link rel="apple-touch-icon-precomposed" href="/static/apple-touch-icon-precomposed.png"> 
+  <link rel="apple-touch-icon" href="/static/apple-touch-icon-precomposed.png"> 
+  <meta name="msapplication-TileImage" content="/static/metro-icon-144x144-precomposed.png"><!-- white shape --> 
+  <meta name="msapplication-TileColor" content="#3673a5"><!-- python blue --> 
+  <meta name="msapplication-navbutton-color" content="#3673a5"> 
+  <title>Python Software Foundation: Vendor Policies | Python Software Foundation</title> 
+  <meta name="description" content="The official home of the Python Programming Language"> 
+  <meta name="keywords" content="Python programming language object oriented web free open source software license documentation download community"> 
+  <meta property="og:type" content="website"> 
+  <meta property="og:site_name" content="Python.org"> 
+  <meta property="og:title" content="Python Software Foundation: Vendor Policies"> 
+  <meta property="og:description" content="The official home of the Python Programming Language"> 
+  <meta property="og:image" content="https://www.python.org/static/opengraph-icon-200x200.png"> 
+  <meta property="og:image:secure_url" content="https://www.python.org/static/opengraph-icon-200x200.png"> 
+  <meta property="og:url" content="https://www.python.org/psf/vendorpolicies/"> 
+  <link rel="author" href="/static/humans.txt"> 
+  <link rel="alternate" type="application/rss+xml" title="Python Enhancement Proposals" href="https://www.python.org/dev/peps/peps.rss/"> 
+  <link rel="alternate" type="application/rss+xml" title="Python Job Opportunities" href="https://www.python.org/jobs/feed/rss/"> 
+  <link rel="alternate" type="application/rss+xml" title="Python Software Foundation News" href="https://feeds.feedburner.com/PythonSoftwareFoundationNews"> 
+  <link rel="alternate" type="application/rss+xml" title="Python Insider" href="https://feeds.feedburner.com/PythonInsider"> 
+  <script type="application/ld+json">
+     {
+       "@context": "https://schema.org",
+       "@type": "WebSite",
+       "url": "https://www.python.org/",
+       "potentialAction": {
+         "@type": "SearchAction",
+         "target": "https://www.python.org/search/?q={search_term_string}",
+         "query-input": "required name=search_term_string"
+       }
+     }
+    </script> 
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-39055973-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script> 
+ </head> 
+ <body class="psf pages default-page"> 
+  <div id="touchnav-wrapper"> 
+   <div id="nojs" class="do-not-print"> 
+    <p><strong>Notice:</strong> While JavaScript is not essential for this website, your interaction with the content will be limited. Please turn JavaScript on for the full experience. </p> 
+   </div> <!--[if lte IE 8]>
+        <div id="oldie-warning" class="do-not-print">
+            <p>
+                <strong>Notice:</strong> Your browser is <em>ancient</em>. Please
+                <a href="http://browsehappy.com/">upgrade to a different browser</a> to experience a better web.
+            </p>
+        </div>
+        <![endif]--> <!-- Sister Site Links --> 
+   <div id="top" class="top-bar do-not-print"> 
+    <nav class="meta-navigation container" role="navigation"> 
+     <div class="skip-link screen-reader-text"> <a href="#content" title="Skip to content">Skip to content</a> 
+     </div> <a id="close-python-network" class="jump-link" href="#python-network" aria-hidden="true"> <span aria-hidden="true" class="icon-arrow-down"><span>?</span></span> Close </a> 
+     <ul class="menu" role="tree"> 
+      <li class="python-meta "> <a href="/" title="The Python Programming Language">Python</a> </li> 
+      <li class="psf-meta current_branch selected"> <a href="/psf-landing/" title="The Python Software Foundation" class="current_branch selected">PSF</a> </li> 
+      <li class="docs-meta "> <a href="https://docs.python.org" title="Python Documentation">Docs</a> </li> 
+      <li class="pypi-meta "> <a href="https://pypi.org/" title="Python Package Index">PyPI</a> </li> 
+      <li class="jobs-meta "> <a href="/jobs/" title="Python Job Board">Jobs</a> </li> 
+      <li class="shop-meta "> <a href="/community-landing/">Community</a> </li> 
+     </ul> <a id="python-network" class="jump-link" href="#top" aria-hidden="true"> <span aria-hidden="true" class="icon-arrow-up"><span>?</span></span> The Python Network </a> 
+    </nav> 
+   </div> <!-- Header elements --> 
+   <header class="main-header" role="banner"> 
+    <div class="container"> 
+     <h1 class="site-headline"> <a href="/psf-landing/"><img class="psf-logo" src="/static/img/psf-logo.png" alt="Python Software Foundation"></a> </h1> 
+     <div class="options-bar-container do-not-print"> <a href="https://psfmember.org/civicrm/contribute/transact?reset=1&amp;id=2" class="donate-button">Donate</a> 
+      <div class="options-bar"> <a id="site-map-link" class="jump-to-menu" href="#site-map"><span class="menu-icon">?</span> Menu</a>
+       <form class="search-the-site" action="/search/" method="get"> 
+        <fieldset title="Search Python.org"> <span aria-hidden="true" class="icon-search"></span> <label class="screen-reader-text" for="id-search-field">Search This Site</label> 
+         <input id="id-search-field" name="q" type="search" role="textbox" class="search-field" placeholder="Search" value="" tabindex="1"> <button type="submit" name="submit" id="submit" class="search-button" title="Submit this Search" tabindex="3"> GO </button> <!--[if IE]><input type="text" style="display: none;" disabled="disabled" size="1" tabindex="4"><![endif]--> 
+        </fieldset> 
+       </form><span class="breaker"></span>
+       <div class="adjust-font-size" aria-hidden="true"> 
+        <ul class="navigation menu" aria-label="Adjust Text Size on Page"> 
+         <li class="tier-1 last" aria-haspopup="true"> <a href="#" class="action-trigger"><strong><small>A</small> A</strong></a> 
+          <ul class="subnav menu"> 
+           <li class="tier-2 element-1" role="treeitem"><a class="text-shrink" title="Make Text Smaller" href="javascript:;">Smaller</a></li> 
+           <li class="tier-2 element-2" role="treeitem"><a class="text-grow" title="Make Text Larger" href="javascript:;">Larger</a></li> 
+           <li class="tier-2 element-3" role="treeitem"><a class="text-reset" title="Reset any font size changes I have made" href="javascript:;">Reset</a></li> 
+          </ul> </li> 
+        </ul> 
+       </div>
+       <div class="winkwink-nudgenudge"> 
+        <ul class="navigation menu" aria-label="Social Media Navigation"> 
+         <li class="tier-1 last" aria-haspopup="true"> <a href="#" class="action-trigger">Socialize</a> 
+          <ul class="subnav menu"> 
+           <li class="tier-2 element-1" role="treeitem"><a href="https://www.facebook.com/pythonlang?fref=ts"><span aria-hidden="true" class="icon-facebook"></span>Facebook</a></li> 
+           <li class="tier-2 element-2" role="treeitem"><a href="https://twitter.com/ThePSF"><span aria-hidden="true" class="icon-twitter"></span>Twitter</a></li> 
+           <li class="tier-2 element-3" role="treeitem"><a href="/community/irc/"><span aria-hidden="true" class="icon-freenode"></span>Chat on IRC</a></li> 
+          </ul> </li> 
+        </ul> 
+       </div> <span data-html-include="/authenticated"></span> 
+      </div><!-- end options-bar --> 
+     </div> 
+     <nav id="mainnav" class="psf-navigation main-navigation do-not-print" role="navigation"> 
+      <ul class="navigation menu" role="menubar" aria-label="Main Navigation"> 
+       <li id="about" class="tier-1 element-1  " aria-haspopup="true"> <a href="/psf/about/" title="" class="">About</a> 
+        <ul class="subnav menu" role="menu" aria-hidden="true"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="/psf/mission/" title="">Mission statement</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="/psf/records/" title="">Public records</a></li> 
+         <li class="tier-2 element-3" role="treeitem"><a href="/psf/committees/" title="">PSF Workgroups</a></li> 
+         <li class="tier-2 element-4" role="treeitem"><a href="/psf/annual-report/2021/" title="">Annual Impact Report</a></li> 
+         <li class="tier-2 element-5" role="treeitem"><a href="/nominations/elections/" title="">Elections</a></li> 
+        </ul> </li> 
+       <li id="sponsorship" class="tier-1 element-2  " aria-haspopup="true"> <a href="/psf/sponsorship/" title="" class="">Sponsorship</a> 
+        <ul class="subnav menu" role="menu" aria-hidden="true"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="/psf/sponsors/" title="">PSF Sponsors</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="/psf/sponsorship/" title="">How to become a sponsor</a></li> 
+         <li class="tier-2 element-3" role="treeitem"><a href="/sponsors/application/" title="">Apply to Sponsor</a></li> 
+        </ul> </li> 
+       <li id="membership" class="tier-1 element-3  " aria-haspopup="true"> <a href="/psf/membership/" title="" class="">Membership</a> 
+        <ul class="subnav menu" role="menu" aria-hidden="true"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="/psf/membership/" title="">Membership FAQ</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="/psf/members/" title="">Membership roster</a></li> 
+         <li class="tier-2 element-3" role="treeitem"><a href="/users/membership/" title="">Sign up as member</a></li> 
+         <li class="tier-2 element-4" role="treeitem"><a href="/community/awards/" title="">Community Awards</a></li> 
+         <li class="tier-2 element-5" role="treeitem"><a href="http://pyfound.blogspot.de/2015/02/enroll-as-psf-voting-member.html" title="">Self-certify as voting member</a></li> 
+         <li class="tier-2 element-6" role="treeitem"><a href="/psf/conduct/" title="">Python Community Code of Conduct</a></li> 
+         <li class="tier-2 element-7" role="treeitem"><a href="/psf/newsletter/" title="">Newsletter</a></li> 
+        </ul> </li> 
+       <li id="donations" class="tier-1 element-4  " aria-haspopup="true"> <a href="/psf/donations/" title="" class="">Donations </a> 
+        <ul class="subnav menu" role="menu" aria-hidden="true"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="/psf/donations/" title="">Donations</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="/psf/contrib/" title="">Contribution forms</a></li> 
+         <li class="tier-2 element-3" role="treeitem"><a href="/psf/fraud/" title="">Suspicious checks</a></li> 
+         <li class="tier-2 element-4" role="treeitem"><a href="https://www.python.org/psf/donations/matching-gifts/" title="">PSF Matching Donations</a></li> 
+        </ul> </li> 
+       <li id="volunteer" class="tier-1 element-5  " aria-haspopup="true"> <a href="/psf/volunteer/" title="" class="">Volunteer</a> 
+        <ul class="subnav menu" role="menu" aria-hidden="true"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="/psf/volunteer/" title="">PSF</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="/psf/volunteer/pycon/" title="">PyCon US</a></li> 
+        </ul> </li> 
+       <li id="grants" class="tier-1 element-6  " aria-haspopup="true"> <a href="/psf/grants/" title="" class="">Grants</a> 
+        <ul class="subnav menu" role="menu" aria-hidden="true"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="/psf/grants/" title="">Grants program</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="/psf/grants/faq/" title="">Grants Program FAQ</a></li> 
+        </ul> </li> 
+       <li id="vendor-info" class="tier-1 element-7  " aria-haspopup="true"> <a href="/psf/accounts-payable" title="" class=" selected">Vendor Info</a> 
+        <ul class="subnav menu" role="menu" aria-hidden="true"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="/psf/vendorpolicies/" title="">Vendor Policies</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="/psf/paymentoptions/" title="">Payment Options</a></li> 
+        </ul> </li> 
+       <li id="legal" class="tier-1 element-8  " aria-haspopup="true"> <a href="/about/legal/" title="" class="">Legal</a> 
+        <ul class="subnav menu" role="menu" aria-hidden="true"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="/psf/bylaws/" title="">Bylaws</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="/psf/trademarks/" title="">Trademark policy</a></li> 
+         <li class="tier-2 element-3" role="treeitem"><a href="/psf/weblog-policy/" title="">Weblog policy</a></li> 
+         <li class="tier-2 element-4" role="treeitem"><a href="/psf/license" title="">License</a></li> 
+        </ul> </li> 
+       <li id="media" class="tier-1 element-9  " aria-haspopup="true"> <a href="https://www.python.org/psf/press-release/" title="" class="">Media</a> 
+        <ul class="subnav menu" role="menu" aria-hidden="true"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="/psf/press-release/" title="">Press releases</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="/community/logos/" title="">Logo</a></li> 
+        </ul> </li> 
+       <li id="psf-blog" class="tier-1 element-10  last" aria-haspopup="true"> <a href="http://pyfound.blogspot.com/" title="" class="">PSF Blog</a> </li> 
+      </ul> 
+     </nav> 
+     <div class="header-banner "> <!-- for optional "do-not-print" class --> 
+     </div> 
+    </div><!-- end .container --> 
+   </header> 
+   <div id="content" class="content-wrapper"> <!-- Main Content Column --> 
+    <div class="container"> 
+     <section class="main-content with-left-sidebar" role="main"> 
+      <div class="notification-bar notification-bar--survey" style="background-color: #ffdf76; color: #664e04; border-color: #004d7a; text-align: center; background-color: #004d7a; color: #fff; padding: 10px; margin: .5em; position: relative; width: 95%; background-color: #ffdf76; color: #664e04; border-color: #004d7a; border-radius: 1em;"> <span class="notification-bar__icon"> <i class="fa fa-chart-line" aria-hidden="true"></i> </span> <span class="notification-bar__message">Contribute today to the ?thon PSF Spring Fundraiser and show your love for Python! &nbsp;&nbsp;<a class="button button--dark button--small button--primary" style="color: #606060; border-color: #006dad; background-color: #006dad;" href="https://psfmember.org/civicrm/contribute/transact?reset=1&amp;id=37" target="_blank" rel="noopener">Donate Now</a> </span> 
+      </div> 
+      <ul class="breadcrumbs menu"> 
+       <li> <a href="/psf-landing/" title="The Python Software Foundation">PSF</a><span class="prompt">&gt;&gt;&gt;</span> </li> 
+       <li> <a href="/psf/accounts-payable">Vendor Info</a><span class="prompt">&gt;&gt;&gt;</span> </li> 
+       <li>Vendor Policies</li> 
+      </ul> 
+      <article class="text"> 
+       <header class="article-header"> 
+        <h1 class="page-title">Python Software Foundation: Vendor Policies</h1> 
+       </header> 
+       <ul> 
+        <li> <h5><a href="#introduction">Introduction</a></h5> </li> 
+        <li> <h5><a href="#employee-vs-contractor">Employee vs contractor</a></h5> 
+         <ul> 
+          <li><a href="#purpose">Purpose</a></li> 
+          <li><a href="#factors">Factors</a></li> 
+          <li><a href="#form-ss-8">Form SS-8</a></li> 
+         </ul> </li> 
+        <li> <h5><a href="#vendor-definition">Vendor Definition</a></h5> </li> 
+        <li> <h5><a href="#invoices">Invoices</a></h5> 
+         <ul> 
+          <li><a href="#invoice-contents">Invoice Contents</a></li> 
+          <li><a href="#invoice-example">Invoice Example</a></li> 
+         </ul> </li> 
+        <li> <h5><a href="#payment-terms">Payment Terms</a></h5> </li> 
+        <li> <h5><a href="#approval-process">Approval Process</a></h5> </li> 
+        <li> <h5><a href="#ofac-sanctions">OFAC Sanctioned Countries</a></h5> </li> 
+        <li> <h5><a href="#vendor-tax-documents">Vendor Tax Documents</a></h5> 
+         <ul> 
+          <li><a href="#tax-withholding">Tax Withholding</a> 
+           <ul> 
+            <li><a href="#domestic-individuals">Domestic Individuals and Organizations</a> 
+             <ul> 
+              <li><a href="#domestic-individuals">Tax Withholding</a></li> 
+              <li><a href="#domestic-individuals">Form 1099</a></li> 
+             </ul> </li> 
+            <li><a href="#foreign-individuals">Foreign Individuals and Organizations</a> 
+             <ul> 
+              <li><a href="#foreign-individuals">Tax Withholding</a> 
+               <ul> 
+                <li><a href="#tax-treaties">United States-Foreign Country Tax Treaties</a></li> 
+                <li><a href="#tax-identification-numbers">US Tax Identification Numbers</a> 
+                 <ul> 
+                  <li><a href="#obtaining-a-us-itin">Obtaining a US ITIN</a></li> 
+                  <li><a href="#itin-exceptions">Exceptions to US TIN requirements</a></li> 
+                 </ul> </li> 
+                <li><a href="#obtaining-a-refund">Obtaining a refund of US federal taxes withheld</a></li> 
+                <li><a href="#fatca">Foreign Account Tax Compliance Act (FATCA)</a></li> 
+               </ul> </li> 
+              <li><a href="#form-1042-s">Form 1042-S</a></li> 
+             </ul> </li> 
+           </ul> </li> 
+         </ul> </li> 
+       </ul> 
+       <hr> 
+       <h1><a name="introduction"></a>Introduction</h1> 
+       <p>The Python Software Foundation (PSF) vendor policies are intended to provide guidance on whether services fall into employment or vendor relationships, further define vendors and invoice requirements, and tax documentation requirements.</p> 
+       <p><strong>The Python Software Foundation does not provide tax, legal or accounting advice. This material has been prepared for informational purposes only, and is not intended to provide, and should not be relied on for, tax, legal, or accounting advice. Please consult your tax, legal, and accounting advisors before engaging in any transaction.</strong></p> 
+       <h1><a name="employee-vs-contractor"></a>Employee vs contractor</h1> 
+       <h2><a name="purpose"></a>Purpose</h2> 
+       <p>To provide a policy to determine whether a service provided to the PSF is done by an employee or a contractor.</p> 
+       <h2><a name="factors"></a>Factors</h2> 
+       <p>In general, if control falls to the PSF, an individual is an employee. If the individual is independent, they are an independent contractor.</p> 
+       <p>In determining employee vs. contractor status, the PSF considers the following criteria:</p> 
+       <ol> 
+        <li>Does the PSF control or have the right to control what the worker does and how the worker does his or her job? 
+         <ol> 
+          <li>Independent contractors decide for themselves how and where they work, and what tools should be used to complete the work. They assume the risk for their own profit/loss on a project.</li> 
+          <li>The PSF has the right to control employee’s work and conducts regular reviews of employee performance to ensure that the work product is following management’s expectations.</li> 
+         </ol> </li> 
+        <li>Are the business aspects of the worker’s job controlled by the PSF? (these include things like how the worker is paid, whether expenses are reimbursed, who provides tools/supplies, etc.) 
+         <ol> 
+          <li>Employees are salaried or hourly employees paid bi-weekly by the PSF.</li> 
+          <li>Independent contractors are paid on a contract basis with the frequency of payment set by the contract.</li> 
+          <li>Employees are reimbursed for expenses and are provided supplies for completing work.</li> 
+          <li>Independent contractors are responsible for their own expenses and must provide their own tools and supplies. In some cases, direct expenses as determined in the contract, such as travel, may be reimbursed by the PSF and not affect the contractor’s status.</li> 
+         </ol> </li> 
+        <li>Are there written contracts or employee type benefits (i.e. pension plan, insurance, vacation pay, etc.)? 
+         <ol> 
+          <li>Prospective hires are given an offer letter providing general terms of employment including annual salary, benefits eligibility, and start date.</li> 
+          <li>The PSF assumes responsibility for worker’s compensation insurance, unemployment insurance, and any employer federal or state payroll taxes for employees. The PSF is not responsible for paying employer taxes for contractors. However, if the contractor is a non-US national, then the PSF may be responsible for withholding and remitting taxes to the IRS.</li> 
+          <li>The PSF’s general liability insurance policy covers all employees and contractors who are performing business on the PSF’s behalf and is not considered an employee benefit.</li> 
+         </ol> </li> 
+        <li>Will the relationship continue and is the work performed a key aspect of the business? 
+         <ol> 
+          <li>Employees are generally hired for an undetermined length of time. Independent contractors are generally hired for a predetermined length of time and for a specific project or projects as stated in their contract.</li> 
+          <li>Work that is a key aspect of business should not be contracted out and should be performed by an employee.</li> 
+         </ol> </li> 
+       </ol> 
+       <p>A <a href="https://www.cjr.org/united_states_project/california-assembly-bill-5.php">new law in California</a> limits the work a contractor can do for a company. Work that is in a company’s normal course of business cannot be contracted out. Additionally, contractors cannot be hired for more than 35 individual projects during a year.</p> 
+       <h2><a name="form-ss-8"></a>Form SS-8</h2> 
+       <p>If, after reviewing these categories of evidence, it is unclear whether a worker is an employee or an independent contractor, <a href="https://www.irs.gov/pub/irs-pdf/fss8.pdf">Form SS-8</a>, Determination of Worker Status for Purposes of Federal Employment Taxes and Income Tax Withholding, can be filed with the IRS. The form may be filed by either the business or the worker. The IRS will review the facts and circumstances and officially determine the worker’s status.</p> 
+       <hr> 
+       <h1><a name="vendor-definition"></a>Vendor Definition</h1> 
+       <p>Vendors include various legal entities that provide goods and services to the PSF. Typical legal entities include individuals/sole proprietors, S-Corporations, C-Corporations, partnerships, and LLCs.</p> 
+       <p>Vendors include legal entities that are paid for invoices or independent contractor agreements, as well as awards and honorariums.</p> 
+       <p>For more information about the tax documentation and implications for various types of vendors, see the Vendor Tax Documents section.</p> 
+       <h1><a name="invoices"></a>Invoices</h1> 
+       <p>The PSF generally requires an invoice in order to process a vendor payment unless a fully-executed letter of agreement or contract provides payment information. Invoices should be submitted by email to <a href="mailto:accounting@python.org">accounting@python.org</a> within 5 days after the end of a calendar month.</p> 
+       <h2><a name="invoice-contents"></a>Invoice Contents</h2> 
+       <p>Invoices should contain the following information:</p> 
+       <ul> 
+        <li>Vendor name</li> 
+        <li>Vendor address 
+         <ul> 
+          <li>street, city, state/province, postal code, country</li> 
+         </ul> </li> 
+        <li>Invoice date 
+         <ul> 
+          <li>MUST BE within the same month the work was completed</li> 
+         </ul> </li> 
+        <li>Invoice number</li> 
+        <li><a href="#h.tjsmxd999ngd">Payment terms</a></li> 
+        <li>Description of goods or services provided</li> 
+        <li>Amount of the invoice and currency (such as “USD” for US dollars)</li> 
+        <li>Form of payment desired and related payment instructions 
+         <ul> 
+          <li>Please see the <a href="https://www.python.org/psf/paymentoptions/">Payment Options</a> page for more detail</li> 
+         </ul> </li> 
+       </ul> 
+       <h2><a name="invoice-example"></a>Invoice Example</h2> 
+       <p>A <a href="https://www.skynova.com/template/invoice">free invoice template can be found here</a>.</p> 
+       <h1><a name="payment-terms"></a>Payment Terms</h1> 
+       <p>Payment terms are defined as the number of days an invoice is due after the invoice date or an event specified by a contract or letter of agreement.</p> 
+       <p>If an invoice does not include payment terms and/or the invoice due date is not specified by a letter of agreement or contract, the PSF assumes the following payment terms from the invoice date:</p> 
+       <ul> 
+        <li>7 days for grants and awards</li> 
+        <li>15 days for individuals</li> 
+        <li>30 days for organizations</li> 
+       </ul> 
+       <p>All invoices must be approved and complete tax documents submitted before payment is issued.</p> 
+       <p>Please contact the <a href="mailto:accounting@python.org">PSF accounting team</a> with any questions about payment terms.</p> 
+       <h1><a name="approval-process"></a>Approval Process</h1> 
+       <p>All invoices must be approved before payment is issued.</p> 
+       <p>Grants, including financial aid, awards, and honoraria, are approved in advance.</p> 
+       <p>Invoices related to software development or user experience must be approved by the appropriate project manager; project managers are encouraged to approve invoices within 7 days of receipt. All other invoices, including project management, must be approved by a PSF employee. The PSF accounting team currently acquires approval using Adobe Echosign or email.</p> 
+       <h1><a name="ofac-sanctions"></a>OFAC Sanctioned Countries</h1> 
+       <p>The <a href="https://home.treasury.gov/policy-issues/office-of-foreign-assets-control-sanctions-programs-and-information">Office of Foreign Assets and Control (OFAC)</a> publishes lists of individuals and companies owned or controlled by, or acting for or on behalf of, targeted countries. The US government prohibits US citizens, US-based entities and US branches of foreign companies from doing business with countries or parties on these lists. The lists include individuals, groups, and entities, such as terrorists and narcotics traffickers designated under programs that are not country-specific. The <a href="https://home.treasury.gov/policy-issues/financial-sanctions/specially-designated-nationals-and-blocked-persons-list-sdn-human">Specially Designated Nationals (SDN)</a> list contains names of individuals, banks, businesses, etc. that have been blocked from doing business in the US. OFAC lists change often and are published on <a href="https://home.treasury.gov/policy-issues/office-of-foreign-assets-control-sanctions-programs-and-information">OFAC’s site</a>.</p> 
+       <p>The Python Software Foundation complies with OFAC regulations to avoid both civil and criminal penalties. Before the PSF accounting team adds new vendors to its system, the PSF checks the OFAC lists to confirm that the new vendor is compliant. Non-compliant vendors will not be issued reimbursements, grants, or other payments.</p> 
+       <h1><a name="vendor-tax-documents"></a>Vendor Tax Documents</h1> 
+       <p>In order to receive payment for a service, the PSF requires complete tax documents to be submitted by mail to <a href="mailto:accounting@python.org">accounting@python.org</a>. Tax document requirements vary depending on where the vendor resides, the type of legal entity the vendor uses, and whether the vendor has a US tax identification number.</p> 
+       <p>All vendors receiving payment from the PSF are required to provide one of the following completed tax forms:</p> 
+       <ul> 
+        <li><a href="https://www.irs.gov/pub/irs-pdf/fw9.pdf">W-9</a>: for domestic individuals and organizations</li> 
+        <li><a href="https://www.irs.gov/pub/irs-pdf/f8233.pdf">Form 8233</a>: for foreign individuals with a US TIN</li> 
+        <li><a href="https://www.irs.gov/pub/irs-pdf/fw8ben.pdf">W-8BEN</a>: for foreign individuals without a US TIN</li> 
+        <li><a href="https://www.irs.gov/pub/irs-pdf/fw8bene.pdf">W-8BEN-E</a>: for foreign organizations</li> 
+       </ul> 
+       <p>Please contact the <a href="mailto:accounting@python.org">PSF accounting team</a> if you have questions about tax documents and we will try to assist you.</p> 
+       <h2><a name="tax-withholding"></a>Tax Withholding for Contractors</h2> 
+       <h3><a name="domestic-individuals"></a>Domestic Individuals and Organizations</h3> 
+       <h4>Tax Withholding</h4> 
+       <p>Payments made to domestic individuals and organizations are not subject to tax withholding by the PSF.</p> 
+       <h4>Form 1099</h4> 
+       <p>The PSF issues one <a href="https://www.irs.gov/pub/irs-pdf/f1099msc.pdf">Form 1099</a> per vendor by January 31 of the year after vendor payments are made. The PSF sends Form 1099 by physical mail; vendors may opt in to receive the form by email.</p> 
+       <p>Payments reported to vendors on Form 1099 may be taxable; please consult your tax advisor and refer to the <a href="https://www.irs.gov/forms-pubs/about-form-1099-misc">IRS’s 1099 page</a> for more information.</p> 
+       <h3><a name="foreign-individuals"></a>Foreign Individuals and Organizations</h3> 
+       <h4>Tax Withholding</h4> 
+       <p>Payments made to foreign individuals are subject to 30% US federal tax withholding, unless all of the following conditions are met:</p> 
+       <ul> 
+        <li>The vendor’s country of residence has a <a href="#tax-treaties">tax treaty with the US</a>.</li> 
+        <li>The vendor has a US tax identification number, such as an EIN, SSN, or ITIN.</li> 
+       </ul> 
+       <h5><a name="tax-treaties"></a>United States-Foreign Country Tax Treaties</h5> 
+       <p>Foreign vendors may claim lowered or reduced US federal withholding rates if a tax treaty exists between their country of residence and the United States.</p> 
+       <p>First, the vendor must determine whether the US has a tax treaty with the foreign vendor’s country of residence using the <a href="https://www.irs.gov/businesses/international-businesses/united-states-income-tax-treaties-a-to-z">current list of US tax treaties</a>.</p> 
+       <p>Second, the vendor must determine whether the tax treaty applies to services provided to the PSF.</p> 
+       <p>Please refer to IRS summaries of available tax treaty benefits <a href="https://www.irs.gov/individuals/international-taxpayers/tax-treaty-tables">here</a> or <a href="https://www.irs.gov/pub/irs-pdf/p901.pdf">Publication 901 (US Tax Treaties)</a> for additional information.</p> 
+       <h5><a name="tax-identification-numbers"></a>US Tax Identification Numbers</h5> 
+       <ul> 
+        <li>US tax identification numbers include the Employer Identification Number (EIN), Social Security Number (SSN), or Individual Taxpayer Identification Number (ITIN).</li> 
+       </ul> 
+       <h6><a name="obtaining-a-us-itin"></a>Obtaining a US ITIN</h6> 
+       <p>A US ITIN is a 9-digit number issued by the U.S. Internal Revenue Service to individuals who do not have and are not eligible to get a US EIN or SSN.</p> 
+       <p>Generally, all foreign individuals claiming reduced withholding under an applicable income tax treaty must have an ITIN (see Regulations section 1.1441-1(e)(4)(vii)(A)). Also see <a href="https://www.irs.gov/pub/irs-pdf/p515.pdf">Pub. 515, Withholding of Tax on Nonresident Aliens and Foreign Entities</a>.</p> 
+       <p>Foreign individuals may obtain a US ITIN by completing <a href="https://www.irs.gov/pub/irs-pdf/fw7.pdf">Form W-7</a>. This form is filed with the US IRS by mail, through acceptance agents, and other methods. For more information, see the <a href="https://www.irs.gov/instructions/iw7">W-7 instructions</a>.</p> 
+       <h6><a name="itin-exceptions"></a>Exceptions to US TIN requirements</h6> 
+       <p>To qualify for the substantial presence test, the PSF as withholding agent would be responsible for tracking a contractor's movements in and out of the United States for all PSF and non-PSF projects for two years. This is an undue burden on both the PSF and the vendor and cannot be projected at the time the payment is made, so the PSF does not allow this exception to be used to avoid US federal tax withholding.</p> 
+       <h5><a name="obtaining-a-refund"></a>Obtaining a refund of US federal taxes withheld</h5> 
+       <p>Please consult a tax expert for the best option for you. Below are two common approaches:</p> 
+       <ul> 
+        <li>Foreign individuals may file a tax return with the United States Internal Revenue Service after the end of the year the payment was made. All US income must be included in the annual tax return.</li> 
+        <li>Foreign individuals may be able to apply for a credit for taxes paid to the US if the income was also taxed by the vendor’s country of residence.</li> 
+       </ul> 
+       <h5><a name="fatca"></a>Foreign Account Tax Compliance Act (FATCA)</h5> 
+       <p>The Foreign Account Tax Compliance Act (FATCA) is a United States Federal Law intended to improve tax compliance.</p> 
+       <p>Payers such as the PSF must:</p> 
+       <ul> 
+        <li>Have procedures to categorize foreign payees and identify payments that are subject to withholding.</li> 
+        <li>Have procedures to report and withhold tax from payments that are subject to withholding.</li> 
+        <li>Receive appropriate documentation, such as forms W-9, 8233, or W-8 series, to verify the payee’s FATCA status.</li> 
+       </ul> 
+       <h4><a name="form-1042-s"></a>Form 1042-S</h4> 
+       <p>The PSF issues one <a href="https://www.irs.gov/pub/irs-pdf/f1042s.pdf">Form 1042-S</a> per vendor by March 15 of the year after vendor payments are made. The PSF sends Form 1042-S by email and will send a physical copy if requested by the vendor.</p> 
+       <p>Payments reported to vendors on Form 1042-S may be taxable; please consult your tax advisor.</p> 
+      </article> 
+     </section> 
+     <aside class="left-sidebar" role="secondary"> 
+      <div class="psf-sidebar-widget sidebar-widget"> 
+       <h3 class="widget-title">The PSF</h3> 
+       <p>The Python Software Foundation is the organization behind Python. Become a member of the PSF and help advance the software and our mission. </p> 
+      </div> 
+      <div class="twitter-widget sidebar-widget"> <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/ThePSF" data-widget-id="434113224703610882">Tweets by @ThePSF</a> 
+       <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script> 
+      </div> 
+     </aside> 
+    </div><!-- end .container --> 
+   </div><!-- end #content .content-wrapper --> <!-- Footer and social media list --> 
+   <footer id="site-map" class="main-footer" role="contentinfo"> 
+    <div class="main-footer-links"> 
+     <div class="container"> <a id="back-to-top-1" class="jump-link" href="#python-network"><span aria-hidden="true" class="icon-arrow-up"><span>?</span></span> Back to Top</a> 
+      <ul class="sitemap navigation menu do-not-print" role="tree" id="container"> 
+       <li class="tier-1 element-1"> <a href="/about/">About</a> 
+        <ul class="subnav menu"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="/about/apps/" title="">Applications</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="/about/quotes/" title="">Quotes</a></li> 
+         <li class="tier-2 element-3" role="treeitem"><a href="/about/gettingstarted/" title="">Getting Started</a></li> 
+         <li class="tier-2 element-4" role="treeitem"><a href="/about/help/" title="">Help</a></li> 
+         <li class="tier-2 element-5" role="treeitem"><a href="http://brochure.getpython.info/" title="">Python Brochure</a></li> 
+        </ul> </li> 
+       <li class="tier-1 element-2"> <a href="/downloads/">Downloads</a> 
+        <ul class="subnav menu"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="/downloads/" title="">All releases</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="/downloads/source/" title="">Source code</a></li> 
+         <li class="tier-2 element-3" role="treeitem"><a href="/downloads/windows/" title="">Windows</a></li> 
+         <li class="tier-2 element-4" role="treeitem"><a href="/downloads/macos/" title="">macOS</a></li> 
+         <li class="tier-2 element-5" role="treeitem"><a href="/download/other/" title="">Other Platforms</a></li> 
+         <li class="tier-2 element-6" role="treeitem"><a href="https://docs.python.org/3/license.html" title="">License</a></li> 
+         <li class="tier-2 element-7" role="treeitem"><a href="/download/alternatives" title="">Alternative Implementations</a></li> 
+        </ul> </li> 
+       <li class="tier-1 element-3"> <a href="/doc/">Documentation</a> 
+        <ul class="subnav menu"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="/doc/" title="">Docs</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="/doc/av" title="">Audio/Visual Talks</a></li> 
+         <li class="tier-2 element-3" role="treeitem"><a href="https://wiki.python.org/moin/BeginnersGuide" title="">Beginner's Guide</a></li> 
+         <li class="tier-2 element-4" role="treeitem"><a href="https://devguide.python.org/" title="">Developer's Guide</a></li> 
+         <li class="tier-2 element-5" role="treeitem"><a href="https://docs.python.org/faq/" title="">FAQ</a></li> 
+         <li class="tier-2 element-6" role="treeitem"><a href="http://wiki.python.org/moin/Languages" title="">Non-English Docs</a></li> 
+         <li class="tier-2 element-7" role="treeitem"><a href="http://python.org/dev/peps/" title="">PEP Index</a></li> 
+         <li class="tier-2 element-8" role="treeitem"><a href="https://wiki.python.org/moin/PythonBooks" title="">Python Books</a></li> 
+         <li class="tier-2 element-9" role="treeitem"><a href="/doc/essays/" title="">Python Essays</a></li> 
+        </ul> </li> 
+       <li class="tier-1 element-4"> <a href="/community/">Community</a> 
+        <ul class="subnav menu"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="/community/diversity/" title="">Diversity</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="/community/lists/" title="">Mailing Lists</a></li> 
+         <li class="tier-2 element-3" role="treeitem"><a href="/community/irc/" title="">IRC</a></li> 
+         <li class="tier-2 element-4" role="treeitem"><a href="/community/forums/" title="">Forums</a></li> 
+         <li class="tier-2 element-5" role="treeitem"><a href="/psf/annual-report/2021/" title="">PSF Annual Impact Report</a></li> 
+         <li class="tier-2 element-6" role="treeitem"><a href="/community/workshops/" title="">Python Conferences</a></li> 
+         <li class="tier-2 element-7" role="treeitem"><a href="/community/sigs/" title="">Special Interest Groups</a></li> 
+         <li class="tier-2 element-8" role="treeitem"><a href="/community/logos/" title="">Python Logo</a></li> 
+         <li class="tier-2 element-9" role="treeitem"><a href="https://wiki.python.org/moin/" title="">Python Wiki</a></li> 
+         <li class="tier-2 element-10" role="treeitem"><a href="/community/merchandise/" title="">Merchandise</a></li> 
+         <li class="tier-2 element-11" role="treeitem"><a href="/community/awards" title="">Community Awards</a></li> 
+         <li class="tier-2 element-12" role="treeitem"><a href="/psf/conduct/" title="">Code of Conduct</a></li> 
+         <li class="tier-2 element-13" role="treeitem"><a href="/psf/get-involved/" title="">Get Involved</a></li> 
+         <li class="tier-2 element-14" role="treeitem"><a href="/psf/community-stories/" title="">Shared Stories</a></li> 
+        </ul> </li> 
+       <li class="tier-1 element-5"> <a href="/success-stories/" title="success-stories">Success Stories</a> 
+        <ul class="subnav menu"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="/success-stories/category/arts/" title="">Arts</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="/success-stories/category/business/" title="">Business</a></li> 
+         <li class="tier-2 element-3" role="treeitem"><a href="/success-stories/category/education/" title="">Education</a></li> 
+         <li class="tier-2 element-4" role="treeitem"><a href="/success-stories/category/engineering/" title="">Engineering</a></li> 
+         <li class="tier-2 element-5" role="treeitem"><a href="/success-stories/category/government/" title="">Government</a></li> 
+         <li class="tier-2 element-6" role="treeitem"><a href="/success-stories/category/scientific/" title="">Scientific</a></li> 
+         <li class="tier-2 element-7" role="treeitem"><a href="/success-stories/category/software-development/" title="">Software Development</a></li> 
+        </ul> </li> 
+       <li class="tier-1 element-6"> <a href="/blogs/" title="News from around the Python world">News</a> 
+        <ul class="subnav menu"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="/blogs/" title="Python Insider Blog Posts">Python News</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="/psf/newsletter/" title="Python Software Foundation Newsletter">PSF Newsletter</a></li> 
+         <li class="tier-2 element-3" role="treeitem"><a href="http://planetpython.org/" title="Planet Python">Community News</a></li> 
+         <li class="tier-2 element-4" role="treeitem"><a href="http://pyfound.blogspot.com/" title="PSF Blog">PSF News</a></li> 
+         <li class="tier-2 element-5" role="treeitem"><a href="http://pycon.blogspot.com/" title="PyCon Blog">PyCon News</a></li> 
+        </ul> </li> 
+       <li class="tier-1 element-7"> <a href="/events/">Events</a> 
+        <ul class="subnav menu"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="/events/python-events/" title="">Python Events</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="/events/python-user-group/" title="">User Group Events</a></li> 
+         <li class="tier-2 element-3" role="treeitem"><a href="/events/python-events/past/" title="">Python Events Archive</a></li> 
+         <li class="tier-2 element-4" role="treeitem"><a href="/events/python-user-group/past/" title="">User Group Events Archive</a></li> 
+         <li class="tier-2 element-5" role="treeitem"><a href="https://wiki.python.org/moin/PythonEventsCalendar#Submitting_an_Event" title="">Submit an Event</a></li> 
+        </ul> </li> 
+       <li class="tier-1 element-8"> <a href="/dev/">Contributing</a> 
+        <ul class="subnav menu"> 
+         <li class="tier-2 element-1" role="treeitem"><a href="https://devguide.python.org/" title="">Developer's Guide</a></li> 
+         <li class="tier-2 element-2" role="treeitem"><a href="https://bugs.python.org/" title="">Issue Tracker</a></li> 
+         <li class="tier-2 element-3" role="treeitem"><a href="https://mail.python.org/mailman/listinfo/python-dev" title="">python-dev list</a></li> 
+         <li class="tier-2 element-4" role="treeitem"><a href="/dev/core-mentorship/" title="">Core Mentorship</a></li> 
+         <li class="tier-2 element-5" role="treeitem"><a href="/dev/security/" title="">Report a Security Issue</a></li> 
+        </ul> </li> 
+      </ul> <a id="back-to-top-2" class="jump-link" href="#python-network"><span aria-hidden="true" class="icon-arrow-up"><span>?</span></span> Back to Top</a> 
+     </div><!-- end .container --> 
+    </div> <!-- end .main-footer-links --> 
+    <div class="site-base"> 
+     <div class="container"> 
+      <ul class="footer-links navigation menu do-not-print" role="tree"> 
+       <li class="tier-1 element-1"><a href="/about/help/">Help &amp; <span class="say-no-more">General</span> Contact</a></li> 
+       <li class="tier-1 element-2"><a href="/community/diversity/">Diversity <span class="say-no-more">Initiatives</span></a></li> 
+       <li class="tier-1 element-3"><a href="https://github.com/python/pythondotorg/issues">Submit Website Bug</a></li> 
+       <li class="tier-1 element-4"> <a href="https://status.python.org/">Status <span class="python-status-indicator-default" id="python-status-indicator"></span></a> </li> 
+      </ul> 
+      <div class="copyright"> 
+       <p><small> <span class="pre">Copyright ©2001-2022.</span> &nbsp;<span class="pre"><a href="/psf-landing/">Python Software Foundation</a></span> &nbsp;<span class="pre"><a href="/about/legal/">Legal Statements</a></span> &nbsp;<span class="pre"><a href="/privacy/">Privacy Policy</a></span> &nbsp;<span class="pre"><a href="/psf/sponsorship/sponsors/#heroku">Powered by Heroku</a></span> </small></p> 
+      </div> 
+     </div><!-- end .container --> 
+    </div><!-- end .site-base --> 
+   </footer> 
+  </div><!-- end #touchnav-wrapper --> 
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script> 
+  <script>window.jQuery || document.write('<script src="/static/js/libs/jquery-1.8.2.min.js"><\/script>')</script> 
+  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script> 
+  <script>window.jQuery || document.write('<script src="/static/js/libs/jquery-ui-1.12.1.min.js"><\/script>')</script> 
+  <script src="/static/js/libs/masonry.pkgd.min.js"></script> 
+  <script src="/static/js/libs/html-includes.js"></script> 
+  <script type="text/javascript" src="/static/js/main-min.dd72c1659644.js" charset="utf-8"></script> <!--[if lte IE 7]>
+    <script type="text/javascript" src="/static/js/plugins/IE8-min.8af6e26c7a3b.js" charset="utf-8"></script>
+    
+    
+    <![endif]--> <!--[if lte IE 8]>
+    <script type="text/javascript" src="/static/js/plugins/getComputedStyle-min.d41d8cd98f00.js" charset="utf-8"></script>
+    
+    
+    <![endif]-->  
+ </body>
+</html>

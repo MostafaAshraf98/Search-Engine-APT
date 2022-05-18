@@ -1,0 +1,803 @@
+<!doctype html>
+<html lang="es" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# "> 
+ <head> 
+  <meta charset="utf-8">
+  <script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["gov-bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"b54c1d4d8c",applicationID:"1569855191"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script> 
+  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init', "321799888466300");fbq('track', "PageView");</script> 
+  <meta name="twitter:card" content="summary"> 
+  <meta property="og:site_name" content="Página principal | La Juventud Opina"> 
+  <link rel="canonical" href="https://www.voicesofyouth.org/es/panelhomepage"> 
+  <meta name="twitter:description" content="Encuentra tu voz. Cambia el mundo."> 
+  <meta name="twitter:title" content="Página principal | La Juventud Opina"> 
+  <meta name="description" content="La Juventud Opina ofrece perspectivas originales e inspiradoras de todos los rincones del mundo – desde jóvenes, para jóvenes."> 
+  <meta property="og:url" content="https://www.voicesofyouth.org/es/panelhomepage"> 
+  <meta name="twitter:url" content="https://www.voicesofyouth.org/es/panelhomepage"> 
+  <meta property="og:description" content="Encuentra tu voz. Cambia el mundo."> 
+  <meta name="twitter:image" content="https://www.voicesofyouth.org/sites/voy/themes/custom/unicef_voy/images/voices.jpg"> 
+  <meta property="og:image" content="https://www.voicesofyouth.org/sites/voy/themes/custom/unicef_voy/images/voices.jpg"> 
+  <meta name="MobileOptimized" content="width"> 
+  <meta name="HandheldFriendly" content="true"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <style>div#sliding-popup, div#sliding-popup .eu-cookie-withdraw-banner, .eu-cookie-withdraw-tab {background: #0779bf} div#sliding-popup.eu-cookie-withdraw-wrapper { background: transparent; } #sliding-popup h1, #sliding-popup h2, #sliding-popup h3, #sliding-popup p, #sliding-popup label, #sliding-popup div, .eu-cookie-compliance-more-button, .eu-cookie-compliance-secondary-button, .eu-cookie-withdraw-tab { color: #ffffff;} .eu-cookie-withdraw-tab { border-color: #ffffff;}</style> 
+  <script src="/sites/voy/files/google_tag/primary/google_tag.script.js?rblq54" defer></script> 
+  <title>Página principal | La Juventud Opina</title> 
+  <link rel="stylesheet" media="all" href="/sites/voy/files/css/css_b3hMGL4KoC8Knlgwh2m16MgtytJ2iBtaDYPRRtHs17A.css"> 
+  <link rel="stylesheet" media="all" href="/sites/voy/files/css/css_ElEu9lgMYLwwCmhBJMifTw4P4xPufjuMbF1LZoZwgTs.css"> 
+  <link rel="stylesheet" media="print" href="/sites/voy/files/css/css_pGm--0VsuXYJmzjdMg5ELhJn66N664jdBFJE_CvxbYU.css"> <!--[if lte IE 8]>
+<script src="/sites/voy/files/js/js_VtafjXmRvoUgAzqzYTA3Wrjkx9wcWhjP0G4ZnnqRamA.js"></script>
+<![endif]--> 
+  <style>
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Roboto:400,700');
+</style> 
+  <script src="https://use.fontawesome.com/fd7b9d90d0.js"></script> 
+  <link rel="apple-touch-icon" sizes="180x180" href="/sites/voy/themes/custom/unicef_voy/dist/images/favicons/apple-touch-icon.png"> 
+  <link rel="icon" type="image/png" sizes="32x32" href="/sites/voy/themes/custom/unicef_voy/dist/images/favicons/favicon-32x32.png"> 
+  <link rel="icon" type="image/png" sizes="16x16" href="/sites/voy/themes/custom/unicef_voy/dist/images/favicons/favicon-16x16.png"> 
+  <link rel="manifest" href="/sites/voy/themes/custom/unicef_voy/dist/images/favicons/site.webmanifest"> 
+  <link rel="mask-icon" href="/sites/voy/themes/custom/unicef_voy/dist/images/favicons/safari-pinned-tab.svg" color="#5bbad5"> 
+  <meta name="msapplication-TileColor" content="#ffffff"> 
+  <meta name="theme-color" content="#1cabe2"> 
+ </head> 
+ <body class="anonymous path-frontpage has-glyphicons"> <a href="#main-content" class="visually-hidden focusable skip-link"> Pasar al contenido principal </a> 
+  <noscript aria-hidden="true">
+   <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5RDP76T" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <noscript>
+   <img height="1" width="1" src="https://www.facebook.com/tr?id=321799888466300&amp;ev=PageView&amp;noscript=1">
+  </noscript> 
+  <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas> 
+   <div class="site-wrapper"> 
+    <div class="layout-container"> 
+     <header id="header"> 
+      <div id="masthead" class="masthead"> 
+       <div class="region region-masthead-actions"> 
+        <section class="language-switcher-language-url block block-language block-language-blocklanguage-interface clearfix" id="block-unicef-voy-languageswitcher" role="navigation" data-block-plugin-id="language_block:language_interface" data-set="ss-lang-switcher"> 
+         <ul class="links" region="masthead_actions">
+          <li hreflang="en" data-drupal-link-system-path="<front>" class="en"><a href="/" class="language-link" hreflang="en" data-drupal-link-system-path="<front>">English</a></li>
+          <li hreflang="ar" data-drupal-link-system-path="<front>" class="ar"><a href="/ar" class="language-link" hreflang="ar" data-drupal-link-system-path="<front>">Arabic</a></li>
+          <li hreflang="es" data-drupal-link-system-path="<front>" class="es is-active"><a href="/es" class="language-link is-active" hreflang="es" data-drupal-link-system-path="<front>">Español</a></li>
+          <li hreflang="fr" data-drupal-link-system-path="<front>" class="fr"><a href="/fr" class="language-link" hreflang="fr" data-drupal-link-system-path="<front>">Français</a></li>
+         </ul> 
+        </section> 
+        <div class="ss-anon-org" data-set="anon-container"> 
+         <div class="anon-search-wrapper"> 
+          <nav role="navigation" aria-labelledby="block-anonymousmenu-menu" id="block-anonymousmenu" data-block-plugin-id="menu_block:anonymous-menu" class="block block-menu-block block-menu-blockanonymous-menu clearfix"> 
+           <h2 class="sr-only" id="block-anonymousmenu-menu">Anonymous Menu</h2> 
+           <ul region="masthead_actions" class="menu menu--anonymous-menu nav"> 
+            <li> <a href="/es/user/login" data-drupal-link-system-path="user/login">Log in</a> </li> 
+           </ul> 
+          </nav> 
+          <div class="search-toggle-wrapper"> <a href="javascript:void(0)" aria-expanded="false" class="search-toggle">Buscar</a> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="ss-header"> <a href="#" class="menu-open-icon"><span class="visually-hidden">Menú</span><i class="icon-menu"></i></a> 
+        </div> 
+       </div> 
+       <div class="region region-masthead-primary"> 
+        <section id="block-leftlogo" data-block-plugin-id="block_content:8ca1f4dc-3339-4f9b-ba28-f1fd3f5eaaff" class="block--logo_block block-leftlogo block block-block-content block-block-content8ca1f4dc-3339-4f9b-ba28-f1fd3f5eaaff clearfix"> <a href="/es"> 
+          <div class="field field--name-field-media-logo field--type-entity-reference field--label-hidden field--item">
+           <div> 
+            <div class="field field--name-field-media-image field--type-image field--label-visually_hidden"> 
+             <div class="field--label sr-only">
+              Imagen
+             </div> 
+             <div class="field--item"> 
+              <img width="" height="" src="/sites/voy/files/images/2018-11/voy_logo_spanish-color_0.svg" alt="VOY Logo Color ES" typeof="foaf:Image" class="img-responsive"> 
+             </div> 
+            </div> 
+           </div> 
+          </div> </a> 
+        </section> 
+        <nav role="navigation" aria-labelledby="block-unicef-voy-main-menu-menu" id="block-unicef-voy-main-menu" data-block-plugin-id="system_menu_block:main" class="block block-system block-system-menu-blockmain clearfix" data-set="ss-nav-primary"> 
+         <h2 class="sr-only" id="block-unicef-voy-main-menu-menu">Main navigation</h2> 
+         <ul region="masthead_primary" class="menu menu--main nav navbar-nav"> 
+          <li class="expanded dropdown"> <a href="" class="dropdown-toggle" data-toggle="dropdown">Inspírate <span class="caret"></span></a> 
+           <ul region="masthead_primary" class="dropdown-menu"> 
+            <li> <a href="/es/blog" data-drupal-link-system-path="blog">Blog</a> </li> 
+            <li> <a href="/es/inspira" data-drupal-link-system-path="inspire">Los chispazos</a> </li> 
+           </ul> </li> 
+          <li class="expanded dropdown"> <a href="" class="dropdown-toggle" data-toggle="dropdown">Comparte <span class="caret"></span></a> 
+           <ul region="masthead_primary" class="dropdown-menu"> 
+            <li> <a href="/es/comparte/como-publicar-un-blog-en-la-juventud-opina" data-drupal-link-system-path="node/481">¿Cómo enviar?</a> </li> 
+           </ul> </li> 
+          <li class="expanded dropdown"> <a href="" class="dropdown-toggle" data-toggle="dropdown">Actúa <span class="caret"></span></a> 
+           <ul region="masthead_primary" class="dropdown-menu"> 
+            <li> <a href="/es/herramientas-recursos" data-drupal-link-system-path="tools-resources">Herramientas de narración</a> </li> 
+            <li> <a href="/es/oportunidades" data-drupal-link-system-path="opportunities">Oportunidades</a> </li> 
+            <li> <a href="/es/como-escribir-sobre-los-derechos-de-las-personas-con-discapacidad" data-drupal-link-system-path="node/3166">¿Cómo escribir sobre los derechos de las personas con discapacidad?</a> </li> 
+            <li> <a href="/es/actua/lo-que-deberias-saber-para-estar-seguro-line" data-drupal-link-system-path="node/411">Lo que deberías saber</a> </li> 
+            <li> <a href="/es/actua/como-reforzar-tu-mensaje-con-datos" data-drupal-link-system-path="node/5981">Cómo reforzar tu mensaje con datos</a> </li> 
+           </ul> </li> 
+          <li class="expanded dropdown"> <a href="" class="dropdown-toggle" data-toggle="dropdown">Reacciona <span class="caret"></span></a> 
+           <ul region="masthead_primary" class="dropdown-menu"> 
+            <li> <a href="/es/topic/crecimiento-personal" data-drupal-link-system-path="taxonomy/term/166">Crecimiento Personal</a> </li> 
+            <li> <a href="/es/topic/cultura" data-drupal-link-system-path="taxonomy/term/156">Cultura</a> </li> 
+            <li> <a href="/es/topic/derechos-humanos" data-drupal-link-system-path="taxonomy/term/126">Derechos Humanos</a> </li> 
+            <li> <a href="/es/topic/educacion" data-drupal-link-system-path="taxonomy/term/131">Educación</a> </li> 
+            <li> <a href="/es/topic/empleo" data-drupal-link-system-path="taxonomy/term/151">Empleo</a> </li> 
+            <li> <a href="/es/topic/innovacion-tecnologia" data-drupal-link-system-path="taxonomy/term/161">Innovación &amp; Tecnología</a> </li> 
+            <li> <a href="/es/topic/medio-ambiente" data-drupal-link-system-path="taxonomy/term/141">Medio Ambiente</a> </li> 
+            <li> <a href="/es/topic/salud" data-drupal-link-system-path="taxonomy/term/136">Salud</a> </li> 
+            <li> <a href="/es/topic/violencia-conflicto" data-drupal-link-system-path="taxonomy/term/146">Violencia &amp; Conflicto</a> </li> 
+           </ul> </li> 
+          <li class="single-level-menu-item"> <a href="/es/search" data-drupal-link-system-path="search">Search</a> </li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="region region-masthead-secondary"> 
+        <div class="ss-add-content-dest" data-set="add-content-container"> 
+        </div> 
+        <div class="ss-anon-dest" data-set="anon-container"> 
+        </div> 
+        <div class="ss-user-dest" data-set="user-container"> 
+        </div> 
+        <section id="block-rightlogo" data-block-plugin-id="block_content:3f7cf41f-7548-444b-afd3-f216baba16f0" class="block--logo_block block-rightlogo block block-block-content block-block-content3f7cf41f-7548-444b-afd3-f216baba16f0 clearfix"> <a href="https://www.unicef.org/es"> 
+          <div class="field field--name-field-media-logo field--type-entity-reference field--label-hidden field--item">
+           <div> 
+            <div class="field field--name-field-media-image field--type-image field--label-visually_hidden"> 
+             <div class="field--label sr-only">
+              Imagen
+             </div> 
+             <div class="field--item"> 
+              <img src="/sites/voy/files/images/2022-04/unicef_foreverychild_black_vertical_rgb_sp_cropped.jpg" width="1981" height="1003" alt="UNICEF logo" typeof="foaf:Image" class="img-responsive"> 
+             </div> 
+            </div> 
+           </div> 
+          </div> </a> 
+        </section> 
+       </div> 
+      </div> 
+      <div class="ss-nav-container"> 
+       <h3>Menú</h3> <a href="#" class="menu-close-icon"><i class="icon-close"></i><span class="visually-hidden">Close Menu</span></a> 
+       <div class="ss-nav"> 
+        <div class="ss-nav-primary" data-set="ss-nav-primary"></div> 
+        <div class="ss-lang-switcher" data-set="ss-lang-switcher"></div> 
+        <div class="ss-account" data-set="ss-account"></div> 
+       </div> 
+      </div> 
+     </header> 
+     <div role="main" class="main-container  js-quickedit-main-content"> 
+      <div class="row"> 
+       <div class="region region-content-prefix"> 
+        <section class="views-exposed-form search-drop block block-views block-views-exposed-filter-blocksearch-page-1 clearfix" novalidate data-drupal-selector="views-exposed-form-search-page-1" id="block-exposedformsearchpage-1" data-block-plugin-id="views_exposed_filter_block:search-page_1"> 
+         <div class="search-container"> 
+          <form region="content_prefix" action="/es/search" method="get" id="views-exposed-form-search-page-1" accept-charset="UTF-8"> 
+           <div class="form--inline form-inline clearfix"> 
+            <div class="form-item js-form-item form-type-search-api-autocomplete js-form-type-search-api-autocomplete form-item-keywords js-form-item-keywords form-no-label form-group form-autocomplete"> <label for="edit-keywords" class="control-label sr-only">Buscar</label> 
+             <div class="input-group">
+              <input placeholder="Buscar" data-drupal-selector="edit-keywords" data-search-api-autocomplete-search="search" class="form-autocomplete form-text form-control" data-autocomplete-path="/es/search_api_autocomplete/search?display=page_1&amp;&amp;filter=keywords" type="text" id="edit-keywords" name="keywords" value="" size="30" maxlength="128"><span class="input-group-addon"><span class="icon glyphicon glyphicon-refresh ajax-progress ajax-progress-throbber" aria-hidden="true"></span></span>
+             </div> 
+            </div> 
+            <div data-drupal-selector="edit-actions" class="form-actions form-group js-form-wrapper form-wrapper" id="edit-actions">
+             <button data-drupal-selector="edit-submit-search" class="button js-form-submit form-submit btn-info btn" type="submit" id="edit-submit-search" value="Aplicar" name="">Aplicar</button>
+            </div> 
+           </div> 
+          </form> 
+         </div> 
+        </section>
+       </div>  
+      </div> 
+      <section class="col-sm-12"> <a id="main-content"></a> 
+       <div class="region region-content"> 
+        <div data-drupal-messages-fallback class="hidden"></div> 
+        <div class="layout layout--onecol"> 
+         <div class="layout__region layout__region--content"> 
+          <div class="block-region-content">
+           <section data-block-plugin-id="featured_homepage_block" class="block block-voy-common block-featured-homepage-block clearfix"> 
+            <div class="view view-homepage-featured view-id-homepage_featured view-display-id-homepage_featured_large js-view-dom-id-8dd5b012d49cf975f5682071494c63ca60509fb574f315d5f50142507dbb749d"> 
+             <div class="view-content"> 
+              <div class="views-row"> 
+               <div class="featured-image-container"> 
+                <div class="featured-image"> <a href="https://www.voicesofyouth.org/es/breakthestigma" rel="bookmark"> <img src="https://www.voicesofyouth.org/sites/voy/files/styles/inline_image/public/images/2021-10/untitled_design_78.png?itok=SPynM8kW" alt="Featured image"> </a> 
+                </div> 
+                <div class="featured-image-text"> 
+                 <article data-history-node-id="38166" role="article" about="/es/node/38166" class="topic-136 node node--type-homepage-feature is-sticky big-teaser clearfix top-align-text"> 
+                  <div class="content"> 
+                   <div class="content-inner"> 
+                    <div class="field field--name-field-topics field--type-entity-reference field--label-hidden field--item">
+                     <a href="/es/topic/salud" hreflang="es">Salud</a>
+                    </div> 
+                    <h2> <a href="https://www.voicesofyouth.org/es/breakthestigma" rel="bookmark"><span>Guía para acabar con el estigma que rodea a la salud mental</span> </a> </h2> <a class="btn btn-tertiary" href="https://www.voicesofyouth.org/es/breakthestigma">Leer más</a> 
+                   </div> 
+                  </div> 
+                 </article> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="view view-homepage-featured view-id-homepage_featured view-display-id-homepage_featured_small js-view-dom-id-5451ddb4b92370c42b1fc44705fd3735f13f453fb1e64cbdbc67c229e227f4e6"> 
+             <div class="view-content"> 
+              <div class="views-row"> 
+               <article data-history-node-id="39561" role="article" about="/es/node/39561" class="topic-126 node node--type-homepage-feature teaser clearfix"> <a href="/es/youthadvocates2021" class="field--name-field-main-image-link"> 
+                 <div class="field field--name-field-main-image field--type-entity-reference field--label-hidden field--item">
+                  <div> 
+                   <div class="field field--name-field-media-image field--type-image field--label-visually_hidden"> 
+                    <div class="field--label sr-only">
+                     Imagen
+                    </div> 
+                    <div class="field--item"> 
+                     <img src="/sites/voy/files/styles/small_homepage_feature_style/public/images/2021-11/ruairi.png?h=801b512a&amp;itok=joHpIJQR" width="150" height="150" alt="Ruairí Holohan is a 16-year-old LGBTQ+ youth activist from Ireland who advocates for equality.  " typeof="foaf:Image" class="img-responsive"> 
+                    </div> 
+                   </div> 
+                  </div> 
+                 </div> </a> 
+                <div class="content"> 
+                 <div class="content-inner"> 
+                  <div class="field field--name-field-topics field--type-entity-reference field--label-hidden field--item">
+                   <a href="/es/topic/derechos-humanos" hreflang="es">Derechos Humanos</a>
+                  </div> 
+                  <h2> <a href="/es/youthadvocates2021" rel="bookmark"><span>Únete a las y los jóvenes que defienden los derechos de la infancia</span> </a> </h2> 
+                 </div> 
+                </div> 
+               </article> 
+              </div> 
+              <div class="views-row"> 
+               <article data-history-node-id="13551" role="article" about="/es/node/13551" class="topic-141 node node--type-homepage-feature teaser clearfix"> <a href="https://www.voicesofyouth.org/es/cambioclimatico" class="field--name-field-main-image-link"> 
+                 <div class="field field--name-field-main-image field--type-entity-reference field--label-hidden field--item">
+                  <div> 
+                   <div class="field field--name-field-media-image field--type-image field--label-visually_hidden"> 
+                    <div class="field--label sr-only">
+                     Imagen
+                    </div> 
+                    <div class="field--item"> 
+                     <img src="/sites/voy/files/styles/small_homepage_feature_style/public/images/2021-04/cover_languages.png?h=d064b762&amp;itok=WC03Nnui" width="150" height="150" alt="Illustration about Climate Action" typeof="foaf:Image" class="img-responsive"> 
+                    </div> 
+                   </div> 
+                  </div> 
+                 </div> </a> 
+                <div class="content"> 
+                 <div class="content-inner"> 
+                  <div class="field field--name-field-topics field--type-entity-reference field--label-hidden field--item">
+                   <a href="/es/topic/medio-ambiente" hreflang="es">Medio Ambiente</a>
+                  </div> 
+                  <h2> <a href="https://www.voicesofyouth.org/es/cambioclimatico" rel="bookmark"><span>¿Qué es el cambio climático? ¿Cómo adaptarnos o mitigarlo? Aprende los datos básicos </span> </a> </h2> 
+                 </div> 
+                </div> 
+               </article> 
+              </div> 
+              <div class="views-row"> 
+               <article data-history-node-id="5541" role="article" about="/es/node/5541" class="node node--type-homepage-feature teaser clearfix"> <a href="/es/desde-cero-testimonios-sobre-la-inclusion-en-america-latina" class="field--name-field-main-image-link"> 
+                 <div class="field field--name-field-main-image field--type-entity-reference field--label-hidden field--item">
+                  <div> 
+                   <div class="field field--name-field-media-image field--type-image field--label-visually_hidden"> 
+                    <div class="field--label sr-only">
+                     Imagen
+                    </div> 
+                    <div class="field--item"> 
+                     <img src="/sites/voy/files/styles/small_homepage_feature_style/public/images/2020-12/screen_shot_2020-12-23_at_1.34.42_pm.png?h=3889ef1e&amp;itok=QcoKSm4G" width="150" height="150" alt="Imagen collage sobre los pueblos indígenas en América Latina" typeof="foaf:Image" class="img-responsive"> 
+                    </div> 
+                   </div> 
+                  </div> 
+                 </div> </a> 
+                <div class="content"> 
+                 <div class="content-inner"> 
+                  <h2> <a href="/es/desde-cero-testimonios-sobre-la-inclusion-en-america-latina" rel="bookmark"><span>Desde cero: testimonios sobre la inclusión en América Latina</span> </a> </h2> 
+                 </div> 
+                </div> 
+               </article> 
+              </div> 
+             </div> 
+            </div> 
+           </section> 
+           <section data-block-plugin-id="block_content:d0c98c65-4194-41c6-b3a3-d2f621b6d3dd" class="block--image_with_text_right_cta block block-block-content block-block-contentd0c98c65-4194-41c6-b3a3-d2f621b6d3dd clearfix"> 
+            <div class="field field--name-field-media field--type-entity-reference field--label-hidden field--item">
+             <div> 
+              <div class="field field--name-field-media-image field--type-image field--label-visually_hidden"> 
+               <div class="field--label sr-only">
+                Imagen
+               </div> 
+               <div class="field--item"> 
+                <img src="/sites/voy/files/styles/large/public/images/2021-10/uni363656.jpg?itok=N6FiUN51" width="500" height="500" alt="Young people in Ecuador" typeof="foaf:Image" class="img-responsive"> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="content-right"> 
+             <h2 class="block-title"> 
+              <div class="field field--name-field-title field--type-string field--label-hidden field--item">
+               ¿Qué es La Juventud Opina?
+              </div> </h2> 
+             <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item">
+              <p lang="EN-US" xml:lang="EN-US">La Juventud Opina es la&nbsp;comunidad&nbsp;digital de UNICEF<strong>&nbsp;PARA JÓVENES, HECHA POR JÓVENES.&nbsp;</strong></p> 
+              <p lang="EN-US" xml:lang="EN-US">Es una web&nbsp;donde&nbsp;puedes&nbsp;encontrar&nbsp;historias&nbsp;escritas&nbsp;por&nbsp;jóvenes que&nbsp;quieren&nbsp;crear&nbsp;un&nbsp;mundo&nbsp;mejor.&nbsp;Puedes&nbsp;registrarte&nbsp;<a href="https://www.voicesofyouth.org/es/comparte/como-publicar-un-blog-en-la-juventud-opina">aquí</a>&nbsp;para&nbsp;enviar&nbsp;tu contenido.&nbsp;</p> 
+              <p lang="EN-US" xml:lang="EN-US">Y <a href="https://www.instagram.com/voicesofyouth/"><strong>síguenos en Instagram</strong></a>, donde a menudo compartimos oportunidades y recursos para jóvenes activistas.&nbsp;Usa&nbsp;el hashtag #lajuventudopina&nbsp;para que&nbsp;podamos&nbsp;descubrirte.&nbsp;</p> 
+              <p lang="EN-US" xml:lang="EN-US"><strong>Encuentra&nbsp;tu&nbsp;voz, ¡y&nbsp;compártela&nbsp;con el&nbsp;mundo!&nbsp;&nbsp;</strong></p>
+             </div> 
+             <div class="field field--name-field-call-to-action field--type-link field--label-hidden field--item">
+              <a href="/es/user/login">Únete a nuestra comunidad</a>
+             </div> 
+            </div> 
+           </section> 
+           <section data-block-plugin-id="block_content:83467122-ee94-4a93-b653-e2cb7fe3755b" class="block--subtitle_section_block with-button block block-block-content block-block-content83467122-ee94-4a93-b653-e2cb7fe3755b clearfix"> 
+            <h2 class="block-title"> 
+             <div class="field field--name-field-title field--type-string field--label-hidden field--item">
+              Voces alrededor del mundo
+             </div> </h2> 
+            <div class="field field--name-field-call-to-action field--type-link field--label-hidden field--item">
+             <a href="/es/add/blog">Enviar un artículo</a>
+            </div> 
+           </section> 
+           <section data-block-plugin-id="blog_homepage_block" class="block block-voy-common block-blog-homepage-block clearfix"> 
+            <div class="view view-blog view-id-blog view-display-id-featured_blog_frontpage_1 js-view-dom-id-da3fd255433f207d2509f0a7304348de143aab737414e23405377575603a6f0c"> 
+             <div class="view-content"> 
+              <div class="views-row"> 
+               <article data-history-node-id="38406" role="article" about="/es/day-of-the-girl-karen-polinesia" class="topic-131 node node--type-blog is-promoted is-sticky big-teaser clearfix"> <a href="/es/day-of-the-girl-karen-polinesia"> 
+                 <div class="field field--name-field-main-image field--type-entity-reference field--label-hidden field--item">
+                  <div> 
+                   <div class="field field--name-field-media-image field--type-image field--label-visually_hidden"> 
+                    <div class="field--label sr-only">
+                     Imagen
+                    </div> 
+                    <div class="field--item"> 
+                     <img src="/sites/voy/files/styles/big_blog_teaser/public/images/2021-10/139308847_834840864032492_1854574141746167054_n.jpg?h=e8711843&amp;itok=scpT0IgI" width="960" height="560" alt="Karen Velázquez, de Los Polinesios" typeof="foaf:Image" class="img-responsive"> 
+                    </div> 
+                   </div> 
+                  </div> 
+                 </div> </a> 
+                <div class="content"> 
+                 <div class="content-inner"> 
+                  <div class="field-wrapper"> 
+                   <div class="field field--name-field-topics field--type-entity-reference field--label-hidden field--item">
+                    <a href="/es/topic/educacion" hreflang="es">Educación</a>
+                   </div> 
+                  </div> 
+                  <h3 class="page-header"><a href="/es/day-of-the-girl-karen-polinesia">Una decisio?n que cambio? mi vida</a></h3> 
+                  <div class="block--article-author"> 
+                   <div class="layout-content"> 
+                    <div class="author-meta"> 
+                     <div class="author-block-name">
+                      Creado por Karen Polinesia
+                     </div> 
+                     <div class="node-user-engagement"> 
+                      <div class="node-like"></div> 
+                      <div class="node-comment"></div> 
+                     </div> 
+                    </div> 
+                   </div> 
+                  </div> 
+                 </div> 
+                </div> 
+               </article> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="view--blog-teaser view view-blog view-id-blog view-display-id-featured_blog_frontpage_small js-view-dom-id-cda3b5a47e0ed9f036c01003573fac54f7332f90c3d1702358d6c04dcbfe6cf8"> 
+             <div class="view-content"> 
+              <div class="views-row"> 
+               <article data-history-node-id="40856" role="article" about="/es/blog/2021" class="topic-166 node node--type-blog is-promoted teaser clearfix"> <a href="/es/blog/2021"> 
+                 <div class="field field--name-field-main-image field--type-entity-reference field--label-hidden field--item">
+                  <div> 
+                   <div class="field field--name-field-media-image field--type-image field--label-visually_hidden"> 
+                    <div class="field--label sr-only">
+                     Imagen
+                    </div> 
+                    <div class="field--item"> 
+                     <img src="/sites/voy/files/styles/blog_teaser/public/images/2021-12/2021.png?h=a1cfb495&amp;itok=fQXNsnlt" width="770" height="620" alt="2021" typeof="foaf:Image" class="img-responsive"> 
+                    </div> 
+                   </div> 
+                  </div> 
+                 </div> </a> 
+                <div class="content"> 
+                 <div class="content-inner"> 
+                  <div class="field-wrapper"> 
+                   <div class="field field--name-field-topics field--type-entity-reference field--label-hidden field--item">
+                    <a href="/es/topic/crecimiento-personal" hreflang="es">Crecimiento Personal</a>
+                   </div> 
+                  </div> 
+                  <h3 class="page-header"><a href="/es/blog/2021">2021</a></h3> 
+                  <div class="block--article-author"> 
+                   <div class="layout-content"> 
+                    <div class="author-meta"> 
+                     <div class="author-block-name">
+                      Creado por <a href="/es/usuario/melany-diaz">Melany Díaz</a>
+                     </div> 
+                     <div class="node-user-engagement"> 
+                      <div class="node-like"></div> 
+                      <div class="node-comment"></div> 
+                     </div> 
+                    </div> 
+                   </div> 
+                  </div> 
+                 </div> 
+                </div> 
+               </article> 
+              </div> 
+              <div class="views-row"> 
+               <article data-history-node-id="40536" role="article" about="/es/blog/tu-cuerpo-tu-mayor-hogar" class="topic-166 node node--type-blog is-promoted teaser clearfix"> <a href="/es/blog/tu-cuerpo-tu-mayor-hogar"> 
+                 <div class="field field--name-field-main-image field--type-entity-reference field--label-hidden field--item">
+                  <div> 
+                   <div class="field field--name-field-media-image field--type-image field--label-visually_hidden"> 
+                    <div class="field--label sr-only">
+                     Imagen
+                    </div> 
+                    <div class="field--item"> 
+                     <img src="/sites/voy/files/styles/blog_teaser/public/images/2021-12/unnamed.jpg?h=e96c62c3&amp;itok=QB6IdZEB" width="770" height="620" alt="crecimiento" typeof="foaf:Image" class="img-responsive"> 
+                    </div> 
+                   </div> 
+                  </div> 
+                 </div> </a> 
+                <div class="content"> 
+                 <div class="content-inner"> 
+                  <div class="field-wrapper"> 
+                   <div class="field field--name-field-topics field--type-entity-reference field--label-hidden field--item">
+                    <a href="/es/topic/crecimiento-personal" hreflang="es">Crecimiento Personal</a>
+                   </div> 
+                  </div> 
+                  <h3 class="page-header"><a href="/es/blog/tu-cuerpo-tu-mayor-hogar">Tu cuerpo, tu mayor hogar. </a></h3> 
+                  <div class="block--article-author"> 
+                   <div class="layout-content"> 
+                    <div class="author-meta"> 
+                     <div class="author-block-name">
+                      Creado por <a href="/es/usuario/maps">Maps</a>
+                     </div> 
+                     <div class="node-user-engagement"> 
+                      <div class="node-like"></div> 
+                      <div class="node-comment"></div> 
+                     </div> 
+                    </div> 
+                   </div> 
+                  </div> 
+                 </div> 
+                </div> 
+               </article> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="view--blog-teaser view view-blog view-id-blog view-display-id-frontpage_blogs js-view-dom-id-23b8415229351a0a3aa4e8c9bdfb07b958afa559730b394abf29a28d6a495f2b"> 
+             <div class="view-content"> 
+              <div class="views-row"> 
+               <article data-history-node-id="43376" role="article" about="/es/blog/la-escasez-de-agua-en-mexico-una-crisis-de-desigualdad" class="topic-141 node node--type-blog teaser clearfix"> <a href="/es/blog/la-escasez-de-agua-en-mexico-una-crisis-de-desigualdad"> 
+                 <div class="field field--name-field-main-image field--type-entity-reference field--label-hidden field--item">
+                  <div> 
+                   <div class="field field--name-field-media-image field--type-image field--label-visually_hidden"> 
+                    <div class="field--label sr-only">
+                     Imagen
+                    </div> 
+                    <div class="field--item"> 
+                     <img src="/sites/voy/files/styles/blog_teaser/public/images/2022-03/img-20210319-wa0090.jpg?h=29234840&amp;itok=c03PJ1o4" width="770" height="620" alt="Maria Reyes Fridays For Future" typeof="foaf:Image" class="img-responsive"> 
+                    </div> 
+                   </div> 
+                  </div> 
+                 </div> </a> 
+                <div class="content"> 
+                 <div class="content-inner"> 
+                  <div class="field-wrapper"> 
+                   <div class="field field--name-field-topics field--type-entity-reference field--label-hidden field--item">
+                    <a href="/es/topic/medio-ambiente" hreflang="es">Medio Ambiente</a>
+                   </div> 
+                  </div> 
+                  <h3 class="page-header"><a href="/es/blog/la-escasez-de-agua-en-mexico-una-crisis-de-desigualdad">La escasez de agua en México: una crisis de desigualdad</a></h3> 
+                  <div class="block--article-author"> 
+                   <div class="layout-content"> 
+                    <div class="author-meta"> 
+                     <div class="author-block-name">
+                      Creado por Maria Reyes
+                     </div> 
+                     <div class="node-user-engagement"> 
+                      <div class="node-like"></div> 
+                      <div class="node-comment"></div> 
+                     </div> 
+                    </div> 
+                   </div> 
+                  </div> 
+                 </div> 
+                </div> 
+               </article> 
+              </div> 
+              <div class="views-row"> 
+               <article data-history-node-id="41766" role="article" about="/es/blog/sal-y-litio-el-dilema-entre-las-comunidades-y-el-negocio-del-extractivismo-en-salinas-grandes" class="topic-141 node node--type-blog teaser clearfix"> <a href="/es/blog/sal-y-litio-el-dilema-entre-las-comunidades-y-el-negocio-del-extractivismo-en-salinas-grandes"> 
+                 <div class="field field--name-field-main-image field--type-entity-reference field--label-hidden field--item">
+                  <div> 
+                   <div class="field field--name-field-media-image field--type-image field--label-visually_hidden"> 
+                    <div class="field--label sr-only">
+                     Imagen
+                    </div> 
+                    <div class="field--item"> 
+                     <img src="/sites/voy/files/styles/blog_teaser/public/images/2022-01/Screenshot_20220115-114900_Gallery.jpg?h=acac68a5&amp;itok=b5ll_f08" width="770" height="620" alt="En salinas grandes" typeof="foaf:Image" class="img-responsive"> 
+                    </div> 
+                   </div> 
+                  </div> 
+                 </div> </a> 
+                <div class="content"> 
+                 <div class="content-inner"> 
+                  <div class="field-wrapper"> 
+                   <div class="field field--name-field-topics field--type-entity-reference field--label-hidden field--item">
+                    <a href="/es/topic/medio-ambiente" hreflang="es">Medio Ambiente</a>
+                   </div> 
+                  </div> 
+                  <h3 class="page-header"><a href="/es/blog/sal-y-litio-el-dilema-entre-las-comunidades-y-el-negocio-del-extractivismo-en-salinas-grandes">Sal y Litio, el dilema entre las comunidades y el negocio del extractivismo en Salinas Grandes</a></h3> 
+                  <div class="block--article-author"> 
+                   <div class="layout-content"> 
+                    <div class="author-meta"> 
+                     <div class="author-block-name">
+                      Creado por <a href="/es/usuario/abril-perazzini">Abril Perazzini</a>
+                     </div> 
+                     <div class="node-user-engagement"> 
+                      <div class="node-like"></div> 
+                      <div class="node-comment"></div> 
+                     </div> 
+                    </div> 
+                   </div> 
+                  </div> 
+                 </div> 
+                </div> 
+               </article> 
+              </div> 
+              <div class="views-row"> 
+               <article data-history-node-id="40471" role="article" about="/es/blog/no-sabemos-de-lo-que-somos-capaces-hasta-que-lo-hacemos" class="topic-166 node node--type-blog teaser clearfix"> <a href="/es/blog/no-sabemos-de-lo-que-somos-capaces-hasta-que-lo-hacemos"> 
+                 <div class="field field--name-field-main-image field--type-entity-reference field--label-hidden field--item">
+                  <div> 
+                   <div class="field field--name-field-media-image field--type-image field--label-visually_hidden"> 
+                    <div class="field--label sr-only">
+                     Imagen
+                    </div> 
+                    <div class="field--item"> 
+                     <img src="/sites/voy/files/styles/blog_teaser/public/images/2021-12/samary.png?h=6b3f69ac&amp;itok=l9L7fSKe" width="770" height="620" alt="Samary Kiwan" typeof="foaf:Image" class="img-responsive"> 
+                    </div> 
+                   </div> 
+                  </div> 
+                 </div> </a> 
+                <div class="content"> 
+                 <div class="content-inner"> 
+                  <div class="field-wrapper"> 
+                   <div class="field field--name-field-topics field--type-entity-reference field--label-hidden field--item">
+                    <a href="/es/topic/crecimiento-personal" hreflang="es">Crecimiento Personal</a>
+                   </div> 
+                  </div> 
+                  <h3 class="page-header"><a href="/es/blog/no-sabemos-de-lo-que-somos-capaces-hasta-que-lo-hacemos">No sabemos de lo que somos capaces hasta que lo hacemos</a></h3> 
+                  <div class="block--article-author"> 
+                   <div class="layout-content"> 
+                    <div class="author-meta"> 
+                     <div class="author-block-name">
+                      Creado por Samary Kiwan
+                     </div> 
+                     <div class="node-user-engagement"> 
+                      <div class="node-like"></div> 
+                      <div class="node-comment"></div> 
+                     </div> 
+                    </div> 
+                   </div> 
+                  </div> 
+                 </div> 
+                </div> 
+               </article> 
+              </div> 
+              <div class="views-row"> 
+               <article data-history-node-id="40151" role="article" about="/es/blog/somos-humanos-antes-que-todo" class="topic-166 node node--type-blog teaser clearfix"> <a href="/es/blog/somos-humanos-antes-que-todo"> 
+                 <div class="field field--name-field-main-image field--type-entity-reference field--label-hidden field--item">
+                  <div> 
+                   <div class="field field--name-field-media-image field--type-image field--label-visually_hidden"> 
+                    <div class="field--label sr-only">
+                     Imagen
+                    </div> 
+                    <div class="field--item"> 
+                     <img src="/sites/voy/files/styles/blog_teaser/public/images/2021-11/humanos.png?h=6799f02d&amp;itok=6rTfSGgM" width="770" height="620" alt="HUMANOS ANTES QUE TODO" typeof="foaf:Image" class="img-responsive"> 
+                    </div> 
+                   </div> 
+                  </div> 
+                 </div> </a> 
+                <div class="content"> 
+                 <div class="content-inner"> 
+                  <div class="field-wrapper"> 
+                   <div class="field field--name-field-topics field--type-entity-reference field--label-hidden field--item">
+                    <a href="/es/topic/crecimiento-personal" hreflang="es">Crecimiento Personal</a>
+                   </div> 
+                  </div> 
+                  <h3 class="page-header"><a href="/es/blog/somos-humanos-antes-que-todo">SOMOS HUMANOS ANTES QUE TODO</a></h3> 
+                  <div class="block--article-author"> 
+                   <div class="layout-content"> 
+                    <div class="author-meta"> 
+                     <div class="author-block-name">
+                      Creado por <a href="/es/usuario/melany-diaz">Melany Díaz</a>
+                     </div> 
+                     <div class="node-user-engagement"> 
+                      <div class="node-like"></div> 
+                      <div class="node-comment"></div> 
+                     </div> 
+                    </div> 
+                   </div> 
+                  </div> 
+                 </div> 
+                </div> 
+               </article> 
+              </div> 
+             </div> 
+            </div> 
+           </section> 
+           <section data-block-plugin-id="block_content:829ed6e3-7e0b-4c93-8fb1-3c725bb56032" class="block--subtitle_section_block with-button block block-block-content block-block-content829ed6e3-7e0b-4c93-8fb1-3c725bb56032 clearfix"> 
+            <h2 class="block-title"> 
+             <div class="field field--name-field-title field--type-string field--label-hidden field--item">
+              Enciende una chispa. Inspírate 
+             </div> </h2> 
+            <div class="field field--name-field-call-to-action field--type-link field--label-hidden field--item">
+             <a href="/es/add/spark">Enviar una chispa</a>
+            </div> 
+           </section> 
+           <section class="views-element-container block block-views block-views-blockhomepage-featured-spark-cards-homepage-featured-spark-cards clearfix" data-block-plugin-id="views_block:homepage_featured_spark_cards-homepage_featured_spark_cards"> 
+            <div class="form-group">
+             <div class="view view-homepage-featured-spark-cards view-id-homepage_featured_spark_cards view-display-id-homepage_featured_spark_cards js-view-dom-id-42d798236eb283e7288838c9715c613fb0c74c45b9339dc95faa37bacc0a6beb"> 
+             </div> 
+            </div> 
+           </section> 
+           <section data-block-plugin-id="block_content:b021b8a8-61c5-429e-b5a8-bc7920d27157" class="block--poll block block-block-content block-block-contentb021b8a8-61c5-429e-b5a8-bc7920d27157 clearfix"> 
+            <div class="block-inner"> 
+             <h2 class="block-title">Participa en nuestra encuesta</h2> 
+             <div class="field field--name-field-poll field--type-entity-reference field--label-hidden field--item">
+              <div class="poll-view default form-group">
+               <form class="poll-view-form-201 poll-view-form" data-drupal-selector="poll-view-form-201" novalidate action="/poll/201?destination=/es/panelhomepage" method="post" id="poll-view-form-201" accept-charset="UTF-8"> 
+                <div class="poll"> 
+                 <div class="vote-form"> 
+                  <h3 class="poll-question">Help us improve the content and resources on Voices of Youth. What are the most important issues to you? </h3> 
+                  <fieldset data-drupal-selector="edit-choice" class="fieldgroup form-composite js-form-item form-item js-form-wrapper form-wrapper" id="edit-choice--wrapper"> <legend> <span class="visually-hidden fieldset-legend">Opciones</span> </legend> 
+                   <div class="fieldset-wrapper"> 
+                    <div id="edit-choice">
+                     <div class="form-item js-form-item form-type-radio js-form-type-radio form-item-choice js-form-item-choice radio"> <label for="edit-choice-766" class="control-label option"><input data-drupal-selector="edit-choice-766" class="form-radio" type="radio" id="edit-choice-766" name="choice" value="766">Climate Action</label> 
+                     </div> 
+                     <div class="form-item js-form-item form-type-radio js-form-type-radio form-item-choice js-form-item-choice radio"> <label for="edit-choice-771" class="control-label option"><input data-drupal-selector="edit-choice-771" class="form-radio" type="radio" id="edit-choice-771" name="choice" value="771">Mental Health</label> 
+                     </div> 
+                     <div class="form-item js-form-item form-type-radio js-form-type-radio form-item-choice js-form-item-choice radio"> <label for="edit-choice-776" class="control-label option"><input data-drupal-selector="edit-choice-776" class="form-radio" type="radio" id="edit-choice-776" name="choice" value="776">Diversity and Inclusion</label> 
+                     </div> 
+                     <div class="form-item js-form-item form-type-radio js-form-type-radio form-item-choice js-form-item-choice radio"> <label for="edit-choice-781" class="control-label option"><input data-drupal-selector="edit-choice-781" class="form-radio" type="radio" id="edit-choice-781" name="choice" value="781">COVID-19 and vaccine equity</label> 
+                     </div> 
+                     <div class="form-item js-form-item form-type-radio js-form-type-radio form-item-choice js-form-item-choice radio"> <label for="edit-choice-786" class="control-label option"><input data-drupal-selector="edit-choice-786" class="form-radio" type="radio" id="edit-choice-786" name="choice" value="786">Education</label> 
+                     </div> 
+                    </div> 
+                   </div> 
+                  </fieldset> 
+                  <div data-drupal-selector="edit-actions" class="form-actions form-group js-form-wrapper form-wrapper" id="edit-actions">
+                   <button data-drupal-selector="edit-vote" class="button button--primary js-form-submit form-submit btn-primary btn" type="submit" id="edit-vote" name="op" value="Vota">Vota</button>
+                  </div> 
+                 </div> 
+                 <input autocomplete="off" data-drupal-selector="form-qxztrtpyczrvydjy95cgsr-nn3chxpwuotbd7-1wjcg" type="hidden" name="form_build_id" value="form-QxZTrtpyczrVYDJY95cgsR-nN3cHXpwUoTbD7-1WJcg">
+                 <input data-drupal-selector="edit-poll-view-form-201" type="hidden" name="form_id" value="poll_view_form_201"> 
+                </div> 
+               </form> 
+              </div> 
+             </div> 
+            </div> 
+           </section> 
+           <section data-block-plugin-id="block_content:f1f5e0e9-ce49-414f-ac7e-d43fb801b7e2" class="block--subtitle_section_block no-button block block-block-content block-block-contentf1f5e0e9-ce49-414f-ac7e-d43fb801b7e2 clearfix"> 
+            <h2 class="block-title"> 
+             <div class="field field--name-field-title field--type-string field--label-hidden field--item">
+              Participa
+             </div> </h2> 
+           </section> 
+           <section data-block-plugin-id="featured_homepage_cta_block" class="block block-voy-common block-featured-homepage-cta-block clearfix"> 
+            <div class="view view-homepage-featured view-id-homepage_featured view-display-id-homepage_featured_cta js-view-dom-id-98394d00cef00a8897bb523ab77d9ce8c986f64a9d8e23d11ac5cd17a8d16c4e"> 
+             <div class="view-content"> 
+              <div class="views-row"> 
+               <article data-history-node-id="12816" role="article" about="/es/node/12816" class="node node--type-homepage-feature big-teaser clearfix"> <a href="/es/node/12816" class=""> 
+                 <div class="field field--name-field-main-image field--type-entity-reference field--label-hidden field--item">
+                  <div> 
+                   <div class="field field--name-field-media-image field--type-image field--label-visually_hidden"> 
+                    <div class="field--label sr-only">
+                     Imagen
+                    </div> 
+                    <div class="field--item"> 
+                     <img src="/sites/voy/files/styles/big_homepage_feature/public/images/2020-04/youth_action_social_media_card-esp.jpg?h=a7b836f4&amp;itok=xFdARfCK" width="1000" height="664" alt="Tarjeta para redes sociales" typeof="foaf:Image" class="img-responsive"> 
+                    </div> 
+                   </div> 
+                  </div> 
+                 </div> </a> 
+                <div class="content"> 
+                 <div class="content-inner"> 
+                  <div class="field field--name-field-subtitle field--type-string field--label-hidden field--item">
+                   Comparte esta guía con amigos y familiares
+                  </div> 
+                  <h2> <a href="https://www.voicesofyouth.org/es/campa%C3%B1a/acciones-para-ayudar-frenar-el-covid-19" rel="bookmark"><span>Ayuda a frenar el COVID-19 con estas acciones</span> </a> </h2> 
+                  <div class="field field--name-field-description field--type-text-long field--label-hidden field--item">
+                   <p>Inspirados por lo que hacen jóvenes de todo el mundo, hemos compilado una serie de acciones que cualquiera puede tomar para unirse a la lucha contra el coronavirus.</p>
+                  </div> <a class="btn btn-tertiary btn-apply" href="https://www.voicesofyouth.org/es/campa%C3%B1a/acciones-para-ayudar-frenar-el-covid-19">Leer más</a> 
+                 </div> 
+                </div> 
+               </article> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="view view-opportunities view-id-opportunities view-display-id-homepage_opportunities_block js-view-dom-id-32f56157cecb639cb6596014f82efae3a15ab33ffd4c3b203e9c5a4d664906b1"> 
+            </div> 
+           </section> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </section> 
+     </div> 
+    </div> 
+    <div class="region region-content-bottom"> 
+     <section id="block-socialmediablock" data-block-plugin-id="block_content:40b5e053-7ce5-44a1-8c2d-595a53f27060" class="block--social_media_logos block-socialmediablock block block-block-content block-block-content40b5e053-7ce5-44a1-8c2d-595a53f27060 clearfix"> 
+      <div class="field field--name-field-title field--type-string field--label-hidden field--item">
+       SÍGUENOS
+      </div> 
+      <div class="field field--name-field-description field--type-string-long field--label-hidden field--item">
+       ÚNETE A LA DISCUSIÓN EN REDES SOCIALES
+      </div> 
+      <div class="icon-container"> 
+       <div class="field field--name-twitter field--type-link field--label-hidden field--item">
+        <a href="https://twitter.com/la_juventud">https://twitter.com/la_juventud</a>
+       </div> 
+       <div class="field field--name-facebook field--type-link field--label-hidden field--item">
+        <a href="https://www.facebook.com/lajuventudopinaoficial/">https://www.facebook.com/lajuventudopinaoficial/</a>
+       </div> 
+       <div class="field field--name-instagram field--type-link field--label-hidden field--item">
+        <a href="https://www.instagram.com/voicesofyouth/">https://www.instagram.com/voicesofyouth/</a>
+       </div> 
+      </div> 
+     </section> 
+    </div> 
+    <footer class="footer " role="contentinfo"> 
+     <div class="region region-footer-first"> 
+      <section id="block-footervoylogo" data-block-plugin-id="block_content:85e49ee2-c9f4-42c8-aab9-d0853fe4728a" class="block--logo_block block-footervoylogo block block-block-content block-block-content85e49ee2-c9f4-42c8-aab9-d0853fe4728a clearfix"> <a href="/es"> 
+        <div class="field field--name-field-media-logo field--type-entity-reference field--label-hidden field--item">
+         <div> 
+          <div class="field field--name-field-media-image field--type-image field--label-visually_hidden"> 
+           <div class="field--label sr-only">
+            Imagen
+           </div> 
+           <div class="field--item"> 
+            <img width="" height="" src="/sites/voy/files/images/2018-11/voy_logo_spanish-white.svg" alt="VOY Logo White ES" typeof="foaf:Image" class="img-responsive"> 
+           </div> 
+          </div> 
+         </div> 
+        </div> </a> 
+      </section> 
+      <section id="block-footeruniceflogo" data-block-plugin-id="block_content:e3d3fb6f-ee15-440d-9b52-95390e524ccd" class="block--logo_block block-footeruniceflogo block block-block-content block-block-contente3d3fb6f-ee15-440d-9b52-95390e524ccd clearfix"> <a href="https://www.unicef.org/es"> 
+        <div class="field field--name-field-media-logo field--type-entity-reference field--label-hidden field--item">
+         <div> 
+          <div class="field field--name-field-media-image field--type-image field--label-visually_hidden"> 
+           <div class="field--label sr-only">
+            Imagen
+           </div> 
+           <div class="field--item"> 
+            <img src="/sites/voy/files/images/2022-03/unicef_foreverychild_white_horizontal_rgb_sp.png" width="7597" height="893" alt="UNICEF logo" typeof="foaf:Image" class="img-responsive"> 
+           </div> 
+          </div> 
+         </div> 
+        </div> </a> 
+      </section> 
+     </div> 
+     <div class="region region-footer-second"> 
+      <section id="block-footer" data-block-plugin-id="menu_block:footer" class="block block-menu-block block-menu-blockfooter clearfix"> 
+       <nav role="navigation" aria-labelledby="block-footer-menu" id="block-footer" data-block-plugin-id="menu_block:footer" class="block block-menu-block block-menu-blockfooter"> 
+        <h2 class="sr-only" id="block-footer-menu">Footer</h2> 
+        <ul region="footer_second" class="menu menu--footer nav"> 
+         <li class="single-level-menu-item"> <a href="/es/condiciones-de-uso-de-la-juventud-opina" data-drupal-link-system-path="node/496">AVISO LEGAL</a> </li> 
+         <li class="single-level-menu-item"> <a href="/es/politica-de-privacidad-de-ljo" data-drupal-link-system-path="node/486">Política de Privacidad </a> </li> 
+         <li class="single-level-menu-item"> <a href="/es/preguntas-frecuentes" data-drupal-link-system-path="node/1851">Preguntas frecuentes</a> </li> 
+        </ul> 
+       </nav> 
+      </section> 
+     </div> 
+    </footer> 
+    <div class="region region-footer-bottom"> 
+     <section id="block-footercopyright-2" data-block-plugin-id="block_content:6ac8cb08-73b9-4173-b48d-a18de9c5181d" class="block--basic block-footercopyright-2 block block-block-content block-block-content6ac8cb08-73b9-4173-b48d-a18de9c5181d clearfix"> 
+      <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item">
+       <p>(C) 2019&nbsp;La Juventud Opina. Todos los derechos reservados.</p>
+      </div> 
+     </section> 
+     <section id="block-footerbuttons" data-block-plugin-id="block_content:eb1a2c12-9dee-40ac-9d95-f4697f638931" class="block--button_block block-footerbuttons block block-block-content block-block-contenteb1a2c12-9dee-40ac-9d95-f4697f638931 clearfix"> 
+      <div class="field field--name-field-button-link field--type-link field--label-hidden field--items"> 
+       <div class="field--item">
+        <a href="/es/add/blog">Escribe una publicación</a>
+       </div> 
+       <div class="field--item">
+        <a href="/es/add/spark">Escribe una chispa</a>
+       </div> 
+      </div> 
+     </section> 
+    </div> 
+   </div> 
+  </div>  
+  <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"es\/","currentPath":"panelhomepage","currentPathIsAdmin":false,"isFront":true,"currentLanguage":"es"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"bootstrap\/popover,bootstrap\/tooltip,classy\/node,core\/html5shiv,eu_cookie_compliance\/eu_cookie_compliance,extlink\/drupal.extlink,layout_discovery\/onecol,poll\/drupal.poll-links,search_api_autocomplete\/search_api_autocomplete,system\/base,unicef_voy\/base,views\/views.ajax,views\/views.module","theme":"unicef_voy","theme_token":null},"ajaxTrustedUrl":{"\/es\/search":true,"\/poll\/201?destination=\/es\/panelhomepage":true,"\/es\/poll\/201?ajax_form=1\u0026view_mode=default":true},"data":{"extlink":{"extTarget":false,"extTargetNoOverride":false,"extNofollow":0,"extFollowNoOverride":0,"extClass":"ext","extLabel":"(link is external)","extImgClass":false,"extSubdomains":true,"extExclude":"","extInclude":"","extCssExclude":"","extCssExplicit":"","extAlert":false,"extAlertText":"This link will take you to an external web site. We are not responsible for their content.","mailtoClass":"mailto","mailtoLabel":"(link sends email)","extUseFontAwesome":false,"extIconPlacement":"append","extFaLinkClasses":"fa fa-external-link","extFaMailtoClasses":"fa fa-envelope-o","whitelistedDomains":[]}},"eu_cookie_compliance":{"popup_enabled":true,"popup_agreed_enabled":false,"popup_hide_agreed":false,"popup_clicking_confirmation":false,"popup_scrolling_confirmation":false,"popup_html_info":"\u003Cdiv class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info eu-cookie-compliance-banner--opt-in\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022\u003E\n      \u003Ch2\u003EWe use cookies on this site to enhance your user experience\u003C\/h2\u003E\u003Cp\u003EWe use cookies and other identifiers to help us to give you the best experience of our website. You can learn more about how we use cookies and other identifiers, and how to change your settings, in our Cookies Policy. By continuing to use our website without changing your settings, you agree to allow us to use cookies and other identifiers. If you would prefer that we limit our use of cookies and identifiers, you can change your cookies settings.\u003C\/p\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button eu-cookie-compliance-more-button\u0022\u003EM\u00e1s info\u003C\/button\u003E\n          \u003C\/div\u003E\n\n    \n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-secondary-button\u0022\u003EOK, I agree\u003C\/button\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022decline-button eu-cookie-compliance-default-button\u0022\u003ENo, thanks\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","use_mobile_message":false,"mobile_popup_html_info":"\u003Cdiv class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info eu-cookie-compliance-banner--opt-in\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022\u003E\n      \n              \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button eu-cookie-compliance-more-button\u0022\u003EM\u00e1s info\u003C\/button\u003E\n          \u003C\/div\u003E\n\n    \n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-secondary-button\u0022\u003EOK, I agree\u003C\/button\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022decline-button eu-cookie-compliance-default-button\u0022\u003ENo, thanks\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","mobile_breakpoint":768,"popup_html_agreed":false,"popup_use_bare_css":false,"popup_height":"auto","popup_width":"100%","popup_delay":1000,"popup_link":"\/es\/politica-de-privacidad-de-ljo","popup_link_new_window":true,"popup_position":false,"fixed_top_position":true,"popup_language":"es","store_consent":false,"better_support_for_screen_readers":false,"cookie_name":"","reload_page":false,"domain":"","domain_all_sites":null,"popup_eu_only_js":false,"cookie_lifetime":100,"cookie_session":0,"disagree_do_not_show_popup":false,"method":"opt_in","whitelisted_cookies":"","withdraw_markup":"\u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-tab\u0022\u003EOpciones de privacidad\u003C\/button\u003E\n\u003Cdiv class=\u0022eu-cookie-withdraw-banner\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022\u003E\n      \u003Ch2\u003EWe use cookies on this site to enhance your user experience\u003C\/h2\u003E\u003Cp\u003EYou have given your consent for us to set cookies.\u003C\/p\u003E\n    \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-button\u0022\u003EWithdraw consent\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","withdraw_enabled":false,"withdraw_button_on_info_popup":null,"cookie_categories":[],"enable_save_preferences_button":null,"fix_first_cookie_category":null,"select_all_categories_by_default":null},"bootstrap":{"forms_has_error_value_toggle":1,"modal_animation":1,"modal_backdrop":"true","modal_focus_input":1,"modal_keyboard":1,"modal_select_text":1,"modal_show":1,"modal_size":"","popover_enabled":1,"popover_animation":1,"popover_auto_close":1,"popover_container":"body","popover_content":"","popover_delay":"0","popover_html":0,"popover_placement":"right","popover_selector":"","popover_title":"","popover_trigger":"click","tooltip_enabled":1,"tooltip_animation":1,"tooltip_container":"body","tooltip_delay":"0","tooltip_html":0,"tooltip_placement":"auto bottom","tooltip_selector":"","tooltip_trigger":"hover"},"views":{"ajax_path":"\/es\/views\/ajax","ajaxViews":{"views_dom_id:32f56157cecb639cb6596014f82efae3a15ab33ffd4c3b203e9c5a4d664906b1":{"view_name":"opportunities","view_display_id":"homepage_opportunities_block","view_args":"","view_path":"\/panelhomepage","view_base_path":"opportunities","view_dom_id":"32f56157cecb639cb6596014f82efae3a15ab33ffd4c3b203e9c5a4d664906b1","pager_element":0}}},"search_api_autocomplete":{"search":{"auto_submit":true,"min_length":3}},"field_group":{"html_element":{"mode":"default","context":"view","settings":{"label":"Icon Container","element":"div","show_label":false,"label_element":"h3","attributes":"","effect":"none","speed":"fast","id":"","classes":"icon-container"}}},"ajax":{"edit-vote":{"callback":"::ajaxReplaceForm","url":"\/es\/poll\/201?ajax_form=1\u0026view_mode=default","event":"mousedown","keypress":true,"prevent":"click","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"Vota"}}},"user":{"uid":0,"permissionsHash":"caaa1ffba5b3c11d5c5ff80474e53fd674bae4f7543dcff7ee64183116279870"}}</script> 
+  <script src="/sites/voy/files/js/js_79Hm2GXk6M7FentHd6tu-DUWTnWphblZpvuMOmDbmq4.js"></script> 
+  <script src="/sites/voy/themes/custom/unicef_voy/bower_components/matchHeight/dist/jquery.matchHeight-min.js?rblq54"></script> 
+  <script src="/sites/voy/themes/custom/unicef_voy/dist/scripts/js/vendor/appendAround.min.js?rblq54"></script> 
+  <script src="/sites/voy/themes/custom/unicef_voy/bower_components/simplestatemanager/dist/ssm.min.js?rblq54"></script> 
+  <script src="/sites/voy/files/js/js_vQD7B8R3FvEwwbjK0zPguif3lqqvLljksuBwJ7q-xKo.js"></script> 
+  <script src="/sites/voy/themes/custom/unicef_voy/dist/scripts/js/script.min.js?rblq54"></script> 
+  <script src="/sites/voy/files/js/js_lDKgekQQtNIq6YGneno5gbM-f5nepEjA9WtpHKO2qQw.js"></script> 
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"gov-bam.nr-data.net","licenseKey":"b54c1d4d8c","applicationID":"1569855191","transactionName":"YV1bYUtYWEAEVExYDlgXeFZNUFldSnNKRBFXVGV2VktTbyBZTFgVT2R6WldNRFwJW11DPXNWTVxNQGBaAEB7Xg9CSlZZVVxEHltBUVQW","queueTime":0,"applicationTime":1673,"atts":"TRpYFwNCS04=","errorBeacon":"gov-bam.nr-data.net","agent":""}</script> 
+ </body>
+</html>

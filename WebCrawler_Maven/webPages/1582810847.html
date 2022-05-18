@@ -1,0 +1,54 @@
+<!doctype html>
+<html> 
+ <head> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <link rel="stylesheet" type="text/css" href="/css/normalize.css"> 
+  <link rel="stylesheet" type="text/css" href="/css/global.css"> 
+  <script type="text/javascript" src="/js/jquery-3.1.0.min.js"></script> 
+  <script type="text/javascript" src="/js/jquery-validate-1.15.1.min.js"></script> 
+  <script type="text/javascript" src="/js/global.js"></script> 
+  <title>Rotten Tomatoes Email Preferences</title> 
+  <meta name="robots" content="noindex,nofollow"> 
+  <link href="/css/rt.css" rel="stylesheet" type="text/css"> 
+ </head> 
+ <body> 
+  <div class="container-fluid rt-pref"> 
+   <header class="main-header group"> 
+    <div class="brand"> 
+     <img class="responsive-img" src="/img/rt/rtlogo.png" title="Rotten Tomatoes Logo" alt="Rotten Tomatoes Logo"> 
+    </div> 
+   </header> 
+   <form id="preferencesform" name="preferencesform"> 
+    <section class="rt-form-wrap group"> 
+     <header class="form-header group"> 
+      <h1>EMAIL PREFERENCES</h1> 
+     </header> 
+     <p id="cc-error" class="error hidden"> Unable to update preferences. Please verify your information and try again. </p> 
+     <p id="cc-ok" class="response-ok hidden"> Update Successful! </p> 
+     <div class="email-box group"> <label class="dil-block">YOUR EMAIL ADDRESS:</label> 
+      <input class="dil-block" type="text" placeholder="Enter Email Address" maxlength="254" name="email" id="email" value="" size="75"> 
+     </div> 
+     <div class="note-box group"> <label class="dil-block">Note:</label> 
+      <p class="dil-block right">Even if you choose not to receive any marketing emails, you will still receive our transactional emails such as email verifications and information about your account.</p> 
+     </div> 
+     <div class="rt-mkt-email-box group"> 
+      <input class="dil-block" type="checkbox" name="marketingEmails" id="marketingEmails" value="true" checked> 
+      <div class="dil-block right"> <label>Rotten Tomatoes Marketing Emails</label> 
+       <p>Get the latest Tomatometer scores for the week's opening movies, the newest trailers and photo galleries, and the latest movie news.</p> 
+      </div> 
+     </div> 
+     <div class="unsub group"> 
+      <input class="dil-block" type="checkbox" name="unsubscribe" id="unsubscribe" value="true"> 
+      <p class="dil-block right">Unsubscribe from all Rotten Tomatoes communications. By selecting this option you will be unsubscribed from all above preferences.</p> 
+     </div> 
+     <div class="button-container"> <button class="btn btn-primary" type="button" id="preferences-submit">SUBMIT</button> 
+     </div> 
+    </section> 
+   </form> 
+   <img class="unsub-pixel" src="https://movies.rottentomatoes.com/pub/optout/UnsubscribeOneStepConfirmAction?_ri_=null&amp;_ei_=null&amp;YES=Remove%20Me"> 
+  </div> 
+  <script src="/js/rtemailpreferences.js"></script>  
+ </body>
+</html>

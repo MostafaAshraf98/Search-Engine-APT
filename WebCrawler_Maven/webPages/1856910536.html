@@ -1,0 +1,343 @@
+<!doctype html><!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]--><!--[if gt IE 8]><!-->
+<html class="no-js" lang="en"> <!--<![endif]--> 
+ <head> 
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Running and deploying — Tornado 6.1 documentation</title> 
+  <link rel="shortcut icon" href="../_static/favicon.ico"> 
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script> 
+  <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script> 
+  <script type="text/javascript" src="../_static/jquery.js"></script> 
+  <script type="text/javascript" src="../_static/underscore.js"></script> 
+  <script type="text/javascript" src="../_static/doctools.js"></script> 
+  <script type="text/javascript" src="../_static/language_data.js"></script> 
+  <script async type="text/javascript" src="https://assets.readthedocs.org/static/javascript/readthedocs-doc-embed.js"></script> 
+  <script type="text/javascript" src="../_static/js/theme.js"></script> 
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css"> 
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css"> 
+  <link rel="index" title="Index" href="../genindex.html"> 
+  <link rel="search" title="Search" href="../search.html"> 
+  <link rel="next" title="Web framework" href="../webframework.html"> 
+  <link rel="prev" title="Authentication and security" href="security.html"> <!-- RTD Extra Head --> <!-- 
+Always link to the latest version, as canonical.
+http://docs.readthedocs.org/en/latest/canonical.html
+--> 
+  <link rel="canonical" href="https://www.tornadoweb.org/en/stable/guide/running.html"> 
+  <link rel="stylesheet" href="https://assets.readthedocs.org/static/css/readthedocs-doc-embed.css" type="text/css"> 
+  <script type="application/json" id="READTHEDOCS_DATA">{"ad_free": true, "api_host": "https://readthedocs.org", "build_date": "2020-10-31T00:02:56Z", "builder": "sphinx", "canonical_url": "https://www.tornadoweb.org/en/stable/", "commit": "2047e7ae", "docroot": "/docs/", "features": {"docsearch_disabled": false}, "global_analytics_code": "UA-17997319-1", "language": "en", "page": "guide/running", "programming_language": "py", "project": "tornado", "proxied_api_host": "/_", "source_suffix": ".rst", "subprojects": {}, "theme": "sphinx_rtd_theme", "user_analytics_code": "UA-39143969-1", "version": "stable"}</script> <!--
+Using this variable directly instead of using `JSON.parse` is deprecated.
+The READTHEDOCS_DATA global variable will be removed in the future.
+--> 
+  <script type="text/javascript">
+READTHEDOCS_DATA = JSON.parse(document.getElementById('READTHEDOCS_DATA').innerHTML);
+</script> 
+  <script type="text/javascript" src="https://assets.readthedocs.org/static/javascript/readthedocs-analytics.js" async></script> <!-- end RTD <extrahead> --> 
+ </head> 
+ <body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav"> 
+   <nav data-toggle="wy-nav-shift" class="wy-nav-side"> 
+    <div class="wy-side-scroll"> 
+     <div class="wy-side-nav-search"> <a href="../index.html" class="icon icon-home"> Tornado </a> 
+      <div class="version">
+        stable 
+      </div> 
+      <div role="search"> 
+       <form id="rtd-search-form" class="wy-form" action="../search.html" method="get"> 
+        <input type="text" name="q" placeholder="Search docs"> 
+        <input type="hidden" name="check_keywords" value="yes"> 
+        <input type="hidden" name="area" value="default"> 
+       </form> 
+      </div> 
+     </div> 
+     <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation"> 
+      <ul class="current"> 
+       <li class="toctree-l1 current"><a class="reference internal" href="../guide.html">User’s guide</a>
+        <ul class="current"> 
+         <li class="toctree-l2"><a class="reference internal" href="intro.html">Introduction</a></li> 
+         <li class="toctree-l2"><a class="reference internal" href="async.html">Asynchronous and non-Blocking I/O</a></li> 
+         <li class="toctree-l2"><a class="reference internal" href="coroutines.html">Coroutines</a></li> 
+         <li class="toctree-l2"><a class="reference internal" href="queues.html"><code class="docutils literal notranslate"><span class="pre">Queue</span></code> example - a concurrent web spider</a></li> 
+         <li class="toctree-l2"><a class="reference internal" href="structure.html">Structure of a Tornado web application</a></li> 
+         <li class="toctree-l2"><a class="reference internal" href="templates.html">Templates and UI</a></li> 
+         <li class="toctree-l2"><a class="reference internal" href="security.html">Authentication and security</a></li> 
+         <li class="toctree-l2 current"><a class="current reference internal" href="#">Running and deploying</a></li> 
+        </ul> </li> 
+       <li class="toctree-l1"><a class="reference internal" href="../webframework.html">Web framework</a></li> 
+       <li class="toctree-l1"><a class="reference internal" href="../http.html">HTTP servers and clients</a></li> 
+       <li class="toctree-l1"><a class="reference internal" href="../networking.html">Asynchronous networking</a></li> 
+       <li class="toctree-l1"><a class="reference internal" href="../coroutine.html">Coroutines and concurrency</a></li> 
+       <li class="toctree-l1"><a class="reference internal" href="../integration.html">Integration with other services</a></li> 
+       <li class="toctree-l1"><a class="reference internal" href="../utilities.html">Utilities</a></li> 
+       <li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li> 
+       <li class="toctree-l1"><a class="reference internal" href="../releases.html">Release notes</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </nav> 
+   <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"> 
+    <nav class="wy-nav-top" aria-label="top navigation"> <i data-toggle="wy-nav-top" class="fa fa-bars"></i> <a href="../index.html">Tornado</a> 
+    </nav> 
+    <div class="wy-nav-content"> 
+     <div class="rst-content"> 
+      <div role="navigation" aria-label="breadcrumbs navigation"> 
+       <ul class="wy-breadcrumbs"> 
+        <li><a href="../index.html">Docs</a> »</li> 
+        <li><a href="../guide.html">User’s guide</a> »</li> 
+        <li>Running and deploying</li> 
+        <li class="wy-breadcrumbs-aside"> <a href="https://github.com/tornadoweb/tornado/blob/stable/docs/guide/running.rst" class="fa fa-github"> Edit on GitHub</a> </li> 
+       </ul> 
+       <hr> 
+      </div> 
+      <div role="main" class="document" itemscope itemtype="http://schema.org/Article"> 
+       <div itemprop="articleBody"> 
+        <div class="section" id="running-and-deploying"> 
+         <h1>Running and deploying<a class="headerlink" href="#running-and-deploying" title="Permalink to this headline">¶</a></h1> 
+         <p>Since Tornado supplies its own HTTPServer, running and deploying it is a little different from other Python web frameworks. Instead of configuring a WSGI container to find your application, you write a <code class="docutils literal notranslate"><span class="pre">main()</span></code> function that starts the server:</p> 
+         <div class="highlight-python notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">app</span> <span class="o">=</span> <span class="n">make_app</span><span class="p">()</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">listen</span><span class="p">(</span><span class="mi">8888</span><span class="p">)</span>
+    <span class="n">IOLoop</span><span class="o">.</span><span class="n">current</span><span class="p">()</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre>
+          </div> 
+         </div> 
+         <p>Configure your operating system or process manager to run this program to start the server. Please note that it may be necessary to increase the number of open files per process (to avoid “Too many open files”-Error). To raise this limit (setting it to 50000 for example) you can use the <code class="docutils literal notranslate"><span class="pre">ulimit</span></code> command, modify <code class="docutils literal notranslate"><span class="pre">/etc/security/limits.conf</span></code> or set <code class="docutils literal notranslate"><span class="pre">minfds</span></code> in your <a class="reference external" href="http://www.supervisord.org">supervisord</a> config.</p> 
+         <div class="section" id="processes-and-ports"> 
+          <h2>Processes and ports<a class="headerlink" href="#processes-and-ports" title="Permalink to this headline">¶</a></h2> 
+          <p>Due to the Python GIL (Global Interpreter Lock), it is necessary to run multiple Python processes to take full advantage of multi-CPU machines. Typically it is best to run one process per CPU.</p> 
+          <p>Tornado includes a built-in multi-process mode to start several processes at once (note that multi-process mode does not work on Windows). This requires a slight alteration to the standard main function:</p> 
+          <div class="highlight-python notranslate">
+           <div class="highlight">
+            <pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">app</span> <span class="o">=</span> <span class="n">make_app</span><span class="p">()</span>
+    <span class="n">server</span> <span class="o">=</span> <span class="n">tornado</span><span class="o">.</span><span class="n">httpserver</span><span class="o">.</span><span class="n">HTTPServer</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+    <span class="n">server</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="mi">8888</span><span class="p">)</span>
+    <span class="n">server</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># forks one process per cpu</span>
+    <span class="n">IOLoop</span><span class="o">.</span><span class="n">current</span><span class="p">()</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</pre>
+           </div> 
+          </div> 
+          <p>This is the easiest way to start multiple processes and have them all share the same port, although it has some limitations. First, each child process will have its own <code class="docutils literal notranslate"><span class="pre">IOLoop</span></code>, so it is important that nothing touches the global <code class="docutils literal notranslate"><span class="pre">IOLoop</span></code> instance (even indirectly) before the fork. Second, it is difficult to do zero-downtime updates in this model. Finally, since all the processes share the same port it is more difficult to monitor them individually.</p> 
+          <p>For more sophisticated deployments, it is recommended to start the processes independently, and have each one listen on a different port. The “process groups” feature of <a class="reference external" href="http://www.supervisord.org">supervisord</a> is one good way to arrange this. When each process uses a different port, an external load balancer such as HAProxy or nginx is usually needed to present a single address to outside visitors.</p> 
+         </div> 
+         <div class="section" id="running-behind-a-load-balancer"> 
+          <h2>Running behind a load balancer<a class="headerlink" href="#running-behind-a-load-balancer" title="Permalink to this headline">¶</a></h2> 
+          <p>When running behind a load balancer like <a class="reference external" href="http://nginx.net/">nginx</a>, it is recommended to pass <code class="docutils literal notranslate"><span class="pre">xheaders=True</span></code> to the <a class="reference internal" href="../httpserver.html#tornado.httpserver.HTTPServer" title="tornado.httpserver.HTTPServer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HTTPServer</span></code></a> constructor. This will tell Tornado to use headers like <code class="docutils literal notranslate"><span class="pre">X-Real-IP</span></code> to get the user’s IP address instead of attributing all traffic to the balancer’s IP address.</p> 
+          <p>This is a barebones nginx config file that is structurally similar to the one we use at FriendFeed. It assumes nginx and the Tornado servers are running on the same machine, and the four Tornado servers are running on ports 8000 - 8003:</p> 
+          <div class="highlight-default notranslate">
+           <div class="highlight">
+            <pre><span></span>user nginx;
+worker_processes 1;
+
+error_log /var/log/nginx/error.log;
+pid /var/run/nginx.pid;
+
+events {
+    worker_connections 1024;
+    use epoll;
+}
+
+http {
+    # Enumerate all the Tornado servers here
+    upstream frontends {
+        server 127.0.0.1:8000;
+        server 127.0.0.1:8001;
+        server 127.0.0.1:8002;
+        server 127.0.0.1:8003;
+    }
+
+    include /etc/nginx/mime.types;
+    default_type application/octet-stream;
+
+    access_log /var/log/nginx/access.log;
+
+    keepalive_timeout 65;
+    proxy_read_timeout 200;
+    sendfile on;
+    tcp_nopush on;
+    tcp_nodelay on;
+    gzip on;
+    gzip_min_length 1000;
+    gzip_proxied any;
+    gzip_types text/plain text/html text/css text/xml
+               application/x-javascript application/xml
+               application/atom+xml text/javascript;
+
+    # Only retry if there was a communication error, not a timeout
+    # on the Tornado server (to avoid propagating "queries of death"
+    # to all frontends)
+    proxy_next_upstream error;
+
+    server {
+        listen 80;
+
+        # Allow file uploads
+        client_max_body_size 50M;
+
+        location ^~ /static/ {
+            root /var/www;
+            if ($query_string) {
+                expires max;
+            }
+        }
+        location = /favicon.ico {
+            rewrite (.*) /static/favicon.ico;
+        }
+        location = /robots.txt {
+            rewrite (.*) /static/robots.txt;
+        }
+
+        location / {
+            proxy_pass_header Server;
+            proxy_set_header Host $http_host;
+            proxy_redirect off;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Scheme $scheme;
+            proxy_pass http://frontends;
+        }
+    }
+}
+</pre>
+           </div> 
+          </div> 
+         </div> 
+         <div class="section" id="static-files-and-aggressive-file-caching"> 
+          <h2>Static files and aggressive file caching<a class="headerlink" href="#static-files-and-aggressive-file-caching" title="Permalink to this headline">¶</a></h2> 
+          <p>You can serve static files from Tornado by specifying the <code class="docutils literal notranslate"><span class="pre">static_path</span></code> setting in your application:</p> 
+          <div class="highlight-default notranslate">
+           <div class="highlight">
+            <pre><span></span><span class="n">settings</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"static_path"</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">),</span> <span class="s2">"static"</span><span class="p">),</span>
+    <span class="s2">"cookie_secret"</span><span class="p">:</span> <span class="s2">"__TODO:_GENERATE_YOUR_OWN_RANDOM_VALUE_HERE__"</span><span class="p">,</span>
+    <span class="s2">"login_url"</span><span class="p">:</span> <span class="s2">"/login"</span><span class="p">,</span>
+    <span class="s2">"xsrf_cookies"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">application</span> <span class="o">=</span> <span class="n">tornado</span><span class="o">.</span><span class="n">web</span><span class="o">.</span><span class="n">Application</span><span class="p">([</span>
+    <span class="p">(</span><span class="sa">r</span><span class="s2">"/"</span><span class="p">,</span> <span class="n">MainHandler</span><span class="p">),</span>
+    <span class="p">(</span><span class="sa">r</span><span class="s2">"/login"</span><span class="p">,</span> <span class="n">LoginHandler</span><span class="p">),</span>
+    <span class="p">(</span><span class="sa">r</span><span class="s2">"/(apple-touch-icon\.png)"</span><span class="p">,</span> <span class="n">tornado</span><span class="o">.</span><span class="n">web</span><span class="o">.</span><span class="n">StaticFileHandler</span><span class="p">,</span>
+     <span class="nb">dict</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">settings</span><span class="p">[</span><span class="s1">'static_path'</span><span class="p">])),</span>
+<span class="p">],</span> <span class="o">**</span><span class="n">settings</span><span class="p">)</span>
+</pre>
+           </div> 
+          </div> 
+          <p>This setting will automatically make all requests that start with <code class="docutils literal notranslate"><span class="pre">/static/</span></code> serve from that static directory, e.g. <code class="docutils literal notranslate"><span class="pre">http://localhost:8888/static/foo.png</span></code> will serve the file <code class="docutils literal notranslate"><span class="pre">foo.png</span></code> from the specified static directory. We also automatically serve <code class="docutils literal notranslate"><span class="pre">/robots.txt</span></code> and <code class="docutils literal notranslate"><span class="pre">/favicon.ico</span></code> from the static directory (even though they don’t start with the <code class="docutils literal notranslate"><span class="pre">/static/</span></code> prefix).</p> 
+          <p>In the above settings, we have explicitly configured Tornado to serve <code class="docutils literal notranslate"><span class="pre">apple-touch-icon.png</span></code> from the root with the <a class="reference internal" href="../web.html#tornado.web.StaticFileHandler" title="tornado.web.StaticFileHandler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">StaticFileHandler</span></code></a>, though it is physically in the static file directory. (The capturing group in that regular expression is necessary to tell <a class="reference internal" href="../web.html#tornado.web.StaticFileHandler" title="tornado.web.StaticFileHandler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">StaticFileHandler</span></code></a> the requested filename; recall that capturing groups are passed to handlers as method arguments.) You could do the same thing to serve e.g. <code class="docutils literal notranslate"><span class="pre">sitemap.xml</span></code> from the site root. Of course, you can also avoid faking a root <code class="docutils literal notranslate"><span class="pre">apple-touch-icon.png</span></code> by using the appropriate <code class="docutils literal notranslate"><span class="pre">&lt;link</span> <span class="pre">/&gt;</span></code> tag in your HTML.</p> 
+          <p>To improve performance, it is generally a good idea for browsers to cache static resources aggressively so browsers won’t send unnecessary <code class="docutils literal notranslate"><span class="pre">If-Modified-Since</span></code> or <code class="docutils literal notranslate"><span class="pre">Etag</span></code> requests that might block the rendering of the page. Tornado supports this out of the box with <em>static content versioning</em>.</p> 
+          <p>To use this feature, use the <a class="reference internal" href="../web.html#tornado.web.RequestHandler.static_url" title="tornado.web.RequestHandler.static_url"><code class="xref py py-obj docutils literal notranslate"><span class="pre">static_url</span></code></a> method in your templates rather than typing the URL of the static file directly in your HTML:</p> 
+          <div class="highlight-default notranslate">
+           <div class="highlight">
+            <pre><span></span><span class="o">&lt;</span><span class="n">html</span><span class="o">&gt;</span>
+   <span class="o">&lt;</span><span class="n">head</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">title</span><span class="o">&gt;</span><span class="n">FriendFeed</span> <span class="o">-</span> <span class="p">{{</span> <span class="n">_</span><span class="p">(</span><span class="s2">"Home"</span><span class="p">)</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="n">title</span><span class="o">&gt;</span>
+   <span class="o">&lt;/</span><span class="n">head</span><span class="o">&gt;</span>
+   <span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span>
+     <span class="o">&lt;</span><span class="n">div</span><span class="o">&gt;&lt;</span><span class="n">img</span> <span class="n">src</span><span class="o">=</span><span class="s2">"{{ static_url("</span><span class="n">images</span><span class="o">/</span><span class="n">logo</span><span class="o">.</span><span class="n">png</span><span class="s2">") }}"</span><span class="o">/&gt;&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+   <span class="o">&lt;/</span><span class="n">body</span><span class="o">&gt;</span>
+ <span class="o">&lt;/</span><span class="n">html</span><span class="o">&gt;</span>
+</pre>
+           </div> 
+          </div> 
+          <p>The <code class="docutils literal notranslate"><span class="pre">static_url()</span></code> function will translate that relative path to a URI that looks like <code class="docutils literal notranslate"><span class="pre">/static/images/logo.png?v=aae54</span></code>. The <code class="docutils literal notranslate"><span class="pre">v</span></code> argument is a hash of the content in <code class="docutils literal notranslate"><span class="pre">logo.png</span></code>, and its presence makes the Tornado server send cache headers to the user’s browser that will make the browser cache the content indefinitely.</p> 
+          <p>Since the <code class="docutils literal notranslate"><span class="pre">v</span></code> argument is based on the content of the file, if you update a file and restart your server, it will start sending a new <code class="docutils literal notranslate"><span class="pre">v</span></code> value, so the user’s browser will automatically fetch the new file. If the file’s contents don’t change, the browser will continue to use a locally cached copy without ever checking for updates on the server, significantly improving rendering performance.</p> 
+          <p>In production, you probably want to serve static files from a more optimized static file server like <a class="reference external" href="http://nginx.net/">nginx</a>. You can configure almost any web server to recognize the version tags used by <code class="docutils literal notranslate"><span class="pre">static_url()</span></code> and set caching headers accordingly. Here is the relevant portion of the nginx configuration we use at FriendFeed:</p> 
+          <div class="highlight-default notranslate">
+           <div class="highlight">
+            <pre><span></span>location /static/ {
+    root /var/friendfeed/static;
+    if ($query_string) {
+        expires max;
+    }
+ }
+</pre>
+           </div> 
+          </div> 
+         </div> 
+         <div class="section" id="debug-mode-and-automatic-reloading"> <span id="debug-mode"></span>
+          <h2>Debug mode and automatic reloading<a class="headerlink" href="#debug-mode-and-automatic-reloading" title="Permalink to this headline">¶</a></h2> 
+          <p>If you pass <code class="docutils literal notranslate"><span class="pre">debug=True</span></code> to the <code class="docutils literal notranslate"><span class="pre">Application</span></code> constructor, the app will be run in debug/development mode. In this mode, several features intended for convenience while developing will be enabled (each of which is also available as an individual flag; if both are specified the individual flag takes precedence):</p> 
+          <ul class="simple"> 
+           <li><code class="docutils literal notranslate"><span class="pre">autoreload=True</span></code>: The app will watch for changes to its source files and reload itself when anything changes. This reduces the need to manually restart the server during development. However, certain failures (such as syntax errors at import time) can still take the server down in a way that debug mode cannot currently recover from.</li> 
+           <li><code class="docutils literal notranslate"><span class="pre">compiled_template_cache=False</span></code>: Templates will not be cached.</li> 
+           <li><code class="docutils literal notranslate"><span class="pre">static_hash_cache=False</span></code>: Static file hashes (used by the <code class="docutils literal notranslate"><span class="pre">static_url</span></code> function) will not be cached.</li> 
+           <li><code class="docutils literal notranslate"><span class="pre">serve_traceback=True</span></code>: When an exception in a <a class="reference internal" href="../web.html#tornado.web.RequestHandler" title="tornado.web.RequestHandler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RequestHandler</span></code></a> is not caught, an error page including a stack trace will be generated.</li> 
+          </ul> 
+          <p>Autoreload mode is not compatible with the multi-process mode of <a class="reference internal" href="../httpserver.html#tornado.httpserver.HTTPServer" title="tornado.httpserver.HTTPServer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HTTPServer</span></code></a>. You must not give <a class="reference internal" href="../tcpserver.html#tornado.tcpserver.TCPServer.start" title="tornado.tcpserver.TCPServer.start"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HTTPServer.start</span></code></a> an argument other than 1 (or call <a class="reference internal" href="../process.html#tornado.process.fork_processes" title="tornado.process.fork_processes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tornado.process.fork_processes</span></code></a>) if you are using autoreload mode.</p> 
+          <p>The automatic reloading feature of debug mode is available as a standalone module in <a class="reference internal" href="../autoreload.html#module-tornado.autoreload" title="tornado.autoreload"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tornado.autoreload</span></code></a>. The two can be used in combination to provide extra robustness against syntax errors: set <code class="docutils literal notranslate"><span class="pre">autoreload=True</span></code> within the app to detect changes while it is running, and start it with <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">tornado.autoreload</span> <span class="pre">myserver.py</span></code> to catch any syntax errors or other errors at startup.</p> 
+          <p>Reloading loses any Python interpreter command-line arguments (e.g. <code class="docutils literal notranslate"><span class="pre">-u</span></code>) because it re-executes Python using <a class="reference external" href="https://docs.python.org/3.6/library/sys.html#sys.executable" title="(in Python v3.6)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sys.executable</span></code></a> and <a class="reference external" href="https://docs.python.org/3.6/library/sys.html#sys.argv" title="(in Python v3.6)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sys.argv</span></code></a>. Additionally, modifying these variables will cause reloading to behave incorrectly.</p> 
+          <p>On some platforms (including Windows and Mac OSX prior to 10.6), the process cannot be updated “in-place”, so when a code change is detected the old server exits and a new one starts. This has been known to confuse some IDEs.</p> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <footer> 
+       <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation"> <a href="../webframework.html" class="btn btn-neutral float-right" title="Web framework" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a> <a href="security.html" class="btn btn-neutral float-left" title="Authentication and security" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a> 
+       </div> 
+       <hr> 
+       <div role="contentinfo"> 
+        <p> © Copyright The Tornado Authors <span class="commit"> Revision <code>2047e7ae</code>. </span> </p> 
+       </div> Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+      </footer> 
+     </div> 
+    </div> 
+   </section> 
+  </div> 
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions"> <span class="rst-current-version" data-toggle="rst-current-version"> <span class="fa fa-book"> Read the Docs</span> v: stable <span class="fa fa-caret-down"></span> </span> 
+   <div class="rst-other-versions"> 
+    <dl> 
+     <dt>
+      Versions
+     </dt> 
+     <dd>
+      <a href="/en/latest/">latest</a>
+     </dd> 
+     <dd>
+      <a href="/en/stable/">stable</a>
+     </dd> 
+     <dd>
+      <a href="/en/branch6.0/">branch6.0</a>
+     </dd> 
+     <dd>
+      <a href="/en/branch5.1/">branch5.1</a>
+     </dd> 
+     <dd>
+      <a href="/en/branch4.5/">branch4.5</a>
+     </dd> 
+    </dl> 
+    <dl> 
+     <dt>
+      Downloads
+     </dt> 
+     <dd>
+      <a href="//www.tornadoweb.org/_/downloads/en/stable/pdf/">pdf</a>
+     </dd> 
+     <dd>
+      <a href="//www.tornadoweb.org/_/downloads/en/stable/htmlzip/">html</a>
+     </dd> 
+     <dd>
+      <a href="//www.tornadoweb.org/_/downloads/en/stable/epub/">epub</a>
+     </dd> 
+    </dl> 
+    <dl> 
+     <dt>
+      On Read the Docs
+     </dt> 
+     <dd> <a href="//readthedocs.org/projects/tornado/?fromdocs=tornado">Project Home</a> 
+     </dd> 
+     <dd> <a href="//readthedocs.org/builds/tornado/?fromdocs=tornado">Builds</a> 
+     </dd> 
+    </dl> 
+    <hr> Free document hosting provided by <a href="http://www.readthedocs.org">Read the Docs</a>. 
+   </div> 
+  </div> 
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+ </body>
+</html>

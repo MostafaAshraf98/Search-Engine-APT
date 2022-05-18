@@ -1,0 +1,149 @@
+<!doctype html>
+<html> 
+ <head> 
+  <script type="text/javascript">
+            var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-27880019-2']); _gaq.push(['_trackPageview']);
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script> 
+  <title>pandas - Python Data Analysis Library</title> 
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+  <link rel="shortcut icon" type="image/x-icon" id="favicon-tag" href="/static/img/favicon.ico"> 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous"> 
+  <link rel="stylesheet" href="/static/css/pandas.css"> 
+  <script src="https://kit.fontawesome.com/79e5369384.js" crossorigin="anonymous"></script> 
+ </head> 
+ <body> 
+  <header> 
+   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark"> 
+    <div class="container"> <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-content" aria-controls="nav-content" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button> <a class="navbar-brand" href="/"><img alt="" src="/static/img/pandas_white.svg"></a> 
+     <div class="collapse navbar-collapse" id="nav-content"> 
+      <ul class="navbar-nav ms-auto"> 
+       <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" id="about-us" href="#" role="button" aria-haspopup="true" aria-expanded="false">About us</a> 
+        <div class="dropdown-menu" aria-labelledby="about-us"> <a class="dropdown-item" href="/about/">About pandas</a> <a class="dropdown-item" href="/about/roadmap.html">Project roadmap</a> <a class="dropdown-item" href="/about/team.html">Team</a> <a class="dropdown-item" href="/about/sponsors.html">Sponsors</a> <a class="dropdown-item" href="/about/citing.html">Citing and logo</a> 
+        </div> </li> 
+       <li class="nav-item"> <a class="nav-link" href="/getting_started.html">Getting started</a> </li> 
+       <li class="nav-item"> <a class="nav-link" href="/docs/">Documentation</a> </li> 
+       <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" id="community" href="#" role="button" aria-haspopup="true" aria-expanded="false">Community</a> 
+        <div class="dropdown-menu" aria-labelledby="community"> <a class="dropdown-item" href="/community/blog/">Blog</a> <a class="dropdown-item" href="https://stackoverflow.com/questions/tagged/pandas">Ask a question (StackOverflow)</a> <a class="dropdown-item" href="/community/coc.html">Code of conduct</a> <a class="dropdown-item" href="/community/ecosystem.html">Ecosystem</a> 
+        </div> </li> 
+       <li class="nav-item"> <a class="nav-link" href="/contribute.html">Contribute</a> </li> 
+      </ul> 
+     </div> 
+    </div> 
+   </nav> 
+  </header> 
+  <main role="main"> 
+   <div class="container"> 
+    <h1 id="citing-and-logo">Citing and logo</h1> 
+    <h2 id="citing-pandas">Citing pandas</h2> 
+    <p>If you use <em>pandas</em> for a scientific publication, we would appreciate citations to the published software and the following paper:</p> 
+    <ul> 
+     <li> <p><a href="https://zenodo.org/record/3715232#.XoqFyC2ZOL8">pandas on Zenodo</a>, Please find us on Zenodo and replace with the citation for the version you are using. You can replace the full author list from there with "The pandas development team" like in the example below.</p> <pre><code>@software{reback2020pandas,
+    author       = {The pandas development team},
+    title        = {pandas-dev/pandas: Pandas},
+    month        = feb,
+    year         = 2020,
+    publisher    = {Zenodo},
+    version      = {latest},
+    doi          = {10.5281/zenodo.3509134},
+    url          = {https://doi.org/10.5281/zenodo.3509134}
+}
+</code></pre> </li> 
+     <li> <p><a href="https://conference.scipy.org/proceedings/scipy2010/pdfs/mckinney.pdf">Data structures for statistical computing in python</a>, McKinney, Proceedings of the 9th Python in Science Conference, Volume 445, 2010.</p> <pre><code>@InProceedings{ mckinney-proc-scipy-2010,
+  author    = { {W}es {M}c{K}inney },
+  title     = { {D}ata {S}tructures for {S}tatistical {C}omputing in {P}ython },
+  booktitle = { {P}roceedings of the 9th {P}ython in {S}cience {C}onference },
+  pages     = { 56 - 61 },
+  year      = { 2010 },
+  editor    = { {S}t\'efan van der {W}alt and {J}arrod {M}illman },
+  doi       = { 10.25080/Majora-92bf1922-00a }
+}
+</code></pre> </li> 
+    </ul> 
+    <h2 id="brand-and-logo">Brand and logo</h2> 
+    <p>When using the project name <em>pandas</em>, please use it in lower case, even at the beginning of a sentence.</p> 
+    <p>The official logos of <em>pandas</em> are:</p> 
+    <h3 id="primary-logo">Primary logo</h3> 
+    <table class="table logo"> 
+     <tbody>
+      <tr> 
+       <td> <img alt="" src="/static/img/pandas.svg"> </td> 
+       <td style="background-color: #150458"> <img alt="" src="/static/img/pandas_white.svg"> </td> 
+      </tr> 
+     </tbody>
+    </table> 
+    <h3 id="secondary-logo">Secondary logo</h3> 
+    <table class="table logo"> 
+     <tbody>
+      <tr> 
+       <td> <img alt="" src="/static/img/pandas_secondary.svg"> </td> 
+       <td style="background-color: #150458"> <img alt="" src="/static/img/pandas_secondary_white.svg"> </td> 
+      </tr> 
+     </tbody>
+    </table> 
+    <h3 id="logo-mark">Logo mark</h3> 
+    <table class="table logo"> 
+     <tbody>
+      <tr> 
+       <td> <img alt="" src="/static/img/pandas_mark.svg"> </td> 
+       <td style="background-color: #150458"> <img alt="" src="/static/img/pandas_mark_white.svg"> </td> 
+      </tr> 
+     </tbody>
+    </table> 
+    <h3 id="logo-usage">Logo usage</h3> 
+    <p>The pandas logo is available in full color and white accent. The full color logo should only appear against white backgrounds. The white accent logo should go against contrasting color background.</p> 
+    <p>When using the logo, please follow the next directives:</p> 
+    <ul> 
+     <li>Primary logo should never be seen under 1 inch in size for printing and 72px for web</li> 
+     <li>The secondary logo should never be seen under 0.75 inch in size for printing and 55px for web</li> 
+     <li>Leave enough margin around the logo (leave the height of the logo in the top, bottom and both sides)</li> 
+     <li>Do not distort the logo by changing its proportions</li> 
+     <li>Do not place text or other elements on top of the logo</li> 
+    </ul> 
+    <h3 id="colors">Colors</h3> 
+    <table class="table"> 
+     <tbody>
+      <tr> 
+       <td style="text-align: center;"> 
+        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"> <circle cx="50" cy="50" r="50" fill="#150458" /> 
+        </svg> <br> <b style="color: #150458;">Blue</b><br> RGB: R21 G4 B88<br> HEX: #150458 </td> 
+       <td style="text-align: center;"> 
+        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"> <circle cx="50" cy="50" r="50" fill="#ffca00" /> 
+        </svg> <br> <b style="color: #150458;">Yellow</b><br> RGB: R255 G202 B0<br> HEX: #FFCA00 </td> 
+       <td style="text-align: center;"> 
+        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"> <circle cx="50" cy="50" r="50" fill="#e70488" /> 
+        </svg> <br> <b style="color: #150458;">Pink</b><br> RGB: R231 G4 B136<br> HEX: #E70488 </td> 
+      </tr> 
+     </tbody>
+    </table> 
+   </div> 
+  </main> 
+  <footer class="container pt-4 pt-md-5 border-top"> 
+   <ul class="list-inline social-buttons float-end"> 
+    <li class="list-inline-item"> <a href="https://twitter.com/pandas_dev/"> <i class="fab fa-twitter"></i> </a> </li> 
+    <li class="list-inline-item"> <a href="https://github.com/pandas-dev/pandas/"> <i class="fab fa-github"></i> </a> </li> 
+    <li class="list-inline-item"> <a href="https://stackoverflow.com/questions/tagged/pandas"> <i class="fab fa-stack-overflow"></i> </a> </li> 
+   </ul> 
+   <p> pandas is a fiscally sponsored project of <a href="https://numfocus.org">NumFOCUS.</a> </p> 
+  </footer> 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script> 
+  <script type="text/javascript">
+            const faviconTag = document.getElementById('favicon-tag');
+            const matcher = window.matchMedia('(prefers-color-scheme:dark)');
+            
+            const onUpdate = () => {
+                if (matcher.matches) faviconTag.href = "/static/img/favicon_white.ico";
+                else faviconTag.href = "/static/img/favicon.ico";
+            };
+            
+            onUpdate();
+            
+            matcher.addEventListener('change', onUpdate);
+        </script>  
+ </body>
+</html>

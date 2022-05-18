@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html> 
+ <head> 
+  <title> [Distutils] Announcement: TLSv1.2 will become mandatory in the future
+   </title> 
+  <link rel="Index" href="index.html"> 
+  <link rel="made" href="mailto:distutils-sig%40python.org?Subject=Re%3A%20%5BDistutils%5D%20Announcement%3A%20TLSv1.2%20will%20become%20mandatory%20in%20the%0A%20future&amp;In-Reply-To=%3C103E266D-F645-4B58-9E22-E45DFD207CD4%40stufft.io%3E"> 
+  <meta name="robots" content="index,nofollow"> 
+  <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style> 
+  <meta http-equiv="Content-Type" content="text/html; charset=us-ascii"> 
+  <link rel="Previous" href="029968.html"> 
+  <link rel="Next" href="029971.html"> 
+ </head> 
+ <body bgcolor="#ffffff"> 
+  <h1>[Distutils] Announcement: TLSv1.2 will become mandatory in the future</h1> <b>Donald Stufft</b> <a href="mailto:distutils-sig%40python.org?Subject=Re%3A%20%5BDistutils%5D%20Announcement%3A%20TLSv1.2%20will%20become%20mandatory%20in%20the%0A%20future&amp;In-Reply-To=%3C103E266D-F645-4B58-9E22-E45DFD207CD4%40stufft.io%3E" title="[Distutils] Announcement: TLSv1.2 will become mandatory in the future">donald at stufft.io </a>
+  <br> <i>Tue Jan 10 08:24:36 EST 2017</i> 
+  <p></p>
+  <ul> 
+   <li>Previous message (by thread): <a href="029968.html">[Distutils] Can't upload sdist: "File already exists" </a></li> 
+   <li>Next message (by thread): <a href="029971.html">[Distutils] Announcement: TLSv1.2 will become mandatory in the future </a></li> 
+   <li> <b>Messages sorted by:</b> <a href="date.html#29970">[ date ]</a> <a href="thread.html#29970">[ thread ]</a> <a href="subject.html#29970">[ subject ]</a> <a href="author.html#29970">[ author ]</a> </li> 
+  </ul> 
+  <hr> <!--beginarticle--> 
+  <pre>Fastly has announced plans to disable TLSv1.0 and TLSv1.1 on their CDN endpoints
+which will include PyPI (as well as other Python properties). You can see their
+timeline at <a href="https://www.fastly.com/blog/phase-two-our-tls-10-and-11-deprecation-plan.">https://www.fastly.com/blog/phase-two-our-tls-10-and-11-deprecation-plan.</a>
+
+There are two hard cut off dates to remember:
+
+* April 30, 2017, which is when any Python.org site you see that does *not*
+  have an EV certificate that is hosted by Fastly will no longer support
+  TLSv1.0 and TLSv1.1 (testpypi.python.org, test.pypi.org,
+  files.pythonhosted.org, etc). This will affect Warehouse since that uses
+  files.pythonhosted.org to serve files.
+
+* June 30, 2018, which is when any Python.org site you see that has an EV
+  certificate that is hosted by Fastly will no longer support TSLv1.0 and
+  TLSv1.1 (pypi.python.org, pypi.org, etc).
+
+I am going to see about possibly organizing some scheduled "brown outs" of
+TLSv1.0 and TLSv1.1 prior to the cut off dates to try and help folks find places
+that will need updates. Any scheduled brownouts will be posted to
+status.python.org prior to happening.
+
+Looking at the download numbers, the absolute largest driver of TLSv1.0 and
+TLSv1.1 traffic to PyPI are old versions of pip or other clients where I cannot
+tell the OS that they are being run on. Past that, macOS is going to be the
+largest casualty since their system Python does not support TLSv1.2 yet in any
+version of their OS.
+
+If you have a Python and you want to check to see if it supports TLSv1.2 or not,
+the easiest way to do that is by running:
+
+    python2 -c "import urllib2,json; print(json.loads(urllib2.urlopen('<a href="https://www.howsmyssl.com/a/check">https://www.howsmyssl.com/a/check</a>').read())['tls_version'])"
+
+    OR
+
+    python3 -c "import urllib.request,json; print(json.loads(urllib.request.urlopen('<a href="https://www.howsmyssl.com/a/check">https://www.howsmyssl.com/a/check</a>').read())['tls_version'])"
+
+If you get something other than TLS 1.2, then I suggest making plans to deal
+with the inevitable breakage which may start occurring on or before April 30,
+2017.
+
+
+
+&#x2014;
+Donald Stufft
+
+
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<a href="http://mail.python.org/pipermail/distutils-sig/attachments/20170110/686fa001/attachment.html">http://mail.python.org/pipermail/distutils-sig/attachments/20170110/686fa001/attachment.html</a>&gt;
+</pre> <!--endarticle--> 
+  <hr> 
+  <p></p>
+  <ul> <!--threads--> 
+   <li>Previous message (by thread): <a href="029968.html">[Distutils] Can't upload sdist: "File already exists" </a></li> 
+   <li>Next message (by thread): <a href="029971.html">[Distutils] Announcement: TLSv1.2 will become mandatory in the future </a></li> 
+   <li> <b>Messages sorted by:</b> <a href="date.html#29970">[ date ]</a> <a href="thread.html#29970">[ thread ]</a> <a href="subject.html#29970">[ subject ]</a> <a href="author.html#29970">[ author ]</a> </li> 
+  </ul> 
+  <hr> <a href="https://mail.python.org/mailman/listinfo/distutils-sig">More information about the Distutils-SIG mailing list</a>
+  <br> 
+ </body>
+</html>

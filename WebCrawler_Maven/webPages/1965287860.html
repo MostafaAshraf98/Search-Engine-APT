@@ -1,0 +1,274 @@
+<!doctype html><!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]--><!--[if gt IE 8]><!-->
+<html class="no-js" lang="en"> <!--<![endif]--> 
+ <head> 
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>CFFI documentation — CFFI 1.15.0 documentation</title> 
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script> 
+  <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script> 
+  <script type="text/javascript" src="_static/jquery.js"></script> 
+  <script type="text/javascript" src="_static/underscore.js"></script> 
+  <script type="text/javascript" src="_static/doctools.js"></script> 
+  <script type="text/javascript" src="_static/language_data.js"></script> 
+  <script async type="text/javascript" src="https://assets.readthedocs.org/static/javascript/readthedocs-doc-embed.js"></script> 
+  <script type="text/javascript" src="_static/js/theme.js"></script> 
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css"> 
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css"> 
+  <link rel="index" title="Index" href="genindex.html"> 
+  <link rel="search" title="Search" href="search.html"> 
+  <link rel="next" title="Goals" href="goals.html"> <!-- RTD Extra Head --> 
+  <link rel="stylesheet" href="https://assets.readthedocs.org/static/css/readthedocs-doc-embed.css" type="text/css"> 
+  <script type="application/json" id="READTHEDOCS_DATA">{"ad_free": false, "api_host": "https://readthedocs.org", "build_date": "2021-10-13T17:44:44Z", "builder": "sphinx", "canonical_url": null, "commit": "7da695c5de85", "docroot": "/doc/source/", "features": {"docsearch_disabled": false}, "global_analytics_code": "UA-17997319-1", "language": "en", "page": "index", "programming_language": "", "project": "cffi", "proxied_api_host": "/_", "source_suffix": ".rst", "subprojects": {}, "theme": "sphinx_rtd_theme", "user_analytics_code": "", "version": "latest"}</script> <!--
+Using this variable directly instead of using `JSON.parse` is deprecated.
+The READTHEDOCS_DATA global variable will be removed in the future.
+--> 
+  <script type="text/javascript">
+READTHEDOCS_DATA = JSON.parse(document.getElementById('READTHEDOCS_DATA').innerHTML);
+</script> 
+  <script type="text/javascript" src="https://assets.readthedocs.org/static/javascript/readthedocs-analytics.js" async></script> <!-- end RTD <extrahead> --> 
+ </head> 
+ <body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav"> 
+   <nav data-toggle="wy-nav-shift" class="wy-nav-side"> 
+    <div class="wy-side-scroll"> 
+     <div class="wy-side-nav-search"> <a href="#" class="icon icon-home"> CFFI </a> 
+      <div class="version">
+        latest 
+      </div> 
+      <div role="search"> 
+       <form id="rtd-search-form" class="wy-form" action="search.html" method="get"> 
+        <input type="text" name="q" placeholder="Search docs"> 
+        <input type="hidden" name="check_keywords" value="yes"> 
+        <input type="hidden" name="area" value="default"> 
+       </form> 
+      </div> 
+     </div> 
+     <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation"> 
+      <ul> 
+       <li class="toctree-l1"><a class="reference internal" href="goals.html">Goals</a></li> 
+       <li class="toctree-l1"><a class="reference internal" href="goals.html#comments-and-bugs">Comments and bugs</a></li> 
+       <li class="toctree-l1"><a class="reference internal" href="whatsnew.html">What’s New</a></li> 
+       <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation and Status</a></li> 
+       <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li> 
+       <li class="toctree-l1"><a class="reference internal" href="using.html">Using the ffi/lib objects</a></li> 
+       <li class="toctree-l1"><a class="reference internal" href="ref.html">CFFI Reference</a></li> 
+       <li class="toctree-l1"><a class="reference internal" href="cdef.html">Preparing and Distributing modules</a></li> 
+       <li class="toctree-l1"><a class="reference internal" href="embedding.html">Using CFFI for embedding</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </nav> 
+   <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"> 
+    <nav class="wy-nav-top" aria-label="top navigation"> <i data-toggle="wy-nav-top" class="fa fa-bars"></i> <a href="#">CFFI</a> 
+    </nav> 
+    <div class="wy-nav-content"> 
+     <div class="rst-content"> 
+      <div role="navigation" aria-label="breadcrumbs navigation"> 
+       <ul class="wy-breadcrumbs"> 
+        <li><a href="#">Docs</a> »</li> 
+        <li>CFFI documentation</li> 
+        <li class="wy-breadcrumbs-aside"> <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a> </li> 
+       </ul> 
+       <hr> 
+      </div> 
+      <div role="main" class="document" itemscope itemtype="http://schema.org/Article"> 
+       <div itemprop="articleBody"> 
+        <div class="section" id="cffi-documentation"> 
+         <h1>CFFI documentation<a class="headerlink" href="#cffi-documentation" title="Permalink to this headline">¶</a></h1> 
+         <p>C Foreign Function Interface for Python. Interact with almost any C code from Python, based on C-like declarations that you can often copy-paste from header files or documentation.</p> 
+         <div class="toctree-wrapper compound"> 
+          <ul> 
+           <li class="toctree-l1"><a class="reference internal" href="goals.html">Goals</a></li> 
+           <li class="toctree-l1"><a class="reference internal" href="goals.html#comments-and-bugs">Comments and bugs</a></li> 
+           <li class="toctree-l1"><a class="reference internal" href="whatsnew.html">What’s New</a>
+            <ul> 
+             <li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v1-15-0">v1.15.0</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v1-14-6">v1.14.6</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v1-14-5">v1.14.5</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v1-14-4">v1.14.4</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v1-14-3">v1.14.3</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v1-14-2">v1.14.2</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v1-14-1">v1.14.1</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v1-14">v1.14</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v1-13-2">v1.13.2</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v1-13-1">v1.13.1</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v1-13">v1.13</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="whatsnew.html#older-versions">Older Versions</a></li> 
+            </ul> </li> 
+           <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation and Status</a>
+            <ul> 
+             <li class="toctree-l2"><a class="reference internal" href="installation.html#platform-specific-instructions">Platform-specific instructions</a></li> 
+            </ul> </li> 
+           <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a>
+            <ul> 
+             <li class="toctree-l2"><a class="reference internal" href="overview.html#main-mode-of-usage">Main mode of usage</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="overview.html#other-cffi-modes">Other CFFI modes</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="overview.html#embedding">Embedding</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="overview.html#what-actually-happened">What actually happened?</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="overview.html#abi-versus-api">ABI versus API</a></li> 
+            </ul> </li> 
+           <li class="toctree-l1"><a class="reference internal" href="using.html">Using the ffi/lib objects</a>
+            <ul> 
+             <li class="toctree-l2"><a class="reference internal" href="using.html#working-with-pointers-structures-and-arrays">Working with pointers, structures and arrays</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="using.html#python-3-support">Python 3 support</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="using.html#an-example-of-calling-a-main-like-thing">An example of calling a main-like thing</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="using.html#function-calls">Function calls</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="using.html#variadic-function-calls">Variadic function calls</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="using.html#memory-pressure-pypy">Memory pressure (PyPy)</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="using.html#extern-python-new-style-callbacks">Extern “Python” (new-style callbacks)</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="using.html#callbacks-old-style">Callbacks (old style)</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="using.html#windows-calling-conventions">Windows: calling conventions</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="using.html#ffi-interface">FFI Interface</a></li> 
+            </ul> </li> 
+           <li class="toctree-l1"><a class="reference internal" href="ref.html">CFFI Reference</a>
+            <ul> 
+             <li class="toctree-l2"><a class="reference internal" href="ref.html#ffi-interface">FFI Interface</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="ref.html#conversions">Conversions</a></li> 
+            </ul> </li> 
+           <li class="toctree-l1"><a class="reference internal" href="cdef.html">Preparing and Distributing modules</a>
+            <ul> 
+             <li class="toctree-l2"><a class="reference internal" href="cdef.html#ffi-ffibuilder-cdef-declaring-types-and-functions">ffi/ffibuilder.cdef(): declaring types and functions</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="cdef.html#ffi-dlopen-loading-libraries-in-abi-mode">ffi.dlopen(): loading libraries in ABI mode</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="cdef.html#ffibuilder-set-source-preparing-out-of-line-modules">ffibuilder.set_source(): preparing out-of-line modules</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="cdef.html#letting-the-c-compiler-fill-the-gaps">Letting the C compiler fill the gaps</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="cdef.html#ffibuilder-compile-etc-compiling-out-of-line-modules">ffibuilder.compile() etc.: compiling out-of-line modules</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="cdef.html#ffi-ffibuilder-include-combining-multiple-cffi-interfaces">ffi/ffibuilder.include(): combining multiple CFFI interfaces</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="cdef.html#ffi-cdef-limitations">ffi.cdef() limitations</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="cdef.html#debugging-dlopen-ed-c-libraries">Debugging dlopen’ed C libraries</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="cdef.html#ffi-verify-in-line-api-mode">ffi.verify(): in-line API-mode</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="cdef.html#upgrading-from-cffi-0-9-to-cffi-1-0">Upgrading from CFFI 0.9 to CFFI 1.0</a></li> 
+            </ul> </li> 
+           <li class="toctree-l1"><a class="reference internal" href="embedding.html">Using CFFI for embedding</a>
+            <ul> 
+             <li class="toctree-l2"><a class="reference internal" href="embedding.html#usage">Usage</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="embedding.html#more-reading">More reading</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="embedding.html#troubleshooting">Troubleshooting</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="embedding.html#issues-about-using-the-so">Issues about using the .so</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="embedding.html#using-multiple-cffi-made-dlls">Using multiple CFFI-made DLLs</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="embedding.html#multithreading">Multithreading</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="embedding.html#testing">Testing</a></li> 
+             <li class="toctree-l2"><a class="reference internal" href="embedding.html#embedding-and-extending">Embedding and Extending</a></li> 
+            </ul> </li> 
+          </ul> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <footer> 
+       <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation"> <a href="goals.html" class="btn btn-neutral float-right" title="Goals" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a> 
+       </div> 
+       <hr> 
+       <div role="contentinfo"> 
+        <p> © Copyright 2012-2018, Armin Rigo, Maciej Fijalkowski <span class="commit"> Revision <code>7da695c5de85</code>. </span> </p> 
+       </div> Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+      </footer> 
+     </div> 
+    </div> 
+   </section> 
+  </div> 
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions"> <span class="rst-current-version" data-toggle="rst-current-version"> <span class="fa fa-book"> Read the Docs</span> v: latest <span class="fa fa-caret-down"></span> </span> 
+   <div class="rst-other-versions"> 
+    <dl> 
+     <dt>
+      Versions
+     </dt> 
+     <dd>
+      <a href="/en/latest/">latest</a>
+     </dd> 
+     <dd>
+      <a href="/en/stable/">stable</a>
+     </dd> 
+     <dd>
+      <a href="/en/release-1.9/">release-1.9</a>
+     </dd> 
+     <dd>
+      <a href="/en/release-1.8/">release-1.8</a>
+     </dd> 
+     <dd>
+      <a href="/en/release-1.7/">release-1.7</a>
+     </dd> 
+     <dd>
+      <a href="/en/release-1.6/">release-1.6</a>
+     </dd> 
+     <dd>
+      <a href="/en/release-1.5/">release-1.5</a>
+     </dd> 
+     <dd>
+      <a href="/en/release-1.4/">release-1.4</a>
+     </dd> 
+     <dd>
+      <a href="/en/release-1.3/">release-1.3</a>
+     </dd> 
+     <dd>
+      <a href="/en/release-1.2/">release-1.2</a>
+     </dd> 
+     <dd>
+      <a href="/en/release-1.14/">release-1.14</a>
+     </dd> 
+     <dd>
+      <a href="/en/release-1.13/">release-1.13</a>
+     </dd> 
+     <dd>
+      <a href="/en/release-1.12/">release-1.12</a>
+     </dd> 
+     <dd>
+      <a href="/en/release-1.11/">release-1.11</a>
+     </dd> 
+     <dd>
+      <a href="/en/release-1.10/">release-1.10</a>
+     </dd> 
+     <dd>
+      <a href="/en/release-1.1/">release-1.1</a>
+     </dd> 
+     <dd>
+      <a href="/en/release-1.0/">release-1.0</a>
+     </dd> 
+     <dd>
+      <a href="/en/release-0.9/">release-0.9</a>
+     </dd> 
+     <dd>
+      <a href="/en/release-0.8/">release-0.8</a>
+     </dd> 
+     <dd>
+      <a href="/en/release-0.7/">release-0.7</a>
+     </dd> 
+     <dd>
+      <a href="/en/release-0.6/">release-0.6</a>
+     </dd> 
+     <dd>
+      <a href="/en/release-0.5/">release-0.5</a>
+     </dd> 
+    </dl> 
+    <dl> 
+     <dt>
+      Downloads
+     </dt> 
+     <dd>
+      <a href="//cffi.readthedocs.io/_/downloads/en/latest/pdf/">pdf</a>
+     </dd> 
+     <dd>
+      <a href="//cffi.readthedocs.io/_/downloads/en/latest/htmlzip/">html</a>
+     </dd> 
+     <dd>
+      <a href="//cffi.readthedocs.io/_/downloads/en/latest/epub/">epub</a>
+     </dd> 
+    </dl> 
+    <dl> 
+     <dt>
+      On Read the Docs
+     </dt> 
+     <dd> <a href="//readthedocs.org/projects/cffi/?fromdocs=cffi">Project Home</a> 
+     </dd> 
+     <dd> <a href="//readthedocs.org/builds/cffi/?fromdocs=cffi">Builds</a> 
+     </dd> 
+    </dl> 
+    <hr> Free document hosting provided by <a href="http://www.readthedocs.org">Read the Docs</a>. 
+   </div> 
+  </div> 
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+ </body>
+</html>

@@ -1,0 +1,1242 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html> 
+ <head> 
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"> 
+  <meta name="robots" content="index,nofollow"> 
+  <title>IntroductoryBooks - Python Wiki</title> 
+  <script type="text/javascript" src="/wiki/common/js/common.js"></script> 
+  <script type="text/javascript">
+<!--
+var search_hint = "Search";
+//-->
+</script> 
+  <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="/wiki/europython/css/common.css"> 
+  <link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="/wiki/europython/css/screen.css"> 
+  <link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="/wiki/europython/css/print.css"> 
+  <link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="/wiki/europython/css/projection.css"> <!-- css only for MS IE6/IE7 browsers --> <!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="/wiki/europython/css/msie.css">
+<![endif]--> 
+  <link rel="alternate" title="Python Wiki: IntroductoryBooks" href="/moin/IntroductoryBooks?diffs=1&amp;show_att=1&amp;action=rss_rc&amp;unique=0&amp;page=IntroductoryBooks&amp;ddiffs=1" type="application/rss+xml"> 
+  <link rel="Start" href="/moin/FrontPage"> 
+  <link rel="Alternate" title="Wiki Markup" href="/moin/IntroductoryBooks?action=raw"> 
+  <link rel="Alternate" media="print" title="Print View" href="/moin/IntroductoryBooks?action=print"> 
+  <link rel="Search" href="/moin/FindPage"> 
+  <link rel="Index" href="/moin/TitleIndex"> 
+  <link rel="Glossary" href="/moin/WordIndex"> 
+  <link rel="Help" href="/moin/HelpOnFormatting"> 
+ </head> 
+ <body lang="en" dir="ltr"> 
+  <div id="header"> 
+   <form id="searchform" method="get" action="/moin/IntroductoryBooks"> 
+    <div> 
+     <input type="hidden" name="action" value="fullsearch"> 
+     <input type="hidden" name="context" value="180"> <label for="searchinput">Search:</label> 
+     <input id="searchinput" type="text" name="value" value="" size="20" onfocus="searchFocus(this)" onblur="searchBlur(this)" onkeyup="searchChange(this)" onchange="searchChange(this)" alt="Search"> 
+     <input id="titlesearch" name="titlesearch" type="submit" value="Titles" alt="Search Titles"> 
+     <input id="fullsearch" name="fullsearch" type="submit" value="Text" alt="Search Full Text"> 
+    </div> 
+   </form> 
+   <script type="text/javascript">
+<!--// Initialize search form
+var f = document.getElementById('searchform');
+f.getElementsByTagName('label')[0].style.display = 'none';
+var e = document.getElementById('searchinput');
+searchChange(e);
+searchBlur(e);
+//-->
+</script> 
+   <div id="logo">
+    <a href="/moin/FrontPage"></a><a href="http://www.python.org"><img src="/wiki/europython/img/python-logo.gif" alt="Python"></a><a name="logo"></a>
+   </div> 
+   <div id="locationline"> 
+    <ul id="pagelocation"> 
+     <li><a href="/moin/IntroductoryBooks">IntroductoryBooks</a></li> 
+    </ul> 
+   </div> 
+   <ul id="pagetrail"> 
+    <li><a href="/moin/IntroductoryBooks">IntroductoryBooks</a></li> 
+   </ul> 
+  </div> 
+  <div id="sidebar"> 
+   <div id="star"> 
+   </div> 
+   <div class="sidepanel"> 
+    <ul id="navibar"> 
+     <li class="wikilink"><a href="/moin/FrontPage">FrontPage</a></li>
+     <li class="wikilink"><a href="/moin/RecentChanges">RecentChanges</a></li>
+     <li class="wikilink"><a href="/moin/FindPage">FindPage</a></li>
+     <li class="wikilink"><a href="/moin/HelpContents">HelpContents</a></li>
+     <li class="current"><a href="/moin/IntroductoryBooks">IntroductoryBooks</a></li> 
+    </ul> 
+   </div> 
+   <div class="sidepanel"> 
+    <h1>Page</h1> 
+    <ul class="editbar">
+     <li><span class="disabled">Immutable Page</span></li>
+     <li class="toggleCommentsButton" style="display:none;"><a href="#" class="nbcomment" onclick="toggleComments();return false;">Comments</a></li>
+     <li><a class="nbinfo" href="/moin/IntroductoryBooks?action=info" rel="nofollow">Info</a></li>
+     <li><a class="nbattachments" href="/moin/IntroductoryBooks?action=AttachFile" rel="nofollow">Attachments</a></li>
+     <li> 
+      <form class="actionsmenu" method="GET" action="/moin/IntroductoryBooks"> 
+       <div> <label>More Actions:</label> <select name="action" onchange="if ((this.selectedIndex != 0) &amp;&amp;
+                      (this.options[this.selectedIndex].disabled == false)) {
+                this.form.submit();
+            }
+            this.selectedIndex = 0;"> <option value="raw">Raw Text</option> <option value="print">Print View</option> <option value="refresh">Delete Cache</option> <option value="show" disabled class="disabled">------------------------</option> <option value="SpellCheck">Check Spelling</option> <option value="LikePages">Like Pages</option> <option value="LocalSiteMap">Local Site Map</option> <option value="show" disabled class="disabled">------------------------</option> <option value="RenamePage" disabled class="disabled">Rename Page</option> <option value="DeletePage" disabled class="disabled">Delete Page</option> <option value="show" disabled class="disabled">------------------------</option> <option value="show" disabled class="disabled">------------------------</option> <option value="show" disabled class="disabled">Remove Spam</option> <option value="show" disabled class="disabled">Revert to this revision</option> <option value="show" disabled class="disabled">------------------------</option> <option value="SlideShow">SlideShow</option> </select> 
+        <input type="submit" value="Do"> 
+       </div> 
+       <script type="text/javascript">
+<!--// Init menu
+actionsMenuInit('More Actions:');
+//-->
+</script> 
+      </form> </li>
+    </ul> 
+   </div> 
+   <div class="sidepanel"> 
+    <h1>User</h1> 
+    <ul id="username">
+     <li><a href="/moin/IntroductoryBooks?action=login" id="login" rel="nofollow">Login</a></li>
+    </ul> 
+   </div> 
+  </div> 
+  <div id="page" lang="en" dir="ltr"> 
+   <div dir="ltr" id="content" lang="en">
+    <span class="anchor" id="top"></span> <span class="anchor" id="line-1"></span>
+    <p class="line862">The books on this page are all general introductions to the Python language. Most of these books will contain a few chapters on particular applications such as GUI interfaces or Web programming, but won't go into great detail on any one topic; refer to the <a href="/moin/PythonBooks">PythonBooks</a> page for lists of application-specific books. Experienced programmers who prefer a brief and condensed introduction should look at the list of <a href="/moin/ReferenceBooks">ReferenceBooks</a>. <span class="anchor" id="line-2"></span></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-3"></span><a class="https" href="https://nostarch.com/art-clean-code">The Art of Clean Code: Best Practices to Eliminate Complexity and Simplify Your Life</a> <span class="anchor" id="line-4"></span><span class="anchor" id="line-5"></span></p>
+    <p class="line874">Christian Mayer <span class="anchor" id="line-6"></span><span class="anchor" id="line-7"></span></p>
+    <p class="line867"><strong>Book Overview:</strong> <span class="anchor" id="line-8"></span><span class="anchor" id="line-9"></span></p>
+    <p class="line874">Most software developers waste thousands of hours working with overly complex code. <span class="anchor" id="line-10"></span><span class="anchor" id="line-11"></span></p>
+    <p class="line862">The eight core principles in <em>The Art of Clean Code</em> will teach you how to write clear, maintainable code without compromising functionality. <span class="anchor" id="line-12"></span><span class="anchor" id="line-13"></span></p>
+    <ol type="1">
+     <li>Complexity Problem <span class="anchor" id="line-14"></span></li>
+     <li>The 80/20 Principle <span class="anchor" id="line-15"></span></li>
+     <li>Build a Minimal Viable Product <span class="anchor" id="line-16"></span></li>
+     <li>Write Clean and Simple Code <span class="anchor" id="line-17"></span></li>
+     <li>Premature Optimization is the Root of All Evil <span class="anchor" id="line-18"></span></li>
+     <li>Flow <span class="anchor" id="line-19"></span></li>
+     <li>Do One Thing Well (Unix) <span class="anchor" id="line-20"></span></li>
+     <li>Less is More in Design <span class="anchor" id="line-21"></span><span class="anchor" id="line-22"></span></li>
+    </ol>
+    <p class="line874">The book’s guiding principle is simplicity: reduce and simplify, then reinvest energy in the important parts to save you countless hours and ease the often onerous task of code maintenance. <span class="anchor" id="line-23"></span><span class="anchor" id="line-24"></span></p>
+    <p class="line862">Amazon: <a class="https" href="https://www.amazon.com/Art-Clean-Code-Practices-Complexity/dp/1718502184">The Art of Clean Code</a> <span class="anchor" id="line-25"></span></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-26"></span><a class="https" href="https://nostarch.com/python-dash">Python Dash: Build Data Analysis and Visualization Apps with Plotly</a> <span class="anchor" id="line-27"></span><span class="anchor" id="line-28"></span></p>
+    <p class="line874">Adam Schroeder, Christian Mayer, and Ann Marie Ward <span class="anchor" id="line-29"></span><span class="anchor" id="line-30"></span></p>
+    <p class="line867"><strong>Book Overview:</strong> <span class="anchor" id="line-31"></span><span class="anchor" id="line-32"></span></p>
+    <p class="line874">Create stunning interactive dashboard applications in Python with the Dash visualization and data analysis tool. Build interfaces that make sense of your data, and make it pretty. <span class="anchor" id="line-33"></span><span class="anchor" id="line-34"></span></p>
+    <p class="line874">A swift and practical introduction to building interactive data visualization apps in Python, known as dashboards. You’ve seen dashboards before; think election result visualizations you can update in real time, or population maps you can filter by demographic. With the Python Dash library you’ll create analytic dashboards that present data in effective, usable, elegant ways in just a few lines of code. <span class="anchor" id="line-35"></span><span class="anchor" id="line-36"></span></p>
+    <p class="line874">The book is fast-paced and caters to those entirely new to dashboards. It will talk you through the necessary software, then get straight into building the dashboards themselves. You’ll learn the basic format of a Dash app by building a Twitter analysis dashboard that maps the number of likes certain accounts gained over time. You’ll build up skills through three more sophisticated projects. The first is a global analysis app that compares country data in three areas: the percentage of a population using the internet, percentage of parliament seats held by women, and CO2 emissions. You’ll then build an investment portfolio dashboard, and an app that allows you to visualize and explore machine learning algorithms. <span class="anchor" id="line-37"></span><span class="anchor" id="line-38"></span></p>
+    <p class="line874">In this book you will: <span class="anchor" id="line-39"></span><span class="anchor" id="line-40"></span></p>
+    <ul>
+     <li>Create and run your first Dash apps <span class="anchor" id="line-41"></span></li>
+     <li>Use the pandas library to manipulate and analyze social media data <span class="anchor" id="line-42"></span></li>
+     <li>Use Git to download and build on existing apps written by the pros <span class="anchor" id="line-43"></span></li>
+     <li>Visualize machine learning models in your apps <span class="anchor" id="line-44"></span></li>
+     <li>Create and manipulate statistical and scientific charts and maps using Plotly <span class="anchor" id="line-45"></span><span class="anchor" id="line-46"></span></li>
+    </ul>
+    <p class="line874">Dash combines several technologies to get you building dashboards quickly and efficiently. This book will do the same. <span class="anchor" id="line-47"></span><span class="anchor" id="line-48"></span></p>
+    <p class="line862">Amazon: <a class="https" href="https://www.amazon.com/Python-Dash-Christian-Mayer-dp-1718502222/dp/1718502222">Python Dash: Build Data Analysis and Visualization Apps with Plotly</a> <span class="anchor" id="line-49"></span></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-50"></span><a class="https" href="https://nostarch.com/learn-code-solving-problems">Learn to Code by Solving Problems: A Python Programming Primer</a> <span class="anchor" id="line-51"></span><span class="anchor" id="line-52"></span></p>
+    <p class="line874">Daniel Zingaro <span class="anchor" id="line-53"></span><span class="anchor" id="line-54"></span></p>
+    <p class="line867"><strong>Book Overview:</strong> <span class="anchor" id="line-55"></span><span class="anchor" id="line-56"></span></p>
+    <p class="line874">Learn to code, right now. No coding experience required. <span class="anchor" id="line-57"></span><span class="anchor" id="line-58"></span></p>
+    <p class="line874">Don't try to memorize Python syntax with the hope of using it one day. Learn Python for good while you solve programming problems. <span class="anchor" id="line-59"></span><span class="anchor" id="line-60"></span></p>
+    <p class="line874">You get line by line walkthroughs, “check your understanding” questions, practice examples with answers, instant and accurate feedback using convenient online websites, discussion of common errors, and more. <span class="anchor" id="line-61"></span><span class="anchor" id="line-62"></span></p>
+    <p class="line874">This isn’t just a Python book. You’ll definitely learn Python here. But you’ll also learn how to think and solve problems like programmers do. And you’ll learn why slow code is slow and how to write better, faster code. You’re building skills that will not only turn you into a Python programmer but will also help you with whatever programming language you might use in the future. <span class="anchor" id="line-63"></span></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-64"></span><a class="https" href="https://pythonfromtheverybeginning.com/">Python from the Very Beginning</a> <span class="anchor" id="line-65"></span><span class="anchor" id="line-66"></span></p>
+    <p class="line874">J. Whitington <span class="anchor" id="line-67"></span><span class="anchor" id="line-68"></span></p>
+    <p class="line874">ISBN-13: 978-0-9576711-5-7 238 Pages (October 2020) <span class="anchor" id="line-69"></span><span class="anchor" id="line-70"></span></p>
+    <p class="line874">Also available as a DRM-free PDF or EPUB. Free HTML version available. <span class="anchor" id="line-71"></span><span class="anchor" id="line-72"></span></p>
+    <p class="line867"><strong>Book Overview:</strong> <span class="anchor" id="line-73"></span><span class="anchor" id="line-74"></span></p>
+    <p class="line862">In <em>Python from the Very Beginning</em> John Whitington takes a no-prerequisites approach to teaching a modern general-purpose programming language. Each small, self-contained chapter introduces a new topic, building until the reader can write quite substantial programs. There are plenty of questions and, crucially, worked answers and hints. <span class="anchor" id="line-75"></span><span class="anchor" id="line-76"></span></p>
+    <p class="line867"><em>Python from the Very Beginning</em> will appeal both to new programmers, and to experienced programmers eager to explore a new language. It is suitable both for formal use within an undergraduate or graduate curriculum, and for the interested amateur. <span class="anchor" id="line-77"></span><span class="anchor" id="line-78"></span></p>
+    <p class="line867"><a class="https" href="https://www.amazon.com/Python-Very-Beginning-exercises-answers/dp/0957671156/">Amazon printed and Kindle</a> <span class="anchor" id="line-79"></span><a class="https" href="https://pythonfromtheverybeginning.com/">PDF and EPUB eBook</a> <span class="anchor" id="line-80"></span><a class="https" href="https://pythonfromtheverybeginning.com/">Free HTML version</a> <span class="anchor" id="line-81"></span><span class="anchor" id="line-82"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-83"></span><a class="https" href="https://smile.amazon.com/gp/product/B08G1XLDNB/">Leaving the Rat Race with Python: An Insider's Guide to Freelance Developing</a> <span class="anchor" id="line-84"></span><span class="anchor" id="line-85"></span></p>
+    <p class="line867"><em>Amazon Smile Link ;)</em> <span class="anchor" id="line-86"></span><span class="anchor" id="line-87"></span></p>
+    <p class="line874">L. Rieger, C. Mayer <span class="anchor" id="line-88"></span><span class="anchor" id="line-89"></span></p>
+    <p class="line874">ASIN: B08G1XLDNB Finxter 233 Pages <span class="anchor" id="line-90"></span><span class="anchor" id="line-91"></span></p>
+    <p class="line867"><strong>Book Overview:</strong> <span class="anchor" id="line-92"></span><span class="anchor" id="line-93"></span></p>
+    <p class="line867"><em>Leaving the Rat Race</em> with Python shows you how to nurture, grow, and harness your work-from-home coding business online --- and live the good life! <span class="anchor" id="line-94"></span><span class="anchor" id="line-95"></span></p>
+    <p class="line862">As an insider's guide to freelance developing, <em>Leaving the Rat Race</em> helps you nurture, grow, and harness your new online coding business plant---even if you've got little or no experience as a programmer and business owner. <span class="anchor" id="line-96"></span><span class="anchor" id="line-97"></span></p>
+    <p class="line874">By following the instructions in this book, you'll create new joy, happiness, and a sense of independence and self-reliance. <span class="anchor" id="line-98"></span>Because life's too short to work a company you don't believe in! <span class="anchor" id="line-99"></span><span class="anchor" id="line-100"></span></p>
+    <p class="line867"><a class="https" href="https://smile.amazon.com/gp/product/B08G1XLDNB/">Kindle Amazon</a> <span class="anchor" id="line-101"></span><a class="https" href="https://blog.finxter.com/book-leaving-the-rat-race-with-python/">eBook PDF</a> <span class="anchor" id="line-102"></span><a class="https" href="https://python-freelancer.com/">Book + Resources Python Freelancing</a> <span class="anchor" id="line-103"></span><span class="anchor" id="line-104"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-105"></span><a class="https" href="https://www.amazon.com/dp/1094777978">https://www.amazon.com/dp/1094777978</a> <span class="anchor" id="line-106"></span><span class="anchor" id="line-107"></span></p>
+    <p class="line874">Abhishek Singh, Zohaib Hasan <span class="anchor" id="line-108"></span><span class="anchor" id="line-109"></span></p>
+    <p class="line874">ISBN-13: 978-1094777979 73 Pages (April 20, 2019) <span class="anchor" id="line-110"></span><span class="anchor" id="line-111"></span></p>
+    <p class="line867"><strong>Book Overview:</strong> <span class="anchor" id="line-112"></span><span class="anchor" id="line-113"></span></p>
+    <p class="line867"><strong>Awarded as one of the best books of regular expression in 2020 and 2021 by bookauthority.org.</strong> <span class="anchor" id="line-114"></span>Regular Expression is one topic which is nightmare for many seasoned programmers also. And what better choice than Python could have been? An easy to understand language to explain an uneasy to understand topic. This book is designed for absolute beginners with elementary knowledge of Python language. Regular Expressions are considered as a tough topic and usually they are not covered in syllabus in much detail. Mostly, a chapter is given on this topic in syllabus or curriculum books. But here, a complete book is dedicated. This book covers Regular Expression in detail with plenty of examples covering password validation, email ID validation, string manipulations etc. and their step by step analysis. The examples are presented in such a way that one can feel like coding only by reading the codes itself. The book is written in a way to give stress free environment. <span class="anchor" id="line-115"></span><span class="anchor" id="line-116"></span></p>
+    <p class="line867"><a class="https" href="https://regexusingpython.wordpress.com/">Learning Regular Expression Page</a> <span class="anchor" id="line-117"></span><span class="anchor" id="line-118"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-119"></span><span class="anchor" id="line-120"></span></p>
+    <p class="line867"><a class="https" href="https://www.amazon.com/Python-3-8-Nat-Dunn/dp/1951959027">Actionable Python 3.8</a> <span class="anchor" id="line-121"></span><span class="anchor" id="line-122"></span></p>
+    <p class="line874">Nat Dunn, Webucator <span class="anchor" id="line-123"></span><span class="anchor" id="line-124"></span></p>
+    <p class="line874">ISBN-13: 978-1951959029 536 Pages (March 15, 2020) <span class="anchor" id="line-125"></span><span class="anchor" id="line-126"></span></p>
+    <p class="line867"><strong>Book Overview:</strong> <span class="anchor" id="line-127"></span><span class="anchor" id="line-128"></span></p>
+    <p class="line862">Learning to program is hard. Don’t let anyone tell you different. If you bought or are considering buying this book because someone told you that you should learn Python, then maybe you should reconsider. The big question to ask yourself is <em>“Do you want to learn Python?”</em> Certainly, this book will help you answer that question, but be prepared to struggle, and to make mistakes, and to get frustrated, and to bang your head against the keyboard. This is Pandora’s box, baby, but… <span class="anchor" id="line-129"></span><span class="anchor" id="line-130"></span></p>
+    <p class="line862">If you get excited by solving hard problems… if you’re into Sudoku, or crosswords, or jigsaw puzzles, or if you’ll spend hours trying to figure out how to separate two metal looping thingamajigs that you found on someone’s shelf…, or you like tinkering with engines, or figuring out the best recipe for chocolate chip cookies… in other words, if you like a challenge, then you might love Python programming.It’s not easy, but it’s easy enough to get started. Pick up a book (good start!), and start going through it. Be patient with yourself. Pretend you’re the teacher as well as the student. When the student fails, the good teacher doesn’t insult or chastise. The good teacher encourages. The good teacher knows that failure is a part of learning, and that overcoming failure is exciting and leads to more learning. <strong>So, be a good teacher and treat yourself well.</strong> <span class="anchor" id="line-131"></span><span class="anchor" id="line-132"></span></p>
+    <p class="line867"><strong>But be a good student too.</strong> When reading this book, you should be sitting at your computer. When you first begin, plan to spend at least two uninterrupted hours. You should do your best to get through the first two lessons in the first sitting. That will get you through the foundational learning. From there on out, you’ll be hopping back and forth between the book and viewing, editing, and writing code. Go through the book slowly and methodically. Read every demo carefully. Work through every exercise. You cannot learn to code through reading alone. You must practice. <span class="anchor" id="line-133"></span><span class="anchor" id="line-134"></span></p>
+    <p class="line874">This book assume no prior knowledge of Python, but it introduces some pretty advanced topics, such as working with databases, scraping the web, and object-oriented Python. <span class="anchor" id="line-135"></span><span class="anchor" id="line-136"></span><span class="anchor" id="line-137"></span></p>
+    <p class="line867"><a class="https" href="https://www.learningiot.net/">Learning IoT Page</a> <span class="anchor" id="line-138"></span><span class="anchor" id="line-139"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-140"></span></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-141"></span><span class="anchor" id="line-142"></span></p>
+    <p class="line867"><a class="https" href="https://www.barnesandnoble.com/w/learning-iot-with-python-and-raspberry-pi-ei-horvath/1133345171?ean=9780578549361">Learning IoT with Python and Raspberry Pi</a> <span class="anchor" id="line-143"></span><span class="anchor" id="line-144"></span></p>
+    <p class="line874">E.I. Horvath <span class="anchor" id="line-145"></span>E.A. Horvath <span class="anchor" id="line-146"></span><span class="anchor" id="line-147"></span></p>
+    <p class="line874">ISBN-13:9780578549361 760 Pages (September 1, 2019) <span class="anchor" id="line-148"></span><span class="anchor" id="line-149"></span></p>
+    <p class="line867"><strong>Book Overview:</strong> <span class="anchor" id="line-150"></span><span class="anchor" id="line-151"></span></p>
+    <p class="line874">The very nature of IoT requires a knowledge of a programming language and electronic circuits and a knowledge of networking in order to interface with the physical world and networking platforms. Learning IoT with Python and Raspberry Pi uses a cross-disciplinary approach when teaching IoT. Circuits which use light dependent resistors, LEDs, buzzers, passive infrared sensors, ultrasonic sensors, and other components will be used to explore and elucidate programming concepts. Users can monitor devices connected to the Raspberry Pi. Learning IoT with Python and Raspberry Pi allows the programmer to explore the Internet of Things (IoT) by writing code which will monitor temperature, pressure, humidity, and light levels and will determine when motion is detected, etc. Based upon these physical events, a text message is sent, an email is sent, a phone call is made, or a picture is taken. <span class="anchor" id="line-152"></span><span class="anchor" id="line-153"></span></p>
+    <ul>
+     <li>300+ code listings illustrate Python programming concepts. <span class="anchor" id="line-154"></span></li>
+     <li>Complete code listings in this textbook for all projects. <span class="anchor" id="line-155"></span></li>
+     <li>250+ homework problems ranging from short Python scripts to web site configuration projects. <span class="anchor" id="line-156"></span></li>
+     <li>Labs on measuring voltage, current, and resistance using a multimeter. <span class="anchor" id="line-157"></span></li>
+     <li>Introduction to basic Linux commands. <span class="anchor" id="line-158"></span></li>
+     <li>Use the Sense HAT to read environmental data, such as temperature, pressure, and humidity. <span class="anchor" id="line-159"></span></li>
+     <li>Send a text message if the light level detected by an LDR circuit falls below a threshold. <span class="anchor" id="line-160"></span></li>
+     <li>Send an email if motion is detected using a PIR sensor circuit. <span class="anchor" id="line-161"></span></li>
+     <li>Use an ultrasonic sensor in a proximity alert circuit and make a phone call if an intruder gets too close. <span class="anchor" id="line-162"></span></li>
+     <li>Use a GPS HAT to get waypoints and store them in a file. <span class="anchor" id="line-163"></span></li>
+     <li>Use an analog to digital converter to read in data from sensors. <span class="anchor" id="line-164"></span></li>
+     <li>Control a servo using classes. <span class="anchor" id="line-165"></span></li>
+     <li>Take a picture with the Raspberry Pi Camera. <span class="anchor" id="line-166"></span></li>
+     <li>Install and configure an HTTP server with multiple virtual web sites. <span class="anchor" id="line-167"></span></li>
+     <li>Install and configure an FTP server. <span class="anchor" id="line-168"></span></li>
+     <li>Use SSH and VNC to remotely control the Raspberry Pi. <span class="anchor" id="line-169"></span></li>
+     <li>Create a virtual machine in the cloud. <span class="anchor" id="line-170"></span></li>
+     <li>Upload data to the cloud. <span class="anchor" id="line-171"></span></li>
+     <li>Learn how to write multi-threaded applications. <span class="anchor" id="line-172"></span></li>
+     <li>Play an audio file. <span class="anchor" id="line-173"></span></li>
+     <li>Control a robot using a multi-threaded application. <span class="anchor" id="line-174"></span><span class="anchor" id="line-175"></span><span class="anchor" id="line-176"></span></li>
+    </ul>
+    <p class="line867"><a class="https" href="https://www.learningiot.net/">Learning IoT Page</a> <span class="anchor" id="line-177"></span><span class="anchor" id="line-178"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-179"></span><span class="anchor" id="line-180"></span></p>
+    <p class="line867"><a class="https" href="https://thepythoncodingbook.com/">The Python Coding Book: Understanding what programming really is</a> <span class="anchor" id="line-181"></span><span class="anchor" id="line-182"></span></p>
+    <p class="line874">Stephen Gruppetta <span class="anchor" id="line-183"></span><span class="anchor" id="line-184"></span></p>
+    <p class="line874">Freely available online book <span class="anchor" id="line-185"></span><span class="anchor" id="line-186"></span></p>
+    <p class="line867"><strong>Book Overview:</strong> <span class="anchor" id="line-187"></span><span class="anchor" id="line-188"></span></p>
+    <p class="line867"><strong>The key to mastering programming is to truly understand why we do things</strong> in the way we do them. Learning the methods is not enough. My focus in the years I’ve spent teaching coding has been to get my students to think in the way the computer does. Only then can we speak its language. We need to understand the various tools in a coding language as if they’re our best friends, not just mere acquaintances. <span class="anchor" id="line-189"></span>The focus of this book is <strong>real</strong> understanding. ‘Why’ is just as important a question as ‘How’. <span class="anchor" id="line-190"></span>And I like analogies—a lot. So your journey through learning how to code will take you through The White Room and coffee machines, and you’ll even climb a tree! <span class="anchor" id="line-191"></span>This book will start from the basics, and in its second part will start to move towards areas of programming relevant to fields such as science, finance, and other data-driven fields. <span class="anchor" id="line-192"></span>The Table of contents of the book is the following: <span class="anchor" id="line-193"></span></p>
+    <ul>
+     <li>0 | How To Learn To Code: Preface <span class="anchor" id="line-194"></span></li>
+     <li>1 | Getting Started: Your First Project <span class="anchor" id="line-195"></span></li>
+     <li>2 | Loops, Lists and More Fundamentals <span class="anchor" id="line-196"></span></li>
+     <li>3 | Power-up Your Coding: Create Your Own Functions <span class="anchor" id="line-197"></span></li>
+     <li>4 | Data, Data Types, and Data Structures <span class="anchor" id="line-198"></span></li>
+     <li>5 | Dealing With Errors and Bugs <span class="anchor" id="line-199"></span></li>
+     <li>~ | The White Room: Understanding Programming <span class="anchor" id="line-200"></span></li>
+     <li>6 | Functions Revisited <span class="anchor" id="line-201"></span></li>
+     <li>7 | Object-Oriented Programming <span class="anchor" id="line-202"></span></li>
+     <li>8 | Numerical Python for Quantitative Applications Using numpy <span class="anchor" id="line-203"></span></li>
+     <li>9 | Dealing with Dates and Times in Python <span class="anchor" id="line-204"></span></li>
+     <li>10 | Basics of Data Visualisation Using matplotlib <span class="anchor" id="line-205"></span></li>
+     <li>11 | Functional Programming and Lambda Functions <span class="anchor" id="line-206"></span></li>
+     <li>12 | Analysing Data Using pandas <span class="anchor" id="line-207"></span><span class="anchor" id="line-208"></span></li>
+    </ul>
+    <p class="line867"><a class="https" href="https://thepythoncodingbook.com/">The Python Coding Book: Understanding what programming really is</a> <span class="anchor" id="line-209"></span><span class="anchor" id="line-210"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-211"></span><span class="anchor" id="line-212"></span></p>
+    <p class="line867"><a class="https" href="https://www.amazon.com/gp/product/B07ZY7XMX8">Python One-Liners</a> <span class="anchor" id="line-213"></span><span class="anchor" id="line-214"></span></p>
+    <p class="line874">Christian Mayer <span class="anchor" id="line-215"></span><span class="anchor" id="line-216"></span></p>
+    <p class="line862">ASIN: B07ZY7XMX8 <a class="nonexistent" href="/moin/NoStarch">NoStarch</a> 256 Pages (May 2020) <span class="anchor" id="line-217"></span><span class="anchor" id="line-218"></span></p>
+    <p class="line867"><strong>Book Overview:</strong> <span class="anchor" id="line-219"></span><span class="anchor" id="line-220"></span></p>
+    <p class="line874">Python programmers will improve their computer science skills with these useful one-liners <span class="anchor" id="line-221"></span><span class="anchor" id="line-222"></span></p>
+    <p class="line874">Python One-Liners will show readers how to perform useful tasks with one line of Python code. Following a brief Python refresher, the book covers essential advanced topics like slicing, list comprehension, broadcasting, lambda functions, algorithms, regular expressions, neural networks, logistic regression and more. Each of the 50 book sections introduces a problem to solve, walks the reader through the skills necessary to solve that problem, then provides a concise one-liner Python solution with a detailed explanation. <span class="anchor" id="line-223"></span><span class="anchor" id="line-224"></span></p>
+    <p class="line867"><a class="https" href="https://pythononeliners.com/">Book page (free material)</a> <span class="anchor" id="line-225"></span><a class="https" href="https://nostarch.com/pythononeliners">Publisher's page</a> <span class="anchor" id="line-226"></span><span class="anchor" id="line-227"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-228"></span><span class="anchor" id="line-229"></span></p>
+    <p class="line867"><a class="https" href="https://www.packtpub.com/application-development/learn-programming-python-cody-jackson">Learn Programming in Python with Cody Jackson</a> <span class="anchor" id="line-230"></span><span class="anchor" id="line-231"></span></p>
+    <p class="line874">Cody Jackson <span class="anchor" id="line-232"></span><span class="anchor" id="line-233"></span></p>
+    <p class="line874">ISBN 13: 9781789531947 Packt 304 Pages (November 2018) <span class="anchor" id="line-234"></span><span class="anchor" id="line-235"></span></p>
+    <p class="line867"><strong>Book Overview:</strong> <span class="anchor" id="line-236"></span><span class="anchor" id="line-237"></span></p>
+    <p class="line874">Kick-start your development journey with this end-to-end guide that covers Python programming fundamentals along with application development <span class="anchor" id="line-238"></span><span class="anchor" id="line-239"></span></p>
+    <p class="line874">Python is a cross-platform language used by organizations such as Google and NASA. It lets you work quickly and efficiently, allowing you to concentrate on your work rather than the language. Based on his personal experiences when learning to program, Learn Programming in Python with Cody Jackson provides a hands-on introduction to computer programming utilizing one of the most readable programming languages–Python. It aims to educate readers regarding software development as well as help experienced developers become familiar with the Python language, utilizing real-world lessons to help readers understand programming concepts quickly and easily. <span class="anchor" id="line-240"></span><span class="anchor" id="line-241"></span></p>
+    <p class="line874">The book starts with the basics of programming, and describes Python syntax while developing the skills to make complete programs. In the first part of the book, readers will be going through all the concepts with short and easy-to-understand code samples that will prepare them for the comprehensive application built in parts 2 and 3. The second part of the book will explore topics such as application requirements, building the application, testing, and documentation. It is here that you will get a solid understanding of building an end-to-end application in Python. The next part will show you how to complete your applications by converting text-based simulation into an interactive, graphical user interface, using a desktop GUI framework. After reading the book, you will be confident in developing a complete application in Python, from program design to documentation to deployment. <span class="anchor" id="line-242"></span><span class="anchor" id="line-243"></span></p>
+    <p class="line867"><a class="https" href="https://www.packtpub.com/application-development/learn-programming-python-cody-jackson">Publisher's page</a> <span class="anchor" id="line-244"></span><span class="anchor" id="line-245"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-246"></span><span class="anchor" id="line-247"></span></p>
+    <p class="line867"><a class="https" href="https://www.packtpub.com/application-development/python-3-object-oriented-programming-third-edition">Python 3 Object-Oriented Programming - Third Edition</a> <span class="anchor" id="line-248"></span><span class="anchor" id="line-249"></span></p>
+    <p class="line874">Dusty Phillips <span class="anchor" id="line-250"></span><span class="anchor" id="line-251"></span></p>
+    <p class="line874">ISBN 13: 9781789615852 Packt 466 Pages (October 2018) <span class="anchor" id="line-252"></span><span class="anchor" id="line-253"></span></p>
+    <p class="line867"><strong>Book Overview:</strong> <span class="anchor" id="line-254"></span><span class="anchor" id="line-255"></span></p>
+    <p class="line874">Uncover modern Python with this guide to Python data structures, design patterns, and effective object-oriented techniques <span class="anchor" id="line-256"></span><span class="anchor" id="line-257"></span></p>
+    <p class="line874">Starting with a detailed analysis of object-oriented programming, you will use the Python programming language to clearly grasp key concepts from the object-oriented paradigm. You will learn how to create maintainable applications by studying higher level design patterns. The book will show you the complexities of string and file manipulation, and how Python distinguishes between binary and textual data. Not one, but two very powerful automated testing systems, unittest and pytest, will be introduced in this book. You'll get a comprehensive introduction to Python's concurrent programming ecosystem. <span class="anchor" id="line-258"></span><span class="anchor" id="line-259"></span></p>
+    <p class="line874">By the end of the book, you will have thoroughly learned object-oriented principles using Python syntax and be able to create robust and reliable programs confidently. <span class="anchor" id="line-260"></span><span class="anchor" id="line-261"></span></p>
+    <p class="line867"><a class="https" href="https://www.packtpub.com/application-development/python-3-object-oriented-programming-third-edition">Publisher's page</a> <span class="anchor" id="line-262"></span><span class="anchor" id="line-263"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-264"></span><strong>'Start Here: Python Programming for Beginners</strong> <a class="http" href="http://www.toonzcat.com/book.html">"Start Here: Python Programming for beginners"</a> by Jody S. Ginther was written after the changes made in Python 3. It is aimed at total beginners and uses hands-on practice and humor to make learning to program more relaxing and enjoyable. <span class="anchor" id="line-265"></span><span class="anchor" id="line-266"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-267"></span><strong>Software Development I: with Python</strong> <span class="anchor" id="line-268"></span><span class="anchor" id="line-269"></span></p>
+    <p class="line874">ISBN: 978-0-9754759-4-2, LCCN: 2010906917, 605 pages <span class="anchor" id="line-270"></span><span class="anchor" id="line-271"></span></p>
+    <p class="line867"><a class="http" href="http://www.softbaugh.com/courses/python1/">"Software Development I: with Python"</a> <span class="anchor" id="line-272"></span><span class="anchor" id="line-273"></span></p>
+    <p class="line874">Tom Baugh <span class="anchor" id="line-274"></span><span class="anchor" id="line-275"></span></p>
+    <p class="line874">This course introduces the student to Python, cultivating professional software development skills along the way. Yet, this course requires no prior programming knowledge to learn or to teach. Organized as sixty-four lessons, sixteen tests and two exams, for a total of 82 lecture units, this course covers the following topics: <span class="anchor" id="line-276"></span><span class="anchor" id="line-277"></span></p>
+    <ul>
+     <li>Python variable, function, class and environment syntax. <span class="anchor" id="line-278"></span></li>
+     <li>Custom module development. <span class="anchor" id="line-279"></span></li>
+     <li>Software development skills and activities. <span class="anchor" id="line-280"></span></li>
+     <li>Python dictionaries, lists, tuples and iterable types. <span class="anchor" id="line-281"></span></li>
+     <li>Command console operations. <span class="anchor" id="line-282"></span></li>
+     <li>List comprehensions. <span class="anchor" id="line-283"></span></li>
+     <li>Python exception handling. <span class="anchor" id="line-284"></span></li>
+     <li>IPython operations and commands. <span class="anchor" id="line-285"></span></li>
+     <li>Essential built-in Python library features. <span class="anchor" id="line-286"></span></li>
+     <li>An introduction to Matplotlib. <span class="anchor" id="line-287"></span></li>
+     <li>An introduction to wxPython and windowed development. <span class="anchor" id="line-288"></span><span class="anchor" id="line-289"></span></li>
+    </ul>
+    <p class="line874">By the end of the course, students will have learned how to write Python projects, including custom classes and modules. The course culminates with an exploration of windowed application development, including a bitmapped graphics project. The course material includes the student text and CD-ROM with instructor's guide for each lesson, tests, exams, solutions guide for exercises, tests and exams, student handouts and completed projects for each lesson. The format of the course is intended to support classroom use, homeschool use, or self-study. <span class="anchor" id="line-290"></span><span class="anchor" id="line-291"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-292"></span><strong>Python Programming in Context</strong> <span class="anchor" id="line-293"></span><span class="anchor" id="line-294"></span></p>
+    <p class="line874">Bradley N. Miller and David L Ranum <span class="anchor" id="line-295"></span><span class="anchor" id="line-296"></span></p>
+    <p class="line874">Python Programming in Context is a clear, accessible introduction to the fundamental programming and problem solving concepts necessary for students at this level. The authors carefully build upon the many important computer science concepts and problem solving techniques throughout the text and offer relevant, real-world examples and exercises to reinforce key material. Programming skills throughout the text are linked to applied areas such as Image Processing, Cryptography, Astronomy, Music, the Internet, and Bioinformatics, giving students a well rounded look of its capabilities. <span class="anchor" id="line-297"></span><span class="anchor" id="line-298"></span></p>
+    <p class="line867"><em>dead link</em> <span class="anchor" id="line-299"></span><span class="anchor" id="line-300"></span></p>
+    <p class="line867"><a class="http" href="http://www.jbpub.com/catalog/9780763746025/">http://www.jbpub.com/catalog/9780763746025/</a> <span class="anchor" id="line-301"></span><span class="anchor" id="line-302"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-303"></span><strong>Python First: The Joy of Success</strong> <span class="anchor" id="line-304"></span><span class="anchor" id="line-305"></span></p>
+    <p class="line874">Atanas Radenski <span class="anchor" id="line-306"></span><span class="anchor" id="line-307"></span></p>
+    <p class="line874">ISBN: 978159526-713-9, 512 pages, Llumina Press, April 2007 <span class="anchor" id="line-308"></span><span class="anchor" id="line-309"></span></p>
+    <p class="line874">This book is a paper companion to the "Python First" digital pack from studypack.com. The complete digital study pack features e-texts, slides, a wealth of detailed self-guided labs that learners can complete on their own, sample programs, and extensive quizzes. The book offers a printed version of the e-texts and self-guided labs in the same format as they appear in the online digital pack. <span class="anchor" id="line-310"></span><span class="anchor" id="line-311"></span></p>
+    <p class="line867"><a class="http" href="http://www.llumina.com/store/python.htm">Publisher's page</a> <span class="anchor" id="line-312"></span><span class="anchor" id="line-313"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-314"></span><strong>Building Skills in Python</strong> <span class="anchor" id="line-315"></span><span class="anchor" id="line-316"></span></p>
+    <p class="line874">Steven F. Lott <span class="anchor" id="line-317"></span><span class="anchor" id="line-318"></span></p>
+    <p class="line874">How do you learn Python? By doing a series of exercises, each of which adds a single new feature of the language. This 250+ page book has 31 chapters that will help you build Python programming skills through a series of exercises. This book includes six projects from straight-forward to sophisticated that will help solidify your Python skills. <span class="anchor" id="line-319"></span><span class="anchor" id="line-320"></span></p>
+    <p class="line867"><a class="http" href="http://homepage.mac.com/s_lott/books/python.html">http://homepage.mac.com/s_lott/books/python.html</a> <span class="anchor" id="line-321"></span><span class="anchor" id="line-322"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-323"></span><strong>Building Skills in Programming How To Write Your Own Software Using Python</strong> <span class="anchor" id="line-324"></span><span class="anchor" id="line-325"></span></p>
+    <p class="line874">Steven F. Lott <span class="anchor" id="line-326"></span><span class="anchor" id="line-327"></span></p>
+    <p class="line874">How do you learn to solve your own programs by writing programs? By doing a series of exercises, each of which builds up a part of the skill set we call "computer programming". This book has 54 chapters that will help you build basic programming skills through a series of exercises that grow from simple identification of the parts of your computer through to statistical simulations. <span class="anchor" id="line-328"></span><span class="anchor" id="line-329"></span></p>
+    <p class="line867"><a class="http" href="http://homepage.mac.com/s_lott/books/nonprogrammer.html">http://homepage.mac.com/s_lott/books/nonprogrammer.html</a> <span class="anchor" id="line-330"></span><span class="anchor" id="line-331"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-332"></span><strong>A Byte of Python</strong> <span class="anchor" id="line-333"></span><span class="anchor" id="line-334"></span></p>
+    <ul>
+     <li style="list-style-type:none">Swaroop C H <span class="anchor" id="line-335"></span><span class="anchor" id="line-336"></span></li>
+    </ul>
+    <p class="line874">A Byte of Python is a book on programming using the Python language. It serves as a tutorial or guide to the Python language for anyone. If all you know is how to save text files, then you can learn Python using this book. If you are an expert programmer who loves C, Perl, Java or C#, you can also learn Python using this book. <span class="anchor" id="line-337"></span><span class="anchor" id="line-338"></span></p>
+    <p class="line862">This book can be read online or downloaded from <a class="http" href="http://www.swaroopch.com/notes/Python">http://www.swaroopch.com/notes/Python</a> <span class="anchor" id="line-339"></span><span class="anchor" id="line-340"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-341"></span><strong>Practical Python</strong> <span class="anchor" id="line-342"></span><span class="anchor" id="line-343"></span></p>
+    <ul>
+     <li style="list-style-type:none">Magnus Lie Hetland <span class="anchor" id="line-344"></span><span class="anchor" id="line-345"></span></li>
+    </ul>
+    <p class="line867"><a class="interwiki" href="http://www.amazon.com/exec/obidos/ISBN=1590590066" title="ISBN">1590590066</a>, 619 pages, APress (August 2002) <span class="anchor" id="line-346"></span><span class="anchor" id="line-347"></span></p>
+    <p class="line862">The first half of this book introduces the Python language, and the second half demonstrates its usage in various practical projects such as "automated document conversion, newsgroup administration, graphical PDF document generation, remote document maintenance, the creation of a peer-to-peer system with XML-RPC, database integration, and GUI and game development." A new edition of this book is available under the title <strong>Beginning Python: From Novice to Professional</strong>. <span class="anchor" id="line-348"></span><span class="anchor" id="line-349"></span></p>
+    <p class="line867"><a class="http" href="http://www.apress.com/book/bookDisplay.html?bID=93">Publisher's page</a> <span class="anchor" id="line-350"></span><span class="anchor" id="line-351"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-352"></span><strong>Beginning Python: From Novice to Professional</strong> <span class="anchor" id="line-353"></span><span class="anchor" id="line-354"></span></p>
+    <ul>
+     <li style="list-style-type:none">Magnus Lie Hetland <span class="anchor" id="line-355"></span><span class="anchor" id="line-356"></span></li>
+    </ul>
+    <p class="line867"><a class="interwiki" href="http://www.amazon.com/exec/obidos/ISBN=1-59059-519-x" title="ISBN">1-59059-519-x</a>, 640 pages, APress (September 2005) <span class="anchor" id="line-357"></span><span class="anchor" id="line-358"></span></p>
+    <p class="line862">This is an update of <strong>Practical Python</strong>. <span class="anchor" id="line-359"></span><span class="anchor" id="line-360"></span></p>
+    <p class="line867"><a class="http" href="http://www.apress.com/book/bookDisplay.html?bID=10013">Publisher's page</a> <span class="anchor" id="line-361"></span><span class="anchor" id="line-362"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-363"></span><strong>Computer Programming is Fun!</strong> <span class="anchor" id="line-364"></span><span class="anchor" id="line-365"></span></p>
+    <ul>
+     <li style="list-style-type:none">David Handy <span class="anchor" id="line-366"></span><span class="anchor" id="line-367"></span></li>
+    </ul>
+    <p class="line874">208 pages, Handy Software and Publishing (April 2005) <span class="anchor" id="line-368"></span><span class="anchor" id="line-369"></span></p>
+    <p class="line874">Written by a homeschooling Dad for teenage youth, this introductory computer programming book is for people who have no prior programming experience. Teaches the basic principles of programming using Python, with lots of examples. Small video game project at the end. Good for self-study or classroom use. <span class="anchor" id="line-370"></span><span class="anchor" id="line-371"></span></p>
+    <p class="line867"><a class="http" href="http://www.handysoftware.com/cpif/">http://www.handysoftware.com/cpif/</a> <span class="anchor" id="line-372"></span><span class="anchor" id="line-373"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-374"></span><strong>Python Programming for the Absolute Beginner</strong> <span class="anchor" id="line-375"></span><span class="anchor" id="line-376"></span></p>
+    <ul>
+     <li style="list-style-type:none">Michael Dawson <span class="anchor" id="line-377"></span><span class="anchor" id="line-378"></span></li>
+    </ul>
+    <p class="line867"><a class="interwiki" href="http://www.amazon.com/exec/obidos/ISBN=1592000738" title="ISBN">1592000738</a> Premier Press, 456 pages (2003) <span class="anchor" id="line-379"></span><span class="anchor" id="line-380"></span></p>
+    <p class="line874">Simple intro accessible for beginners. Very hands-on and fun, utilizes development of games to teach each concept. Great for visual and hands-on learners alike. <span class="anchor" id="line-381"></span><span class="anchor" id="line-382"></span></p>
+    <p class="line867"><a class="http" href="http://www.premierpressbooks.com/ptr_detail.cfm?group=Programming&amp;isbn=1-59200-073-8">Publisher's page</a> <span class="anchor" id="line-383"></span><span class="anchor" id="line-384"></span><span class="anchor" id="line-385"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-386"></span></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-387"></span></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-388"></span><span class="anchor" id="line-389"></span><span class="anchor" id="line-390"></span></p>
+    <p class="line867"><a class="https" href="https://www.packtpub.com/application-development/python-apprentice">The Python Apprentice</a> <span class="anchor" id="line-391"></span><span class="anchor" id="line-392"></span></p>
+    <p class="line874">Robert Smallshire, Austin Bingham <span class="anchor" id="line-393"></span><span class="anchor" id="line-394"></span></p>
+    <p class="line874">ISBN 13: 9781788293181 Packt Publishing 352 pages (June 2017) <span class="anchor" id="line-395"></span><span class="anchor" id="line-396"></span></p>
+    <p class="line867"><strong>Book Overview:</strong> <span class="anchor" id="line-397"></span><span class="anchor" id="line-398"></span></p>
+    <p class="line874">Before you master Python, you need to learn the culture and the tools to become a productive member of any Python project. This book will give you a practical and thorough introduction to Python programming, providing you with the insight and technical craftsmanship you need to be a productive member of any Python project. As a Python developer, know the tools, basic idioms and of course the ins and outs of the language, the standard library and other modules to be able to jump into most projects. <span class="anchor" id="line-399"></span><span class="anchor" id="line-400"></span></p>
+    <p class="line867"><strong>What you will learn:</strong> <span class="anchor" id="line-401"></span><span class="anchor" id="line-402"></span></p>
+    <ul>
+     <li>Learn the language of Python itself <span class="anchor" id="line-403"></span></li>
+     <li>Get a start on the Python standard library <span class="anchor" id="line-404"></span></li>
+     <li>Learn how to integrate 3rd party libraries <span class="anchor" id="line-405"></span></li>
+     <li>Develop libraries on your own <span class="anchor" id="line-406"></span></li>
+     <li>Become familiar with the basics of Python testing <span class="anchor" id="line-407"></span><span class="anchor" id="line-408"></span></li>
+    </ul>
+    <p class="line867"><a class="https" href="https://www.packtpub.com/application-development/python-apprentice">Publisher's page</a> <span class="anchor" id="line-409"></span><span class="anchor" id="line-410"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-411"></span><span class="anchor" id="line-412"></span></p>
+    <p class="line867"><a class="https" href="https://www.packtpub.com/application-development/learn-python-7-days">Learn Python in 7 Days</a> <span class="anchor" id="line-413"></span><span class="anchor" id="line-414"></span></p>
+    <p class="line874">Mohit, Bhaskar N. Das <span class="anchor" id="line-415"></span><span class="anchor" id="line-416"></span></p>
+    <p class="line874">ISBN 13: 9781787288386 Packt Publishing 280 pages (May 2017) <span class="anchor" id="line-417"></span><span class="anchor" id="line-418"></span></p>
+    <p class="line867"><strong>Book Overview:</strong> <span class="anchor" id="line-419"></span><span class="anchor" id="line-420"></span></p>
+    <p class="line874">Python is a great language to get started in the world of programming and application development. This book will help you to take your skills to the next level having a good knowledge of the fundamentals of Python. <span class="anchor" id="line-421"></span><span class="anchor" id="line-422"></span></p>
+    <p class="line874">Begin with the absolute foundation, covering the basic syntax, type variables and operators. Then you can move on to concepts like statements, arrays, operators, string processing and I/O handling. You’ll be able to learn how to operate tuples and understand the functions and methods of lists. Develop a deep understanding of list and tuples and learn python dictionary. As you progress through the book, you’ll learn about function parameters and how to use control statements with the loop. You’ll further learn how to create modules and packages, storing of data as well as handling errors. Later, dive into advanced level concepts such as Python collections and how to use class, methods, objects in Python. <span class="anchor" id="line-423"></span><span class="anchor" id="line-424"></span></p>
+    <p class="line874">By the end of this book, you will be able to take your skills to the next level having a good knowledge of the fundamentals of Python. <span class="anchor" id="line-425"></span><span class="anchor" id="line-426"></span></p>
+    <p class="line867"><strong>What you will learn:</strong> <span class="anchor" id="line-427"></span><span class="anchor" id="line-428"></span></p>
+    <ul>
+     <li>Use if else statement with loops and how to break, skip the loop <span class="anchor" id="line-429"></span></li>
+     <li>Get acquainted with python types and its operators <span class="anchor" id="line-430"></span></li>
+     <li>Create modules and packages <span class="anchor" id="line-431"></span></li>
+     <li>Learn slicing, indexing and string methods <span class="anchor" id="line-432"></span></li>
+     <li>Explore advanced concepts like collections, class and objects <span class="anchor" id="line-433"></span></li>
+     <li>Learn dictionary operation and methods <span class="anchor" id="line-434"></span></li>
+     <li>Discover the scope and function of variables with arguments and return value <span class="anchor" id="line-435"></span><span class="anchor" id="line-436"></span></li>
+    </ul>
+    <p class="line867"><a class="https" href="https://www.packtpub.com/application-development/learn-python-7-days">Publisher's page</a> <span class="anchor" id="line-437"></span><span class="anchor" id="line-438"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-439"></span><a class="https" href="https://www.packtpub.com/packt/free-ebook/what-you-need-know-about-machine-learning2">What You Need to Know about Machine Learning</a> <strong>(Free eBook)</strong> <span class="anchor" id="line-440"></span><span class="anchor" id="line-441"></span></p>
+    <p class="line874">By Gabriel A. Cánepa <span class="anchor" id="line-442"></span><span class="anchor" id="line-443"></span></p>
+    <p class="line874">ISBN 13: 9781786466211 Packt Publishing (July 2016) <span class="anchor" id="line-444"></span><span class="anchor" id="line-445"></span></p>
+    <p class="line867"><strong>Book Overview:</strong> <span class="anchor" id="line-446"></span><span class="anchor" id="line-447"></span></p>
+    <p class="line874">This book offers you the perfect place to lay the foundation for your work in the world of Machine Learning, providing the basic understanding, knowledge, and skills that you can build on with experience and time. <span class="anchor" id="line-448"></span><span class="anchor" id="line-449"></span></p>
+    <ul>
+     <li>Discover the various forms Machine Learning, and take that which will benefit you the most <span class="anchor" id="line-450"></span></li>
+     <li>Pick up the Python tools you need to know: from pandas to scikit-learn <span class="anchor" id="line-451"></span></li>
+     <li>Learn the relationship between machine learning and big data <span class="anchor" id="line-452"></span></li>
+     <li>Understand and identify potential real-world scenarios where machine learning can be applied <span class="anchor" id="line-453"></span></li>
+     <li>Lay the foundations to get started in the wide world of machine learning <span class="anchor" id="line-454"></span><span class="anchor" id="line-455"></span></li>
+    </ul>
+    <p class="line867"><a class="https" href="https://www.packtpub.com/packt/free-ebook/what-you-need-know-about-machine-learning2">Publisher's Page</a> <span class="anchor" id="line-456"></span><span class="anchor" id="line-457"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-458"></span><span class="anchor" id="line-459"></span><span class="anchor" id="line-460"></span></p>
+    <p class="line867"><a class="https" href="https://www.packtpub.com/packt/free-ebook/what-you-need-know-about-python2">What You Need to Know about Python</a> <strong>(Free eBook)</strong> <span class="anchor" id="line-461"></span><span class="anchor" id="line-462"></span></p>
+    <p class="line874">By Pierluigi Riti <span class="anchor" id="line-463"></span><span class="anchor" id="line-464"></span></p>
+    <p class="line874">ISBN 13: 9781786465566 Packt Publishing (March 2016) <span class="anchor" id="line-465"></span><span class="anchor" id="line-466"></span></p>
+    <p class="line867"><strong>Book Overview:</strong> <span class="anchor" id="line-467"></span><span class="anchor" id="line-468"></span></p>
+    <p class="line874">With this book you’ll experience the basics of Python, what it can be used for, and get a clear direction in what you need to really get the most from this great language. <span class="anchor" id="line-469"></span><span class="anchor" id="line-470"></span></p>
+    <ul>
+     <li>Discover the state of Python in 2016 and what it means for you <span class="anchor" id="line-471"></span></li>
+     <li>Begin learning about the basics and unique features of Python <span class="anchor" id="line-472"></span></li>
+     <li>Take on the world of cloud and web development with Django <span class="anchor" id="line-473"></span></li>
+     <li>Let Jupyter handle your data visualization <span class="anchor" id="line-474"></span></li>
+     <li><p class="line862">Get an introduction to the world of <a class="nonexistent" href="/moin/DevOps">DevOps</a> <span class="anchor" id="line-475"></span><span class="anchor" id="line-476"></span></p></li>
+    </ul>
+    <p class="line867"><a class="https" href="https://www.packtpub.com/packt/free-ebook/what-you-need-know-about-python2">Publisher's Page</a> <span class="anchor" id="line-477"></span><span class="anchor" id="line-478"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-479"></span><a class="https" href="https://www.manning.com/books/get-programming">Learn Python</a> <span class="anchor" id="line-480"></span><span class="anchor" id="line-481"></span></p>
+    <p class="line874">By Ana Bell <span class="anchor" id="line-482"></span><span class="anchor" id="line-483"></span></p>
+    <ul>
+     <li>Manning Publications Co <span class="anchor" id="line-484"></span></li>
+     <li><p class="line862">ISBN 9781617293788, 456 pages, printed in black &amp; white <span class="anchor" id="line-485"></span></p></li>
+     <li>Published Spring 2018 <span class="anchor" id="line-486"></span><span class="anchor" id="line-487"></span></li>
+    </ul>
+    <p class="line867"><strong>Book overview:</strong> <span class="anchor" id="line-488"></span><span class="anchor" id="line-489"></span></p>
+    <p class="line874">When you're ready to learn to program, Python is a great language to start with. It has a straightforward syntax, you'll find it easy to learn, and it's extremely versatile. Once you master the basics, you'll appreciate Python's very strong online community where you can continue learning and tinkering with more advanced programming techniques. All you need is some help to get going. Learning to program with Python doesn't have to be difficult, in fact it can even be fun. This book will get you started! <span class="anchor" id="line-490"></span><span class="anchor" id="line-491"></span></p>
+    <p class="line874">Learn Python is an introduction to programming using one of the most popular programming languages. The first few chapters give you a quick background to programming concepts and a hands-on guide to setting up your programming environment. You will then be gently introduced to the basics of programming, building up to writing your first programs! This easy-to-follow tutorial is full of exercises to practice and reinforce each new concept, as well as to give you confidence that you are ready to move on to the next lesson. As you progress, you'll learn programming topics and concepts that are ubiquitous across almost all other programming languages. By the end of the book, you'll have a solid grasp of how to write programs as well as programming best practices. <span class="anchor" id="line-492"></span><span class="anchor" id="line-493"></span></p>
+    <p class="line867"><strong>Who this book is written for:</strong> <span class="anchor" id="line-494"></span><span class="anchor" id="line-495"></span></p>
+    <p class="line874">Anyone without programming experience who wants an easy-to-follow book that guides you through short lessons and exercises. <span class="anchor" id="line-496"></span><span class="anchor" id="line-497"></span></p>
+    <p class="line862">Chapter 4 available for free: <a class="https" href="https://manning-content.s3.amazonaws.com/download/e/2d021c6-d4ed-40e5-8f6d-084f92ccbb86/SampleCh04.pdf">Variables and Expressions: Giving Names and Values to Things</a> <span class="anchor" id="line-498"></span><span class="anchor" id="line-499"></span></p>
+    <p class="line862">Chapter 30 available for free: <a class="https" href="https://manning-content.s3.amazonaws.com/download/3/145ee71-1acd-4e02-a9b0-fb0f1892485e/SampleCh30.pdf">Making your own Object Types</a> <span class="anchor" id="line-500"></span><span class="anchor" id="line-501"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-502"></span><a class="https" href="https://www.manning.com/books/the-quick-python-book-third-edition">The Quick Python Book, 3rd Edition</a> <span class="anchor" id="line-503"></span><span class="anchor" id="line-504"></span></p>
+    <p class="line874">By Naomi Ceder <span class="anchor" id="line-505"></span><span class="anchor" id="line-506"></span></p>
+    <ul>
+     <li>Manning Publications Co <span class="anchor" id="line-507"></span></li>
+     <li>ISBN 9781617294037 400 pages (estimated) <span class="anchor" id="line-508"></span></li>
+     <li>MEAP began December 2016, Publication in Spring 2017 (estimated) <span class="anchor" id="line-509"></span><span class="anchor" id="line-510"></span></li>
+    </ul>
+    <p class="line862">MEAP: early access to chapters as they are being written, available at the Manning Publications web site: <a class="https" href="https://www.manning.com/books/the-quick-python-book-third-edition">The Quick Python Book, 3rd Edition</a> <span class="anchor" id="line-511"></span><span class="anchor" id="line-512"></span></p>
+    <p class="line867"><strong>Book overview:</strong> <span class="anchor" id="line-513"></span><span class="anchor" id="line-514"></span></p>
+    <p class="line874">This third revision of Manning's popular The Quick Python Book offers a clear, crisp updated introduction to the elegant Python programming language and its famously easy-to-read syntax. Written for programmers new to Python, this latest edition includes new exercises throughout. It covers features common to other languages concisely, while introducing Python's comprehensive standard functions library and unique features in detail. <span class="anchor" id="line-515"></span><span class="anchor" id="line-516"></span></p>
+    <p class="line874">After exploring Python's syntax, control flow, and basic data structures, the book shows how to create and deploy full applications and larger code libraries. It addresses established Python features as well as the advanced object-oriented options available in Python 3. Along the way, you'll survey the current Python development landscape, including Pythonic best practices, data extraction and cleaning, database access, and web frameworks. <span class="anchor" id="line-517"></span><span class="anchor" id="line-518"></span></p>
+    <p class="line867"><strong>Who this book is written for:</strong> <span class="anchor" id="line-519"></span><span class="anchor" id="line-520"></span></p>
+    <p class="line874">This book is for someone who knows how to program, who whats to learn Python quickly and efficiently. <span class="anchor" id="line-521"></span><span class="anchor" id="line-522"></span></p>
+    <p class="line862">Chapter 1 available for free: <a class="https" href="https://www.manning.com/books/the-quick-python-book-third-edition#downloads">About Python</a> <span class="anchor" id="line-523"></span><span class="anchor" id="line-524"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-525"></span><a class="https" href="https://www.packtpub.com/big-data-and-business-intelligence/python-machine-learning-cookbook">Python Machine Learning Cookbook</a> <span class="anchor" id="line-526"></span><span class="anchor" id="line-527"></span></p>
+    <p class="line874">By Prateek Joshi <span class="anchor" id="line-528"></span><span class="anchor" id="line-529"></span></p>
+    <p class="line874">ISBN 13: 9781786464477 Packt Publishing 304 pages (June 2016) <span class="anchor" id="line-530"></span><span class="anchor" id="line-531"></span></p>
+    <p class="line867"><strong>Book overview:</strong> <span class="anchor" id="line-532"></span><span class="anchor" id="line-533"></span></p>
+    <p class="line874">Machine learning is becoming increasingly pervasive in the modern data-driven world. It is used extensively across many fields such as search engines, robotics, self-driving cars, and more. With this book, you will learn how to perform various machine learning tasks in different environments. We’ll start by exploring a range of real-life scenarios where machine learning can be used, and look at various building blocks. Throughout the book, you’ll use a wide variety of machine learning algorithms to solve real-world problems and use Python to implement these algorithms. You’ll discover how to deal with various types of data and explore the differences between machine learning paradigms such as supervised and unsupervised learning. We also cover a range of regression techniques, classification algorithms, predictive modeling, data visualization techniques, recommendation engines, and more with the help of real-world examples. <span class="anchor" id="line-534"></span><span class="anchor" id="line-535"></span></p>
+    <ul>
+     <li>Explore classification algorithms and apply them to the income bracket estimation problem <span class="anchor" id="line-536"></span></li>
+     <li>Use predictive modeling and apply it to real-world problems <span class="anchor" id="line-537"></span></li>
+     <li>Understand how to perform market segmentation using unsupervised learning <span class="anchor" id="line-538"></span></li>
+     <li>Explore data visualization techniques to interact with your data in diverse ways <span class="anchor" id="line-539"></span></li>
+     <li>Find out how to build a recommendation engine <span class="anchor" id="line-540"></span></li>
+     <li>Understand how to interact with text data and build models to analyze it <span class="anchor" id="line-541"></span></li>
+     <li>Work with speech data and recognize spoken words using Hidden Markov Models <span class="anchor" id="line-542"></span></li>
+     <li>Analyze stock market data using Conditional Random Fields <span class="anchor" id="line-543"></span></li>
+     <li>Work with image data and build systems for image recognition and biometric face recognition <span class="anchor" id="line-544"></span></li>
+     <li>Grasp how to use deep neural networks to build an optical character recognition system <span class="anchor" id="line-545"></span><span class="anchor" id="line-546"></span></li>
+    </ul>
+    <p class="line867"><strong>Who this book is written for:</strong> <span class="anchor" id="line-547"></span><span class="anchor" id="line-548"></span></p>
+    <p class="line874">This book is for Python programmers who are looking to use machine-learning algorithms to create real-world applications. This book is friendly to Python beginners, but familiarity with Python programming would certainly be useful to play around with the code. <span class="anchor" id="line-549"></span><span class="anchor" id="line-550"></span></p>
+    <p class="line867"><a class="https" href="https://www.packtpub.com/big-data-and-business-intelligence/python-machine-learning-cookbook">Publisher's page</a> <span class="anchor" id="line-551"></span><span class="anchor" id="line-552"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-553"></span><a class="https" href="https://www.packtpub.com/application-development/modular-programming-python">Modular Programming with Python</a> <span class="anchor" id="line-554"></span><span class="anchor" id="line-555"></span></p>
+    <p class="line874">By Erik Westra <span class="anchor" id="line-556"></span><span class="anchor" id="line-557"></span></p>
+    <p class="line874">ISBN 13: 9781785884481 Packt Publishing 246 pages (May 2016) <span class="anchor" id="line-558"></span><span class="anchor" id="line-559"></span></p>
+    <p class="line867"><strong>Book overview:</strong> <span class="anchor" id="line-560"></span><span class="anchor" id="line-561"></span></p>
+    <p class="line862">This book will help readers develop readable, reliable, and maintainable programs in Python. Starting with an introduction to the concept of modules and packages, this book shows how you can use these building blocks to organize a complex program into logical parts and make sure those parts are working correctly together. Using clearly written, real-world examples, this book demonstrates how you can use modular techniques to build better programs. A number of common modular programming patterns are covered, including divide-and-conquer, abstraction, encapsulation, wrappers and extensibility. You will also learn how to test your modules and packages, how to prepare your code for sharing with other people, and how to publish your modules and packages on <a class="nonexistent" href="/moin/GitHub">GitHub</a> and the Python Package Index so that other people can use them. Finally, you will learn how to use modular design techniques to be a more effective programmer. <span class="anchor" id="line-562"></span><span class="anchor" id="line-563"></span></p>
+    <ul>
+     <li>Learn how to use modules and packages to organize your Python code <span class="anchor" id="line-564"></span></li>
+     <li>Understand how to use the import statement to load modules and packages into your program <span class="anchor" id="line-565"></span></li>
+     <li>Use common module patterns such as abstraction and encapsulation to write better programs <span class="anchor" id="line-566"></span></li>
+     <li>Discover how to create self-testing Python packages <span class="anchor" id="line-567"></span></li>
+     <li>Create reusable modules that other programmers can use <span class="anchor" id="line-568"></span></li>
+     <li><p class="line862">Learn how to use <a class="nonexistent" href="/moin/GitHub">GitHub</a> and the Python Package Index to share your code with other people <span class="anchor" id="line-569"></span></p></li>
+     <li>Make use of modules and packages that others have written <span class="anchor" id="line-570"></span></li>
+     <li>Use modular techniques to build robust systems that can handle complexity and changing requirements over time <span class="anchor" id="line-571"></span><span class="anchor" id="line-572"></span></li>
+    </ul>
+    <p class="line867"><strong>Who this book is written for:</strong> <span class="anchor" id="line-573"></span><span class="anchor" id="line-574"></span></p>
+    <p class="line874">This book is intended for beginner to intermediate level Python programmers who wish to learn how to use modules and packages within their programs. While readers must understand the basics of Python programming, no knowledge of modular programming techniques is required. <span class="anchor" id="line-575"></span><span class="anchor" id="line-576"></span></p>
+    <p class="line867"><a class="https" href="https://www.packtpub.com/application-development/modular-programming-python">Publisher's page</a> <span class="anchor" id="line-577"></span><span class="anchor" id="line-578"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-579"></span><a class="http" href="http://www.spronck.net/pythonbook">The Coder's Apprentice: Learning programming with Python 3</a> <span class="anchor" id="line-580"></span><span class="anchor" id="line-581"></span></p>
+    <p class="line874">By Pieter Spronck <span class="anchor" id="line-582"></span><span class="anchor" id="line-583"></span></p>
+    <p class="line874">~400 pages (July 2016) <span class="anchor" id="line-584"></span><span class="anchor" id="line-585"></span></p>
+    <p class="line867"><strong>Book overview:</strong> <span class="anchor" id="line-586"></span><span class="anchor" id="line-587"></span></p>
+    <p class="line874">"The Coder's Apprentice" is a course book, aimed at teaching Python 3 to students and teenagers who are completely new to programming. Contrary to many of the other books that teach Python programming, this book assumes no previous knowledge of programming on the part of the students, and contains numerous exercises that allow students to train their programming skills. <span class="anchor" id="line-588"></span><span class="anchor" id="line-589"></span></p>
+    <p class="line874">The book covers all imperative programming and object oriented programming aspects of Python 3, including: <span class="anchor" id="line-590"></span><span class="anchor" id="line-591"></span></p>
+    <ul>
+     <li>Installing, writing, and running Python <span class="anchor" id="line-592"></span></li>
+     <li>Expressions, variables, conditions, loops, and functions <span class="anchor" id="line-593"></span></li>
+     <li>Strings, tuples, lists, dictionaries, and sets <span class="anchor" id="line-594"></span></li>
+     <li>Text files, binary files, and exceptions <span class="anchor" id="line-595"></span></li>
+     <li>Object orientation, operator overloading, inheritance, iterators, and generators <span class="anchor" id="line-596"></span></li>
+     <li>Regular expressions <span class="anchor" id="line-597"></span><span class="anchor" id="line-598"></span></li>
+    </ul>
+    <p class="line874">The book also spends time on algorithm design and writing effective code. <span class="anchor" id="line-599"></span><span class="anchor" id="line-600"></span></p>
+    <p class="line874">The book is freely available as PDF. <span class="anchor" id="line-601"></span><span class="anchor" id="line-602"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-603"></span><a class="https" href="https://www.packtpub.com/networking-and-servers/learning-python-forensics">Learning Python for Forensics</a> <span class="anchor" id="line-604"></span><span class="anchor" id="line-605"></span></p>
+    <p class="line874">By Preston Miller, Chapin Bryce <span class="anchor" id="line-606"></span><span class="anchor" id="line-607"></span></p>
+    <p class="line874">ISBN 13: 9781783285235 Packt Publishing 488 pages (May 2016) <span class="anchor" id="line-608"></span><span class="anchor" id="line-609"></span></p>
+    <p class="line867"><strong>Book overview:</strong> <span class="anchor" id="line-610"></span><span class="anchor" id="line-611"></span></p>
+    <p class="line874">This book will illustrate how and why you should learn Python to strengthen your analysis skills and efficiency as you creatively solve real-world problems through instruction-based tutorials. The tutorials use an interactive design, giving you experience of the development process so you gain a better understanding of what it means to be a forensic developer. <span class="anchor" id="line-612"></span><span class="anchor" id="line-613"></span></p>
+    <ul>
+     <li>Discover how to perform Python script development. <span class="anchor" id="line-614"></span></li>
+     <li>Update yourself by learning the best practices in forensic programming. <span class="anchor" id="line-615"></span></li>
+     <li>Build scripts through an iterative design. <span class="anchor" id="line-616"></span></li>
+     <li>Explore the rapid development of specialized scripts. <span class="anchor" id="line-617"></span></li>
+     <li>Understand how to leverage forensic libraries developed by the community. <span class="anchor" id="line-618"></span></li>
+     <li>Design flexibly to accommodate present and future hurdles. <span class="anchor" id="line-619"></span></li>
+     <li>Conduct effective and efficient investigations through programmatic pre-analysis. <span class="anchor" id="line-620"></span><span class="anchor" id="line-621"></span></li>
+    </ul>
+    <p class="line867"><strong>Who this book is written for:</strong> <span class="anchor" id="line-622"></span><span class="anchor" id="line-623"></span></p>
+    <p class="line874">If you are a forensics student, hobbyist, or professional that is seeking to increase your understanding in forensics through the use of a programming language, then this book is for you.You are not required to have previous experience in programming to learn and master the content within this book. This material, created by forensic professionals, was written with a unique perspective and understanding of examiners who wish to learn programming. <span class="anchor" id="line-624"></span><span class="anchor" id="line-625"></span></p>
+    <p class="line867"><a class="https" href="https://www.packtpub.com/networking-and-servers/learning-python-forensics">Publisher's page</a> <span class="anchor" id="line-626"></span><span class="anchor" id="line-627"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-628"></span><a class="https" href="https://www.packtpub.com/big-data-and-business-intelligence/practical-data-analysis-cookbook">Practical Data Analysis Cookbook</a> <span class="anchor" id="line-629"></span><span class="anchor" id="line-630"></span></p>
+    <p class="line874">By Tomasz Drabas <span class="anchor" id="line-631"></span><span class="anchor" id="line-632"></span></p>
+    <p class="line874">ISBN 13: 9781783551668 Packt Publishing 384 pages (April 2016) <span class="anchor" id="line-633"></span><span class="anchor" id="line-634"></span></p>
+    <p class="line867"><strong>Book overview:</strong> <span class="anchor" id="line-635"></span><span class="anchor" id="line-636"></span></p>
+    <p class="line874">This book provides a rich set of independent recipes that dive into the world of data analytics and modeling using a variety of approaches, tools, and algorithms. You will learn the basics of data handling and modeling, and will build your skills gradually toward more advanced topics such as simulations, raw text processing, social interactions analysis, and more. <span class="anchor" id="line-637"></span><span class="anchor" id="line-638"></span></p>
+    <ul>
+     <li><p class="line862">Read, clean, transform, and store your data usng Pandas and <a class="nonexistent" href="/moin/OpenRefine">OpenRefine</a>. <span class="anchor" id="line-639"></span></p></li>
+     <li>Understand your data and explore the relationships between variables using Pandas and D3.js. <span class="anchor" id="line-640"></span></li>
+     <li><p class="line862">Explore a variety of techniques to classify and cluster outbound marketing campaign calls data of a bank using Pandas, mlpy, <a href="/moin/NumPy">NumPy</a>, and Statsmodels. <span class="anchor" id="line-641"></span></p></li>
+     <li><p class="line862">Reduce the dimensionality of your dataset and extract the most important features with pandas, <a href="/moin/NumPy">NumPy</a>, and mlpy. <span class="anchor" id="line-642"></span></p></li>
+     <li><p class="line862">Predict the output of a power plant with regression models and forecast water flow of American rivers with time series methods using pandas, <a href="/moin/NumPy">NumPy</a>, Statsmodels, and scikit-learn. <span class="anchor" id="line-643"></span></p></li>
+     <li>Explore social interactions and identify fraudulent activities with graph theory concepts using NetworkX and Gephi. <span class="anchor" id="line-644"></span></li>
+     <li><p class="line862">Scrape Internet web pages using urlib and <a class="nonexistent" href="/moin/BeautifulSoup">BeautifulSoup</a> and get to know natural language processing techniques to classify movies ratings using NLTK . <span class="anchor" id="line-645"></span></p></li>
+     <li>Study simulation techniques in an example of a gas station with agent-based modeling. <span class="anchor" id="line-646"></span><span class="anchor" id="line-647"></span></li>
+    </ul>
+    <p class="line867"><strong>Who this book is written for:</strong> <span class="anchor" id="line-648"></span><span class="anchor" id="line-649"></span></p>
+    <p class="line874">This hands-on recipe guide is divided into three sections that tackle and overcome real-world data modeling problems faced by data analysts/scientist in their everyday work. Each independent recipe is written in an easy-to-follow and step-by-step fashion. <span class="anchor" id="line-650"></span><span class="anchor" id="line-651"></span></p>
+    <p class="line867"><a class="https" href="https://www.packtpub.com/big-data-and-business-intelligence/practical-data-analysis-cookbook">Publisher's page</a> <span class="anchor" id="line-652"></span><span class="anchor" id="line-653"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-654"></span><span class="anchor" id="line-655"></span></p>
+    <p class="line867"><a class="https" href="https://www.packtpub.com/application-development/python-projects-kids">Python Projects for Kids</a> <span class="anchor" id="line-656"></span><span class="anchor" id="line-657"></span></p>
+    <p class="line874">Jessica Ingrassellino <span class="anchor" id="line-658"></span><span class="anchor" id="line-659"></span></p>
+    <p class="line874">ISBN: 9781782175063 <span class="anchor" id="line-660"></span><span class="anchor" id="line-661"></span></p>
+    <p class="line874">192 pages, April 2016, Packt Publishing <span class="anchor" id="line-662"></span><span class="anchor" id="line-663"></span></p>
+    <p class="line874">Kids are always the most fast-paced and enthusiastic learners, and are naturally willing to build stuff that looks like magic at the end (when it works!). Programming can be one such magic. Being able to write a program that works helps them feel they've really achieved something. Kids today are very tech-savvy and cannot wait to enter the fast-paced digital world. <span class="anchor" id="line-664"></span><span class="anchor" id="line-665"></span></p>
+    <p class="line874">Because Python is one of the most popular languages and has a syntax that is quite simple to understand, even kids are eager to use it as a stepping stone to learning programming languages. <span class="anchor" id="line-666"></span><span class="anchor" id="line-667"></span></p>
+    <p class="line874">This book covers projects that are simple and fun, and teach kids how to write Python code that works. <span class="anchor" id="line-668"></span><span class="anchor" id="line-669"></span></p>
+    <p class="line874">The book will teach the basics of Python programming, installation, and so on and then will move on to projects. A total of three projects, with each and every step explained carefully, without any assumption of previous experience. <span class="anchor" id="line-670"></span><span class="anchor" id="line-671"></span></p>
+    <p class="line867"><strong>What You Will Learn</strong>: <span class="anchor" id="line-672"></span><span class="anchor" id="line-673"></span></p>
+    <ul>
+     <li>Start fiddling with Python's variables, build functions and interact with users <span class="anchor" id="line-674"></span></li>
+     <li>Build your own calculator using the Math Library <span class="anchor" id="line-675"></span></li>
+     <li>Train Python to make logical decisions <span class="anchor" id="line-676"></span></li>
+     <li>Work with moving 2D objects on-screen <span class="anchor" id="line-677"></span></li>
+     <li>Understand the Pygame Library and build your very own game! <span class="anchor" id="line-678"></span><span class="anchor" id="line-679"></span></li>
+    </ul>
+    <p class="line874">This book is for kids (aged 10 and over). This is book is intended for absolute beginners who lack any knowledge of computing or programming languages and want to get started in the world of programming. <span class="anchor" id="line-680"></span><span class="anchor" id="line-681"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-682"></span><a class="https" href="https://www.nostarch.com/pythonwithminecraft">Learn to Program with Minecraft</a> <span class="anchor" id="line-683"></span><span class="anchor" id="line-684"></span></p>
+    <p class="line874">Craig Richardson <span class="anchor" id="line-685"></span><span class="anchor" id="line-686"></span></p>
+    <p class="line874">ISBN: 978-1-59327-670-6 <span class="anchor" id="line-687"></span><span class="anchor" id="line-688"></span></p>
+    <p class="line874">304 pages, December 2015, No Starch Press <span class="anchor" id="line-689"></span><span class="anchor" id="line-690"></span></p>
+    <p class="line874">You’ve bested creepers, traveled deep into caves, and maybe even gone to The End and back—but have you ever transformed a sword into a magic wand? Built a palace in the blink of an eye? Designed your own color-changing disco dance floor? <span class="anchor" id="line-691"></span><span class="anchor" id="line-692"></span></p>
+    <p class="line862">In <em>Learn to Program with Minecraft®</em>, you’ll do all this and more with the power of Python, a free language used by millions of professional and first-time programmers! <span class="anchor" id="line-693"></span><span class="anchor" id="line-694"></span></p>
+    <p class="line874">Begin with some short, simple Python lessons and then use your new skills to modify Minecraft to produce instant and totally awesome results. Learn how to customize Minecraft to make mini-games, duplicate entire buildings, and turn boring blocks into gold. <span class="anchor" id="line-695"></span><span class="anchor" id="line-696"></span></p>
+    <p class="line874">You’ll also write programs that: <span class="anchor" id="line-697"></span><span class="anchor" id="line-698"></span></p>
+    <ul>
+     <li>Take you on an automated teleportation tour around your Minecraft world <span class="anchor" id="line-699"></span></li>
+     <li>Build massive monuments, pyramids, forests, and more in a snap! <span class="anchor" id="line-700"></span></li>
+     <li>Make secret passageways that open when you activate a hidden switch <span class="anchor" id="line-701"></span></li>
+     <li>Create a spooky ghost town that vanishes and reappears elsewhere <span class="anchor" id="line-702"></span></li>
+     <li>Show exactly where to dig for rare blocks <span class="anchor" id="line-703"></span></li>
+     <li>Cast a spell so that a cascade of flowers (or dynamite if you’re daring!) follows your every move <span class="anchor" id="line-704"></span></li>
+     <li>Make mischief with dastardly lava traps and watery curses that cause huge floods <span class="anchor" id="line-705"></span><span class="anchor" id="line-706"></span></li>
+    </ul>
+    <p class="line874">Whether you’re a Minecraft megafan or a newbie, you’ll see Minecraft in a whole new light while learning the basics of programming. Sure, you could spend all day mining for precious resources or building your mansion by hand, but with the power of Python, those days are over! <span class="anchor" id="line-707"></span><span class="anchor" id="line-708"></span></p>
+    <p class="line874">Requires: Windows 7 or later; OS X 10.10 or later; or a Raspberry Pi. <span class="anchor" id="line-709"></span><span class="anchor" id="line-710"></span></p>
+    <p class="line874">Uses Python 3 <span class="anchor" id="line-711"></span><span class="anchor" id="line-712"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-713"></span><a class="https" href="https://www.nostarch.com/automatestuff">Automate the Boring Stuff with Python</a> <span class="anchor" id="line-714"></span><span class="anchor" id="line-715"></span></p>
+    <p class="line874">Al Sweigart <span class="anchor" id="line-716"></span><span class="anchor" id="line-717"></span></p>
+    <p class="line874">ISBN: 978-1-59327-599-0 <span class="anchor" id="line-718"></span><span class="anchor" id="line-719"></span></p>
+    <p class="line874">504 pages, April 2015, No Starch Press <span class="anchor" id="line-720"></span><span class="anchor" id="line-721"></span></p>
+    <p class="line874">If you’ve ever spent hours renaming files or updating hundreds of spreadsheet cells, you know how tedious tasks like these can be. But what if you could have your computer do them for you? <span class="anchor" id="line-722"></span><span class="anchor" id="line-723"></span></p>
+    <p class="line862">In <em>Automate the Boring Stuff with Python</em>, you’ll learn how to use Python to write programs that do in minutes what would take you hours to do by hand—no prior programming experience required. Once you’ve mastered the basics of programming, you’ll create Python programs that effortlessly perform useful and impressive feats of automation to: <span class="anchor" id="line-724"></span><span class="anchor" id="line-725"></span></p>
+    <ul>
+     <li>Search for text in a file or across multiple files <span class="anchor" id="line-726"></span></li>
+     <li>Create, update, move, and rename files and folders <span class="anchor" id="line-727"></span></li>
+     <li>Search the Web and download online content <span class="anchor" id="line-728"></span></li>
+     <li>Update and format data in Excel spreadsheets of any size <span class="anchor" id="line-729"></span></li>
+     <li>Split, merge, watermark, and encrypt PDFs <span class="anchor" id="line-730"></span></li>
+     <li>Send reminder emails and text notifications <span class="anchor" id="line-731"></span></li>
+     <li>Fill out online forms <span class="anchor" id="line-732"></span><span class="anchor" id="line-733"></span></li>
+    </ul>
+    <p class="line874">Step-by-step instructions walk you through each program, and practice projects at the end of each chapter challenge you to improve those programs and use your newfound skills to automate similar tasks. <span class="anchor" id="line-734"></span><span class="anchor" id="line-735"></span></p>
+    <p class="line862">Don’t spend your time doing work a well-trained monkey could do. Even if you’ve never written a line of code, you can make your computer do the grunt work. Learn how in <em>Automate the Boring Stuff with Python</em>. <span class="anchor" id="line-736"></span><span class="anchor" id="line-737"></span></p>
+    <p class="line874">Note: The programs in this book are written to run on Python 3. <span class="anchor" id="line-738"></span><span class="anchor" id="line-739"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-740"></span><a class="https" href="https://www.nostarch.com/doingmathwithpython">Doing Math with Python</a> <span class="anchor" id="line-741"></span><span class="anchor" id="line-742"></span></p>
+    <p class="line874">Amit Saha <span class="anchor" id="line-743"></span><span class="anchor" id="line-744"></span></p>
+    <p class="line874">ISBN: 978-1-59327-640-9 <span class="anchor" id="line-745"></span><span class="anchor" id="line-746"></span></p>
+    <p class="line874">264 pages, August 2015, No Starch Press <span class="anchor" id="line-747"></span><span class="anchor" id="line-748"></span></p>
+    <p class="line862">In <em>Doing Math with Python</em> you'll learn to how to use the Python programming language as a tool to delve into math concepts. Python is easy to learn, and it's perfect for exploring topics like statistics, geometry, probability, and calculus. You’ll learn to write programs to find derivatives, solve equations graphically, manipulate algebraic expressions, even examine projectile motion. <span class="anchor" id="line-749"></span><span class="anchor" id="line-750"></span></p>
+    <p class="line874">Rather than crank through tedious calculations by hand, you'll learn how to use Python functions and modules to handle the number crunching while you focus on the principles behind the math. Exercises throughout teach fundamental programming concepts, like using functions, handling user input, and reading and manipulating data. As you learn to think computationally, you'll discover new ways to explore and think about math, and gain valuable programming skills that you can use to continue your study of math and computer science. <span class="anchor" id="line-751"></span><span class="anchor" id="line-752"></span></p>
+    <p class="line874">If you’re interested in math but have yet to dip into programming, you’ll find that Python makes it easy to go deeper into the subject—let Python handle the tedious work while you spend more time on the math. <span class="anchor" id="line-753"></span><span class="anchor" id="line-754"></span></p>
+    <p class="line874">Suggested for ages 14 and up. <span class="anchor" id="line-755"></span><span class="anchor" id="line-756"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-757"></span><a class="https" href="https://www.nostarch.com/pythoncrashcourse">Python Crash Course</a> <span class="anchor" id="line-758"></span><span class="anchor" id="line-759"></span></p>
+    <p class="line874">Eric Matthes <span class="anchor" id="line-760"></span><span class="anchor" id="line-761"></span></p>
+    <p class="line874">ISBN: 978-1-59327-603-4 <span class="anchor" id="line-762"></span><span class="anchor" id="line-763"></span></p>
+    <p class="line874">624 pages, November 2015, No Starch Press <span class="anchor" id="line-764"></span><span class="anchor" id="line-765"></span></p>
+    <p class="line874">Solve Problems, Make Things, and Do Cool Stuff! <span class="anchor" id="line-766"></span><span class="anchor" id="line-767"></span></p>
+    <p class="line867"><em>Python Crash Course</em> is a fast-paced and thorough introduction to Python that will have you writing programs, solving problems, and making things that work, fast. <span class="anchor" id="line-768"></span><span class="anchor" id="line-769"></span></p>
+    <p class="line874">In the first half of the book you’ll learn basic programming concepts, from installing Python to testing code, including how to use a text editor, write clean and readable code, store data in lists and dictionaries, create classes that simulate real-life objects, and write loops to perform actions on your data. You’ll also learn how to make your programs interactive and test your code safely before adding it to your project. The exercises in chapters will help cement your learning so you can put that knowledge into practice in the second half, with three substantial projects: a Space-Invaders-inspired arcade game, data visualization with Python’s super-handy libraries, and a simple Web app you can deploy online. <span class="anchor" id="line-770"></span><span class="anchor" id="line-771"></span></p>
+    <p class="line862">As you work through <em>Python Crash Course </em>you’ll learn how to: <span class="anchor" id="line-772"></span><span class="anchor" id="line-773"></span></p>
+    <ul>
+     <li>Make games that respond to buttons and mouse clicks, and grow more difficult as you progress <span class="anchor" id="line-774"></span></li>
+     <li>Work with data and generate interactive visualizations <span class="anchor" id="line-775"></span></li>
+     <li>Utilize the most useful Python libraries and tools, including: matplotlib, numpy, and pygal <span class="anchor" id="line-776"></span></li>
+     <li>Create and customize Web apps and deploy them safely online <span class="anchor" id="line-777"></span></li>
+     <li>Deal with mistakes and errors, to better prepare you for solving your own programming problems later <span class="anchor" id="line-778"></span><span class="anchor" id="line-779"></span></li>
+    </ul>
+    <p class="line867"><em>Python Crash Course</em> will teach you just what you need to know to start programming meaningful things quickly. <span class="anchor" id="line-780"></span><span class="anchor" id="line-781"></span></p>
+    <p class="line874">Uses Python 2 and 3 <span class="anchor" id="line-782"></span><span class="anchor" id="line-783"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-784"></span><a class="https" href="https://www.nostarch.com/pythonforkids">Python for Kids</a> <span class="anchor" id="line-785"></span><span class="anchor" id="line-786"></span></p>
+    <p class="line874">Jason Briggs <span class="anchor" id="line-787"></span><span class="anchor" id="line-788"></span></p>
+    <p class="line874">ISBN: 978-1-59327-407-8 <span class="anchor" id="line-789"></span><span class="anchor" id="line-790"></span></p>
+    <p class="line874">344 pages, December 2012, No Starch Press <span class="anchor" id="line-791"></span><span class="anchor" id="line-792"></span></p>
+    <p class="line874">The code in this book runs on almost anything: Windows, Mac, Linux, even an OLPC laptop or Raspberry Pi! <span class="anchor" id="line-793"></span><span class="anchor" id="line-794"></span></p>
+    <p class="line874">Python is a powerful, expressive programming language that’s easy to learn and fun to use! But books about learning to program in Python can be kind of dull, gray, and boring, and that’s no fun for anyone. <span class="anchor" id="line-795"></span><span class="anchor" id="line-796"></span></p>
+    <p class="line867"><em>Python for Kids</em> brings Python to life and brings you (and your parents) into the world of programming. The ever-patient Jason R. Briggs will guide you through the basics as you experiment with unique (and often hilarious) example programs that feature ravenous monsters, secret agents, thieving ravens, and more. New terms are defined; code is colored, dissected, and explained; and quirky, full-color illustrations keep things on the lighter side. <span class="anchor" id="line-797"></span><span class="anchor" id="line-798"></span></p>
+    <p class="line874">Chapters end with programming puzzles designed to stretch your brain and strengthen your understanding. By the end of the book you’ll have programmed two complete games: a clone of the famous Pong and “Mr. Stick Man Races for the Exit”—a platform game with jumps, animation, and much more. <span class="anchor" id="line-799"></span><span class="anchor" id="line-800"></span></p>
+    <p class="line874">As you strike out on your programming adventure, you’ll learn how to: <span class="anchor" id="line-801"></span><span class="anchor" id="line-802"></span></p>
+    <ul>
+     <li>Use fundamental data structures like lists, tuples, and maps <span class="anchor" id="line-803"></span></li>
+     <li>Organize and reuse your code with functions and modules <span class="anchor" id="line-804"></span></li>
+     <li>Use control structures like loops and conditional statements <span class="anchor" id="line-805"></span></li>
+     <li>Draw shapes and patterns with Python’s turtle module <span class="anchor" id="line-806"></span></li>
+     <li>Create games, animations, and other graphical wonders with tkinter <span class="anchor" id="line-807"></span><span class="anchor" id="line-808"></span></li>
+    </ul>
+    <p class="line862">Why should serious adults have all the fun? <em>Python for Kids</em> is your ticket into the amazing world of computer programming. <span class="anchor" id="line-809"></span><span class="anchor" id="line-810"></span></p>
+    <p class="line874">For kids ages 10+ (and their parents). <span class="anchor" id="line-811"></span><span class="anchor" id="line-812"></span></p>
+    <p class="line874">Featuring original artwork by Miran Lipova?a! <span class="anchor" id="line-813"></span><span class="anchor" id="line-814"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-815"></span><a class="https" href="https://www.nostarch.com/teachkids">Teach Your Kids to Code</a> <span class="anchor" id="line-816"></span><span class="anchor" id="line-817"></span></p>
+    <p class="line874">Bryson Payne <span class="anchor" id="line-818"></span><span class="anchor" id="line-819"></span></p>
+    <p class="line874">ISBN: 978-1-59327-614-0 <span class="anchor" id="line-820"></span><span class="anchor" id="line-821"></span></p>
+    <p class="line874">336 pages, April 2015, No Starch Press <span class="anchor" id="line-822"></span><span class="anchor" id="line-823"></span></p>
+    <p class="line867"><em>Teach Your Kids to Code</em> is a parent's and teacher's guide to teaching kids basic programming and problem solving using Python, the powerful language used in college courses and by tech companies like Google and IBM. <span class="anchor" id="line-824"></span><span class="anchor" id="line-825"></span></p>
+    <p class="line874">Step-by-step explanations will have kids learning computational thinking right away, while visual and game-oriented examples hold their attention. Friendly introductions to fundamental programming concepts such as variables, loops, and functions will help even the youngest programmers build the skills they need to make their own cool games and applications. <span class="anchor" id="line-826"></span><span class="anchor" id="line-827"></span></p>
+    <p class="line862">Whether you've been coding for years or have never programmed anything at all, <em>Teach Your Kids to Code</em> will help you show your young programmer how to: <span class="anchor" id="line-828"></span><span class="anchor" id="line-829"></span></p>
+    <ul>
+     <li>Explore geometry by drawing colorful shapes with Turtle graphics <span class="anchor" id="line-830"></span></li>
+     <li>Write programs to encode and decode messages, play Rock-Paper-Scissors, and calculate how tall someone is in Ping-Pong balls <span class="anchor" id="line-831"></span></li>
+     <li>Create fun, playable games like War, Yahtzee, and Pong <span class="anchor" id="line-832"></span></li>
+     <li>Add interactivity, animation, and sound to their apps <span class="anchor" id="line-833"></span><span class="anchor" id="line-834"></span></li>
+    </ul>
+    <p class="line867"><em>Teach Your Kids to Code</em> is the perfect companion to any introductory programming class or after-school meet-up, or simply your educational efforts at home. Spend some fun, productive afternoons at the computer with your kids—you can all learn something! <span class="anchor" id="line-835"></span><span class="anchor" id="line-836"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-837"></span><a class="http" href="http://www.amazon.com/Python-complete-beginners-friendly-experience/dp/1514376989/">Python for complete beginners</a> <span class="anchor" id="line-838"></span><span class="anchor" id="line-839"></span></p>
+    <p class="line874">Dr. Martin Jones <span class="anchor" id="line-840"></span><span class="anchor" id="line-841"></span></p>
+    <p class="line874">ISBN: 978-1514376980 <span class="anchor" id="line-842"></span><span class="anchor" id="line-843"></span></p>
+    <p class="line874">246 pages, 2015 <span class="anchor" id="line-844"></span><span class="anchor" id="line-845"></span></p>
+    <p class="line874">Getting started with programming can be an intimidating challenge. Most books and tutorials assume lots of previous knowledge, skip over jargon and new concepts, and use examples that only make sense if you already understand programming. <span class="anchor" id="line-846"></span><span class="anchor" id="line-847"></span></p>
+    <p class="line874">This book is different. It gives you an introduction to programming in Python from the ground up, starting with tips on installation and setting up your programming environment, and moving through the core parts of the Python language in a logical order. Dr. Jones has drawn on his many years experience teaching programming to produce a book that will guide you through the language step by step in simple terms. <span class="anchor" id="line-848"></span><span class="anchor" id="line-849"></span></p>
+    <p class="line874">The book doesn't assume any previous knowledge, and introduces fundamental programming concepts like variables, loops and functions using simple terms and easy-to-follow examples that you can run and modify. <span class="anchor" id="line-850"></span><span class="anchor" id="line-851"></span></p>
+    <p class="line874">The book takes a unique approach to practical exercises. Rather than simply presenting you with the solutions, it shows you how large, complex programs are gradually built up from simple building blocks, explaining the role of every line. You can download the examples and exercise solutions - edit, modify and run them yourself. <span class="anchor" id="line-852"></span><span class="anchor" id="line-853"></span></p>
+    <p class="line862">Examples and exercise files available at the author's website: <a class="http" href="http://pythonforcompletebeginners.com/">Python for complete beginners</a> <span class="anchor" id="line-854"></span><span class="anchor" id="line-855"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-856"></span><a class="http" href="http://www.manning.com/garrard/">Geoprocessing with Python</a> <span class="anchor" id="line-857"></span><span class="anchor" id="line-858"></span></p>
+    <p class="line874">Chris Garrard <span class="anchor" id="line-859"></span><span class="anchor" id="line-860"></span></p>
+    <p class="line874">Manning Publications ISBN: 9781617292149, 400 pages, MEAP Began May 2014 <span class="anchor" id="line-861"></span><span class="anchor" id="line-862"></span></p>
+    <p class="line862">Geospatial data is hard to ignore. Nearly every car, phone, or camera has a GPS sensor, and aerial photos, satellite imagery, and data representing political boundaries, roads, rivers, and streams are available for free download from many websites. Geoprocessing is the science of reading, analyzing, and presenting geospatial data programmatically. The Python language, along with dozens of open source libraries and tools, makes it possible to take on professional geoprocessing tasks without investing in expensive proprietary packages like ArcGIS and <a class="nonexistent" href="/moin/MapInfo">MapInfo</a>. <span class="anchor" id="line-863"></span><span class="anchor" id="line-864"></span></p>
+    <p class="line874">Geoprocessing with Python teaches you how to use the Python programming language along with free and open source tools to read, write, and process geospatial data. You'll learn how to access available data sets to make maps or perform your own analyses using free and open source tools like the GDAL, Shapely, and Fiona Python modules. You'll master core practices like handling multiple vector file formats, editing and manipulating geometries, applying spatial and attribute filters, working with projections, and performing basic analyses on vector data. You'll also learn how to create geospatial data, rather than just consuming it. The book also covers how to manipulate and analyze raster data, such as aerial photographs, satellite images, and digital elevation models. <span class="anchor" id="line-865"></span><span class="anchor" id="line-866"></span></p>
+    <p class="line862">Chapter one available for free: <a class="http" href="http://www.manning.com/garrard/GeoPython_MEAP_ch01.pdf">Introduction</a> <span class="anchor" id="line-867"></span><span class="anchor" id="line-868"></span></p>
+    <p class="line862">MEAP Available at Manning Publications's Site: <a class="http" href="http://www.manning.com/garrard/">Geoprocessing with Python</a> <span class="anchor" id="line-869"></span><span class="anchor" id="line-870"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-871"></span><a class="https" href="https://books.google.com.br/books?id=HvSsCAAAQBAJ">Algorithms and Programming Course</a> <span class="anchor" id="line-872"></span><span class="anchor" id="line-873"></span></p>
+    <p class="line874">Guilherme Soares Lima <span class="anchor" id="line-874"></span><span class="anchor" id="line-875"></span></p>
+    <p class="line874">(2015, 100 pages) <span class="anchor" id="line-876"></span><span class="anchor" id="line-877"></span></p>
+    <p class="line874">The book is a gentle introtuction to algorithms and programming with Python, specially for those that don't know how to program on any language. It has a progressive approach, it covers most of basic topics like programming logics, repetition structures. It is a small book, but yet a powerful tool for learning. It helps get good orientation from the beginning. It has only 100 pages and it's free. <span class="anchor" id="line-878"></span><span class="anchor" id="line-879"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-880"></span><a class="http" href="http://www.cengagebrain.com/shop/isbn/9781111822705">Fundamentals of Python: First Programs</a> <span class="anchor" id="line-881"></span><span class="anchor" id="line-882"></span></p>
+    <p class="line874">Ken Lambert <span class="anchor" id="line-883"></span><span class="anchor" id="line-884"></span></p>
+    <p class="line874">ISBN 13: 978-1-111-82270-5 (2012, 510 pages) <span class="anchor" id="line-885"></span><span class="anchor" id="line-886"></span></p>
+    <p class="line874">An introduction to programming and problem solving with Python (CS1). Covers algorithmic problem solving, basic data structures, functional design, and object-oriented design. Also includes an introduction to turtle graphics, image processing, GUIs, and networks. <span class="anchor" id="line-887"></span><span class="anchor" id="line-888"></span></p>
+    <ol type="1">
+     <li>Introduction. <span class="anchor" id="line-889"></span></li>
+     <li>Data Types and Expressions. <span class="anchor" id="line-890"></span></li>
+     <li>Control Statements. <span class="anchor" id="line-891"></span></li>
+     <li>Strings and Text Files. <span class="anchor" id="line-892"></span></li>
+     <li>Lists and Dictionaries. <span class="anchor" id="line-893"></span></li>
+     <li>Design with Functions. <span class="anchor" id="line-894"></span></li>
+     <li>Simple Graphics and Image Processing. <span class="anchor" id="line-895"></span></li>
+     <li>Design with Classes. <span class="anchor" id="line-896"></span></li>
+     <li>Graphical User Interfaces. <span class="anchor" id="line-897"></span></li>
+     <li>Multithreading, Networks, and Client/Server Programming. <span class="anchor" id="line-898"></span><span class="anchor" id="line-899"></span></li>
+    </ol>
+    <p class="line862">Link to example programs and other information at the author's <a class="http" href="http://home.wlu.edu/~lambertk/python/cs1python/index.html">website</a>. <span class="anchor" id="line-900"></span><span class="anchor" id="line-901"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-902"></span><a class="http" href="http://www.cengagebrain.com/shop/isbn/9781285752006">Fundamentals of Python: Data Structures</a> <span class="anchor" id="line-903"></span><span class="anchor" id="line-904"></span></p>
+    <p class="line874">Ken Lambert <span class="anchor" id="line-905"></span><span class="anchor" id="line-906"></span></p>
+    <p class="line874">ISBN 13: 978-1-285-75200-6 (2014, 496 pages) <span class="anchor" id="line-907"></span><span class="anchor" id="line-908"></span></p>
+    <p class="line874">An introduction to Python with data structures (CS2). Covers the design of collection classes with polymorphism and inheritance, multiple implementations of collection interfaces, and the analysis of space/time tradeoffs of different collections, all within a realistic collection framework. <span class="anchor" id="line-909"></span><span class="anchor" id="line-910"></span></p>
+    <ol type="1">
+     <li>Basic Python Programming. <span class="anchor" id="line-911"></span></li>
+     <li>An Overview of Collections. <span class="anchor" id="line-912"></span></li>
+     <li>Searching, Sorting, and Complexity Analysis. <span class="anchor" id="line-913"></span></li>
+     <li>Arrays and Linked Structures. <span class="anchor" id="line-914"></span></li>
+     <li>Interfaces, Implementations, and Polymorphism. <span class="anchor" id="line-915"></span></li>
+     <li>Inheritance and Abstract Classes. <span class="anchor" id="line-916"></span></li>
+     <li>Stacks. <span class="anchor" id="line-917"></span></li>
+     <li>Queues. <span class="anchor" id="line-918"></span></li>
+     <li>Lists. <span class="anchor" id="line-919"></span></li>
+     <li>Trees. <span class="anchor" id="line-920"></span></li>
+     <li>Sets and Dictionaries. <span class="anchor" id="line-921"></span></li>
+     <li>Graphs. <span class="anchor" id="line-922"></span><span class="anchor" id="line-923"></span></li>
+    </ol>
+    <p class="line862">Link to example programs and other information at the author's <a class="http" href="http://home.wlu.edu/~lambertk/python/cs2python/index.html">website</a>. <span class="anchor" id="line-924"></span><span class="anchor" id="line-925"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-926"></span><a class="http" href="http://home.wlu.edu/~lambertk/breezypythongui/easyguibook.html">Easy GUI Programming in Python</a> <span class="anchor" id="line-927"></span><span class="anchor" id="line-928"></span></p>
+    <p class="line874">Ken Lambert <span class="anchor" id="line-929"></span><span class="anchor" id="line-930"></span></p>
+    <p class="line874">ISBN-13: 978-0-9859567-0-7 (August, 2012, 110 pages, ebook only) <span class="anchor" id="line-931"></span><span class="anchor" id="line-932"></span></p>
+    <p class="line862">An introduction to GUI programming in Python. Topics include the basics of window layout, widget configuration, and responding to user events. The book uses a toolkit, <a class="http" href="http://home.wlu.edu/~lambertk/breezypythongui/index.html">breezypythongui</a>, to explore GUI concepts and resources within a simple coding framework. <span class="anchor" id="line-933"></span><span class="anchor" id="line-934"></span></p>
+    <ol type="1">
+     <li>The Hello World Program <span class="anchor" id="line-935"></span></li>
+     <li>Windows, Layouts, and Window Components <span class="anchor" id="line-936"></span></li>
+     <li>Command Buttons and Responding to Events <span class="anchor" id="line-937"></span></li>
+     <li>Input and Output with Data Fields <span class="anchor" id="line-938"></span></li>
+     <li>Error Handling and Message Boxes <span class="anchor" id="line-939"></span></li>
+     <li>The Model/View/Controller Pattern <span class="anchor" id="line-940"></span></li>
+     <li>Check Buttons, Radio Buttons, and Menus <span class="anchor" id="line-941"></span></li>
+     <li>Scrolling List Boxes <span class="anchor" id="line-942"></span></li>
+     <li>Text Areas and File Dialogs <span class="anchor" id="line-943"></span></li>
+     <li>Dialogs <span class="anchor" id="line-944"></span></li>
+     <li>Canvases and Graphics Operations <span class="anchor" id="line-945"></span></li>
+     <li>Responding to Mouse Events in Canvases <span class="anchor" id="line-946"></span><span class="anchor" id="line-947"></span></li>
+    </ol>
+    <p class="line862">Link to example programs and ebook vendor sites at the author's <a class="http" href="http://home.wlu.edu/~lambertk/breezypythongui/easyguibook.html">website</a>. <span class="anchor" id="line-948"></span><span class="anchor" id="line-949"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-950"></span><a class="http" href="http://www.packtpub.com/building-machine-learning-systems-with-python/book">Building Machine Learning Systems with Python</a> <span class="anchor" id="line-951"></span><span class="anchor" id="line-952"></span></p>
+    <p class="line874">By Willi Richert, Luis Pedro Coelho <span class="anchor" id="line-953"></span><span class="anchor" id="line-954"></span></p>
+    <p class="line874">ISBN 13: 9781782161400 Packt Publishing 290 pages (July 2013) <span class="anchor" id="line-955"></span><span class="anchor" id="line-956"></span></p>
+    <p class="line874">Master the art of machine learning with Python and build effective machine learning systems with this intensive hands-on guide <span class="anchor" id="line-957"></span><span class="anchor" id="line-958"></span></p>
+    <ul>
+     <li>Master Machine Learning using a broad set of Python libraries and start building your own Python-based ML systems <span class="anchor" id="line-959"></span></li>
+     <li>Covers classification, regression, feature engineering, and much more guided by practical examples <span class="anchor" id="line-960"></span></li>
+     <li>A scenario-based tutorial to get into the right mind-set of a machine learner (data exploration) and successfully implement this in your new or existing projects <span class="anchor" id="line-961"></span><span class="anchor" id="line-962"></span></li>
+    </ul>
+    <p class="line867"><strong>Who this book was written for</strong> <span class="anchor" id="line-963"></span><span class="anchor" id="line-964"></span></p>
+    <p class="line874">This book is for Python programmers who are beginners in machine learning, but want to learn Machine learning. Readers are expected to know Python and be able to install and use open-source libraries. They are not expected to know machine learning, although the book can also serve as an introduction to some Python libraries for readers who know machine learning. This book does not go into the detail of the mathematics behind the algorithms. <span class="anchor" id="line-965"></span><span class="anchor" id="line-966"></span></p>
+    <p class="line874">This book primarily targets Python developers who want to learn and build machine learning in their projects, or who want to provide machine learning support to their existing projects, and see them getting implemented effectively. <span class="anchor" id="line-967"></span><span class="anchor" id="line-968"></span></p>
+    <p class="line867"><a class="http" href="http://www.packtpub.com/building-machine-learning-systems-with-python/book">Publisher's page</a> <span class="anchor" id="line-969"></span><span class="anchor" id="line-970"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-971"></span><a class="https" href="https://www.createspace.com/3611970">Learning to Program Using Python</a> <span class="anchor" id="line-972"></span><span class="anchor" id="line-973"></span></p>
+    <p class="line874">Cody Jackson <span class="anchor" id="line-974"></span><span class="anchor" id="line-975"></span></p>
+    <p class="line874">ISBN: 1461182050 (November 2011, 230 pages) <span class="anchor" id="line-976"></span><span class="anchor" id="line-977"></span></p>
+    <p class="line874">An introduction to computer programming, using the easy, yet powerful, Python programming language. Python, a cross-platform language used by such organizations as Google and NASA, lets you work quickly and efficiently, allowing you to concentrate on your work rather than the language. The core Python language (both versions 2.x and 3.x) is discussed, as well as an introduction to graphical user interface creation. <span class="anchor" id="line-978"></span><span class="anchor" id="line-979"></span></p>
+    <p class="line874">The ideas covered in this book provide the reader with many major programming topics, applicable to a wide variety of programming languages. After reading this book, the reader should be able to quickly create simple to medium-level programs and be prepared to tackle more complex programming tasks. <span class="anchor" id="line-980"></span><span class="anchor" id="line-981"></span></p>
+    <p class="line867"><a class="https" href="https://www.createspace.com/3611970">Print version</a> <span class="anchor" id="line-982"></span><span class="anchor" id="line-983"></span></p>
+    <p class="line867"><a class="http" href="http://www.amazon.com/dp/B0063ZM6I0">Kindle version (no DRM)</a> <span class="anchor" id="line-984"></span><span class="anchor" id="line-985"></span></p>
+    <p class="line862">The book's <a class="http" href="http://python-ebook.blogspot.com">website</a> also provides alternative electronic versions for free, without DRM. In addition, source code files for programs shown in the book are also available. <span class="anchor" id="line-986"></span><span class="anchor" id="line-987"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-988"></span><a class="https" href="https://www.packtpub.com/python-2-6-text-processing-beginners-guide/book">Python 2.6 Text Processing Beginner's Guide</a> <span class="anchor" id="line-989"></span><span class="anchor" id="line-990"></span></p>
+    <p class="line862">Jeff <a class="nonexistent" href="/moin/McNeil">McNeil</a> <span class="anchor" id="line-991"></span><span class="anchor" id="line-992"></span></p>
+    <p class="line874">ISBN 13: 978-1-84951-212-1 Packt Publishing 380 pages (December 2010) <span class="anchor" id="line-993"></span><span class="anchor" id="line-994"></span></p>
+    <p class="line874">The easiest way to learn how to manipulate text with Python: <span class="anchor" id="line-995"></span><span class="anchor" id="line-996"></span></p>
+    <ul>
+     <li>The easiest way to learn text processing with Python <span class="anchor" id="line-997"></span></li>
+     <li>Deals with the most important textual data formats you will encounter <span class="anchor" id="line-998"></span></li>
+     <li>Learn to use the most popular text processing libraries available for Python <span class="anchor" id="line-999"></span></li>
+     <li>Packed with examples to guide you through <span class="anchor" id="line-1000"></span><span class="anchor" id="line-1001"></span></li>
+    </ul>
+    <p class="line867"><a class="https" href="https://www.packtpub.com/python-2-6-text-processing-beginners-guide/book">Publisher's page</a> <span class="anchor" id="line-1002"></span><span class="anchor" id="line-1003"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-1004"></span><strong>Learning Python, 5th Edition</strong> <span class="anchor" id="line-1005"></span><span class="anchor" id="line-1006"></span></p>
+    <p class="line874">(Mark Lutz, O'Reilly Media, June 2013, 1600 pages) <span class="anchor" id="line-1007"></span><span class="anchor" id="line-1008"></span></p>
+    <p class="line874">An in-depth, tutorial introduction to Python core language fundamentals, based on 260 live classes taught by the author. This edition is updated to cover both Python 3.X and 2.X. It is specifically based on 3.3 and 2.7, but is applicable to other releases. <span class="anchor" id="line-1009"></span><span class="anchor" id="line-1010"></span></p>
+    <p class="line862">Links: <a class="http" href="http://www.rmi.net/~lutz/about-lp5e.html">author</a>, <a class="http" href="http://shop.oreilly.com/product/0636920028154.do">publisher</a>. <span class="anchor" id="line-1011"></span><span class="anchor" id="line-1012"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-1013"></span><strong>Programming Python, 4th Edition</strong> <span class="anchor" id="line-1014"></span><span class="anchor" id="line-1015"></span></p>
+    <p class="line874">(Mark Lutz, O'Reilly Media, December 2010, 1600 pages) <span class="anchor" id="line-1016"></span><span class="anchor" id="line-1017"></span></p>
+    <p class="line874">An in-depth, tutorial introduction to common Python application programming domains, and a follow-up to the core language coverage of Learning Python. This edition is updated to use Python 3.X (3.1 and 3.2 specifically), but is still largely applicable to most 2.X readers. <span class="anchor" id="line-1018"></span><span class="anchor" id="line-1019"></span></p>
+    <p class="line862">Links: <a class="http" href="http://www.rmi.net/~lutz/about-pp4e.html">author</a>, <a class="http" href="http://shop.oreilly.com/product/9780596158118.do">publisher</a>. <span class="anchor" id="line-1020"></span><span class="anchor" id="line-1021"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-1022"></span><strong>Python Pocket Reference, 4th Edition</strong> <span class="anchor" id="line-1023"></span><span class="anchor" id="line-1024"></span></p>
+    <p class="line874">(Mark Lutz, O'Reilly Media, September 2009, 200 pages) <span class="anchor" id="line-1025"></span><span class="anchor" id="line-1026"></span></p>
+    <p class="line874">A reference-only book, designed to serve as a companion to both Learning Python and Programming Python. This edition is updated to cover both Python 3.X and 2.X. It is specifically based on 3.1 and 2.6, but is applicable to other releases. <span class="anchor" id="line-1027"></span><span class="anchor" id="line-1028"></span></p>
+    <p class="line862">Links: <a class="http" href="http://www.rmi.net/~lutz/about-pyref4e.html">author</a>, <a class="http" href="http://shop.oreilly.com/product/9780596158095.do">publisher</a>. <span class="anchor" id="line-1029"></span><span class="anchor" id="line-1030"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-1031"></span><a class="http" href="http://oreilly.com/catalog/9781449382674/">Head First Python</a> by Paul Barry <span class="anchor" id="line-1032"></span><span class="anchor" id="line-1033"></span></p>
+    <ul>
+     <li>Published by: O'Reilly Media, November 2010, 496 pages. <span class="anchor" id="line-1034"></span></li>
+     <li>Print ISBN: 978-1-4493-8267-4, ISBN 10: 1-4493-8267-3 <span class="anchor" id="line-1035"></span></li>
+     <li>Ebook ISBN: 978-1-4493-8268-1, ISBN 10: 1-4493-8268-1 <span class="anchor" id="line-1036"></span><span class="anchor" id="line-1037"></span></li>
+    </ul>
+    <p class="line867"><strong>Head First Python</strong> <span class="anchor" id="line-1038"></span><span class="anchor" id="line-1039"></span></p>
+    <p class="line874">Ever wished you could learn Python from a book? Head First Python helps you learn the language through a unique method that goes beyond syntax and how-to manuals. You'll quickly grasp Python's fundamentals, then move on to persistence, exception handling, web development, SQLite, data wrangling, and Google App Engine. You'll also learn how to write mobile apps for Android, all thanks to the power that Python gives you. Head First Python is a complete learning experience that will help you become a bona fide Python programmer. <span class="anchor" id="line-1040"></span><span class="anchor" id="line-1041"></span></p>
+    <p class="line874">This book is designed to get you up to speed with Python as quickly as possible. <span class="anchor" id="line-1042"></span><span class="anchor" id="line-1043"></span></p>
+    <p class="line862">See <a class="http" href="http://python.itcarlow.ie">http://python.itcarlow.ie</a> and <a class="http" href="http://www.headfirstlabs.com/books/hfpython/">http://www.headfirstlabs.com/books/hfpython/</a> for more details. <span class="anchor" id="line-1044"></span><span class="anchor" id="line-1045"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-1046"></span><a class="http" href="http://www.pragprog.com/titles/gwpy2/practical-programming">Practical Programming</a> by Jennifer Campbell, Paul Gries, and Jason Montojo <span class="anchor" id="line-1047"></span><span class="anchor" id="line-1048"></span></p>
+    <p class="line874">Practical Programming (2nd edition): An Introduction to Computer Science Using Python 3 <span class="anchor" id="line-1049"></span><span class="anchor" id="line-1050"></span></p>
+    <ul>
+     <li>ISBN: 978-1-93778-545-1 <span class="anchor" id="line-1051"></span></li>
+     <li>350 pages, August 2013 <span class="anchor" id="line-1052"></span><span class="anchor" id="line-1053"></span></li>
+    </ul>
+    <p class="line874">Computers are used in every part of science from ecology to particle physics. This introduction to computer science continually reinforces those ties by using real-world science problems as examples. Anyone who has taken a high school science class will be able to follow along as the book introduces the basics of programming, then goes on to show readers how to work with databases, download data from the web automatically, build graphical interfaces, and most importantly, how to think like a professional programmer. <span class="anchor" id="line-1054"></span><span class="anchor" id="line-1055"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-1056"></span><a class="http" href="http://www.pragprog.com/titles/gwpy/practical-programming">Practical Programming</a> by Jennifer Campbell, Paul Gries, Jason Montojo, and Greg Wilson <span class="anchor" id="line-1057"></span><span class="anchor" id="line-1058"></span></p>
+    <p class="line874">Practical Programming: An Introduction to Computer Science Using Python <span class="anchor" id="line-1059"></span><span class="anchor" id="line-1060"></span></p>
+    <ul>
+     <li>ISBN: 978-1-93435-627-2 <span class="anchor" id="line-1061"></span></li>
+     <li>350 pages, Apr 2009 <span class="anchor" id="line-1062"></span><span class="anchor" id="line-1063"></span></li>
+    </ul>
+    <p class="line874">Computers are used in every part of science from ecology to particle physics. This introduction to computer science continually reinforces those ties by using real-world science problems as examples. Anyone who has taken a high school science class will be able to follow along as the book introduces the basics of programming, then goes on to show readers how to work with databases, download data from the web automatically, build graphical interfaces, and most importantly, how to think like a professional programmer. <span class="anchor" id="line-1064"></span><span class="anchor" id="line-1065"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-1066"></span><a class="https" href="https://www.packtpub.com/python-3-object-oriented-programming/book">Python 3 Object Oriented Programming</a> <span class="anchor" id="line-1067"></span><span class="anchor" id="line-1068"></span></p>
+    <p class="line874">Dusty Phillips <span class="anchor" id="line-1069"></span><span class="anchor" id="line-1070"></span></p>
+    <p class="line874">ISBN-13: 978-1-849511-26-1 Packt Publishing 404 pages (July 2010) <span class="anchor" id="line-1071"></span><span class="anchor" id="line-1072"></span></p>
+    <p class="line874">Harness the power of Python 3 objects: <span class="anchor" id="line-1073"></span><span class="anchor" id="line-1074"></span></p>
+    <p class="line867"><strong>Overview of Python 3 Object Oriented Programming</strong> <span class="anchor" id="line-1075"></span><span class="anchor" id="line-1076"></span></p>
+    <ul>
+     <li>Learn how to do Object Oriented Programming in Python using this step-by-step tutorial <span class="anchor" id="line-1077"></span></li>
+     <li>Design public interfaces using abstraction, encapsulation, and information hiding <span class="anchor" id="line-1078"></span></li>
+     <li>Turn your designs into working software by studying the Python syntax <span class="anchor" id="line-1079"></span></li>
+     <li>Raise, handle, define, and manipulate exceptions using special error objects <span class="anchor" id="line-1080"></span></li>
+     <li>Implement Object Oriented Programming in Python using practical examples <span class="anchor" id="line-1081"></span><span class="anchor" id="line-1082"></span></li>
+    </ul>
+    <p class="line867"><strong>Who this book is written for</strong> If you're new to Object Oriented Programming techniques, or if you have basic Python skills and wish to learn in depth how and when to correctly apply Object Oriented Programming in Python, this is the book for you. <span class="anchor" id="line-1083"></span><span class="anchor" id="line-1084"></span></p>
+    <p class="line874">If you are an object-oriented programmer for other languages, you too will find this book a useful introduction to Python, as it uses terminology you are already familiar with. <span class="anchor" id="line-1085"></span><span class="anchor" id="line-1086"></span></p>
+    <p class="line874">Python 2 programmers seeking a leg up in the new world of Python 3 will also find the book beneficial, and you need not necessarily know Python 2. <span class="anchor" id="line-1087"></span><span class="anchor" id="line-1088"></span></p>
+    <p class="line867"><a class="https" href="https://www.packtpub.com/python-3-object-oriented-programming/book">Publisher's page</a> <span class="anchor" id="line-1089"></span><span class="anchor" id="line-1090"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-1091"></span><a class="http" href="http://www.pearsonhighered.com/educator/product/Practice-of-Computing-using-Python-The/9780136110675.page">The Practice of Computing Using Python</a> by Bill Punch and Rich Enbody <span class="anchor" id="line-1092"></span><span class="anchor" id="line-1093"></span></p>
+    <ul>
+     <li>ISBN-10: 0136110673 <span class="anchor" id="line-1094"></span></li>
+     <li>ISBN-13: 9780136110675 <span class="anchor" id="line-1095"></span></li>
+     <li>Addison-Wesley, 696 pp, 02/25/2010 <span class="anchor" id="line-1096"></span><span class="anchor" id="line-1097"></span></li>
+    </ul>
+    <p class="line862">The Computer Science Department of Michigan State University converted their Introduction to Programming Course <a class="http" href="http:www.cse.msu.edu/~cse231">CSE 231</a> to Python in the Fall of 2007. One of the products of this change was this textbook, written as a general introduction to CS1 using Python. The book adopts the theme of "data manipulation" for its examples, focusing on using real-world datasets and manipulating them (averages, graphs, indicies, searches, etc.) in various ways. <span class="anchor" id="line-1098"></span><span class="anchor" id="line-1099"></span></p>
+    <p class="line874">The book covers the standard CS1 curriculum, and includes extensive algorithm development sections to help students in their study of computing. Supplemental material is also provided including: full set of power point slides, collaborative lab exercises, project homeworks and solutions to over 600 exercises in the book. <span class="anchor" id="line-1100"></span><span class="anchor" id="line-1101"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-1102"></span><a class="http" href="http://www.headfirstlabs.com/books/hfprog">Head First Programming</a> by Paul Barry and David Griffiths <span class="anchor" id="line-1103"></span><span class="anchor" id="line-1104"></span></p>
+    <p class="line874">A Learner's Guide to Programming, using the Python Language <span class="anchor" id="line-1105"></span><span class="anchor" id="line-1106"></span></p>
+    <ul>
+     <li>ISBN-10: 0596802374 <span class="anchor" id="line-1107"></span></li>
+     <li>ISBN-13: 978-0596802370 <span class="anchor" id="line-1108"></span></li>
+     <li>O'Reilly Media <span class="anchor" id="line-1109"></span></li>
+     <li>440 pages (November 2009) <span class="anchor" id="line-1110"></span><span class="anchor" id="line-1111"></span></li>
+    </ul>
+    <p class="line874">Ever wished you could learn how to program from a book? If you have no previous programming experience, you might be wondering where to start. Head First Programming introduces the core concepts of writing computer programs--variables, decisions, loops, functions, and objects--which apply regardless of the programming language, but uses concrete examples and exercises in the dynamic and versatile Python language to apply and reinforce these concepts. <span class="anchor" id="line-1112"></span><span class="anchor" id="line-1113"></span></p>
+    <p class="line874">Learn the basic tools to start writing the programs that interests you, not the generic software someone else thinks you should have, and get a better understanding of what software can (and cannot) do. When you're finished, you'll have the necessary foundation to apply to whatever language or software project you need or want to learn. <span class="anchor" id="line-1114"></span><span class="anchor" id="line-1115"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-1116"></span><a class="http" href="http://www.qtrac.eu/py3book.html">Programming in Python 3: A Complete Introduction to the Python Language (Second Edition)</a> by Mark Summerfield <span class="anchor" id="line-1117"></span><span class="anchor" id="line-1118"></span></p>
+    <ul>
+     <li>ISBN10: 0321680561 <span class="anchor" id="line-1119"></span></li>
+     <li>Addison-Wesley Professional <span class="anchor" id="line-1120"></span></li>
+     <li>648 pages (November 2009) <span class="anchor" id="line-1121"></span><span class="anchor" id="line-1122"></span></li>
+    </ul>
+    <p class="line874">This book teaches you how to write programs using Python 3 in good Python 3 style. <span class="anchor" id="line-1123"></span><span class="anchor" id="line-1124"></span></p>
+    <p class="line874">The book will be useful to people who program professionally as part of their job, whether as full-time software developers, or those from other disciplines, including scientists and engineers, who need to do some programming in support of their work. It will also prove ideal for those Python 2 programmers who need to migrate (or prepare to migrate) to Python 3. The book is also suitable for students—the only prerequisite is some basic knowledge of programming in any language, for example, Basic or Java, or of course Python itself. <span class="anchor" id="line-1125"></span><span class="anchor" id="line-1126"></span></p>
+    <p class="line874">The book teaches solid procedural style programming, then builds on that to teach solid object-oriented programming, and then goes on to more advanced topics such as descriptors and class decorators. But even newcomers to Python 3 should be able to write useful (although small and basic) programs after reading chapter 1, and then go on to create larger and more sophisticated programs as they work through the chapters. <span class="anchor" id="line-1127"></span><span class="anchor" id="line-1128"></span></p>
+    <p class="line862">The book's <a class="http" href="http://www.qtrac.eu/py3book.html">web site</a> lists the table of contents and has links to extracts. It also has all the examples and exercise solutions available for download. <span class="anchor" id="line-1129"></span><span class="anchor" id="line-1130"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-1131"></span><a class="http" href="http://www.cambridge.org/us/catalogue/catalogue.asp?isbn=9780521725965">Python for Software Design: How to Think Like a Computer Scientist</a> by Allen B. Downey, Olin College of Engineering, Massachusetts <span class="anchor" id="line-1132"></span><span class="anchor" id="line-1133"></span></p>
+    <ul>
+     <li>ISBN-13: 9780521725965) <span class="anchor" id="line-1134"></span></li>
+     <li>Cambridge University Press <span class="anchor" id="line-1135"></span></li>
+     <li>272 pages (March 2009) <span class="anchor" id="line-1136"></span><span class="anchor" id="line-1137"></span></li>
+    </ul>
+    <p class="line874">Python for Software Design is a concise introduction to software design using the Python programming language. Intended for people with no programming experience, this book starts with the most basic concepts and gradually adds new material. Some of the ideas students find most challenging, like recursion and object-oriented programming, are divided into a sequence of smaller steps and introduced over the course of several chapters. The focus is on the programming process, with special emphasis on debugging. The book includes a wide range of exercises, from short examples to substantial projects, so that students have ample opportunity to practice each new concept. Exercise solutions and code examples are available from thinkpython.com, along with Swampy, a suite of Python programs that is used in some of the exercises. <span class="anchor" id="line-1138"></span><span class="anchor" id="line-1139"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-1140"></span><a class="http" href="http://www.manning.com/sande">Hello World! Computer Programming for Kids and Other Beginners</a> by Warren Sande and Carter Sande <span class="anchor" id="line-1141"></span><span class="anchor" id="line-1142"></span></p>
+    <ul>
+     <li>ISBN10: 1933988495 <span class="anchor" id="line-1143"></span></li>
+     <li>Manning Publications <span class="anchor" id="line-1144"></span></li>
+     <li>488 pages (January 2009) <span class="anchor" id="line-1145"></span><span class="anchor" id="line-1146"></span></li>
+    </ul>
+    <p class="line874">"Computer programming is a powerful tool for children to 'learn learning,' that is, to learn the skills of thinking and problem-solving...Children who engage in programming transfer that kind of learning to other things."--Nicholas Negroponte, the man behind the One Laptop Per Child project that hopes to put a computer in the hands of every child on earth, January 2008 <span class="anchor" id="line-1147"></span><span class="anchor" id="line-1148"></span></p>
+    <p class="line874">Your computer won't respond when you yell at it. Why not learn to talk to your computer in its own language? Whether you want to write games, start a business, or you're just curious, learning to program is a great place to start. Plus, programming is fun! <span class="anchor" id="line-1149"></span><span class="anchor" id="line-1150"></span></p>
+    <p class="line874">Hello World! provides a gentle but thorough introduction to the world of computer programming. It's written in language a 12-year-old can follow, but anyone who wants to learn how to program a computer can use it. Even adults. Written by Warren Sande and his son, Carter, and reviewed by professional educators, this book is kid-tested and parent-approved. You don't need to know anything about programming to use the book. But you should know the basics of using a computer--e-mail, surfing the web, listening to music, and so forth. If you can start a program and save a file, you should have no trouble using this book. <span class="anchor" id="line-1151"></span><span class="anchor" id="line-1152"></span></p>
+    <p class="line862">Color ebook and black and white print book are both available from the publisher at <a class="http" href="http://www.manning.com/sande">www.manning.com/sande</a>. <span class="anchor" id="line-1153"></span><span class="anchor" id="line-1154"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-1155"></span><a class="http" href="http://manning.com/briggs/">Hello Python!</a> by Anthony Briggs <span class="anchor" id="line-1156"></span><span class="anchor" id="line-1157"></span></p>
+    <ul>
+     <li>Foreword by Steve Holden <span class="anchor" id="line-1158"></span></li>
+     <li>424 pages (February, 2012) <span class="anchor" id="line-1159"></span></li>
+     <li>ISBN 9781935182085 <span class="anchor" id="line-1160"></span><span class="anchor" id="line-1161"></span></li>
+    </ul>
+    <p class="line874">Hello! Python fully covers the building blocks of Python programming and gives you an introduction to more advanced topics such as object-oriented programming, functional programming, network programming, and program design. New (or nearly new) programmers will learn most of what they need to know to start using Python immediately. <span class="anchor" id="line-1162"></span><span class="anchor" id="line-1163"></span></p>
+    <p class="line874">A more advanced book than Hello World!, it takes a different tack. You follow along as the author writes a practical project in every chapter. You'll see how programmers think about solving problems with programming, and there are hints on how to extend the projects to suit your own needs. <span class="anchor" id="line-1164"></span><span class="anchor" id="line-1165"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-1166"></span><strong><a class="http" href="http://www.manning.com/ceder/">The Quick Python Book, 2nd edition</a></strong> <span class="anchor" id="line-1167"></span><span class="anchor" id="line-1168"></span></p>
+    <ul>
+     <li style="list-style-type:none">Naomi Ceder <span class="anchor" id="line-1169"></span></li>
+     <li><p class="line891"><a class="http" href="http://www.amazon.com/Quick-Python-Book-Second/dp/193518220X/ref=sr_1_1?ie=UTF8&amp;qid=1309567984&amp;sr=8-1">ISBN13:978-1935182207</a> <span class="anchor" id="line-1170"></span></p></li>
+     <li>Manning Publications, <span class="anchor" id="line-1171"></span></li>
+     <li>335 pages (January 2010) <span class="anchor" id="line-1172"></span><span class="anchor" id="line-1173"></span></li>
+    </ul>
+    <p class="line874">This revision of Manning's popular The Quick Python Book offers a clear, crisp introduction to the elegant Python programming language and its famously easy-to-read syntax. Written for programmers new to Python, this updated edition covers features common to other languages concisely, while introducing Python's comprehensive standard functions library and unique features in detail. <span class="anchor" id="line-1174"></span><span class="anchor" id="line-1175"></span></p>
+    <p class="line874">After exploring Python's syntax, control flow, and basic data structures, the book shows how to create, test, and deploy full applications and larger code libraries. It addresses established Python features as well as the advanced object-oriented options available in Python 3. Along the way, you'll survey the current Python development landscape, including GUI programming, testing, database access, and web frameworks. <span class="anchor" id="line-1176"></span><span class="anchor" id="line-1177"></span></p>
+    <p class="line867"><a class="http" href="http://manning.com/ceder/SampleChapter-4.pdf">Chapter 4</a> <a class="http" href="http://manning.com/ceder/SampleChapter-6.pdf">Chapter 6</a> <span class="anchor" id="line-1178"></span><span class="anchor" id="line-1179"></span></p>
+    <p class="line867"><a class="http" href="http://books.dzone.com/reviews/quick-python-book-delivers">Review by Jim Kohli, dzone.com</a> <span class="anchor" id="line-1180"></span><span class="anchor" id="line-1181"></span></p>
+    <p class="line862">Ebook and print book are both available from the publisher at <a class="http" href="http://www.manning.com/ceder">www.manning.com/ceder</a>. <span class="anchor" id="line-1182"></span><span class="anchor" id="line-1183"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-1184"></span><a class="http" href="http://www.ironpythoninaction.com/">IronPython in Action</a> by Michael Foord <span class="anchor" id="line-1185"></span><span class="anchor" id="line-1186"></span></p>
+    <ul>
+     <li>ISBN10: 1933988339 <span class="anchor" id="line-1187"></span></li>
+     <li>Manning Publications <span class="anchor" id="line-1188"></span></li>
+     <li>480 pages (March 2009) <span class="anchor" id="line-1189"></span><span class="anchor" id="line-1190"></span></li>
+    </ul>
+    <p class="line867"><a href="/moin/IronPython">IronPython</a> is an implementation of Python for the Microsoft .NET framework, Mono, and the Silverlight and Moonlight browser plugins. <a href="/moin/IronPython">IronPython</a> in Action is an introduction to programming with <a href="/moin/IronPython">IronPython</a> for both .NET programmers interested in Python and Python programmers new to .NET. <span class="anchor" id="line-1191"></span><span class="anchor" id="line-1192"></span></p>
+    <p class="line867"><a href="/moin/IronPython">IronPython</a> in Action includes a swift paced Python tutorial, chapters introducing .NET libraries and structured application development with Python, integrating with other .NET languages like C# and VB.NET, server side web programming with ASP.NET and client side web programming with Silverlight, system administration, working with the WPF and Windows Forms user interface libraries and embedding the <a href="/moin/IronPython">IronPython</a> engine in .NET applications. <span class="anchor" id="line-1193"></span><span class="anchor" id="line-1194"></span></p>
+    <p class="line874">As well as covering specific topics and both Python and .NET libraries the book pays special attention to the nitty-gritty details of Python and .NET integration that previous experience with Python or C# won't necessarily have prepared you for. <span class="anchor" id="line-1195"></span><span class="anchor" id="line-1196"></span></p>
+    <p class="line862">Color ebook and black and white print book are both available from the publisher at <a class="http" href="http://www.manning.com/foord">www.manning.com/foord</a>. <span class="anchor" id="line-1197"></span><span class="anchor" id="line-1198"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-1199"></span>"Beginning Python: From Novice to Professional, Second Edition" Magnus Lie Hetland <span class="anchor" id="line-1200"></span><span class="anchor" id="line-1201"></span></p>
+    <p class="line874">ISBN13: 978-1-59059-982-2 Apress Inc, 688 pages (September 2008) <span class="anchor" id="line-1202"></span><span class="anchor" id="line-1203"></span></p>
+    <p class="line874">Gain a fundamental understanding of Python’s syntax and features with the second edition of Beginning Python, an up–to–date introduction and practical reference. Covering a wide array of Python–related programming topics, including addressing language internals, database integration, network programming, and web services, you’ll be guided by sound development principles. Ten accompanying projects will ensure you can get your hands dirty in no time. <span class="anchor" id="line-1204"></span><span class="anchor" id="line-1205"></span></p>
+    <p class="line874">Updated to reflect the latest in Python programming paradigms and several of the most crucial features found in the forthcoming Python 3.0 (otherwise known as Python 3000), advanced topics, such as extending Python and packaging/distributing Python applications, are also covered. <span class="anchor" id="line-1206"></span><span class="anchor" id="line-1207"></span></p>
+    <p class="line867"><a class="http" href="http://www.apress.com/book/view/9781590599822/">Home Page</a> (includes electronic version) <span class="anchor" id="line-1208"></span><span class="anchor" id="line-1209"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-1210"></span><strong>Object-Oriented Programming in Python</strong> <span class="anchor" id="line-1211"></span><span class="anchor" id="line-1212"></span></p>
+    <ul>
+     <li style="list-style-type:none">Michael H. Goldwasser, David Letscher <span class="anchor" id="line-1213"></span><span class="anchor" id="line-1214"></span></li>
+    </ul>
+    <p class="line874">This is a textbook for an object-oriented introduction to computer science course (CS1) using Python. <span class="anchor" id="line-1215"></span><span class="anchor" id="line-1216"></span></p>
+    <p class="line867"><a class="http" href="http://prenhall.com/goldwasser">Home Page</a> <span class="anchor" id="line-1217"></span><span class="anchor" id="line-1218"></span></p>
+    <p class="line867"><a class="interwiki" href="http://www.amazon.com/exec/obidos/ISBN=0136150314" title="ISBN">0136150314</a>, Prentice Hall Publishing, 688 pages (October 2007) <span class="anchor" id="line-1219"></span><span class="anchor" id="line-1220"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-1221"></span><strong>An Introduction to Python</strong> (version 2.5) <span class="anchor" id="line-1222"></span><span class="anchor" id="line-1223"></span></p>
+    <ul>
+     <li style="list-style-type:none">Guido van Rossum, and Fred L. Drake, Jr. (Editor) <span class="anchor" id="line-1224"></span><span class="anchor" id="line-1225"></span></li>
+    </ul>
+    <p class="line867"><a class="interwiki" href="http://www.amazon.com/exec/obidos/ISBN=0954161769" title="ISBN">0954161769</a>, Network Theory Ltd, 164 pages (November 2006) <span class="anchor" id="line-1226"></span><span class="anchor" id="line-1227"></span></p>
+    <p class="line874">This is a printed edition of the official Python tutorial by Guido van Rossum. For each copy sold $1 will be donated to the Python Software Foundation. <span class="anchor" id="line-1228"></span><span class="anchor" id="line-1229"></span></p>
+    <p class="line867"><a class="http" href="http://www.network-theory.co.uk/python/manual/">Home Page</a> (includes electronic version) <span class="anchor" id="line-1230"></span><span class="anchor" id="line-1231"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-1232"></span><strong>Python for Dummies</strong> (version 2.5) <span class="anchor" id="line-1233"></span><span class="anchor" id="line-1234"></span></p>
+    <ul>
+     <li style="list-style-type:none">Stef Maruch and Aahz Maruch <span class="anchor" id="line-1235"></span><span class="anchor" id="line-1236"></span></li>
+    </ul>
+    <p class="line867"><a class="interwiki" href="http://www.amazon.com/exec/obidos/ISBN=0471778648" title="ISBN">0471778648</a>, For Dummies, 410 pages (August 2006) <span class="anchor" id="line-1237"></span><span class="anchor" id="line-1238"></span></p>
+    <p class="line867"><a class="http" href="http://www.pythonfood.com/">Home Page</a> <span class="anchor" id="line-1239"></span><span class="anchor" id="line-1240"></span></p>
+    <p class="line862">Following the usual Dummies style, this book takes a light-hearted approach to introducing Python. In addition to Python itself, <em>Python for Dummies</em> also gives lots of advice about good programming practices. <span class="anchor" id="line-1241"></span><span class="anchor" id="line-1242"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-1243"></span><strong>Introduction to Computing and Programming Using Python: A Multimedia Approach</strong> Mark Guzdial <span class="anchor" id="line-1244"></span><span class="anchor" id="line-1245"></span></p>
+    <p class="line862">ISBN: 0131176552 <a class="http" href="http://coweb.cc.gatech.edu/mediaComp-teach">http://coweb.cc.gatech.edu/mediaComp-teach</a> <span class="anchor" id="line-1246"></span><span class="anchor" id="line-1247"></span></p>
+    <p class="line874">An introduction to programming by manipulating digital media --- creating negatives and grayscale pictures, splicing sounds, implementing chromakey. <span class="anchor" id="line-1248"></span><span class="anchor" id="line-1249"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-1250"></span><strong>Core Python Programming</strong> <span class="anchor" id="line-1251"></span><span class="anchor" id="line-1252"></span></p>
+    <ul>
+     <li style="list-style-type:none">Wesley J. Chun <span class="anchor" id="line-1253"></span><span class="anchor" id="line-1254"></span></li>
+    </ul>
+    <p class="line874">ISBN: 0132269937 (2nd ed.); 0130260363 (1st ed.) <span class="anchor" id="line-1255"></span><span class="anchor" id="line-1256"></span></p>
+    <p class="line874">Prentice Hall PTR / Pearson Education <span class="anchor" id="line-1257"></span><span class="anchor" id="line-1258"></span></p>
+    <p class="line874">~1120 pages (Sep 2006); 810 pages (Jan 2001) <span class="anchor" id="line-1259"></span><span class="anchor" id="line-1260"></span></p>
+    <p class="line862">The main goal of this book is comprehensively teaching you the core of the Python language, much more than just its syntax (which you don't really need a book to learn, right?). Knowing more about how Python works under the covers, including the relationship between data objects and memory management, will make you a much more <strong>effective</strong> Python programmer coming out of the gate. The advanced topics chapters are meant as complete intros or "quick dives" into each of those distinct subjects. However, if moving towards those specific areas of development, they are more than enough to get you pointed in the right direction. We would say that the book is 40% introductory, 40% intermediate (in-depth core Python material plus advanced topics chapters), and 20% reference -- it is *not* meant to be a substitute for a pure reference such as the <em>Python Essential Reference</em> or <em>Python in a Nutshell</em>. <span class="anchor" id="line-1261"></span><span class="anchor" id="line-1262"></span></p>
+    <p class="line874">The new 2nd edition is expanded (300 new pages!) and updated through Python 2.5 as well as confirmed functionality for future versions! Also added are a few new chapters of advanced material. As in the 1st edition, a plethora of easy to advanced exercises can be found at the end of every chapter to hammer the concepts home. At the moment, this is the most complete and up-to-date Python book on the market today. <span class="anchor" id="line-1263"></span><span class="anchor" id="line-1264"></span></p>
+    <p class="line874">From an anonymous reviewer: "Very well written. It is the clearest, friendliest book I have come across yet for explaining Python, and putting it in a wider context. It does not presume a large amount of other experience. It may be too slow for more advanced people, but it does go into some important Python topics carefully and in depth. Unlike too many beginner books, it never condescends or tortures the reader with childish hide-and-seek prose games. Not too many in-depth real-world examples in the book (hopefully he will do a followup volume), it sticks to gaining a solid grasp of Python syntax and structure." <span class="anchor" id="line-1265"></span><span class="anchor" id="line-1266"></span></p>
+    <p class="line867"><a class="http" href="http://corepython.com">Home Page</a> (includes book reviews, errata, sample chapter, links to alternate editions, source code from the book, and more!) <span class="anchor" id="line-1267"></span><span class="anchor" id="line-1268"></span></p>
+    <p class="line862">Links regarding the 1st edition: <a class="http" href="http://www-106.ibm.com/developerworks/linux/library/l-pbook3.html">IBM Developer Works review</a> <a class="http" href="http://www2.linuxjournal.com/lj-issues/issue85/4564.html">Linux Journal review</a> <a class="http" href="http://www.china-pub.com/computers/common/info.asp?id=3097">Chinese edition</a> <a class="http" href="http://safari1.oreilly.com/main.asp?bookname=0130260363">O'Reilly Safari electronic edition</a> <a class="http" href="http://www.prakashbooks.com/details.php3?id=5806">Indian edition (English)</a> <a class="http" href="http://www.wowbook.com/computer/book/info/book_detail.asp?isbn=ISBN89-450-7052-4">Korean edition</a> <a class="http" href="http://www.accu.org/bookreviews/public/reviews/c/c002320.htm">Association of C/C++ Users review</a> <a class="http" href="http://www.awaretek.com/CorePython.html">Python Learning Foundation review</a> <a class="http" href="http://uselesspython.com/gettingstarted.html">Mississippi Python users group (Useless Python) review</a> <span class="anchor" id="line-1269"></span><span class="anchor" id="line-1270"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-1271"></span><strong>Python Programming: An Introduction to Computer Science</strong> <span class="anchor" id="line-1272"></span><span class="anchor" id="line-1273"></span></p>
+    <ul>
+     <li style="list-style-type:none">John Zelle <span class="anchor" id="line-1274"></span><span class="anchor" id="line-1275"></span></li>
+    </ul>
+    <p class="line867"><a class="interwiki" href="http://www.amazon.com/exec/obidos/ISBN=1887902996" title="ISBN">1887902996</a>, Franklin Beedle &amp; Associates, December 2003 <span class="anchor" id="line-1276"></span><span class="anchor" id="line-1277"></span></p>
+    <p class="line874">This is a textbook for a "traditional" introduction to computer science course (CS1) using Python. <span class="anchor" id="line-1278"></span><span class="anchor" id="line-1279"></span></p>
+    <p class="line867"><a class="http" href="http://mcsp.wartburg.edu/zelle/python">Home Page</a> <span class="anchor" id="line-1280"></span><span class="anchor" id="line-1281"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-1282"></span></p>
+    <ul>
+     <li style="list-style-type:none"><p class="line891"><strong>How to Think Like a Computer Scientist: Learning with Python</strong> <span class="anchor" id="line-1283"></span><span class="anchor" id="line-1284"></span></p></li>
+     <li class="gap" style="list-style-type:none">Allen Downey, Jeff Elkner and Chris Meyers <span class="anchor" id="line-1285"></span><span class="anchor" id="line-1286"></span></li>
+    </ul>
+    <p class="line867"><a class="interwiki" href="http://www.amazon.com/exec/obidos/ISBN=0971677506" title="ISBN">0971677506</a>, Green Tea Press 288 pages <span class="anchor" id="line-1287"></span><span class="anchor" id="line-1288"></span></p>
+    <p class="line862">How to Think... is a free textbook available under the GNU Free Documentation License. It is a true beginners book. The ebook version is free and available in PDF, HTML and <a href="/moin/PostScript">PostScript</a>. <span class="anchor" id="line-1289"></span><span class="anchor" id="line-1290"></span></p>
+    <p class="line867"><a class="http" href="http://thinkpython.com">Home Page</a> <span class="anchor" id="line-1291"></span><span class="anchor" id="line-1292"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-1293"></span></p>
+    <ul>
+     <li style="list-style-type:none"><p class="line891"><strong>Dive Into Python: Python for Experienced Programmers</strong> <span class="anchor" id="line-1294"></span><span class="anchor" id="line-1295"></span></p></li>
+     <li class="gap" style="list-style-type:none">Mark Pilgrim <span class="anchor" id="line-1296"></span><span class="anchor" id="line-1297"></span></li>
+    </ul>
+    <p class="line867"><a class="interwiki" href="http://www.amazon.com/exec/obidos/ISBN=1590593561" title="ISBN">1590593561</a>, Apress 432 pages <span class="anchor" id="line-1298"></span><span class="anchor" id="line-1299"></span></p>
+    <p class="line862">Dive Into Python is a free Python ebook for experienced programmers available under the GNU Free Documentation License. A printed version has been published by Apress <a class="http" href="http://www.apress.com/">http://www.apress.com/</a>, and is available through all major outlets. <span class="anchor" id="line-1300"></span><span class="anchor" id="line-1301"></span></p>
+    <p class="line867"><a class="http" href="http://www.diveintopython.net/">Home Page</a> <span class="anchor" id="line-1302"></span><span class="anchor" id="line-1303"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-1304"></span><strong>Learning Python</strong> <span class="anchor" id="line-1305"></span><span class="anchor" id="line-1306"></span></p>
+    <ul>
+     <li style="list-style-type:none">Mark Lutz <span class="anchor" id="line-1307"></span><span class="anchor" id="line-1308"></span></li>
+    </ul>
+    <p class="line867"><a class="interwiki" href="http://www.amazon.com/exec/obidos/ISBN=0596158068" title="ISBN">0596158068</a> O'Reilly &amp; Associates, 1216 pages (September 2009) <span class="anchor" id="line-1309"></span><span class="anchor" id="line-1310"></span></p>
+    <p class="line874">Learning Python is meant for beginning Python programmers, and others seeking a quick introduction to the language. It focuses on core language fundamentals in depth, is based on Mark Lutz's Python training classes, and includes numerous exercises with solutions to guide the reader through a hands-on learning experience. <span class="anchor" id="line-1311"></span><span class="anchor" id="line-1312"></span></p>
+    <p class="line867"><a class="http" href="http://www.oreilly.com/catalog/9780596158071/">O'Reilly's catalog page</a> <a class="http" href="http://rmi.net/~lutz/about-lp4e.html">Author's book page</a> <a class="http" href="http://oreilly.com/catalog/9780596158071/toc.html">Sample chapters</a> <a class="http" href="http://www2.linuxjournal.com/lj-issues/issue66/3541.html">Review of first edition by Phil Hughes in Linux Journal</a> <span class="anchor" id="line-1313"></span><span class="anchor" id="line-1314"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-1315"></span><strong>The Quick Python Book</strong> <span class="anchor" id="line-1316"></span><span class="anchor" id="line-1317"></span></p>
+    <ul>
+     <li style="list-style-type:none"><p class="line862">Daryl Harms, Kenneth <a class="nonexistent" href="/moin/McDonald">McDonald</a> <span class="anchor" id="line-1318"></span><span class="anchor" id="line-1319"></span></p></li>
+    </ul>
+    <p class="line867"><a class="interwiki" href="http://www.amazon.com/exec/obidos/ISBN=1884777740" title="ISBN">1884777740</a>, Manning Publications, 275 pages (October 1999) <span class="anchor" id="line-1320"></span><span class="anchor" id="line-1321"></span></p>
+    <p class="line874">A clear and concise description of Python aimed at readers who are already familiar with programming in at least one other language. <span class="anchor" id="line-1322"></span><span class="anchor" id="line-1323"></span></p>
+    <p class="line867"><a class="http" href="http://www.manning.com/getpage.html?project=harms&amp;filename=Chapters.html">Two sample chapters</a> <a class="http" href="http://www.accu.org/bookreviews/public/reviews/q/q002082.htm">Review by Francis Glassborow in _C Vu_</a> <a class="http" href="http://www2.linuxjournal.com/lj-issues/issue73/3851.html">Review by Phil Hughes</a> <a class="http" href="http://www.amk.ca/python/books/qpb.html">Review by AMK</a> <span class="anchor" id="line-1324"></span><span class="anchor" id="line-1325"></span></p>
+    <p class="line874">A 2nd edition (complete rewrite moving it from Python 1.x to 3.x was published Jan 2010. <span class="anchor" id="line-1326"></span><span class="anchor" id="line-1327"></span></p>
+    <p class="line867"><a class="http" href="http://www.manning.com/ceder/">Publisher's page for The Quick Python Book, 2nd ed.</a> <span class="anchor" id="line-1328"></span><span class="anchor" id="line-1329"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-1330"></span><strong>Learn to Program Using Python</strong> <span class="anchor" id="line-1331"></span><span class="anchor" id="line-1332"></span></p>
+    <ul>
+     <li style="list-style-type:none">Alan Gauld <span class="anchor" id="line-1333"></span><span class="anchor" id="line-1334"></span></li>
+    </ul>
+    <p class="line867"><a class="interwiki" href="http://www.amazon.com/exec/obidos/ISBN=0201709384" title="ISBN">0201709384</a>, Addison-Wesley, 270 pages (December, 2000) <span class="anchor" id="line-1335"></span><span class="anchor" id="line-1336"></span></p>
+    <p class="line874">This book teaches programming in Python to true beginners. It started as a popular Web tutorial, and been expanded into a complete book. <span class="anchor" id="line-1337"></span><span class="anchor" id="line-1338"></span></p>
+    <p class="line867"><a class="http" href="http://www.freenetpages.co.uk/hp/alan.gauld/index.htm">Home Page</a> <span class="anchor" id="line-1339"></span><span class="anchor" id="line-1340"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-1341"></span><strong>Programming Python (Third Edition)</strong> <span class="anchor" id="line-1342"></span><span class="anchor" id="line-1343"></span></p>
+    <ul>
+     <li style="list-style-type:none">Mark Lutz <span class="anchor" id="line-1344"></span><span class="anchor" id="line-1345"></span></li>
+    </ul>
+    <p class="line867"><a class="interwiki" href="http://www.amazon.com/exec/obidos/ISBN=0596009259" title="ISBN">0596009259</a>, O'Reilly &amp; Associates, 1596 pages (August, 2006) <span class="anchor" id="line-1346"></span><span class="anchor" id="line-1347"></span></p>
+    <p class="line874">A Python classic, updated and expanded to cover Python 2.5. The first edition, published in 1996, was the first Python book project to be signed. Programming Python is about what you can do with Python after you've mastered the language fundamentals - it assumes you already know the core language, and focuses on applications programming in gradual tutorial fashion. It is designed to be a natural follow-up to the book Learning Python. This book includes 300 pages on GUIs, 500 on Internet programming, and more on databases, systems programming, text processing, Python/C integration, and other topics. Also available in PDF form from O'Reilly. <span class="anchor" id="line-1348"></span><span class="anchor" id="line-1349"></span></p>
+    <p class="line867"><a class="http" href="http://www.oreilly.com/catalog/python3/">O'Reilly's catalog page</a> <a class="http" href="http://www.rmi.net/~lutz/about-pp3e.html">Author's book page</a> <a class="http" href="http://www.python.org/doc/essays/foreword.html">Foreword by Guido van Rossum</a> <a class="http" href="http://www.ercb.com/ddj/1997/ddj.9711.html">Review of the first edition by Greg Wilson</a> <a class="http" href="http://www.usenix.org/publications/login/1998-4/python.html">Review of the first edition by Terry Rooker in ;login:</a> <a class="http" href="http://dannyreviews.com/h/Python.html">Review of the first edition by Danny Yee</a> <span class="anchor" id="line-1350"></span><span class="anchor" id="line-1351"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-1352"></span><strong>Python Pocket Reference (Third Edition)</strong> <span class="anchor" id="line-1353"></span><span class="anchor" id="line-1354"></span></p>
+    <ul>
+     <li style="list-style-type:none">Mark Lutz <span class="anchor" id="line-1355"></span><span class="anchor" id="line-1356"></span></li>
+    </ul>
+    <p class="line867"><a class="interwiki" href="http://www.amazon.com/exec/obidos/ISBN=0596009402" title="ISBN">0596009402</a>, O'Reilly &amp; Associates, 160 pages (February, 2005) <span class="anchor" id="line-1357"></span><span class="anchor" id="line-1358"></span></p>
+    <p class="line874">This handy reference guide summarizes Python statements, built-in functions, escape and formatting codes, and other prominent Python language features. <span class="anchor" id="line-1359"></span><span class="anchor" id="line-1360"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-1361"></span><strong>Python Standard Library</strong> <span class="anchor" id="line-1362"></span><span class="anchor" id="line-1363"></span></p>
+    <ul>
+     <li style="list-style-type:none"><p class="line891"><a href="/moin/FredrikLundh">FredrikLundh</a> <span class="anchor" id="line-1364"></span><span class="anchor" id="line-1365"></span></p></li>
+    </ul>
+    <p class="line867"><a class="interwiki" href="http://www.amazon.com/exec/obidos/ISBN=0596000960" title="ISBN">0596000960</a>, O'Reilly &amp; Associates, 250 pages (February 2001) <span class="anchor" id="line-1366"></span><span class="anchor" id="line-1367"></span></p>
+    <p class="line862">Based in part on 3,000 newsgroup articles written by Python veteran <a href="/moin/FredrikLundh">FredrikLundh</a> over the last four and half years, this book provides sample scripts for all standard modules in the Python library. Also available in German. <span class="anchor" id="line-1368"></span><span class="anchor" id="line-1369"></span></p>
+    <p class="line867"><a class="http" href="http://www.pythonware.com/people/fredrik/librarybook.htm">Author's book page</a> <a class="https" href="https://web.archive.org/web/20201017142948/http://effbot.org/zone/librarybook-index.htm">Electronic edition (archived snapshot)</a> <span class="anchor" id="line-1370"></span><span class="anchor" id="line-1371"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-1372"></span><strong>Web Programming in Python: Techniques for Integrating Linux, Apache, and MySQL</strong> <span class="anchor" id="line-1373"></span><span class="anchor" id="line-1374"></span></p>
+    <ul>
+     <li style="list-style-type:none">George K. Thiruvathukal, John Shafaee and Thomas Christopher <span class="anchor" id="line-1375"></span><span class="anchor" id="line-1376"></span></li>
+    </ul>
+    <p class="line867"><a class="interwiki" href="http://www.amazon.com/exec/obidos/ISBN=0130410659" title="ISBN">0130410659</a>, Prentice Hall, 450 pages (October 2001) <span class="anchor" id="line-1377"></span><span class="anchor" id="line-1378"></span></p>
+    <p class="line874">The book has introductory chapters on Python, networking, Apache, Linux, and MySQL. It is a self- contained reference to Python and open-source programming that makes use of Python to develop real applications that are also available under an open source license. <span class="anchor" id="line-1379"></span><span class="anchor" id="line-1380"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-1381"></span><strong>Programming With Python</strong> <span class="anchor" id="line-1382"></span><span class="anchor" id="line-1383"></span></p>
+    <ul>
+     <li style="list-style-type:none">Tim Altom with Mitch Chapman, <span class="anchor" id="line-1384"></span><span class="anchor" id="line-1385"></span></li>
+    </ul>
+    <p class="line867"><a class="interwiki" href="http://www.amazon.com/exec/obidos/ISBN=0761523340" title="ISBN">0761523340</a>, Prima Publishing, (October 1999) <span class="anchor" id="line-1386"></span><span class="anchor" id="line-1387"></span></p>
+    <p class="line867"><a class="http" href="http://www2.linuxjournal.com/lj-issues/issue73/3851.html">Review by Phil Hughes in Linux Journal</a> <a class="http" href="http://lists.tummy.com/pipermail/frpythoneers/2000-June/000085.html">Review by Cary Miller</a> <span class="anchor" id="line-1388"></span><span class="anchor" id="line-1389"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-1390"></span><strong>Python Developer's Handbook</strong> <span class="anchor" id="line-1391"></span><span class="anchor" id="line-1392"></span></p>
+    <ul>
+     <li style="list-style-type:none">Andre Lessa <span class="anchor" id="line-1393"></span><span class="anchor" id="line-1394"></span></li>
+    </ul>
+    <p class="line867"><a class="interwiki" href="http://www.amazon.com/exec/obidos/ISBN=0672319942" title="ISBN">0672319942</a>, Sams, 600 pages (December 2000) <span class="anchor" id="line-1395"></span><span class="anchor" id="line-1396"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-1397"></span><strong>Python How to Program</strong> <span class="anchor" id="line-1398"></span><span class="anchor" id="line-1399"></span></p>
+    <ul>
+     <li style="list-style-type:none">Harvey M Deitel, Paul J Deitel, Jonathan Liperi, Ben Wiedermann <span class="anchor" id="line-1400"></span><span class="anchor" id="line-1401"></span></li>
+    </ul>
+    <p class="line867"><a class="interwiki" href="http://www.amazon.com/exec/obidos/ISBN=0130923613" title="ISBN">0130923613</a>, Prentice Hall, 1376 pages (2002) <span class="anchor" id="line-1402"></span><span class="anchor" id="line-1403"></span></p>
+    <p class="line874">In the renowned Deitel series "How to Program" <span class="anchor" id="line-1404"></span><span class="anchor" id="line-1405"></span></p>
+    <p class="line867"><a class="http" href="http://vig.prenhall.com/catalog/academic/product/1,4096,0130923613,00.html">description</a> <span class="anchor" id="line-1406"></span><span class="anchor" id="line-1407"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-1408"></span><strong>Text Processing in Python</strong> <span class="anchor" id="line-1409"></span><span class="anchor" id="line-1410"></span></p>
+    <ul>
+     <li style="list-style-type:none">David Mertz <span class="anchor" id="line-1411"></span><span class="anchor" id="line-1412"></span></li>
+    </ul>
+    <p class="line874">The free text is available at: <span class="anchor" id="line-1413"></span><span class="anchor" id="line-1414"></span></p>
+    <p class="line867"><a class="http" href="http://gnosis.cx/TPiP/">http://gnosis.cx/TPiP/</a> <span class="anchor" id="line-1415"></span><span class="anchor" id="line-1416"></span></p>
+    <p class="line874">Buy the dead-trees version at: <span class="anchor" id="line-1417"></span><span class="anchor" id="line-1418"></span></p>
+    <p class="line867"><a class="http" href="http://tinyurl.com/jskh">http://tinyurl.com/jskh</a> <span class="anchor" id="line-1419"></span><span class="anchor" id="line-1420"></span></p>
+    <p class="line862">A review by Danny Yee at: <a class="http" href="http://dannyreviews.com/h/Text_Python.html">http://dannyreviews.com/h/Text_Python.html</a> <span class="anchor" id="line-1421"></span><span class="anchor" id="line-1422"></span></p>
+    <p class="line862">See also: <a href="/moin/TextProcessingInPython">TextProcessingInPython</a> <span class="anchor" id="line-1423"></span><span class="anchor" id="line-1424"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-1425"></span><strong>Python Programming Patterns</strong> Thomas Christopher <span class="anchor" id="line-1426"></span><span class="anchor" id="line-1427"></span></p>
+    <p class="line874">Prentice-Hall, 2001 <span class="anchor" id="line-1428"></span><span class="anchor" id="line-1429"></span></p>
+    <p class="line874">ISBN: 0130409561 <span class="anchor" id="line-1430"></span><span class="anchor" id="line-1431"></span></p>
+    <p class="line862">There's a <a class="http" href="http://www.informit.com/articles/printerfriendly.asp?p=28672&amp;rl=1">sample chapter</a> at informIT <span class="anchor" id="line-1432"></span><span class="anchor" id="line-1433"></span></p>
+    <p class="line862">Reviews: <a class="http" href="http://www.accu.org/bookreviews/public/reviews/p/p003210.htm">ACCU review</a> by Francis Glasborow; one of several books in Mertz's <a class="http" href="http://gnosis.cx/publish/programming/charming_python_b8.html">book roundup #3</a> <span class="anchor" id="line-1434"></span><span class="anchor" id="line-1435"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-1436"></span><strong>Python First: Introduction to Computing with Python</strong> <span class="anchor" id="line-1437"></span><span class="anchor" id="line-1438"></span></p>
+    <p class="line874">Atanas Radenski <span class="anchor" id="line-1439"></span><span class="anchor" id="line-1440"></span></p>
+    <p class="line874">The 'Python First' digital pack provides a gentle introduction to computer science. It is more than a book: Ten self-contained online chapters consist of e-texts, slides, 62 labs, tens of sample programs, and online quizzes. The 'Python First' pack includes a wealth of detailed self-guided labs that you can complete on your own. <span class="anchor" id="line-1441"></span><span class="anchor" id="line-1442"></span></p>
+    <p class="line867"><a class="http" href="http://studypack.com/comp/course/view.php?id=232">Home Page</a> <span class="anchor" id="line-1443"></span><span class="anchor" id="line-1444"></span></p>
+    <p class="line867"> </p>
+    <h2 id="Python_2">Python 2</h2> <span class="anchor" id="line-1445"></span><span class="anchor" id="line-1446"></span>
+    <p class="line867"><strong>Practical Programming (in Python)</strong> <a class="https" href="https://launchpad.net/practical-programming">"Practical Programming (in Python)"</a> is meant as a first programming course and is tightly aligned with the <a class="http" href="http://www.otago.ac.nz">University of Otago</a> introductory programming course called <a class="http" href="http://www.cs.otago.ac.nz/student/papers.php?name=COMP150">Practical Programming</a>. The textbook is organized into 24 "lectures" that cover all the basics of programming (sequence, selection, iteration, functions etc), plus all the major data structures supplied by Python. <span class="anchor" id="line-1447"></span><span class="anchor" id="line-1448"></span></p>
+    <p class="line862">This textbook is a modified version of <a class="http" href="http://www.openbookproject.net/thinkcs/python/english2e/">"How to Think Like a Computer Scientist: Learning with Python 2nd Edition"</a>, by Jeffrey Elkner, Allen B. Downey and Chris Meyers. <span class="anchor" id="line-1449"></span><span class="anchor" id="line-1450"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-1451"></span><span class="anchor" id="line-1452"></span><span class="anchor" id="line-1453"></span></p>
+    <p class="line867"> </p>
+    <h2 id="Books_no_longer_available">Books no longer available</h2> <span class="anchor" id="line-1454"></span>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-1455"></span><span class="anchor" id="line-1456"></span></p>
+    <p class="line867"><strong>How Would Pareto Learn Python!</strong> <span class="anchor" id="line-1457"></span><span class="anchor" id="line-1458"></span></p>
+    <p class="line867"><a class="http" href="http://www.testingperspective.com/?page_id=1889">Rahul Verma</a> <span class="anchor" id="line-1459"></span><span class="anchor" id="line-1460"></span></p>
+    <p class="line874">Python is a very powerful high level object oriented language and has easy bindings with C,C++,Java etc. It can very well be the first and the only language needed by a software tester for routine test automation tasks as well as for building robust general purpose test automation frameworks. <span class="anchor" id="line-1461"></span><span class="anchor" id="line-1462"></span></p>
+    <p class="line874">This online book is written keeping beginners in Python in mind. It bridges the gap between very basic tutorials and comprehensive books. <span class="anchor" id="line-1463"></span><span class="anchor" id="line-1464"></span></p>
+    <p class="line862">The book is provided for free by <a class="http" href="http://www.talentreboot.com">Talent Reboot Trainings and Asessments</a> and hosts the online version of the book as a part of its official website. <span class="anchor" id="line-1465"></span><span class="anchor" id="line-1466"></span></p>
+    <p class="line867"><a class="http" href="http://www.talentreboot.com/publications/book-how-would-pareto-learn-python/">Read Online Free Version - How Would Pareto Learn Python</a> <span class="anchor" id="line-1467"></span><span class="anchor" id="line-1468"></span></p>
+    <p class="line867"><a href="/moin/CategoryPythonInEducation">CategoryPythonInEducation</a> <a href="/moin/CategoryDocumentation">CategoryDocumentation</a> <span class="anchor" id="line-1469"></span><span class="anchor" id="line-1470"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-1471"></span><span class="anchor" id="line-1472"></span><span class="anchor" id="line-1473"></span></p>
+    <p class="line867"><a class="https" href="https://www.packtpub.com/packt/free-ebook/learning-python">Learning Python</a> (<strong>Free eBook</strong>) <span class="anchor" id="line-1474"></span><span class="anchor" id="line-1475"></span></p>
+    <p class="line874">By Fabrizio Romano <span class="anchor" id="line-1476"></span><span class="anchor" id="line-1477"></span></p>
+    <p class="line874">ISBN 13: 9781783551712 Packt Publishing 442 pages (December 2015) <span class="anchor" id="line-1478"></span><span class="anchor" id="line-1479"></span></p>
+    <p class="line867"><strong>Book Overview:</strong> <span class="anchor" id="line-1480"></span><span class="anchor" id="line-1481"></span></p>
+    <p class="line874">This book goes deeper than simply showing you how to build a Python app, giving you the fundamentals of Python programming that every developer needs to know to make the most of the language. Packed with tutorials and examples this title features everything from data structures, writing reusable code, testing, paradigms, and how Python can be adapted. This free eBook will help transform you from a complete beginner to someone ready to bring the best out of their projects. <span class="anchor" id="line-1482"></span><span class="anchor" id="line-1483"></span></p>
+    <ul>
+     <li>Get Python up and running on Windows, Mac, and Linux in no time <span class="anchor" id="line-1484"></span></li>
+     <li>Grasp the fundamental concepts of coding, along with the basics of data structures and control flow. <span class="anchor" id="line-1485"></span></li>
+     <li>Write elegant, reusable, and efficient code in any situation <span class="anchor" id="line-1486"></span></li>
+     <li>Understand when to use the functional or the object oriented programming approach <span class="anchor" id="line-1487"></span></li>
+     <li>Create bulletproof, reliable software by writing tests to support your code <span class="anchor" id="line-1488"></span></li>
+     <li>Explore examples of GUIs, scripting, data science and web applications <span class="anchor" id="line-1489"></span></li>
+     <li>Learn to be independent, capable of fetching any resource you need, as well as dig deeper <span class="anchor" id="line-1490"></span><span class="anchor" id="line-1491"></span></li>
+    </ul>
+    <p class="line867"><strong>Who this book is written for:</strong> <span class="anchor" id="line-1492"></span><span class="anchor" id="line-1493"></span></p>
+    <p class="line874">This book is meant for programmers who wants to learn Python programming from a basic to an expert level. The book is mostly self-contained and introduces Python programming to a new reader and can help him become an expert in this trade. <span class="anchor" id="line-1494"></span><span class="anchor" id="line-1495"></span></p>
+    <p class="line867"><a class="http" href="http://www.packtpub.com/packt/free-ebook/learning-python">Publisher's page</a> <span class="anchor" id="line-1496"></span><span class="anchor" id="line-1497"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-1498"></span><span class="anchor" id="line-1499"></span></p>
+    <p class="line867"><a href="/moin/CategoryPythonWebsite">CategoryPythonWebsite</a> <a href="/moin/CategoryPyCon2008">CategoryPyCon2008</a> <a href="/moin/CategoryPythonInEducation">CategoryPythonInEducation</a> <span class="anchor" id="line-1500"></span><span class="anchor" id="bottom"></span></p>
+   </div>
+   <p id="pageinfo" class="info" lang="en" dir="ltr">IntroductoryBooks (last edited 2022-02-26 18:34:30 by <span title="MatsWichmann @ 209.188.119.117[209.188.119.117]"><a href="/moin/MatsWichmann" title="MatsWichmann @ 209.188.119.117[209.188.119.117]">MatsWichmann</a></span>)</p> 
+   <div id="pagebottom"></div> 
+  </div> 
+  <div id="footer"> 
+   <ul id="credits"> 
+    <li><a href="http://moinmo.in/" title="This site uses the MoinMoin Wiki software.">MoinMoin Powered</a></li>
+    <li><a href="http://moinmo.in/Python" title="MoinMoin is written in Python.">Python Powered</a></li>
+    <li><a href="http://moinmo.in/GPL" title="MoinMoin is GPL licensed.">GPL licensed</a></li>
+    <li><a href="http://validator.w3.org/check?uri=referer" title="Click here to validate this page.">Valid HTML 4.01</a></li> 
+   </ul> 
+  </div> 
+  <p style="text-align: center; font-size: 85%"><a href="/moin/FrontPage#use">Unable to edit the page? See the FrontPage for instructions.</a></p> 
+ </body>
+</html>

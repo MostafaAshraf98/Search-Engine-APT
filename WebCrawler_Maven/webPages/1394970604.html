@@ -1,0 +1,1333 @@
+<!doctype html>
+<html lang="en" dir="ltr" prefix="og: http://ogp.me/ns#" data-behavior="i18n" data-environment="prod" data-server-mode="publish" data-dc="a" class="  twtr-type--chirp"> 
+ <head> 
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <title>Use Cases, Tutorials, &amp; Documentation  | Twitter Developer Platform  </title> 
+  <meta name="description" content="Publish &amp; analyze Tweets, optimize ads, &amp; create unique customer experiences with the Twitter API, Twitter Ads API, &amp; Twitter Embeds."> 
+  <link rel="canonical" href="https://developer.twitter.com/en"> 
+  <meta property="og:url" content="https://developer.twitter.com/en"> 
+  <meta property="og:type" content="article"> 
+  <meta property="og:title" content="Use Cases, Tutorials, &amp; Documentation "> 
+  <meta property="og:description" content="Publish &amp; analyze Tweets, optimize ads, &amp; create unique customer experiences with the Twitter API, Twitter Ads API, &amp; Twitter Embeds."> 
+  <meta property="og:image" content="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/redesign-2021-images/og-social-card/devwebsite_card_tn.jpg.twimg.768.jpg"> 
+  <meta name="keywords"> 
+  <meta name="twitter:card" content="summary_large_image"> 
+  <link rel="alternate" hreflang="ja" href="https://developer.twitter.com/content/developer-twitter/ja"> 
+  <link rel="alternate" hreflang="pt" href="https://developer.twitter.com/content/developer-twitter/pt.html"> 
+  <link rel="alternate" hreflang="fr" href="https://developer.twitter.com/content/developer-twitter/fr"> 
+  <link rel="alternate" hreflang="zh-cn" href="https://developer.twitter.com/zh-cn"> 
+  <link rel="alternate" hreflang="es" href="https://developer.twitter.com/content/developer-twitter/es.html"> 
+  <meta name="twitter:widgets:new-embed-design" content="on"> 
+  <meta name="twitter:widgets:csp" content="on"> 
+  <link href="https://abs.twimg.com/favicons/favicon.ico" rel="shortcut icon" type="image/x-icon"> 
+  <script type="application/json" id="analytics-settings">{&quot;google&quot;:{&quot;accounts&quot;:[],&quot;options&quot;:{&quot;displayAdvertisingFeatures&quot;:false}},&quot;scribe&quot;:{&quot;scribeSectionWithImpression&quot;:false},&quot;trackingPixel&quot;:{},&quot;bing&quot;:{}}</script> 
+  <script type="application/ld+json">
+      ,</script> 
+  <script type="application/json" class="u14-data-layer" data-component="u14-data-layer" id="data-layer">{"page":{"pageId":"","pageKey":"en-en","pageName":"Use Cases, Tutorials, \u0026 Documentation ","pagePath":"/content/developer-twitter/en","pageType":"home-page","language":"en","geoRegion":"en","category":{"tags":{"tagIDs":[],"tagNames":[]},"scribe":{"page":"developer","element":"page"}},"attribute":{}}}</script> 
+  <link rel="preload" href="https://fonts.twitter.com/chirp/chirp-bold-italic-web.woff2" as="font" type="font/woff2" crossorigin> 
+  <link rel="preload" href="https://fonts.twitter.com/chirp/chirp-bold-web.woff2" as="font" type="font/woff2" crossorigin> 
+  <link rel="preload" href="https://fonts.twitter.com/chirp/chirp-display-extended-black-web.woff2" as="font" type="font/woff2" crossorigin> 
+  <link rel="preload" href="https://fonts.twitter.com/chirp/chirp-regular-web.woff2" as="font" type="font/woff2" crossorigin> 
+  <link rel="preload" href="https://fonts.twitter.com/chirp/chirp-regular-italic-web.woff2" as="font" type="font/woff2" crossorigin> 
+  <link rel="preload" href="https://fonts.twitter.com/chirp/chirp-extended-bold-web.woff2" as="font" type="font/woff2" crossorigin> 
+  <script type="text/javascript" src="/etc/clientlibs/dtm/developer-twitter/c411b4930511/eb5ca470897a/launch-c9524692def8.min.js.twhash.a.f.aee8b9e58d11e52743423f0d9f91c0f2.js" async></script> 
+  <link rel="stylesheet" href="https://cdn.cms-twdigitalassets.com/etc/designs/developer2-twitter/public/css/chirp.css.twhash.a.f.0ff12fb69cbe59867c55e46032a6738d.css" media="screen" type="text/css"> 
+  <link rel="stylesheet" href="https://cdn.cms-twdigitalassets.com/etc/designs/developer2-twitter/public/css/legacy-colors.css.twhash.a.f.39d678450f551ea75cabb73a8fd5e7cd.css" type="text/css"> 
+  <link rel="stylesheet" href="https://cdn.cms-twdigitalassets.com/etc/designs/developer2-twitter/public/css/project.css.twhash.a.f.233edf5aec56c17acfd9106d726ed953.css" media="screen" type="text/css"> 
+  <link rel="stylesheet" href="https://cdn.cms-twdigitalassets.com/etc/designs/developer2-twitter/public/css/print.css.twhash.a.f.1a8bb2fd0a6938557399328158f0824e.css" media="print" type="text/css"> <!-- /* Scribe logs */ --> 
+  <script src="https://cdn.cms-twdigitalassets.com/etc/designs/common-twitter/global-vars.min.twhash.a.cl.d124ce9017ad534db9653f8308be25d0.js"></script> 
+  <script src="https://cdn.cms-twdigitalassets.com/etc/designs/common-twitter/clientlib-twtr-scribe.min.twhash.a.cl.194e09295d8f3c5dd0438f62b5b891a4.js"></script> 
+ </head> 
+ <body class="
+        twtr-theme--blue
+        page home-page
+        page--legacy-nav
+        
+        twtr-color-bg--white-neutral
+        
+        js-no-scroll
+        atm-light
+      " style="--theme-color: var(--blue-dark)" data-analytics-page="developer" data-analytics-component="en" data-analytics-element="page"> 
+  <div id="twtr-dtc-main" style="--nav-height: var(--navbar-short)" data-dtc-rebrand-on="true" class="dtc-rebrand-flag-on"> 
+   <div id="twBearerToken" data-value="AAAAAAAAAAAAAAAAAAAAACHguwAAAAAAaSlT0G31NDEyg%2BSnBN5JuyKjMCU%3Dlhg0gv0nE7KKyiJNEAojQbn8Y3wJm1xidDK7VnKGBP4ByJwHPb" style="display:none"></div> 
+   <div id="twAuthenticationFlag" data-value="guest" style="display:none"></div> 
+   <div id="twGeoLocationRegion" data-value="other" style="display:none"></div> 
+   <div class="u01-dtc-react__page-padding"></div> 
+   <div class="u01-dtc-react__top-nav-wrapper"> 
+    <div class="u01-dtc-react__container" data-root-page-title="Developer Platform" data-home-path="/content/developer-twitter/en" data-nav-items=",,,,,,," data-icon-chevron-right="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;24&quot; height=&quot;24&quot; viewbox=&quot;0 0 24 24&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot; role=&quot;none&quot; class=&quot;twtr-icon&quot;> 
+ <path opacity=&quot;0&quot; d=&quot;M0 0h24v24H0z&quot; /> 
+ <path d=&quot;M17.207 11.293l-7.5-7.5c-.39-.39-1.023-.39-1.414 0s-.39 1.023 0 1.414L15.086 12l-6.793 6.793c-.39.39-.39 1.023 0 1.414.195.195.45.293.707.293s.512-.098.707-.293l7.5-7.5c.39-.39.39-1.023 0-1.414z&quot; /> 
+</svg>" data-icon-arrow-left="<svg width=&quot;28px&quot; height=&quot;28px&quot; viewbox=&quot;0 0 28 28&quot; version=&quot;1.1&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot; role=&quot;none&quot; class=&quot;twtr-icon  u01b__icon-arrow-left&quot;> 
+ <g stroke=&quot;none&quot; stroke-width=&quot;1&quot; fill=&quot;none&quot; fill-rule=&quot;evenodd&quot; stroke-linecap=&quot;round&quot;> 
+  <g transform=&quot;translate(-1216.000000, -298.000000)&quot; stroke-width=&quot;2.25&quot;> 
+   <g transform=&quot;translate(1200.000000, 282.000000)&quot;> 
+    <g transform=&quot;translate(17.000000, 17.000000)&quot;> 
+     <path d=&quot;M0.756410256,12.8589744 L25.7179487,12.8589744&quot;></path> 
+     <path d=&quot;M13.2371795,25.3397436 L25.7179487,12.8589744&quot;></path> 
+     <path d=&quot;M13.2371795,12.4807692 L25.3397436,0.378205128&quot; transform=&quot;translate(19.288462, 6.429487) rotate(-90.000000) translate(-19.288462, -6.429487) &quot;></path> 
+    </g> 
+   </g> 
+  </g> 
+ </g> 
+</svg>" data-icon-close="<svg version=&quot;1.1&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; x=&quot;0px&quot; y=&quot;0px&quot; viewbox=&quot;0 0 24 24&quot; style=&quot;enable-background:new 0 0 24 24;&quot; xml:space=&quot;preserve&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot; role=&quot;none&quot; class=&quot;twtr-icon--md&quot;> 
+ <g> 
+  <g> 
+   <defs> 
+    <rect id=&quot;SVGID_1_&quot; x=&quot;-468&quot; y=&quot;-1360&quot; width=&quot;1440&quot; height=&quot;3027&quot; /> 
+   </defs> 
+   <clippath id=&quot;SVGID_2_&quot;> 
+    <use xlink:href=&quot;#SVGID_1_&quot; style=&quot;overflow:visible;&quot; /> 
+   </clippath> 
+  </g> 
+ </g> 
+ <rect x=&quot;-468&quot; y=&quot;-1360&quot; class=&quot;st0&quot; width=&quot;1440&quot; height=&quot;3027&quot; style=&quot;fill:rgb(0,0,0,0);stroke-width:3;stroke:rgb(0,0,0)&quot; /> 
+ <path d=&quot;M13.4,12l5.8-5.8c0.4-0.4,0.4-1,0-1.4c-0.4-0.4-1-0.4-1.4,0L12,10.6L6.2,4.8c-0.4-0.4-1-0.4-1.4,0c-0.4,0.4-0.4,1,0,1.4
+	l5.8,5.8l-5.8,5.8c-0.4,0.4-0.4,1,0,1.4c0.2,0.2,0.4,0.3,0.7,0.3s0.5-0.1,0.7-0.3l5.8-5.8l5.8,5.8c0.2,0.2,0.5,0.3,0.7,0.3
+	s0.5-0.1,0.7-0.3c0.4-0.4,0.4-1,0-1.4L13.4,12z&quot; /> 
+</svg>"></div> 
+    <div class="u01-dtc-react__search-modal  twtr-color-bg--blue-dark"> 
+     <div class="search-bar search-bar--js" data-theme="blue" data-search-path="https://developer.twitter.com/en/search-results.html"> 
+      <input placeholder="Type your search here" type="search" autocomplete="off" class="search-bar__input" name="q" tabindex="-1"> <button id="u04-search__button" class="u04-search__button" tabindex="-1"> 
+       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true" focusable="false" role="none" class="twtr-icon--mega  twtr-color-fill--white-neutral"> <path opacity="0" d="M0 0h24v24H0z" /> <path d="M22.06 19.94l-3.73-3.73C19.38 14.737 20 12.942 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c1.943 0 3.738-.622 5.21-1.67l3.73 3.73c.292.294.676.44 1.06.44s.768-.146 1.06-.44c.586-.585.586-1.535 0-2.12zM11 17c-3.308 0-6-2.692-6-6s2.692-6 6-6 6 2.692 6 6-2.692 6-6 6z" /> 
+       </svg> </button> 
+     </div> 
+    </div> 
+   </div> 
+   <main class="twtr-color-bg--white-neutral  twtr-main--bg-image  lazyload" id="twtr-main" data-bg="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/redesign-2021-images/textures/background_image.jpg.twimg.768.jpg"> 
+    <div class="u07  is-hidden" aria-hidden="true"> 
+     <div class="u07__item  u07__bg-color--neutral"> 
+      <div class="u07__item-content"> 
+       <div class="u07__notification  twtr-type--bold-200  chirp--bold-200  twtr-color--gray-900"> 
+       </div> 
+       <div class="u07__close"> <button type="button" class="u07__close-btn"> 
+         <svg xmlns="http://www.w3.org/2000/svg" width="46" height="72" viewbox="0 0 46 72" aria-hidden="true" focusable="false" role="none" class="twtr-icon"> <path d="M27.243 36l14.879-14.879a2.998 2.998 0 0 0 0-4.242 2.998 2.998 0 0 0-4.242 0L23 31.758 8.122 16.879a2.998 2.998 0 0 0-4.242 0 2.998 2.998 0 0 0 0 4.242L18.758 36 3.879 50.879A2.998 2.998 0 0 0 6.001 56a2.99 2.99 0 0 0 2.121-.879L23 40.242l14.879 14.879A2.991 2.991 0 0 0 40 56a2.998 2.998 0 0 0 2.121-5.121L27.243 36z" /> 
+         </svg> </button> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="ct01-columns"> 
+     <div class="ct01
+            
+            twtr-padding__nested--top
+            twtr-padding__nested--bottom
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            "> 
+      <div class="ct01__content  twtr-container--wide  "> 
+       <div class="ct01__item  twtr-grid    "> 
+        <div class="ct01__column
+                    twtr-col-md-5  twtr-order-0-xs  twtr-order-0-md  has-no-margin-bottom
+                    
+                    "> 
+         <div class="ct01__wrapper  is-vertically-centered  "> 
+          <div class="cr02-responsive-visibility twtr-component twtr-component--first"> 
+           <div class="cr02"> 
+            <div class="cr02__item twtr-hidden--md  twtr-hidden--lg  twtr-hidden--xl  "> 
+             <div class="b27-spacing twtr-component--last twtr-component twtr-component--first"> 
+              <div class="b27 twtr-spacing--mbf-900"> 
+              </div>
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <div class="cr02-responsive-visibility twtr-component"> 
+           <div class="cr02"> 
+            <div class="cr02__item twtr-hidden--sm  twtr-hidden--xs  "> 
+             <div class="b27-spacing twtr-component--last twtr-component twtr-component--first"> 
+              <div class="b27 twtr-spacing--mbf-500"> 
+              </div>
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <div class="b01-headline-v3 twtr-component"> 
+           <div class="b01-v3 b01-v3__copy--no-margin"> 
+            <div class="b01-v3__item"> 
+             <div class="b01-v3__copy"> 
+              <h1 class="b01-v3__headline  chirp--display-800  twtr-color--black  b01-v3--align-left  chirp--fluid"> Tap into what’s happening to build what’s next </h1> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <div class="b27-spacing twtr-component"> 
+           <div class="b27 twtr-spacing--mbf-500"> 
+           </div>
+          </div> 
+          <div class="b02-rich-text-v3 twtr-component"> 
+           <div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-300 twtr-color--black  twtr-component-space--md"> 
+            <h2><b><span class="chirp--bold-400 chirp--fluid">It’s a new era for innovators with the new Twitter API v2, seconds to ‘hello world’, and more free access</span></b></h2> 
+           </div> 
+          </div> 
+          <div class="cr02-responsive-visibility twtr-component"> 
+           <div class="cr02"> 
+            <div class="cr02__item twtr-hidden--sm  twtr-hidden--xs  "> 
+             <div class="b27-spacing twtr-component twtr-component--first"> 
+              <div class="b27 twtr-spacing--mbf-400"> 
+              </div>
+             </div> 
+             <div class="b03-button-v3 twtr-component--last twtr-component"> <a class="chirp-btn twtr-spacing--mb-500  chirp-btn--secondary     twtr-scribe-clicks" href="https://developer.twitter.com/en/portal/petition/essential/basic-info" target="_blank" rel="noopener noreferrer" data-twtr-scribe-section="b03-button-v3" data-twtr-scribe-element="BAI0" data-twtr-scribe-component="sign-up" data-text="Sign up"> Sign up </a> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <div class="cr02-responsive-visibility twtr-component--last twtr-component"> 
+           <div class="cr02"> 
+            <div class="cr02__item twtr-hidden--md  twtr-hidden--lg  twtr-hidden--xl  "> 
+             <div class="b27-spacing twtr-component twtr-component--first"> 
+              <div class="b27 twtr-spacing--mbf-900"> 
+              </div>
+             </div> 
+             <div class="b27-spacing twtr-component"> 
+              <div class="b27 twtr-spacing--mbf-900"> 
+              </div>
+             </div> 
+             <div class="b27-spacing twtr-component--last twtr-component"> 
+              <div class="b27 twtr-spacing--mbf-900"> 
+              </div>
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="ct01__column
+                    twtr-col-md-6  twtr-order-1-xs  twtr-order-1-md
+                    
+                    "> 
+         <div class="ct01__wrapper  is-vertically-centered  "> 
+          <div class="cr02-responsive-visibility twtr-component twtr-component--first"> 
+           <div class="cr02"> 
+            <div class="cr02__item twtr-hidden--sm  twtr-hidden--xs  "> 
+             <div class="ct09-justify-content twtr-component--last twtr-component twtr-component--first"> 
+              <div class="ct09      has-fixed-height--px" style="--ct09-fixed-height: 700;"> 
+               <div class="ct09__item"> 
+                <div class="ct09__wrapper  is-direction--row  is-justified-start  is-aligned-start  has-no-margin-bottom  twtr-spacing--pb-0"> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <div class="cr02-responsive-visibility twtr-component--last twtr-component"> 
+           <div class="cr02"> 
+            <div class="cr02__item twtr-hidden--md  twtr-hidden--lg  twtr-hidden--xl  "> 
+             <div class="ct09-justify-content twtr-component--last twtr-component twtr-component--first"> 
+              <div class="ct09      has-fixed-height--px" style="--ct09-fixed-height: 375;"> 
+               <div class="ct09__item"> 
+                <div class="ct09__wrapper  is-direction--row  is-justified-start  is-aligned-start  has-no-margin-bottom  twtr-spacing--pb-0"> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="ct01__background"> <picture> 
+        <source srcset="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/redesign-2021-images/homepage/APIv2-Launch-masthead-m-v2.jpg.twimg.768.jpg" media="(max-width: 600px)"> 
+        <source srcset="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/redesign-2021-images/homepage/APIv2_Launch_masthead_d.jpg.twimg.2560.jpg" media="(min-width: 1920px)"> 
+        <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/redesign-2021-images/homepage/APIv2_Launch_masthead_d.jpg.twimg.1920.jpg" width="2880" height="1400" alt data-object-fit="cover" class="ct01__background-img  lazyload"> 
+       </picture> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="cr02-responsive-visibility"> 
+     <div class="cr02"> 
+      <div class="cr02__item twtr-hidden--sm  twtr-hidden--xs  "> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="ct01-columns"> 
+     <div class="ct01
+            
+            twtr-padding__paragraph--top
+            twtr-padding__paragraph--bottom
+            twtr-background--gray-900
+            
+            
+            
+            
+            
+            
+            
+            
+            "> 
+      <div class="ct01__content  twtr-container  "> 
+       <div class="ct01__item  twtr-grid    "> 
+        <div class="ct01__column
+                    twtr-col-md-12
+                    
+                    "> 
+         <div class="ct01__wrapper    "> 
+          <div class="ct09-justify-content twtr-component--last twtr-component twtr-component--first"> 
+           <div class="ct09      " style="--ct09-fixed-height: ;"> 
+            <div class="ct09__item"> 
+             <div class="ct09__wrapper  is-direction--row  is-justified-center  is-aligned-center  has-no-margin-bottom  twtr-spacing--pb-0"> 
+              <div class="b02-rich-text-v3 twtr-component twtr-component--first"> 
+               <div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--white chirp--stepped "> 
+                <div>
+                 <span class="chirp--regular-200 chirp--stepped"><b>Tweet from the API in just a few clicks.</b></span>
+                </div> 
+               </div> 
+              </div> 
+              <div class="b02-rich-text-v3 twtr-component--last twtr-component"> 
+               <div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--white chirp--stepped "> 
+                <div>
+                 <span class="chirp--regular-200 chirp--stepped"><b>&nbsp; <a href="https://oauth-playground.glitch.me/?id=createTweet&amp;compose=1" rel="nofollow">Try it now!&nbsp;</a></b></span>
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="b27-spacing"> 
+     <div class="b27 twtr-spacing--mbf-900"> 
+     </div>
+    </div> 
+    <div class="ct01-columns"> 
+     <div class="ct01
+            
+            twtr-padding__nested--top
+            twtr-padding__nested--bottom
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            "> 
+      <div class="ct01__content  twtr-container  "> 
+       <div class="ct01__item  twtr-grid    "> 
+        <div class="ct01__column
+                    twtr-col-md-12
+                    none
+                    "> 
+         <div class="ct01__wrapper    "> 
+          <div class="b01-headline-v3 twtr-component--last twtr-component twtr-component--first"> 
+           <div class="b01-v3 b01-v3__copy--no-margin"> 
+            <div class="b01-v3__item"> 
+             <div class="b01-v3__copy"> 
+              <h2 class="b01-v3__headline  chirp--display-700  twtr-color--gray-900  b01-v3--align-left  chirp--fluid"> Use cases </h2> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="b27-spacing"> 
+     <div class="b27 twtr-spacing--mbf-700"> 
+     </div>
+    </div> 
+    <div class="ct01-columns"> 
+     <div class="ct01
+            
+            twtr-padding__nested--top
+            twtr-padding__nested--bottom
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            "> 
+      <div class="ct01__content  twtr-container  "> 
+       <div class="ct01__item  twtr-grid    "> 
+        <div class="ct01__column
+                    twtr-col-md-4
+                    none
+                    "> 
+         <div class="ct01__wrapper    "> 
+          <div class="b04-image twtr-component twtr-component--first"> 
+           <div class="b04  "> 
+            <div class="b04__image  b04__image--fixed"> <a href="/en/use-cases/build-for-businesses" target="_self" class="b04__image-link"> 
+              <picture> 
+               <source srcset="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/redesign-2021-images/card-thumbnails/buildforbusinesses_card_tn.jpg.twimg.768.jpg" media="(max-width: 767px)"> 
+               <source srcset="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/redesign-2021-images/card-thumbnails/buildforbusinesses_card_tn.jpg.twimg.2560.jpg" media="(min-width: 1920px)"> 
+               <img src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 688 408%22%3E%3C/svg%3E" style="width: 688px" width="688px" height="408px" data-src="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/redesign-2021-images/card-thumbnails/buildforbusinesses_card_tn.jpg.twimg.1920.jpg" alt="Older man and woman in restaurant aprons smiling in front of food menus" data-object-fit="cover" class="b04__img
+          b04__img-cover
+          b04__img--fixed
+          is-aligned-left
+          
+          
+          lazyload
+          "> 
+              </picture> </a> 
+            </div> 
+           </div> 
+          </div> 
+          <div class="b27-spacing twtr-component"> 
+           <div class="b27 twtr-spacing--mbf-400"> 
+           </div>
+          </div> 
+          <div class="b02-rich-text-v3 twtr-component"> 
+           <div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--gray-900  "> 
+            <h3><span class="twtr-color--gray-900"><span class="chirp--regular-300 chirp--stepped"><b>Build for businesses</b></span><span class="chirp--display-400 chirp--fluid"><span class="chirp--regular-300 chirp--stepped"><b><br> </b></span></span><b><span class="chirp--display-400 chirp--fluid"></span></b><span class="chirp--regular-300"><b></b></span></span><b><span class="chirp--bold-400 chirp--fluid"><span class="twtr-color--gray-900"></span></span></b><span class="chirp--regular-300 chirp--stepped"><b></b></span><br> </h3> 
+           </div> 
+          </div> 
+          <div class="b27-spacing twtr-component"> 
+           <div class="b27 twtr-spacing--mbf-300"> 
+           </div>
+          </div> 
+          <div class="b02-rich-text-v3 twtr-component"> 
+           <div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--gray-900  "> 
+            <p>Use Twitter’s powerful APIs to help your business listen, act, and discover.</p> 
+           </div> 
+          </div> 
+          <div class="b27-spacing twtr-component"> 
+           <div class="b27 twtr-spacing--mbf-50"> 
+           </div>
+          </div> 
+          <div class="b03-button-v3 twtr-component"> <a class="chirp-btn twtr-spacing--mb-0 chirp-btn--black chirp-btn--tertiary chirp-btn--jumbo    twtr-scribe-clicks" href="https://developer.twitter.com/en/use-cases/build-for-businesses" data-twtr-scribe-section="b03-button-v3" data-twtr-scribe-element="OVZN" data-twtr-scribe-component="learn-more-" data-text="Learn more ?"> Learn more ? </a> 
+          </div> 
+          <div class="cr02-responsive-visibility twtr-component--last twtr-component"> 
+           <div class="cr02"> 
+            <div class="cr02__item twtr-hidden--md  twtr-hidden--lg  twtr-hidden--xl  "> 
+             <div class="b27-spacing twtr-component twtr-component--first"> 
+              <div class="b27 twtr-spacing--mb-400"> 
+              </div>
+             </div> 
+             <div class="b12-horizontal-rule twtr-component--last twtr-component"> 
+              <div class="
+  b12
+  b12-thickness--base
+  twtr-color-border--light-gray-neutral
+  
+  twtr-margin__nested--top
+  twtr-margin__nested--bottom"> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="ct01__column
+                    twtr-col-md-4
+                    none
+                    "> 
+         <div class="ct01__wrapper    "> 
+          <div class="b04-image twtr-component twtr-component--first"> 
+           <div class="b04  "> 
+            <div class="b04__image  b04__image--fixed"> <a href="/en/use-cases/build-for-consumers" target="_self" class="b04__image-link"> 
+              <picture> 
+               <source srcset="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/redesign-2021-images/card-thumbnails/buildforconsumers_card_tn.jpg.twimg.768.jpg" media="(max-width: 767px)"> 
+               <source srcset="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/redesign-2021-images/card-thumbnails/buildforconsumers_card_tn.jpg.twimg.2560.jpg" media="(min-width: 1920px)"> 
+               <img src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 688 408%22%3E%3C/svg%3E" style="width: 688px" width="688px" height="408px" data-src="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/redesign-2021-images/card-thumbnails/buildforconsumers_card_tn.jpg.twimg.1920.jpg" alt="Smiling woman and man sharing phone with city view in the background" data-object-fit="cover" class="b04__img
+          b04__img-cover
+          b04__img--fixed
+          is-aligned-left
+          
+          
+          lazyload
+          "> 
+              </picture> </a> 
+            </div> 
+           </div> 
+          </div> 
+          <div class="b27-spacing twtr-component"> 
+           <div class="b27 twtr-spacing--mbf-400"> 
+           </div>
+          </div> 
+          <div class="b02-rich-text-v3 twtr-component"> 
+           <div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--gray-900  "> 
+            <h3><span class="twtr-color--gray-900"><span class="chirp--regular-300 chirp--stepped"><b>Build for the public</b></span><span class="chirp--regular-300"><b><br> </b></span></span><b><span class="chirp--bold-400 chirp--fluid"><span class="twtr-color--gray-900"></span></span></b><span class="chirp--regular-300 chirp--stepped"><b></b></span><br> </h3> 
+           </div> 
+          </div> 
+          <div class="b27-spacing twtr-component"> 
+           <div class="b27 twtr-spacing--mbf-300"> 
+           </div>
+          </div> 
+          <div class="b02-rich-text-v3 twtr-component"> 
+           <div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--gray-900  "> 
+            <p><span class="chirp--regular-200 chirp--stepped"><span class="twtr-color--gray-900">Build for people on Twitter to integrate or improve their experience on the platform.</span></span></p> 
+           </div> 
+          </div> 
+          <div class="b27-spacing twtr-component"> 
+           <div class="b27 twtr-spacing--mbf-50"> 
+           </div>
+          </div> 
+          <div class="b03-button-v3 twtr-component"> <a class="chirp-btn twtr-spacing--mb-0 chirp-btn--black chirp-btn--tertiary chirp-btn--jumbo    twtr-scribe-clicks" href="https://developer.twitter.com/en/use-cases/build-for-consumers" data-twtr-scribe-section="b03-button-v3" data-twtr-scribe-element="0JOS" data-twtr-scribe-component="learn-more-" data-text="Learn more ?"> Learn more ? </a> 
+          </div> 
+          <div class="cr02-responsive-visibility twtr-component--last twtr-component"> 
+           <div class="cr02"> 
+            <div class="cr02__item twtr-hidden--md  twtr-hidden--lg  twtr-hidden--xl  "> 
+             <div class="b27-spacing twtr-component twtr-component--first"> 
+              <div class="b27 twtr-spacing--mb-400"> 
+              </div>
+             </div> 
+             <div class="b12-horizontal-rule twtr-component--last twtr-component"> 
+              <div class="
+  b12
+  b12-thickness--base
+  twtr-color-border--light-gray-neutral
+  
+  twtr-margin__nested--top
+  twtr-margin__nested--bottom"> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="ct01__column
+                    twtr-col-md-4
+                    none
+                    "> 
+         <div class="ct01__wrapper    "> 
+          <div class="b04-image twtr-component twtr-component--first"> 
+           <div class="b04  "> 
+            <div class="b04__image  b04__image--fixed"> <a href="/en/use-cases/do-research" target="_self" class="b04__image-link"> 
+              <picture> 
+               <source srcset="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/redesign-2021-images/card-thumbnails/doresearch_card_tn.jpg.twimg.768.jpg" media="(max-width: 767px)"> 
+               <source srcset="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/redesign-2021-images/card-thumbnails/doresearch_card_tn.jpg.twimg.2560.jpg" media="(min-width: 1920px)"> 
+               <img src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 688 408%22%3E%3C/svg%3E" style="width: 688px" width="688px" height="408px" data-src="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/redesign-2021-images/card-thumbnails/doresearch_card_tn.jpg.twimg.1920.jpg" alt="Woman drawing a formula on a board" data-object-fit="cover" class="b04__img
+          b04__img-cover
+          b04__img--fixed
+          is-aligned-left
+          
+          
+          lazyload
+          "> 
+              </picture> </a> 
+            </div> 
+           </div> 
+          </div> 
+          <div class="b27-spacing twtr-component"> 
+           <div class="b27 twtr-spacing--mbf-400"> 
+           </div>
+          </div> 
+          <div class="b02-rich-text-v3 twtr-component"> 
+           <div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--gray-900  "> 
+            <h3><span class="twtr-color--gray-900"><span class="chirp--regular-300 chirp--stepped"><b>Do research</b></span><span class="chirp--regular-300"><b><br> </b></span></span><b><span class="chirp--bold-400 chirp--fluid"><span class="twtr-color--gray-900"></span></span></b><span class="chirp--regular-300 chirp--stepped"><b></b></span><br> </h3> 
+           </div> 
+          </div> 
+          <div class="b27-spacing twtr-component"> 
+           <div class="b27 twtr-spacing--mbf-300"> 
+           </div>
+          </div> 
+          <div class="b02-rich-text-v3 twtr-component"> 
+           <div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--gray-900  "> 
+            <p><span class="chirp--regular-200 chirp--stepped">Use the Twitter API to get historical and real-time data points for your next research project.<b> </b></span></p> 
+           </div> 
+          </div> 
+          <div class="b27-spacing twtr-component"> 
+           <div class="b27 twtr-spacing--mbf-50"> 
+           </div>
+          </div> 
+          <div class="b03-button-v3 twtr-component"> <a class="chirp-btn twtr-spacing--mb-0 chirp-btn--black chirp-btn--tertiary chirp-btn--jumbo    twtr-scribe-clicks" href="https://developer.twitter.com/en/use-cases/do-research" data-twtr-scribe-section="b03-button-v3" data-twtr-scribe-element="E2LX" data-twtr-scribe-component="learn-more-" data-text="Learn more ?"> Learn more ? </a> 
+          </div> 
+          <div class="cr02-responsive-visibility twtr-component--last twtr-component"> 
+           <div class="cr02"> 
+            <div class="cr02__item twtr-hidden--md  twtr-hidden--lg  twtr-hidden--xl  "> 
+             <div class="b27-spacing twtr-component twtr-component--first"> 
+              <div class="b27 twtr-spacing--mb-400"> 
+              </div>
+             </div> 
+             <div class="b12-horizontal-rule twtr-component"> 
+              <div class="
+  b12
+  b12-thickness--base
+  twtr-color-border--light-gray-neutral
+  
+  twtr-margin__nested--top
+  twtr-margin__nested--bottom"> 
+              </div> 
+             </div> 
+             <div class="b27-spacing twtr-component--last twtr-component"> 
+              <div class="b27 twtr-spacing--mb-500"> 
+              </div>
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="cr02-responsive-visibility"> 
+     <div class="cr02"> 
+      <div class="cr02__item twtr-hidden--sm  twtr-hidden--xs  "> 
+       <div class="b27-spacing twtr-component--last twtr-component twtr-component--first"> 
+        <div class="b27 twtr-spacing--mbf-700"> 
+        </div>
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="ct01-columns"> 
+     <div class="ct01
+            
+            twtr-padding__nested--top
+            twtr-padding__nested--bottom
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            "> 
+      <div class="ct01__content  twtr-container  "> 
+       <div class="ct01__item  twtr-grid    "> 
+        <div class="ct01__column
+                    twtr-col-md-4
+                    none
+                    "> 
+         <div class="ct01__wrapper    "> 
+          <div class="b04-image twtr-component twtr-component--first"> 
+           <div class="b04  "> 
+            <div class="b04__image  b04__image--fixed"> <a href="/en/use-cases/teach-and-learn" target="_self" class="b04__image-link"> 
+              <picture> 
+               <source srcset="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/redesign-2021-images/card-thumbnails/teachandlearn_card_tn.jpg.twimg.768.jpg" media="(max-width: 767px)"> 
+               <source srcset="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/redesign-2021-images/card-thumbnails/teachandlearn_card_tn.jpg.twimg.2560.jpg" media="(min-width: 1920px)"> 
+               <img src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 688 408%22%3E%3C/svg%3E" style="width: 688px" width="688px" height="408px" data-src="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/redesign-2021-images/card-thumbnails/teachandlearn_card_tn.jpg.twimg.1920.jpg" alt="Young woman studying at a computer screen seated with others" data-object-fit="cover" class="b04__img
+          b04__img-cover
+          b04__img--fixed
+          is-aligned-left
+          
+          
+          lazyload
+          "> 
+              </picture> </a> 
+            </div> 
+           </div> 
+          </div> 
+          <div class="b27-spacing twtr-component"> 
+           <div class="b27 twtr-spacing--mbf-400"> 
+           </div>
+          </div> 
+          <div class="b02-rich-text-v3 twtr-component"> 
+           <div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--gray-900  "> 
+            <h3><span class="twtr-color--gray-900"><span class="chirp--regular-300 chirp--stepped"><b>Teach &amp; learn</b></span><span class="chirp--regular-300"><b><br> </b></span></span><b><span class="chirp--bold-400 chirp--fluid"><span class="twtr-color--gray-900"></span></span></b><span class="chirp--regular-300 chirp--stepped"><b></b></span><br> </h3> 
+           </div> 
+          </div> 
+          <div class="b27-spacing twtr-component"> 
+           <div class="b27 twtr-spacing--mbf-300"> 
+           </div>
+          </div> 
+          <div class="b02-rich-text-v3 twtr-component"> 
+           <div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--gray-900  "> 
+            <p><span class="chirp--regular-200 chirp--stepped">Teach or learn valuable skills with the Twitter API. </span></p> 
+           </div> 
+          </div> 
+          <div class="b27-spacing twtr-component"> 
+           <div class="b27 twtr-spacing--mbf-50"> 
+           </div>
+          </div> 
+          <div class="b03-button-v3 twtr-component"> <a class="chirp-btn twtr-spacing--mb-0 chirp-btn--black chirp-btn--tertiary chirp-btn--jumbo    twtr-scribe-clicks" href="https://developer.twitter.com/en/use-cases/teach-and-learn" data-twtr-scribe-section="b03-button-v3" data-twtr-scribe-element="09GS" data-twtr-scribe-component="learn-more-" data-text="Learn more ?"> Learn more ? </a> 
+          </div> 
+          <div class="cr02-responsive-visibility twtr-component--last twtr-component"> 
+           <div class="cr02"> 
+            <div class="cr02__item twtr-hidden--md  twtr-hidden--lg  twtr-hidden--xl  "> 
+             <div class="b27-spacing twtr-component twtr-component--first"> 
+              <div class="b27 twtr-spacing--mb-400"> 
+              </div>
+             </div> 
+             <div class="b12-horizontal-rule twtr-component--last twtr-component"> 
+              <div class="
+  b12
+  b12-thickness--base
+  twtr-color-border--light-gray-neutral
+  
+  twtr-margin__nested--top
+  twtr-margin__nested--bottom"> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="ct01__column
+                    twtr-col-md-4
+                    none
+                    "> 
+         <div class="ct01__wrapper    "> 
+          <div class="b04-image twtr-component twtr-component--first"> 
+           <div class="b04  "> 
+            <div class="b04__image  b04__image--fixed"> <a href="/en/use-cases/build-for-fun" target="_self" class="b04__image-link"> 
+              <picture> 
+               <source srcset="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/redesign-2021-images/card-thumbnails/buildforfun_card_tn.jpg.twimg.768.jpg" media="(max-width: 767px)"> 
+               <source srcset="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/redesign-2021-images/card-thumbnails/buildforfun_card_tn.jpg.twimg.2560.jpg" media="(min-width: 1920px)"> 
+               <img src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 688 408%22%3E%3C/svg%3E" style="width: 688px" width="688px" height="408px" data-src="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/redesign-2021-images/card-thumbnails/buildforfun_card_tn.jpg.twimg.1920.jpg" alt="Male musician working on both laptop and music keyboard" data-object-fit="cover" class="b04__img
+          b04__img-cover
+          b04__img--fixed
+          is-aligned-left
+          
+          
+          lazyload
+          "> 
+              </picture> </a> 
+            </div> 
+           </div> 
+          </div> 
+          <div class="b27-spacing twtr-component"> 
+           <div class="b27 twtr-spacing--mbf-400"> 
+           </div>
+          </div> 
+          <div class="b02-rich-text-v3 twtr-component"> 
+           <div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--gray-900  "> 
+            <h3><span class="twtr-color--gray-900"><span class="chirp--regular-300 chirp--stepped"><b>Build for fun</b></span></span><br> </h3> 
+           </div> 
+          </div> 
+          <div class="b27-spacing twtr-component"> 
+           <div class="b27 twtr-spacing--mbf-300"> 
+           </div>
+          </div> 
+          <div class="b02-rich-text-v3 twtr-component"> 
+           <div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--gray-900  "> 
+            <p><span class="chirp--regular-200 chirp--stepped">Experiment, explore, create, and have fun.</span></p> 
+           </div> 
+          </div> 
+          <div class="b27-spacing twtr-component"> 
+           <div class="b27 twtr-spacing--mbf-50"> 
+           </div>
+          </div> 
+          <div class="b03-button-v3 twtr-component"> <a class="chirp-btn twtr-spacing--mb-0 chirp-btn--black chirp-btn--tertiary chirp-btn--jumbo    twtr-scribe-clicks" href="https://developer.twitter.com/en/use-cases/build-for-fun" data-twtr-scribe-section="b03-button-v3" data-twtr-scribe-element="ECTX" data-twtr-scribe-component="learn-more-" data-text="Learn more ?"> Learn more ? </a> 
+          </div> 
+          <div class="cr02-responsive-visibility twtr-component--last twtr-component"> 
+           <div class="cr02"> 
+            <div class="cr02__item twtr-hidden--md  twtr-hidden--lg  twtr-hidden--xl  "> 
+             <div class="b27-spacing twtr-component twtr-component--first"> 
+              <div class="b27 twtr-spacing--mb-400"> 
+              </div>
+             </div> 
+             <div class="b12-horizontal-rule twtr-component--last twtr-component"> 
+              <div class="
+  b12
+  b12-thickness--base
+  twtr-color-border--light-gray-neutral
+  
+  twtr-margin__nested--top
+  twtr-margin__nested--bottom"> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="ct01__column
+                    twtr-col-md-4
+                    none
+                    "> 
+         <div class="ct01__wrapper    "> 
+          <div class="b04-image twtr-component twtr-component--first"> 
+           <div class="b04  "> 
+            <div class="b04__image  b04__image--fixed"> <a href="/en/use-cases/build-for-good" target="_self" class="b04__image-link"> 
+              <picture> 
+               <source srcset="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/redesign-2021-images/card-thumbnails/buildforgood_card_tn.jpg.twimg.768.jpg" media="(max-width: 767px)"> 
+               <source srcset="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/redesign-2021-images/card-thumbnails/buildforgood_card_tn.jpg.twimg.2560.jpg" media="(min-width: 1920px)"> 
+               <img src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 688 408%22%3E%3C/svg%3E" style="width: 688px" width="688px" height="408px" data-src="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/redesign-2021-images/card-thumbnails/buildforgood_card_tn.jpg.twimg.1920.jpg" alt="Worker in mask and reflective clothing unloading a box of produce" data-object-fit="cover" class="b04__img
+          b04__img-cover
+          b04__img--fixed
+          is-aligned-left
+          
+          
+          lazyload
+          "> 
+              </picture> </a> 
+            </div> 
+           </div> 
+          </div> 
+          <div class="b27-spacing twtr-component"> 
+           <div class="b27 twtr-spacing--mbf-400"> 
+           </div>
+          </div> 
+          <div class="b02-rich-text-v3 twtr-component"> 
+           <div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--gray-900  "> 
+            <h3><span class="twtr-color--gray-900"><span class="chirp--regular-300 chirp--stepped"><b>Build for good</b></span></span><br> </h3> 
+           </div> 
+          </div> 
+          <div class="b27-spacing twtr-component"> 
+           <div class="b27 twtr-spacing--mbf-300"> 
+           </div>
+          </div> 
+          <div class="b02-rich-text-v3 twtr-component"> 
+           <div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--gray-900  "> 
+            <p><span class="chirp--regular-200 chirp--stepped">Make the world, and Twitter, a better place.</span></p> 
+           </div> 
+          </div> 
+          <div class="b27-spacing twtr-component"> 
+           <div class="b27 twtr-spacing--mbf-50"> 
+           </div>
+          </div> 
+          <div class="b03-button-v3 twtr-component"> <a class="chirp-btn twtr-spacing--mb-0 chirp-btn--black chirp-btn--tertiary chirp-btn--jumbo    twtr-scribe-clicks" href="https://developer.twitter.com/en/use-cases/build-for-good" data-twtr-scribe-section="b03-button-v3" data-twtr-scribe-element="B2UI" data-twtr-scribe-component="learn-more-" data-text="Learn more ?"> Learn more ? </a> 
+          </div> 
+          <div class="cr02-responsive-visibility twtr-component--last twtr-component"> 
+           <div class="cr02"> 
+            <div class="cr02__item twtr-hidden--md  twtr-hidden--lg  twtr-hidden--xl  "> 
+             <div class="b27-spacing twtr-component twtr-component--first"> 
+              <div class="b27 twtr-spacing--mb-400"> 
+              </div>
+             </div> 
+             <div class="b12-horizontal-rule twtr-component--last twtr-component"> 
+              <div class="
+  b12
+  b12-thickness--base
+  twtr-color-border--light-gray-neutral
+  
+  twtr-margin__nested--top
+  twtr-margin__nested--bottom"> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="b27-spacing"> 
+     <div class="b27 twtr-spacing--mbf-900"> 
+     </div>
+    </div> 
+    <div class="e02-editorial-showcase"> 
+     <div class="e02" data-tabs-json="{&quot;tab1&quot;:{&quot;tabLabel&quot;:&quot;Twitter API&quot;,&quot;splitImage&quot;:&quot;https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/redesign-2021-images/editorial-showcases/twitterapi_showcase_d_max.jpg.twimg.1280.jpg&quot;,&quot;splitImageMobile&quot;:&quot;https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/redesign-2021-images/editorial-showcases/twitterapi_showcase_m.jpg.twimg.1280.jpg&quot;,&quot;imgAltText&quot;:&quot;Featured Tweet from Camping Mom expressing enthusiasm for taking her kids camping, with rugged mountain background&quot;,&quot;engagementCount&quot;:false,&quot;imgHorizontalPoint&quot;:&quot;center&quot;,&quot;imgVerticalPoint&quot;:&quot;center&quot;,&quot;imgHorizontalPointMobile&quot;:&quot;center&quot;,&quot;imgVerticalPointMobile&quot;:&quot;center&quot;,&quot;tweetTheme&quot;:&quot;bt01--light&quot;,&quot;tweetTextAnimates&quot;:false,&quot;primaryButtonText&quot;:&quot;Learn more ?&quot;,&quot;primaryButtonLink&quot;:&quot;/content/developer-twitter/en/products/twitter-api&quot;,&quot;tabContent&quot;:&quot;\u003cdiv class\u003d\&quot;e03-editorial-tab\&quot;\u003e\n\n\u003cdiv class\u003d\&quot;e03\&quot;\u003e\n  \u003cdiv class\u003d\&quot;e03__wrapper\&quot;\u003e\n    \n  \n  \n  \n      \n      \n      \n      \u003cdiv class\u003d\&quot;b01-headline-v3 twtr-component twtr-component--first\&quot;\u003e\n\n\n\n\n\n\n\n\n\n\n\n  \n  \u003cdiv class\u003d\&quot;b01-v3 b01-v3__copy--no-margin\&quot;\u003e\n    \u003cdiv class\u003d\&quot;b01-v3__item\&quot;\u003e\n      \u003cdiv class\u003d\&quot;b01-v3__copy\&quot;\u003e\n        \n        \u003ch2 class\u003d\&quot;b01-v3__headline  chirp--extended-bold-700  twtr-color--white  b01-v3--align-left  chirp--fluid\&quot;\u003e\n          Real-time access to the global conversation\n        \u003c/h2\u003e\n      \u003c/div\u003e\n    \u003c/div\u003e\n  \u003c/div\u003e\n\n\n\n\u003c/div\u003e\n\n  \n      \n      \n      \n      \u003cdiv class\u003d\&quot;b27-spacing twtr-component\&quot;\u003e\n\n\n\n\n\n\n\n\n\n\u003cdiv class\u003d\&quot;b27 twtr-spacing--mbf-400\&quot;\u003e\n\u003c/div\u003e\u003c/div\u003e\n\n  \n      \n      \n      \n      \u003cdiv class\u003d\&quot;b02-rich-text-v3 twtr-component\&quot;\u003e\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003cdiv class\u003d\&quot;b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--white  \&quot;\u003e\n  \u003cp\u003e\u003cspan class\u003d\&quot;chirp--regular-200 chirp--stepped\&quot;\u003eUse the Twitter API to listen to and analyze the public conversation, engage with people on Twitter, and innovate. Here you can see how the \u003ca href\u003d\&quot;https://developer.twitter.com/en/docs/twitter-api/tweets/search/introduction\&quot; target\u003d\&quot;_self\&quot; rel\u003d\&quot;nofollow noopener noreferrer\&quot;\u003e\u003cb\u003erecent search&nbsp;endpoint\u003c/b\u003e\u003c/a\u003e was used to find Tweets with specific keywords.\u003c/span\u003e\u003c/p\u003e\r\n\n\u003c/div\u003e\n\u003c/div\u003e\n\n  \n      \n      \n      \n      \u003cdiv class\u003d\&quot;b27-spacing twtr-component\&quot;\u003e\n\n\n\n\n\n\n\n\n\n\u003cdiv class\u003d\&quot;b27 twtr-spacing--mbf-100\&quot;\u003e\n\u003c/div\u003e\u003c/div\u003e\n\n  \n      \n      \n      \n      \u003cdiv class\u003d\&quot;b19-code-snippet twtr-component-space--md twtr-component--last twtr-component\&quot;\u003e\n\n\n\n\n\n\n\n\n\n\n\n\u003cdiv class\u003d\&quot;b19-snippet  b19__theme--dark\&quot;\u003e\n  \u003c!--Rendering snippet component with tabs--\u003e\n  \n  \u003cdiv class\u003d\&quot;t04-numbered-code-snippet\&quot;\u003e\n    \u003cdiv class\u003d\&quot;t04__container\&quot;\u003e\n      \u003cnav class\u003d\&quot;t04__nav\&quot; role\u003d\&quot;tablist\&quot; aria-label\u003d\&quot;Code Examples\&quot;\u003e\n        \n          \u003cbutton aria-selected\u003d\&quot;true\&quot; class\u003d\&quot;t04__nav-item  b19__tab-title--white  twtr-type--roman-100  t04__nav-item--active\&quot; role\u003d\&quot;tab\&quot; data-lang\u003d\&quot;t04__tab--bash\&quot; data-index\u003d\&quot;0\&quot; id\u003d\&quot;subtab-0\&quot;\u003e\n              Example Request\n          \u003c/button\u003e\n        \n          \u003cbutton aria-selected\u003d\&quot;false\&quot; class\u003d\&quot;t04__nav-item  b19__tab-title--white  twtr-type--roman-100  \&quot; role\u003d\&quot;tab\&quot; data-lang\u003d\&quot;t04__tab--json\&quot; data-index\u003d\&quot;1\&quot; id\u003d\&quot;subtab-1\&quot;\u003e\n              Example Response\n          \u003c/button\u003e\n        \n      \u003c/nav\u003e\n      \n        \u003cdiv aria-labelledby\u003d\&quot;subtab-0\&quot; id\u003d\&quot;t04__tab--0\&quot; class\u003d\&quot;t04__tab t04__tab--active\&quot; role\u003d\&quot;tabpanel\&quot;\u003e\n\n          \n  \u003cdiv class\u003d\&quot;t05-inline-code-snippet  \&quot;\u003e\n    \u003c!--line-numbers and language are prismjs classes, these classes are used to render line numbers and code properly--\u003e\n    \u003cpre class\u003d\&quot;line-numbers     t05__pre--wrap-text\&quot;\u003e\n      \u003ccode tabindex\u003d\&quot;0\&quot; class\u003d\&quot;t05__copy  language-bash\&quot;\u003ecurl --request GET --location \u0026#39;https://api.twitter.com/2/tweets/search/recent?tweet.fields\u003dcontext_annotations\u0026amp;max_results\u003d100\u0026amp;query\u003dcamping(nature%20OR%20%22outdoor%20actvities%22)\u0026#39; \\\r\n--header \u0026#39;Authorization: Bearer $BEARER_TOKEN\u0026#39;\u003c/code\u003e\n    \u003c/pre\u003e\n    \n  \u003c/div\u003e\n\n        \u003c/div\u003e\n      \n        \u003cdiv aria-labelledby\u003d\&quot;subtab-1\&quot; aria-hidden id\u003d\&quot;t04__tab--1\&quot; class\u003d\&quot;t04__tab \&quot; role\u003d\&quot;tabpanel\&quot;\u003e\n\n          \n  \u003cdiv class\u003d\&quot;t05-inline-code-snippet  \&quot;\u003e\n    \u003c!--line-numbers and language are prismjs classes, these classes are used to render line numbers and code properly--\u003e\n    \u003cpre class\u003d\&quot;line-numbers     t05__pre--wrap-text\&quot;\u003e\n      \u003ccode tabindex\u003d\&quot;0\&quot; class\u003d\&quot;t05__copy  language-json\&quot;\u003e{\r\n   \u0026#34;data\u0026#34;: {\r\n       \u0026#34;context_annotations\u0026#34;: [\r\n           {\r\n               \u0026#34;domain\u0026#34;: {\r\n                   \u0026#34;id\u0026#34;: \u0026#34;65\u0026#34;,\r\n                   \u0026#34;name\u0026#34;: \u0026#34;Interests and Hobbies Vertical\u0026#34;,\r\n                   \u0026#34;description\u0026#34;: \u0026#34;Top level interests and hobbies groupings, like Food or Travel\u0026#34;\r\n               },\r\n               \u0026#34;entity\u0026#34;: {\r\n                   \u0026#34;id\u0026#34;: \u0026#34;839159814991167489\u0026#34;,\r\n                   \u0026#34;name\u0026#34;: \u0026#34;Travel\u0026#34;,\r\n                   \u0026#34;description\u0026#34;: \u0026#34;Travel\u0026#34;\r\n               }\r\n           },\r\n           {\r\n               \u0026#34;domain\u0026#34;: {\r\n                   \u0026#34;id\u0026#34;: \u0026#34;66\u0026#34;,\r\n                   \u0026#34;name\u0026#34;: \u0026#34;Interests and Hobbies Category\u0026#34;,\r\n                   \u0026#34;description\u0026#34;: \u0026#34;A grouping of interests and hobbies entities, like Novelty Food or Destinations\u0026#34;\r\n               },\r\n               \u0026#34;entity\u0026#34;: {\r\n                   \u0026#34;id\u0026#34;: \u0026#34;839160129752686593\u0026#34;,\r\n                   \u0026#34;name\u0026#34;: \u0026#34;General Travel\u0026#34;,\r\n                   \u0026#34;description\u0026#34;: \u0026#34;General Travel\u0026#34;\r\n               }\r\n           },\r\n           {\r\n               \u0026#34;domain\u0026#34;: {\r\n                   \u0026#34;id\u0026#34;: \u0026#34;66\u0026#34;,\r\n                   \u0026#34;name\u0026#34;: \u0026#34;Interests and Hobbies Category\u0026#34;,\r\n                   \u0026#34;description\u0026#34;: \u0026#34;A grouping of interests and hobbies entities, like Novelty Food or Destinations\u0026#34;\r\n               },\r\n               \u0026#34;entity\u0026#34;: {\r\n                   \u0026#34;id\u0026#34;: \u0026#34;1046575724830720001\u0026#34;,\r\n                   \u0026#34;name\u0026#34;: \u0026#34;Outdoor Activities\u0026#34;,\r\n                   \u0026#34;description\u0026#34;: \u0026#34;Outdoor Activities\u0026#34;\r\n               }\r\n           },\r\n           {\r\n               \u0026#34;domain\u0026#34;: {\r\n                   \u0026#34;id\u0026#34;: \u0026#34;67\u0026#34;,\r\n                   \u0026#34;name\u0026#34;: \u0026#34;Interests and Hobbies\u0026#34;,\r\n                   \u0026#34;description\u0026#34;: \u0026#34;Interests, opinions, and behaviors of individuals, groups, or cultures; like Speciality Cooking or Theme Parks\u0026#34;\r\n               },\r\n               \u0026#34;entity\u0026#34;: {\r\n                   \u0026#34;id\u0026#34;: \u0026#34;849076092111536128\u0026#34;,\r\n                   \u0026#34;name\u0026#34;: \u0026#34;Adventure travel\u0026#34;,\r\n                   \u0026#34;description\u0026#34;: \u0026#34;Adventure travel\u0026#34;\r\n               }\r\n           },\r\n           {\r\n               \u0026#34;domain\u0026#34;: {\r\n                   \u0026#34;id\u0026#34;: \u0026#34;67\u0026#34;,\r\n                   \u0026#34;name\u0026#34;: \u0026#34;Interests and Hobbies\u0026#34;,\r\n                   \u0026#34;description\u0026#34;: \u0026#34;Interests, opinions, and behaviors of individuals, groups, or cultures; like Speciality Cooking or Theme Parks\u0026#34;\r\n               },\r\n               \u0026#34;entity\u0026#34;: {\r\n                   \u0026#34;id\u0026#34;: \u0026#34;849076476272009216\u0026#34;,\r\n                   \u0026#34;name\u0026#34;: \u0026#34;Camping\u0026#34;,\r\n                   \u0026#34;description\u0026#34;: \u0026#34;Camping\u0026#34;\r\n               }\r\n           },\r\n           {\r\n               \u0026#34;domain\u0026#34;: {\r\n                   \u0026#34;id\u0026#34;: \u0026#34;67\u0026#34;,\r\n                   \u0026#34;name\u0026#34;: \u0026#34;Interests and Hobbies\u0026#34;,\r\n                   \u0026#34;description\u0026#34;: \u0026#34;Interests, opinions, and behaviors of individuals, groups, or cultures; like Speciality Cooking or Theme Parks\u0026#34;\r\n               },\r\n               \u0026#34;entity\u0026#34;: {\r\n                   \u0026#34;id\u0026#34;: \u0026#34;1103294729079349250\u0026#34;,\r\n                   \u0026#34;name\u0026#34;: \u0026#34;Nature\u0026#34;,\r\n                   \u0026#34;description\u0026#34;: \u0026#34;Nature\u0026#34;\r\n               }\r\n           },\r\n           {\r\n               \u0026#34;domain\u0026#34;: {\r\n                   \u0026#34;id\u0026#34;: \u0026#34;65\u0026#34;,\r\n                   \u0026#34;name\u0026#34;: \u0026#34;Interests and Hobbies Vertical\u0026#34;,\r\n                   \u0026#34;description\u0026#34;: \u0026#34;Top level interests and hobbies groupings, like Food or Travel\u0026#34;\r\n               },\r\n               \u0026#34;entity\u0026#34;: {\r\n                   \u0026#34;id\u0026#34;: \u0026#34;839159814991167489\u0026#34;,\r\n                   \u0026#34;name\u0026#34;: \u0026#34;Travel\u0026#34;,\r\n                   \u0026#34;description\u0026#34;: \u0026#34;Travel\u0026#34;\r\n               }\r\n           },\r\n           {\r\n               \u0026#34;domain\u0026#34;: {\r\n                   \u0026#34;id\u0026#34;: \u0026#34;66\u0026#34;,\r\n                   \u0026#34;name\u0026#34;: \u0026#34;Interests and Hobbies Category\u0026#34;,\r\n                   \u0026#34;description\u0026#34;: \u0026#34;A grouping of interests and hobbies entities, like Novelty Food or Destinations\u0026#34;\r\n               },\r\n               \u0026#34;entity\u0026#34;: {\r\n                   \u0026#34;id\u0026#34;: \u0026#34;839160129752686593\u0026#34;,\r\n                   \u0026#34;name\u0026#34;: \u0026#34;General Travel\u0026#34;,\r\n                   \u0026#34;description\u0026#34;: \u0026#34;General Travel\u0026#34;\r\n               }\r\n           },\r\n           {\r\n               \u0026#34;domain\u0026#34;: {\r\n                   \u0026#34;id\u0026#34;: \u0026#34;67\u0026#34;,\r\n                   \u0026#34;name\u0026#34;: \u0026#34;Interests and Hobbies\u0026#34;,\r\n                   \u0026#34;description\u0026#34;: \u0026#34;Interests, opinions, and behaviors of individuals, groups, or cultures; like Speciality Cooking or Theme Parks\u0026#34;\r\n               },\r\n               \u0026#34;entity\u0026#34;: {\r\n                   \u0026#34;id\u0026#34;: \u0026#34;839161975712067584\u0026#34;,\r\n                   \u0026#34;name\u0026#34;: \u0026#34;Travel Actions\u0026#34;,\r\n                   \u0026#34;description\u0026#34;: \u0026#34;This entity includes all conversations about travel and vacation.\u0026#34;\r\n               }\r\n           }\r\n       ],\r\n       \u0026#34;id\u0026#34;: \u0026#34;1392142832274612224\u0026#34;,\r\n       \u0026#34;text\u0026#34;: \u0026#34;Can\u0026#39;t wait to take my family camping at all the amazing nature areas in my state that I loved growing up!\u0026#34;\r\n   }\r\n}\u003c/code\u003e\n    \u003c/pre\u003e\n    \n  \u003c/div\u003e\n\n        \u003c/div\u003e\n      \n    \u003c/div\u003e\n  \u003c/div\u003e\n\n  \u003c!--Rendering snippet component single code--\u003e\n  \n  \u003c!--To support legacy mode(initial version) of snippet component--\u003e\n  \n\u003c/div\u003e\n\u003c/div\u003e\n\n  \n  \n  \u003c/div\u003e\n\u003c/div\u003e\n\u003c/div\u003e&quot;},&quot;tab2&quot;:{&quot;tabLabel&quot;:&quot;Twitter Ads API&quot;,&quot;splitImage&quot;:&quot;https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/redesign-2021-images/editorial-showcases/twitteradsapi_showcase_d_max.jpg.twimg.1280.jpg&quot;,&quot;splitImageMobile&quot;:&quot;https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/redesign-2021-images/editorial-showcases/twitteradsapi_showcase_m.jpg.twimg.1280.jpg&quot;,&quot;imgAltText&quot;:&quot;Featured Tweet from Regression Basin National Park to fourth graders and their families, with snowy blue mountain background&quot;,&quot;engagementCount&quot;:false,&quot;imgHorizontalPoint&quot;:&quot;center&quot;,&quot;imgVerticalPoint&quot;:&quot;center&quot;,&quot;imgHorizontalPointMobile&quot;:&quot;center&quot;,&quot;imgVerticalPointMobile&quot;:&quot;center&quot;,&quot;tweetTheme&quot;:&quot;bt01--light&quot;,&quot;tweetTextAnimates&quot;:false,&quot;primaryButtonText&quot;:&quot;Learn more ?&quot;,&quot;primaryButtonLink&quot;:&quot;/content/developer-twitter/en/products/twitter-ads-api&quot;,&quot;tabContent&quot;:&quot;\u003cdiv class\u003d\&quot;e03-editorial-tab\&quot;\u003e\n\n\u003cdiv class\u003d\&quot;e03\&quot;\u003e\n  \u003cdiv class\u003d\&quot;e03__wrapper\&quot;\u003e\n    \n  \n  \n  \n      \n      \n      \n      \u003cdiv class\u003d\&quot;ct16-columns-spa twtr-component twtr-component--first\&quot;\u003e\u003c/div\u003e\n\n  \n      \n      \n      \n      \u003cdiv class\u003d\&quot;b01-headline-v3 twtr-component\&quot;\u003e\n\n\n\n\n\n\n\n\n\n\n\n  \n  \u003cdiv class\u003d\&quot;b01-v3 b01-v3__copy--no-margin\&quot;\u003e\n    \u003cdiv class\u003d\&quot;b01-v3__item\&quot;\u003e\n      \u003cdiv class\u003d\&quot;b01-v3__copy\&quot;\u003e\n        \n        \u003ch2 class\u003d\&quot;b01-v3__headline  chirp--extended-bold-700  twtr-color--white  b01-v3--align-left  chirp--fluid\&quot;\u003e\n          Build solutions that meet the needs of advertisers\n        \u003c/h2\u003e\n      \u003c/div\u003e\n    \u003c/div\u003e\n  \u003c/div\u003e\n\n\n\n\u003c/div\u003e\n\n  \n      \n      \n      \n      \u003cdiv class\u003d\&quot;b27-spacing twtr-component\&quot;\u003e\n\n\n\n\n\n\n\n\n\n\u003cdiv class\u003d\&quot;b27 twtr-spacing--mbf-400\&quot;\u003e\n\u003c/div\u003e\u003c/div\u003e\n\n  \n      \n      \n      \n      \u003cdiv class\u003d\&quot;b02-rich-text-v3 twtr-component\&quot;\u003e\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003cdiv class\u003d\&quot;b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--white  \&quot;\u003e\n  \u003cp\u003e\u003cspan class\u003d\&quot;chirp--regular-200 chirp--stepped\&quot;\u003eProgrammatically create, schedule, and manage ad campaigns to engage people on Twitter.\u003c/span\u003e\u003c/p\u003e\r\n\n\u003c/div\u003e\n\u003c/div\u003e\n\n  \n      \n      \n      \n      \u003cdiv class\u003d\&quot;b27-spacing twtr-component\&quot;\u003e\n\n\n\n\n\n\n\n\n\n\u003cdiv class\u003d\&quot;b27 twtr-spacing--mbf-100\&quot;\u003e\n\u003c/div\u003e\u003c/div\u003e\n\n  \n      \n      \n      \n      \u003cdiv class\u003d\&quot;b19-code-snippet twtr-component-space--md twtr-component--last twtr-component\&quot;\u003e\n\n\n\n\n\n\n\n\n\n\n\n\u003cdiv class\u003d\&quot;b19-snippet  b19__theme--dark\&quot;\u003e\n  \u003c!--Rendering snippet component with tabs--\u003e\n  \n  \u003cdiv class\u003d\&quot;t04-numbered-code-snippet\&quot;\u003e\n    \u003cdiv class\u003d\&quot;t04__container\&quot;\u003e\n      \u003cnav class\u003d\&quot;t04__nav\&quot; role\u003d\&quot;tablist\&quot; aria-label\u003d\&quot;Code Examples\&quot;\u003e\n        \n          \u003cbutton aria-selected\u003d\&quot;true\&quot; class\u003d\&quot;t04__nav-item  b19__tab-title--white  twtr-type--roman-100  t04__nav-item--active\&quot; role\u003d\&quot;tab\&quot; data-lang\u003d\&quot;t04__tab--javascript\&quot; data-index\u003d\&quot;0\&quot; id\u003d\&quot;subtab-0\&quot;\u003e\n              Example Request\n          \u003c/button\u003e\n        \n          \u003cbutton aria-selected\u003d\&quot;false\&quot; class\u003d\&quot;t04__nav-item  b19__tab-title--white  twtr-type--roman-100  \&quot; role\u003d\&quot;tab\&quot; data-lang\u003d\&quot;t04__tab--json\&quot; data-index\u003d\&quot;1\&quot; id\u003d\&quot;subtab-1\&quot;\u003e\n              Example Response\n          \u003c/button\u003e\n        \n      \u003c/nav\u003e\n      \n        \u003cdiv aria-labelledby\u003d\&quot;subtab-0\&quot; id\u003d\&quot;t04__tab--0\&quot; class\u003d\&quot;t04__tab t04__tab--active\&quot; role\u003d\&quot;tabpanel\&quot;\u003e\n\n          \n  \u003cdiv class\u003d\&quot;t05-inline-code-snippet  \&quot;\u003e\n    \u003c!--line-numbers and language are prismjs classes, these classes are used to render line numbers and code properly--\u003e\n    \u003cpre class\u003d\&quot;line-numbers     \&quot;\u003e\n      \u003ccode tabindex\u003d\&quot;0\&quot; class\u003d\&quot;t05__copy  language-javascript\&quot;\u003e# Create a new Campaign:\r\n\r\ntwurl -H ads-api.twitter.com -X POST \u0026#34;/2/accounts/hkk5/campaigns?funding_instrument_id\u003dhw6ie\u0026amp;total_budget_amount_local_micro\u003d5500000\u0026amp;daily_budget_amount_local_micro\u003d500000\u0026amp;start_time\u003d2013-01-01T00:00:01Z\u0026amp;entity_status\u003dPAUSED\u0026amp;name\u003dLaunch\u0026#34;\u003c/code\u003e\n    \u003c/pre\u003e\n    \n  \u003c/div\u003e\n\n        \u003c/div\u003e\n      \n        \u003cdiv aria-labelledby\u003d\&quot;subtab-1\&quot; aria-hidden id\u003d\&quot;t04__tab--1\&quot; class\u003d\&quot;t04__tab \&quot; role\u003d\&quot;tabpanel\&quot;\u003e\n\n          \n  \u003cdiv class\u003d\&quot;t05-inline-code-snippet  \&quot;\u003e\n    \u003c!--line-numbers and language are prismjs classes, these classes are used to render line numbers and code properly--\u003e\n    \u003cpre class\u003d\&quot;line-numbers     \&quot;\u003e\n      \u003ccode tabindex\u003d\&quot;0\&quot; class\u003d\&quot;t05__copy  language-json\&quot;\u003e\u0026#34;data\u0026#34;: {\r\n    \u0026#34;name\u0026#34;: \u0026#34;Launch\u0026#34;,\r\n    \u0026#34;start_time\u0026#34;: \u0026#34;2013-01-01T00:00:01Z\u0026#34;,\r\n    \u0026#34;reasons_not_servable\u0026#34;: [\r\n      \u0026#34;PAUSED_BY_ADVERTISER\u0026#34;,\r\n      \u0026#34;INCOMPLETE\u0026#34;\r\n    ],\r\n    \u0026#34;servable\u0026#34;: false,\r\n    \u0026#34;daily_budget_amount_local_micro\u0026#34;: 500000,\r\n    \u0026#34;end_time\u0026#34;: null,\r\n    \u0026#34;funding_instrument_id\u0026#34;: \u0026#34;hw6ie\u0026#34;,\r\n    \u0026#34;duration_in_days\u0026#34;: null,\r\n    \u0026#34;standard_delivery\u0026#34;: true,\r\n    \u0026#34;total_budget_amount_local_micro\u0026#34;: 5500000,\r\n    \u0026#34;id\u0026#34;: \u0026#34;9bo81\u0026#34;,\r\n    \u0026#34;entity_status\u0026#34;: \u0026#34;PAUSED\u0026#34;,\r\n    \u0026#34;account_id\u0026#34;: \u0026#34;hkk5\u0026#34;,\r\n    \u0026#34;frequency_cap\u0026#34;: null,\r\n    \u0026#34;currency\u0026#34;: \u0026#34;USD\u0026#34;,\r\n    \u0026#34;created_at\u0026#34;: \u0026#34;2017-08-21T23:01:20Z\u0026#34;,\r\n    \u0026#34;updated_at\u0026#34;: \u0026#34;2017-08-21T23:01:20Z\u0026#34;,\r\n    \u0026#34;deleted\u0026#34;: false\r\n  }\r\n# Create a new Campaign:\u003c/code\u003e\n    \u003c/pre\u003e\n    \n  \u003c/div\u003e\n\n        \u003c/div\u003e\n      \n    \u003c/div\u003e\n  \u003c/div\u003e\n\n  \u003c!--Rendering snippet component single code--\u003e\n  \n  \u003c!--To support legacy mode(initial version) of snippet component--\u003e\n  \n\u003c/div\u003e\n\u003c/div\u003e\n\n  \n  \n  \u003c/div\u003e\n\u003c/div\u003e\n\u003c/div\u003e&quot;},&quot;tab3&quot;:{&quot;tabLabel&quot;:&quot;Twitter for Websites&quot;,&quot;splitImage&quot;:&quot;https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/redesign-2021-images/editorial-showcases/twitterforwebsites_showcase_d_max.jpg.twimg.1280.jpg&quot;,&quot;splitImageMobile&quot;:&quot;https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/redesign-2021-images/editorial-showcases/twitterforwebsites_showcase_m.jpg.twimg.1280.jpg&quot;,&quot;imgAltText&quot;:&quot;Featured Tweet from Sandbox National Park promoting guides and passes, with forest and mountain background&quot;,&quot;engagementCount&quot;:false,&quot;imgHorizontalPoint&quot;:&quot;center&quot;,&quot;imgVerticalPoint&quot;:&quot;center&quot;,&quot;imgHorizontalPointMobile&quot;:&quot;center&quot;,&quot;imgVerticalPointMobile&quot;:&quot;center&quot;,&quot;tweetTheme&quot;:&quot;bt01--light&quot;,&quot;tweetTextAnimates&quot;:false,&quot;primaryButtonText&quot;:&quot;Learn more ?&quot;,&quot;primaryButtonLink&quot;:&quot;/content/developer-twitter/en/products/twitter-for-websites&quot;,&quot;tabContent&quot;:&quot;\u003cdiv class\u003d\&quot;e03-editorial-tab\&quot;\u003e\n\n\u003cdiv class\u003d\&quot;e03\&quot;\u003e\n  \u003cdiv class\u003d\&quot;e03__wrapper\&quot;\u003e\n    \n  \n  \n  \n      \n      \n      \n      \u003cdiv class\u003d\&quot;b01-headline-v3 twtr-component twtr-component--first\&quot;\u003e\n\n\n\n\n\n\n\n\n\n\n\n  \n  \u003cdiv class\u003d\&quot;b01-v3 b01-v3__copy--no-margin\&quot;\u003e\n    \u003cdiv class\u003d\&quot;b01-v3__item\&quot;\u003e\n      \u003cdiv class\u003d\&quot;b01-v3__copy\&quot;\u003e\n        \n        \u003ch2 class\u003d\&quot;b01-v3__headline  chirp--extended-bold-700  twtr-color--white  b01-v3--align-left  chirp--fluid\&quot;\u003e\n          The power of Twitter in your website or app\n        \u003c/h2\u003e\n      \u003c/div\u003e\n    \u003c/div\u003e\n  \u003c/div\u003e\n\n\n\n\u003c/div\u003e\n\n  \n      \n      \n      \n      \u003cdiv class\u003d\&quot;b27-spacing twtr-component\&quot;\u003e\n\n\n\n\n\n\n\n\n\n\u003cdiv class\u003d\&quot;b27 twtr-spacing--mbf-400\&quot;\u003e\n\u003c/div\u003e\u003c/div\u003e\n\n  \n      \n      \n      \n      \u003cdiv class\u003d\&quot;b02-rich-text-v3 twtr-component\&quot;\u003e\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003cdiv class\u003d\&quot;b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--white  \&quot;\u003e\n  \u003cp\u003e\u003cspan class\u003d\&quot;chirp--regular-200 chirp--stepped\&quot;\u003eDisplay beautifully rendered, interactive Tweets with Twitter embeds, publish mobile-optimized pages with AMP, and drive valuable engagement with Cards.\u003c/span\u003e\u003c/p\u003e\r\n\n\u003c/div\u003e\n\u003c/div\u003e\n\n  \n      \n      \n      \n      \u003cdiv class\u003d\&quot;b27-spacing twtr-component\&quot;\u003e\n\n\n\n\n\n\n\n\n\n\u003cdiv class\u003d\&quot;b27 twtr-spacing--mbf-100\&quot;\u003e\n\u003c/div\u003e\u003c/div\u003e\n\n  \n      \n      \n      \n      \u003cdiv class\u003d\&quot;b19-code-snippet twtr-component-space--md twtr-component--last twtr-component\&quot;\u003e\n\n\n\n\n\n\n\n\n\n\n\n\u003cdiv class\u003d\&quot;b19-snippet  b19__theme--dark\&quot;\u003e\n  \u003c!--Rendering snippet component with tabs--\u003e\n  \n  \u003cdiv class\u003d\&quot;t04-numbered-code-snippet\&quot;\u003e\n    \u003cdiv class\u003d\&quot;t04__container\&quot;\u003e\n      \u003cnav class\u003d\&quot;t04__nav\&quot; role\u003d\&quot;tablist\&quot; aria-label\u003d\&quot;Code Examples\&quot;\u003e\n        \n          \u003cbutton aria-selected\u003d\&quot;true\&quot; class\u003d\&quot;t04__nav-item  b19__tab-title--white  twtr-type--roman-100  t04__nav-item--active\&quot; role\u003d\&quot;tab\&quot; data-lang\u003d\&quot;t04__tab--javascript\&quot; data-index\u003d\&quot;0\&quot; id\u003d\&quot;subtab-0\&quot;\u003e\n              Example Request\n          \u003c/button\u003e\n        \n          \u003cbutton aria-selected\u003d\&quot;false\&quot; class\u003d\&quot;t04__nav-item  b19__tab-title--white  twtr-type--roman-100  \&quot; role\u003d\&quot;tab\&quot; data-lang\u003d\&quot;t04__tab--javascript\&quot; data-index\u003d\&quot;1\&quot; id\u003d\&quot;subtab-1\&quot;\u003e\n              Example Response\n          \u003c/button\u003e\n        \n      \u003c/nav\u003e\n      \n        \u003cdiv aria-labelledby\u003d\&quot;subtab-0\&quot; id\u003d\&quot;t04__tab--0\&quot; class\u003d\&quot;t04__tab t04__tab--active\&quot; role\u003d\&quot;tabpanel\&quot;\u003e\n\n          \n  \u003cdiv class\u003d\&quot;t05-inline-code-snippet  \&quot;\u003e\n    \u003c!--line-numbers and language are prismjs classes, these classes are used to render line numbers and code properly--\u003e\n    \u003cpre class\u003d\&quot;line-numbers     t05__pre--wrap-text\&quot;\u003e\n      \u003ccode tabindex\u003d\&quot;0\&quot; class\u003d\&quot;t05__copy  language-javascript\&quot;\u003e# Fetch any embeddable Twitter object from the oEmbed API\r\n\r\n\r\nlet oembedResponse \u003d await fetch(new Request(\u0026#39;https://publish.twitter.com/oembed?url\u003dhttps://twitter.com/jack/status/20\u0026#39;));\r\nlet oembedTweet \u003d oembedResponse.json();\r\n\r\n# Make a request to the oEmbed API\r\n\r\n{\r\n  \u0026#34;url\u0026#34;: \u0026#34;https://twitter.com/jack/status/20\u0026#34;,\r\n  \u0026#34;author_name\u0026#34;: \u0026#34;jack\u0026#34;,\r\n  \u0026#34;author_url\u0026#34;: \u0026#34;https://twitter.com/jack\u0026#34;,\r\n  \u0026#34;html\u0026#34;: \u0026#34;\u0026lt;blockquote class\u003d\\\u0026#34;twitter-tweet\\\u0026#34;\u0026gt;\u0026lt;p lang\u003d\\\u0026#34;en\\\u0026#34; dir\u003d\\\u0026#34;ltr\\\u0026#34;\u0026gt;just setting up my twttr\u0026lt;/p\u0026gt;\u0026amp;mdash; jack (@jack) \u0026lt;a href\u003d\\\u0026#34;https://twitter.com/jack/status/20\\\u0026#34;\u0026gt;March 21, 2006\u0026lt;/a\u0026gt;\u0026lt;/blockquote\u0026gt;\\n\u0026lt;script async src\u003d\\\u0026#34;//platform.twitter.com/widgets.js\\\u0026#34; charset\u003d\\\u0026#34;utf-8\\\u0026#34;\u0026gt;\u0026lt;/script\u0026gt;\u0026#34;,\r\n  \u0026#34;width\u0026#34;: 550,\r\n  \u0026#34;height\u0026#34;: null,\r\n  \u0026#34;type\u0026#34;: \u0026#34;rich\u0026#34;,\r\n  \u0026#34;cache_age\u0026#34;: \u0026#34;3153600000\u0026#34;,\r\n  \u0026#34;provider_name\u0026#34;: \u0026#34;Twitter\u0026#34;,\r\n  \u0026#34;provider_url\u0026#34;: \u0026#34;https://twitter.com\u0026#34;,\r\n  \u0026#34;version\u0026#34;: \u0026#34;1.0\u0026#34;\r\n}\r\n\u003c/code\u003e\n    \u003c/pre\u003e\n    \n  \u003c/div\u003e\n\n        \u003c/div\u003e\n      \n        \u003cdiv aria-labelledby\u003d\&quot;subtab-1\&quot; aria-hidden id\u003d\&quot;t04__tab--1\&quot; class\u003d\&quot;t04__tab \&quot; role\u003d\&quot;tabpanel\&quot;\u003e\n\n          \n  \u003cdiv class\u003d\&quot;t05-inline-code-snippet  \&quot;\u003e\n    \u003c!--line-numbers and language are prismjs classes, these classes are used to render line numbers and code properly--\u003e\n    \u003cpre class\u003d\&quot;line-numbers     t05__pre--wrap-text\&quot;\u003e\n      \u003ccode tabindex\u003d\&quot;0\&quot; class\u003d\&quot;t05__copy  language-javascript\&quot;\u003e# This returns a JSON oEmbed response\r\n\r\n\u0026lt;article\u0026gt;\r\n  \u0026lt;figure\u0026gt;\r\n    {{{oembedTweet.html}}}\r\n    \u0026lt;figcaption\u0026gt;Tweet by Jack Dorsey\u0026lt;/figcaption\u0026gt;\r\n  \u0026lt;/figure\u0026gt;\r\n  \u0026lt;p\u0026gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\ntempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.\u0026lt;/p\u0026gt;\r\n\u0026lt;/article\u0026gt;\r\n\r\n# Output the HTML into your page.\u003c/code\u003e\n    \u003c/pre\u003e\n    \n  \u003c/div\u003e\n\n        \u003c/div\u003e\n      \n    \u003c/div\u003e\n  \u003c/div\u003e\n\n  \u003c!--Rendering snippet component single code--\u003e\n  \n  \u003c!--To support legacy mode(initial version) of snippet component--\u003e\n  \n\u003c/div\u003e\n\u003c/div\u003e\n\n  \n  \n  \u003c/div\u003e\n\u003c/div\u003e\n\u003c/div\u003e&quot;}}" data-split-image-alignment="right" data-has-image-tear="true" data-height="large" data-middle-tear-img="https://cdn.cms-twdigitalassets.com/etc/designs/developer2-twitter/public/img/middle_tear_v2.svg" data-middle-tear-reversed-img="https://cdn.cms-twdigitalassets.com/etc/designs/developer2-twitter/public/img/middle_tear_reversed_v2.svg" data-bottom-tear-img="https://cdn.cms-twdigitalassets.com/etc/designs/developer2-twitter/public/img/bottom_tear.svg" data-bg-img="https://cdn.cms-twdigitalassets.com/etc/designs/developer2-twitter/public/img/bg_texture.png"> 
+     </div> 
+    </div> 
+    <div class="b27-spacing"> 
+     <div class="b27 twtr-spacing--mbf-900"> 
+     </div>
+    </div> 
+    <div class="ct01-columns"> 
+     <div class="ct01
+            
+            twtr-padding__nested--top
+            twtr-padding__nested--bottom
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            "> 
+      <div class="ct01__content  twtr-container  "> 
+       <div class="ct01__item  twtr-grid    "> 
+        <div class="ct01__column
+                    twtr-col-md-10  twtr-order-0-xs  twtr-order-0-md  has-no-margin-bottom
+                    none
+                    "> 
+         <div class="ct01__wrapper    "> 
+          <div class="b01-headline-v3 twtr-component twtr-component--first"> 
+           <div class="b01-v3 b01-v3__copy--no-margin"> 
+            <div class="b01-v3__item"> 
+             <div class="b01-v3__copy"> 
+              <h2 class="b01-v3__headline  chirp--display-700  twtr-color--gray-900  b01-v3--align-left  chirp--fluid"> See how others are innovating with the Twitter Developer Platform </h2> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <div class="b27-spacing twtr-component"> 
+           <div class="b27 twtr-spacing--mbf-500"> 
+           </div>
+          </div> 
+          <div class="b02-rich-text-v3 twtr-component--last twtr-component"> 
+           <div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--gray-900 chirp--stepped "> 
+            <p><span class="chirp--regular-200 chirp--stepped"><span class="twtr-color--gray-900">Businesses, researchers, and developers all over the world have used the Twitter Developer Platform to creatively innovate, gain valuable insights, and shape the future. Explore how they did it and get inspired to use the APIs in your own way.</span></span></p> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="ct01-columns"> 
+     <div class="ct01
+            
+            twtr-padding__section-top--top
+            twtr-padding__section-bottom--bottom
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            "> 
+      <div class="ct01__content  twtr-container  "> 
+       <div class="ct01__item  twtr-grid    "> 
+        <div class="ct01__column
+                    twtr-col-md-12
+                    
+                    "> 
+         <div class="ct01__wrapper    "> 
+          <div class="cr02-responsive-visibility twtr-component--last twtr-component twtr-component--first"> 
+           <div class="cr02"> 
+            <div class="cr02__item twtr-hidden--sm  twtr-hidden--xs  "> 
+             <div class="b27-spacing twtr-component--last twtr-component twtr-component--first"> 
+              <div class="b27 twtr-spacing--mbf-600"> 
+              </div>
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="ct01-columns"> 
+     <div class="ct01
+            
+            twtr-padding__nested--top
+            twtr-padding__nested--bottom
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            "> 
+      <div class="ct01__content  twtr-container  "> 
+       <div class="ct01__item  twtr-grid    "> 
+        <div class="ct01__column
+                    twtr-col-md-4
+                    none
+                    "> 
+         <div class="ct01__wrapper    "> 
+          <div class="b23-article-card twtr-component--last twtr-component twtr-component--first"> 
+           <div class="b23__root" data-class-name="b23--article-card" data-card-size="b23--height-md" data-drop-shadow="true" data-image-animated="false" data-image="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/redesign-2021-images/card-thumbnails/default_card_orange_tn.jpg.twimg.768.jpg" data-label="Success story" data-title="Audiense" data-subtitle="See how Audiense uses social listening for personalized engagement." data-cta-text="Read more" data-cta-link="https://developer.twitter.com/en/community/success-stories/audiense" data-hide-image="false" data-hide-eyebrow="false" data-hide-title="false" data-hide-subtitle="false" data-hide-cta="false" data-image-type="THUMBNAIL" data-alt-text="Samples of developer code on orange background"></div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="ct01__column
+                    twtr-col-md-4
+                    none
+                    "> 
+         <div class="ct01__wrapper    "> 
+          <div class="b23-article-card twtr-component--last twtr-component twtr-component--first"> 
+           <div class="b23__root" data-class-name="b23--article-card" data-card-size="b23--height-md" data-drop-shadow="true" data-image-animated="false" data-image="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/redesign-2021-images/card-thumbnails/penn_card_tn.jpg.twimg.768.jpg" data-label="Success story" data-title="Penn Medicine CDH" data-subtitle="Penn Medicine CDH uses Twitter data to understand the COVID-19 health crisis." data-cta-text="Read more" data-cta-link="https://developer.twitter.com/en/community/success-stories/penn" data-hide-image="false" data-hide-eyebrow="false" data-hide-title="false" data-hide-subtitle="false" data-hide-cta="false" data-image-type="THUMBNAIL" data-alt-text="Man wearing a surgical mask and surfing on the mobile with purple abstract background and computer code snippets "></div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="ct01__column
+                    twtr-col-md-4
+                    none
+                    "> 
+         <div class="ct01__wrapper    "> 
+          <div class="b23-article-card twtr-component--last twtr-component twtr-component--first"> 
+           <div class="b23__root" data-class-name="b23--article-card" data-card-size="b23--height-md" data-drop-shadow="true" data-image-animated="false" data-image="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/redesign-2021-images/card-thumbnails/bitproject_card_tn.jpg.twimg.768.jpg" data-label="Success story" data-title="Bit Project" data-subtitle="See how BitProject uses Twitter to help democratize technical education." data-cta-text="Read more" data-cta-link="https://developer.twitter.com/en/community/success-stories/bitproject" data-hide-image="false" data-hide-eyebrow="false" data-hide-title="false" data-hide-subtitle="false" data-hide-cta="false" data-image-type="THUMBNAIL" data-alt-text="Four students studying with books and laptops and an abstract blue background of computer code samples"></div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="ct01-columns"> 
+     <div class="ct01
+            
+            twtr-padding__nested--top
+            twtr-padding__nested--bottom
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            "> 
+      <div class="ct01__content  twtr-container  "> 
+       <div class="ct01__item  twtr-grid    "> 
+        <div class="ct01__column
+                    twtr-col-md-12
+                    none
+                    "> 
+         <div class="ct01__wrapper    "> 
+          <div class="b27-spacing twtr-component twtr-component--first"> 
+           <div class="b27 twtr-spacing--mbf-700"> 
+           </div>
+          </div> 
+          <div class="b03-button-v3 twtr-component"> <a class="chirp-btn twtr-spacing--mb-0 chirp-btn--black chirp-btn--secondary chirp-btn--jumbo    twtr-scribe-clicks" href="https://developer.twitter.com/en/community/success-stories" data-twtr-scribe-section="b03-button-v3" data-twtr-scribe-element="02JZ" data-twtr-scribe-component="browse-all-success-stories" data-text="Browse all success stories"> Browse all success stories </a> 
+          </div> 
+          <div class="cr02-responsive-visibility twtr-component--last twtr-component"> 
+           <div class="cr02"> 
+            <div class="cr02__item twtr-hidden--md  twtr-hidden--lg  twtr-hidden--xl  "> 
+             <div class="b27-spacing twtr-component--last twtr-component twtr-component--first"> 
+              <div class="b27 twtr-spacing--mbf-300"> 
+              </div>
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="b27-spacing"> 
+     <div class="b27 twtr-spacing--mbf-900"> 
+     </div>
+    </div> 
+    <div class="c42-layered-tweet-cards"> 
+     <div class="c42 c42--is-decoupled"> 
+      <div class="c42__locked-content"> 
+       <div class="c42__tweets" data-theme="bt01--light" data-tweet-card-list-json="[
+  {
+    &quot;tweetId&quot;: &quot;1362715576037232644&quot;,
+    &quot;backgroundImg&quot;: &quot;https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/redesign-2021-images/homepage/homepage_layeredtweet_1.jpg.twimg.1280.jpg&quot;
+  },
+  {
+    &quot;tweetId&quot;: &quot;1348329132116103171&quot;,
+    &quot;backgroundImg&quot;: &quot;https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/redesign-2021-images/homepage/homepage_layeredtweet_2.jpg.twimg.1280.jpg&quot;
+  },
+  {
+    &quot;tweetId&quot;: &quot;1334987486343299072&quot;,
+    &quot;backgroundImg&quot;: &quot;https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/redesign-2021-images/homepage/homepage_layeredtweet_3.jpg.twimg.1280.jpg&quot;
+  }
+]"></div> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="b27-spacing"> 
+     <div class="b27 twtr-spacing--mbf-900"> 
+     </div>
+    </div> 
+    <div class="ct01-columns"> 
+     <div class="ct01
+            
+            twtr-padding__nested--top
+            twtr-padding__nested--bottom
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            "> 
+      <div class="ct01__content  twtr-container  "> 
+       <div class="ct01__item  twtr-grid    "> 
+        <div class="ct01__column
+                    twtr-col-md-7  has-no-margin-bottom
+                    none
+                    "> 
+         <div class="ct01__wrapper    "> 
+          <div class="b01-headline-v3 twtr-component twtr-component--first"> 
+           <div class="b01-v3 b01-v3__copy--no-margin"> 
+            <div class="b01-v3__item"> 
+             <div class="b01-v3__copy"> 
+              <h2 class="b01-v3__headline  chirp--display-700  twtr-color--gray-900  b01-v3--align-left  chirp--fluid"> Join the global conversation </h2> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <div class="b27-spacing twtr-component"> 
+           <div class="b27 twtr-spacing--mbf-500"> 
+           </div>
+          </div> 
+          <div class="b02-rich-text-v3 twtr-component"> 
+           <div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--gray-900 chirp--stepped "> 
+            <p><span class="chirp--regular-200 chirp--stepped"><span class="twtr-color--gray-900">Stay up-to-date on the latest developer events and product updates.</span></span></p> 
+           </div> 
+          </div> 
+          <div class="b27-spacing twtr-component"> 
+           <div class="b27 twtr-spacing--mbf-500"> 
+           </div>
+          </div> 
+          <div class="ct09-justify-content twtr-component--last twtr-component"> 
+           <div class="ct09      " style="--ct09-fixed-height: ;"> 
+            <div class="ct09__item"> 
+             <div class="ct09__wrapper  is-direction--row  is-justified-start  is-aligned-start  has-no-margin-bottom  twtr-spacing--pb-0"> 
+              <div class="b03-button-v3 twtr-component twtr-component--first"> <a class="chirp-btn twtr-spacing--mb-100 chirp-btn--black chirp-btn--primary chirp-btn--jumbo    twtr-scribe-clicks" href="https://developer.twitter.com/en/twitterdev-news-subscription" data-twtr-scribe-section="b03-button-v3" data-twtr-scribe-element="A8QL" data-twtr-scribe-component="subscribe-to-newsletter" data-text="Subscribe to newsletter"> Subscribe to newsletter </a> 
+              </div> 
+              <div class="b03-button-v3 twtr-component--last twtr-component"> <a class="chirp-btn twtr-spacing--mb-0 chirp-btn--black chirp-btn--secondary chirp-btn--jumbo    twtr-scribe-clicks" href="https://developer.twitter.com/en/community" data-twtr-scribe-section="b03-button-v3" data-twtr-scribe-element="BB1I" data-twtr-scribe-component="explore-our-community" data-text="Explore our community"> Explore our community </a> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="b27-spacing"> 
+     <div class="b27 twtr-spacing--mbf-900"> 
+     </div>
+    </div> 
+    <div class="ct17-banner-container"> 
+     <div class="ct17__banner-outer-container ct17--top-transition-tear"> 
+      <div class="ct17__banner-container ct17--bg-desktop-horizontal-center ct17--bg-desktop-vertical-center ct17--bg-mobile-horizontal-center ct17--bg-mobile-vertical-center ct17--split-desktop-horizontal-center ct17--split-desktop-vertical-center ct17--bottom-transition-none ct17--alignment-right ct17--content-columns-seven "> 
+       <div class="ct17__background"> <picture> 
+         <source srcset="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/redesign-2021-images/textures/texture_bottombanner_m.jpg.twimg.768.jpg" media="(max-width: 600px)"> 
+         <source srcset="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/redesign-2021-images/textures/texture_bottombanner_d.jpg.twimg.2560.jpg" media="(min-width: 1920px)"> 
+         <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/redesign-2021-images/textures/texture_bottombanner_d.jpg.twimg.1920.jpg" alt="true" data-object-fit="cover" class="ct17__background-img  lazyload"> 
+        </picture> 
+       </div> 
+       <div class="ct17__wrapper twtr-container"> 
+        <div class="ct17__content-wrapper"> 
+         <div class="ct17__content"> 
+          <div class="b27-spacing"> 
+           <div class="b27 twtr-spacing--mbf-700"> 
+           </div>
+          </div> 
+          <div class="b01-headline-v3"> 
+           <div class="b01-v3 b01-v3__copy--no-margin"> 
+            <div class="b01-v3__item"> 
+             <div class="b01-v3__copy"> 
+              <h2 class="b01-v3__headline  chirp--display-700  twtr-color--gray-900  b01-v3--align-left  chirp--fluid"> Ready to build what's next? </h2> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <div class="b27-spacing"> 
+           <div class="b27 twtr-spacing--mbf-500"> 
+           </div>
+          </div> 
+          <div class="b02-rich-text-v3"> 
+           <div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--white chirp--stepped "> 
+            <p><span class="chirp--regular-200 chirp--stepped"><span class="twtr-color--white"><span class="twtr-color--gray-900">Send your first request in no time with Essential access to the Twitter API.</span></span></span></p> 
+           </div> 
+          </div> 
+          <div class="b27-spacing"> 
+           <div class="b27 twtr-spacing--mbf-500"> 
+           </div>
+          </div> 
+          <div class="ct09-justify-content"> 
+           <div class="ct09      " style="--ct09-fixed-height: ;"> 
+            <div class="ct09__item"> 
+             <div class="ct09__wrapper  is-direction--row  is-justified-start  is-aligned-start  has-no-margin-bottom  twtr-spacing--pb-0"> 
+              <div class="b03-button-v3 twtr-component twtr-component--first"> <a class="chirp-btn twtr-spacing--mb-0 chirp-btn--black chirp-btn--primary chirp-btn--jumbo    twtr-scribe-clicks" href="https://developer.twitter.com/en/portal/petition/essential/basic-info" data-twtr-scribe-section="b03-button-v3" data-twtr-scribe-element="EVAR" data-twtr-scribe-component="sign-up" data-text="Sign up"> Sign up </a> 
+              </div> 
+              <div class="b03-button-v3 twtr-component--last twtr-component"> <a class="chirp-btn twtr-spacing--mb-0 chirp-btn--black chirp-btn--secondary chirp-btn--jumbo    twtr-scribe-clicks" href="https://developer.twitter.com/en/docs" data-twtr-scribe-section="b03-button-v3" data-twtr-scribe-element="XXIO" data-twtr-scribe-component="go-to-docs" data-text="Go to docs"> Go to docs </a> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <div class="b27-spacing"> 
+           <div class="b27 twtr-spacing--mbf-600"> 
+           </div>
+          </div> 
+         </div> 
+         <div class="ct17__image-component" data-split-image-alignment="ct17--alignment-right"> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="twtr-container"> 
+     <div id="twtr-article-embedded-survey" class="dtc11"></div> 
+    </div> 
+   </main> 
+   <div> 
+    <footer class="u02fs  twtr-background--blue-extra-light  twtr-background--gray-0"> 
+     <div class="twtr-container"> 
+      <div class="twtr-grid"> 
+       <div class="u02fs__footer-link-col  twtr-col-12  twtr-col-md-4"> <a href="/en/more/developer-terms.html" title="Developer policy and terms" target="_blank" class="u02fs__footer-link  twtr-type--roman-50  twtr-color--gray-900"> Developer policy and terms </a> 
+       </div> 
+       <div class="u02fs__footer-link-col  twtr-col-12  twtr-col-md-4"> <a href="http://twitter.com/twitterdev" title="Follow @twitterdev" target="_blank" class="u02fs__footer-link  twtr-type--roman-50  twtr-color--gray-900"> Follow @twitterdev </a> 
+       </div> 
+       <div class="u02fs__footer-link-col  twtr-col-12  twtr-col-md-4  u02fs__subscribe-button-col"> <a class="b03__button
+      twtr-btn
+      twtr-btn--secondary
+      twtr-btn--size-default
+      twtr-btn-color--secondary-blue
+      u02fs__button
+      twtr-btn__icon--
+      twtr-scribe-clicks" href="https://developer.twitter.com/en/twitterdev-news-subscription" rel="noopener noreferrer" target="_blank" data-twtr-scribe-section="b03-button" data-twtr-scribe-element="Y1Y3" data-twtr-scribe-component="subscribe-to-developer-news" data-text="Subscribe to developer news"> <!--/* Button text --> Subscribe to developer news </a> 
+       </div> 
+      </div> 
+     </div> 
+    </footer> 
+   </div> 
+   <div> 
+    <footer class="u02 twtr-color-bg--black-neutral"> 
+     <div class="twtr-container"> 
+      <div class="u02__wrapper"> 
+       <div class="u02__row  u02__network-map"> 
+        <div class="twtr-grid  u02__twtr-grid"> 
+         <div class="js-accordion  u02__column"> 
+          <h4 class="u02__column__parent  twtr-type--bold-14  twtr-color--gray-0 is-opaque"> Twitter platform <span class="u02__icon  twtr-dtc-fill--extra-light-gray  twtr-hidden--md  twtr-hidden--lg  twtr-hidden--xl"> 
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="9.5" viewbox="0 0 17 9.5" aria-hidden="true" focusable="false" role="none" class="twtr-icon--sm"> <path d="M16.707.293c-.39-.39-1.023-.39-1.414 0L8.5 7.086 1.707.293c-.39-.39-1.023-.39-1.414 0s-.39 1.023 0 1.414l7.5 7.5c.195.195.45.293.707.293s.512-.098.707-.293l7.5-7.5c.39-.39.39-1.023 0-1.414z" /> 
+            </svg> </span> </h4> 
+          <ul class="u02__column__list"> 
+           <li class="u02__link-item"> <a href="https://twitter.com/" title="Twitter.com" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover"> Twitter.com </a> </li> 
+           <li class="u02__link-item"> <a href="https://status.twitterstat.us/" title="Status" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover"> Status </a> </li> 
+           <li class="u02__link-item"> <a href="https://cards-dev.twitter.com/validator" title="Card validator" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover"> Card validator </a> </li> 
+           <li class="u02__link-item"> <a href="https://publish.twitter.com" title="Embed a Tweet" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover"> Embed a Tweet </a> </li> 
+           <li class="u02__link-item"> <a href="https://privacy.twitter.com/" title="Privacy Center" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover"> Privacy Center </a> </li> 
+           <li class="u02__link-item"> <a href="https://transparency.twitter.com/" title="Transparency Center" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover"> Transparency Center </a> </li> 
+          </ul> 
+         </div> 
+         <div class="js-accordion  u02__column"> 
+          <h4 class="u02__column__parent  twtr-type--bold-14  twtr-color--gray-0 is-opaque"> Twitter, Inc. <span class="u02__icon  twtr-dtc-fill--extra-light-gray  twtr-hidden--md  twtr-hidden--lg  twtr-hidden--xl"> 
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="9.5" viewbox="0 0 17 9.5" aria-hidden="true" focusable="false" role="none" class="twtr-icon--sm"> <path d="M16.707.293c-.39-.39-1.023-.39-1.414 0L8.5 7.086 1.707.293c-.39-.39-1.023-.39-1.414 0s-.39 1.023 0 1.414l7.5 7.5c.195.195.45.293.707.293s.512-.098.707-.293l7.5-7.5c.39-.39.39-1.023 0-1.414z" /> 
+            </svg> </span> </h4> 
+          <ul class="u02__column__list"> 
+           <li class="u02__link-item"> <a href="https://about.twitter.com/en/who-we-are/our-company.html" title="About the company" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover"> About the company </a> </li> 
+           <li class="u02__link-item"> <a href="https://about.twitter.com/en/who-we-are/twitter-for-good.html" title="Twitter for Good" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover"> Twitter for Good </a> </li> 
+           <li class="u02__link-item"> <a href="https://blog.twitter.com/" title="Company news" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover"> Company news </a> </li> 
+           <li class="u02__link-item"> <a href="https://about.twitter.com/en/who-we-are/brand-toolkit.html" title="Brand toolkit" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover"> Brand toolkit </a> </li> 
+           <li class="u02__link-item"> <a href="https://careers.twitter.com/" title="Jobs and internships" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover"> Jobs and internships </a> </li> 
+           <li class="u02__link-item"> <a href="https://investor.twitterinc.com/" title="Investors" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover"> Investors </a> </li> 
+          </ul> 
+         </div> 
+         <div class="js-accordion  u02__column"> 
+          <h4 class="u02__column__parent  twtr-type--bold-14  twtr-color--gray-0 is-opaque"> Help <span class="u02__icon  twtr-dtc-fill--extra-light-gray  twtr-hidden--md  twtr-hidden--lg  twtr-hidden--xl"> 
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="9.5" viewbox="0 0 17 9.5" aria-hidden="true" focusable="false" role="none" class="twtr-icon--sm"> <path d="M16.707.293c-.39-.39-1.023-.39-1.414 0L8.5 7.086 1.707.293c-.39-.39-1.023-.39-1.414 0s-.39 1.023 0 1.414l7.5 7.5c.195.195.45.293.707.293s.512-.098.707-.293l7.5-7.5c.39-.39.39-1.023 0-1.414z" /> 
+            </svg> </span> </h4> 
+          <ul class="u02__column__list"> 
+           <li class="u02__link-item"> <a href="https://help.twitter.com/" title="Help Center" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover"> Help Center </a> </li> 
+           <li class="u02__link-item"> <a href="https://help.twitter.com/en/using-twitter" title="Using Twitter" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover"> Using Twitter </a> </li> 
+           <li class="u02__link-item"> <a href="https://media.twitter.com/" title="Twitter Media" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover"> Twitter Media </a> </li> 
+           <li class="u02__link-item"> <a href="https://business.twitter.com/en/help.html" title="Ads Help Center" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover"> Ads Help Center </a> </li> 
+           <li class="u02__link-item"> <a href="https://help.twitter.com/en/managing-your-account" title="Managing your account" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover"> Managing your account </a> </li> 
+           <li class="u02__link-item"> <a href="https://preferencecenter.twitter.com/" title="Email Preference Center" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover"> Email Preference Center </a> </li> 
+           <li class="u02__link-item"> <a href="https://help.twitter.com/en/rules-and-policies" title="Rules and policies" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover"> Rules and policies </a> </li> 
+           <li class="u02__link-item"> <a href="https://help.twitter.com/en/forms.html" title="Contact us" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover"> Contact us </a> </li> 
+          </ul> 
+         </div> 
+         <div class="js-accordion  u02__column"> 
+          <h4 class="u02__column__parent  twtr-type--bold-14  twtr-color--gray-0 is-opaque"> Developer resources <span class="u02__icon  twtr-dtc-fill--extra-light-gray  twtr-hidden--md  twtr-hidden--lg  twtr-hidden--xl"> 
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="9.5" viewbox="0 0 17 9.5" aria-hidden="true" focusable="false" role="none" class="twtr-icon--sm"> <path d="M16.707.293c-.39-.39-1.023-.39-1.414 0L8.5 7.086 1.707.293c-.39-.39-1.023-.39-1.414 0s-.39 1.023 0 1.414l7.5 7.5c.195.195.45.293.707.293s.512-.098.707-.293l7.5-7.5c.39-.39.39-1.023 0-1.414z" /> 
+            </svg> </span> </h4> 
+          <ul class="u02__column__list"> 
+           <li class="u02__link-item"> <a href="https://developer.twitter.com/en" title="Developer home" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover"> Developer home </a> </li> 
+           <li class="u02__link-item"> <a href="https://developer.twitter.com/en/docs" title="Documentation" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover"> Documentation </a> </li> 
+           <li class="u02__link-item"> <a href="https://twittercommunity.com/" title="Forums" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover"> Forums </a> </li> 
+           <li class="u02__link-item"> <a href="https://developer.twitter.com/en/community" title="Communities" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover"> Communities </a> </li> 
+           <li class="u02__link-item"> <a href="https://blog.twitter.com/developer/" title="Developer blog" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover"> Developer blog </a> </li> 
+           <li class="u02__link-item"> <a href="https://blog.twitter.com/engineering/en_us.html" title="Engineering blog" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover"> Engineering blog </a> </li> 
+           <li class="u02__link-item"> <a href="https://developer.twitter.com/en/more/developer-terms" title="Developer terms" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover"> Developer terms </a> </li> 
+          </ul> 
+         </div> 
+         <div class="js-accordion  u02__column"> 
+          <h4 class="u02__column__parent  twtr-type--bold-14  twtr-color--gray-0 is-opaque"> Business resources <span class="u02__icon  twtr-dtc-fill--extra-light-gray  twtr-hidden--md  twtr-hidden--lg  twtr-hidden--xl"> 
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="9.5" viewbox="0 0 17 9.5" aria-hidden="true" focusable="false" role="none" class="twtr-icon--sm"> <path d="M16.707.293c-.39-.39-1.023-.39-1.414 0L8.5 7.086 1.707.293c-.39-.39-1.023-.39-1.414 0s-.39 1.023 0 1.414l7.5 7.5c.195.195.45.293.707.293s.512-.098.707-.293l7.5-7.5c.39-.39.39-1.023 0-1.414z" /> 
+            </svg> </span> </h4> 
+          <ul class="u02__column__list"> 
+           <li class="u02__link-item"> <a href="https://business.twitter.com/en/advertising.html" title="Advertise" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover"> Advertise </a> </li> 
+           <li class="u02__link-item"> <a href="https://business.twitter.com/" title="Twitter for business" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover"> Twitter for business </a> </li> 
+           <li class="u02__link-item"> <a href="https://business.twitter.com/en/resources.html" title="Resources and guides" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover"> Resources and guides </a> </li> 
+           <li class="u02__link-item"> <a href="https://marketing.twitter.com/" title="Twitter for marketers" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover"> Twitter for marketers </a> </li> 
+           <li class="u02__link-item"> <a href="https://marketing.twitter.com/en/insights" title="Marketing insights" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover"> Marketing insights </a> </li> 
+           <li class="u02__link-item"> <a href="https://marketing.twitter.com/en/success-stories" title="Brand inspiration" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover"> Brand inspiration </a> </li> 
+           <li class="u02__link-item"> <a href="https://www.twitterflightschool.com/sl/382652bc" title="Twitter Flight School" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover"> Twitter Flight School </a> </li> 
+          </ul> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="u02__row  u02__legal  twtr-spacing--pt-500"> 
+        <div class="twtr-grid  u02__twtr-grid"> 
+         <div class="u02__column  u02__column--bottom"> <span class="u02__column-footnote  twtr-type--roman-14  twtr-color--gray-0  is-opaque"> © 2022 Twitter, Inc. </span> 
+         </div> 
+         <div class="u02__column  u02__column--bottom"> <a href="https://help.twitter.com/rules-and-policies/twitter-cookies" title="Cookies" target="_blank" class="u02__column-footnote  twtr-type--roman-14  twtr-color--gray-0  is-opaque has-hover"> Cookies </a> 
+         </div> 
+         <div class="u02__column  u02__column--bottom"> <a href="https://twitter.com/privacy" title="Privacy" target="_blank" class="u02__column-footnote  twtr-type--roman-14  twtr-color--gray-0  is-opaque has-hover"> Privacy </a> 
+         </div> 
+         <div class="u02__column  u02__column--bottom"> <a href="https://twitter.com/tos" title="Terms and conditions" target="_blank" class="u02__column-footnote  twtr-type--roman-14  twtr-color--gray-0  is-opaque has-hover"> Terms and conditions </a> 
+         </div> 
+         <div class="u02__column  u02__column--bottom  u08__language-selector"> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </footer> 
+   </div> 
+   <script async src="https://platform.twitter.com/widgets.js"></script> 
+   <div id="page-props" data-page-title="Use Cases, Tutorials, &amp; Documentation " data-page-path="/content/developer-twitter/en"> 
+   </div> 
+   <script type="text/javascript" src="https://cdn.cms-twdigitalassets.com/etc/designs/developer2-twitter/public/js/core.js.twhash.a.f.0ee117a3bedef6f99173ddcfb2817641.js"></script> 
+   <script type="text/javascript" src="https://cdn.cms-twdigitalassets.com/etc/designs/developer2-twitter/public/js/project.js.twhash.a.f.ff5fc794d07e30b425b07b17f9a4723c.js"></script> 
+   <script src="https://cdn.cms-twdigitalassets.com/etc/designs/developer-twitter/clientlib-twtr-profile-adapter.min.twhash.a.cl.c3b119a4cc2249caed364b89790624a4.js"></script> 
+   <div id="u12" class="u12-data-protection-notice"> 
+    <div class="u12-data-protection-notice__item  u12-data-protection-notice__item--a"> 
+     <div class="js-eu-countries-list" data-eu-countries-list="[AT,BE,BG,CY,CZ,DK,EE,FI,FR,DE,EL,HU,IE,IT,LV,LT,LU,MT,NL,PL,PT,RO,SK,SI,ES,SE,UK,IS,NO,LI,CH]"></div> 
+     <div class="u12a-eu-cookie-notice  js-eu-cookie-notice" id="u12a" data-cname="eu_cn"> 
+      <div class="u12a-eu-cookie-notice__item  u12-data-protection-notice__notice"> 
+       <div class="u12a-eu-cookie-notice__content"> 
+        <div class="u12a-eu-cookie-notice__copy"> 
+         <p class="mtc-font  twtr-font  js-cookie-copy"> By using Twitter’s services you agree to our <a href="https://help.twitter.com/en/rules-and-policies/twitter-cookies" target="_blank">Cookies Use</a>. We use cookies for purposes including analytics, personalisation, and ads. </p> 
+        </div> 
+        <div class="u12a-eu-cookie-notice__choice"> 
+         <ul class="u12a-eu-cookie-notice__choice-list"> 
+          <li><button class="u12a-eu-cookie-notice__button  is-blue  u12a-eu-cookie-notice__button--accept  mtc-font  twtr-font  js-accept">OK</button></li> 
+         </ul> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="u12-data-protection-notice__item  u12-data-protection-notice__item--b is-hidden"> 
+     <div class="u12b-opt-in" id="u12b" data-cname="des_opt_in"> 
+      <div class="u12b-opt-in__item  u12-data-protection-notice__notice"> 
+       <div class="u12b-opt-in__content"> 
+        <div class="u12b-opt-in__copy"> 
+         <p class="mtc-font  twtr-font"> This page and certain other Twitter sites place and read third party cookies on your browser that are used for non-essential purposes including targeting of ads.&nbsp;Through these cookies, <u><a href="https://policies.google.com/privacy?hl=en">Google</a></u>, <u><a href="https://www.linkedin.com/legal/privacy-policy" target="_blank">LinkedIn</a></u> and <u><a href="https://www.demandbase.com/privacy-policy/">Demandbase</a></u> collect personal data about you for their own purposes.&nbsp;<u><a href="https://help.twitter.com/en/rules-and-policies/twitter-cookies">Learn more</a></u>.<br> </p> 
+        </div> 
+        <div class="u12b-opt-in__choice twtr-scribe-clicks-within"> 
+         <ul class="u12b-opt-in__choice-list"> 
+          <li> <button class="u12b-opt-in__button  is-blue  u12b-opt-in__button--accept  mtc-font  twtr-font  js-accept twtr-scribe-clicks" data-twtr-scribe-section="u12-data-protection-notice" data-twtr-scribe-element="HI9D" data-twtr-scribe-component="data-protection-notice"> Accept </button> </li> 
+          <li> <button class="u12b-opt-in__button  is-naked  u12b-opt-in__button--decline  mtc-font  twtr-font  js-decline twtr-scribe-clicks" data-twtr-scribe-section="u12-data-protection-notice" data-twtr-scribe-element="HI9D" data-twtr-scribe-component="data-protection-notice"> Decline </button> </li> 
+         </ul> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <link rel="stylesheet" href="https://cdn.cms-twdigitalassets.com/etc/designs/common-twitter/clientlib-u12-data-protection-notice.min.twhash.a.cl.e5f41c96ebe26adc278fe501d69fdebf.css" type="text/css"> 
+   <script src="https://cdn.cms-twdigitalassets.com/etc/designs/common-twitter/clientlib-promise-polyfill.min.twhash.a.cl.678c3c47bfcf62393184734a7204fcdf.js"></script> 
+   <script src="https://cdn.cms-twdigitalassets.com/etc/designs/common-twitter/clientlib-twtr-profile-adapter.min.twhash.a.cl.2f6a2e41ae41c33aba9f8a7dcf876eb6.js"></script> 
+   <script src="https://cdn.cms-twdigitalassets.com/etc/designs/common-twitter/clientlib-u12-data-protection-notice.min.twhash.a.cl.dd36791d0d028510f49c89c6d8b44746.js"></script> 
+  </div>  
+ </body>
+</html>

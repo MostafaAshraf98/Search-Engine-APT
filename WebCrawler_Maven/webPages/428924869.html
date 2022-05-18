@@ -1,0 +1,396 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html> 
+ <head> 
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"> 
+  <meta name="robots" content="index,nofollow"> 
+  <title>IntegratedDevelopmentEnvironments - Python Wiki</title> 
+  <script type="text/javascript" src="/wiki/common/js/common.js"></script> 
+  <script type="text/javascript">
+<!--
+var search_hint = "Search";
+//-->
+</script> 
+  <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="/wiki/europython/css/common.css"> 
+  <link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="/wiki/europython/css/screen.css"> 
+  <link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="/wiki/europython/css/print.css"> 
+  <link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="/wiki/europython/css/projection.css"> <!-- css only for MS IE6/IE7 browsers --> <!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="/wiki/europython/css/msie.css">
+<![endif]--> 
+  <link rel="alternate" title="Python Wiki: IntegratedDevelopmentEnvironments" href="/moin/IntegratedDevelopmentEnvironments?diffs=1&amp;show_att=1&amp;action=rss_rc&amp;unique=0&amp;page=IntegratedDevelopmentEnvironments&amp;ddiffs=1" type="application/rss+xml"> 
+  <link rel="Start" href="/moin/FrontPage"> 
+  <link rel="Alternate" title="Wiki Markup" href="/moin/IntegratedDevelopmentEnvironments?action=raw"> 
+  <link rel="Alternate" media="print" title="Print View" href="/moin/IntegratedDevelopmentEnvironments?action=print"> 
+  <link rel="Search" href="/moin/FindPage"> 
+  <link rel="Index" href="/moin/TitleIndex"> 
+  <link rel="Glossary" href="/moin/WordIndex"> 
+  <link rel="Help" href="/moin/HelpOnFormatting"> 
+ </head> 
+ <body lang="en" dir="ltr"> 
+  <div id="header"> 
+   <form id="searchform" method="get" action="/moin/IntegratedDevelopmentEnvironments"> 
+    <div> 
+     <input type="hidden" name="action" value="fullsearch"> 
+     <input type="hidden" name="context" value="180"> <label for="searchinput">Search:</label> 
+     <input id="searchinput" type="text" name="value" value="" size="20" onfocus="searchFocus(this)" onblur="searchBlur(this)" onkeyup="searchChange(this)" onchange="searchChange(this)" alt="Search"> 
+     <input id="titlesearch" name="titlesearch" type="submit" value="Titles" alt="Search Titles"> 
+     <input id="fullsearch" name="fullsearch" type="submit" value="Text" alt="Search Full Text"> 
+    </div> 
+   </form> 
+   <script type="text/javascript">
+<!--// Initialize search form
+var f = document.getElementById('searchform');
+f.getElementsByTagName('label')[0].style.display = 'none';
+var e = document.getElementById('searchinput');
+searchChange(e);
+searchBlur(e);
+//-->
+</script> 
+   <div id="logo">
+    <a href="/moin/FrontPage"></a><a href="http://www.python.org"><img src="/wiki/europython/img/python-logo.gif" alt="Python"></a><a name="logo"></a>
+   </div> 
+   <div id="locationline"> 
+    <ul id="pagelocation"> 
+     <li><a href="/moin/IntegratedDevelopmentEnvironments">IntegratedDevelopmentEnvironments</a></li> 
+    </ul> 
+   </div> 
+   <ul id="pagetrail"> 
+    <li><a href="/moin/IntegratedDevelopmentEnvironments">IntegratedD...nvironments</a></li> 
+   </ul> 
+  </div> 
+  <div id="sidebar"> 
+   <div id="star"> 
+   </div> 
+   <div class="sidepanel"> 
+    <ul id="navibar"> 
+     <li class="wikilink"><a href="/moin/FrontPage">FrontPage</a></li>
+     <li class="wikilink"><a href="/moin/RecentChanges">RecentChanges</a></li>
+     <li class="wikilink"><a href="/moin/FindPage">FindPage</a></li>
+     <li class="wikilink"><a href="/moin/HelpContents">HelpContents</a></li>
+     <li class="current"><a href="/moin/IntegratedDevelopmentEnvironments">IntegratedD...nvironments</a></li> 
+    </ul> 
+   </div> 
+   <div class="sidepanel"> 
+    <h1>Page</h1> 
+    <ul class="editbar">
+     <li><span class="disabled">Immutable Page</span></li>
+     <li class="toggleCommentsButton" style="display:none;"><a href="#" class="nbcomment" onclick="toggleComments();return false;">Comments</a></li>
+     <li><a class="nbinfo" href="/moin/IntegratedDevelopmentEnvironments?action=info" rel="nofollow">Info</a></li>
+     <li><a class="nbattachments" href="/moin/IntegratedDevelopmentEnvironments?action=AttachFile" rel="nofollow">Attachments</a></li>
+     <li> 
+      <form class="actionsmenu" method="GET" action="/moin/IntegratedDevelopmentEnvironments"> 
+       <div> <label>More Actions:</label> <select name="action" onchange="if ((this.selectedIndex != 0) &amp;&amp;
+                      (this.options[this.selectedIndex].disabled == false)) {
+                this.form.submit();
+            }
+            this.selectedIndex = 0;"> <option value="raw">Raw Text</option> <option value="print">Print View</option> <option value="refresh">Delete Cache</option> <option value="show" disabled class="disabled">------------------------</option> <option value="SpellCheck">Check Spelling</option> <option value="LikePages">Like Pages</option> <option value="LocalSiteMap">Local Site Map</option> <option value="show" disabled class="disabled">------------------------</option> <option value="RenamePage" disabled class="disabled">Rename Page</option> <option value="DeletePage" disabled class="disabled">Delete Page</option> <option value="show" disabled class="disabled">------------------------</option> <option value="show" disabled class="disabled">------------------------</option> <option value="show" disabled class="disabled">Remove Spam</option> <option value="show" disabled class="disabled">Revert to this revision</option> <option value="show" disabled class="disabled">------------------------</option> <option value="SlideShow">SlideShow</option> </select> 
+        <input type="submit" value="Do"> 
+       </div> 
+       <script type="text/javascript">
+<!--// Init menu
+actionsMenuInit('More Actions:');
+//-->
+</script> 
+      </form> </li>
+    </ul> 
+   </div> 
+   <div class="sidepanel"> 
+    <h1>User</h1> 
+    <ul id="username">
+     <li><a href="/moin/IntegratedDevelopmentEnvironments?action=login" id="login" rel="nofollow">Login</a></li>
+    </ul> 
+   </div> 
+  </div> 
+  <div id="page" lang="en" dir="ltr"> 
+   <div dir="ltr" id="content" lang="en">
+    <span class="anchor" id="top"></span> <span class="anchor" id="line-1"></span>
+    <p class="line867"><img alt="(!)" height="16" src="/wiki/europython/img/idea.png" title="(!)" width="16"> <strong>Please keep wiki links as wiki links, use external links only if there is no existing page for the IDE.</strong> <span class="anchor" id="line-2"></span><span class="anchor" id="line-3"></span></p>
+    <p class="line867"> </p>
+    <h1 id="Reviews">Reviews</h1> <span class="anchor" id="line-4"></span>
+    <ul>
+     <li><p class="line891"><a class="http" href="http://proyectojuanchacon.blogspot.com.ee/2016/01/thonny-python-ide-for-beginners.html">First look on Thonny</a> (Jeff Elkner, 2016-01-23) <span class="anchor" id="line-5"></span></p></li>
+     <li><p class="line891"><a class="http" href="http://xcorr.net/2013/04/17/evaluating-ides-for-scientific-python/">Evaluating IDEs for Scientific Python</a> (Patrick Mineault, 2013-05-27) <span class="anchor" id="line-6"></span></p></li>
+     <li><p class="line891"><a class="http" href="http://pythoncentral.io/comparison-of-python-ides-development/">Comparison of Python IDEs for Development</a>(Jason Fruit, 2013-01-14) <span class="anchor" id="line-7"></span></p></li>
+     <li><p class="line891"><a class="http" href="http://www.linux-magazine.com/Online/Blogs/Productivity-Sauce/Do-Python-Coding-with-NINJA-IDE/">Do Python Coding with NINJA-IDE</a>(Dmitri Popov, 2011-07-13) <span class="anchor" id="line-8"></span></p></li>
+     <li><p class="line891"><a class="http" href="http://www.infoworld.com/d/developer-world/infoworld-review-nine-fine-python-development-tools-374">InfoWorld review: Nine fine Python development tools</a> (Rick Grehan, 2010-09-08) <span class="anchor" id="line-9"></span></p></li>
+     <li><p class="line891"><a class="http" href="http://stackoverflow.com/questions/81584">Stackoverflow "what IDE to use for python"</a> (Various, 2009-01-01) <span class="anchor" id="line-10"></span></p></li>
+     <li><p class="line891"><a class="http" href="http://ask.slashdot.org/article.pl?sid=08/09/16/136219">Ask Slashdot: Best Cross-Platform, GUI Editor/IDE For Python?</a> (Various, 2008-09-16) <span class="anchor" id="line-11"></span></p></li>
+     <li><p class="line891"><a class="http" href="http://www.drdobbs.com/linux-open-source/208402843">Wing IDE Professional 3.1.1: An IDE for Python</a> (Dr. Dobb's Journal, June 9, 2008) <span class="anchor" id="line-12"></span></p></li>
+     <li><p class="line862">September 2005 <a class="http" href="http://spyced.blogspot.com/2005/09/review-of-6-python-ides.html">Review of 6 Python IDEs</a> (<a href="/moin/PyDev">PyDev</a>, Eric3, Boa, <a class="nonexistent" href="/moin/BlackAdder">BlackAdder</a>, <a href="/moin/Komodo">Komodo</a>, Wing) and the February 2006 <a class="http" href="http://spyced.blogspot.com/2006/02/pycon-python-ide-review.html">follow-up review of 4</a> (<a href="/moin/PyDev">PyDev</a>, SPE, Komodo, Wing) <span class="anchor" id="line-13"></span></p></li>
+     <li><p class="line891"><a class="https" href="https://python.land/creating-python-programs/using-a-python-ide#What_is_The_Best_Python_IDE">What is the best Python IDE?</a> Opinionated tutorial chapter about using VS Code for Python development (Python.land, 2021) <span class="anchor" id="line-14"></span><span class="anchor" id="line-15"></span></p></li>
+    </ul>
+    <p class="line862">See also Wikipedia's <a class="http" href="http://en.wikipedia.org/wiki/Comparison_of_integrated_development_environments#Python">list of Python IDEs</a> and these <a href="/moin/ShowMeDo">ShowMeDo</a> videos for <a class="http" href="http://showmedo.com/videos/series?name=DedxPxuMK">Wing 3 Professional</a> <a class="http" href="http://showmedo.com/videos/series?name=PythonDevelopmentWithSPE">SPE</a>, <a class="http" href="http://showmedo.com/videos/series?name=PyDevEclipseList">PyDev</a> (inside Eclipse) and <a class="http" href="http://showmedo.com/videos/series?name=PythonIPythonSeries">IPython</a>. <span class="anchor" id="line-16"></span><span class="anchor" id="line-17"></span></p>
+    <p class="line867"> </p>
+    <h1 id="IDEs_with_introspection-based_code_completion_and_integrated_debugger">IDEs with introspection-based code completion and integrated debugger</h1> <span class="anchor" id="line-18"></span>
+    <div>
+     <table>
+      <tbody>
+       <tr> 
+        <td><p class="line891"><strong>Name</strong> </p></td> 
+        <td><p class="line891"><strong>Platform</strong> </p></td> 
+        <td><p class="line891"><strong>Updated</strong> </p></td> 
+        <td><p class="line891"><strong>Notes</strong> </p></td> 
+       </tr> 
+       <tr> 
+        <td><span class="anchor" id="line-19"></span><p class="line891"><a class="http" href="http://thonny.org/">Thonny</a> </p></td> 
+        <td><p class="line862">Windows, Linux, Mac OS X, more </p></td> 
+        <td><p class="line862">2020 </p></td> 
+        <td><p class="line862">For teaching/learning programming. Focused on program runtime visualization. Provides stepping both in statements and expressions, no-hassle variables view, separate mode for explaining references etc. </p></td> 
+       </tr> 
+       <tr> 
+        <td><span class="anchor" id="line-20"></span><p class="line891"><a href="/moin/Komodo">Komodo</a> </p></td> 
+        <td><p class="line862">Windows/Linux/Mac OS X </p></td> 
+        <td><p class="line862">2017 </p></td> 
+        <td><p class="line862">Multi-language IDE with support for Python 2.x and Python 3. Available as <a class="http" href="http://www.activestate.com/komodo-ide">Komodo IDE</a> (commercial). </p></td> 
+       </tr> 
+       <tr> 
+        <td><span class="anchor" id="line-21"></span><p class="line891"><a class="http" href="http://www.liclipse.com/">LiClipse</a> </p></td> 
+        <td><p class="line862">Linux/Mac OS X/Windows </p></td> 
+        <td><p class="line862">2018 </p></td> 
+        <td><p class="line862">Commercial Eclipse-based IDE which provides a standalone bundling <a class="http" href="http://pydev.org/">PyDev</a>, Workspace Mechanic, Eclipse Color Theme, StartExplorer and AnyEdit, along with lightweigth support for other languages, and other usability enhancements (such as multi-caret-edition). </p></td> 
+       </tr> 
+       <tr> 
+        <td><span class="anchor" id="line-22"></span><p class="line891"><a href="/moin/NetBeans">NetBeans</a> </p></td> 
+        <td><p class="line862">Linux, Mac, Solaris, Windows </p></td> 
+        <td><p class="line862">2016 </p></td> 
+        <td><p class="line862">Python/Jython support in <a href="/moin/NetBeans">NetBeans</a> -- Open source, allows Python and Jython Editing, code-completion, debugger, refactoring, templates, syntax analysis, etc.; see <a class="http" href="http://wiki.netbeans.org/Python">http://wiki.netbeans.org/Python</a>. Note: the Python plugin as a community-supported project, and may trail behind. Currently it works for 8.1, does not appear to be available for 8.2 </p></td> 
+       </tr> 
+       <tr> 
+        <td><span class="anchor" id="line-23"></span><p class="line891"><a class="http" href="http://www.jetbrains.com/pycharm/">PyCharm</a> </p></td> 
+        <td><p class="line862">Linux/Mac OS X/Windows </p></td> 
+        <td><p class="line862">2018 </p></td> 
+        <td><p class="line862">Community is a free open-source IDE with a smart Python editor providing quick code navigation, code completion, refactoring, unit testing and debugger. Commercial Professional edition fully supports Web development with Django, Flask, Mako and <a href="/moin/Web2Py">Web2Py</a> and allows to develop remotely. JetBrains offers free PyCharm professional licenses for open-source projects under certain conditions <a class="https" href="https://www.jetbrains.com/buy/opensource/">https://www.jetbrains.com/buy/opensource/</a>, also for Student/Educational use. </p></td> 
+       </tr> 
+       <tr> 
+        <td><span class="anchor" id="line-24"></span><p class="line891"><a class="https" href="https://marketplace.visualstudio.com/items?itemName=ms-python.python">Python for VS Code</a> </p></td> 
+        <td><p class="line862">Linux/Mac OS X/Windows </p></td> 
+        <td><p class="line862">2018 </p></td> 
+        <td><p class="line862">Free <a class="https" href="https://github.com/Microsoft/vscode-python">open-source</a> extension for Visual Studio Code (now maintained by Microsoft). Supports syntax highlighting, debugging, code completion, code navigation, unit testing, refactoring, with support for Django, multi threaded, local and remote debugging. </p></td> 
+       </tr> 
+       <tr> 
+        <td><span class="anchor" id="line-25"></span><p class="line891"><a class="http" href="http://kdevelop.org/">KDevelop</a> </p></td> 
+        <td><p class="line862">Linux/Mac OS X/(Windows) </p></td> 
+        <td><p class="line862">2017 </p></td> 
+        <td><p class="line862">Free open-source IDE with a focus on static analysis-based code completion, navigation and highlighting. Also features a VI emulation mode. </p></td> 
+       </tr> 
+       <tr> 
+        <td><span class="anchor" id="line-26"></span><p class="line891"><a href="/moin/PyDev">PyDev</a> </p></td> 
+        <td><p class="line862">Eclipse </p></td> 
+        <td><p class="line862">2018 </p></td> 
+        <td><p class="line862">Free, open-source plugin for <a class="http" href="http://www.eclipse.org">Eclipse</a> -- Allows Python, Jython, and <a href="/moin/IronPython">IronPython</a> editing, code-completion, debugger, refactoring, quick navigation, templates, code analysis, unittest integration, Django integration, etc. </p></td> 
+       </tr> 
+       <tr> 
+        <td><span class="anchor" id="line-27"></span><p class="line891"><a class="http" href="http://wingware.com/">Wing</a> </p></td> 
+        <td><p class="line862">Windows, Linux, Mac OS X </p></td> 
+        <td><p class="line862">2022 </p></td> 
+        <td><p class="line862">Family of Python IDEs with advanced debugger, editor with vi, emacs, visual studio and other key bindings, auto-completion, auto-editing, multi-selection, inline code warnings, snippets, goto-definition, find uses, refactoring, unit testing, remote development, support for containers and clusters, array and dataframe viewer, bookmarking, project management with version control, Python environment creation with virtualenv, pipenv, conda, and Docker, Python package management with pip, pipenv, and conda, source browser, PEP 8 / Black / YAPF reformatting, and much more. There are several product levels, including free and paid versions with a fully functional trial and free licenses for educational use and unpaid open source developers. Extensive documentation includes help for using Wing with Django, Flask, Docker, AWS, Vagrant, Matplotlib, Jupyter, Blender, Maya, any many other third party tools and packages. See <a class="http" href="http://wingware.com/downloads">product comparison</a> and <a class="http" href="http://wingware.com/store/purchase">pricing</a> for details. </p></td> 
+       </tr> 
+       <tr> 
+        <td><span class="anchor" id="line-28"></span><p class="line891"><a class="http" href="http://code.google.com/p/pyscripter/">PyScripter</a> </p></td> 
+        <td><p class="line862">Windows </p></td> 
+        <td><p class="line862">2012 </p></td> 
+        <td><p class="line862">MIT licensed IDE written in Delphi with debugger, integrated unit testing, source browser, code navigation and syntax coloring/auto-completing editor. </p></td> 
+       </tr> 
+       <tr> 
+        <td><span class="anchor" id="line-29"></span><p class="line891"><a class="https" href="https://www.spyder-ide.org/">Spyder</a> </p></td> 
+        <td><p class="line862">Windows/Linux/macOS </p></td> 
+        <td><p class="line862">2018 </p></td> 
+        <td><p class="line862">A powerful, free/open-source scientific environment written in Python, for Python,and designed by and for scientists, engineers and data analysts. Features a unique combination of the advanced editing, analysis, debugging and profiling functionality of a comprehensive development tool with the data exploration, interactive execution, deep inspection and beautiful visualization capabilities of a scientific package. Furthermore, offers built-in integration with many popular scientific packages, including <a href="/moin/NumPy">NumPy</a>, <a href="/moin/SciPy">SciPy</a>, Pandas, IPython, <a class="nonexistent" href="/moin/QtConsole">QtConsole</a>, Matplotlib, <a href="/moin/SymPy">SymPy</a>, and more, and can be easily extended with plugins. It is conveniently integrated in the cross-platform <a class="https" href="https://www.anaconda.com/">Anaconda distribution</a>, and is the centerpiece of the <a class="https" href="https://python-xy.github.io">Python(x,y)</a> and <a class="https" href="https://winpython.github.io/">WinPython</a> distributions. </p></td> 
+       </tr> 
+       <tr> 
+        <td><span class="anchor" id="line-30"></span><p class="line862">IDLE </p></td> 
+        <td><p class="line862">Windows/Linux/Mac OS X/All Tk Platforms </p></td> 
+        <td><p class="line862">2018 </p></td> 
+        <td><p class="line862">Multi-window colorized source browser, autoindent, autocompletion, tool tips, code context panel, search in files, class and path browsers, debugger, executes code in clean separate subprocess with one keystroke. 100% pure Python, part of Python 2.x and 3.x distributions (may be packaged separately in some situations). </p></td> 
+       </tr> 
+       <tr> 
+        <td><span class="anchor" id="line-31"></span><p class="line891"><a class="http" href="http://idlex.sourceforge.net/">IdleX</a> </p></td> 
+        <td><p class="line862">Windows/Linux/Mac OS X/All Tk Platforms </p></td> 
+        <td><p class="line862">2016 </p></td> 
+        <td><p class="line862">IdleX is a collection of over twenty extensions and plugins that provide additional functionality to IDLE, a Python IDE provided in the standard library. It transforms IDLE into a more useful tool for academic research and development as well as exploratory programming. </p></td> 
+       </tr> 
+       <tr> 
+        <td><span class="anchor" id="line-32"></span><p class="line891"><a class="http" href="http://sakurastudio.yolasite.com/micro-dev.php">µ.dev</a> </p></td> 
+        <td><p class="line862">Windows (needs to be compiled manually for other platforms) </p></td> 
+        <td><p class="line862">2010 </p></td> 
+        <td><p class="line862">An open-source IDE, created using Lazarus. It's only for Python. include syntax highlighting, project manager, and uses pdb for debugging. </p></td> 
+       </tr> 
+       <tr> 
+        <td><span class="anchor" id="line-33"></span><p class="line891"><a class="http" href="http://www.pyzo.org/">Pyzo (formerly IEP)</a> </p></td> 
+        <td><p class="line862">Windows/Linux/Mac OS X </p></td> 
+        <td><p class="line862">2018 </p></td> 
+        <td><p class="line862">Open-source Python IDE focused on interactivity and introspection, which makes it very suitable for scientific computing. Its practical design is aimed at simplicity and efficiency. Pyzo consists of two main components, the editor and the shell, and uses a set of pluggable tools to help the programmer in various ways: e.g. source structure, interactive help, workspace, file browser (with functionality for searching). Also includes a post-mortem debugger. </p></td> 
+       </tr> 
+       <tr> 
+        <td><span class="anchor" id="line-34"></span><p class="line891"><a class="http" href="http://pythontoolkit.sourceforge.net/">PythonToolkit (PTK)</a> </p></td> 
+        <td><p class="line862">Windows/Linux/Mac OS X </p></td> 
+        <td><p class="line862">2014 </p></td> 
+        <td><p class="line862">An interactive environment for python built around a matlab style console window and editor. It was designed to provide a python based environment similiar to Matlab for scientists and engineers however it can also be used as a general purpose interactive python environment especially for interactive GUI programming. Features include: Multiple independent python interpreters. Interactively program with different GUI toolkits (wxPython, <a href="/moin/TkInter">TkInter</a>, pyGTK, pyQT4 and <a href="/moin/PySide">PySide</a>). Matlab style namespace/workspace browser. Object auto-completions, calltips and multi-line command editing in the console. Object inspection and python path management. Simple code editor and integrated debugger. </p></td> 
+       </tr> 
+       <tr> 
+        <td><span class="anchor" id="line-35"></span><p class="line891"><a class="http" href="http://code.google.com/p/editra-plugins/wiki/PyStudio">PyStudio</a> </p></td> 
+        <td><p class="line862">Windows/Linux/Mac OS X </p></td> 
+        <td><p class="line862">2012 </p></td> 
+        <td><p class="line862">Open-source plugin that adds syntax checking, integrated debugger and module search to <a class="http" href="http://www.editra.org">Editra</a>, a general purpose developer's text editor that supports python syntax highlighting, auto-indent, auto-completion, classbrowser, and can run scripts from inside the editor. </p></td> 
+       </tr> 
+       <tr> 
+        <td><span class="anchor" id="line-36"></span><p class="line891"><a class="https" href="https://www.visualstudio.com/vs/python/">Python Tools for Visual Studio</a> </p></td> 
+        <td><p class="line862">Windows </p></td> 
+        <td><p class="line862">2017 </p></td> 
+        <td><p class="line891"><a class="nonexistent" href="/moin/javascript%3Avoid%280%29%3B/%2A1514994382979%2A/">Open-source</a> plugin for Visual Studio 2010, 2012 onwards (now maintained by Microsoft). Supports syntax highlighting, debugging and rich intellisense, unit testing, refactoring, object browser, MPI cluster debugging, Django intellisense and debugging, development REPL window and a debugging REPL window. Supports mixed-mode Python/C/C++ debugging. </p></td> 
+       </tr> 
+       <tr> 
+        <td><span class="anchor" id="line-37"></span><p class="line891"><a class="http" href="http://celestialteapot.com/exedore/">Exedore</a> </p></td> 
+        <td><p class="line862">Mac OS X </p></td> 
+        <td><p class="line862">2015 </p></td> 
+        <td><p class="line862">Commercial with feature-limited free trial. A Mac-native, single-window IDE inspired by Xcode. Features integrated debugger, tabs, code completion with tab triggers, syntax highlighting themes, search and replace with regex, integrated REPL sessions, goto definition, file browser, integrated documentation browser. As of June 2015, does not support input() meaning any console input using this function is not supported. </p></td> 
+       </tr> 
+      </tbody>
+     </table>
+    </div><span class="anchor" id="line-38"></span><span class="anchor" id="line-39"></span><span class="anchor" id="line-40"></span>
+    <p class="line867"> </p>
+    <h1 id="IDEs_with_introspection-based_code_completion_.2For.2F_integrated_debugger">IDEs with introspection-based code completion /or/ integrated debugger</h1> <span class="anchor" id="line-41"></span>
+    <div>
+     <table>
+      <tbody>
+       <tr> 
+        <td><p class="line891"><strong>Name</strong> </p></td> 
+        <td><p class="line891"><strong>Platform</strong> </p></td> 
+        <td><p class="line891"><strong>Updated</strong> </p></td> 
+        <td><p class="line891"><strong>Notes</strong> </p></td> 
+       </tr> 
+       <tr> 
+        <td><span class="anchor" id="line-42"></span><p class="line891"><a href="/moin/Komodo">Komodo</a> </p></td> 
+        <td><p class="line862">Windows/Mac/Linux </p></td> 
+        <td><p class="line862">2012 </p></td> 
+        <td><p class="line891"><a class="http" href="http://www.activestate.com/komodo-edit">Komodo Edit</a> (open source, as part of the <a class="http" href="http://www.openkomodo.com">Open Komodo</a> project). Little brother to Komodo IDE. </p></td> 
+       </tr> 
+       <tr> 
+        <td><span class="anchor" id="line-43"></span><p class="line891"><a class="nonexistent" href="/moin/BlackAdder">BlackAdder</a> </p></td> 
+        <td><p class="line862">Windows/Linux </p></td> 
+        <td><p class="line862">2004 </p></td> 
+        <td><p class="line862">Commercial; integrated debugger; interfaces with Qt Designer </p></td> 
+       </tr> 
+       <tr> 
+        <td><span class="anchor" id="line-44"></span><p class="line891"><a href="/moin/eric">eric</a> </p></td> 
+        <td><p class="line862">Python + <a href="/moin/PyQt">PyQt</a> + QScintilla </p></td> 
+        <td><p class="line862">2018 </p></td> 
+        <td><p class="line862">Open Source, interfaces with Qt Designer, Qt Linguist, unittest; integrated debugger </p></td> 
+       </tr> 
+       <tr> 
+        <td><span class="anchor" id="line-45"></span><p class="line891"><a class="http" href="http://pythonide.stani.be/">SPE</a> </p></td> 
+        <td><p class="line862">Windows, Linux, MacOsX, FreeBSD, more </p></td> 
+        <td><p class="line862">2008 </p></td> 
+        <td><p class="line862">Open-source with <a class="http" href="http://www.wxpython.org">wxPython</a> interface. Code completion, call tips, class explorer, source index, auto todo list, <a class="http" href="http://www.blender.org">Blender</a> support, integrated <a class="http" href="http://pychecker.sourceforge.net/">PyChecker</a> (source code doctor) and <a class="http" href="http://project5.freezope.org/kiki">Kiki</a> (regex console). <a class="http" href="http://pythonide.blogspot.com/2007/02/how-to-download-latest-spe-from_26.html">Download instructions</a> </p></td> 
+       </tr> 
+       <tr> 
+        <td><span class="anchor" id="line-46"></span><p class="line891"><a class="http" href="http://pida.co.uk/">Pida</a> </p></td> 
+        <td><p class="line862">Linux, FreeBSD, ..., (Windows in progress) </p></td> 
+        <td><p class="line862">2007 (2008 dev) </p></td> 
+        <td><p class="line862">Open-source with GTK interface, written in Python. Supports different languages, python trough <a class="http" href="http://rope.sourceforge.net/">rope</a> and pyflakes as well as rpdb2. Support <strong>different</strong> Editors (Vim, Medit, Emacs) <a class="http" href="http://pida.co.uk/trac/wiki/DeveloperRepos">Current Repos</a> </p></td> 
+       </tr> 
+       <tr> 
+        <td><span class="anchor" id="line-47"></span><p class="line891"><a class="http" href="http://icsharpcode.net/OpenSource/SD/Default.aspx">SharpDevelop</a> </p></td> 
+        <td><p class="line862">.net CLR </p></td> 
+        <td><p class="line862">26/7/2009 </p></td> 
+        <td><p class="line862">FOSS IDE uses <a href="/moin/IronPython">IronPython</a> to support making python module solutions. </p></td> 
+       </tr> 
+       <tr> 
+        <td><span class="anchor" id="line-48"></span><p class="line891"><a class="http" href="http://ninja-ide.org">NINJA-IDE</a> </p></td> 
+        <td><p class="line862">Python + <a href="/moin/PyQt">PyQt</a> + (Linux/Windows/Mac OS X) </p></td> 
+        <td><p class="line862">2011 </p></td> 
+        <td><p class="line862">NINJA-IDE (from: "Ninja Is Not Just Another IDE"), is a cross-platform integrated development environment specially design to build Python Applications. </p></td> 
+       </tr> 
+       <tr> 
+        <td><span class="anchor" id="line-49"></span><p class="line891"><a class="http" href="http://aptana.com/products/studio3">Aptana Studio 3</a> </p></td> 
+        <td><p class="line862">Linux, Windows and Mac OS X </p></td> 
+        <td><p class="line862">10/01/2012 </p></td> 
+        <td><p class="line862">Aptana Studio3 is a professional, open source development tool for the open web </p></td> 
+       </tr> 
+       <tr> 
+        <td><span class="anchor" id="line-50"></span><p class="line891"><a class="https" href="https://github.com/fortharris/Pcode">Pcode</a> </p></td> 
+        <td><p class="line862">Windows, Linux and Mac OSX </p></td> 
+        <td><p class="line862">2014 </p></td> 
+        <td><p class="line862">Python 3x IDE with emphasis on power, usability and simplicity. </p></td> 
+       </tr> 
+      </tbody>
+     </table>
+    </div><span class="anchor" id="line-51"></span><span class="anchor" id="line-52"></span><span class="anchor" id="line-53"></span>
+    <p class="line867"> </p>
+    <h1 id="IDEs_with_integrated_GUI_builder">IDEs with integrated GUI builder</h1> <span class="anchor" id="line-54"></span>
+    <div>
+     <table>
+      <tbody>
+       <tr> 
+        <td><p class="line891"><strong>Name</strong> </p></td> 
+        <td><p class="line891"><strong>Platform</strong> </p></td> 
+        <td><p class="line891"><strong>Updated</strong> </p></td> 
+        <td><p class="line891"><strong>Notes</strong> </p></td> 
+       </tr> 
+       <tr> 
+        <td><span class="anchor" id="line-55"></span><p class="line891"><a class="https" href="https://monkeystudio.pasnox.com">MonkeyStudio</a> </p></td> 
+        <td><p class="line862">Windows/Linux/Mac </p></td> 
+        <td><p class="line862">2012 </p></td> 
+        <td><p class="line891"><a href="/moin/OpenSource">OpenSource</a> (GPL) powerful cross platform (Win,Mac,Linux) RAD GUI IDE, includes a integrated <a class="nonexistent" href="/moin/QtDesigner">QtDesigner</a> supports Python+<a href="/moin/PyQt4">PyQt4</a> </p></td> 
+       </tr> 
+       <tr> 
+        <td><span class="anchor" id="line-56"></span><p class="line891"><a href="/moin/BoaConstructor">BoaConstructor</a> </p></td> 
+        <td><p class="line862">Python + wxPython </p></td> 
+        <td><p class="line862">2007 </p></td> 
+        <td><p class="line862">RAD GUI building IDE for wxPython, similar to Delphi. </p></td> 
+       </tr> 
+       <tr> 
+        <td><span class="anchor" id="line-57"></span><p class="line891"><a class="http" href="http://pythoncard.sourceforge.net">PythonCard</a> </p></td> 
+        <td><p class="line862">Python + wxPython </p></td> 
+        <td><p class="line862">2006 </p></td> 
+        <td><p class="line862">RAD GUI building IDE </p></td> 
+       </tr> 
+       <tr> 
+        <td><span class="anchor" id="line-58"></span><p class="line891"><a class="http" href="http://developer.apple.com/">Xcode</a> </p></td> 
+        <td><p class="line862">Mac OS X 10.5 and later </p></td> 
+        <td><p class="line862">2008 </p></td> 
+        <td><p class="line862">Apple's free of charge IDE now with full Python GUI making. Requires free developer registration for download. </p></td> 
+       </tr> 
+       <tr> 
+        <td><span class="anchor" id="line-59"></span><p class="line891"><a class="http" href="http://vpython.org/">Visual Python</a> </p></td> 
+        <td><p class="line862">Python + Tkinter </p></td> 
+        <td><p class="line862">2017 </p></td> 
+        <td><p class="line862">Visual graphic interface. Python GUI </p></td> 
+       </tr> 
+       <tr> 
+        <td><span class="anchor" id="line-60"></span><p class="line891"><a class="http" href="http://pytools.codeplex.com/">Python Tools for Visual Studio</a> </p></td> 
+        <td><p class="line862">Windows </p></td> 
+        <td><p class="line862">2017 </p></td> 
+        <td><p class="line862">Integrated WPF GUI Designer for <a href="/moin/IronPython">IronPython</a> (Free/OSS) </p></td> 
+       </tr> 
+       <tr> 
+        <td><span class="anchor" id="line-61"></span><p class="line891"><a class="http" href="http://anvil.works/">Anvil</a> </p></td> 
+        <td><p class="line862">Online </p></td> 
+        <td><p class="line862">2021 </p></td> 
+        <td><p class="line862">IDE for building full-stack, Python-only web apps, with a drag-and-drop UI designer and autocomplete (Freemium/OSS) </p></td> 
+       </tr> 
+      </tbody>
+     </table>
+    </div><span class="anchor" id="line-62"></span><span class="anchor" id="line-63"></span><span class="anchor" id="line-64"></span>
+    <p class="line867"> </p>
+    <h1 id="Editors">Editors</h1> <span class="anchor" id="line-65"></span>
+    <p class="line862">Take a look at <a href="/moin/PythonEditors">PythonEditors</a> if you prefer something lightweight. IDEs that don't integrate anything Python-specific are also listed at <a href="/moin/PythonEditors#Glorified_Editors.">PythonEditors#Glorified_Editors.</a> <span class="anchor" id="line-66"></span><span class="anchor" id="line-67"></span></p>
+    <p class="line867"></p>
+    <hr>
+    <p class="line874"> <span class="anchor" id="line-68"></span><a href="/moin/CategoryIntegratedDevelopmentEnvironment">CategoryIntegratedDevelopmentEnvironment</a> <a href="/moin/CategoryEditors">CategoryEditors</a> <a href="/moin/CategoryIntegratedDevelopmentEnvironment">CategoryIntegratedDevelopmentEnvironment</a> <span class="anchor" id="line-69"></span><span class="anchor" id="bottom"></span></p>
+   </div>
+   <p id="pageinfo" class="info" lang="en" dir="ltr">IntegratedDevelopmentEnvironments (last edited 2022-02-03 17:14:27 by <span title="StephanDeibel @ 45.47.157.24[45.47.157.24]"><a href="/moin/StephanDeibel" title="StephanDeibel @ 45.47.157.24[45.47.157.24]">StephanDeibel</a></span>)</p> 
+   <div id="pagebottom"></div> 
+  </div> 
+  <div id="footer"> 
+   <ul id="credits"> 
+    <li><a href="http://moinmo.in/" title="This site uses the MoinMoin Wiki software.">MoinMoin Powered</a></li>
+    <li><a href="http://moinmo.in/Python" title="MoinMoin is written in Python.">Python Powered</a></li>
+    <li><a href="http://moinmo.in/GPL" title="MoinMoin is GPL licensed.">GPL licensed</a></li>
+    <li><a href="http://validator.w3.org/check?uri=referer" title="Click here to validate this page.">Valid HTML 4.01</a></li> 
+   </ul> 
+  </div> 
+  <p style="text-align: center; font-size: 85%"><a href="/moin/FrontPage#use">Unable to edit the page? See the FrontPage for instructions.</a></p> 
+ </body>
+</html>

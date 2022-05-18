@@ -1,0 +1,668 @@
+<!doctype html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# " class="no-javascript"> 
+ <head> 
+  <meta charset="utf-8">
+  <script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["gov-bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"b54c1d4d8c",applicationID:"976702224"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script> 
+  <script>window.dataLayer = window.dataLayer || []; window.dataLayer.push({"drupalLanguage":"en","drupalCountry":"GB","siteName":"UNICEF Global","entityCreated":"1646065029","entityLangcode":"en","entityStatus":"1","entityUid":"1461","entityUuid":"52688d26-b672-4f6e-8cdc-7effc8beaca9","entityVid":"96041","entityName":"asobirjonov","entityType":"node","entityBundle":"donation_page","entityId":"5886","entityTitle":"Laylatul Qadr Appeal - Give your Sadaqah and help deliver therapeutic food to a malnourished child. Help save lives.","entityTaxonomy":{"donation_frequency":{"106":"Monthly","101":"One time"},"geographic_region":{"811":"MENA"},"global_layouts":{"96":"Default"},"campaign_themes":{"61":"Children \u0026 Emergencies"},"campaign_types":{"116":"Default"},"funds_destinations":{"136":"Where Most Needed"},"fund_types":{"51":"Regular Resources (RR)"}},"userUid":0,"Language":"English","country_code":null,"country":"Global","fullPageReferrer":null,"pageCategory":"Donation Form","originalPageUrl":"https:\/\/help.unicef.org\/ramadan2022","pageType":"donation_page","formType":"Web","fundType":"Regular Resources (RR)","event":"Page Meta","userRegion":"MENA"});</script> 
+  <link rel="canonical" href="https://help.unicef.org/ramadan2022"> 
+  <meta name="news_keywords" content="aid, charity islam, ramadan giving, ramadan 2022, kaffarah, ramadan fitr, fitrana, eid ul fitr, eid al fitr, sadaqah, zakat, laylatul qadr charity, donate laylatul qadr, donate night of power, night of power charity"> 
+  <meta name="description" content="No Amount is too small. With UNICEF you can give hope to children living in crisis in this holy month."> 
+  <meta name="keywords" content="aid, charity islam, ramadan giving, ramadan 2022, kaffarah, ramadan fitr, fitrana, eid ul fitr, eid al fitr, sadaqah, zakat, laylatul qadr charity, donate laylatul qadr, donate night of power, night of power charity"> 
+  <meta property="og:type" content="article"> 
+  <meta property="og:url" content="https://help.unicef.org/ramadan2022"> 
+  <meta property="og:title" content="Laylatul Qadr Appeal - Give your Sadaqah and help deliver therapeutic food to a malnourished child. Help save lives."> 
+  <meta property="og:description" content="No Amount is too small. With UNICEF you can give hope to children living in crisis in this holy month."> 
+  <meta property="og:image:url" content="https://help.unicef.org/sites/default/files/styles/facebook_share_image/public/2022-04/UN0607825_0.jpg?itok=Tb9Rhln0"> 
+  <meta property="og:image:secure_url" content="https://help.unicef.org/sites/default/files/styles/facebook_share_image/public/2022-04/UN0607825_0.jpg?itok=Tb9Rhln0"> 
+  <meta name="facebook-domain-verification" content="2in1at3bw0zj16j4eiarbgfi4a4gek"> 
+  <meta name="google-site-verification" content="GxUdwgvND2dvxuHiBj468fyTP4i_FNcqN9yRwLwM1zg"> 
+  <meta name="twitter:card" content="summary_large_image"> 
+  <meta name="twitter:site" content="@UNICEF"> 
+  <meta name="twitter:description" content="No Amount is too small. With UNICEF you can give hope to children living in crisis in this holy month."> 
+  <meta name="twitter:title" content="Laylatul Qadr Appeal - Give your Sadaqah and help deliver therapeutic food to a malnourished child. Help save lives."> 
+  <meta name="twitter:url" content="https://help.unicef.org/ramadan2022"> 
+  <meta name="twitter:image" content="https://help.unicef.org/sites/default/files/styles/twitter_share_image/public/2022-04/UN0607825_0.jpg?itok=sbBZma-u"> 
+  <meta name="Generator" content="Drupal 9 (https://www.drupal.org); Commerce 2"> 
+  <meta name="MobileOptimized" content="width"> 
+  <meta name="HandheldFriendly" content="true"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <style>div#sliding-popup, div#sliding-popup .eu-cookie-withdraw-banner, .eu-cookie-withdraw-tab {background: #0779bf} div#sliding-popup.eu-cookie-withdraw-wrapper { background: transparent; } #sliding-popup h1, #sliding-popup h2, #sliding-popup h3, #sliding-popup p, #sliding-popup label, #sliding-popup div, .eu-cookie-compliance-more-button, .eu-cookie-compliance-secondary-button, .eu-cookie-withdraw-tab { color: #ffffff;} .eu-cookie-withdraw-tab { border-color: #ffffff;}</style> 
+  <link rel="preload" as="style" href="//fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&amp;display=swap"> 
+  <link rel="stylesheet" href="//fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&amp;display=swap"> 
+  <style>.paragraph-91721 { background-color: rgb(28,171,226) !important; }</style> 
+  <style>.paragraph-91666 { background-color: rgb(28,171,226) !important; }</style> 
+  <style media="all and (max-width: 767px)" defer>.page_top {background-color: #FFFFFF ;background-image:  url('/sites/default/files/styles/responsive_mobile/public/2022-04/UN0607825_0.jpg?itok=1m3WY-nd') ;background-repeat: no-repeat ;background-attachment: scroll ;background-position: left top ;z-index: auto;}</style> 
+  <style media="(min-width: 768px) and (max-width: 1199px)" defer>.page_top {background-color: #FFFFFF ;background-image:  url('/sites/default/files/styles/responsive_tablet/public/2022-04/UN0607825_0.jpg?itok=XT79aEHX') ;background-repeat: no-repeat ;background-attachment: scroll ;background-position: left top ;z-index: auto;}</style> 
+  <style media="all and (min-width: 1200px)" defer>.page_top {background-color: #FFFFFF ;background-image:  url('/sites/default/files/styles/responsive_desktop/public/2022-04/UN0607825_0.jpg?itok=8Hbztvhi') ;background-repeat: no-repeat ;background-attachment: scroll ;background-position: left top ;z-index: auto;}</style> 
+  <link rel="alternate" hreflang="en" href="https://help.unicef.org/ramadan2022"> 
+  <link rel="shortcut icon" href="/themes/custom/unicef_colombia/favicon.ico" type="image/vnd.microsoft.icon"> 
+  <title>Laylatul Qadr Appeal - Give your Sadaqah and help deliver therapeutic food to a malnourished child. Help save lives. | UNICEF Global</title> 
+  <link rel="stylesheet" media="all" href="/sites/default/files/css/css_TdPwt3b7DeddEK0niXE10vpkwfnMheOl9641_mHjGwM.css"> 
+  <link rel="stylesheet" media="all" href="/sites/default/files/css/css_0PkkAQy6fe61x9DP1urr8C0jmACGEkFHNmQvtkvCa6w.css"> 
+  <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/5886","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"blazy\/blazy,blazy\/classlist,blazy\/load,blazy\/polyfill,blazy\/promise,blazy\/raf,blazy\/webp,bootstrap\/popover,bootstrap\/tooltip,clientside_validation_jquery\/cv.jquery.ckeditor,clientside_validation_jquery\/cv.jquery.validate,clientside_validation_jquery\/jquery.validate.additional,commerce_donation_napas\/commerce_donation_napas_payment_button,commerce_donation_stripe\/commerce_donation_stripe_elements_payment_intent,commerce_donation_stripe\/stripev3,commerce_donation_webpay\/webpay,core\/drupal.ajax,core\/drupal.collapse,core\/drupal.states,core\/jquery.form,core\/picturefill,datalayer\/behaviors,datalayer\/helper,device_fingerprint\/device-fp,eu_cookie_compliance\/eu_cookie_compliance_default,media\/filter.caption,paragraphs\/drupal.paragraphs.unpublished,raisenow_tamaro\/raisenow_tamaro,system\/base,unicef_bs3\/bootstrap-scripts,unicef_bs3\/carousel,unicef_bs3\/global-styling,unicef_clientside_validation\/unicef_csv_jquery_mask,unicef_clientside_validation\/unicef_csv_minimum_amounts,unicef_clientside_validation\/unicef_csv_settings,unicef_colombia\/global-styling,unicef_dashboard\/toolbar-icon,unicef_datalayers\/datalayers_webform_v2,unicef_donation_form\/unicef_donation_form_ajax_event_listener_js,unicef_donation_form\/unicef_donation_form_console_logger_js,unicef_donation_form\/unicef_donation_form_js,unicef_locale\/locale-js,unicef_locale_redirect\/cookie_redirect,unicef_webform_themes\/unicef_webform_themes_unicef_brazil_js,webform_donation_placeholders\/donation_switcher,webform_themes\/webform_theme_style_unicef_webform_themes_unicef_brazil_unicef_donation_amounts,webform_themes\/webform_theme_style_unicef_webform_themes_unicef_brazil_unicef_donation_form_elements,webform_themes\/webform_theme_style_unicef_webform_themes_unicef_brazil_unicef_donation_form_header,webform_themes\/webform_theme_style_unicef_webform_themes_unicef_brazil_unicef_form,webform_themes\/webform_themes.theme_21","theme":"unicef_colombia","theme_token":"I0uHGMj2YWFOClgnfyg5QZUxsOmDy9Dinokcn63YY5w"},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/ramadan2022?ajax_form=1":true},"clientside_validation_jquery":{"validate_all_ajax_forms":2,"force_validate_on_blur":true,"messages":{"required":"This field is required.","remote":"Please fix this field.","email":"Please enter a valid email address.","url":"Please enter a valid URL.","date":"Please enter a valid date.","dateISO":"Please enter a valid date (ISO).","number":"Please enter a valid number.","digits":"Please enter only digits.","equalTo":"Please enter the same value again.","maxlength":"Please enter no more than {0} characters.","minlength":"Please enter at least {0} characters.","rangelength":"Please enter a value between {0} and {1} characters long.","range":"Please enter a value between {0} and {1}.","max":"Please enter a value less than or equal to {0}.","min":"Please enter a value greater than or equal to {0}.","step":"Please enter a multiple of {0}."}},"commerce_donation_stripe":{"publishable_key":"pk_live_XhNQUEP4Wkuy4W7sLDr50Y4d","locale":"en","styles":{"iconColor":"","color":"","lineHeight":"40px","fontWeight":"normal","fontFamily":"Roboto, Helvetica, Arial, sans-serif","fontSize":"14px","placeholderColor":"","backgroundColor":"transparent"}},"dataLayer":{"defaultLang":"en","languages":{"en":{"id":"en","name":"English","direction":"ltr","weight":-16},"bg":{"id":"bg","name":"Bulgarian","direction":"ltr","weight":-15},"nl":{"id":"nl","name":"Dutch","direction":"ltr","weight":-14},"pt-br":{"id":"pt-br","name":"Portuguese, Brazil","direction":"ltr","weight":-13},"sv":{"id":"sv","name":"Swedish","direction":"ltr","weight":-12},"ar":{"id":"ar","name":"Arabic","direction":"rtl","weight":-11},"zh-hans":{"id":"zh-hans","name":"Chinese, Simplified","direction":"ltr","weight":-10},"fr":{"id":"fr","name":"French","direction":"ltr","weight":-9},"ru":{"id":"ru","name":"Russian","direction":"ltr","weight":-8},"es":{"id":"es","name":"Spanish","direction":"ltr","weight":-7},"gsw-berne":{"id":"gsw-berne","name":"Swiss German","direction":"ltr","weight":-6},"pt-pt":{"id":"pt-pt","name":"Portuguese, Portugal","direction":"ltr","weight":-5},"de":{"id":"de","name":"German","direction":"ltr","weight":-4},"da":{"id":"da","name":"Danish","direction":"ltr","weight":-3},"hr":{"id":"hr","name":"Croatian","direction":"ltr","weight":-2},"sr":{"id":"sr","name":"Serbian","direction":"ltr","weight":-1},"el":{"id":"el","name":"Greek","direction":"ltr","weight":0},"th":{"id":"th","name":"Thai","direction":"ltr","weight":1},"ja":{"id":"ja","name":"Japanese","direction":"ltr","weight":2},"ky":{"id":"ky","name":"Kyrgyz","direction":"ltr","weight":3},"af":{"id":"af","name":"Afrikaans","direction":"ltr","weight":4},"hu":{"id":"hu","name":"Hungarian","direction":"ltr","weight":5},"hy":{"id":"hy","name":"Armenian","direction":"ltr","weight":6},"vi":{"id":"vi","name":"Vietnamese","direction":"ltr","weight":7},"uk":{"id":"uk","name":"Ukrainian","direction":"ltr","weight":8},"ne":{"id":"ne","name":"Nepali","direction":"ltr","weight":9},"hi":{"id":"hi","name":"Hindi","direction":"ltr","weight":10},"ta":{"id":"ta","name":"Tamil","direction":"ltr","weight":11},"te":{"id":"te","name":"Telugu","direction":"ltr","weight":12},"kn":{"id":"kn","name":"Kannada","direction":"ltr","weight":13},"pt-ao":{"id":"pt-ao","name":"Portuguese (Angolan)","direction":"ltr","weight":14},"ro":{"id":"ro","name":"Romanian","direction":"ltr","weight":15}}},"eu_cookie_compliance":{"cookie_policy_version":"1.0.0","popup_enabled":true,"popup_agreed_enabled":false,"popup_hide_agreed":false,"popup_clicking_confirmation":true,"popup_scrolling_confirmation":false,"popup_html_info":"\u003Cdiv class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info\u0022\u003E\n    \u003Cdiv class =\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n        \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n            \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-agree-button glyphicon glyphicon-remove-circle\u0022 aria-label=\u0022OK, I agree\u0022\u003E\u003C\/button\u003E\n                    \u003C\/div\u003E\n        \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022\u003E\n            \u003Cp\u003EWe use cookies and other identifiers to help us to give you the best experience of our website. You can learn more about how we use cookies and other identifiers, and how to change your settings, in our \u003Ca href=\u0022https:\/\/www.unicef.org\/about\/legal_102356.html\u0022\u003ECookies Policy\u003C\/a\u003E. By continuing to use our website without changing your settings, you agree to allow us to use cookies and other identifiers. If you would prefer that we limit our use of cookies and identifiers, you can change your cookies settings.\u003C\/p\u003E\n\n        \u003C\/div\u003E\n    \u003C\/div\u003E\n\u003C\/div\u003E","use_mobile_message":false,"mobile_popup_html_info":"\u003Cdiv class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info\u0022\u003E\n    \u003Cdiv class =\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n        \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n            \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-agree-button glyphicon glyphicon-remove-circle\u0022 aria-label=\u0022OK, I agree\u0022\u003E\u003C\/button\u003E\n                    \u003C\/div\u003E\n        \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022\u003E\n            \n        \u003C\/div\u003E\n    \u003C\/div\u003E\n\u003C\/div\u003E","mobile_breakpoint":768,"popup_html_agreed":false,"popup_use_bare_css":false,"popup_height":"auto","popup_width":"100%","popup_delay":1000,"popup_link":"https:\/\/www.unicef.org\/about\/legal_privacy.html","popup_link_new_window":true,"popup_position":false,"fixed_top_position":true,"popup_language":"en","store_consent":false,"better_support_for_screen_readers":false,"cookie_name":"","reload_page":false,"domain":"","domain_all_sites":false,"popup_eu_only_js":false,"cookie_lifetime":100,"cookie_session":0,"set_cookie_session_zero_on_disagree":0,"disagree_do_not_show_popup":false,"method":"default","automatic_cookies_removal":true,"allowed_cookies":"","withdraw_markup":"\u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-tab\u0022\u003EPrivacy settings\u003C\/button\u003E\n\u003Cdiv role=\u0022alertdialog\u0022 aria-labelledby=\u0022popup-text\u0022 class=\u0022eu-cookie-withdraw-banner\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022\u003E\n      \u003Ch2\u003EWe use cookies on this site to enhance your user experience\u003C\/h2\u003E\n\u003Cp\u003EYou have given your consent for us to set cookies.\u003C\/p\u003E\n\n    \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-button\u0022\u003EWithdraw consent\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","withdraw_enabled":false,"reload_options":0,"reload_routes_list":"","withdraw_button_on_info_popup":false,"cookie_categories":[],"cookie_categories_details":[],"enable_save_preferences_button":true,"cookie_value_disagreed":"0","cookie_value_agreed_show_thank_you":"1","cookie_value_agreed":"2","containing_element":"body","settings_tab_enabled":false,"open_by_default":true},"unicef_clientside_validation":{"ignored_validation_css_class":".ignore-jquery-validation","ignored_validation_ajax_triggers":"[\u0022previous\u0022,\u0022address[country_code]\u0022,\u0022address[administrative_area]\u0022]"},"bootstrap":{"forms_has_error_value_toggle":1,"popover_enabled":1,"popover_animation":1,"popover_auto_close":1,"popover_container":"body","popover_content":"","popover_delay":"0","popover_html":0,"popover_placement":"right","popover_selector":"","popover_title":"","popover_trigger":"click","tooltip_enabled":1,"tooltip_animation":1,"tooltip_container":"body","tooltip_delay":"0","tooltip_html":0,"tooltip_placement":"auto left","tooltip_selector":"","tooltip_trigger":"hover"},"blazy":{"loadInvisible":true,"offset":200,"saveViewportOffsetDelay":50,"validateDelay":100,"container":".slick-carousel-slides","loader":true,"unblazy":false},"blazyIo":{"disconnect":false,"rootMargin":"0px","threshold":[0.5]},"carouseljs":{"slides_to_show":"1","autoplay":"1","infinite":"1"},"unicef_donation_form":{"ajax_event_route":false,"debug_form":false},"ajax":{"edit-next":{"callback":[{"_serviceId":"unicef_donation_form.form_step_manager"},"processAjaxSubmit"],"wrapper":"wrapper-wrapper","effect":"fade","event":"click","disable-refocus":true,"url":"\/ramadan2022?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"next","_triggering_element_value":"Next"}}},"donation_switcher":{"donation_switcher_target":".form-actions.step-integer-1 .btn.btn-next","donation_switcher_hide_tabs":true,"monthly":{"label":"\u003Ci class=\u0022fas fa-heart\u0022 style=\u0022color: rgb(237, 49, 29);\u0022\u003E\u003C\/i\u003E Switch to Give Monthly","prompt_markup":"","enable_icon":1,"icon":"\u003Ci class=\u0022fas fa-heart\u0022\u003E","icon_color":"#e61919","icon_position":"prepend","back_button_icon_color":"#000000","back_button_icon_position":"prepend"},"one-time":{"label":"Give once","enable_prompt":1,"prompt_markup":"\u003Ch2\u003EYour regular support is a lifeline to children\u003C\/h2\u003E\n\n\u003Cp\u003EMonthly donations help us meet children\u0027s most urgent needs, wherever they are.\u003C\/p\u003E\n\n\u003Cp\u003E\u003Cb\u003EMake a powerful difference for children everywhere.\u003C\/b\u003E\u003C\/p\u003E\n\n\u003Cdiv class=\u0022align-center\u0022\u003E\n  \n  \n            \u003Cdiv data-blazy=\u0022\u0022 class=\u0022blazy blazy--field blazy--field-media-image blazy--field-media-image---custom field field--name-field-media-image field--type-image field--label-hidden field--item\u0022\u003E\n\n\n\n\n                  \u003Cdiv class=\u0022media media--blazy media--bundle--image media--image is-b-loading\u0022\u003E  \u003Cpicture\u003E\u003Csource srcset=\u0022\u0022 media=\u0022all and (min-width: 1200px)\u0022 type=\u0022image\/jpeg\u0022 data-srcset=\u0022\/sites\/default\/files\/styles\/responsive_desktop\/public\/2022-03\/UN0536066%20%281%29.jpg?itok=Nd1F4Gf- 1x\u0022\u003E\u003C\/source\u003E\u003Csource srcset=\u0022\u0022 media=\u0022(min-width: 768px) and (max-width: 1199px)\u0022 type=\u0022image\/jpeg\u0022 data-srcset=\u0022\/sites\/default\/files\/styles\/responsive_tablet\/public\/2022-03\/UN0536066%20%281%29.jpg?itok=Zh5-vTEM 1x\u0022\u003E\u003C\/source\u003E\u003Csource srcset=\u0022\u0022 media=\u0022all and (max-width: 767px)\u0022 type=\u0022image\/jpeg\u0022 data-srcset=\u0022\/sites\/default\/files\/styles\/responsive_mobile\/public\/2022-03\/UN0536066%20%281%29.jpg?itok=Cn7buUOm 1x\u0022\u003E\u003C\/source\u003E\u003Cimg class=\u0022media__image media__element b-lazy b-responsive img-responsive\u0022 decoding=\u0022async\u0022 loading=\u0022lazy\u0022 data-src=\u0022\/sites\/default\/files\/styles\/responsive_tablet\/public\/2022-03\/UN0536066%20%281%29.jpg?itok=Zh5-vTEM\u0022 src=\u0022data:image\/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D\u0027http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg\u0027%20viewBox%3D\u00270%200%205760%203240\u0027%2F%3E\u0022 alt=\u0022ramadan\u0022 typeof=\u0022foaf:Image\u0022 \/\u003E\u003C\/picture\u003E\u003C\/div\u003E\n        \n  \n\u003C\/div\u003E\n      \n\u003C\/div\u003E\n\u003Cp\u003E\u00a0\u003C\/p\u003E\n","icon_color":"#000000","icon_position":"prepend","enable_back_button_icon":1,"back_button_icon":"\u003Ci class=\u0022fas fa-heart\u0022\u003E\u003C\/i\u003E","back_button_icon_color":"#2b088c","back_button_icon_position":"prepend"}},"unicef_locale":{"country_code":"EG"},"widthBreakpoint":1,"user":{"uid":0,"permissionsHash":"dd10a9b731787b57fa51cb7db3efe3e12e5f0a4e757037e8768b4c2680f6a9f3"}}</script> 
+  <script src="/core/assets/vendor/modernizr/modernizr.min.js?v=3.11.7"></script> 
+  <script src="/sites/default/files/js/js_ZvFU4VlvuElbvgkILEbMsws4rlMFB1ba79klhC4-jXE.js"></script> 
+  <script src="/core/misc/modernizr-additional-tests.js?v=3.11.7"></script> 
+  <script src="/sites/default/files/js/js_3XAFrrdkJXKxR6TbLRSN4awzSjU_hhwedvlPEPXBnP4.js"></script> <!-- Google Tag Manager --> 
+  <script>(function (w, d, s, l, i) {
+                            w[l] = w[l] || [];
+                            w[l].push({
+                                'gtm.start':
+                                    new Date().getTime(), event: 'gtm.js'
+                            });
+                            var f = d.getElementsByTagName(s)[0],
+                                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+                            j.async = true;
+                            j.src =
+                                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                            f.parentNode.insertBefore(j, f);
+                        })(window, document, 'script', 'dataLayer', 'GTM-MXZNXGW');</script> <!-- End Google Tag Manager --> 
+  <style>a.donation-switcher{
+margin: 0 auto 20px;
+}</style> 
+ </head> 
+ <body class="country-group-defaults path-node page-node-type-donation-page has-glyphicons"> <!-- Google Tag Manager (noscript) --> 
+  <noscript> <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MXZNXGW" height="0" width="0" style="display:none;visibility:hidden"></iframe> 
+  </noscript> <!-- End Google Tag Manager (noscript) --> <a href="#main-content" class="visually-hidden focusable skip-link"> Skip to main content </a> 
+  <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas> 
+   <div class="page-wrapper content  hero_image"> 
+    <div class="region region-background"> 
+     <div id="block-unicef-colombia-contentfield" class="block block-fieldblock block-fieldblocknode clearfix"> 
+      <div class="field field--name-field-hero-media field--type-entity-reference field--label-hidden field--item">
+       <div> 
+        <div class="field field--name-field-media-image field--type-image field--label-hidden field--item"></div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="page_top hero_image"> 
+     <header class="main-header row no-gutters" role="banner"> 
+      <nav class="navbar navbar-toggleable-md" role="navigation"> 
+       <div class="row nav-row"> <!-- div class="col-sm-1"></div --> 
+        <div class="col-12 col-sm-12 col-md-12 col-logo"> <a class="branding logo" href="/"> <img src="https://help.unicef.org/sites/default/files/styles/logo_image/public/2022-02/UNICEF_ForEveryChild_White_Horizontal_RGB_144ppi_ENG.png?itok=sbj4DP2E" alt="Home"> <span class="sr-only">Logo</span> </a> 
+        </div> 
+       </div> 
+      </nav> 
+     </header> 
+     <main class="main-content background-image" id="content" role="main"> <a id="main-content"></a> 
+      <div class="container-fluid"> 
+       <article class="row"> 
+        <div class="col-12 col-donation-form-wrapper"> 
+         <div class="container"> 
+          <div class="row form-position-left"> 
+           <div class="col-donation-form col"> 
+            <div class="donation_form"> 
+             <div class="highlighted"> 
+              <div class="region region-highlighted"> 
+               <div data-drupal-messages-fallback class="hidden"></div> 
+              </div> 
+             </div> 
+             <div class="region region-donation-form"> 
+              <div class="donation-form unicef-ajax-multistep-donation-form block block-unicef-donation-form block-donation-form-block clearfix" data-drupal-selector="donation-form" autocomplete="off" id="block-unicef-colombia-donationform"> 
+               <form autocomplete="off" action="/ramadan2022" method="post" id="donation-form" accept-charset="UTF-8"> 
+                <input data-drupal-selector="edit-http-request-uri" type="hidden" name="http_request_uri" value="https://help.unicef.org/ramadan2022">
+                <input data-drupal-selector="edit-http-referrer" type="hidden" name="http_referrer">
+                <input data-drupal-selector="edit-http-request-parameters" type="hidden" name="http_request_parameters" value="[]">
+                <input data-drupal-selector="edit-window-href" type="hidden" name="window_href">
+                <input data-drupal-selector="edit-messages-id" type="hidden" name="messages_id" value="messages-wrapper">
+                <div id="messages-wrapper" class="messages-wrapper clearfix form-group js-form-wrapper form-wrapper" data-drupal-selector="edit-messages-wrapper"></div> 
+                <input data-drupal-selector="edit-wrapper-id" type="hidden" name="wrapper_id" value="wrapper-wrapper">
+                <div id="wrapper-wrapper" class="wrapper-wrapper clearfix donate-form-wrapper step_donation_amount step-1 form-group js-form-wrapper form-wrapper" data-drupal-selector="edit-wrapper-wrapper">
+                 <div class="step-counter-container step-1 compact center form-group js-form-wrapper form-wrapper" data-drupal-selector="edit-s" id="edit-s"> 
+                  <div id="edit-step-counter-donation-amount" class="step-counter step-1 active-step"> 
+                   <div class="number-wrapper"> <span class="number">1</span> 
+                   </div> 
+                  </div> 
+                  <div id="edit-step-counter-personal-details" class="step-counter step-2 next-step"> 
+                   <div class="number-wrapper"> <span class="number">2</span> 
+                   </div> 
+                  </div> 
+                  <div id="edit-step-counter-payment-processor" class="step-counter step-3 next-step"> 
+                   <div class="number-wrapper"> <span class="number">3</span> 
+                   </div> 
+                  </div>
+                 </div> 
+                 <h1> 
+                  <div id="edit-title" class="form-item-title title form-item js-form-item form-type-string js-form-type-string js-form-item-title form-no-label field--item">
+                    Laylatul Qadr Appeal - Give your Sadaqah and help deliver therapeutic food to a malnourished child. Help save lives. 
+                  </div> </h1> 
+                 <div id="edit-subtitle" class="form-item-subtitle field_subtitle form-item js-form-item form-type-string js-form-type-string form-item-field-subtitle js-form-item-field-subtitle form-no-label field--item">
+                   No Amount is too small. With UNICEF you can give hope to children living in crisis in this holy month. 
+                 </div> 
+                 <div class="step_wrapper step_wrapper_donation_amount form-group js-form-wrapper form-wrapper" data-drupal-selector="edit-donation-amount-wrapper" id="edit-donation-amount-wrapper">
+                  <div data-drupal-selector="edit-donation-amounts-control" class="form-group js-form-wrapper form-wrapper" id="edit-donation-amounts-control">
+                   <div id="donation-amounts-wrapper">
+                    <div class="donation-tabs form-item js-form-item form-type-vertical-tabs js-form-type-vertical-tabs form-item- js-form-item- form-group"> 
+                     <div role="tablist" class="donation-tabs-wrapper" data-drupal-selector="edit-donation-amounts" data-vertical-tabs-panes>
+                      <input data-drupal-selector="edit-donation-amounts-currency-code" type="hidden" name="donation_amounts[currency_code]" value="USD">
+                      <input data-drupal-selector="edit-donation-amounts-currency-symbol" type="hidden" name="donation_amounts[currency_symbol]" value="USD">
+                      <input class="vertical-tabs-active-tab" data-drupal-selector="edit-donation-amounts-donation-amounts-active-tab" type="hidden" name="donation_amounts[donation_amounts_active_tab]" value="">
+                      <div class="js-form-wrapper form-wrapper form-item js-form-item panel panel-default" role="tab" data-donation-type="monthly" data-donation-type-text="Give Monthly" data-drupal-selector="edit-monthly" id="edit-monthly"> 
+                       <div class="panel-heading"> <a aria-controls="edit-monthly--content" aria-expanded="false" aria-pressed="false" data-toggle="collapse" role="button" class="panel-title" href="#edit-monthly--content">Give Monthly</a> 
+                       </div> 
+                       <div id="edit-monthly--content" class="panel-body panel-collapse collapse fade"> 
+                        <fieldset class="monthly donation-amounts-fieldset js-form-item form-item js-form-wrapper form-wrapper" data-drupal-selector="edit-monthly-wrapper" id="edit-monthly-wrapper"> <legend> <span class="visually-hidden fieldset-legend">Give Monthly Donation Amounts</span> </legend> 
+                         <div class="fieldset-wrapper"> 
+                          <div id="edit-donation-amounts-monthly" class="donation-radios-wrapper clearfix">
+                           <div class="form-item js-form-item form-type-radio js-form-type-radio form-item-donation-amounts-monthly js-form-item-donation-amounts-monthly radio"> <label for="edit-donation-amounts-monthly-70" class="control-label option"><input data-donation-type="monthly" data-drupal-selector="edit-donation-amounts-monthly-70" class="form-radio" data-sku="USD70" type="radio" id="edit-donation-amounts-monthly-70" name="donation_amounts[monthly]" value="70" checked><span><i>USD70</i></span></label> 
+                           </div> 
+                           <div class="form-item js-form-item form-type-radio js-form-type-radio form-item-donation-amounts-monthly js-form-item-donation-amounts-monthly radio"> <label for="edit-donation-amounts-monthly-140" class="control-label option"><input data-donation-type="monthly" data-drupal-selector="edit-donation-amounts-monthly-140" class="form-radio" data-sku="USD140" type="radio" id="edit-donation-amounts-monthly-140" name="donation_amounts[monthly]" value="140"><span><i>USD140</i></span></label> 
+                           </div> 
+                           <div class="form-item js-form-item form-type-radio js-form-type-radio form-item-donation-amounts-monthly js-form-item-donation-amounts-monthly radio"> <label for="edit-donation-amounts-monthly-200" class="control-label option"><input data-donation-type="monthly" data-drupal-selector="edit-donation-amounts-monthly-200" class="form-radio" data-sku="USD200" type="radio" id="edit-donation-amounts-monthly-200" name="donation_amounts[monthly]" value="200"><span><i>USD200</i></span></label> 
+                           </div> 
+                           <div class="form-item js-form-item form-type-radio js-form-type-radio form-item-donation-amounts-monthly js-form-item-donation-amounts-monthly radio"> <label for="edit-donation-amounts-monthly-other" class="control-label option"><input data-donation-type="monthly" data-drupal-selector="edit-donation-amounts-monthly-other" class="other form-radio" data-sku="Other" data-child="monthly-other" type="radio" id="edit-donation-amounts-monthly-other" name="donation_amounts[monthly]" value="other"><span><i>Other</i></span></label> 
+                           </div> 
+                          </div> 
+                          <div class="donation-descriptions-wrapper form-group js-form-wrapper form-wrapper" data-drupal-selector="edit-monthly-wrapper-descriptions" id="edit-monthly-wrapper-descriptions"></div> 
+                          <div class="other-amount-wrapper form-item js-form-item form-type-textfield js-form-type-textfield form-item-monthly-wrapper-monthly-other js-form-item-monthly-wrapper-monthly-other form-group"> <label for="edit-monthly-wrapper-monthly-other" class="control-label">Other give monthly amount</label> 
+                           <input class="currency_us-dollar other-amount form-text form-control" pattern="^[0-9.,]*$" data-msg-pattern="Other give monthly amount does not meet the requirements." data-sku="monthly-other" data-donation-type="monthly" data-currency-code="USD" data-minimum-amount="20" data-drupal-selector="edit-monthly-wrapper-monthly-other" data-msg-maxlength="Other give monthly amount field has a maximum length of 128." data-msg-required="Other give monthly amount field is required." data-rule-minimum_amounts data-msg-minimum_amounts="Please choose a donation amount over 20." type="text" id="edit-monthly-wrapper-monthly-other" name="monthly[wrapper][monthly_other]" value="" size="60" maxlength="128" data-drupal-states="{&quot;visible&quot;:{&quot;:input[name=\u0022donation_amounts[monthly]\u0022]&quot;:{&quot;value&quot;:&quot;other&quot;}},&quot;required&quot;:{&quot;:input[name=\u0022donation_amounts[monthly]\u0022]&quot;:{&quot;value&quot;:&quot;other&quot;}}}"> 
+                          </div> 
+                         </div> 
+                        </fieldset> 
+                       </div> 
+                      </div> 
+                      <div class="js-form-wrapper form-wrapper form-item js-form-item panel panel-default" role="tab" data-donation-type="one-time" data-donation-type-text="Give Once" data-drupal-selector="edit-one-time" id="edit-one-time"> 
+                       <div class="panel-heading"> <a aria-controls="edit-one-time--content" aria-expanded="false" aria-pressed="false" data-toggle="collapse" role="button" class="panel-title" href="#edit-one-time--content">Give Once</a> 
+                       </div> 
+                       <div id="edit-one-time--content" class="panel-body panel-collapse collapse fade"> 
+                        <fieldset class="one-time donation-amounts-fieldset js-form-item form-item js-form-wrapper form-wrapper" data-drupal-selector="edit-one-time-wrapper" id="edit-one-time-wrapper"> <legend> <span class="visually-hidden fieldset-legend">Give Once Donation Amounts</span> </legend> 
+                         <div class="fieldset-wrapper"> 
+                          <div id="edit-donation-amounts-one-time" class="donation-radios-wrapper clearfix">
+                           <div class="form-item js-form-item form-type-radio js-form-type-radio form-item-donation-amounts-one-time js-form-item-donation-amounts-one-time radio"> <label for="edit-donation-amounts-one-time-300" class="control-label option"><input data-donation-type="one-time" data-drupal-selector="edit-donation-amounts-one-time-300" class="form-radio" data-sku="USD300" type="radio" id="edit-donation-amounts-one-time-300" name="donation_amounts[one-time]" value="300" checked><span class="description-arrow"><i>USD300</i></span></label> 
+                           </div> 
+                           <div class="form-item js-form-item form-type-radio js-form-type-radio form-item-donation-amounts-one-time js-form-item-donation-amounts-one-time radio"> <label for="edit-donation-amounts-one-time-240" class="control-label option"><input data-donation-type="one-time" data-drupal-selector="edit-donation-amounts-one-time-240" class="form-radio" data-sku="USD240" type="radio" id="edit-donation-amounts-one-time-240" name="donation_amounts[one-time]" value="240"><span class="description-arrow"><i>USD240</i></span></label> 
+                           </div> 
+                           <div class="form-item js-form-item form-type-radio js-form-type-radio form-item-donation-amounts-one-time js-form-item-donation-amounts-one-time radio"> <label for="edit-donation-amounts-one-time-60" class="control-label option"><input data-donation-type="one-time" data-drupal-selector="edit-donation-amounts-one-time-60" class="form-radio" data-sku="USD60" type="radio" id="edit-donation-amounts-one-time-60" name="donation_amounts[one-time]" value="60"><span class="description-arrow"><i>USD60</i></span></label> 
+                           </div> 
+                           <div class="form-item js-form-item form-type-radio js-form-type-radio form-item-donation-amounts-one-time js-form-item-donation-amounts-one-time radio"> <label for="edit-donation-amounts-one-time-other" class="control-label option"><input data-donation-type="one-time" data-drupal-selector="edit-donation-amounts-one-time-other" class="other form-radio" data-sku="Other" data-child="one-time-other" type="radio" id="edit-donation-amounts-one-time-other" name="donation_amounts[one-time]" value="other"><span><i>Other</i></span></label> 
+                           </div> 
+                          </div> 
+                          <div class="donation-descriptions-wrapper form-group js-form-wrapper form-wrapper" data-drupal-selector="edit-one-time-wrapper-descriptions" id="edit-one-time-wrapper-descriptions">
+                           <div class="donation-description donation-description-one-time child-of-edit-donation-amounts-one-time-300 form-group js-form-wrapper form-wrapper" data-drupal-selector="edit-one-time-wrapper-descriptions-description-300" data-drupal-states="{&quot;visible&quot;:{&quot;:input[name=\u0022donation_amounts[one-time]\u0022]&quot;:{&quot;value&quot;:300}}}" id="edit-one-time-wrapper-descriptions-description-300"> 
+                            <div class="paragraph-91731 paragraph paragraph--type--onetime-donation-descriptions paragraph--view-mode--default"> 
+                             <div class="row"> 
+                              <div class="col field field--name-field-html-text field--type-text-long field--label-hidden field--item">
+                              <p>Will provide <strong>Emergency food for 5 children</strong></p> 
+                              </div> 
+                             </div> 
+                            </div> 
+                           </div> 
+                           <div class="donation-description donation-description-one-time child-of-edit-donation-amounts-one-time-240 form-group js-form-wrapper form-wrapper" data-drupal-selector="edit-one-time-wrapper-descriptions-description-240" data-drupal-states="{&quot;visible&quot;:{&quot;:input[name=\u0022donation_amounts[one-time]\u0022]&quot;:{&quot;value&quot;:240}}}" id="edit-one-time-wrapper-descriptions-description-240"> 
+                            <div class="paragraph-91736 paragraph paragraph--type--onetime-donation-descriptions paragraph--view-mode--default"> 
+                             <div class="row"> 
+                              <div class="col field field--name-field-html-text field--type-text-long field--label-hidden field--item">
+                              <p>Will provide <strong>Emergency food for 4 children</strong></p> 
+                              </div> 
+                             </div> 
+                            </div> 
+                           </div> 
+                           <div class="donation-description donation-description-one-time child-of-edit-donation-amounts-one-time-60 form-group js-form-wrapper form-wrapper" data-drupal-selector="edit-one-time-wrapper-descriptions-description-60" data-drupal-states="{&quot;visible&quot;:{&quot;:input[name=\u0022donation_amounts[one-time]\u0022]&quot;:{&quot;value&quot;:60}}}" id="edit-one-time-wrapper-descriptions-description-60"> 
+                            <div class="paragraph-91741 paragraph paragraph--type--onetime-donation-descriptions paragraph--view-mode--default"> 
+                             <div class="row"> 
+                              <div class="col field field--name-field-html-text field--type-text-long field--label-hidden field--item">
+                              <p>Will provide <strong>Emergency food for 1 child</strong></p> 
+                              </div> 
+                             </div> 
+                            </div> 
+                           </div> 
+                          </div> 
+                          <div class="other-amount-wrapper form-item js-form-item form-type-textfield js-form-type-textfield form-item-one-time-wrapper-one-time-other js-form-item-one-time-wrapper-one-time-other form-group"> <label for="edit-one-time-wrapper-one-time-other" class="control-label">Other give once amount</label> 
+                           <input class="currency_us-dollar other-amount form-text form-control" pattern="^[0-9.,]*$" data-msg-pattern="Other give once amount does not meet the requirements." data-sku="one-time-other" data-donation-type="one-time" data-currency-code="USD" data-minimum-amount="50" data-drupal-selector="edit-one-time-wrapper-one-time-other" data-msg-maxlength="Other give once amount field has a maximum length of 128." data-msg-required="Other give once amount field is required." data-rule-minimum_amounts data-msg-minimum_amounts="Please choose a donation amount over 50." type="text" id="edit-one-time-wrapper-one-time-other" name="one-time[wrapper][one-time_other]" value="" size="60" maxlength="128" data-drupal-states="{&quot;visible&quot;:{&quot;:input[name=\u0022donation_amounts[one-time]\u0022]&quot;:{&quot;value&quot;:&quot;other&quot;}},&quot;required&quot;:{&quot;:input[name=\u0022donation_amounts[one-time]\u0022]&quot;:{&quot;value&quot;:&quot;other&quot;}}}"> 
+                          </div> 
+                         </div> 
+                        </fieldset> 
+                       </div> 
+                      </div> 
+                      <input class="vertical-tabs__active-tab" data-drupal-selector="edit-donation-amounts-donation-amounts-active-tab" type="hidden" name="donation_amounts[donation_amounts__active_tab]" value="">
+                     </div> 
+                    </div> 
+                   </div>
+                   <input data-drupal-selector="edit-donation-amount-defaults" type="hidden" name="donation_amount_defaults" value="defaults">
+                  </div> 
+                  <div id="edit-disclaimer" class="form-item-disclaimer field_disclaimer form-item js-form-item form-type-text-long js-form-type-text-long form-item-field-disclaimer js-form-item-field-disclaimer form-no-label field--item"> 
+                   <p>As you proceed, you will be taken to a secure payment page, where you perform the transfer of your gift.</p> 
+                  </div> 
+                 </div> 
+                 <div class="form-actions clearfix webform-actions step-donation_amount step-integer-1 form-group js-form-wrapper form-wrapper" data-drupal-selector="edit-wrapper" id="edit-wrapper">
+                  <button class="donate-form-next-btn btn btn-next btn-primary button js-form-submit form-submit" data-step-key="donation_amount" data-step-integer="1" data-drupal-selector="edit-next" data-disable-refocus="true" type="submit" id="edit-next" name="next" value="Next">Next</button>
+                 </div> 
+                 <input data-drupal-selector="edit-device-fingerprint" data-msg-maxlength="This field field has a maximum length of 1000." type="hidden" name="device_fingerprint" value="">
+                 <input data-drupal-selector="edit-step-key" type="hidden" name="step_key" value="donation_amount">
+                 <input data-drupal-selector="edit-step-integer" type="hidden" name="step_integer" value="1">
+                 <input data-json="{&quot;step_key&quot;:&quot;donation_amount&quot;,&quot;step_integer&quot;:0,&quot;country&quot;:&quot;EG&quot;,&quot;x_geo_country&quot;:&quot;EG&quot;,&quot;language&quot;:&quot;en&quot;,&quot;browser_language&quot;:&quot;en&quot;,&quot;user_agent&quot;:&quot;Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/79.0.3945.130 Safari\/537.36&quot;,&quot;session_id&quot;:&quot;HgdBBa3FX3S0zrc4htiRSQ6WVTU_UcAtEDfcIgF6gGs&quot;,&quot;entity_id&quot;:&quot;5886&quot;,&quot;node_url&quot;:&quot;\/ramadan2022&quot;,&quot;field_meta_campaign_title&quot;:&quot;Ramadan 2022&quot;,&quot;title&quot;:&quot;Laylatul Qadr Appeal - Give your Sadaqah and help deliver therapeutic food to a malnourished child. Help save lives.&quot;,&quot;field_meta_campaign_type&quot;:&quot;Default&quot;,&quot;field_meta_campaign_theme&quot;:&quot;Children \u0026 Emergencies&quot;,&quot;field_geographic_region&quot;:&quot;MENA&quot;}" class="donation-form-json-attributes" data-drupal-selector="edit-json-attributes" type="hidden" name="json_attributes" value="{&quot;step_key&quot;:&quot;donation_amount&quot;,&quot;step_integer&quot;:0,&quot;country&quot;:&quot;EG&quot;,&quot;x_geo_country&quot;:&quot;EG&quot;,&quot;language&quot;:&quot;en&quot;,&quot;browser_language&quot;:&quot;en&quot;,&quot;user_agent&quot;:&quot;Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/79.0.3945.130 Safari\/537.36&quot;,&quot;session_id&quot;:&quot;HgdBBa3FX3S0zrc4htiRSQ6WVTU_UcAtEDfcIgF6gGs&quot;,&quot;entity_id&quot;:&quot;5886&quot;,&quot;node_url&quot;:&quot;\/ramadan2022&quot;,&quot;field_meta_campaign_title&quot;:&quot;Ramadan 2022&quot;,&quot;title&quot;:&quot;Laylatul Qadr Appeal - Give your Sadaqah and help deliver therapeutic food to a malnourished child. Help save lives.&quot;,&quot;field_meta_campaign_type&quot;:&quot;Default&quot;,&quot;field_meta_campaign_theme&quot;:&quot;Children \u0026 Emergencies&quot;,&quot;field_geographic_region&quot;:&quot;MENA&quot;}">
+                </div> 
+                <input autocomplete="off" data-drupal-selector="form-sfdl6clxuqmg3bqyx-uaexgiv0xqvhwc2r7sdv-fans" type="hidden" name="form_build_id" value="form-SFDL6clxUqMg3BQYX_uaexgIV0xQvhwC2r7SDV-fAns">
+                <input data-drupal-selector="edit-donation-form" type="hidden" name="form_id" value="donation_form"> 
+               </form> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <div class="col-emergency-content col"> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </article> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="page_bottom"> 
+     <div class="emergency-content"> 
+      <div class="region region-content"> 
+       <article about="/ramadan2022" class="donation-page is-promoted full clearfix"> 
+        <div class="content"> 
+         <div class="field field--name-field-body-paragraphs field--type-entity-reference-revisions field--label-hidden field--items"> 
+          <div class="field--item"> 
+           <div class="paragraph-91646 paragraph paragraph--type--html-text paragraph--view-mode--default"> 
+            <div class="container"> 
+             <div class="row"> 
+              <div class="col-12 field field--name-field-html-text field--type-text-long field--label-hidden field--item">
+               <h2 class="text-align-center">Give your sadaqah to help save the lives of malnourished children in Afghanistan, Yemen, Syria and many other parts of the world</h2> 
+               <p><strong>A Lifeline for Aseel, a Severely Malnourished 2-Year-Old in Yemen</strong>.&nbsp;<span class="text-unicef-red"><strong>Aseel is 2 years old and he has been suffering from severe acute malnutrition&nbsp;</strong>since he was 2 months old</span>.&nbsp;<strong>He received treatment in a hospital supported by UNICEF and after 4 months he started to gain weight</strong>. But his fight against malnutrition continues, and the&nbsp;<strong>experience of seeing their child go hungry still remains in his family’s memory.</strong>&nbsp;In countries like Yemen and Afghanistan, the malnutrition rates are soaring, but the support of generous donors like you will help bring hope.</p> 
+               <div class="align-center"> 
+                <div data-blazy="" class="blazy blazy--field blazy--field-media-image blazy--field-media-image---custom field field--name-field-media-image field--type-image field--label-hidden field--item"> 
+                 <div class="media media--blazy media--bundle--image media--image is-b-loading"> <picture>
+                   <source srcset="" media="all and (min-width: 1200px)" type="image/jpeg" data-srcset="/sites/default/files/styles/responsive_desktop/public/2022-04/Aseel.jpeg?itok=gDmx5oLc 1x">
+                   <source srcset="" media="(min-width: 768px) and (max-width: 1199px)" type="image/jpeg" data-srcset="/sites/default/files/styles/responsive_tablet/public/2022-04/Aseel.jpeg?itok=hlXg8qgF 1x">
+                   <source srcset="" media="all and (max-width: 767px)" type="image/jpeg" data-srcset="/sites/default/files/styles/responsive_mobile/public/2022-04/Aseel.jpeg?itok=mxrFiPiq 1x">
+                   <img class="media__image media__element b-lazy b-responsive img-responsive" decoding="async" loading="lazy" data-src="/sites/default/files/styles/responsive_tablet/public/2022-04/Aseel.jpeg?itok=hlXg8qgF" src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%201140%20641'%2F%3E" alt="Without treatment, severe acute malnutrition can be fatal" typeof="foaf:Image">
+                  </picture>
+                 </div> 
+                </div> 
+               </div> 
+               <p>&nbsp;</p> 
+               <p><strong>Around the world, Muslim communities are coming together to commemorate the holy month of Ramadan through prayer and fasting. But too many children like Aseel and their families are unable to have a proper meal to start and break their fast.&nbsp;</strong>This Ramadan, your sadaqah will help UNICEF provide life-saving and critical supplies like therapeutic food, access to water and much more to children in&nbsp;<strong>Yemen, Syria, Afghanistan&nbsp;</strong>and many other parts of the world.</p> 
+               <p><strong>Did You Know?</strong>&nbsp;In 2021, with support from individual donors like you,&nbsp;<span class="text-unicef-blue"><strong>UNICEF helped 3.1 million children&nbsp;fight malnutrition in Yemen alone.</strong></span></p> 
+               <p><strong>UNICEF is the largest provider of ready-to-use therapeutic food&nbsp;</strong>(RUTF) in the world. It is a sweet, peanut-based, nutrient-enriched paste that is&nbsp;<strong>effective in treating malnutrition among children</strong>. 3 packets a day for 8 weeks can save the life of a child with severe acute malnutrition.&nbsp;</p> 
+               <h2 class="text-align-center">But we can't do any of this without your support.</h2> 
+               <p><strong>Give your sadaqah,</strong>&nbsp;to give a better future to the most vulnerable children.&nbsp;There is no better time than now. Your generosity will bring hope to Muslims in need in this Ramadan.&nbsp;<strong>Show your generosity this Ramadan.&nbsp;</strong></p> 
+               <p>&nbsp;</p> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <div class="field--item"> 
+           <div class="paragraph-91661 paragraph paragraph--type--columns paragraph--view-mode--default"> 
+            <div class="container"> 
+             <div class="row justify-content-center field field--name-field-columns field--type-entity-reference-revisions field--label-hidden field--items"> 
+              <div class="col col--column"> 
+               <div class="paragraph-91651 paragraph paragraph--type--column paragraph--view-mode--default"> 
+                <div class="column-image column-float-animation field field--name-field-image-media field--type-entity-reference field--label-hidden field--item">
+                 <div> 
+                  <div data-blazy="" class="blazy blazy--field blazy--field-media-image blazy--field-media-image---custom field field--name-field-media-image field--type-image field--label-hidden field--item"> 
+                   <div class="media media--blazy media--bundle--image media--image is-b-loading"> <picture> 
+                     <source srcset="" media="all and (min-width: 1200px)" type="image/jpeg" data-srcset="/sites/default/files/styles/responsive_desktop/public/2022-03/UNI312547.jpg?itok=rMJCSFDv 1x"> 
+                     <source srcset="" media="(min-width: 768px) and (max-width: 1199px)" type="image/jpeg" data-srcset="/sites/default/files/styles/responsive_tablet/public/2022-03/UNI312547.jpg?itok=saczB6lp 1x"> 
+                     <source srcset="" media="all and (max-width: 767px)" type="image/jpeg" data-srcset="/sites/default/files/styles/responsive_mobile/public/2022-03/UNI312547.jpg?itok=tZwoCqt- 1x"> 
+                     <img class="media__image media__element b-lazy b-responsive img-responsive" decoding="async" loading="lazy" data-src="/sites/default/files/styles/responsive_tablet/public/2022-03/UNI312547.jpg?itok=saczB6lp" src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%206336%204224'%2F%3E" alt="With UNICEF, your gift will reach them with the therapeutic food that they need to survive and thrive." typeof="foaf:Image"> 
+                    </picture> 
+                   </div> 
+                  </div> 
+                 </div> 
+                </div> 
+                <div class="column-body field field--name-field-html-text field--type-text-long field--label-hidden field--item">
+                 <p class="text-align-center"><strong>Your urgent Ramadan gift will reach vulnerable children with the therapeutic food, and water services</strong> that they need to survive and thrive.&nbsp;</p> 
+                </div> 
+               </div> 
+              </div> 
+              <div class="col col--column"> 
+               <div class="paragraph-91656 paragraph paragraph--type--column paragraph--view-mode--default"> 
+                <div class="column-image column-float-animation field field--name-field-image-media field--type-entity-reference field--label-hidden field--item">
+                 <div> 
+                  <div data-blazy="" class="blazy blazy--field blazy--field-media-image blazy--field-media-image---custom field field--name-field-media-image field--type-image field--label-hidden field--item"> 
+                   <div class="media media--blazy media--bundle--image media--image is-b-loading"> <picture> 
+                     <source srcset="" media="all and (min-width: 1200px)" type="image/jpeg" data-srcset="/sites/default/files/styles/responsive_desktop/public/2022-03/UN0595961.JPG?itok=YQ--T7s9 1x"> 
+                     <source srcset="" media="(min-width: 768px) and (max-width: 1199px)" type="image/jpeg" data-srcset="/sites/default/files/styles/responsive_tablet/public/2022-03/UN0595961.JPG?itok=42ByI6iL 1x"> 
+                     <source srcset="" media="all and (max-width: 767px)" type="image/jpeg" data-srcset="/sites/default/files/styles/responsive_mobile/public/2022-03/UN0595961.JPG?itok=P6zL9xL3 1x"> 
+                     <img class="media__image media__element b-lazy b-responsive img-responsive" decoding="async" loading="lazy" data-src="/sites/default/files/styles/responsive_tablet/public/2022-03/UN0595961.JPG?itok=42ByI6iL" src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%205760%203840'%2F%3E" alt="rutf-children" typeof="foaf:Image"> 
+                    </picture> 
+                   </div> 
+                  </div> 
+                 </div> 
+                </div> 
+                <div class="column-body field field--name-field-html-text field--type-text-long field--label-hidden field--item">
+                 <p class="text-align-center"><strong>Your urgent gift will reach families with the cash assistance that they need to survive and thrive.&nbsp;</strong></p> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <div class="field--item"> 
+           <div class="paragraph-91666 paragraph paragraph--type--html-text paragraph--view-mode--default"> 
+            <div class="container"> 
+             <div class="row"> 
+              <div class="col-12 field field--name-field-background-color field--type-color-field-type field--label-hidden field--item">
+               <div class="hidden">
+                rgb(28,171,226)
+               </div>
+              </div> 
+              <div class="col-12 field field--name-field-html-text field--type-text-long field--label-hidden field--item">
+               <h3 class="text-align-center"><span class="text-white">Donate to UNICEF this Ramadan and help us reach children like Aseel, Fatima, Gosson and Sajeed. </span></h3> 
+               <h3 class="text-align-center"><span class="text-white">There’s no better time than now to save a life.?&nbsp;</span></h3> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <div class="field--item"> 
+           <div class="paragraph-91686 paragraph paragraph--type--columns paragraph--view-mode--default"> 
+            <div class="container"> 
+             <div class="row justify-content-center field field--name-field-columns field--type-entity-reference-revisions field--label-hidden field--items"> 
+              <div style="flex-basis: 33%; align-self: flex-start" class="col col--column"> 
+               <div class="paragraph-91671 paragraph paragraph--type--column paragraph--view-mode--default"> 
+                <div class="column-image column-float-animation field field--name-field-image-media field--type-entity-reference field--label-hidden field--item">
+                 <div> 
+                  <div data-blazy="" class="blazy blazy--field blazy--field-media-image blazy--field-media-image---custom field field--name-field-media-image field--type-image field--label-hidden field--item"> 
+                   <div class="media media--blazy media--bundle--image media--image is-b-loading"> <picture> 
+                     <source srcset="" media="all and (min-width: 1200px)" type="image/jpeg" data-srcset="/sites/default/files/styles/responsive_desktop/public/2022-03/UN0536066.jpg?itok=lgCFqPAo 1x"> 
+                     <source srcset="" media="(min-width: 768px) and (max-width: 1199px)" type="image/jpeg" data-srcset="/sites/default/files/styles/responsive_tablet/public/2022-03/UN0536066.jpg?itok=sTDnnyjc 1x"> 
+                     <source srcset="" media="all and (max-width: 767px)" type="image/jpeg" data-srcset="/sites/default/files/styles/responsive_mobile/public/2022-03/UN0536066.jpg?itok=d983ASl_ 1x"> 
+                     <img class="media__image media__element b-lazy b-responsive img-responsive" decoding="async" loading="lazy" data-src="/sites/default/files/styles/responsive_tablet/public/2022-03/UN0536066.jpg?itok=sTDnnyjc" src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%20600%20350'%2F%3E" alt="Fatima, child with malnutrition in Yemen" typeof="foaf:Image"> 
+                    </picture> 
+                   </div> 
+                  </div> 
+                 </div> 
+                </div> 
+                <div class="column-body field field--name-field-html-text field--type-text-long field--label-hidden field--item">
+                 <p>As many other children under 5,&nbsp;<strong>Fatima arrived in a hospital in Yemen suffering from severe dehydration</strong>&nbsp;and malnutrition, resulting in kidney failure. She was put on a treatment programme and is recovering now.&nbsp;</p> 
+                </div> 
+               </div> 
+              </div> 
+              <div style="flex-basis: 33%; align-self: flex-start" class="col col--column"> 
+               <div class="paragraph-91676 paragraph paragraph--type--column paragraph--view-mode--default"> 
+                <div class="column-image column-float-animation field field--name-field-image-media field--type-entity-reference field--label-hidden field--item">
+                 <div> 
+                  <div data-blazy="" class="blazy blazy--field blazy--field-media-image blazy--field-media-image---custom field field--name-field-media-image field--type-image field--label-hidden field--item"> 
+                   <div class="media media--blazy media--bundle--image media--image is-b-loading"> <picture> 
+                     <source srcset="" media="all and (min-width: 1200px)" type="image/jpeg" data-srcset="/sites/default/files/styles/responsive_desktop/public/2022-03/UN0492356.jpg?itok=_dg4x8HC 1x"> 
+                     <source srcset="" media="(min-width: 768px) and (max-width: 1199px)" type="image/jpeg" data-srcset="/sites/default/files/styles/responsive_tablet/public/2022-03/UN0492356.jpg?itok=hO1_lbxU 1x"> 
+                     <source srcset="" media="all and (max-width: 767px)" type="image/jpeg" data-srcset="/sites/default/files/styles/responsive_mobile/public/2022-03/UN0492356.jpg?itok=qqvz1ztB 1x"> 
+                     <img class="media__image media__element b-lazy b-responsive img-responsive" decoding="async" loading="lazy" data-src="/sites/default/files/styles/responsive_tablet/public/2022-03/UN0492356.jpg?itok=hO1_lbxU" src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%20600%20350'%2F%3E" alt="Gosson, child in Yemen with malnutrition" typeof="foaf:Image"> 
+                    </picture> 
+                   </div> 
+                  </div> 
+                 </div> 
+                </div> 
+                <div class="column-body field field--name-field-html-text field--type-text-long field--label-hidden field--item">
+                 <p><strong>Gosson is one of the many children in Yemen who have been affected by malnutrition.</strong>&nbsp;She was referred to a hospital and started treatment with therapeutic food. Once her health improved, she was back home, where she could finally eat regular food with her mother’s help.&nbsp;</p> 
+                </div> 
+               </div> 
+              </div> 
+              <div style="flex-basis: 33%; align-self: flex-start" class="col col--column"> 
+               <div class="paragraph-91681 paragraph paragraph--type--column paragraph--view-mode--default"> 
+                <div class="column-image column-float-animation field field--name-field-image-media field--type-entity-reference field--label-hidden field--item">
+                 <div> 
+                  <div data-blazy="" class="blazy blazy--field blazy--field-media-image blazy--field-media-image---custom field field--name-field-media-image field--type-image field--label-hidden field--item"> 
+                   <div class="media media--blazy media--bundle--image media--image is-b-loading"> <picture> 
+                     <source srcset="" media="all and (min-width: 1200px)" type="image/jpeg" data-srcset="/sites/default/files/styles/responsive_desktop/public/2022-03/UN0574478-%281%29.jpg?itok=Bw-_HGnk 1x"> 
+                     <source srcset="" media="(min-width: 768px) and (max-width: 1199px)" type="image/jpeg" data-srcset="/sites/default/files/styles/responsive_tablet/public/2022-03/UN0574478-%281%29.jpg?itok=h0cDJk0B 1x"> 
+                     <source srcset="" media="all and (max-width: 767px)" type="image/jpeg" data-srcset="/sites/default/files/styles/responsive_mobile/public/2022-03/UN0574478-%281%29.jpg?itok=drn92dZ7 1x"> 
+                     <img class="media__image media__element b-lazy b-responsive img-responsive" decoding="async" loading="lazy" data-src="/sites/default/files/styles/responsive_tablet/public/2022-03/UN0574478-%281%29.jpg?itok=h0cDJk0B" src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%20600%20350'%2F%3E" alt="Sajeed, child in Afghanistan" typeof="foaf:Image"> 
+                    </picture> 
+                   </div> 
+                  </div> 
+                 </div> 
+                </div> 
+                <div class="column-body field field--name-field-html-text field--type-text-long field--label-hidden field--item">
+                 <p>In Afghanistan, the situation has become dire for many families in the brink of poverty. Cash assistance is being distributed by UNICEF to&nbsp;<strong>help vulnerable families like Sajeed’s</strong>. This money will help them meet critical needs like food this Ramadan.&nbsp;</p> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <div class="field--item"> 
+           <div class="paragraph-91691 paragraph paragraph--type--html-text paragraph--view-mode--default"> 
+            <div class="container"> 
+             <div class="row"> 
+              <div class="col-12 field field--name-field-html-text field--type-text-long field--label-hidden field--item">
+               <h2>Your sadaqah can make a big difference this Ramadan by providing -&nbsp;&nbsp;</h2> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <div class="field--item"> 
+           <div class="paragraph-91711 paragraph paragraph--type--cards paragraph--view-mode--default"> 
+            <div class="container"> 
+             <div class="row justify-content-center field field--name-field-cards field--type-entity-reference-revisions field--label-hidden field--items"> 
+              <div class="col col--card">
+               <div class="paragraph-91696 card"> 
+                <div class="card-header"> 
+                 <div class="card-title field--item">
+                  Nutrition 
+                 </div> 
+                </div> 
+                <div class="card-image field--item">
+                 <div> 
+                  <div data-blazy="" class="blazy blazy--field blazy--field-media-image blazy--field-media-image---custom field field--name-field-media-image field--type-image field--label-hidden field--item"> 
+                   <div class="media media--blazy media--bundle--image media--image is-b-loading"> <picture> 
+                     <source srcset="" media="all and (min-width: 1200px)" type="image/jpeg" data-srcset="/sites/default/files/styles/responsive_desktop/public/2022-02/UN0551770.jpg?itok=Lmu1hRIw 1x"> 
+                     <source srcset="" media="(min-width: 768px) and (max-width: 1199px)" type="image/jpeg" data-srcset="/sites/default/files/styles/responsive_tablet/public/2022-02/UN0551770.jpg?itok=C5dj0QNM 1x"> 
+                     <source srcset="" media="all and (max-width: 767px)" type="image/jpeg" data-srcset="/sites/default/files/styles/responsive_mobile/public/2022-02/UN0551770.jpg?itok=uVh_Uc_E 1x"> 
+                     <img class="media__image media__element b-lazy b-responsive img-responsive" decoding="async" loading="lazy" data-src="/sites/default/files/styles/responsive_tablet/public/2022-02/UN0551770.jpg?itok=C5dj0QNM" src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%206000%204000'%2F%3E" alt="nutrition" typeof="foaf:Image"> 
+                    </picture> 
+                   </div> 
+                  </div> 
+                 </div> 
+                </div> 
+                <div class="card-body field--item">
+                 <p>PlumpyNut are sackets of therapeutic food used to treat children affected by severe acute malnutrition. Each package contains a peanut-based paste that can help recover a child within weeks. Providing this treatment to children is key to help them recover as quickly as possible.&nbsp;&nbsp;</p> 
+                </div> 
+               </div> 
+              </div> 
+              <div class="col col--card">
+               <div class="paragraph-91701 card"> 
+                <div class="card-header"> 
+                 <div class="card-title field--item">
+                  Water
+                 </div> 
+                </div> 
+                <div class="card-image field--item">
+                 <div> 
+                  <div data-blazy="" class="blazy blazy--field blazy--field-media-image blazy--field-media-image---custom field field--name-field-media-image field--type-image field--label-hidden field--item"> 
+                   <div class="media media--blazy media--bundle--image media--image is-b-loading"> <picture> 
+                     <source srcset="" media="all and (min-width: 1200px)" type="image/jpeg" data-srcset="/sites/default/files/styles/responsive_desktop/public/2022-02/UN0536149.jpg?itok=kCUsGkcS 1x"> 
+                     <source srcset="" media="(min-width: 768px) and (max-width: 1199px)" type="image/jpeg" data-srcset="/sites/default/files/styles/responsive_tablet/public/2022-02/UN0536149.jpg?itok=oJPdNFp9 1x"> 
+                     <source srcset="" media="all and (max-width: 767px)" type="image/jpeg" data-srcset="/sites/default/files/styles/responsive_mobile/public/2022-02/UN0536149.jpg?itok=jtnQVKOR 1x"> 
+                     <img class="media__image media__element b-lazy b-responsive img-responsive" decoding="async" loading="lazy" data-src="/sites/default/files/styles/responsive_tablet/public/2022-02/UN0536149.jpg?itok=oJPdNFp9" src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%205760%203840'%2F%3E" alt="water" typeof="foaf:Image"> 
+                    </picture> 
+                   </div> 
+                  </div> 
+                 </div> 
+                </div> 
+                <div class="card-body field--item">
+                 <p>In Yemen, your sadaqah can help to provide water and sanitation services to displaced populations and schools. Your support can bring assistance in the form of water points and communal water tanks, latrines, hygiene kits and household water treatment tablets.&nbsp;&nbsp;</p> 
+                </div> 
+               </div> 
+              </div> 
+              <div class="col col--card">
+               <div class="paragraph-91706 card"> 
+                <div class="card-header"> 
+                 <div class="card-title field--item">
+                  Cash Assistance
+                 </div> 
+                </div> 
+                <div class="card-image field--item">
+                 <div> 
+                  <div data-blazy="" class="blazy blazy--field blazy--field-media-image blazy--field-media-image---custom field field--name-field-media-image field--type-image field--label-hidden field--item"> 
+                   <div class="media media--blazy media--bundle--image media--image is-b-loading"> <picture> 
+                     <source srcset="" media="all and (min-width: 1200px)" type="image/jpeg" data-srcset="/sites/default/files/styles/responsive_desktop/public/2022-02/UN0574454.jpg?itok=MvHtHjVM 1x"> 
+                     <source srcset="" media="(min-width: 768px) and (max-width: 1199px)" type="image/jpeg" data-srcset="/sites/default/files/styles/responsive_tablet/public/2022-02/UN0574454.jpg?itok=nrb7YgQH 1x"> 
+                     <source srcset="" media="all and (max-width: 767px)" type="image/jpeg" data-srcset="/sites/default/files/styles/responsive_mobile/public/2022-02/UN0574454.jpg?itok=6D6mc_yI 1x"> 
+                     <img class="media__image media__element b-lazy b-responsive img-responsive" decoding="async" loading="lazy" data-src="/sites/default/files/styles/responsive_tablet/public/2022-02/UN0574454.jpg?itok=nrb7YgQH" src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%202048%201365'%2F%3E" alt="poor-afghanistan" typeof="foaf:Image"> 
+                    </picture> 
+                   </div> 
+                  </div> 
+                 </div> 
+                </div> 
+                <div class="card-body field--item">
+                 <p>Helping the most vulnerable families to meet their basic needs is our goal in 4 provinces in Afghanistan. Every month, each household receives a lifeline of $80 to buy food, clothes and medicines for their children. This money is making a difference in their lives, helping them to survive.&nbsp;</p> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <div class="field--item"> 
+           <div class="paragraph-91716 paragraph paragraph--type--carousel paragraph--view-mode--default"> 
+            <div class="container"> 
+             <div class="row"> 
+              <div class="col-12 field field--name-field-carousel-reference field--type-entity-reference field--label-hidden field--item">
+               <article about="/node/5206" class="carousel is-promoted default clearfix"> 
+                <h2 class="hidden"> <span>Quotes &amp; Testimonials</span> </h2> 
+                <div class="content"> 
+                 <div class="slick-carousel-slides field field--name-field-carousel-slides field--type-entity-reference-revisions field--label-hidden field--items" data-slick="{&quot;dots&quot;: true}"> 
+                  <div class="slick-carousel-slide field--item"> 
+                   <div class="paragraph-80901 paragraph paragraph--type--carousel-slide paragraph--view-mode--default"> 
+                    <div class="container"> 
+                     <div class="row"> 
+                      <div class="slick-carousel-slide-text col-12 field field--name-field-html-text field--type-text-long field--label-hidden field--item">
+                       <div class="align-center"> 
+                        <div data-blazy="" class="blazy blazy--field blazy--field-media-image blazy--field-media-image---custom field field--name-field-media-image field--type-image field--label-hidden field--item"> 
+                         <div class="media media--blazy media--bundle--image media--image is-b-loading"> <picture>
+                           <source srcset="" media="all and (min-width: 1200px)" type="image/jpeg" data-srcset="/sites/default/files/styles/responsive_desktop/public/2022-03/UN0492355.jpg?itok=mD45TuXO 1x">
+                           <source srcset="" media="(min-width: 768px) and (max-width: 1199px)" type="image/jpeg" data-srcset="/sites/default/files/styles/responsive_tablet/public/2022-03/UN0492355.jpg?itok=4thYBrS1 1x">
+                           <source srcset="" media="all and (max-width: 767px)" type="image/jpeg" data-srcset="/sites/default/files/styles/responsive_mobile/public/2022-03/UN0492355.jpg?itok=qehwW40h 1x">
+                           <img class="media__image media__element b-lazy b-responsive img-responsive" decoding="async" loading="lazy" data-src="/sites/default/files/styles/responsive_tablet/public/2022-03/UN0492355.jpg?itok=4thYBrS1" src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%20800%20500'%2F%3E" alt="Wardah Awad and Gosson, Yemen" typeof="foaf:Image">
+                          </picture>
+                         </div> 
+                        </div> 
+                       </div> 
+                       <p class="text-align-center" paraeid="{e42728f4-078e-4631-a356-f188a5a9f13e}{196}" paraid="598055414">&nbsp;</p> 
+                       <p class="text-align-center" paraeid="{e42728f4-078e-4631-a356-f188a5a9f13e}{196}" paraid="598055414">“My daughter was sick, but since she came to the hospital for treatment, I started to notice that her condition is improving, as her weight was 5 kilos before and now it is 7 kilos.”&nbsp;</p> 
+                       <p class="text-align-center" paraeid="{e42728f4-078e-4631-a356-f188a5a9f13e}{202}" paraid="17490941">Wardah Awad, 25 years old, Gosson’s mother&nbsp;</p> 
+                      </div> 
+                     </div> 
+                    </div> 
+                   </div> 
+                  </div> 
+                  <div class="slick-carousel-slide field--item"> 
+                   <div class="paragraph-80906 paragraph paragraph--type--carousel-slide paragraph--view-mode--default"> 
+                    <div class="container"> 
+                     <div class="row"> 
+                      <div class="slick-carousel-slide-text col-12 field field--name-field-html-text field--type-text-long field--label-hidden field--item">
+                       <div class="align-center"> 
+                        <div data-blazy="" class="blazy blazy--field blazy--field-media-image blazy--field-media-image---custom field field--name-field-media-image field--type-image field--label-hidden field--item"> 
+                         <div class="media media--blazy media--bundle--image media--image is-b-loading"> <picture>
+                           <source srcset="" media="all and (min-width: 1200px)" type="image/jpeg" data-srcset="/sites/default/files/styles/responsive_desktop/public/2022-03/UN0523310.jpg?itok=bhS6bBGU 1x">
+                           <source srcset="" media="(min-width: 768px) and (max-width: 1199px)" type="image/jpeg" data-srcset="/sites/default/files/styles/responsive_tablet/public/2022-03/UN0523310.jpg?itok=LVN5uX9W 1x">
+                           <source srcset="" media="all and (max-width: 767px)" type="image/jpeg" data-srcset="/sites/default/files/styles/responsive_mobile/public/2022-03/UN0523310.jpg?itok=Y-aV8hPQ 1x">
+                           <img class="media__image media__element b-lazy b-responsive img-responsive" decoding="async" loading="lazy" data-src="/sites/default/files/styles/responsive_tablet/public/2022-03/UN0523310.jpg?itok=LVN5uX9W" src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%20800%20500'%2F%3E" alt="Ali Mohammend and Assel" typeof="foaf:Image">
+                          </picture>
+                         </div> 
+                        </div> 
+                       </div> 
+                       <p class="text-align-center" paraeid="{e42728f4-078e-4631-a356-f188a5a9f13e}{226}" paraid="1446796165">&nbsp;</p> 
+                       <p class="text-align-center" paraeid="{e42728f4-078e-4631-a356-f188a5a9f13e}{226}" paraid="1446796165">“I hope they can help him so we don’t lose him too, like I lost my kids. One after other and…They died in front of my eyes....I lost already two children because of malnutrition. I do not want Aseel to face the same fate.”&nbsp;</p> 
+                       <p class="text-align-center" paraeid="{e42728f4-078e-4631-a356-f188a5a9f13e}{250}" paraid="2091981407">Ali Mohammend, Aseel’s uncle.&nbsp;</p> 
+                      </div> 
+                     </div> 
+                    </div> 
+                   </div> 
+                  </div> 
+                  <div class="slick-carousel-slide field--item"> 
+                   <div class="paragraph-80911 paragraph paragraph--type--carousel-slide paragraph--view-mode--default"> 
+                    <div class="container"> 
+                     <div class="row"> 
+                      <div class="slick-carousel-slide-text col-12 field field--name-field-html-text field--type-text-long field--label-hidden field--item">
+                       <div class="align-center"> 
+                        <div data-blazy="" class="blazy blazy--field blazy--field-media-image blazy--field-media-image---custom field field--name-field-media-image field--type-image field--label-hidden field--item"> 
+                         <div class="media media--blazy media--bundle--image media--image is-b-loading"> <picture>
+                           <source srcset="" media="all and (min-width: 1200px)" type="image/jpeg" data-srcset="/sites/default/files/styles/responsive_desktop/public/2022-03/UN0574454.jpg?itok=2HR_NHWG 1x">
+                           <source srcset="" media="(min-width: 768px) and (max-width: 1199px)" type="image/jpeg" data-srcset="/sites/default/files/styles/responsive_tablet/public/2022-03/UN0574454.jpg?itok=IvAT1p83 1x">
+                           <source srcset="" media="all and (max-width: 767px)" type="image/jpeg" data-srcset="/sites/default/files/styles/responsive_mobile/public/2022-03/UN0574454.jpg?itok=1mMKvgEn 1x">
+                           <img class="media__image media__element b-lazy b-responsive img-responsive" decoding="async" loading="lazy" data-src="/sites/default/files/styles/responsive_tablet/public/2022-03/UN0574454.jpg?itok=IvAT1p83" src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%20800%20500'%2F%3E" alt="Mohammad, farmer in Afghanistan" typeof="foaf:Image">
+                          </picture>
+                         </div> 
+                        </div> 
+                       </div> 
+                       <p class="text-align-center" paraeid="{05cd8071-babb-409c-b75f-a3b443846b0a}{21}" paraid="1441387893">&nbsp;</p> 
+                       <p class="text-align-center" paraeid="{05cd8071-babb-409c-b75f-a3b443846b0a}{21}" paraid="1441387893">“For a poor family like mine, this money will solve thousands of our problems.”&nbsp;</p> 
+                       <p class="text-align-center" paraeid="{05cd8071-babb-409c-b75f-a3b443846b0a}{27}" paraid="1891712380">Mohammad, 65-year-old farmer in Afghanistan.&nbsp;</p> 
+                      </div> 
+                     </div> 
+                    </div> 
+                   </div> 
+                  </div> 
+                 </div> 
+                </div> 
+               </article> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <div class="field--item"> 
+           <div class="paragraph-91721 paragraph paragraph--type--html-text paragraph--view-mode--default"> 
+            <div class="container"> 
+             <div class="row"> 
+              <div class="col-12 field field--name-field-background-color field--type-color-field-type field--label-hidden field--item">
+               <div class="hidden">
+                rgb(28,171,226)
+               </div>
+              </div> 
+              <div class="col-12 field field--name-field-html-text field--type-text-long field--label-hidden field--item">
+               <p class="text-align-center"><span class="text-white"><b>Why give your Sadaqah to UNICEF this Ramadan 2022?</b>&nbsp;</span></p> 
+               <p class="text-align-center"><span class="text-white">UNICEF is the most&nbsp;trusted children’s charity that is&nbsp;working actively on the ground, providing emergency life-saving support and holistic long-term protection for vulnerable children, and their families.&nbsp;&nbsp;With your Sadaqah you can make a life-saving and lasting impact on children living in the conflict in Yemen, Syria, Afghanistan and many more places. By giving your Sadaqah to UNICEF during the month of Ramadan, you can trust that your donation is going exactly where the need is greatest.&nbsp;&nbsp;Even the smallest amount makes a big difference and helps to deliver hope to children in need. </span></p> 
+               <p class="text-align-center"><span class="text-white">Give Your Sadaqah Now.</span></p> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <div class="field--item"> 
+           <div class="paragraph-91726 paragraph paragraph--type--donate-button paragraph--view-mode--default"> 
+            <div class="container"> 
+             <div class="row"> 
+              <div class="col-12 text-center field field--name-field-donate-button-text field--type-string field--label-hidden field--items"> <a id="donate-btn" class="btn btn-default btn-orange btn-primary" href="#main-content">Donate Now</a> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="container"> 
+          <div class="row"> 
+           <div class="col-12 field field--name-field-article-footer field--type-text-long field--label-hidden field--item">
+            <h6 class="text-align-center">Disclaimer: Please note that the stories of children mentioned are to illustrate activities and the change that your donation can make to the lives of vulnerable children. UNICEF, based on the need on the ground, will allocate resources to areas that need funds the most.</h6> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </article> 
+      </div> 
+     </div> 
+    </div> 
+    <footer class="main-footer " role="contentinfo"> 
+     <div class="container"> 
+      <div class="row align-items-center"> 
+       <div class="footer-element footer-logo col-md-3"> 
+        <img src="https://help.unicef.org/sites/default/files/styles/logo_image/public/2022-02/UNICEF_ForEveryChild_White_Horizontal_RGB_144ppi_ENG.png?itok=sbj4DP2E" alt="Home"> 
+       </div> 
+       <div class="footer-element unicef-copyright col-md-6 text-center">
+         ©2022 UNICEF - All rights reserved 
+       </div> 
+       <div class="footer-element unicef-legal col-md-3 text-right"> <a href="https://www.unicef.org/legal#privacy-policy">Privacy Policy</a> <a href="https://www.unicef.org/legal">Legal</a> <a href="https://help.unicef.org/contact">Contact Us</a> 
+       </div> 
+      </div> 
+     </div> 
+    </footer> 
+   </div> 
+  </div> 
+  <script src="/sites/default/files/js/js_PVdTtUEFbflxvvID2fMYROJkgmZAuIr-BwAvDKNkSBU.js"></script> 
+  <script src="/modules/custom/raisenow/raisenow_tamaro/js/raisenow_tamaro.js?v=1.x"></script> 
+  <script src="//js.stripe.com/v3/"></script> 
+  <script src="/sites/default/files/js/js_-Ch6uBzU3GtwmFnUQSCr82FabwY8kez_8-y3F4QTk0w.js"></script> 
+  <script src="/modules/contrib/eu_cookie_compliance/js/eu_cookie_compliance.js?v=1.19" defer></script> 
+  <script src="/sites/default/files/js/js_khqSxXH9Hm9FOCRJdB9UNKVVE4Kg4FwbPT5JGDswaeY.js"></script> 
+  <script src="/modules/custom/unicef_datalayers/js/unicef_datalayers_webform_v2.js?raqk77"></script> 
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"gov-bam.nr-data.net","licenseKey":"b54c1d4d8c","applicationID":"976702224","transactionName":"YV1bYUtYWEAEVExYDlgXeFZNUFldSnNKRBFXVGVbVl1TbyZYVkUTWVRVUEtleFwBUm5YBEF7VltNS1lfCVJKHF9AUVxC","queueTime":0,"applicationTime":1868,"atts":"TRpYFwNCS04=","errorBeacon":"gov-bam.nr-data.net","agent":""}</script> 
+ </body>
+</html>

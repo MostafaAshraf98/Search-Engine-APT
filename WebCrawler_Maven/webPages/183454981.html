@@ -1,0 +1,226 @@
+<!doctype html>
+<html class="writer-html5" lang="en"> 
+ <head> 
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>UI principles — Warehouse  documentation</title> 
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css"> 
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css"> 
+  <link rel="canonical" href="https://warehouse.pypa.io/ui-principles.html"> <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]--> 
+  <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script> 
+  <script src="_static/jquery.js"></script> 
+  <script src="_static/underscore.js"></script> 
+  <script src="_static/doctools.js"></script> 
+  <script async src="https://assets.readthedocs.org/static/javascript/readthedocs-doc-embed.js"></script> 
+  <script src="_static/js/theme.js"></script> 
+  <link rel="index" title="Index" href="genindex.html"> 
+  <link rel="search" title="Search" href="search.html"> 
+  <link rel="next" title="Security" href="security.html"> 
+  <link rel="prev" title="BigQuery Datasets" href="api-reference/bigquery-datasets.html"> <!-- RTD Extra Head --> 
+  <link rel="stylesheet" href="https://assets.readthedocs.org/static/css/readthedocs-doc-embed.css" type="text/css"> 
+  <script type="application/json" id="READTHEDOCS_DATA">{"ad_free": false, "api_host": "https://readthedocs.org", "build_date": "2022-05-16T21:16:41Z", "builder": "sphinx", "canonical_url": null, "commit": "140a2cc3", "docroot": "/docs/", "features": {"docsearch_disabled": false}, "global_analytics_code": "UA-17997319-1", "language": "en", "page": "ui-principles", "programming_language": "py", "project": "warehouse", "proxied_api_host": "/_", "source_suffix": ".rst", "subprojects": {}, "theme": "sphinx_rtd_theme", "user_analytics_code": "", "version": "latest"}</script> <!--
+Using this variable directly instead of using `JSON.parse` is deprecated.
+The READTHEDOCS_DATA global variable will be removed in the future.
+--> 
+  <script type="text/javascript">
+READTHEDOCS_DATA = JSON.parse(document.getElementById('READTHEDOCS_DATA').innerHTML);
+</script> 
+  <script type="text/javascript" src="https://assets.readthedocs.org/static/javascript/readthedocs-analytics.js" async></script> <!-- end RTD <extrahead> --> 
+ </head> 
+ <body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav"> 
+   <nav data-toggle="wy-nav-shift" class="wy-nav-side"> 
+    <div class="wy-side-scroll"> 
+     <div class="wy-side-nav-search"> <a href="index.html" class="icon icon-home"> Warehouse </a> 
+      <div class="version">
+        latest 
+      </div> 
+      <div role="search"> 
+       <form id="rtd-search-form" class="wy-form" action="search.html" method="get"> 
+        <input type="text" name="q" placeholder="Search docs"> 
+        <input type="hidden" name="check_keywords" value="yes"> 
+        <input type="hidden" name="area" value="default"> 
+       </form> 
+      </div> 
+     </div>
+     <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu"> 
+      <ul class="current"> 
+       <li class="toctree-l1"><a class="reference internal" href="development/index.html">Development</a></li> 
+       <li class="toctree-l1"><a class="reference internal" href="application.html">Warehouse codebase</a></li> 
+       <li class="toctree-l1"><a class="reference internal" href="api-reference/index.html">API reference</a></li> 
+       <li class="toctree-l1 current"><a class="current reference internal" href="#">UI principles</a>
+        <ul> 
+         <li class="toctree-l2"><a class="reference internal" href="#be-consistent">1. Be consistent</a></li> 
+         <li class="toctree-l2"><a class="reference internal" href="#consider-usability-and-accessibility">2. Consider usability and accessibility</a></li> 
+         <li class="toctree-l2"><a class="reference internal" href="#provide-help">3. Provide help</a></li> 
+         <li class="toctree-l2"><a class="reference internal" href="#write-clearly-with-consistent-style-and-terminology">4. Write clearly, with consistent style and terminology</a></li> 
+        </ul> </li> 
+       <li class="toctree-l1"><a class="reference internal" href="security.html">Security</a></li> 
+       <li class="toctree-l1"><a class="reference internal" href="translations.html">Translations</a></li> 
+       <li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap and Sprints</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </nav> 
+   <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+    <nav class="wy-nav-top" aria-label="Mobile navigation menu"> <i data-toggle="wy-nav-top" class="fa fa-bars"></i> <a href="index.html">Warehouse</a> 
+    </nav> 
+    <div class="wy-nav-content"> 
+     <div class="rst-content"> 
+      <div role="navigation" aria-label="Page navigation"> 
+       <ul class="wy-breadcrumbs"> 
+        <li><a href="index.html" class="icon icon-home"></a> »</li> 
+        <li>UI principles</li> 
+        <li class="wy-breadcrumbs-aside"> <a href="https://github.com/pypa/warehouse/blob/main/docs/ui-principles.rst" class="fa fa-github"> Edit on GitHub</a> </li> 
+       </ul> 
+       <hr> 
+      </div> 
+      <div role="main" class="document" itemscope itemtype="http://schema.org/Article"> 
+       <div itemprop="articleBody"> 
+        <section id="ui-principles"> 
+         <h1>UI principles<a class="headerlink" href="#ui-principles" title="Permalink to this headline">¶</a></h1> 
+         <p>The Warehouse UI aims to be clean, clear and easy to use. Changes and additions to the UI should follow these four principles:</p> 
+         <section id="be-consistent"> 
+          <h2>1. Be consistent<a class="headerlink" href="#be-consistent" title="Permalink to this headline">¶</a></h2> 
+          <p>Creating <strong>consistent</strong> interfaces is more aesthetically pleasing, improves usability and helps new users master the UI faster.</p> 
+          <p>Before creating a new design, layout or CSS style, always consider reusing an existing pattern. This may include modifying an existing design or layout to make it more generic.</p> 
+          <p>Following this principle can also help to reduce the footprint of our frontend code, which will make Warehouse easier to maintain in the long term.</p> 
+         </section> 
+         <section id="consider-usability-and-accessibility"> 
+          <h2>2. Consider usability and accessibility<a class="headerlink" href="#consider-usability-and-accessibility" title="Permalink to this headline">¶</a></h2> 
+          <p>Ensuring Warehouse follows usability and accessibility best practices will make the site easier to use for everybody.</p> 
+          <p>Warehouse follows the <a class="reference external" href="https://www.w3.org/TR/WCAG20/">WCAG 2.0 AA standard</a>. When working on the UI:</p> 
+          <ul class="simple"> 
+           <li>
+            <dl class="simple"> 
+             <dt>
+              Ensure contrast is high, particularly on text. This can be checked:
+             </dt>
+             <dd>
+              <ul> 
+               <li><p>On Chrome by installing <a class="reference external" href="http://bit.ly/1ikZ68B">Accessibility Developer Tools</a></p></li> 
+               <li><p>On Firefox by installing the <a class="reference external" href="https://addons.mozilla.org/en-us/firefox/addon/wcag-contrast-checker/">WCAG Contrast Checker</a></p></li> 
+              </ul> 
+             </dd> 
+            </dl> </li> 
+           <li><p>Write <a class="reference external" href="https://en.wikipedia.org/wiki/Semantic_HTML">semantic HTML</a></p></li> 
+           <li><p>Ensure image <a class="reference external" href="http://webaim.org/techniques/alttext/">alt tags are present and meaningful</a></p></li> 
+           <li><p>Add labels to all form fields (if you want to hide a label visually but leave it readable to screen readers, apply <code class="docutils literal notranslate"><span class="pre">.sr-only</span></code>)</p></li> 
+           <li><p>Where possible add <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA">ARIA roles</a> to the HTML</p></li> 
+           <li><p>Indicate the state of individual UI components with CSS styles. For example, darken a button on hover.</p></li> 
+           <li><p>Ensure that keyboard users can easily navigate each page. It is particularly important that the <code class="docutils literal notranslate"><span class="pre">outline</span></code> is not removed from links.</p></li> 
+           <li><p>Consider color blind users: if using color to convey meaning (e.g. red for an error) always use an additional indicator (e.g. an appropriate icon) to convey the same meaning.</p></li> 
+          </ul> 
+         </section> 
+         <section id="provide-help"> 
+          <h2>3. Provide help<a class="headerlink" href="#provide-help" title="Permalink to this headline">¶</a></h2> 
+          <p>Never assume that all Warehouse users are as familiar with the Python ecosystem as you are. Something that may seem obvious or second-nature to you may be a difficult or novel concept for someone else.</p> 
+          <p>Seek out places in the interface where help text should be included - either as standard text on the page, or by adding a help icon (that links to help content).</p> 
+         </section> 
+         <section id="write-clearly-with-consistent-style-and-terminology"> 
+          <h2>4. Write clearly, with consistent style and terminology<a class="headerlink" href="#write-clearly-with-consistent-style-and-terminology" title="Permalink to this headline">¶</a></h2> 
+          <p>Warehouse follows the <a class="reference external" href="https://web.archive.org/web/20180410101124/https://material.io/guidelines/style/writing.html">Material design writing style guide</a>.</p> 
+          <p>When writing interfaces use direct, clear and simple language. This is especially important as Warehouse caters to an international audience with varying proficiency in English. If you’re unsure, <a class="reference external" href="http://www.webpagefx.com/tools/read-able/">check the readability of your text</a>. For consistency, we prefer using American English spellings over British English.</p> 
+          <p>Do not use directional prompts when writing user interface copy. For example “Click the button on the left” should be avoided.</p> 
+          <p>Be consistent, particularly when it comes to domain specific words. Use this glossary as a guide:</p> 
+          <table class="docutils align-default"> 
+           <colgroup> 
+            <col style="width: 19%"> 
+            <col style="width: 81%"> 
+           </colgroup> 
+           <thead> 
+            <tr class="row-odd">
+             <th class="head"><p>Term</p></th> 
+             <th class="head"><p>Definition</p></th> 
+            </tr> 
+           </thead> 
+           <tbody> 
+            <tr class="row-even">
+             <td><p>Project</p></td> 
+             <td><p>A collection of releases and files, and information about them. Projects on Warehouse are made and shared by members of the Python community so others can use them.</p></td> 
+            </tr> 
+            <tr class="row-odd">
+             <td><p>Release</p></td> 
+             <td><p>A specific version of a project. For example, the requests project has many releases, like requests 2.10 and requests 1.2.1. A release consists of one or more files.</p></td> 
+            </tr> 
+            <tr class="row-even">
+             <td><p>File</p></td> 
+             <td><p>Something that you can download and install. Because of different hardware, operating systems, and file formats, a release may have several files, like an archive containing source code or a binary wheel.</p></td> 
+            </tr> 
+            <tr class="row-odd">
+             <td><p>Package</p></td> 
+             <td><p>A synonym for a file.</p></td> 
+            </tr> 
+            <tr class="row-even">
+             <td><p>User</p></td> 
+             <td><p>A person who has registered an account on Warehouse.</p></td> 
+            </tr> 
+            <tr class="row-odd">
+             <td><p>Maintainer</p></td> 
+             <td><p>A user who has permissions to manage a project on Warehouse.</p></td> 
+            </tr> 
+            <tr class="row-even">
+             <td><p>Owner</p></td> 
+             <td><p>A user who has permissions to manage a project on Warehouse, <strong>and</strong> has additional permission to add and remove other maintainers and owners to a project.</p></td> 
+            </tr> 
+            <tr class="row-odd">
+             <td><p>Author</p></td> 
+             <td><p>A free-form piece of information associated with a project. This information could be a name of a person, an organization, or something else altogether. This information is not linked to a user on Warehouse.</p></td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </section> 
+        </section> 
+       </div> 
+      </div> 
+      <footer>
+       <div class="rst-footer-buttons" role="navigation" aria-label="Footer"> <a href="api-reference/bigquery-datasets.html" class="btn btn-neutral float-left" title="BigQuery Datasets" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a> <a href="security.html" class="btn btn-neutral float-right" title="Security" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a> 
+       </div> 
+       <hr> 
+       <div role="contentinfo"> 
+        <p>© Copyright 2022. <span class="commit">Revision <code>140a2cc3</code>. </span></p> 
+       </div> Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+      </footer> 
+     </div> 
+    </div> 
+   </section> 
+  </div> 
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="Versions"> <span class="rst-current-version" data-toggle="rst-current-version"> <span class="fa fa-book"> Read the Docs</span> v: latest <span class="fa fa-caret-down"></span> </span> 
+   <div class="rst-other-versions"> 
+    <dl> 
+     <dt>
+      Versions
+     </dt> 
+     <dd>
+      <a href="/en/latest/">latest</a>
+     </dd> 
+     <dd>
+      <a href="/en/stable/">stable</a>
+     </dd> 
+    </dl> 
+    <dl> 
+     <dt>
+      Downloads
+     </dt> 
+    </dl> 
+    <dl> 
+     <dt>
+      On Read the Docs
+     </dt> 
+     <dd> <a href="//readthedocs.org/projects/warehouse/?fromdocs=warehouse">Project Home</a> 
+     </dd> 
+     <dd> <a href="//readthedocs.org/builds/warehouse/?fromdocs=warehouse">Builds</a> 
+     </dd> 
+    </dl> 
+   </div> 
+  </div> 
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+ </body>
+</html>

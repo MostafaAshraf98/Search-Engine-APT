@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en"> 
+ <head> 
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <title>Jinja — Jinja Documentation (3.1.x)</title> 
+  <link rel="stylesheet" type="text/css" href="_static/pygments.css"> 
+  <link rel="stylesheet" type="text/css" href="_static/jinja.css"> 
+  <link rel="stylesheet" type="text/css" href="https://assets.readthedocs.org/static/css/badge_only.css"> 
+  <script data-url_root="#" id="documentation_options" src="_static/documentation_options.js"></script> 
+  <script src="_static/jquery.js"></script> 
+  <script src="_static/underscore.js"></script> 
+  <script src="_static/doctools.js"></script> 
+  <script async src="https://assets.readthedocs.org/static/javascript/readthedocs-doc-embed.js"></script> 
+  <link rel="canonical" href="https://jinja.palletsprojects.com/en/3.1.x/"> 
+  <link rel="shortcut icon" href="_static/jinja-logo-sidebar.png"> 
+  <link rel="index" title="Index" href="genindex/"> 
+  <link rel="search" title="Search" href="search/"> 
+  <link rel="next" title="Introduction" href="intro/"> <!-- RTD Extra Head --> 
+  <link rel="stylesheet" href="https://assets.readthedocs.org/static/css/readthedocs-doc-embed.css" type="text/css"> 
+  <script type="application/json" id="READTHEDOCS_DATA">{"ad_free": false, "api_host": "https://readthedocs.org", "build_date": "2022-04-28T17:21:19Z", "builder": "sphinx", "canonical_url": null, "commit": "b08cd4bc", "docroot": "/docs/", "features": {"docsearch_disabled": true}, "global_analytics_code": "UA-17997319-1", "language": "en", "page": "index", "programming_language": "py", "project": "jinja", "proxied_api_host": "/_", "source_suffix": ".rst", "subprojects": {}, "theme": "jinja", "user_analytics_code": "UA-162825511-4", "version": "3.1.x"}</script> <!--
+Using this variable directly instead of using `JSON.parse` is deprecated.
+The READTHEDOCS_DATA global variable will be removed in the future.
+--> 
+  <script type="text/javascript">
+READTHEDOCS_DATA = JSON.parse(document.getElementById('READTHEDOCS_DATA').innerHTML);
+</script> 
+  <script type="text/javascript" src="https://assets.readthedocs.org/static/javascript/readthedocs-analytics.js" async></script> <!-- end RTD <extrahead> --> 
+ </head>
+ <body> 
+  <div class="related" role="navigation" aria-label="related navigation"> 
+   <h3>Navigation</h3> 
+   <ul> 
+    <li class="right" style="margin-right: 10px"> <a href="genindex/" title="General Index" accesskey="I">index</a></li> 
+    <li class="right"> <a href="py-modindex/" title="Python Module Index">modules</a> |</li> 
+    <li class="right"> <a href="intro/" title="Introduction" accesskey="N">next</a> |</li> 
+    <li class="nav-item nav-item-0"><a href="#">Jinja Documentation (3.1.x)</a> »</li> 
+    <li class="nav-item nav-item-this"><a href="">Jinja</a></li> 
+   </ul> 
+  </div> 
+  <div class="document"> 
+   <div class="documentwrapper"> 
+    <div class="bodywrapper"> 
+     <div class="body" role="main"> 
+      <section class="hide-header" id="jinja"> 
+       <h1>Jinja<a class="headerlink" href="#jinja" title="Permalink to this headline">¶</a></h1> <a class="reference external image-reference" href="https://palletsprojects.com/p/jinja/"><img alt="_images/jinja-logo.png" class="align-center" src="_images/jinja-logo.png"></a> 
+       <p>Jinja is a fast, expressive, extensible templating engine. Special placeholders in the template allow writing code similar to Python syntax. Then the template is passed data to render the final document.</p> 
+       <div class="toctree-wrapper compound"> 
+        <p class="caption" role="heading"><span class="caption-text">Contents:</span></p> 
+        <ul> 
+         <li class="toctree-l1"><a class="reference internal" href="intro/">Introduction</a>
+          <ul> 
+           <li class="toctree-l2"><a class="reference internal" href="intro/#installation">Installation</a></li> 
+          </ul> </li> 
+         <li class="toctree-l1"><a class="reference internal" href="api/">API</a>
+          <ul> 
+           <li class="toctree-l2"><a class="reference internal" href="api/#basics">Basics</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="api/#high-level-api">High Level API</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="api/#autoescaping">Autoescaping</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="api/#notes-on-identifiers">Notes on Identifiers</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="api/#undefined-types">Undefined Types</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="api/#the-context">The Context</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="api/#loaders">Loaders</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="api/#bytecode-cache">Bytecode Cache</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="api/#async-support">Async Support</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="api/#policies">Policies</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="api/#utilities">Utilities</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="api/#exceptions">Exceptions</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="api/#custom-filters">Custom Filters</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="api/#custom-tests">Custom Tests</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="api/#evaluation-context">Evaluation Context</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="api/#the-global-namespace">The Global Namespace</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="api/#low-level-api">Low Level API</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="api/#the-meta-api">The Meta API</a></li> 
+          </ul> </li> 
+         <li class="toctree-l1"><a class="reference internal" href="sandbox/">Sandbox</a>
+          <ul> 
+           <li class="toctree-l2"><a class="reference internal" href="sandbox/#security-considerations">Security Considerations</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="sandbox/#module-jinja2.sandbox">API</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="sandbox/#operator-intercepting">Operator Intercepting</a></li> 
+          </ul> </li> 
+         <li class="toctree-l1"><a class="reference internal" href="nativetypes/">Native Python Types</a>
+          <ul> 
+           <li class="toctree-l2"><a class="reference internal" href="nativetypes/#examples">Examples</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="nativetypes/#api">API</a></li> 
+          </ul> </li> 
+         <li class="toctree-l1"><a class="reference internal" href="templates/">Template Designer Documentation</a>
+          <ul> 
+           <li class="toctree-l2"><a class="reference internal" href="templates/#synopsis">Synopsis</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="templates/#variables">Variables</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="templates/#filters">Filters</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="templates/#tests">Tests</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="templates/#comments">Comments</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="templates/#whitespace-control">Whitespace Control</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="templates/#escaping">Escaping</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="templates/#line-statements">Line Statements</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="templates/#template-inheritance">Template Inheritance</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="templates/#html-escaping">HTML Escaping</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="templates/#list-of-control-structures">List of Control Structures</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="templates/#import-context-behavior">Import Context Behavior</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="templates/#expressions">Expressions</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="templates/#list-of-builtin-filters">List of Builtin Filters</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="templates/#list-of-builtin-tests">List of Builtin Tests</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="templates/#list-of-global-functions">List of Global Functions</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="templates/#extensions">Extensions</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="templates/#autoescape-overrides">Autoescape Overrides</a></li> 
+          </ul> </li> 
+         <li class="toctree-l1"><a class="reference internal" href="extensions/">Extensions</a>
+          <ul> 
+           <li class="toctree-l2"><a class="reference internal" href="extensions/#adding-extensions">Adding Extensions</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="extensions/#i18n-extension">i18n Extension</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="extensions/#expression-statement">Expression Statement</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="extensions/#loop-controls">Loop Controls</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="extensions/#with-statement">With Statement</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="extensions/#autoescape-extension">Autoescape Extension</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="extensions/#debug-extension">Debug Extension</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="extensions/#module-jinja2.ext">Writing Extensions</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="extensions/#example-extensions">Example Extensions</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="extensions/#extension-api">Extension API</a></li> 
+          </ul> </li> 
+         <li class="toctree-l1"><a class="reference internal" href="integration/">Integration</a>
+          <ul> 
+           <li class="toctree-l2"><a class="reference internal" href="integration/#flask">Flask</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="integration/#django">Django</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="integration/#babel">Babel</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="integration/#pylons">Pylons</a></li> 
+          </ul> </li> 
+         <li class="toctree-l1"><a class="reference internal" href="switching/">Switching From Other Template Engines</a>
+          <ul> 
+           <li class="toctree-l2"><a class="reference internal" href="switching/#django">Django</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="switching/#mako">Mako</a></li> 
+          </ul> </li> 
+         <li class="toctree-l1"><a class="reference internal" href="tricks/">Tips and Tricks</a>
+          <ul> 
+           <li class="toctree-l2"><a class="reference internal" href="tricks/#null-default-fallback">Null-Default Fallback</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="tricks/#alternating-rows">Alternating Rows</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="tricks/#highlighting-active-menu-items">Highlighting Active Menu Items</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="tricks/#accessing-the-parent-loop">Accessing the parent Loop</a></li> 
+          </ul> </li> 
+         <li class="toctree-l1"><a class="reference internal" href="faq/">Frequently Asked Questions</a>
+          <ul> 
+           <li class="toctree-l2"><a class="reference internal" href="faq/#why-is-it-called-jinja">Why is it called Jinja?</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="faq/#how-fast-is-jinja">How fast is Jinja?</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="faq/#isn-t-it-a-bad-idea-to-put-logic-in-templates">Isn’t it a bad idea to put logic in templates?</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="faq/#why-is-html-escaping-not-the-default">Why is HTML escaping not the default?</a></li> 
+          </ul> </li> 
+         <li class="toctree-l1"><a class="reference internal" href="license/">BSD-3-Clause License</a></li> 
+         <li class="toctree-l1"><a class="reference internal" href="changes/">Changes</a>
+          <ul> 
+           <li class="toctree-l2"><a class="reference internal" href="changes/#version-3-1-2">Version 3.1.2</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="changes/#version-3-1-1">Version 3.1.1</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="changes/#version-3-1-0">Version 3.1.0</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="changes/#version-3-0-3">Version 3.0.3</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="changes/#version-3-0-2">Version 3.0.2</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="changes/#version-3-0-1">Version 3.0.1</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="changes/#version-3-0-0">Version 3.0.0</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="changes/#version-2-11-3">Version 2.11.3</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="changes/#version-2-11-2">Version 2.11.2</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="changes/#version-2-11-1">Version 2.11.1</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="changes/#version-2-11-0">Version 2.11.0</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="changes/#version-2-10-3">Version 2.10.3</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="changes/#version-2-10-2">Version 2.10.2</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="changes/#version-2-10-1">Version 2.10.1</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="changes/#version-2-10">Version 2.10</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="changes/#version-2-9-6">Version 2.9.6</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="changes/#version-2-9-5">Version 2.9.5</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="changes/#version-2-9-4">Version 2.9.4</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="changes/#version-2-9-3">Version 2.9.3</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="changes/#version-2-9-2">Version 2.9.2</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="changes/#version-2-9-1">Version 2.9.1</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="changes/#version-2-9">Version 2.9</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="changes/#version-2-8-1">Version 2.8.1</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="changes/#version-2-8">Version 2.8</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="changes/#version-2-7-3">Version 2.7.3</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="changes/#version-2-7-2">Version 2.7.2</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="changes/#version-2-7-1">Version 2.7.1</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="changes/#version-2-7">Version 2.7</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="changes/#version-2-6">Version 2.6</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="changes/#version-2-5-5">Version 2.5.5</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="changes/#version-2-5-4">Version 2.5.4</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="changes/#version-2-5-3">Version 2.5.3</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="changes/#version-2-5-2">Version 2.5.2</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="changes/#version-2-5-1">Version 2.5.1</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="changes/#version-2-5">Version 2.5</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="changes/#version-2-4-1">Version 2.4.1</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="changes/#version-2-4">Version 2.4</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="changes/#version-2-3-1">Version 2.3.1</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="changes/#version-2-3">Version 2.3</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="changes/#version-2-2-1">Version 2.2.1</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="changes/#version-2-2">Version 2.2</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="changes/#version-2-1-1">Version 2.1.1</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="changes/#version-2-1">Version 2.1</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="changes/#version-2-0">Version 2.0</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="changes/#version-2-0rc1">Version 2.0rc1</a></li> 
+          </ul> </li> 
+        </ul> 
+       </div> 
+      </section> 
+      <div class="clearer"></div> 
+     </div> 
+    </div> 
+   </div> <span id="sidebar-top"></span> 
+   <div class="sphinxsidebar" role="navigation" aria-label="main navigation"> 
+    <div class="sphinxsidebarwrapper"> 
+     <h3>Project Links</h3> 
+     <ul> 
+      <li><a href="https://palletsprojects.com/donate">Donate</a> </li>
+      <li><a href="https://pypi.org/project/Jinja2/">PyPI Releases</a> </li>
+      <li><a href="https://github.com/pallets/jinja/">Source Code</a> </li>
+      <li><a href="https://github.com/pallets/jinja/issues/">Issue Tracker</a> </li>
+      <li><a href="https://palletsprojects.com/p/jinja/">Website</a> </li>
+      <li><a href="https://twitter.com/PalletsTeam">Twitter</a> </li>
+      <li><a href="https://discord.gg/pallets">Chat</a> </li>
+     </ul> 
+     <div id="searchbox" style="display: none" role="search"> 
+      <h3 id="searchlabel">Quick search</h3> 
+      <div class="searchformwrapper"> 
+       <form class="search" action="search/" method="get"> 
+        <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"> 
+        <input type="submit" value="Go"> 
+       </form> 
+      </div> 
+     </div> 
+     <script>$('#searchbox').show(0);</script>
+     <div id="ethical-ad-placement"></div> 
+    </div> 
+   </div> 
+   <div class="clearer"></div> 
+  </div> 
+  <div class="footer" role="contentinfo">
+    © Copyright 2007 Pallets. Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.5.0. 
+  </div> 
+  <script src="_static/version_warning_offset.js"></script>  
+ </body>
+</html>

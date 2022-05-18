@@ -1,0 +1,844 @@
+<!doctype html><!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en" ng-app="bccom"> <![endif]--><!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en" ng-app="bccom"> <![endif]--><!--[if IE 8]>    <html class="no-js lt-ie9" lang="en" ng-app="bccom"> <![endif]--><!--[if gt IE 8]><!-->
+<html class="no-js" lang="en" ng-app="bccom"> <!--<![endif]--> 
+ <head> 
+  <meta charset="utf-8"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  <title>
+		Influencer Marketing in 2022: Strategies + Examples	</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <meta class="foundation-mq"> <!-- Google Tag Manager --> 
+  <script>
+		(function(w, d, s, l, i) {
+			w[l] = w[l] || [];
+			w[l].push({
+				'gtm.start': new Date().getTime(),
+				event: 'gtm.js'
+			});
+			var f = d.getElementsByTagName(s)[0],
+				j = d.createElement(s),
+				dl = l != 'dataLayer' ? '&l=' + l : '';
+			j.async = true;
+			j.src =
+				'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+			f.parentNode.insertBefore(j, f);
+		})(window, document, 'script', 'dataLayer', 'GTM-D9S9');
+	</script> <!-- End Google Tag Manager --> <!-- If Site Icon isn't set in customizer --> 
+  <link rel="pingback" href="https://www.bigcommerce.com/blog/xmlrpc.php"> 
+  <meta name="environment" content="production"> <!-- Load analytics.js --> 
+  <script>
+  ! function() {
+    var analytics = window.analytics = window.analytics || [];
+    if (!analytics.initialize)
+      if (analytics.invoked) window.console && console.error && console.error("Segment snippet included twice.");
+      else {
+        analytics.invoked = !0;
+        analytics.methods = ["trackSubmit", "trackClick", "trackLink", "trackForm", "pageview", "identify", "reset", "group", "track", "ready", "alias", "debug", "page", "once", "off", "on"];
+        analytics.factory = function(t) {
+          return function() {
+            var e = Array.prototype.slice.call(arguments);
+            e.unshift(t);
+            analytics.push(e);
+            return analytics
+          }
+        };
+        for (var t = 0; t < analytics.methods.length; t++) {
+          var e = analytics.methods[t];
+          analytics[e] = analytics.factory(e)
+        }
+        analytics.load = function(t, e) {
+          var n = document.createElement("script");
+          n.type = "text/javascript";
+          n.async = !0;
+          n.src = "https://cdn.segment.com/analytics.js/v1/" + t + "/analytics.min.js";
+          var a = document.getElementsByTagName("script")[0];
+          a.parentNode.insertBefore(n, a);
+          analytics._loadOptions = e
+        };
+        analytics.SNIPPET_VERSION = "4.1.0";
+        analytics.page();
+      }
+  }();
+</script> 
+  <script type="application/javascript">
+  function getCookie(cookieName) {
+    var cookie = document.cookie.match('(^|[^;]+)\\s*' + cookieName + '\\s*=\\s*([^;]+)');
+    var cookieVal = cookie ? cookie.pop() : '';
+    return cookieVal;
+  }
+
+  function initLoad() {
+    window.consentManagerConfig = function(exports) {
+      var React = exports.React;
+      var inEU = exports.inEU;
+      var inCA = window.inCA;
+
+      // console.log("inCA", inCA);
+
+      var writeKeySegment = "zEvwxXJWb3m1YY4SUrCC17Xjz0cQV3OH";
+
+
+      var otherWriteKeys = [
+        'BTmUWLubCbJjBopJwsDTxC0594E6Z5ex', // Developer Documentation
+        'pcIxZ9NO06csZFSFyDQ0akcPcQadO4M5', // Developer Portal
+        'Hk5ZBVORHL7NP3CfOXSyFXuYVuk6tv1j', // Impartner
+        'facRwgayTgyKQCya6Y3ykhpfYVHSkKNf', // segment_support
+        '8z6A0VG5UxD5lvVNAJXGuEvFxdeqLsKY', // Android
+        'rQ7w49xyp8c3AXdjrxsFo9HK4JikVYJm' // iOS
+      ];
+
+      var initialPreferences = {
+        'Functional': true,
+        'Analytics': true,
+        'Targeting and Advertising': true
+      }
+      if (inEU()) {
+        initialPreferences = {
+          'Functional': true
+        }
+      }
+
+      var customCategories = {
+        'Targeting and Advertising': {
+          purpose: 'Used to create profiles or personalize content to enhance your shopping experience.',
+          integrations: ['Google Ads (Classic)', 'Facebook Pixel', 'Personas Facebook Custom Audiences', 'Facebook Conversions API']
+        },
+        'Analytics': {
+          purpose: 'Provide statistical information on site usage, e.g., web analytics so we can improve this website over time.',
+          integrations: ['Google Universal Analytics', 'Marketplace App Event Forwarding (Bigcommerce)', 'Amplitude']
+        },
+        'Functional': {
+          purpose: 'Enables enhanced functionality, such as videos and live chat. If you do not allow these, then some or all of these functions may not work properly.',
+          integrations: ['Optimizely Web', 'Marketo V2', 'Salesforce', 'Natero', 'Pendo', 'Optimizely Customer Profiles (Bigcommerce)', 'Drift Contacts API (Bigcommerce)', 'Amazon Kinesis Firehose'],
+        },
+      }
+
+      var onOptionsClick = function() {
+        exports.openConsentManager();
+      }
+
+      var shouldRequireConsent = function() {
+        return inEU() || inCA;
+      };
+
+      var bannerContent = React.createElement(
+        'div', {
+          class: 'consentBannerText',
+          style: 'display: flex; align-items: center; justify-content: flex-end; padding: 10px 10px;'
+        },
+        React.createElement(
+          'span', {
+            style: 'flex-grow: 1; text-align: left;'
+          },
+          'We use cookies (and other similar technologies) to improve your experience on our site and to serve you better. By using our website, you are agreeing to the collection of data as described in our',
+          '\u00a0',
+          React.createElement(
+            'a', {
+              href: '/privacy/',
+              target: '_blank'
+            },
+            'Privacy Policy'
+          ),
+          '. You can',
+          '\u00a0',
+          React.createElement(
+            'a', {
+              onClick: function() {
+                onOptionsClick()
+              }
+            },
+            'change your preferences'
+          ),
+          '\u00a0',
+          'at any time.'
+        ),
+      );
+
+      var prefs = {
+        container: '#consent-manager',
+        writeKey: writeKeySegment,
+        otherWriteKeys: otherWriteKeys,
+        initialPreferences: initialPreferences,
+        shouldRequireConsent: shouldRequireConsent,
+        bannerContent: bannerContent,
+        bannerSubContent: null,
+        bannerBackgroundColor: '#313441',
+        preferencesDialogTitle: 'Website Data Collection Preferences',
+        preferencesDialogContent: 'We use data collected by cookies and JavaScript libraries, which are necessary for website functioning, to improve user’s browsing experience, analyze site traffic, deliver personalized advertisements, and increase the overall performance of our site.',
+        cancelDialogTitle: 'Are you sure you want to cancel?',
+        cancelDialogContent: 'Your preferences have not been saved. By continuing to use our website, you are agreeing to our Website Data Collection Policy',
+        customCategories: customCategories,
+        closeBehavior: 'accept',
+        implyConsentOnInteraction: false
+      }
+      return prefs;
+    }
+
+    function loadScripts(scriptType) {
+      // console.log('loadScripts ' + scriptType);
+
+      // Load functional scripts
+      if (scriptType === 'functional' || scriptType === 'all') {
+        // Optimizely
+        var optimizely_script = document.createElement('script');
+        optimizely_script.setAttribute('type', 'text/javascript');
+        optimizely_script.setAttribute('src', '//cdn.optimizely.com/js/134769299.js');
+        document.head.appendChild(optimizely_script);
+      }
+
+      // Load advertising scripts
+      if (scriptType === 'advertising' || scriptType === 'all') {}
+
+      // Load marketing and analytics scripts
+      if (scriptType === 'analytics' || scriptType === 'all') {}
+
+    }
+
+    // Fire an event passing users tracking preferences and locale
+    analytics.ready(function() {
+
+      var trackingPreferences = getCookie('tracking-preferences');
+      if (trackingPreferences !== '') {
+        trackingPreferences = JSON.parse(decodeURIComponent(trackingPreferences));
+        if (trackingPreferences.custom['Functional']) loadScripts('functional');
+        if (trackingPreferences.custom['Targeting and Advertising']) loadScripts('advertising');
+        if (trackingPreferences.custom['Analytics']) loadScripts('analytics');
+      } else {
+        loadScripts('all');
+      }
+
+      // console.log('Fire "Consent Preferences" event');
+      analytics.track('Consent Preferences', {
+        trackingPreferences: trackingPreferences,
+        inEU: window.consentManager.inEU(),
+        inCA: window.inCA
+      });
+    });
+
+    // Load Segment Consent Manager
+    // console.log("Load Segment Consent Manager");
+    var segment_script = document.createElement('script');
+    segment_script.setAttribute('type', 'text/javascript');
+    segment_script.setAttribute('src', '//unpkg.com/@segment/consent-manager@4.1.0/standalone/consent-manager.js');
+    segment_script.setAttribute('defer', '');
+    document.head.appendChild(segment_script);
+  }
+
+  var bcLocTime = 0;
+  var bcLocTimeout = 3000;
+
+  function awaitBCLocation() {
+    if (window.inCA == undefined && bcLocTime < bcLocTimeout) {
+      // console.log("inCA is undefined, total time elapsed:" + bcLocTime);
+      var bcLocation = getCookie('bcLocation');
+      if (bcLocation !== '') {
+        bcLocation = JSON.parse(decodeURIComponent(bcLocation));
+        window.inCA = bcLocation.state && bcLocation.state == 'CA';
+      }
+      bcLocTime += 100;
+      setTimeout(awaitBCLocation, 100);
+    } else {
+      // console.log("inCA is set:" + window.inCA);
+      initLoad()
+    }
+  }
+  setTimeout(awaitBCLocation, 100);
+</script> 
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"> 
+  <link rel="alternate" hreflang="en-us" href="https://www.bigcommerce.com/blog/influencer-marketing/"> 
+  <link rel="alternate" hreflang="en-au" href="https://www.bigcommerce.com.au/blog/influencer-marketing/"> 
+  <link rel="alternate" hreflang="en-gb" href="https://bigcommerce.co.uk/blog/influencer-marketing/"> 
+  <link rel="alternate" hreflang="x-default" href="https://www.bigcommerce.com/blog/influencer-marketing/"> <!-- This site is optimized with the Yoast SEO plugin v18.6 - https://yoast.com/wordpress/plugins/seo/ --> 
+  <meta name="description" content="From traditional posts to ever-popular Instagram Stories to long videos, influencers are always finding new ways to be sponsored on their favorite platforms."> 
+  <link rel="canonical" href="https://www.bigcommerce.com/blog/influencer-marketing/"> 
+  <meta property="og:locale" content="en_US"> 
+  <meta property="og:type" content="article"> 
+  <meta property="og:title" content="Influencer Marketing in 2022: Strategies + Examples"> 
+  <meta property="og:description" content="From traditional posts to ever-popular Instagram Stories to long videos, influencers are always finding new ways to be sponsored on their favorite platforms."> 
+  <meta property="og:url" content="https://www.bigcommerce.com/blog/influencer-marketing/"> 
+  <meta property="og:site_name" content="The BigCommerce Blog"> 
+  <meta property="article:publisher" content="https://www.facebook.com/bigcommerce"> 
+  <meta property="article:published_time" content="2021-10-05T20:41:08+00:00"> 
+  <meta property="article:modified_time" content="2022-05-06T14:52:50+00:00"> 
+  <meta property="og:image" content="https://www.bigcommerce.com/blog/wp-content/uploads/2017/08/influencer-marketing.jpg"> 
+  <meta property="og:image:width" content="2000"> 
+  <meta property="og:image:height" content="750"> 
+  <meta property="og:image:type" content="image/jpeg"> 
+  <meta name="twitter:card" content="summary_large_image"> 
+  <meta name="twitter:image" content="https://www.bigcommerce.com/blog/wp-content/uploads/2017/08/influencer-marketing.jpg"> 
+  <meta name="twitter:creator" content="@bigcommerce"> 
+  <meta name="twitter:site" content="@bigcommerce"> 
+  <meta name="twitter:label1" content="Written by"> 
+  <meta name="twitter:data1" content="Lynn Corbitt"> 
+  <meta name="twitter:label2" content="Est. reading time"> 
+  <meta name="twitter:data2" content="14 minutes"> 
+  <script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.bigcommerce.nl/blog/#organization","name":"Bigcommerce Ltd Pty","url":"https://www.bigcommerce.nl/blog/","sameAs":["https://www.facebook.com/bigcommerce","https://www.instagram.com/bigcommerce/","https://www.linkedin.com/company/bigcommerce/","https://www.youtube.com/user/bigcommercedotcom","https://twitter.com/bigcommerce"],"logo":{"@type":"ImageObject","@id":"https://www.bigcommerce.nl/blog/#logo","inLanguage":"en-US","url":"https://www.bigcommerce.com/blog/wp-content/uploads/2018/05/BigCommerce-Logo.png","contentUrl":"https://www.bigcommerce.com/blog/wp-content/uploads/2018/05/BigCommerce-Logo.png","width":1920,"height":1080,"caption":"Bigcommerce Ltd Pty"},"image":{"@id":"https://www.bigcommerce.nl/blog/#logo"}},{"@type":"WebSite","@id":"https://www.bigcommerce.nl/blog/#website","url":"https://www.bigcommerce.nl/blog/","name":"The BigCommerce Blog","description":"Ecommerce Blog delivering news, strategy and success stories to power 2x growth for scaling brands.","publisher":{"@id":"https://www.bigcommerce.nl/blog/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.bigcommerce.nl/blog/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"ImageObject","@id":"https://www.bigcommerce.com/blog/influencer-marketing/#primaryimage","inLanguage":"en-US","url":"https://www.bigcommerce.com/blog/wp-content/uploads/2017/08/influencer-marketing.jpg","contentUrl":"https://www.bigcommerce.com/blog/wp-content/uploads/2017/08/influencer-marketing.jpg","width":2000,"height":750,"caption":"influencer marketing"},{"@type":"WebPage","@id":"https://www.bigcommerce.com/blog/influencer-marketing/#webpage","url":"https://www.bigcommerce.com/blog/influencer-marketing/","name":"Influencer Marketing in 2022: Strategies + Examples","isPartOf":{"@id":"https://www.bigcommerce.nl/blog/#website"},"primaryImageOfPage":{"@id":"https://www.bigcommerce.com/blog/influencer-marketing/#primaryimage"},"datePublished":"2021-10-05T20:41:08+00:00","dateModified":"2022-05-06T14:52:50+00:00","description":"From traditional posts to ever-popular Instagram Stories to long videos, influencers are always finding new ways to be sponsored on their favorite platforms.","breadcrumb":{"@id":"https://www.bigcommerce.com/blog/influencer-marketing/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.bigcommerce.com/blog/influencer-marketing/"]}]},{"@type":"BreadcrumbList","@id":"https://www.bigcommerce.com/blog/influencer-marketing/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.bigcommerce.nl/blog/"},{"@type":"ListItem","position":2,"name":"How You Can Build a Powerful Influencer Marketing Strategy in 2022"}]},{"@type":"Article","@id":"https://www.bigcommerce.com/blog/influencer-marketing/#article","isPartOf":{"@id":"https://www.bigcommerce.com/blog/influencer-marketing/#webpage"},"author":{"@id":"https://www.bigcommerce.nl/blog/#/schema/person/fa95d09f3aa3ad7ea2a04cdaf3a1d9ea"},"headline":"How You Can Build a Powerful Influencer Marketing Strategy in 2022","datePublished":"2021-10-05T20:41:08+00:00","dateModified":"2022-05-06T14:52:50+00:00","mainEntityOfPage":{"@id":"https://www.bigcommerce.com/blog/influencer-marketing/#webpage"},"wordCount":2935,"publisher":{"@id":"https://www.bigcommerce.nl/blog/#organization"},"image":{"@id":"https://www.bigcommerce.com/blog/influencer-marketing/#primaryimage"},"thumbnailUrl":"https://www.bigcommerce.com/blog/wp-content/uploads/2017/08/influencer-marketing.jpg","keywords":["influencer marketing"],"articleSection":["Branding Strategies","Mobile Strategies"],"inLanguage":"en-US"},{"@type":"Person","@id":"https://www.bigcommerce.nl/blog/#/schema/person/fa95d09f3aa3ad7ea2a04cdaf3a1d9ea","name":"Lynn Corbitt","image":{"@type":"ImageObject","@id":"https://www.bigcommerce.nl/blog/#personlogo","inLanguage":"en-US","url":"https://secure.gravatar.com/avatar/80eb2f029f04309c2c1cbcb313a564fd?s=96&d=mm&r=g","contentUrl":"https://secure.gravatar.com/avatar/80eb2f029f04309c2c1cbcb313a564fd?s=96&d=mm&r=g","caption":"Lynn Corbitt"},"description":"Lynn Corbitt is a content marketing expert and owner of Coffee Break Communications. She specializes in content creation and strategy for businesses in a variety of industries. You can more Instagram marketing tips from her at kicksta.co.","url":"https://www.bigcommerce.com/blog/author/lynn-corbitt/"}]}</script> <!-- / Yoast SEO plugin. --> 
+  <link rel="dns-prefetch" href="//app-ab15.marketo.com"> 
+  <link rel="alternate" type="application/rss+xml" title="The BigCommerce Blog » Feed" href="https://www.bigcommerce.com/blog/feed/"> 
+  <link data-minify="1" rel="stylesheet" id="ultimate-tables-style-css" href="https://www.bigcommerce.com/blog/wp-content/cache/min/1/blog/wp-content/plugins/ultimate-tables/css/ultimate-tables.css?ver=1651084242" type="text/css" media="all"> 
+  <link data-minify="1" rel="stylesheet" id="ultimate-datatables-style-css" href="https://www.bigcommerce.com/blog/wp-content/cache/min/1/blog/wp-content/plugins/ultimate-tables/css/jquery.dataTables.css?ver=1651084242" type="text/css" media="all"> 
+  <link rel="stylesheet" id="wp-block-library-css" href="https://www.bigcommerce.com/blog/wp-includes/css/dist/block-library/style.min.css?ver=5.9.3" type="text/css" media="all"> 
+  <link rel="stylesheet" id="wp-components-css" href="https://www.bigcommerce.com/blog/wp-includes/css/dist/components/style.min.css?ver=5.9.3" type="text/css" media="all"> 
+  <link rel="stylesheet" id="wp-block-editor-css" href="https://www.bigcommerce.com/blog/wp-includes/css/dist/block-editor/style.min.css?ver=5.9.3" type="text/css" media="all"> 
+  <link rel="stylesheet" id="wp-nux-css" href="https://www.bigcommerce.com/blog/wp-includes/css/dist/nux/style.min.css?ver=5.9.3" type="text/css" media="all"> 
+  <link rel="stylesheet" id="wp-reusable-blocks-css" href="https://www.bigcommerce.com/blog/wp-includes/css/dist/reusable-blocks/style.min.css?ver=5.9.3" type="text/css" media="all"> 
+  <link rel="stylesheet" id="wp-editor-css" href="https://www.bigcommerce.com/blog/wp-includes/css/dist/editor/style.min.css?ver=5.9.3" type="text/css" media="all"> 
+  <link data-minify="1" rel="stylesheet" id="drop_shadow_block-style-css-css" href="https://www.bigcommerce.com/blog/wp-content/cache/min/1/blog/wp-content/plugins/drop-shadow-boxes/block/blocks.style.build.css?ver=1651084242" type="text/css" media="all"> 
+  <style id="global-styles-inline-css" type="text/css">
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style> 
+  <link data-minify="1" rel="stylesheet" id="tm_clicktotweet-css" href="https://www.bigcommerce.com/blog/wp-content/cache/min/1/blog/wp-content/plugins/click-to-tweet-by-todaymade/assets/css/styles.css?ver=1651084242" type="text/css" media="all"> 
+  <link data-minify="1" rel="stylesheet" id="cta-front-css-css" href="https://www.bigcommerce.com/blog/wp-content/cache/min/1/blog/wp-content/plugins/cta-mat-plugin/assets/css/frontend.css?ver=1651084242" type="text/css" media="all"> 
+  <link data-minify="1" rel="stylesheet" id="theme-style-css" href="https://www.bigcommerce.com/blog/wp-content/cache/min/1/blog/wp-content/themes/bigcommerce/css/style.min.css?ver=1651084242" type="text/css" media="all"> 
+  <style id="rocket-lazyload-inline-css" type="text/css">
+.rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;cursor:pointer;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:72px;width:72px;left:50%;top:50%;margin-left:-36px;margin-top:-36px;position:absolute;background:url(https://www.bigcommerce.com/blog/wp-content/plugins/wp-rocket/assets/img/youtube.png) no-repeat;cursor:pointer}
+</style> 
+  <script type="text/javascript" src="https://www.bigcommerce.com/blog/wp-includes/js/jquery/jquery.min.js?ver=3.6.0" id="jquery-core-js" defer></script> 
+  <script type="text/javascript" src="https://www.bigcommerce.com/blog/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2" id="jquery-migrate-js" defer></script> 
+  <script type="text/javascript" id="wpml-cookie-js-extra">
+/* <![CDATA[ */
+var wpml_cookies = {"wp-wpml_current_language":{"value":"en","expires":1,"path":"\/"}};
+var wpml_cookies = {"wp-wpml_current_language":{"value":"en","expires":1,"path":"\/"}};
+/* ]]> */
+</script> 
+  <script data-minify="1" type="text/javascript" src="https://www.bigcommerce.com/blog/wp-content/cache/min/1/blog/wp-content/plugins/sitepress-multilingual-cms/res/js/cookies/language-cookie.js?ver=1651084242" id="wpml-cookie-js" defer></script> 
+  <script data-minify="1" type="text/javascript" src="https://www.bigcommerce.com/blog/wp-content/cache/min/1/js/forms2/js/forms2.min.js?ver=1651084243" id="forms2-js" defer></script> 
+  <script type="text/javascript" id="wpml-xdomain-data-js-extra">
+/* <![CDATA[ */
+var wpml_xdomain_data = {"css_selector":"wpml-ls-item","ajax_url":"https:\/\/www.bigcommerce.com\/blog\/wp-admin\/admin-ajax.php","current_lang":"en"};
+/* ]]> */
+</script> 
+  <script data-minify="1" type="text/javascript" src="https://www.bigcommerce.com/blog/wp-content/cache/min/1/blog/wp-content/plugins/sitepress-multilingual-cms/res/js/xdomain-data.js?ver=1651084243" id="wpml-xdomain-data-js" defer></script> 
+  <script type="text/javascript" id="ajax-test-js-extra">
+/* <![CDATA[ */
+var the_ajax_script = {"ajaxurl":"https:\/\/www.bigcommerce.com\/blog\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script> 
+  <script data-minify="1" type="text/javascript" src="https://www.bigcommerce.com/blog/wp-content/cache/min/1/blog/wp-content/plugins/google-site-verification-using-meta-tag/verification.js?ver=1651084243" id="ajax-test-js" defer></script> 
+  <link rel="https://api.w.org/" href="https://www.bigcommerce.com/blog/wp-json/">
+  <link rel="alternate" type="application/json" href="https://www.bigcommerce.com/blog/wp-json/wp/v2/posts/22927">
+  <link rel="shortlink" href="https://www.bigcommerce.com/blog/?p=22927"> 
+  <link rel="alternate" type="application/json+oembed" href="https://www.bigcommerce.com/blog/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.bigcommerce.com%2Fblog%2Finfluencer-marketing%2F"> 
+  <link rel="alternate" type="text/xml+oembed" href="https://www.bigcommerce.com/blog/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.bigcommerce.com%2Fblog%2Finfluencer-marketing%2F&amp;format=xml"> 
+  <meta name="generator" content="WPML ver:4.5.5 stt:1,65,64;"> 
+  <script data-minify="1" async src="https://www.bigcommerce.com/blog/wp-content/cache/min/1/analytics_e3e564133bb14fcb8086e62d228ed2c9.js?ver=1651084243"></script>
+  <link rel="icon" href="https://www.bigcommerce.com/blog/wp-content/uploads/2016/05/cropped-e8d7fa0a-3b0e-4069-91b1-78460a4d4af1-150x150.png" sizes="32x32"> 
+  <link rel="icon" href="https://www.bigcommerce.com/blog/wp-content/uploads/2016/05/cropped-e8d7fa0a-3b0e-4069-91b1-78460a4d4af1-300x300.png" sizes="192x192"> 
+  <link rel="apple-touch-icon" href="https://www.bigcommerce.com/blog/wp-content/uploads/2016/05/cropped-e8d7fa0a-3b0e-4069-91b1-78460a4d4af1-300x300.png"> 
+  <meta name="msapplication-TileImage" content="https://www.bigcommerce.com/blog/wp-content/uploads/2016/05/cropped-e8d7fa0a-3b0e-4069-91b1-78460a4d4af1-300x300.png"> 
+  <style type="text/css" id="wp-custom-css">
+			/*
+You can add your own CSS here.
+
+Click the help icon above to learn more.
+*/
+
+h6.snippet {font-size: 22px; font-weight:bold; margin-top:0px;}
+
+table.blog-table {
+  border: 1px solid #333333;
+  background-color: #FFFFFF;
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+}
+table.blog-table td, table.blog-table th {
+  border: 1px solid #333333;
+  padding: 3px 2px;
+}
+table.blog-table tbody td {
+  font-size: 16px;
+  color: #330000;
+}
+table.blog-table thead {
+  background: -moz-linear-gradient(top, #f8f9fa 0%, #f7f7f9 66%, #F6F7F9 100%);
+  background: -webkit-linear-gradient(top, #f8f9fa 0%, #f7f7f9 66%, #F6F7F9 100%);
+  background: linear-gradient(to bottom, #f8f9fa 0%, #f7f7f9 66%, #F6F7F9 100%);
+  border-bottom: 1px solid #333333;
+}
+table.blog-table thead th {
+  background: #3f5cd6;
+font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  border-left: 1px solid #333333;
+width: 33%;
+}
+table.blog-table thead th:first-child {
+  border-left: none;
+}
+
+table.blog-table tfoot {
+  font-size: 14px;
+  font-weight: bold;
+  color: #FFFFFF;
+  background: #D0E4F5;
+  background: -moz-linear-gradient(top, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
+  background: -webkit-linear-gradient(top, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
+  background: linear-gradient(to bottom, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
+  border-top: 2px solid #444444;
+}
+table.blog-table tfoot td {
+  font-size: 14px;
+}
+table.blog-table tfoot .links {
+  text-align: right;
+}
+table.blog-table tfoot .links a{
+  display: inline-block;
+  background: #1C6EA4;
+  color: #FFFFFF;
+  padding: 2px 8px;
+  border-radius: 5px;
+}		</style> <!--
+Plugin: Google meta tag Site Verification Plugin
+Tracking Code.
+
+--> 
+  <meta name="google-site-verification" content="google631fa914ea26a44b.html">
+  <noscript>
+   <style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style>
+  </noscript> 
+  <meta name="host" value="www.bigcommerce.com"> 
+  <meta name="home_url" value="https://www.bigcommerce.com/blog"> 
+  <meta name="site_url" value="https://www.bigcommerce.com/blog"> 
+  <meta name="rest_url" value="https://www.bigcommerce.com/blog/wp-json/"> 
+ </head> 
+ <body class="post-template-default single single-post postid-22927 single-format-standard bigcommerce-blog"> 
+  <div class="off-canvas position-right" id="menu" data-off-canvas> <!-- Your menu or Off-canvas content goes here --> 
+   <ul id="menu-main-navigation" class="menuItems">
+    <li id="menu-item-50968" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50968"><a href="/blog/">Latest Articles</a></li> 
+    <li id="menu-item-62282" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-62282"><a href="https://www.bigcommerce.com/blog/category/customer-stories/">Success Stories</a></li> 
+    <li id="menu-item-50971" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50971"><a href="/resources/">Resources</a></li> 
+    <li id="menu-item-62871" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-62871"><a href="https://www.bigcommerce.com/blog/category/ecommerce-holiday-ideas/">Holiday Ideas &amp; Strategies</a></li> 
+   </ul> 
+   <div class="menu-actions"> <a href="/start-your-trial/" class="button button--action button--small">Get Started</a> 
+   </div> 
+  </div> 
+  <div id="bodyWrapper" class="wrapper off-canvas-content" data-off-canvas-content> 
+   <div id="consent-manager"></div> <!-- <button
+  type="button"
+  onclick="event.stopPropagation(); window.consentManager.openConsentManager()"
+>
+  Data Collection and Cookie Preferences
+</button> --> 
+   <div class="siteStyleBar-container"> 
+    <div class="siteStyleBar"> 
+     <ul class="siteStyleBar-list siteStyleBar-tabs"> 
+      <li class="tabs-tab"><a class="tab-link" href="/" title="Enterprise">Enterprise</a></li> 
+      <li class="tabs-tab"><a class="tab-link" href="/essentials/" title="Essentials">Essentials</a></li> 
+     </ul> 
+     <ul class="siteStyleBar-list siteStyleBar-linksList"> 
+      <li class="linksList-item"><a class="linksList-link" href="tel:+1-888-248-9325" title="1-888-248-9325">1-888-248-9325</a></li> 
+      <li class="linksList-item"><a class="linksList-link" href="https://support.bigcommerce.com/" title="Help Center">Help Center</a></li> 
+      <li class="linksList-item"><a class="linksList-link" href="https://login.bigcommerce.com/login" title="Log In">Log In</a></li> 
+     </ul> 
+    </div> 
+   </div> 
+   <header class="header"> 
+    <div class="header__inner"> 
+     <div class="topBar-container headerColorScheme-transparentWhite topBar-container title-bar" role="menu"> 
+      <div class="title-bar-left"> 
+       <div class="top-bar"> 
+        <ul class="title-area menu"> 
+         <li class="name"> <a href="/"> <img class="lazyload" class="title-area-logo--hover" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20132%2030'%3E%3C/svg%3E" alt="bc-logo-dark" scale="0" width="132" height="30" data-lazy-src="https://www.bigcommerce.com/blog/wp-content/themes/bigcommerce/assets/images/bc-logo-bright.svg">
+           <noscript>
+            <img class="lazyload" class="title-area-logo--hover" src="https://www.bigcommerce.com/blog/wp-content/themes/bigcommerce/assets/images/bc-logo-bright.svg" alt="bc-logo-dark" scale="0" width="132" height="30">
+           </noscript> <!-- <img class="title-area-logo" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="bc-logo-dark" scale="0" data-lazy-src="https://www.bigcommerce.com/blog/wp-content/themes/bigcommerce/assets/images/bc-logo-dark.svg"><noscript><img class="title-area-logo" src="https://www.bigcommerce.com/blog/wp-content/themes/bigcommerce/assets/images/bc-logo-dark.svg" alt="bc-logo-dark" scale="0"></noscript> --> </a> </li> 
+        </ul> 
+        <section class="top-bar-section"> 
+         <ul id="menu-main-navigation-1" class="menuItems">
+          <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50968"><a href="/blog/">Latest Articles</a></li> 
+          <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-62282"><a href="https://www.bigcommerce.com/blog/category/customer-stories/">Success Stories</a></li> 
+          <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50971"><a href="/resources/">Resources</a></li> 
+          <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-62871"><a href="https://www.bigcommerce.com/blog/category/ecommerce-holiday-ideas/">Holiday Ideas &amp; Strategies</a></li> 
+         </ul> <button id="menu-toggle" class="menu-icon" type="button" data-toggle="menu" data-open="offCanvasRight"> <i class="icon icon-hamburger"></i> </button> 
+        </section> 
+        <div class="top-bar-actions"> <a href="/start-your-trial/" class="button button--action button--small">Get Started</a> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> <progress ng-non-bindable value="0"></progress> 
+   </header> 
+   <div id="content"> 
+    <div class="post-wrapper"> 
+     <div class="post-detail"> 
+      <div class="post-detail__title"> 
+       <div class="post-detail__title-inner"> 
+        <p class="post-detail__categories"><a href="https://www.bigcommerce.com/blog/category/ecommerce-branding/" rel="category tag">Branding Strategies</a> / <a href="https://www.bigcommerce.com/blog/category/mobile-commerce/" rel="category tag">Mobile Strategies</a></p> 
+        <h1 itemprop="headline">How You Can Build a Powerful Influencer Marketing Strategy in 2022</h1> 
+        <div class="post-detail__meta"> <span class="post-detail__meta-authorimage"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20145%20150'%3E%3C/svg%3E" alt="Lynn Corbitt" width="145" height="150" class="photo" data-lazy-src="https://www.bigcommerce.com/blog/wp-content/uploads/userphoto/573.thumbnail.png">
+          <noscript>
+           <img src="https://www.bigcommerce.com/blog/wp-content/uploads/userphoto/573.thumbnail.png" alt="Lynn Corbitt" width="145" height="150" class="photo">
+          </noscript></span> <span><a href="https://www.bigcommerce.com/blog/author/lynn-corbitt/" title="Posts by Lynn Corbitt" rel="author">Lynn Corbitt</a></span> <span class="sep">/</span> 10 min read 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="post-detail__hero"> 
+      <img width="2000" height="750" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202000%20750'%3E%3C/svg%3E" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="influencer marketing" data-lazy-srcset="https://www.bigcommerce.com/blog/wp-content/uploads/2017/08/influencer-marketing.jpg 2000w, https://www.bigcommerce.com/blog/wp-content/uploads/2017/08/influencer-marketing-300x113.jpg 300w, https://www.bigcommerce.com/blog/wp-content/uploads/2017/08/influencer-marketing-750x281.jpg 750w" data-lazy-sizes="(max-width: 2000px) 100vw, 2000px" data-lazy-src="https://www.bigcommerce.com/blog/wp-content/uploads/2017/08/influencer-marketing.jpg">
+      <noscript>
+       <img width="2000" height="750" src="https://www.bigcommerce.com/blog/wp-content/uploads/2017/08/influencer-marketing.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="influencer marketing" srcset="https://www.bigcommerce.com/blog/wp-content/uploads/2017/08/influencer-marketing.jpg 2000w, https://www.bigcommerce.com/blog/wp-content/uploads/2017/08/influencer-marketing-300x113.jpg 300w, https://www.bigcommerce.com/blog/wp-content/uploads/2017/08/influencer-marketing-750x281.jpg 750w" sizes="(max-width: 2000px) 100vw, 2000px">
+      </noscript> 
+     </div> 
+     <div class="post-detail"> 
+      <div class="post-detail__body"> 
+       <div class="post-detail__body-main"> 
+        <div class="post-detail__toc" style="display:none;"> 
+         <div class="toc_container"> 
+          <div class="toc_title">
+           Table of Contents
+          </div> 
+          <ul class="toc_list"></ul> 
+         </div> 
+        </div> 
+        <div class="post-detail__body-inner" itemprop="text"> 
+         <p>It’s almost impossible to scroll through social media without seeing some form of <a href="https://www.bigcommerce.com/blog/influencer-marketing-statistics/"><strong>influencer marketing</strong></a>. Everywhere you look, influencers are showing off their latest snacks, clothes, makeup brands or candles, and that’s just the beginning.</p> 
+         <p>From traditional posts to ever-popular Instagram Stories to long videos, influencers are always finding new ways to be sponsored on their favorite platforms.</p> 
+         <p>When it comes to defining influencers, it’s important to note that anyone can be an influencer. Like John Maxwell says, “To be an influencer, you have to love people before you can try to lead them.” If you have one follower, you have influence. If you get one like on your posts, you’re generating engagement.</p> 
+         <p>So let’s take a moment to acknowledge the aspiring influencers who are growing their following. These people post about their favorite brands and products simply because they love them. Granted, they’re probably also hoping for a brand deal in the long run, but at the time that they post, they aren’t making any money for their efforts.</p> 
+         <p>It might feel like influencer marketing is a new thing that just became popular recently. Actually, <a href="https://izea.com/history-influencer-marketing/" target="_blank" rel="noopener"><strong>influencer marketing began</strong></a> 15 years ago. PayPerPost, the first marketplace to pay bloggers for branded content, launched to quite a bit of speculation. Since blogs were mainly seen as online diaries, many experts were skeptical that adding advertising or sponsorships into the content would actually feel authentic.</p> 
+         <p>That’s a challenge that today’s influencers are still facing, but for those who can manage to promote products or services and sound real and authentic while doing so, there are many rewards to be reaped. After all, people want to buy from other people, so when they find someone they like, they’re more likely to trust their recommendations.</p> 
+         <h2><strong>What Is Influencer Marketing?</strong></h2> 
+         <p>Influencer marketing is a way brands can promote their products through endorsements or recommendations from influencers and content creators on the internet. Social media and blogs are home to the majority of influencers, although other creators like podcast hosts can fit the bill, too. Many times, influencer marketing is a part of brand awareness campaigns, but it can also result in plenty of conversions and sales.</p> 
+         <p>While influencer marketing began back in 2006, it has changed a lot over the past 15 years. Facebook and Twitter were just getting started, but Instagram wouldn’t join the social media landscape until 2010. When influencers began, they were primarily bloggers who shared stories about their lives and promoted products they used each day.</p> 
+         <p>It’s kind of a paradox, but while influencer marketing hasn’t changed that much, it’s vastly different in several ways. Influencers are still sharing stories about their lives and promoting products they use each day. Now, though, there are many people who are career influencers, earning a living through brand sponsorships. When it began, any money a blogger made through a partnership was nice side cash, but certainly not enough to be considered full-time income.</p> 
+         <p>Influencers today also have so many more options than the original influencers did. There are countless social media platforms to choose from, and there are so many kinds of content they can create. For those who like video platforms, YouTube or <a href="/articles/omnichannel-retail/tiktok-ecommerce/%20">TikTok</a> are excellent options. Those who want to share long-form written posts can benefit from traditional blogging or even Facebook. Influencers who want a little of everything can turn to Instagram. While Clubhouse is still a new platform, it probably won’t be long until influencers find a way to turn that into a spot for their promotions, too.</p> 
+         <h2><strong>Influencer Marketing By The Numbers</strong></h2> 
+         <p>Influencer marketing is an incredibly popular marketing tool right now, and for good reason:</p> 
+         <ul> 
+          <li aria-level="1"><strong><a href="https://socialpubli.com/blog/2019-influencer-marketing-report-a-marketers-perspective/%20" target="_blank" rel="noopener">Nine out of 10 brands</a></strong> are using some form of influencer marketing.</li> 
+         </ul> 
+         <p>Unless you want your company to be left behind, it’s time to start exploring your options for influencer marketing. No matter what industry you’re in, there’s sure to be at least one influencer who fits your needs. And don’t be worried if you can only find smaller influencers in your niche, because:</p> 
+         <ul> 
+          <li aria-level="1">Generate an equivalent earned media <strong><a href="https://influencermarketinghub.com/influencer-marketing-2019-benchmark-report/" target="_blank" rel="noopener">value of $18 per $1 spent</a></strong>.</li> 
+         </ul> 
+         <p>If you’re looking to grow your brand awareness, increase sales, or really get your brand’s name out into the world in any way possible, you need to be taking advantage of influencer marketing. You don’t see a media value like this with other marketing tactics. The most important thing, though, is to approach influencer marketing strategically, so you do it correctly. Generating this kind of earned media equivalence only happens if you’re working with the right influencers in the right niche.</p> 
+         <h2><strong>4 Reasons Why Influencer Marketing Will Continue to Grow</strong></h2> 
+         <p><strong><a href="https://attrock.com/blog/case-study-influencer-marketing/" target="_blank" rel="noopener">Influencer marketing</a></strong> is popular now, but it’s not just a trend that’s going to fade away. In fact, it’s nowhere near done growing. It will continue to become more and more popular over the coming years, so now is the best time to learn about it and prepare to incorporate it into your own strategies.</p> 
+         <h3><strong>1. More people are becoming influencers.</strong></h3> 
+         <p>While it might feel like there are too many influencers out there, that’s actually not the case. As social media platforms continue to grow, there are more opportunities for new people to become influencers.&nbsp;</p> 
+         <p>Some will certainly do this intentionally, while others will simply be sharing about their life and happen to strike up a brand deal with a company they love. Either way, there will be more people growing audiences in specific niches. This means you have a better chance of finding someone talking to your specific ideal audience that’s perfect for your ecommerce store.</p> 
+         <p><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20923%20593'%3E%3C/svg%3E" alt="" width="923" height="593" data-lazy-src="https://www.bigcommerce.com/blog/wp-content/uploads/2018/09/Instagram-1.jpg">
+          <noscript>
+           <img src="https://www.bigcommerce.com/blog/wp-content/uploads/2018/09/Instagram-1.jpg" alt="" width="923" height="593">
+          </noscript></p> 
+         <h3><strong>2. Influencer marketing agencies are growing in popularity.</strong></h3> 
+         <p>As with any business strategy or tactic, influencer marketing is becoming standardized. There are now agencies that represent influencers and agencies designed to help brands find the best influencers for their strategy. As business surrounding influencer marketing continues to grow, the marketing itself will also keep expanding.&nbsp;</p> 
+         <p>For ecommerce brands that don’t want to dedicate the time or resources to keeping up with influencer <a href="https://blog.wishpond.com/post/115675438345/marketing-trends-2022" target="_blank" rel="noopener">marketing trends</a>, these kinds of agencies are a great option. You can still take advantage of the incredible success that often comes with influencer marketing without learning everything yourself.</p> 
+         <h3><strong>3. There are more content options.</strong></h3> 
+         <p>Influencers began with <a href="https://www.evergreenfeed.com/blog/5-easy-steps-to-build-a-blog-with-bloghandy/" target="_blank" rel="noopener">creating written blog posts</a> talking about their favorite products. Then, social media became more popular and the kinds of content influencers were creating changed. Nowadays, video is perhaps the most popular kind of content for influencers to make when it comes to promoting products. Instagram and Facebook Live, IGTV, YouTube, and TikTok have all shown the incredible power of video.&nbsp;</p> 
+         <p>However, with the growing popularity of podcasts and the advent of audio-only apps like Clubhouse, it makes you wonder what the next big trend in influencer marketing will be. While we might not know that answer, we do know it will continue to evolve. Ecommerce brands can be prepared to take advantage of new, innovative platforms and content by joining these new platforms as they arise. If you are already building a following on a particular platform, influencers will be more likely to want to work with you.</p> 
+         <h3><strong>4. Influencers are showing more of their reality.</strong></h3> 
+         <p>In many ways, influencers are going back to their roots. In recent years, people have become far more interested in seeing posts that aren’t overly edited. They don’t want to listen to, learn from, or take advice from someone whose life seems entirely unattainable. Instead, they want to see reality. They want to see influencers make mistakes and have bad days and pick themselves back up again and keep going.&nbsp;</p> 
+         <p>Because of this open transparency, even more people are trusting and following influencers, which means that there are more people to see and buy from sponsored content. Ecommerce brands can now reach even more people when they work with influencers, especially if they’re not caught up in showing only the perfect, highly-filtered sides of their life.</p> 
+         <p><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20512%20366'%3E%3C/svg%3E" alt="" width="512" height="366" data-lazy-src="https://www.bigcommerce.com/blog/wp-content/uploads/2018/09/example-insta-2.jpg">
+          <noscript>
+           <img src="https://www.bigcommerce.com/blog/wp-content/uploads/2018/09/example-insta-2.jpg" alt="" width="512" height="366">
+          </noscript></p> 
+         <h2><strong>Ways Ecommerce Stores Are Using Influencer Marketing&nbsp;</strong></h2> 
+         <p>Influencer marketing is working for all kinds of businesses. Big brands work with celebrities to promote their products, and entrepreneurs who are just getting started find a way to work with influencers who are still growing their platforms. Ecommerce stores are using influencer marketing in a few key ways, and if you aren’t on board yet, it’s time to join.</p> 
+         <h3><strong>1. To promote their store.&nbsp;</strong></h3> 
+         <p>Promoting an online store is probably the most common and most obvious way that ecommerce brands can use influencer marketing. When influencers are talking about or promoting your brand and products, it’s easy for them to provide a link to your <strong><a href="https://www.bigcommerce.com/blog/best-ecommerce-stores/">ecommerce store</a></strong>. In fact, it’s easier than telling someone they need to go to Target or go to “wherever books are sold.” Instead, they can add a link directly to your page, which means potential customers are less likely to get lost along the way.</p> 
+         <p><em>Tip: Create a code or provide influencers with specific links to your page. This way, you’ll be able to track and see the ROI of your influencer campaigns.</em></p> 
+         <p><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20806%20591'%3E%3C/svg%3E" alt="" width="806" height="591" data-lazy-src="https://www.bigcommerce.com/blog/wp-content/uploads/2018/09/insta-example-3.jpg">
+          <noscript>
+           <img src="https://www.bigcommerce.com/blog/wp-content/uploads/2018/09/insta-example-3.jpg" alt="" width="806" height="591">
+          </noscript></p> 
+         <h3><strong>2. Share user-generated content.</strong>&nbsp;</h3> 
+         <p>Another great benefit of influencer marketing is having <strong><a href="https://www.bigcommerce.com/blog/ugc-ecommerce/">user-generated content (UGC)</a></strong> that you can share. People trust other people more than they trust brands, by and large. However, it can feel like a challenge to find images and content from people outside of your team. When you work with an influencer, you can request the use of their content on your page. Then, you’ll be able to re-post their content, which shows your audience the partnership you have with this influencer as well as their images and copy.</p> 
+         <p>Tip: Create a plan for <a href="https://flippingbook.com/es/blog/guides/how-to-create-shareable-content-that-engages-users" target="_blank" rel="noopener">sharing UGC</a> so you can fully maximize the benefits. If you know you’re promoting a particular product soon, save your UGC for that product until that promotion comes around so you can have the full effect.</p> 
+         <h3><strong>3. Use testimonials from influencers.&nbsp;</strong></h3> 
+         <p>Every brand needs more testimonials on their website, but sometimes customers don’t think to come back and leave a review or share their experience. When you work with an influencer, you can capture their testimonial and their story. By putting their information on your site as a whole or the page of the product they’re reviewing specifically, you can provide more social proof to your potential customers so they feel more confident purchasing.</p> 
+         <p>Tip: Outline what kind of testimonial you want from the influencer at the beginning of your campaign. This is the best way to ensure that they capture all of the content and ideas you want to see in their testimonial.</p> 
+         <h3><strong>4. Offer a promotion with an influencer.&nbsp;</strong></h3> 
+         <p>Offering a discount when you’re working with an influencer is such a great way to increase your sales and ROI on the campaign. First of all, like we mentioned earlier, having a discount code specifically for that influencer will allow you to track their conversions. Beyond that, though, many people will strongly consider making a purchase if they can save some money while doing it. Sometimes that can be the tipping point that really inspires someone to click through to your shop and make the purchase.</p> 
+         <p>Tip: Alongside a base rate, you can negotiate with the influencer to offer them a percentage of each sale made with their code. This can encourage them to be thorough when creating their campaign.</p> 
+         <h3><strong>5. Work with micro-influencers.&nbsp;</strong></h3> 
+         <p>We alluded to this a little earlier, but working with micro influencers is certainly the way to go, especially for ecommerce brands. Don’t be afraid of working with someone with a small following, so long as their engagement rate is significant. If you’re working with an Instagram influencer, it can be easy to feel like you need to choose someone with at least <a href="https://blog.kicksta.co/10k-followers-instagram-successful-micro-influencer/"><strong>10,000 followers</strong></a> so they can take advantage of the <strong><a href="https://socialmarketingwriting.com/how-to-get-swipe-up-link-on-instagram-without-10k-followers/" target="_blank" rel="noopener">swipe-up feature</a></strong>, but that’s not true. That feature isn’t a requirement of a successful campaign. Instead, they can use a direct messaging strategy that allows them to rely on the connections they’ve built with their small following to encourage them to learn more or buy.</p> 
+         <p>Tip: Always look for the engagement rate on their posts. Sometimes influencers with big followings have gotten to that point by buying instagram followers. These bought followers tend to be fake, which means they aren’t going to engage with <a href="https://databox.com/influencer-marketing-campaign-tracking" target="_blank" rel="noopener">the campaign or purchase</a> your product.</p> 
+         <h2><strong>How To Build An Influencer Marketing Strategy</strong></h2> 
+         <p>Now that you’re ready to incorporate influencer marketing into your overall marketing plan, it’s time to start with a strategy. Like any good marketing tactic, building a strategy can ensure that you’re being thorough and methodical. You’ll know exactly what you want to get from influencer marketing and you’ll have a process for measuring it to see your progress along the way.</p> 
+         <h3><strong>1. Document your goals and key performance indicators.</strong></h3> 
+         <p>Any good strategy begins with goals. When you’re thinking about influencer marketing, there are a number of goals you could have for your campaign. While the most obvious is probably making sales, <a href="https://tapfiliate.com/blog/how-to-find-key-influencers-to-promote-your-brand/" target="_blank" rel="noopener">working with influencers</a> can do more for your brand than just create sales in the moment. Here are a few goal ideas:</p> 
+         <h4><strong>Building Brand Awareness&nbsp;</strong></h4> 
+         <p>Working with influencers means your brand’s name is getting in front of thousands of people who may have never heard of it before. They’re learning about your brand from someone they trust, which means they’re going to be more ready to learn about your company or follow you on social media.</p> 
+         <h4><strong>Attracting A New Target Market</strong></h4> 
+         <p>If you’re looking to change your ideal customer a bit, there’s no better way to do so than working with an influencer. Be advised: it will probably take a little more work on your end to explain to the influencer why your brand is right for their audience. Influencers are often protective of their audiences because they’ve worked hard to grow their following and earn their trust. However, if you work with the influencer to create a strong campaign plan, they can help you reach a new market.</p> 
+         <h4><strong>Facilitating Lead Generation</strong></h4> 
+         <p>Finally, influencer marketing can help you get more leads and customers. Depending on what you sell, you might want your influencer partnership to move their followers toward a nurturing campaign so they can get to know your brand better. Or, you could send them directly to your e-commerce shop to start making sales.</p> 
+         <p>Once you know what your goal is, it’s time to identify your <strong><a href="https://www.investopedia.com/terms/k/kpi.asp#:~:text=Key%20performance%20indicators%20(KPIs)%20refer,businesses%20within%20the%20same%20sector." target="_blank" rel="noopener">key performance indicators</a></strong>, or KPIs. These will be the metrics you’ll track throughout your campaign and analyze when it’s over to see how well your campaign did. If your goal is brand awareness, you might want to track visits to your website or followers on social media. If your goal is <a href="https://mailshake.com/blog/what-is-lead-generation/" target="_blank" rel="noopener">lead generation</a>, you’ll want to track sign ups for your nurturing sequence. Sales can easily be tracked with unique links for influencers or a special promo code.</p> 
+         <h3><strong>2. Understand the influencer landscape.</strong></h3> 
+         <p>Before you really begin working with influencers, you’ll want to take the time to actually understand the landscape. Know the different types of influencers — we’ve talked a lot about micro-influencers, but there are also macro-influencers and celebrities. By and large you’ll want to avoid celebrities, as their following is so big that their engagement rate is very low, but their rates are often quite high.</p> 
+         <p>Take some time to observe influencers and see how they promote brands before you look to pitch your brand to anyone. This will ensure that you’re more well-informed and that you can make a bigger impression on the influencer.</p> 
+         <h3><strong>3. Connect with influencers.&nbsp;</strong></h3> 
+         <p>Once you’re confident that you know what you’re doing, it’s time to connect with influencers. There are many different ways you can <a href="https://trendhero.io/blog/find-influencers/" target="_blank" rel="noopener">find influencers</a> that will work for your brand, but you’ll want to start with looking to others in your industry. Not only will you discover who your competitors are working with, but you’ll also see what size influencers they’re targeting. Then, you can make a decision about whether you want to look for people with a similar-sized following or something different.&nbsp;</p> 
+         <p>Depending on the platform you’re looking to promote on, you can find tools that will help you identify influencers in your niche. <strong><a href="https://influencegrid.com/" target="_blank" rel="noopener">InfluenceGrid</a></strong> helps you find TikTok influencers, and <strong><a href="https://awario.com/" target="_blank" rel="noopener">Awario</a></strong> helps you find influencers on a variety of platforms. But you don’t have to use tools like this to find influencers. You can also search through hashtags to find people making #sponsored posts. From there, you can look through their audience and see if that resonates with you.</p> 
+         <p>You can also start with your followers. Click on a few of the people who are already following your brand. Scroll through the other accounts they’re following and see if you can find any influencers there. This is a great way to find someone who is already targeting your ideal audience.</p> 
+         <h2><strong>Wrapping Up</strong></h2> 
+         <p>Influencer marketing is here to stay, and it’s only going to grow more in the coming years. <a href="https://www.bigcommerce.com/articles/ecommerce/"><strong>Ecommerce</strong></a> brands can truly benefit from working with influencers, no matter what their goal is. Influencers can help you grow your following, make sales, or simply get the word out about your business. No matter what, today is a great day to start creating your influencer marketing strategy.</p> 
+         <div class="callout__rss">
+          <div class="callout__rss-inner">
+           <div class="callout__rss-wrapper">
+            <div class="callout__rss-table">
+             <div class="callout__rss-text">
+              <p class="h3">Want more insights like this?</p>
+              <p><span style="font-weight: 400;">Subscribe to our bi-weekly newsletter to get the latest thought leadership content delivered right to your inbox — from blogs and resource articles, to podcast episodes, webinars and more.</span></p> 
+             </div>
+             <div class="callout__rss-form clearfix">
+              <form class="mktoForm" data-formid="2142" data-forminstance="post-rss-1" ng-non-bindable></form>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div> 
+        </div> 
+        <div id="sidebar" class="post-detail__sidebar" data-sticky-container> 
+         <div class="sticky-sidebar sticky" data-sticky data-margin-top="30px"> 
+          <div class="post-detail__toc" style="display:block;"> 
+           <div class="toc_container"> 
+            <div class="toc_title">
+             Table of Contents
+            </div> 
+            <ul class="toc_list"></ul> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="post-detail__body-share" data-sticky-container> 
+        <div id="sticky-share" class="sticky" data-sticky data-margin-top="30px"> 
+         <p class="h4">SHARE</p> 
+         <ul> 
+          <li> <a href="https://twitter.com/share?url=https%3A%2F%2Fwww.bigcommerce.com%2Fblog%2Finfluencer-marketing%2F" target="_blank"> 
+            <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+             <path d="M23.954 4.569a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.691 8.094 4.066 6.13 1.64 3.161a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.061a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.937 4.937 0 004.604 3.417 9.868 9.868 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63a9.936 9.936 0 002.46-2.548l-.047-.02z" />
+            </svg> </a> </li> 
+          <li> <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fwww.bigcommerce.com%2Fblog%2Finfluencer-marketing%2F" target="_blank"> 
+            <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+             <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+            </svg> </a> </li> 
+          <li> <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.bigcommerce.com%2Fblog%2Finfluencer-marketing%2F" target="_blank"> 
+            <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+             <path d="M23.998 12c0-6.628-5.372-12-11.999-12C5.372 0 0 5.372 0 12c0 5.988 4.388 10.952 10.124 11.852v-8.384H7.078v-3.469h3.046V9.356c0-3.008 1.792-4.669 4.532-4.669 1.313 0 2.686.234 2.686.234v2.953H15.83c-1.49 0-1.955.925-1.955 1.874V12h3.328l-.532 3.469h-2.796v8.384c5.736-.9 10.124-5.864 10.124-11.853z" />
+            </svg> </a> </li> 
+         </ul> 
+        </div> 
+       </div> 
+      </div> 
+      <div id="footer" class="post-detail__footer"> 
+       <div class="post-detail__footer-inner "> 
+        <div class="post-detail__author"> 
+         <div class="post-detail__author-image" itemprop="image"> 
+          <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20145%20150'%3E%3C/svg%3E" alt="Lynn Corbitt" width="145" height="150" class="photo" data-lazy-src="https://www.bigcommerce.com/blog/wp-content/uploads/userphoto/573.thumbnail.png">
+          <noscript>
+           <img src="https://www.bigcommerce.com/blog/wp-content/uploads/userphoto/573.thumbnail.png" alt="Lynn Corbitt" width="145" height="150" class="photo">
+          </noscript> 
+         </div> 
+         <div class="post-detail__author-header"> 
+          <p class="h3" itemprop="name">Lynn Corbitt</p> 
+          <p class="h4" itemprop="jobTitle"></p> 
+         </div> 
+         <div class="post-detail__author-text"> 
+          <p class="description" itemprop="description">Lynn Corbitt is a content marketing expert and owner of Coffee Break Communications. She specializes in content creation and strategy for businesses in a variety of industries. You can more Instagram marketing tips from her at <a href="https://kicksta.co/">kicksta.co</a>.</p> <a href="https://www.bigcommerce.com/blog/author/lynn-corbitt/">View all posts by Lynn Corbitt <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="callout__trial"> 
+     <div class="callout__trial-inner"> 
+      <div class="callout__trial-text"> 
+       <p class="h2">Less Development. More Marketing.</p> 
+       <p>Let us future-proof your backend. You focus on building your brand.</p> 
+      </div> 
+      <div class="callout__trial-button"> <a class="button" href="/start-your-trial/">Start Your Free Trial</a> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="ctaWrapper"> 
+     <div class="ctaContent"> 
+      <div class="ctaBody"> 
+       <div class="ctaHeading"> 
+        <p class="h2"> Ecommerce insights on the go </p> 
+       </div> 
+       <div class="ctaSubheading"> 
+        <p> Introducing the all-new Make it Big Podcast — a thought leadership audio series for retailers, entrepreneurs and ecommerce professionals. Tune in for expert insights, strategies and tactics to help grow your business. </p> 
+       </div> 
+       <div class="ctaButton beforeImage"> <a class="button buttonPrimary" href="https://www.bigcommerce.com/make-it-big-podcast/" target="_blank"> Listen today </a> 
+       </div> 
+      </div> 
+      <div class="ctaImg"> 
+       <img width="750" height="422" class="lazyload" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20750%20422'%3E%3C/svg%3E" data-lazy-src="https://www.bigcommerce.com/blog/wp-content/uploads/2021/09/3010CD-MIB2021-Podcast-CTA-Mat-AS-750x422.jpg">
+       <noscript>
+        <img width="750" height="422" class="lazyload" src="https://www.bigcommerce.com/blog/wp-content/uploads/2021/09/3010CD-MIB2021-Podcast-CTA-Mat-AS-750x422.jpg">
+       </noscript> 
+      </div> 
+     </div> 
+    </div>
+    <div class="blog__header"> 
+     <div class="blog__header-home"> <a href="https://www.bigcommerce.com/blog/"><span class="arrow-left-link"></span> BLOG HOME</a> 
+     </div> 
+     <div class="blog__header-nav clearfix"> 
+      <div class="blog__header-nav-categories"> <a class="blog__header-nav-trigger"> Branding Strategies </a> 
+       <div class="blog__header-nav-dropdown"> 
+        <ul> 
+         <li><a href="https://www.bigcommerce.com/blog/category/customer-stories/">Customer Stories</a></li> 
+         <li><a href="https://www.bigcommerce.com/blog/category/ecommerce-research/">Ecommerce Research</a></li> 
+         <li><a href="https://www.bigcommerce.com/blog/category/enterprise-ecommerce/">Enterprise Ecommerce</a></li> 
+         <li><a href="https://www.bigcommerce.com/blog/category/enterprise-ecommerce/b2b-ecommerce/">B2B Ecommerce</a></li> 
+         <li><a href="https://www.bigcommerce.com/blog/category/how-to-sell-online/">How to Sell Online</a></li> 
+         <li><a href="https://www.bigcommerce.com/blog/category/omnichannel/">Omnichannel Strategies</a></li> 
+         <li><a href="https://www.bigcommerce.com/blog/category/product-news/">Product News</a></li> 
+        </ul> 
+       </div> 
+      </div> 
+      <div class="blog__header-nav-label">
+        CATEGORY 
+      </div> 
+      <div class="blog__header-nav-search"> <a class="search-trigger blog__header-search-trigger">Search</a> 
+      </div> 
+      <div class="blog__header-search archive-page__search"> 
+       <div class="archive-page__search-inner"> 
+        <form method="get" id="searchform" action="https://www.bigcommerce.com/blog/"> 
+         <input type="text" value="" name="s" id="s"> <a class="archive-page__search-close">Close</a> 
+        </form> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> <!--</END CONTENT>--> 
+   <footer class="footer--decorated"> 
+    <div class="footer">
+     <div class="footer-nav">
+      <div class="footer-nav-column footer-nav-column--legacy">
+       <h4 class="footer-nav-heading">Product</h4>
+       <ul class="footer-links">
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/product/" title="Features" class="footer-links-link ">Features</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/services/" title="Services" class="footer-links-link ">Services</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/enterprise-pricing/" title="Enterprise Pricing" class="footer-links-link ">Enterprise Pricing</a></li>
+       </ul>
+      </div><!--//Footer Column -->
+      <div class="footer-nav-column footer-nav-column--legacy">
+       <h4 class="footer-nav-heading">Partners</h4>
+       <ul class="footer-links">
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/partners/" title="Overview" class="footer-links-link ">Overview</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/partners/become-a-partner/" title="Become a Partner" class="footer-links-link ">Become a Partner</a></li>
+        <li class="footer-links-item"><a href="https://partners.bigcommerce.com/directory/home.aspx" title="Find a Partner" target="_blank" class="footer-links-link ">Find a Partner</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/partners/become-a-partner/affiliate/" title="Affiliates" class="footer-links-link ">Affiliates</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/offers/" title="Partner Offers" class="footer-links-link ">Partner Offers</a></li>
+       </ul>
+      </div><!--//Footer Column -->
+      <div class="footer-nav-column footer-nav-column--legacy">
+       <h4 class="footer-nav-heading">Customers</h4>
+       <ul class="footer-links">
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/case-study/" title="Case Studies" class="footer-links-link ">Case Studies</a></li>
+        <li class="footer-links-item"><a href="/showcase/" title="Store Examples" class="footer-links-link ">Store Examples</a></li>
+       </ul>
+      </div><!--//Footer Column -->
+      <div class="footer-nav-column footer-nav-column--legacy">
+       <h4 class="footer-nav-heading">Resources</h4>
+       <ul class="footer-links">
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/resources/" title="Overview" class="footer-links-link ">Overview</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/articles/" title="Articles" class="footer-links-link ">Articles</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/resources/guides/" title="Guides &amp; White Papers" class="footer-links-link ">Guides &amp; White Papers</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/resources/webinars/" title="Webinars" class="footer-links-link ">Webinars</a></li>
+        <li class="footer-links-item"><a href="/events/" title="Events" class="footer-links-link ">Events</a></li>
+        <li class="footer-links-item"><a href="/blog/" title="Ecommerce Blog" class="footer-links-link ">Ecommerce Blog</a></li>
+        <li class="footer-links-item"><a href="https://medium.com/bigcommerce-developer-blog" title="Developer Blog" target="_blank" class="footer-links-link ">Developer Blog</a></li>
+       </ul>
+      </div><!--//Footer Column -->
+      <div class="footer-nav-column footer-nav-column--legacy">
+       <h4 class="footer-nav-heading">Use Case Solutions</h4>
+       <ul class="footer-links">
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/solutions/headless-commerce/" title="Headless Commerce" class="footer-links-link ">Headless Commerce</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/solutions/b2b-ecommerce-platform/" title="B2B" class="footer-links-link ">B2B</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/solutions/wholesale-ecommerce-platform/" title="Wholesale" class="footer-links-link ">Wholesale</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/solutions/multi-channel/" title="Multi-Channel" class="footer-links-link ">Multi-Channel</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/solutions/international/" title="International" class="footer-links-link ">International</a></li>
+       </ul>
+      </div><!--//Footer Column -->
+      <div class="footer-nav-column footer-nav-column--legacy">
+       <h4 class="footer-nav-heading">Industry Solutions</h4>
+       <ul class="footer-links">
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/solutions/fashion/" title="Apparel &amp; Fashion" class="footer-links-link ">Apparel &amp; Fashion</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/solutions/health-beauty/" title="Health &amp; Beauty" class="footer-links-link ">Health &amp; Beauty</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/solutions/food-beverage/" title="Food &amp; Beverage" class="footer-links-link ">Food &amp; Beverage</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/solutions/manufacturing/" title="Manufacturing" class="footer-links-link ">Manufacturing</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/solutions/automotive/" title="Automotive" class="footer-links-link ">Automotive</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/solutions/cbd/" title="CBD" class="footer-links-link ">CBD</a></li>
+       </ul>
+      </div><!--//Footer Column -->
+      <div class="footer-nav-column footer-nav-column--legacy">
+       <h4 class="footer-nav-heading">Company</h4>
+       <ul class="footer-links">
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/company/leaders/" title="Leaders" class="footer-links-link ">Leaders</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/company/" title="About Us" class="footer-links-link ">About Us</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/press/" title="Press" class="footer-links-link ">Press</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/company/awards/" title="Awards" class="footer-links-link ">Awards</a></li>
+        <li class="footer-links-item"><a href="https://investors.bigcommerce.com/" title="Investor Relations" target="_blank" class="footer-links-link ">Investor Relations</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/terms/" title="Terms of Service" class="footer-links-link ">Terms of Service</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/privacy/" title="Privacy Policy" class="footer-links-link ">Privacy Policy</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/contact/" title="Contact Us" class="footer-links-link ">Contact Us</a></li>
+       </ul>
+      </div><!--//Footer Column -->
+      <div class="footer-nav-column footer-nav-column--legacy">
+       <h4 class="footer-nav-heading">Help Center</h4>
+       <ul class="footer-links">
+        <li class="footer-links-item"><a href="https://support.bigcommerce.com/s/community" title="BigCommerce Community" target="_blank" class="footer-links-link ">BigCommerce Community</a></li>
+        <li class="footer-links-item"><a href="https://support.bigcommerce.com/s/knowledge" title="Knowledge Base" target="_blank" class="footer-links-link ">Knowledge Base</a></li>
+        <li class="footer-links-item"><a href="https://support.bigcommerce.com/s/videos" title="Videos" target="_blank" class="footer-links-link ">Videos</a></li>
+        <li class="footer-links-item"><a href="https://support.bigcommerce.com/s/contact" title="Contact Tech Support" target="_blank" class="footer-links-link ">Contact Tech Support</a></li>
+        <li class="footer-links-item"><a href="https://developer.bigcommerce.com/" title="Developer Center" target="_blank" class="footer-links-link ">Developer Center</a></li>
+        <li class="footer-links-item"><a href="https://developer.bigcommerce.com/api-docs" title="API Documentation" target="_blank" class="footer-links-link ">API Documentation</a></li>
+        <li class="footer-links-item"><a href="https://developer.bigcommerce.com/stencil-docs" title="Theme Documentation" target="_blank" class="footer-links-link ">Theme Documentation</a></li>
+       </ul>
+      </div><!--//Footer Column -->
+     </div><!-- //Footer Nav -->
+     <div class="footer-bottom">
+      <div class="footer-bottom-copyright">
+       <a href="/"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="footer-bottom-logo" data-lazy-src="/assets/svg/bc-logo-bright.svg">
+        <noscript>
+         <img src="/assets/svg/bc-logo-bright.svg" class="footer-bottom-logo">
+        </noscript></a> © Copyright 2003 - 2022 BigCommerce Pty. Ltd. <a href="/" class="footer-links-link">Ecommerce Platform</a>
+      </div>
+      <div class="footer-bottom-social">
+       <ul class="footer-links footer-links--horizontal">
+        <li class="footer-links-item"><a href="http://twitter.com/Bigcommerce" title="Twitter" target="_blank" class="footer-links-link">Twitter</a></li>
+        <li class="footer-links-item"><a href="http://www.facebook.com/Bigcommerce" title="Facebook" target="_blank" class="footer-links-link">Facebook</a></li>
+        <li class="footer-links-item"><a href="http://www.linkedin.com/company/bigcommerce" title="LinkedIn" target="_blank" class="footer-links-link">LinkedIn</a></li>
+        <li class="footer-links-item"><a href="https://www.youtube.com/c/bigcommerce" title="YouTube" target="_blank" class="footer-links-link">YouTube</a></li>
+        <li class="footer-links-item"><a href="http://pinterest.com/bigcommerce/" title="Pinterest" target="_blank" class="footer-links-link">Pinterest</a></li>
+        <li class="footer-links-item"><a href="https://www.instagram.com/bigcommerce/" title="Instagram" target="_blank" class="footer-links-link">Instagram</a></li>
+       </ul>
+      </div>
+     </div><!-- //Footer Bottom --><a href="tel:1-888-699-8911" class="footer-mobileCta">Call us toll-free at 1-888-699-8911</a>
+    </div> 
+   </footer> 
+  </div> 
+  <script type="text/javascript" src="https://www.bigcommerce.com/blog/wp-content/plugins/ultimate-tables/js/jquery.dataTables.min.js?ver=1.0" id="ultimatetables-js" defer></script> 
+  <script type="text/javascript" id="rocket-browser-checker-js-after">
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script> 
+  <script type="text/javascript" id="rocket-preload-links-js-extra">
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/blog(\/(.+\/)?feed\/?.+\/?|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$))|\/wp-admin\/|\/logout\/|\/wp-login.php","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|php|pdf|html|htm","siteUrl":"https:\/\/www.bigcommerce.com\/blog","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script> 
+  <script type="text/javascript" id="rocket-preload-links-js-after">
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script> 
+  <script type="text/javascript" src="https://www.bigcommerce.com/blog/wp-content/themes/bigcommerce/js/theme.min.js?ver=5.9.3" id="site-js-js" defer></script> 
+  <script data-minify="1" type="text/javascript" src="https://www.bigcommerce.com/blog/wp-content/cache/min/1/blog/wp-content/themes/bigcommerce/js/devicepx-jetpack.js?ver=1651084243" id="devicepx-js" defer></script> 
+  <script>window.lazyLoadOptions={elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}};window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script>
+  <script data-no-minify="1" async src="https://www.bigcommerce.com/blog/wp-content/plugins/wp-rocket/assets/js/lazyload/16.1/lazyload.min.js"></script>
+  <script>function lazyLoadThumb(e){var t='<img loading="lazy" data-lazy-src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"><noscript><img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"></noscript>',a='<div class="play"></div>';return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.dataset.query.length?'':'&'+this.dataset.query;e.setAttribute("src",t.replace("ID",this.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.replaceChild(e,this)}document.addEventListener("DOMContentLoaded",function(){var e,t,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)e=document.createElement("div"),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query", a[t].dataset.query),e.setAttribute("data-src", a[t].dataset.src),e.innerHTML=lazyLoadThumb(a[t].dataset.id),e.onclick=lazyLoadYoutubeIframe,a[t].appendChild(e)});</script>  <!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1652827901 -->
+ </body>
+</html>

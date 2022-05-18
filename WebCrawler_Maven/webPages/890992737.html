@@ -1,0 +1,894 @@
+<!doctype html>
+<html lang="en"> 
+ <head> 
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/"> 
+  <title>Installing Packages — Python Packaging User Guide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="stylesheet" type="text/css" href="../../_static/pygments.css"> 
+  <link rel="stylesheet" type="text/css" href="../../_static/pypa.css"> 
+  <link rel="stylesheet" type="text/css" href="../../_static/tabs.css"> 
+  <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css"> 
+  <link rel="stylesheet" type="text/css" href="https://assets.readthedocs.org/static/css/badge_only.css"> 
+  <link rel="stylesheet" type="text/css" href="../../_static/overrides.css"> 
+  <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script> 
+  <script src="../../_static/jquery.js"></script> 
+  <script src="../../_static/underscore.js"></script> 
+  <script src="../../_static/doctools.js"></script> 
+  <script src="../../_static/tabs.js"></script> 
+  <script src="../../_static/clipboard.min.js"></script> 
+  <script src="../../_static/copybutton.js"></script> 
+  <script async src="https://assets.readthedocs.org/static/javascript/readthedocs-doc-embed.js"></script> 
+  <script src="../../_static/sidebar.js"></script> 
+  <link rel="canonical" href="https://packaging.python.org/en/latest/tutorials/installing-packages.html"> 
+  <link rel="index" title="Index" href="../../genindex/"> 
+  <link rel="search" title="Search" href="../../search/"> 
+  <link rel="next" title="Managing Application Dependencies" href="../managing-dependencies/"> 
+  <link rel="prev" title="Tutorials" href="../">
+  <link rel="shortcut icon" type="image/png" href="../../_static/py.svg"> 
+  <script type="text/javascript" src="../../_static/copybutton.js"></script> 
+  <script type="text/javascript" src="../../_static/menu.js"></script> <!-- RTD Extra Head --> 
+  <link rel="stylesheet" href="https://assets.readthedocs.org/static/css/readthedocs-doc-embed.css" type="text/css"> 
+  <script type="application/json" id="READTHEDOCS_DATA">{"ad_free": false, "api_host": "https://readthedocs.org", "build_date": "2022-05-09T12:23:53Z", "builder": "sphinx", "canonical_url": null, "commit": "eb42238e", "docroot": "/source/", "features": {"docsearch_disabled": false}, "global_analytics_code": "UA-17997319-1", "language": "en", "page": "tutorials/installing-packages", "programming_language": "py", "project": "python-packaging-user-guide", "proxied_api_host": "/_", "source_suffix": ".rst", "subprojects": {}, "theme": "pypa_theme", "user_analytics_code": "", "version": "latest"}</script> <!--
+Using this variable directly instead of using `JSON.parse` is deprecated.
+The READTHEDOCS_DATA global variable will be removed in the future.
+--> 
+  <script type="text/javascript">
+READTHEDOCS_DATA = JSON.parse(document.getElementById('READTHEDOCS_DATA').innerHTML);
+</script> 
+  <script type="text/javascript" src="https://assets.readthedocs.org/static/javascript/readthedocs-analytics.js" async></script> <!-- end RTD <extrahead> --> 
+ </head> 
+ <body> 
+  <div class="mobile-nav"> 
+   <input type="checkbox" id="menuToggler" class="toggler__input" aria-controls="navigation" aria-pressed="false" aria-expanded="false" role="button" aria-label="Menu"> <label for="menuToggler" class="toggler__label"> <span></span> </label> 
+   <nav class="nav-content" role="navigation"> <a href="https://pypa.io" class="nav-logo"> <img src="../../_static/py.svg" alt="Logo"> </a> 
+    <div class="version_switcher_placeholder"></div> 
+    <form id="searchbox" role="search" class="search" action="../../search/" method="get"> 
+     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" class="search-icon"> <path fill-rule="nonzero" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" fill="#444"></path> 
+     </svg> 
+     <input type="text" name="q" aria-label="Quick search"> 
+     <input type="submit" value="Go"> 
+    </form> 
+   </nav> 
+   <div class="menu-wrapper"> 
+    <nav class="menu" role="navigation" aria-label="main navigation"> 
+     <div class="language_switcher_placeholder"></div> 
+     <h3><a href="../../">Table of Contents</a></h3> 
+     <ul class="current"> 
+      <li class="toctree-l1"><a class="reference internal" href="../../overview/">An Overview of Packaging for Python</a></li> 
+      <li class="toctree-l1 current"><a class="reference internal" href="../">Tutorials</a>
+       <ul class="current"> 
+        <li class="toctree-l2 current"><a class="current reference internal" href="#">Installing Packages</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../managing-dependencies/">Managing Application Dependencies</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../packaging-projects/">Packaging Python Projects</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../creating-documentation/">Creating Documentation</a></li> 
+       </ul> </li> 
+      <li class="toctree-l1"><a class="reference internal" href="../../guides/">Guides</a></li> 
+      <li class="toctree-l1"><a class="reference internal" href="../../discussions/">Discussions</a></li> 
+      <li class="toctree-l1"><a class="reference internal" href="../../specifications/">PyPA specifications</a></li> 
+      <li class="toctree-l1"><a class="reference internal" href="../../key_projects/">Project Summaries</a></li> 
+      <li class="toctree-l1"><a class="reference internal" href="../../glossary/">Glossary</a></li> 
+      <li class="toctree-l1"><a class="reference internal" href="../../support/">How to Get Support</a></li> 
+      <li class="toctree-l1"><a class="reference internal" href="../../contribute/">Contribute to this guide</a></li> 
+      <li class="toctree-l1"><a class="reference internal" href="../../news/">News</a></li> 
+     </ul> 
+     <h4>Previous topic</h4> 
+     <p class="topless"><a href="../" title="previous chapter">Tutorials</a></p> 
+     <h4>Next topic</h4> 
+     <p class="topless"><a href="../managing-dependencies/" title="next chapter">Managing Application Dependencies</a></p> 
+    </nav> 
+   </div> 
+  </div> 
+  <div class="related" role="navigation" aria-label="related navigation"> 
+   <h3>Navigation</h3> 
+   <ul> 
+    <li class="right" style="margin-right: 10px"> <a href="../../genindex/" title="General Index" accesskey="I">index</a></li> 
+    <li class="right"> <a href="../managing-dependencies/" title="Managing Application Dependencies" accesskey="N">next</a> |</li> 
+    <li class="right"> <a href="../" title="Tutorials" accesskey="P">previous</a> |</li> 
+    <li><img src="../../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"></li> 
+    <li><a href="https://pypa.io">PyPA</a> »</li> 
+    <li class="switchers"> 
+     <div class="language_switcher_placeholder"></div> 
+     <div class="version_switcher_placeholder"></div> </li> 
+    <li> <a href="../../">Python Packaging User Guide</a> » </li> 
+    <li class="nav-item nav-item-1"><a href="../" accesskey="U">Tutorials</a> »</li> 
+    <li class="nav-item nav-item-this"><a href="">Installing Packages</a></li> 
+    <li class="right"> 
+     <div class="inline-search" role="search"> 
+      <form class="inline-search" action="../../search/" method="get"> 
+       <input placeholder="Quick search" aria-label="Quick search" type="text" name="q"> 
+       <input type="submit" value="Go"> 
+       <input type="hidden" name="check_keywords" value="yes"> 
+       <input type="hidden" name="area" value="default"> 
+      </form> 
+     </div> | </li> 
+   </ul> 
+  </div> 
+  <div class="document"> 
+   <div class="documentwrapper"> 
+    <div class="bodywrapper"> 
+     <div class="body" role="main"> 
+      <section id="installing-packages"> <span id="id1"></span>
+       <h1>Installing Packages<a class="headerlink" href="#installing-packages" title="Permalink to this headline">¶</a></h1> 
+       <p>This section covers the basics of how to install Python <a class="reference internal" href="../../glossary/#term-Distribution-Package"><span class="xref std std-term">packages</span></a>.</p> 
+       <p>It’s important to note that the term “package” in this context is being used to describe a bundle of software to be installed (i.e. as a synonym for a <a class="reference internal" href="../../glossary/#term-Distribution-Package"><span class="xref std std-term">distribution</span></a>). It does not to refer to the kind of <a class="reference internal" href="../../glossary/#term-Import-Package"><span class="xref std std-term">package</span></a> that you import in your Python source code (i.e. a container of modules). It is common in the Python community to refer to a <a class="reference internal" href="../../glossary/#term-Distribution-Package"><span class="xref std std-term">distribution</span></a> using the term “package”. Using the term “distribution” is often not preferred, because it can easily be confused with a Linux distribution, or another larger software distribution like Python itself.</p> 
+       <div class="contents local topic" id="contents"> 
+        <p class="topic-title">Contents</p> 
+        <ul class="simple"> 
+         <li><p><a class="reference internal" href="#requirements-for-installing-packages" id="id11">Requirements for Installing Packages</a></p> 
+          <ul> 
+           <li><p><a class="reference internal" href="#ensure-you-can-run-python-from-the-command-line" id="id12">Ensure you can run Python from the command line</a></p></li> 
+           <li><p><a class="reference internal" href="#ensure-you-can-run-pip-from-the-command-line" id="id13">Ensure you can run pip from the command line</a></p></li> 
+           <li><p><a class="reference internal" href="#ensure-pip-setuptools-and-wheel-are-up-to-date" id="id14">Ensure pip, setuptools, and wheel are up to date</a></p></li> 
+           <li><p><a class="reference internal" href="#optionally-create-a-virtual-environment" id="id15">Optionally, create a virtual environment</a></p></li> 
+          </ul> </li> 
+         <li><p><a class="reference internal" href="#creating-virtual-environments" id="id16">Creating Virtual Environments</a></p></li> 
+         <li><p><a class="reference internal" href="#use-pip-for-installing" id="id17">Use pip for Installing</a></p></li> 
+         <li><p><a class="reference internal" href="#installing-from-pypi" id="id18">Installing from PyPI</a></p></li> 
+         <li><p><a class="reference internal" href="#source-distributions-vs-wheels" id="id19">Source Distributions vs Wheels</a></p></li> 
+         <li><p><a class="reference internal" href="#upgrading-packages" id="id20">Upgrading packages</a></p></li> 
+         <li><p><a class="reference internal" href="#installing-to-the-user-site" id="id21">Installing to the User Site</a></p></li> 
+         <li><p><a class="reference internal" href="#requirements-files" id="id22">Requirements files</a></p></li> 
+         <li><p><a class="reference internal" href="#installing-from-vcs" id="id23">Installing from VCS</a></p></li> 
+         <li><p><a class="reference internal" href="#installing-from-other-indexes" id="id24">Installing from other Indexes</a></p></li> 
+         <li><p><a class="reference internal" href="#installing-from-a-local-src-tree" id="id25">Installing from a local src tree</a></p></li> 
+         <li><p><a class="reference internal" href="#installing-from-local-archives" id="id26">Installing from local archives</a></p></li> 
+         <li><p><a class="reference internal" href="#installing-from-other-sources" id="id27">Installing from other sources</a></p></li> 
+         <li><p><a class="reference internal" href="#installing-prereleases" id="id28">Installing Prereleases</a></p></li> 
+         <li><p><a class="reference internal" href="#installing-setuptools-extras" id="id29">Installing Setuptools “Extras”</a></p></li> 
+        </ul> 
+       </div> 
+       <section id="requirements-for-installing-packages"> <span id="installing-requirements"></span>
+        <h2><a class="toc-backref" href="#id11">Requirements for Installing Packages</a><a class="headerlink" href="#requirements-for-installing-packages" title="Permalink to this headline">¶</a></h2> 
+        <p>This section describes the steps to follow before installing other Python packages.</p> 
+        <section id="ensure-you-can-run-python-from-the-command-line"> 
+         <h3><a class="toc-backref" href="#id12">Ensure you can run Python from the command line</a><a class="headerlink" href="#ensure-you-can-run-python-from-the-command-line" title="Permalink to this headline">¶</a></h3> 
+         <p>Before you go any further, make sure you have Python and that the expected version is available from your command line. You can check this by running:</p> 
+         <div class="tab-set docutils container"> 
+          <input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">Unix/macOS</label>
+          <div class="tab-content docutils container"> 
+           <div class="highlight-bash notranslate">
+            <div class="highlight">
+             <pre><span></span>python3 --version
+</pre>
+            </div> 
+           </div> 
+          </div> 
+          <input class="tab-input" id="tab-set--0-input--2" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--2">Windows</label>
+          <div class="tab-content docutils container"> 
+           <div class="highlight-bat notranslate">
+            <div class="highlight">
+             <pre><span></span>py --version
+</pre>
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <p>You should get some output like <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">3.6.3</span></code>. If you do not have Python, please install the latest 3.x version from <a class="reference external" href="https://www.python.org">python.org</a> or refer to the <a class="reference external" href="https://docs.python-guide.org/starting/installation/#installation" title="(in pythonguide v0.0.1)"><span class="xref std std-ref">Installing Python</span></a> section of the Hitchhiker’s Guide to Python.</p> 
+         <div class="admonition note"> 
+          <p class="admonition-title">Note</p> 
+          <p>If you’re a newcomer and you get an error like this:</p> 
+          <div class="highlight-python notranslate">
+           <div class="highlight">
+            <pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">python</span> <span class="o">--</span><span class="n">version</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">"&lt;stdin&gt;"</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">NameError</span>: <span class="n">name 'python' is not defined</span>
+</pre>
+           </div> 
+          </div> 
+          <p>It’s because this command and other suggested commands in this tutorial are intended to be run in a <em>shell</em> (also called a <em>terminal</em> or <em>console</em>). See the Python for Beginners <a class="reference external" href="https://opentechschool.github.io/python-beginners/en/getting_started.html#what-is-python-exactly">getting started tutorial</a> for an introduction to using your operating system’s shell and interacting with Python.</p> 
+         </div> 
+         <div class="admonition note"> 
+          <p class="admonition-title">Note</p> 
+          <p>If you’re using an enhanced shell like IPython or the Jupyter notebook, you can run system commands like those in this tutorial by prefacing them with a <code class="docutils literal notranslate"><span class="pre">!</span></code> character:</p> 
+          <blockquote> 
+           <div>
+            <div class="highlight-default notranslate">
+             <div class="highlight">
+              <pre><span></span>In [1]: import sys
+        !{sys.executable} --version
+Python 3.6.3
+</pre>
+             </div> 
+            </div> 
+           </div>
+          </blockquote> 
+          <p>It’s recommended to write <code class="docutils literal notranslate"><span class="pre">{sys.executable}</span></code> rather than plain <code class="docutils literal notranslate"><span class="pre">python</span></code> in order to ensure that commands are run in the Python installation matching the currently running notebook (which may not be the same Python installation that the <code class="docutils literal notranslate"><span class="pre">python</span></code> command refers to).</p> 
+         </div> 
+         <div class="admonition note"> 
+          <p class="admonition-title">Note</p> 
+          <p>Due to the way most Linux distributions are handling the Python 3 migration, Linux users using the system Python without creating a virtual environment first should replace the <code class="docutils literal notranslate"><span class="pre">python</span></code> command in this tutorial with <code class="docutils literal notranslate"><span class="pre">python3</span></code> and the <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span></code> command with <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">--user</span></code>. Do <em>not</em> run any of the commands in this tutorial with <code class="docutils literal notranslate"><span class="pre">sudo</span></code>: if you get a permissions error, come back to the section on creating virtual environments, set one up, and then continue with the tutorial as written.</p> 
+         </div> 
+        </section> 
+        <section id="ensure-you-can-run-pip-from-the-command-line"> 
+         <h3><a class="toc-backref" href="#id13">Ensure you can run pip from the command line</a><a class="headerlink" href="#ensure-you-can-run-pip-from-the-command-line" title="Permalink to this headline">¶</a></h3> 
+         <p>Additionally, you’ll need to make sure you have <a class="reference internal" href="../../key_projects/#pip"><span class="std std-ref">pip</span></a> available. You can check this by running:</p> 
+         <div class="tab-set docutils container"> 
+          <input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">Unix/macOS</label>
+          <div class="tab-content docutils container"> 
+           <div class="highlight-bash notranslate">
+            <div class="highlight">
+             <pre><span></span>python3 -m pip --version
+</pre>
+            </div> 
+           </div> 
+          </div> 
+          <input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--2">Windows</label>
+          <div class="tab-content docutils container"> 
+           <div class="highlight-bat notranslate">
+            <div class="highlight">
+             <pre><span></span>py -m pip --version
+</pre>
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <p>If you installed Python from source, with an installer from <a class="reference external" href="https://www.python.org">python.org</a>, or via <a class="reference external" href="https://brew.sh">Homebrew</a> you should already have pip. If you’re on Linux and installed using your OS package manager, you may have to install pip separately, see <a class="reference internal" href="../../guides/installing-using-linux-tools/"><span class="doc">Installing pip/setuptools/wheel with Linux Package Managers</span></a>.</p> 
+         <p>If <code class="docutils literal notranslate"><span class="pre">pip</span></code> isn’t already installed, then first try to bootstrap it from the standard library:</p> 
+         <div class="tab-set docutils container"> 
+          <input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--1">Unix/macOS</label>
+          <div class="tab-content docutils container"> 
+           <div class="highlight-bash notranslate">
+            <div class="highlight">
+             <pre><span></span>python3 -m ensurepip --default-pip
+</pre>
+            </div> 
+           </div> 
+          </div> 
+          <input class="tab-input" id="tab-set--2-input--2" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--2">Windows</label>
+          <div class="tab-content docutils container"> 
+           <div class="highlight-bat notranslate">
+            <div class="highlight">
+             <pre><span></span>py -m ensurepip --default-pip
+</pre>
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <p>If that still doesn’t allow you to run <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span></code>:</p> 
+         <blockquote> 
+          <div>
+           <ul> 
+            <li><p>Securely Download <a class="reference external" href="https://bootstrap.pypa.io/get-pip.py">get-pip.py</a> <a class="footnote-reference brackets" href="#id7" id="id2">1</a></p></li> 
+            <li><p>Run <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">get-pip.py</span></code>. <a class="footnote-reference brackets" href="#id8" id="id3">2</a> This will install or upgrade pip. Additionally, it will install <a class="reference internal" href="../../key_projects/#setuptools"><span class="std std-ref">setuptools</span></a> and <a class="reference internal" href="../../key_projects/#wheel"><span class="std std-ref">wheel</span></a> if they’re not installed already.</p> 
+             <div class="admonition warning"> 
+              <p class="admonition-title">Warning</p> 
+              <p>Be cautious if you’re using a Python install that’s managed by your operating system or another package manager. get-pip.py does not coordinate with those tools, and may leave your system in an inconsistent state. You can use <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">get-pip.py</span> <span class="pre">--prefix=/usr/local/</span></code> to install in <code class="docutils literal notranslate"><span class="pre">/usr/local</span></code> which is designed for locally-installed software.</p> 
+             </div> </li> 
+           </ul> 
+          </div>
+         </blockquote> 
+        </section> 
+        <section id="ensure-pip-setuptools-and-wheel-are-up-to-date"> 
+         <h3><a class="toc-backref" href="#id14">Ensure pip, setuptools, and wheel are up to date</a><a class="headerlink" href="#ensure-pip-setuptools-and-wheel-are-up-to-date" title="Permalink to this headline">¶</a></h3> 
+         <p>While <code class="docutils literal notranslate"><span class="pre">pip</span></code> alone is sufficient to install from pre-built binary archives, up to date copies of the <code class="docutils literal notranslate"><span class="pre">setuptools</span></code> and <code class="docutils literal notranslate"><span class="pre">wheel</span></code> projects are useful to ensure you can also install from source archives:</p> 
+         <div class="tab-set docutils container"> 
+          <input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--1">Unix/macOS</label>
+          <div class="tab-content docutils container"> 
+           <div class="highlight-bash notranslate">
+            <div class="highlight">
+             <pre><span></span>python3 -m pip install --upgrade pip setuptools wheel
+</pre>
+            </div> 
+           </div> 
+          </div> 
+          <input class="tab-input" id="tab-set--3-input--2" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--2">Windows</label>
+          <div class="tab-content docutils container"> 
+           <div class="highlight-bat notranslate">
+            <div class="highlight">
+             <pre><span></span>py -m pip install --upgrade pip setuptools wheel
+</pre>
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </section> 
+        <section id="optionally-create-a-virtual-environment"> 
+         <h3><a class="toc-backref" href="#id15">Optionally, create a virtual environment</a><a class="headerlink" href="#optionally-create-a-virtual-environment" title="Permalink to this headline">¶</a></h3> 
+         <p>See <a class="reference internal" href="#creating-and-using-virtual-environments"><span class="std std-ref">section below</span></a> for details, but here’s the basic <a class="reference external" href="https://docs.python.org/3/library/venv.html" title="(in Python v3.10)"><span class="xref std std-doc">venv</span></a> <a class="footnote-reference brackets" href="#id9" id="id4">3</a> command to use on a typical Linux system:</p> 
+         <div class="tab-set docutils container"> 
+          <input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--1">Unix/macOS</label>
+          <div class="tab-content docutils container"> 
+           <div class="highlight-bash notranslate">
+            <div class="highlight">
+             <pre><span></span>python3 -m venv tutorial_env
+<span class="nb">source</span> tutorial_env/bin/activate
+</pre>
+            </div> 
+           </div> 
+          </div> 
+          <input class="tab-input" id="tab-set--4-input--2" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--2">Windows</label>
+          <div class="tab-content docutils container"> 
+           <div class="highlight-bat notranslate">
+            <div class="highlight">
+             <pre><span></span>py -m venv tutorial_env
+tutorial_env\Scripts\activate
+</pre>
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <p>This will create a new virtual environment in the <code class="docutils literal notranslate"><span class="pre">tutorial_env</span></code> subdirectory, and configure the current shell to use it as the default <code class="docutils literal notranslate"><span class="pre">python</span></code> environment.</p> 
+        </section> 
+       </section> 
+       <section id="creating-virtual-environments"> <span id="creating-and-using-virtual-environments"></span>
+        <h2><a class="toc-backref" href="#id16">Creating Virtual Environments</a><a class="headerlink" href="#creating-virtual-environments" title="Permalink to this headline">¶</a></h2> 
+        <p>Python “Virtual Environments” allow Python <a class="reference internal" href="../../glossary/#term-Distribution-Package"><span class="xref std std-term">packages</span></a> to be installed in an isolated location for a particular application, rather than being installed globally. If you are looking to safely install global command line tools, see <a class="reference internal" href="../../guides/installing-stand-alone-command-line-tools/"><span class="doc">Installing stand alone command line tools</span></a>.</p> 
+        <p>Imagine you have an application that needs version 1 of LibFoo, but another application requires version 2. How can you use both these applications? If you install everything into /usr/lib/python3.6/site-packages (or whatever your platform’s standard location is), it’s easy to end up in a situation where you unintentionally upgrade an application that shouldn’t be upgraded.</p> 
+        <p>Or more generally, what if you want to install an application and leave it be? If an application works, any change in its libraries or the versions of those libraries can break the application.</p> 
+        <p>Also, what if you can’t install <a class="reference internal" href="../../glossary/#term-Distribution-Package"><span class="xref std std-term">packages</span></a> into the global site-packages directory? For instance, on a shared host.</p> 
+        <p>In all these cases, virtual environments can help you. They have their own installation directories and they don’t share libraries with other virtual environments.</p> 
+        <p>Currently, there are two common tools for creating Python virtual environments:</p> 
+        <ul class="simple"> 
+         <li><p><a class="reference external" href="https://docs.python.org/3/library/venv.html" title="(in Python v3.10)"><span class="xref std std-doc">venv</span></a> is available by default in Python 3.3 and later, and installs <a class="reference internal" href="../../key_projects/#pip"><span class="std std-ref">pip</span></a> and <a class="reference internal" href="../../key_projects/#setuptools"><span class="std std-ref">setuptools</span></a> into created virtual environments in Python 3.4 and later.</p></li> 
+         <li><p><a class="reference internal" href="../../key_projects/#virtualenv"><span class="std std-ref">virtualenv</span></a> needs to be installed separately, but supports Python 2.7+ and Python 3.3+, and <a class="reference internal" href="../../key_projects/#pip"><span class="std std-ref">pip</span></a>, <a class="reference internal" href="../../key_projects/#setuptools"><span class="std std-ref">setuptools</span></a> and <a class="reference internal" href="../../key_projects/#wheel"><span class="std std-ref">wheel</span></a> are always installed into created virtual environments by default (regardless of Python version).</p></li> 
+        </ul> 
+        <p>The basic usage is like so:</p> 
+        <p>Using <a class="reference external" href="https://docs.python.org/3/library/venv.html" title="(in Python v3.10)"><span class="xref std std-doc">venv</span></a>:</p> 
+        <div class="tab-set docutils container"> 
+         <input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--1">Unix/macOS</label>
+         <div class="tab-content docutils container"> 
+          <div class="highlight-bash notranslate">
+           <div class="highlight">
+            <pre><span></span>python3 -m venv &lt;DIR&gt;
+<span class="nb">source</span> &lt;DIR&gt;/bin/activate
+</pre>
+           </div> 
+          </div> 
+         </div> 
+         <input class="tab-input" id="tab-set--5-input--2" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--2">Windows</label>
+         <div class="tab-content docutils container"> 
+          <div class="highlight-bat notranslate">
+           <div class="highlight">
+            <pre><span></span>py -m venv <span class="p">&lt;</span>DIR&gt;
+<span class="p">&lt;</span>DIR<span class="p">&gt;</span>\Scripts\activate
+</pre>
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <p>Using <a class="reference internal" href="../../key_projects/#virtualenv"><span class="std std-ref">virtualenv</span></a>:</p> 
+        <div class="tab-set docutils container"> 
+         <input checked="True" class="tab-input" id="tab-set--6-input--1" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--1">Unix/macOS</label>
+         <div class="tab-content docutils container"> 
+          <div class="highlight-bash notranslate">
+           <div class="highlight">
+            <pre><span></span>python3 -m virtualenv &lt;DIR&gt;
+<span class="nb">source</span> &lt;DIR&gt;/bin/activate
+</pre>
+           </div> 
+          </div> 
+         </div> 
+         <input class="tab-input" id="tab-set--6-input--2" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--2">Windows</label>
+         <div class="tab-content docutils container"> 
+          <div class="highlight-bat notranslate">
+           <div class="highlight">
+            <pre><span></span>virtualenv <span class="p">&lt;</span>DIR&gt;
+<span class="p">&lt;</span>DIR<span class="p">&gt;</span>\Scripts\activate
+</pre>
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <p>For more information, see the <a class="reference external" href="https://docs.python.org/3/library/venv.html" title="(in Python v3.10)"><span class="xref std std-doc">venv</span></a> docs or the <a class="reference external" href="https://virtualenv.pypa.io/en/stable/index.html" title="(in virtualenv v20.14)"><span class="xref std std-doc">virtualenv</span></a> docs.</p> 
+        <p>The use of <strong class="command">source</strong> under Unix shells ensures that the virtual environment’s variables are set within the current shell, and not in a subprocess (which then disappears, having no useful effect).</p> 
+        <p>In both of the above cases, Windows users should _not_ use the <strong class="command">source</strong> command, but should rather run the <strong class="command">activate</strong> script directly from the command shell like so:</p> 
+        <div class="highlight-bat notranslate">
+         <div class="highlight">
+          <pre><span></span><span class="p">&lt;</span>DIR<span class="p">&gt;</span>\Scripts\activate
+</pre>
+         </div> 
+        </div> 
+        <p>Managing multiple virtual environments directly can become tedious, so the <a class="reference internal" href="../managing-dependencies/#managing-dependencies"><span class="std std-ref">dependency management tutorial</span></a> introduces a higher level tool, <a class="reference internal" href="../../key_projects/#pipenv"><span class="std std-ref">Pipenv</span></a>, that automatically manages a separate virtual environment for each project and application that you work on.</p> 
+       </section> 
+       <section id="use-pip-for-installing"> 
+        <h2><a class="toc-backref" href="#id17">Use pip for Installing</a><a class="headerlink" href="#use-pip-for-installing" title="Permalink to this headline">¶</a></h2> 
+        <p><a class="reference internal" href="../../key_projects/#pip"><span class="std std-ref">pip</span></a> is the recommended installer. Below, we’ll cover the most common usage scenarios. For more detail, see the <a class="reference external" href="https://pip.pypa.io/en/latest/" title="(in pip v22.1)"><span class="xref std std-doc">pip docs</span></a>, which includes a complete <a class="reference external" href="https://pip.pypa.io/en/latest/cli/" title="(in pip v22.1)"><span class="xref std std-doc">Reference Guide</span></a>.</p> 
+       </section> 
+       <section id="installing-from-pypi"> 
+        <h2><a class="toc-backref" href="#id18">Installing from PyPI</a><a class="headerlink" href="#installing-from-pypi" title="Permalink to this headline">¶</a></h2> 
+        <p>The most common usage of <a class="reference internal" href="../../key_projects/#pip"><span class="std std-ref">pip</span></a> is to install from the <a class="reference internal" href="../../glossary/#term-Python-Package-Index-PyPI"><span class="xref std std-term">Python Package Index</span></a> using a <a class="reference internal" href="../../glossary/#term-Requirement-Specifier"><span class="xref std std-term">requirement specifier</span></a>. Generally speaking, a requirement specifier is composed of a project name followed by an optional <a class="reference internal" href="../../glossary/#term-Version-Specifier"><span class="xref std std-term">version specifier</span></a>. <span class="target" id="index-0"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0440"><strong>PEP 440</strong></a> contains a <span class="target" id="index-1"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0440#version-specifiers"><strong>full specification</strong></a> of the currently supported specifiers. Below are some examples.</p> 
+        <p>To install the latest version of “SomeProject”:</p> 
+        <div class="tab-set docutils container"> 
+         <input checked="True" class="tab-input" id="tab-set--7-input--1" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--1">Unix/macOS</label>
+         <div class="tab-content docutils container"> 
+          <div class="highlight-bash notranslate">
+           <div class="highlight">
+            <pre><span></span>python3 -m pip install <span class="s2">"SomeProject"</span>
+</pre>
+           </div> 
+          </div> 
+         </div> 
+         <input class="tab-input" id="tab-set--7-input--2" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--2">Windows</label>
+         <div class="tab-content docutils container"> 
+          <div class="highlight-bat notranslate">
+           <div class="highlight">
+            <pre><span></span>py -m pip install <span class="s2">"SomeProject"</span>
+</pre>
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <p>To install a specific version:</p> 
+        <div class="tab-set docutils container"> 
+         <input checked="True" class="tab-input" id="tab-set--8-input--1" name="tab-set--8" type="radio"><label class="tab-label" for="tab-set--8-input--1">Unix/macOS</label>
+         <div class="tab-content docutils container"> 
+          <div class="highlight-bash notranslate">
+           <div class="highlight">
+            <pre><span></span>python3 -m pip install <span class="s2">"SomeProject==1.4"</span>
+</pre>
+           </div> 
+          </div> 
+         </div> 
+         <input class="tab-input" id="tab-set--8-input--2" name="tab-set--8" type="radio"><label class="tab-label" for="tab-set--8-input--2">Windows</label>
+         <div class="tab-content docutils container"> 
+          <div class="highlight-bat notranslate">
+           <div class="highlight">
+            <pre><span></span>py -m pip install <span class="s2">"SomeProject==1.4"</span>
+</pre>
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <p>To install greater than or equal to one version and less than another:</p> 
+        <div class="tab-set docutils container"> 
+         <input checked="True" class="tab-input" id="tab-set--9-input--1" name="tab-set--9" type="radio"><label class="tab-label" for="tab-set--9-input--1">Unix/macOS</label>
+         <div class="tab-content docutils container"> 
+          <div class="highlight-bash notranslate">
+           <div class="highlight">
+            <pre><span></span>python3 -m pip install <span class="s2">"SomeProject&gt;=1,&lt;2"</span>
+</pre>
+           </div> 
+          </div> 
+         </div> 
+         <input class="tab-input" id="tab-set--9-input--2" name="tab-set--9" type="radio"><label class="tab-label" for="tab-set--9-input--2">Windows</label>
+         <div class="tab-content docutils container"> 
+          <div class="highlight-bat notranslate">
+           <div class="highlight">
+            <pre><span></span>py -m pip install <span class="s2">"SomeProject&gt;=1,&lt;2"</span>
+</pre>
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <p>To install a version that’s <span class="target" id="index-2"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0440#compatible-release"><strong>“compatible”</strong></a> with a certain version: <a class="footnote-reference brackets" href="#id10" id="id5">4</a></p> 
+        <div class="tab-set docutils container"> 
+         <input checked="True" class="tab-input" id="tab-set--10-input--1" name="tab-set--10" type="radio"><label class="tab-label" for="tab-set--10-input--1">Unix/macOS</label>
+         <div class="tab-content docutils container"> 
+          <div class="highlight-bash notranslate">
+           <div class="highlight">
+            <pre><span></span>python3 -m pip install <span class="s2">"SomeProject~=1.4.2"</span>
+</pre>
+           </div> 
+          </div> 
+         </div> 
+         <input class="tab-input" id="tab-set--10-input--2" name="tab-set--10" type="radio"><label class="tab-label" for="tab-set--10-input--2">Windows</label>
+         <div class="tab-content docutils container"> 
+          <div class="highlight-bat notranslate">
+           <div class="highlight">
+            <pre><span></span>py -m pip install <span class="s2">"SomeProject~=1.4.2"</span>
+</pre>
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <p>In this case, this means to install any version “==1.4.*” version that’s also “&gt;=1.4.2”.</p> 
+       </section> 
+       <section id="source-distributions-vs-wheels"> 
+        <h2><a class="toc-backref" href="#id19">Source Distributions vs Wheels</a><a class="headerlink" href="#source-distributions-vs-wheels" title="Permalink to this headline">¶</a></h2> 
+        <p><a class="reference internal" href="../../key_projects/#pip"><span class="std std-ref">pip</span></a> can install from either <a class="reference internal" href="../../glossary/#term-Source-Distribution-or-sdist"><span class="xref std std-term">Source Distributions (sdist)</span></a> or <a class="reference internal" href="../../glossary/#term-Wheel"><span class="xref std std-term">Wheels</span></a>, but if both are present on PyPI, pip will prefer a compatible <a class="reference internal" href="../../glossary/#term-Wheel"><span class="xref std std-term">wheel</span></a>. You can override pip`s default behavior by e.g. using its <a class="reference external" href="https://pip.pypa.io/en/latest/cli/pip_install/#install-no-binary" title="(in pip v22.1)"><span class="xref std std-ref">–no-binary</span></a> option.</p> 
+        <p><a class="reference internal" href="../../glossary/#term-Wheel"><span class="xref std std-term">Wheels</span></a> are a pre-built <a class="reference internal" href="../../glossary/#term-Distribution-Package"><span class="xref std std-term">distribution</span></a> format that provides faster installation compared to <a class="reference internal" href="../../glossary/#term-Source-Distribution-or-sdist"><span class="xref std std-term">Source Distributions (sdist)</span></a>, especially when a project contains compiled extensions.</p> 
+        <p>If <a class="reference internal" href="../../key_projects/#pip"><span class="std std-ref">pip</span></a> does not find a wheel to install, it will locally build a wheel and cache it for future installs, instead of rebuilding the source distribution in the future.</p> 
+       </section> 
+       <section id="upgrading-packages"> 
+        <h2><a class="toc-backref" href="#id20">Upgrading packages</a><a class="headerlink" href="#upgrading-packages" title="Permalink to this headline">¶</a></h2> 
+        <p>Upgrade an already installed <code class="docutils literal notranslate"><span class="pre">SomeProject</span></code> to the latest from PyPI.</p> 
+        <div class="tab-set docutils container"> 
+         <input checked="True" class="tab-input" id="tab-set--11-input--1" name="tab-set--11" type="radio"><label class="tab-label" for="tab-set--11-input--1">Unix/macOS</label>
+         <div class="tab-content docutils container"> 
+          <div class="highlight-bash notranslate">
+           <div class="highlight">
+            <pre><span></span>python3 -m pip install --upgrade SomeProject
+</pre>
+           </div> 
+          </div> 
+         </div> 
+         <input class="tab-input" id="tab-set--11-input--2" name="tab-set--11" type="radio"><label class="tab-label" for="tab-set--11-input--2">Windows</label>
+         <div class="tab-content docutils container"> 
+          <div class="highlight-bat notranslate">
+           <div class="highlight">
+            <pre><span></span>py -m pip install --upgrade SomeProject
+</pre>
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </section> 
+       <section id="installing-to-the-user-site"> <span id="id6"></span>
+        <h2><a class="toc-backref" href="#id21">Installing to the User Site</a><a class="headerlink" href="#installing-to-the-user-site" title="Permalink to this headline">¶</a></h2> 
+        <p>To install <a class="reference internal" href="../../glossary/#term-Distribution-Package"><span class="xref std std-term">packages</span></a> that are isolated to the current user, use the <code class="docutils literal notranslate"><span class="pre">--user</span></code> flag:</p> 
+        <div class="tab-set docutils container"> 
+         <input checked="True" class="tab-input" id="tab-set--12-input--1" name="tab-set--12" type="radio"><label class="tab-label" for="tab-set--12-input--1">Unix/macOS</label>
+         <div class="tab-content docutils container"> 
+          <div class="highlight-bash notranslate">
+           <div class="highlight">
+            <pre><span></span>python3 -m pip install --user SomeProject
+</pre>
+           </div> 
+          </div> 
+         </div> 
+         <input class="tab-input" id="tab-set--12-input--2" name="tab-set--12" type="radio"><label class="tab-label" for="tab-set--12-input--2">Windows</label>
+         <div class="tab-content docutils container"> 
+          <div class="highlight-bat notranslate">
+           <div class="highlight">
+            <pre><span></span>py -m pip install --user SomeProject
+</pre>
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <p>For more information see the <a class="reference external" href="https://pip.pypa.io/en/latest/user_guide/#user-installs">User Installs</a> section from the pip docs.</p> 
+        <p>Note that the <code class="docutils literal notranslate"><span class="pre">--user</span></code> flag has no effect when inside a virtual environment - all installation commands will affect the virtual environment.</p> 
+        <p>If <code class="docutils literal notranslate"><span class="pre">SomeProject</span></code> defines any command-line scripts or console entry points, <code class="docutils literal notranslate"><span class="pre">--user</span></code> will cause them to be installed inside the <a class="reference external" href="https://docs.python.org/3/library/site.html#site.USER_BASE">user base</a>’s binary directory, which may or may not already be present in your shell’s <span class="target" id="index-3"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PATH</span></code>. (Starting in version 10, pip displays a warning when installing any scripts to a directory outside <span class="target" id="index-4"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PATH</span></code>.) If the scripts are not available in your shell after installation, you’ll need to add the directory to your <span class="target" id="index-5"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PATH</span></code>:</p> 
+        <ul class="simple"> 
+         <li><p>On Linux and macOS you can find the user base binary directory by running <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">site</span> <span class="pre">--user-base</span></code> and adding <code class="docutils literal notranslate"><span class="pre">bin</span></code> to the end. For example, this will typically print <code class="docutils literal notranslate"><span class="pre">~/.local</span></code> (with <code class="docutils literal notranslate"><span class="pre">~</span></code> expanded to the absolute path to your home directory) so you’ll need to add <code class="docutils literal notranslate"><span class="pre">~/.local/bin</span></code> to your <code class="docutils literal notranslate"><span class="pre">PATH</span></code>. You can set your <code class="docutils literal notranslate"><span class="pre">PATH</span></code> permanently by <a class="reference external" href="https://stackoverflow.com/a/14638025">modifying ~/.profile</a>.</p></li> 
+         <li><p>On Windows you can find the user base binary directory by running <code class="docutils literal notranslate"><span class="pre">py</span> <span class="pre">-m</span> <span class="pre">site</span> <span class="pre">--user-site</span></code> and replacing <code class="docutils literal notranslate"><span class="pre">site-packages</span></code> with <code class="docutils literal notranslate"><span class="pre">Scripts</span></code>. For example, this could return <code class="docutils literal notranslate"><span class="pre">C:\Users\Username\AppData\Roaming\Python36\site-packages</span></code> so you would need to set your <code class="docutils literal notranslate"><span class="pre">PATH</span></code> to include <code class="docutils literal notranslate"><span class="pre">C:\Users\Username\AppData\Roaming\Python36\Scripts</span></code>. You can set your user <code class="docutils literal notranslate"><span class="pre">PATH</span></code> permanently in the <a class="reference external" href="https://docs.microsoft.com/en-us/windows/win32/shell/user-environment-variables?redirectedfrom=MSDN">Control Panel</a>. You may need to log out for the <code class="docutils literal notranslate"><span class="pre">PATH</span></code> changes to take effect.</p></li> 
+        </ul> 
+       </section> 
+       <section id="requirements-files"> 
+        <h2><a class="toc-backref" href="#id22">Requirements files</a><a class="headerlink" href="#requirements-files" title="Permalink to this headline">¶</a></h2> 
+        <p>Install a list of requirements specified in a <a class="reference external" href="https://pip.pypa.io/en/latest/user_guide/#requirements-files" title="(in pip v22.1)"><span class="xref std std-ref">Requirements File</span></a>.</p> 
+        <div class="tab-set docutils container"> 
+         <input checked="True" class="tab-input" id="tab-set--13-input--1" name="tab-set--13" type="radio"><label class="tab-label" for="tab-set--13-input--1">Unix/macOS</label>
+         <div class="tab-content docutils container"> 
+          <div class="highlight-bash notranslate">
+           <div class="highlight">
+            <pre><span></span>python3 -m pip install -r requirements.txt
+</pre>
+           </div> 
+          </div> 
+         </div> 
+         <input class="tab-input" id="tab-set--13-input--2" name="tab-set--13" type="radio"><label class="tab-label" for="tab-set--13-input--2">Windows</label>
+         <div class="tab-content docutils container"> 
+          <div class="highlight-bat notranslate">
+           <div class="highlight">
+            <pre><span></span>py -m pip install -r requirements.txt
+</pre>
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </section> 
+       <section id="installing-from-vcs"> 
+        <h2><a class="toc-backref" href="#id23">Installing from VCS</a><a class="headerlink" href="#installing-from-vcs" title="Permalink to this headline">¶</a></h2> 
+        <p>Install a project from VCS in “editable” mode. For a full breakdown of the syntax, see pip’s section on <a class="reference external" href="https://pip.pypa.io/en/latest/cli/pip_install/#vcs-support" title="(in pip v22.1)"><span class="xref std std-ref">VCS Support</span></a>.</p> 
+        <div class="tab-set docutils container"> 
+         <input checked="True" class="tab-input" id="tab-set--14-input--1" name="tab-set--14" type="radio"><label class="tab-label" for="tab-set--14-input--1">Unix/macOS</label>
+         <div class="tab-content docutils container"> 
+          <div class="highlight-bash notranslate">
+           <div class="highlight">
+            <pre><span></span>python3 -m pip install -e git+https://git.repo/some_pkg.git#egg<span class="o">=</span>SomeProject          <span class="c1"># from git</span>
+python3 -m pip install -e hg+https://hg.repo/some_pkg#egg<span class="o">=</span>SomeProject                <span class="c1"># from mercurial</span>
+python3 -m pip install -e svn+svn://svn.repo/some_pkg/trunk/#egg<span class="o">=</span>SomeProject         <span class="c1"># from svn</span>
+python3 -m pip install -e git+https://git.repo/some_pkg.git@feature#egg<span class="o">=</span>SomeProject  <span class="c1"># from a branch</span>
+</pre>
+           </div> 
+          </div> 
+         </div> 
+         <input class="tab-input" id="tab-set--14-input--2" name="tab-set--14" type="radio"><label class="tab-label" for="tab-set--14-input--2">Windows</label>
+         <div class="tab-content docutils container"> 
+          <div class="highlight-bat notranslate">
+           <div class="highlight">
+            <pre><span></span>py -m pip install -e git+https://git.repo/some_pkg.git#egg=SomeProject          # from git
+py -m pip install -e hg+https://hg.repo/some_pkg#egg=SomeProject                # from mercurial
+py -m pip install -e svn+svn://svn.repo/some_pkg/trunk/#egg=SomeProject         # from svn
+py -m pip install -e git+https://git.repo/some_pkg.git@feature#egg=SomeProject  # from a branch
+</pre>
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </section> 
+       <section id="installing-from-other-indexes"> 
+        <h2><a class="toc-backref" href="#id24">Installing from other Indexes</a><a class="headerlink" href="#installing-from-other-indexes" title="Permalink to this headline">¶</a></h2> 
+        <p>Install from an alternate index</p> 
+        <div class="tab-set docutils container"> 
+         <input checked="True" class="tab-input" id="tab-set--15-input--1" name="tab-set--15" type="radio"><label class="tab-label" for="tab-set--15-input--1">Unix/macOS</label>
+         <div class="tab-content docutils container"> 
+          <div class="highlight-bash notranslate">
+           <div class="highlight">
+            <pre><span></span>python3 -m pip install --index-url http://my.package.repo/simple/ SomeProject
+</pre>
+           </div> 
+          </div> 
+         </div> 
+         <input class="tab-input" id="tab-set--15-input--2" name="tab-set--15" type="radio"><label class="tab-label" for="tab-set--15-input--2">Windows</label>
+         <div class="tab-content docutils container"> 
+          <div class="highlight-bat notranslate">
+           <div class="highlight">
+            <pre><span></span>py -m pip install --index-url http://my.package.repo/simple/ SomeProject
+</pre>
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <p>Search an additional index during install, in addition to <a class="reference internal" href="../../glossary/#term-Python-Package-Index-PyPI"><span class="xref std std-term">PyPI</span></a></p> 
+        <div class="tab-set docutils container"> 
+         <input checked="True" class="tab-input" id="tab-set--16-input--1" name="tab-set--16" type="radio"><label class="tab-label" for="tab-set--16-input--1">Unix/macOS</label>
+         <div class="tab-content docutils container"> 
+          <div class="highlight-bash notranslate">
+           <div class="highlight">
+            <pre><span></span>python3 -m pip install --extra-index-url http://my.package.repo/simple SomeProject
+</pre>
+           </div> 
+          </div> 
+         </div> 
+         <input class="tab-input" id="tab-set--16-input--2" name="tab-set--16" type="radio"><label class="tab-label" for="tab-set--16-input--2">Windows</label>
+         <div class="tab-content docutils container"> 
+          <div class="highlight-bat notranslate">
+           <div class="highlight">
+            <pre><span></span>py -m pip install --extra-index-url http://my.package.repo/simple SomeProject
+</pre>
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </section> 
+       <section id="installing-from-a-local-src-tree"> 
+        <h2><a class="toc-backref" href="#id25">Installing from a local src tree</a><a class="headerlink" href="#installing-from-a-local-src-tree" title="Permalink to this headline">¶</a></h2> 
+        <p>Installing from local src in <a class="reference external" href="https://setuptools.pypa.io/en/latest/userguide/development_mode.html" title="(in setuptools v62.1.0.post20220422)"><span class="xref std std-doc">Development Mode</span></a>, i.e. in such a way that the project appears to be installed, but yet is still editable from the src tree.</p> 
+        <div class="tab-set docutils container"> 
+         <input checked="True" class="tab-input" id="tab-set--17-input--1" name="tab-set--17" type="radio"><label class="tab-label" for="tab-set--17-input--1">Unix/macOS</label>
+         <div class="tab-content docutils container"> 
+          <div class="highlight-bash notranslate">
+           <div class="highlight">
+            <pre><span></span>python3 -m pip install -e &lt;path&gt;
+</pre>
+           </div> 
+          </div> 
+         </div> 
+         <input class="tab-input" id="tab-set--17-input--2" name="tab-set--17" type="radio"><label class="tab-label" for="tab-set--17-input--2">Windows</label>
+         <div class="tab-content docutils container"> 
+          <div class="highlight-bat notranslate">
+           <div class="highlight">
+            <pre><span></span>py -m pip install -e <span class="p">&lt;</span>path&gt;
+</pre>
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <p>You can also install normally from src</p> 
+        <div class="tab-set docutils container"> 
+         <input checked="True" class="tab-input" id="tab-set--18-input--1" name="tab-set--18" type="radio"><label class="tab-label" for="tab-set--18-input--1">Unix/macOS</label>
+         <div class="tab-content docutils container"> 
+          <div class="highlight-bash notranslate">
+           <div class="highlight">
+            <pre><span></span>python3 -m pip install &lt;path&gt;
+</pre>
+           </div> 
+          </div> 
+         </div> 
+         <input class="tab-input" id="tab-set--18-input--2" name="tab-set--18" type="radio"><label class="tab-label" for="tab-set--18-input--2">Windows</label>
+         <div class="tab-content docutils container"> 
+          <div class="highlight-bat notranslate">
+           <div class="highlight">
+            <pre><span></span>py -m pip install <span class="p">&lt;</span>path&gt;
+</pre>
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </section> 
+       <section id="installing-from-local-archives"> 
+        <h2><a class="toc-backref" href="#id26">Installing from local archives</a><a class="headerlink" href="#installing-from-local-archives" title="Permalink to this headline">¶</a></h2> 
+        <p>Install a particular source archive file.</p> 
+        <div class="tab-set docutils container"> 
+         <input checked="True" class="tab-input" id="tab-set--19-input--1" name="tab-set--19" type="radio"><label class="tab-label" for="tab-set--19-input--1">Unix/macOS</label>
+         <div class="tab-content docutils container"> 
+          <div class="highlight-bash notranslate">
+           <div class="highlight">
+            <pre><span></span>python3 -m pip install ./downloads/SomeProject-1.0.4.tar.gz
+</pre>
+           </div> 
+          </div> 
+         </div> 
+         <input class="tab-input" id="tab-set--19-input--2" name="tab-set--19" type="radio"><label class="tab-label" for="tab-set--19-input--2">Windows</label>
+         <div class="tab-content docutils container"> 
+          <div class="highlight-bat notranslate">
+           <div class="highlight">
+            <pre><span></span>py -m pip install ./downloads/SomeProject-1.0.4.tar.gz
+</pre>
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <p>Install from a local directory containing archives (and don’t check <a class="reference internal" href="../../glossary/#term-Python-Package-Index-PyPI"><span class="xref std std-term">PyPI</span></a>)</p> 
+        <div class="tab-set docutils container"> 
+         <input checked="True" class="tab-input" id="tab-set--20-input--1" name="tab-set--20" type="radio"><label class="tab-label" for="tab-set--20-input--1">Unix/macOS</label>
+         <div class="tab-content docutils container"> 
+          <div class="highlight-bash notranslate">
+           <div class="highlight">
+            <pre><span></span>python3 -m pip install --no-index --find-links<span class="o">=</span>file:///local/dir/ SomeProject
+python3 -m pip install --no-index --find-links<span class="o">=</span>/local/dir/ SomeProject
+python3 -m pip install --no-index --find-links<span class="o">=</span>relative/dir/ SomeProject
+</pre>
+           </div> 
+          </div> 
+         </div> 
+         <input class="tab-input" id="tab-set--20-input--2" name="tab-set--20" type="radio"><label class="tab-label" for="tab-set--20-input--2">Windows</label>
+         <div class="tab-content docutils container"> 
+          <div class="highlight-bat notranslate">
+           <div class="highlight">
+            <pre><span></span>py -m pip install --no-index --find-links=file:///local/dir/ SomeProject
+py -m pip install --no-index --find-links=/local/dir/ SomeProject
+py -m pip install --no-index --find-links=relative/dir/ SomeProject
+</pre>
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </section> 
+       <section id="installing-from-other-sources"> 
+        <h2><a class="toc-backref" href="#id27">Installing from other sources</a><a class="headerlink" href="#installing-from-other-sources" title="Permalink to this headline">¶</a></h2> 
+        <p>To install from other data sources (for example Amazon S3 storage) you can create a helper application that presents the data in a <span class="target" id="index-6"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0503"><strong>PEP 503</strong></a> compliant index format, and use the <code class="docutils literal notranslate"><span class="pre">--extra-index-url</span></code> flag to direct pip to use that index.</p> 
+        <div class="highlight-bash notranslate">
+         <div class="highlight">
+          <pre><span></span>./s3helper --port<span class="o">=</span><span class="m">7777</span>
+python -m pip install --extra-index-url http://localhost:7777 SomeProject
+</pre>
+         </div> 
+        </div> 
+       </section> 
+       <section id="installing-prereleases"> 
+        <h2><a class="toc-backref" href="#id28">Installing Prereleases</a><a class="headerlink" href="#installing-prereleases" title="Permalink to this headline">¶</a></h2> 
+        <p>Find pre-release and development versions, in addition to stable versions. By default, pip only finds stable versions.</p> 
+        <div class="tab-set docutils container"> 
+         <input checked="True" class="tab-input" id="tab-set--21-input--1" name="tab-set--21" type="radio"><label class="tab-label" for="tab-set--21-input--1">Unix/macOS</label>
+         <div class="tab-content docutils container"> 
+          <div class="highlight-bash notranslate">
+           <div class="highlight">
+            <pre><span></span>python3 -m pip install --pre SomeProject
+</pre>
+           </div> 
+          </div> 
+         </div> 
+         <input class="tab-input" id="tab-set--21-input--2" name="tab-set--21" type="radio"><label class="tab-label" for="tab-set--21-input--2">Windows</label>
+         <div class="tab-content docutils container"> 
+          <div class="highlight-bat notranslate">
+           <div class="highlight">
+            <pre><span></span>py -m pip install --pre SomeProject
+</pre>
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </section> 
+       <section id="installing-setuptools-extras"> 
+        <h2><a class="toc-backref" href="#id29">Installing Setuptools “Extras”</a><a class="headerlink" href="#installing-setuptools-extras" title="Permalink to this headline">¶</a></h2> 
+        <p>Install <a class="reference external" href="https://setuptools.readthedocs.io/en/latest/userguide/dependency_management.html#optional-dependencies">setuptools extras</a>.</p> 
+        <div class="tab-set docutils container"> 
+         <input checked="True" class="tab-input" id="tab-set--22-input--1" name="tab-set--22" type="radio"><label class="tab-label" for="tab-set--22-input--1">Unix/macOS</label>
+         <div class="tab-content docutils container"> 
+          <div class="highlight-bash notranslate">
+           <div class="highlight">
+            <pre><span></span>python3 -m pip install SomePackage<span class="o">[</span>PDF<span class="o">]</span>
+python3 -m pip install SomePackage<span class="o">[</span>PDF<span class="o">]==</span><span class="m">3</span>.0
+python3 -m pip install -e .<span class="o">[</span>PDF<span class="o">]</span>  <span class="c1"># editable project in current directory</span>
+</pre>
+           </div> 
+          </div> 
+         </div> 
+         <input class="tab-input" id="tab-set--22-input--2" name="tab-set--22" type="radio"><label class="tab-label" for="tab-set--22-input--2">Windows</label>
+         <div class="tab-content docutils container"> 
+          <div class="highlight-bat notranslate">
+           <div class="highlight">
+            <pre><span></span>py -m pip install SomePackage[PDF]
+py -m pip install SomePackage[PDF]==3.0
+py -m pip install -e .[PDF]  # editable project in current directory
+</pre>
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <hr class="docutils"> 
+        <dl class="footnote brackets"> 
+         <dt class="label" id="id7">
+          <span class="brackets"><a class="fn-backref" href="#id2">1</a></span>
+         </dt> 
+         <dd>
+          <p>“Secure” in this context means using a modern browser or a tool like <strong class="command">curl</strong> that verifies SSL certificates when downloading from https URLs.</p> 
+         </dd> 
+         <dt class="label" id="id8">
+          <span class="brackets"><a class="fn-backref" href="#id3">2</a></span>
+         </dt> 
+         <dd>
+          <p>Depending on your platform, this may require root or Administrator access. <a class="reference internal" href="../../key_projects/#pip"><span class="std std-ref">pip</span></a> is currently considering changing this by <a class="reference external" href="https://github.com/pypa/pip/issues/1668">making user installs the default behavior</a>.</p> 
+         </dd> 
+         <dt class="label" id="id9">
+          <span class="brackets"><a class="fn-backref" href="#id4">3</a></span>
+         </dt> 
+         <dd>
+          <p>Beginning with Python 3.4, <code class="docutils literal notranslate"><span class="pre">venv</span></code> (a stdlib alternative to <a class="reference internal" href="../../key_projects/#virtualenv"><span class="std std-ref">virtualenv</span></a>) will create virtualenv environments with <code class="docutils literal notranslate"><span class="pre">pip</span></code> pre-installed, thereby making it an equal alternative to <a class="reference internal" href="../../key_projects/#virtualenv"><span class="std std-ref">virtualenv</span></a>.</p> 
+         </dd> 
+         <dt class="label" id="id10">
+          <span class="brackets"><a class="fn-backref" href="#id5">4</a></span>
+         </dt> 
+         <dd>
+          <p>The compatible release specifier was accepted in <span class="target" id="index-7"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0440"><strong>PEP 440</strong></a> and support was released in <a class="reference internal" href="../../key_projects/#setuptools"><span class="std std-ref">setuptools</span></a> v8.0 and <a class="reference internal" href="../../key_projects/#pip"><span class="std std-ref">pip</span></a> v6.0</p> 
+         </dd> 
+        </dl> 
+       </section> 
+      </section> 
+      <div class="clearer"></div> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="sphinxsidebar" role="navigation" aria-label="main navigation"> 
+    <div class="sphinxsidebarwrapper"> 
+     <h3><a href="../../">Table of Contents</a></h3> 
+     <ul class="current"> 
+      <li class="toctree-l1"><a class="reference internal" href="../../overview/">An Overview of Packaging for Python</a></li> 
+      <li class="toctree-l1 current"><a class="reference internal" href="../">Tutorials</a>
+       <ul class="current"> 
+        <li class="toctree-l2 current"><a class="current reference internal" href="#">Installing Packages</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../managing-dependencies/">Managing Application Dependencies</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../packaging-projects/">Packaging Python Projects</a></li> 
+        <li class="toctree-l2"><a class="reference internal" href="../creating-documentation/">Creating Documentation</a></li> 
+       </ul> </li> 
+      <li class="toctree-l1"><a class="reference internal" href="../../guides/">Guides</a></li> 
+      <li class="toctree-l1"><a class="reference internal" href="../../discussions/">Discussions</a></li> 
+      <li class="toctree-l1"><a class="reference internal" href="../../specifications/">PyPA specifications</a></li> 
+      <li class="toctree-l1"><a class="reference internal" href="../../key_projects/">Project Summaries</a></li> 
+      <li class="toctree-l1"><a class="reference internal" href="../../glossary/">Glossary</a></li> 
+      <li class="toctree-l1"><a class="reference internal" href="../../support/">How to Get Support</a></li> 
+      <li class="toctree-l1"><a class="reference internal" href="../../contribute/">Contribute to this guide</a></li> 
+      <li class="toctree-l1"><a class="reference internal" href="../../news/">News</a></li> 
+     </ul> 
+     <h4>Previous topic</h4> 
+     <p class="topless"><a href="../" title="previous chapter">Tutorials</a></p> 
+     <h4>Next topic</h4> 
+     <p class="topless"><a href="../managing-dependencies/" title="next chapter">Managing Application Dependencies</a></p> 
+    </div> 
+   </div> 
+   <div class="clearer"></div> 
+  </div> 
+  <div class="related" role="navigation" aria-label="related navigation"> 
+   <h3>Navigation</h3> 
+   <ul> 
+    <li class="right" style="margin-right: 10px"> <a href="../../genindex/" title="General Index">index</a></li> 
+    <li class="right"> <a href="../managing-dependencies/" title="Managing Application Dependencies">next</a> |</li> 
+    <li class="right"> <a href="../" title="Tutorials">previous</a> |</li> 
+    <li><img src="../../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"></li> 
+    <li><a href="https://pypa.io">PyPA</a> »</li> 
+    <li class="switchers"> 
+     <div class="language_switcher_placeholder"></div> 
+     <div class="version_switcher_placeholder"></div> </li> 
+    <li> <a href="../../">Python Packaging User Guide</a> » </li> 
+    <li class="nav-item nav-item-1"><a href="../">Tutorials</a> »</li> 
+    <li class="nav-item nav-item-this"><a href="">Installing Packages</a></li> 
+    <li class="right"> 
+     <div class="inline-search" role="search"> 
+      <form class="inline-search" action="../../search/" method="get"> 
+       <input placeholder="Quick search" aria-label="Quick search" type="text" name="q"> 
+       <input type="submit" value="Go"> 
+       <input type="hidden" name="check_keywords" value="yes"> 
+       <input type="hidden" name="area" value="default"> 
+      </form> 
+     </div> | </li> 
+   </ul> 
+  </div> 
+  <div class="footer">
+    © <a href="../../copyright/">Copyright</a> 2013–2020, PyPA. 
+   <br> This page is licensed under the Python Software Foundation License Version 2. 
+   <br> Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License. 
+   <br> See <a href="">History and License</a> for more information. 
+   <br>
+   <br> The Python Software Foundation is a non-profit corporation. <a href="https://www.python.org/psf/donations/">Please donate.</a> 
+   <br> 
+   <br> Last updated on May 09, 2022. <a href="https://github.com/pypa/packaging.python.org/issues">Found a bug</a>? 
+   <br> Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.3.1. 
+  </div>  
+ </body>
+</html>

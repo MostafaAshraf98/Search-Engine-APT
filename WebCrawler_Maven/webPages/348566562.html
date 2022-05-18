@@ -1,0 +1,2226 @@
+<!doctype html>
+<html class="no-js " lang="en"> 
+ <head> 
+  <meta http-equiv="X-UA-Compatible" content="IE=IE9"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"> 
+  <meta charset="utf-8"> 
+  <title>ipython/ipython - Gitter</title> 
+  <style>
+
+      @-webkit-keyframes pulsey {
+        0% { opacity: 0.6; }
+        50% { opacity: 1; }
+        100% { opacity: 0.6; }
+      }
+
+      html.loading .trpContentPanel { background: url("//cdn01.gitter.im/_s/39e3eb229/images/logo-mark-grey-64.png") center no-repeat; height: 90%; -webkit-animation: pulsey 2s ease-out; -webkit-animation-iteration-count: infinite;  }
+      html.loading .trpContentPanel > * { visibility: hidden; }
+    </style> 
+  <base target="_parent"> 
+  <style>
+    @font-face {
+      font-family: 'SourceSansLocal';
+      font-style: normal;
+      font-weight: bold;
+      src: local("SourceSansPro-Bold");
+    }
+    @font-face {
+      font-family: 'SourceSansLocal';
+      font-style: italic;
+      font-weight: bold;
+      src: local("SourceSansPro-BoldIt");
+    }
+    @font-face {
+      font-family: 'SourceSansLocal';
+      font-style: normal;
+      font-weight: 200;
+      src: local("SourceSansPro-ExtraLight");
+    }
+    @font-face {
+      font-family: 'SourceSansLocal';
+      font-style: italic;
+      font-weight: normal;
+      src: local("SourceSansPro-It");
+    }
+    @font-face {
+      font-family: 'SourceSansLocal';
+      font-style: normal;
+      font-weight: 300;
+      src: local("SourceSansPro-Light");
+    }
+    @font-face {
+      font-family: 'SourceSansLocal';
+      font-style: normal;
+      font-weight: normal;
+      src: local("SourceSansPro-Regular");
+    }
+    @font-face {
+      font-family: 'SourceSansLocal';
+      font-style: normal;
+      font-weight: 600;
+      src: local("SourceSansPro-Semibold");
+    }
+    @font-face {
+      font-family: "source-sans-pro";
+        src: url("//cdn02.gitter.im/_s/39e3eb229/fonts/sourcesans/SourceSansPro-Regular.otf.woff") format('woff');
+      font-weight: normal;
+      font-style: normal
+    }
+    @font-face {
+      font-family: "source-sans-pro";
+        src: url("//cdn01.gitter.im/_s/39e3eb229/fonts/sourcesans/SourceSansPro-It.otf.woff") format('woff');
+      font-weight: normal;
+      font-style: italic
+    }
+    @font-face {
+      font-family: "source-sans-pro";
+        src: url("//cdn03.gitter.im/_s/39e3eb229/fonts/sourcesans/SourceSansPro-Bold.otf.woff") format('woff');
+      font-weight: bold;
+      font-style: normal
+    }
+    @font-face {
+      font-family: "source-sans-pro";
+        src: url("//cdn02.gitter.im/_s/39e3eb229/fonts/sourcesans/SourceSansPro-Semibold.otf.woff") format('woff');
+      font-weight: 600;
+      font-style: normal
+    }
+    @font-face {
+      font-family: "source-sans-pro";
+        src: url("//cdn01.gitter.im/_s/39e3eb229/fonts/sourcesans/SourceSansPro-BoldIt.otf.woff") format('woff');
+      font-weight: bold;
+      font-style: italic
+    }
+    @font-face {
+      font-family: "source-sans-pro";
+        src: url("//cdn02.gitter.im/_s/39e3eb229/fonts/sourcesans/SourceSansPro-Light.otf.woff") format('woff');
+      font-weight: 300;
+      font-style: normal
+    }
+    @font-face {
+      font-family: "source-sans-pro";
+        src: url("//cdn02.gitter.im/_s/39e3eb229/fonts/sourcesans/SourceSansPro-ExtraLight.otf.woff") format('woff');
+      font-weight: 200;
+      font-style: normal
+    }
+    @font-face {
+      font-family: "KaTeX_AMS";
+        src: url("//cdn02.gitter.im/_s/39e3eb229/repo/katex/fonts-0.10.0/KaTeX_AMS-Regular.woff") format('woff');
+        src: url("//cdn02.gitter.im/_s/39e3eb229/repo/katex/fonts-0.10.0/KaTeX_AMS-Regular.woff2") format('woff2');
+      font-weight: normal;
+      font-style: italic
+    }
+    @font-face {
+      font-family: "KaTeX_Caligraphic";
+        src: url("//cdn01.gitter.im/_s/39e3eb229/repo/katex/fonts-0.10.0/KaTeX_Caligraphic-Bold.woff") format('woff');
+        src: url("//cdn01.gitter.im/_s/39e3eb229/repo/katex/fonts-0.10.0/KaTeX_Caligraphic-Bold.woff2") format('woff2');
+      font-weight: normal;
+      font-style: italic
+    }
+    @font-face {
+      font-family: "KaTeX_Caligraphic";
+        src: url("//cdn01.gitter.im/_s/39e3eb229/repo/katex/fonts-0.10.0/KaTeX_Caligraphic-Regular.woff") format('woff');
+        src: url("//cdn01.gitter.im/_s/39e3eb229/repo/katex/fonts-0.10.0/KaTeX_Caligraphic-Regular.woff2") format('woff2');
+      font-weight: normal;
+      font-style: italic
+    }
+    @font-face {
+      font-family: "KaTeX_Fraktur";
+        src: url("//cdn01.gitter.im/_s/39e3eb229/repo/katex/fonts-0.10.0/KaTeX_Fraktur-Bold.woff") format('woff');
+        src: url("//cdn01.gitter.im/_s/39e3eb229/repo/katex/fonts-0.10.0/KaTeX_Fraktur-Bold.woff2") format('woff2');
+      font-weight: normal;
+      font-style: italic
+    }
+    @font-face {
+      font-family: "KaTeX_Fraktur";
+        src: url("//cdn03.gitter.im/_s/39e3eb229/repo/katex/fonts-0.10.0/KaTeX_Fraktur-Regular.woff") format('woff');
+        src: url("//cdn03.gitter.im/_s/39e3eb229/repo/katex/fonts-0.10.0/KaTeX_Fraktur-Regular.woff2") format('woff2');
+      font-weight: normal;
+      font-style: italic
+    }
+    @font-face {
+      font-family: "KaTeX_Main";
+        src: url("//cdn02.gitter.im/_s/39e3eb229/repo/katex/fonts-0.10.0/KaTeX_Main-Bold.woff") format('woff');
+        src: url("//cdn02.gitter.im/_s/39e3eb229/repo/katex/fonts-0.10.0/KaTeX_Main-Bold.woff2") format('woff2');
+      font-weight: normal;
+      font-style: italic
+    }
+    @font-face {
+      font-family: "KaTeX_Main";
+        src: url("//cdn03.gitter.im/_s/39e3eb229/repo/katex/fonts-0.10.0/KaTeX_Main-BoldItalic.woff") format('woff');
+        src: url("//cdn03.gitter.im/_s/39e3eb229/repo/katex/fonts-0.10.0/KaTeX_Main-BoldItalic.woff2") format('woff2');
+      font-weight: normal;
+      font-style: italic
+    }
+    @font-face {
+      font-family: "KaTeX_Main";
+        src: url("//cdn01.gitter.im/_s/39e3eb229/repo/katex/fonts-0.10.0/KaTeX_Main-Italic.woff") format('woff');
+        src: url("//cdn01.gitter.im/_s/39e3eb229/repo/katex/fonts-0.10.0/KaTeX_Main-Italic.woff2") format('woff2');
+      font-weight: normal;
+      font-style: italic
+    }
+    @font-face {
+      font-family: "KaTeX_Main";
+        src: url("//cdn01.gitter.im/_s/39e3eb229/repo/katex/fonts-0.10.0/KaTeX_Main-Regular.woff") format('woff');
+        src: url("//cdn01.gitter.im/_s/39e3eb229/repo/katex/fonts-0.10.0/KaTeX_Main-Regular.woff2") format('woff2');
+      font-weight: normal;
+      font-style: italic
+    }
+    @font-face {
+      font-family: "KaTeX_Math";
+        src: url("//cdn03.gitter.im/_s/39e3eb229/repo/katex/fonts-0.10.0/KaTeX_Math-BoldItalic.woff") format('woff');
+        src: url("//cdn03.gitter.im/_s/39e3eb229/repo/katex/fonts-0.10.0/KaTeX_Math-BoldItalic.woff2") format('woff2');
+      font-weight: normal;
+      font-style: italic
+    }
+    @font-face {
+      font-family: "KaTeX_Math";
+        src: url("//cdn01.gitter.im/_s/39e3eb229/repo/katex/fonts-0.10.0/KaTeX_Math-Italic.woff") format('woff');
+        src: url("//cdn01.gitter.im/_s/39e3eb229/repo/katex/fonts-0.10.0/KaTeX_Math-Italic.woff2") format('woff2');
+      font-weight: normal;
+      font-style: italic
+    }
+    @font-face {
+      font-family: "KaTeX_SansSerif";
+        src: url("//cdn01.gitter.im/_s/39e3eb229/repo/katex/fonts-0.10.0/KaTeX_SansSerif-Bold.woff") format('woff');
+        src: url("//cdn01.gitter.im/_s/39e3eb229/repo/katex/fonts-0.10.0/KaTeX_SansSerif-Bold.woff2") format('woff2');
+      font-weight: normal;
+      font-style: italic
+    }
+    @font-face {
+      font-family: "KaTeX_SansSerif";
+        src: url("//cdn02.gitter.im/_s/39e3eb229/repo/katex/fonts-0.10.0/KaTeX_SansSerif-Italic.woff") format('woff');
+        src: url("//cdn02.gitter.im/_s/39e3eb229/repo/katex/fonts-0.10.0/KaTeX_SansSerif-Italic.woff2") format('woff2');
+      font-weight: normal;
+      font-style: italic
+    }
+    @font-face {
+      font-family: "KaTeX_SansSerif";
+        src: url("//cdn03.gitter.im/_s/39e3eb229/repo/katex/fonts-0.10.0/KaTeX_SansSerif-Regular.woff") format('woff');
+        src: url("//cdn03.gitter.im/_s/39e3eb229/repo/katex/fonts-0.10.0/KaTeX_SansSerif-Regular.woff2") format('woff2');
+      font-weight: normal;
+      font-style: italic
+    }
+    @font-face {
+      font-family: "KaTeX_Script";
+        src: url("//cdn02.gitter.im/_s/39e3eb229/repo/katex/fonts-0.10.0/KaTeX_Script-Regular.woff") format('woff');
+        src: url("//cdn02.gitter.im/_s/39e3eb229/repo/katex/fonts-0.10.0/KaTeX_Script-Regular.woff2") format('woff2');
+      font-weight: normal;
+      font-style: italic
+    }
+    @font-face {
+      font-family: "KaTeX_Size1";
+        src: url("//cdn03.gitter.im/_s/39e3eb229/repo/katex/fonts-0.10.0/KaTeX_Size1-Regular.woff") format('woff');
+        src: url("//cdn03.gitter.im/_s/39e3eb229/repo/katex/fonts-0.10.0/KaTeX_Size1-Regular.woff2") format('woff2');
+      font-weight: normal;
+      font-style: italic
+    }
+    @font-face {
+      font-family: "KaTeX_Size2";
+        src: url("//cdn03.gitter.im/_s/39e3eb229/repo/katex/fonts-0.10.0/KaTeX_Size2-Regular.woff") format('woff');
+        src: url("//cdn03.gitter.im/_s/39e3eb229/repo/katex/fonts-0.10.0/KaTeX_Size2-Regular.woff2") format('woff2');
+      font-weight: normal;
+      font-style: italic
+    }
+    @font-face {
+      font-family: "KaTeX_Size3";
+        src: url("//cdn03.gitter.im/_s/39e3eb229/repo/katex/fonts-0.10.0/KaTeX_Size3-Regular.woff") format('woff');
+        src: url("//cdn03.gitter.im/_s/39e3eb229/repo/katex/fonts-0.10.0/KaTeX_Size3-Regular.woff2") format('woff2');
+      font-weight: normal;
+      font-style: italic
+    }
+    @font-face {
+      font-family: "KaTeX_Size4";
+        src: url("//cdn03.gitter.im/_s/39e3eb229/repo/katex/fonts-0.10.0/KaTeX_Size4-Regular.woff") format('woff');
+        src: url("//cdn03.gitter.im/_s/39e3eb229/repo/katex/fonts-0.10.0/KaTeX_Size4-Regular.woff2") format('woff2');
+      font-weight: normal;
+      font-style: italic
+    }
+    @font-face {
+      font-family: "KaTeX_Typewriter";
+        src: url("//cdn02.gitter.im/_s/39e3eb229/repo/katex/fonts-0.10.0/KaTeX_Typewriter-Regular.woff") format('woff');
+        src: url("//cdn02.gitter.im/_s/39e3eb229/repo/katex/fonts-0.10.0/KaTeX_Typewriter-Regular.woff2") format('woff2');
+      font-weight: normal;
+      font-style: italic
+    }
+  </style> 
+  <link rel="stylesheet" href="//cdn01.gitter.im/_s/39e3eb229/sprites/services.css"> 
+  <link rel="stylesheet" href="//cdn01.gitter.im/_s/39e3eb229/styles/router-nli-chat.css"> 
+  <link id="favicon" rel="shortcut icon" href="//cdn03.gitter.im/_s/39e3eb229/images/favicon-normal.ico"><!-- Le fav and touch icons --> 
+  <link rel="manifest" href="/manifest.webmanifest"> 
+  <meta property="og:title" content="ipython/ipython"> 
+  <meta property="og:description" content="Talking about cool IPython features!"> 
+  <meta property="og:type" content="website"> 
+  <meta property="og:image" content="https://avatars-04.gitter.im/group/iv/4/57542d0dc43b8c60197791cc"> 
+  <meta property="fb:app_id" content=""> 
+  <meta property="twitter:card" content="summary"> 
+  <meta property="twitter:site" content="@gitchat"> 
+  <meta property="twitter:title" content="ipython/ipython"> 
+  <meta property="twitter:description" content="Talking about cool IPython features!"> 
+  <meta property="twitter:image" content="https://avatars-04.gitter.im/group/iv/4/57542d0dc43b8c60197791cc"> 
+ </head> 
+ <body class=" iframe logged-out"> 
+  <div class="layout-app"> 
+   <script>window.__INITIAL_STATE__={"search":{"repo":{"loading":false,"error":null,"results":[]},"room":{"loading":false,"error":null,"results":[]},"people":{"loading":false,"error":null,"results":[]},"message":{"loading":false,"error":null,"results":[]},"searchInputValue":"","current":{"results":[]}},"joinRoomRequest":{"loading":false,"error":null,"results":[]},"isMobile":false,"isLoggedIn":false,"darkTheme":false,"groupMap":{},"roomMap":{"52ebe3e15e986b0712ef4106":{"id":"52ebe3e15e986b0712ef4106","name":"ipython\u002Fipython","topic":"Talking about cool IPython features!","avatarUrl":"https:\u002F\u002Favatars-04.gitter.im\u002Fgroup\u002Fiv\u002F4\u002F57542d0dc43b8c60197791cc","uri":"ipython\u002Fipython","userCount":1779,"url":"\u002Fipython\u002Fipython","githubType":"REPO","security":"PUBLIC","premium":true,"groupId":"57542d0dc43b8c60197791cc","public":true,"matrixRoomLink":"https:\u002F\u002Fmatrix.to\u002F#\u002F#ipython_ipython:gitter.im?utm_source=gitter","v":991}},"messageMap":{},"displayedRoomId":"52ebe3e15e986b0712ef4106","hightLightedMessageId":null,"leftMenuState":"all","leftMenuPinnedState":true,"leftMenuExpandedState":false,"favouriteDraggingInProgress":false,"threadMessageFeed":{"isVisible":false,"draftMessage":"","messageEditState":{"id":null,"text":null},"atTop":false,"atBottom":false,"parentId":null,"childMessagesRequest":{"loading":false,"error":null,"results":[]}},"createCommunity":{"currentStep":"step-main","communityName":"","communityNameError":null,"communitySlug":"","slugAvailabilityStatus":null,"communitySlugError":null,"selectedBackingEntity":null,"allowBadger":true,"orgs":[],"repos":[],"entityTypeTabState":"tab-orgs","orgsRequest":{"loading":false,"error":null,"results":[]},"reposRequest":{"loading":false,"error":null,"results":[]},"communitySubmitRequest":{"loading":false,"error":null,"results":[]}},"createRoom":{"adminGroupMap":{},"groupFilterText":"","selectedGroupId":null,"groupError":null,"roomName":"","roomNameError":null,"roomNameAvailabilityStatus":null,"adminRepoMap":{},"repoFilterText":"","selectedRepoId":null,"roomSecurity":"PUBLIC","onlyGithubUsers":false,"allowGroupAdmins":false,"allowBadger":true,"repos":[],"groupsRequest":{"loading":false,"error":null,"results":[]},"reposRequest":{"loading":false,"error":null,"results":[]},"roomSubmitRequest":{"loading":false,"error":null,"results":[]}}}</script>
+   <style data-vue-ssr-id="2795a402:0">.root[data-v-44ebcb1a] {
+  box-sizing: border-box;
+  z-index: 201;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  will-change: transform;
+  transition: transform 0.05s ease;
+}
+.root[data-v-44ebcb1a] *,
+.root[data-v-44ebcb1a] *:before,
+.root[data-v-44ebcb1a] *:after {
+  box-sizing: inherit;
+}
+@media (max-width: 900px) {
+.root[data-v-44ebcb1a] {
+    position: absolute;
+    transform: translateX(-100%);
+}
+.root.expanded[data-v-44ebcb1a] {
+    transform: translateX(0%);
+}
+}
+.layout-minibar[data-v-44ebcb1a] {
+  z-index: 1;
+  width: 7.5rem;
+}
+.layout-main-menu[data-v-44ebcb1a] {
+  width: 26.5rem;
+  transition: transform 0.1s ease;
+}
+@media not all and (max-width: 900px) {
+.root:not(.pinned).logged-in .layout-main-menu[data-v-44ebcb1a] {
+    position: absolute;
+    left: 7.5rem;
+    transform: translateX(-100%);
+}
+.root.expanded:not(.pinned).logged-in .layout-main-menu[data-v-44ebcb1a] {
+    transform: translateX(0%);
+}
+}
+.header[data-v-44ebcb1a] {
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  height: 65px;
+  color: #ffffff;
+}
+.header-minibar[data-v-44ebcb1a] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: #753a88;
+}
+.dark-theme .header-minibar[data-v-44ebcb1a] {
+  background-color: #2d2c2c;
+}
+.header-main-menu[data-v-44ebcb1a] {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  background-color: #753a88;
+}
+.dark-theme .header-main-menu[data-v-44ebcb1a] {
+  background-color: #2d2c2c;
+}
+.left-menu-toggle[data-v-44ebcb1a] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+  transition: background-color 0.2s ease;
+}
+.left-menu-toggle:hover .hamburger-icon[data-v-44ebcb1a] {
+  left: -9px;
+}
+.left-menu-toggle[data-v-44ebcb1a]:focus {
+  background-color: #f68d42;
+  outline: none;
+}
+.hamburger-icon[data-v-44ebcb1a] {
+  position: absolute;
+  left: -13px;
+  width: 26px;
+  stroke-width: 2px;
+  vector-effect: non-scaling-stroke;
+  color: rgba(255, 255, 255, 0.7);
+  stroke: rgba(255, 255, 255, 0.7);
+  transition: left 0.2s ease;
+}
+.logo-gitter-sign[data-v-44ebcb1a] {
+  display: block;
+  width: 18px;
+  fill: #ffffff;
+}
+.logo-text[data-v-44ebcb1a] {
+  display: block;
+  width: 7rem;
+}
+.logo-text[data-v-44ebcb1a] > svg {
+  fill: #ffffff;
+}
+.body[data-v-44ebcb1a] {
+  position: relative;
+  flex: 1;
+  display: flex;
+  min-height: 0;
+}
+.body-main-menu[data-v-44ebcb1a] {
+  overflow-x: hidden;
+  overflow-y: auto;
+  touch-action: pan-y;
+  height: 100%;
+  background-color: #fdfdfd;
+  border-right: 1px solid #f1f1f1;
+}
+.dark-theme .body-main-menu[data-v-44ebcb1a] {
+  background-color: #383736;
+  border-right-color: #2d2c2c;
+}
+.room-list-title[data-v-44ebcb1a] {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  max-width: 90%;
+  margin: 0;
+  overflow: hidden;
+  font-weight: 400;
+  font-size: 1.5rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  padding: 0 0 0 2.6rem;
+  line-height: 65px;
+  color: #a2a3a3;
+}
+.mobile .room-list-title[data-v-44ebcb1a] {
+  padding: 0 0 0 0.5rem;
+  line-height: 50px;
+}
+.room-list[data-v-44ebcb1a] {
+  margin-left: 0;
+  list-style: none;
+}
+.nli-body[data-v-44ebcb1a] {
+  flex: 1;
+  display: block;
+  width: 34rem;
+  height: 100%;
+  padding: 20px;
+  background-color: #753a88;
+  color: #ffffff;
+}
+.nli-body a[data-v-44ebcb1a] {
+  color: #ffffff;
+}
+.nli-primary-heading[data-v-44ebcb1a] {
+  font-family: 'source-sans-pro';
+  font-weight: 200;
+  font-size: 47px;
+  line-height: 43px;
+}
+.nli-info-block[data-v-44ebcb1a] {
+  padding: 1vh 15px;
+  margin: 10px 0px;
+  list-style: none;
+  background-color: rgba(255, 255, 255, 0.1);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.nli-info-block-item[data-v-44ebcb1a] {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+</style>
+   <div data-server-rendered="true" class="root js-left-menu-root pinned" style="transform:;transition:;" data-v-44ebcb1a>
+    <header class="header" data-v-44ebcb1a>
+     <section class="header-minibar layout-minibar" data-v-44ebcb1a>
+      <button label="Unpin and collapse the left-menu" class="left-menu-toggle" data-v-44ebcb1a>
+       <svg viewbox="0 0 26 22" class="hamburger-icon" data-v-44ebcb1a>
+        <path d="M0,2 l26,0" data-v-44ebcb1a /> <path d="M0,11 l26,0" data-v-44ebcb1a /> <path d="M0,20 l26,0" data-v-44ebcb1a />
+       </svg> 
+       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 18 25" class="logo-gitter-sign" data-v-44ebcb1a>
+        <rect x="15" y="5" width="2" height="10"></rect> <rect x="10" y="5" width="2" height="20"></rect> <rect x="5" y="5" width="2" height="20"></rect> <rect width="2" height="15"></rect>
+       </svg></button>
+     </section> 
+     <section class="header-main-menu layout-main-menu" data-v-44ebcb1a>
+      <a href="https://gitter.im/?utm_source=left-menu-logo" class="logo-text" data-v-44ebcb1a>
+       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 98.7 16.3" data-v-44ebcb1a>
+        <g>
+         <path d="M20.9,0.3h2.6v15.8h-2.6V0.3z" /> 
+         <path d="M34.8,2.9h-4V0.3h11.8v2.6h-5.2v13.2h-2.6V2.9z" /> 
+         <path d="M51.9,2.9h-4V0.3h11.8v2.6h-5.2v13.2h-2.6V2.9z" /> 
+         <path d="M66.4,0.3h11.8v2.6H69v3.9h7.9v2.6H69v4h9.2v2.6H66.4V0.3z" /> 
+         <path d="M98.7,16.1l-4.2-5.9c1.7-0.9,2.8-2.5,2.8-4.6c0-3.1-2.5-5.3-5.7-5.3l-6.2,0v15.8h2.6l0-5.3
+    c0,0,3.6,0,3.6,0l3.8,5.3H98.7z M88.1,8.2l0-5.3l3.5,0c1.7,0,3,1,3,2.6c0,1.7-1.4,2.6-3,2.6L88.1,8.2z" /> 
+         <path d="M7.9,7.1v2.6l3.9,0c0,0,0,1.4,0,2.3c-0.1,0.2-0.4,1.8-3.8,1.8c-0.2,0-0.3,0-0.5,0
+    c-0.1,0-0.2,0-0.2,0c-0.1,0-0.2,0-0.2,0c-0.1,0-0.2-0.1-0.3-0.1c-0.1,0-0.1,0-0.2-0.1c0,0-0.1,0-0.1,0c-2.1-0.7-3.5-2.8-3.5-5.3
+    l0,0v0v0c0-0.3,0-0.5,0.1-0.8C3.3,4.7,5.4,2.5,8,2.5c0.9,0,2.5,0.3,3.6,1.5l1.5-2.2c0,0-1.3-1.9-5-1.9C3.7,0,0.4,3.3,0,7.3
+    c0,0.3,0,0.6,0,0.8l0,0l0,0c0,4.3,3.2,7.9,7.7,8.1c0.2,0,0.3,0,0.5,0c0,0,0.1,0,0.1,0c0.3,0,0.5,0,0.7,0c0.1,0,0.2,0,0.3,0
+    c0.2,0,0.3,0,0.5-0.1c2.7-0.1,4.7-2.3,4.7-3.4c0-5,0-5.7,0-5.7H7.9z" />
+        </g>
+       </svg></a>
+     </section>
+    </header> 
+    <section class="body nli-body" data-v-44ebcb1a>
+     <h2 class="nli-primary-heading" data-v-44ebcb1a>Where communities thrive</h2> 
+     <br data-v-44ebcb1a> 
+     <ul class="nli-info-block" data-v-44ebcb1a>
+      <li class="nli-info-block-item" data-v-44ebcb1a> Join over <strong data-v-44ebcb1a>1.5M+ people</strong></li> 
+      <li class="nli-info-block-item" data-v-44ebcb1a> Join over <strong data-v-44ebcb1a>100K+ communities</strong></li> 
+      <li class="nli-info-block-item" data-v-44ebcb1a> Free <strong data-v-44ebcb1a>without limits</strong></li> 
+      <li class="nli-info-block-item" data-v-44ebcb1a> Create <strong data-v-44ebcb1a>your own community</strong></li>
+     </ul> 
+     <ul class="nli-info-block" data-v-44ebcb1a>
+      <li class="nli-info-block-item" data-v-44ebcb1a><a href="/explore" data-v-44ebcb1a>Explore more communities</a></li>
+     </ul>
+    </section>
+   </div> 
+   <div class="layout-app-body"> 
+    <div class="trpAlertWrapper" id="alert-panel"> 
+     <div class="trpAlertContainer"> 
+      <div class="trpAlertContent" id="alert-content"> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="chat-header-wrapper"> 
+     <header class="chat-header" id="header-wrapper"> 
+      <div id="header" class="chat-header-inner"> 
+       <div class="chat-header__main-grouping chat-header__left-menu-toggle-grouping"> <button class="chat-header__left-menu-toggle js-header-view-left-menu-toggle"> 
+         <svg class="chat-header__action-icon" viewbox="0 0 26 22"> <path d="M0,2 l26,0" /> <path d="M0,11 l26,0" /> <path d="M0,20 l26,0" /> 
+         </svg> </button> 
+       </div> 
+       <div class="chat-header__main-grouping chat-header__avatar-grouping"> 
+        <form class="chat-header__avatar chat-header__avatar--pro js-chat-header-group-avatar-upload-form" action="" enctype="multipart/form-data" method="POST"> 
+         <input type="hidden" class="js-chat-header-group-avatar-upload-signature" name="signature" value=""> 
+         <input type="hidden" class="js-chat-header-group-avatar-upload-params" name="params" value=""> 
+         <input id="chat-header-group-avatar-upload-input" class="chat-header__group-avatar-upload-input js-chat-header-group-avatar-upload-input" name="file" type="file" accept="image/*" disabled> <label class="chat-header__group-avatar-upload-label js-chat-header-group-avatar-upload-label" for="chat-header-group-avatar-upload-input"> <img class="js-chat-header-avatar-image" height="48" width="48" src="https://avatars-04.gitter.im/group/iv/4/57542d0dc43b8c60197791cc?s=48" srcset="https://avatars-04.gitter.im/group/iv/4/57542d0dc43b8c60197791cc?s=96 2x"> 
+          <div class="chat-header__group-avatar-upload-progress hidden js-chat-header-group-avatar-upload-progress"></div> </label> 
+        </form> 
+       </div> 
+       <div class="chat-header__main-grouping chat-header__info-grouping"> 
+        <div class="chat-header__heading-sub-group"> 
+         <h1 class="js-chat-name chat-header__heading"> <a href="https://github.com/ipython/ipython" class="chat-header__title" target="_blank">ipython/ipython</a> </h1> 
+        </div> 
+        <div class="chat-header__topic-sub-group js-room-topic-edit-activator" tabindex="0"> 
+         <div class="chat-header__topic-wrapper js-room-topic-wrapper  ">
+          <p class="js-room-topic chat-header__topic  ">Talking about cool IPython features!</p>
+         </div> 
+        </div> 
+       </div> 
+       <div class="chat-header__main-grouping chat-header__action-grouping"> <a href="https://matrix.to/#/#ipython_ipython:gitter.im?utm_source=gitter" class="chat-header__org-page org-page-link" title="See this room on Matrix" target="_blank" rel="nofollow noopener noreferrer"> <img class="chat-header__action-icon chat-header__action-matrix-icon" src="//cdn01.gitter.im/_s/39e3eb229/images/svg/matrix-favicon-logo-white.svg" aria-hidden="true"> </a> <a href="/orgs/ipython/rooms" class="chat-header__org-page org-page-link js-chat-header-org-page-action" title="More ipython rooms"> <i class="chat-header__action-icon icon-globe"></i> </a> 
+       </div> 
+      </div> 
+     </header> 
+     <div class="chat-and-toolbar-wrapper"> 
+      <div class="right-toolbar-region" id="right-toolbar-layout"> 
+       <div class="right-toolbar right-toolbar--collapsible "> 
+        <div id="toolbar-top-content" class="right-toolbar__body"> 
+         <div id="people-list"> 
+          <div class="trpToolbarHeader" id="top-header"> 
+           <h5 class="trpToolbarHeaderItem selected" id="people-header"> People </h5> 
+           <h5 class="trpToolbarHeaderItem " id="info-header"> Repo info </h5> 
+          </div> 
+          <div class="trpToolbarList"> 
+           <div class="trpToolbarListContent" id="people-roster"> 
+            <div> <span class="frame-people"> <span id="roster-region"> 
+               <ul id="roster-view" class="roster"> 
+                <li class="js-model-id-52c08aeaed5ab0b3bf05250e"> 
+                 <div class="trpDisplayPicture avatar-52c08aeaed5ab0b3bf05250e avatar-s offline admin "> 
+                  <img src="https://avatars2.githubusercontent.com/Carreau?v=4&amp;s=30" srcset="https://avatars2.githubusercontent.com/Carreau?v=4&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                  <div class="trpStatus" id="status"> 
+                  </div> 
+                 </div> </li> 
+                <li class="js-model-id-530ce5b85e986b0712efb514"> 
+                 <div class="trpDisplayPicture avatar-530ce5b85e986b0712efb514 avatar-s offline admin "> 
+                  <img src="https://avatars1.githubusercontent.com/ellisonbg?v=4&amp;s=30" srcset="https://avatars1.githubusercontent.com/ellisonbg?v=4&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                  <div class="trpStatus" id="status"> 
+                  </div> 
+                 </div> </li> 
+                <li class="js-model-id-529c6cc9ed5ab0b3bf04d9eb"> 
+                 <div class="trpDisplayPicture avatar-529c6cc9ed5ab0b3bf04d9eb avatar-s offline admin "> 
+                  <img src="https://avatars1.githubusercontent.com/minrk?v=4&amp;s=30" srcset="https://avatars1.githubusercontent.com/minrk?v=4&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                  <div class="trpStatus" id="status"> 
+                  </div> 
+                 </div> </li> 
+                <li class="js-model-id-529c6b5aed5ab0b3bf04d5eb"> 
+                 <div class="trpDisplayPicture avatar-529c6b5aed5ab0b3bf04d5eb avatar-s offline  "> 
+                  <img src="https://avatars1.githubusercontent.com/albertz?v=3&amp;s=30" srcset="https://avatars1.githubusercontent.com/albertz?v=3&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                  <div class="trpStatus" id="status"> 
+                  </div> 
+                 </div> </li> 
+                <li class="js-model-id-529c6a79ed5ab0b3bf04d376"> 
+                 <div class="trpDisplayPicture avatar-529c6a79ed5ab0b3bf04d376 avatar-s offline  "> 
+                  <img src="https://avatars2.githubusercontent.com/apetresc?v=4&amp;s=30" srcset="https://avatars2.githubusercontent.com/apetresc?v=4&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                  <div class="trpStatus" id="status"> 
+                  </div> 
+                 </div> </li> 
+                <li class="js-model-id-529c69c1ed5ab0b3bf04d173"> 
+                 <div class="trpDisplayPicture avatar-529c69c1ed5ab0b3bf04d173 avatar-s offline  "> 
+                  <img src="https://avatars1.githubusercontent.com/asmeurer?v=4&amp;s=30" srcset="https://avatars1.githubusercontent.com/asmeurer?v=4&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                  <div class="trpStatus" id="status"> 
+                  </div> 
+                 </div> </li> 
+                <li class="js-model-id-52c010d6ed5ab0b3bf0524b8"> 
+                 <div class="trpDisplayPicture avatar-52c010d6ed5ab0b3bf0524b8 avatar-s offline  "> 
+                  <img src="https://avatars1.githubusercontent.com/Feanaur?v=4&amp;s=30" srcset="https://avatars1.githubusercontent.com/Feanaur?v=4&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                  <div class="trpStatus" id="status"> 
+                  </div> 
+                 </div> </li> 
+                <li class="js-model-id-529d4934ed5ab0b3bf04e5c9"> 
+                 <div class="trpDisplayPicture avatar-529d4934ed5ab0b3bf04e5c9 avatar-s offline  "> 
+                  <img src="https://avatars0.githubusercontent.com/flacjacket?v=4&amp;s=30" srcset="https://avatars0.githubusercontent.com/flacjacket?v=4&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                  <div class="trpStatus" id="status"> 
+                  </div> 
+                 </div> </li> 
+                <li class="js-model-id-52a009daed5ab0b3bf04efd0"> 
+                 <div class="trpDisplayPicture avatar-52a009daed5ab0b3bf04efd0 avatar-s offline  "> 
+                  <img src="https://avatars2.githubusercontent.com/gnanakeethan?v=4&amp;s=30" srcset="https://avatars2.githubusercontent.com/gnanakeethan?v=4&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                  <div class="trpStatus" id="status"> 
+                  </div> 
+                 </div> </li> 
+                <li class="js-model-id-52c70aa3ed5ab0b3bf053102"> 
+                 <div class="trpDisplayPicture avatar-52c70aa3ed5ab0b3bf053102 avatar-s offline  "> 
+                  <img src="https://avatars1.githubusercontent.com/invinciblejha?v=3&amp;s=30" srcset="https://avatars1.githubusercontent.com/invinciblejha?v=3&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                  <div class="trpStatus" id="status"> 
+                  </div> 
+                 </div> </li> 
+                <li class="js-model-id-529c6b60ed5ab0b3bf04d5fc"> 
+                 <div class="trpDisplayPicture avatar-529c6b60ed5ab0b3bf04d5fc avatar-s offline  "> 
+                  <img src="https://avatars0.githubusercontent.com/Jackneill?v=4&amp;s=30" srcset="https://avatars0.githubusercontent.com/Jackneill?v=4&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                  <div class="trpStatus" id="status"> 
+                  </div> 
+                 </div> </li> 
+                <li class="js-model-id-529c6c0bed5ab0b3bf04d7db"> 
+                 <div class="trpDisplayPicture avatar-529c6c0bed5ab0b3bf04d7db avatar-s offline  "> 
+                  <img src="https://avatars1.githubusercontent.com/jaepil?v=3&amp;s=30" srcset="https://avatars1.githubusercontent.com/jaepil?v=3&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                  <div class="trpStatus" id="status"> 
+                  </div> 
+                 </div> </li> 
+                <li class="js-model-id-52f12fef5e986b0712ef5660"> 
+                 <div class="trpDisplayPicture avatar-52f12fef5e986b0712ef5660 avatar-s offline  "> 
+                  <img src="https://avatars1.githubusercontent.com/jdfreder?v=3&amp;s=30" srcset="https://avatars1.githubusercontent.com/jdfreder?v=3&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                  <div class="trpStatus" id="status"> 
+                  </div> 
+                 </div> </li> 
+                <li class="js-model-id-529c6cd0ed5ab0b3bf04d9fe"> 
+                 <div class="trpDisplayPicture avatar-529c6cd0ed5ab0b3bf04d9fe avatar-s offline  "> 
+                  <img src="https://avatars1.githubusercontent.com/linhmtran168?v=4&amp;s=30" srcset="https://avatars1.githubusercontent.com/linhmtran168?v=4&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                  <div class="trpStatus" id="status"> 
+                  </div> 
+                 </div> </li> 
+                <li class="js-model-id-529c6a57ed5ab0b3bf04d318"> 
+                 <div class="trpDisplayPicture avatar-529c6a57ed5ab0b3bf04d318 avatar-s offline  "> 
+                  <img src="https://avatars2.githubusercontent.com/mager?v=3&amp;s=30" srcset="https://avatars2.githubusercontent.com/mager?v=3&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                  <div class="trpStatus" id="status"> 
+                  </div> 
+                 </div> </li> 
+                <li class="js-model-id-530c03e25e986b0712efafb8"> 
+                 <div class="trpDisplayPicture avatar-530c03e25e986b0712efafb8 avatar-s offline  "> 
+                  <img src="https://avatars0.githubusercontent.com/mrocklin?v=4&amp;s=30" srcset="https://avatars0.githubusercontent.com/mrocklin?v=4&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                  <div class="trpStatus" id="status"> 
+                  </div> 
+                 </div> </li> 
+                <li class="js-model-id-52cacff0ed5ab0b3bf0533ef"> 
+                 <div class="trpDisplayPicture avatar-52cacff0ed5ab0b3bf0533ef avatar-s offline  "> 
+                  <img src="https://avatars0.githubusercontent.com/nacyot?v=3&amp;s=30" srcset="https://avatars0.githubusercontent.com/nacyot?v=3&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                  <div class="trpStatus" id="status"> 
+                  </div> 
+                 </div> </li> 
+                <li class="js-model-id-529c6b1ded5ab0b3bf04d541"> 
+                 <div class="trpDisplayPicture avatar-529c6b1ded5ab0b3bf04d541 avatar-s offline  "> 
+                  <img src="https://avatars0.githubusercontent.com/nickcheng?v=3&amp;s=30" srcset="https://avatars0.githubusercontent.com/nickcheng?v=3&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                  <div class="trpStatus" id="status"> 
+                  </div> 
+                 </div> </li> 
+                <li class="js-model-id-530070545e986b0712ef779d"> 
+                 <div class="trpDisplayPicture avatar-530070545e986b0712ef779d avatar-s offline  "> 
+                  <img src="https://avatars2.githubusercontent.com/scari?v=4&amp;s=30" srcset="https://avatars2.githubusercontent.com/scari?v=4&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                  <div class="trpStatus" id="status"> 
+                  </div> 
+                 </div> </li> 
+                <li class="js-model-id-52c70926ed5ab0b3bf0530fa"> 
+                 <div class="trpDisplayPicture avatar-52c70926ed5ab0b3bf0530fa avatar-s offline  "> 
+                  <img src="https://avatars1.githubusercontent.com/sirinath?v=4&amp;s=30" srcset="https://avatars1.githubusercontent.com/sirinath?v=4&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                  <div class="trpStatus" id="status"> 
+                  </div> 
+                 </div> </li> 
+                <li class="js-model-id-52f10abd5e986b0712ef51b4"> 
+                 <div class="trpDisplayPicture avatar-52f10abd5e986b0712ef51b4 avatar-s offline  "> 
+                  <img src="https://avatars2.githubusercontent.com/ssebastianj?v=3&amp;s=30" srcset="https://avatars2.githubusercontent.com/ssebastianj?v=3&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                  <div class="trpStatus" id="status"> 
+                  </div> 
+                 </div> </li> 
+                <li class="js-model-id-52f105bd5e986b0712ef4fb5"> 
+                 <div class="trpDisplayPicture avatar-52f105bd5e986b0712ef4fb5 avatar-s offline  "> 
+                  <img src="https://avatars2.githubusercontent.com/tarikd?v=3&amp;s=30" srcset="https://avatars2.githubusercontent.com/tarikd?v=3&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                  <div class="trpStatus" id="status"> 
+                  </div> 
+                 </div> </li> 
+                <li class="js-model-id-52ea95615e986b0712ef3f9c"> 
+                 <div class="trpDisplayPicture avatar-52ea95615e986b0712ef3f9c avatar-s offline  "> 
+                  <img src="https://avatars2.githubusercontent.com/tbitowt?v=4&amp;s=30" srcset="https://avatars2.githubusercontent.com/tbitowt?v=4&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                  <div class="trpStatus" id="status"> 
+                  </div> 
+                 </div> </li> 
+                <li class="js-model-id-529c6d36ed5ab0b3bf04db17"> 
+                 <div class="trpDisplayPicture avatar-529c6d36ed5ab0b3bf04db17 avatar-s offline  "> 
+                  <img src="https://avatars0.githubusercontent.com/tudorprodan?v=3&amp;s=30" srcset="https://avatars0.githubusercontent.com/tudorprodan?v=3&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                  <div class="trpStatus" id="status"> 
+                  </div> 
+                 </div> </li> 
+                <li class="js-model-id-530786d45e986b0712ef9f57"> 
+                 <div class="trpDisplayPicture avatar-530786d45e986b0712ef9f57 avatar-s offline  "> 
+                  <img src="https://avatars2.githubusercontent.com/unicod3?v=3&amp;s=30" srcset="https://avatars2.githubusercontent.com/unicod3?v=3&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                  <div class="trpStatus" id="status"> 
+                  </div> 
+                 </div> </li> 
+               </ul> </span> 
+              <div id="remaining-region" class="remaining-region"></div> </span> 
+            </div> 
+           </div> 
+           <div class="trpToolbarListContent" id="repo-info" style="display: none"></div> 
+          </div> 
+         </div> 
+         <div id="activity-region" class="right-toolbar-activity-area"> 
+          <div class="right-toolbar-activity-area-inner"> 
+           <div class="trpToolbarHeader"> 
+            <h5 class="trpToolbarHeaderItem selected" id="activity-header">Activity</h5> 
+           </div> 
+           <ul class="right-toolbar-activity-list u-font-smaller" id="activity-list">
+            <li class="activity-item model-id-6283bbdbd30b6b44ebf1f217">
+             <div class="activity-item-inner github-comment"> <i class="octicon octicon-comment activity-item__icon"></i> 
+              <div class="activity-time" id="time">
+               May 17 15:14
+              </div> 
+              <div class="gtrActivityItemText">
+               <span class="mention" data-link-type="mention" data-screen-name="oliver-sanders">oliver-sanders</span> commented <span class="issue open" data-link-type="issue" data-issue="724" data-issue-repo="ipython/traitlets">#724</span>
+              </div> 
+             </div> </li>
+            <li class="activity-item model-id-6283bbc9eaf3267f8565cab3">
+             <div class="activity-item-inner github-comment"> <i class="octicon octicon-comment activity-item__icon"></i> 
+              <div class="activity-time" id="time">
+               May 17 15:14
+              </div> 
+              <div class="gtrActivityItemText">
+               <span class="mention" data-link-type="mention" data-screen-name="oliver-sanders">oliver-sanders</span> commented <span class="issue open" data-link-type="issue" data-issue="724" data-issue-repo="ipython/traitlets">#724</span>
+              </div> 
+             </div> </li>
+            <li class="activity-item model-id-6282cb9ca687887f8dab368e">
+             <div class="activity-item-inner github-pull-request"> <i class="octicon octicon-git-pull-request activity-item__icon"></i> 
+              <div class="activity-time" id="time">
+               May 16 22:09
+              </div> 
+              <div class="gtrActivityItemText">
+               <span class="mention" data-link-type="mention" data-screen-name="pre-commit-ci[bot]">pre-commit-ci[bot]</span> opened <a class="issue open" href="https://github.com/ipython/traitlets/pull/730" target="_blank" data-link-type="issue" data-issue="730" data-issue-repo="ipython/traitlets">#730</a>
+              </div> 
+             </div> </li>
+            <li class="activity-item model-id-6282cb9ccd938f6ea24d785c">
+             <div class="activity-item-inner github-push"> <i class="octicon octicon-repo-push activity-item__icon"></i> 
+              <div class="activity-time" id="time">
+               May 16 22:09
+              </div> 
+              <div class="gtrActivityItemText"> 
+               <p class="activity-commit"> <span class="mention" data-link-type="mention" data-screen-name="pre-commit-ci[bot]">pre-commit-ci[bot]</span> on pre-commit-ci-update-config </p> 
+               <p class="activity-commit"> <span data-link-type="commit" data-commit-sha="ce964b99b5bac10b30e0224bf60ea27bf0d806e0" data-commit-repo="ipython/traitlets" class="commit">[pre-commit.ci] pre-commit auto…</span> <a href="https://github.com/ipython/traitlets/commit/ce964b99b5ba" target="_blank" style="opacity: 0.6">(compare)</a> </p> 
+              </div> 
+             </div> </li>
+            <li class="activity-item model-id-6282c99fd30b6b44ebf02157">
+             <div class="activity-item-inner github-comment"> <i class="octicon octicon-comment activity-item__icon"></i> 
+              <div class="activity-time" id="time">
+               May 16 22:01
+              </div> 
+              <div class="gtrActivityItemText">
+               <span class="mention" data-link-type="mention" data-screen-name="psychemedia">psychemedia</span> commented <span class="issue open" data-link-type="issue" data-issue="13346" data-issue-repo="ipython/ipython">#13346</span>
+              </div> 
+             </div> </li>
+            <li class="activity-item model-id-6282c97c14df4e44f22b0d77">
+             <div class="activity-item-inner github-comment"> <i class="octicon octicon-comment activity-item__icon"></i> 
+              <div class="activity-time" id="time">
+               May 16 22:00
+              </div> 
+              <div class="gtrActivityItemText">
+               <span class="mention" data-link-type="mention" data-screen-name="psychemedia">psychemedia</span> commented <span class="issue open" data-link-type="issue" data-issue="13346" data-issue-repo="ipython/ipython">#13346</span>
+              </div> 
+             </div> </li>
+            <li class="activity-item model-id-6282562b89dcc96e9c055e39">
+             <div class="activity-item-inner github-issue github-issue-opened"> <i class="octicon octicon-issue-opened activity-item__icon"></i> 
+              <div class="activity-time" id="time">
+               May 16 13:48
+              </div> 
+              <div class="gtrActivityItemText">
+               <span class="mention" data-link-type="mention" data-screen-name="danking">danking</span> opened <span class="issue open" data-link-type="issue" data-issue="729" data-issue-repo="ipython/traitlets">#729</span>
+              </div> 
+             </div> </li>
+            <li class="activity-item model-id-628253e5d4ef6e15af4ba9a6">
+             <div class="activity-item-inner github-comment"> <i class="octicon octicon-comment activity-item__icon"></i> 
+              <div class="activity-time" id="time">
+               May 16 13:38
+              </div> 
+              <div class="gtrActivityItemText">
+               <span class="mention" data-link-type="mention" data-screen-name="hroncok">hroncok</span> commented <span class="issue closed" data-link-type="issue" data-issue="727" data-issue-repo="ipython/traitlets">#727</span>
+              </div> 
+             </div> </li>
+            <li class="activity-item model-id-62825395fa846847c969e2d2">
+             <div class="activity-item-inner github-comment"> <i class="octicon octicon-comment activity-item__icon"></i> 
+              <div class="activity-time" id="time">
+               May 16 13:37
+              </div> 
+              <div class="gtrActivityItemText">
+               <span class="mention" data-link-type="mention" data-screen-name="blink1073">blink1073</span> commented <span class="issue closed" data-link-type="issue" data-issue="727" data-issue-repo="ipython/traitlets">#727</span>
+              </div> 
+             </div> </li>
+            <li class="activity-item model-id-628252d4fa846847c969e186">
+             <div class="activity-item-inner github-comment"> <i class="octicon octicon-comment activity-item__icon"></i> 
+              <div class="activity-time" id="time">
+               May 16 13:34
+              </div> 
+              <div class="gtrActivityItemText">
+               <span class="mention" data-link-type="mention" data-screen-name="hroncok">hroncok</span> commented <span class="issue closed" data-link-type="issue" data-issue="727" data-issue-repo="ipython/traitlets">#727</span>
+              </div> 
+             </div> </li>
+            <li class="activity-item model-id-62824dedd4ef6e15af4b9c34">
+             <div class="activity-item-inner github-push"> <i class="octicon octicon-repo-push activity-item__icon"></i> 
+              <div class="activity-time" id="time">
+               May 16 13:13
+              </div> 
+              <div class="gtrActivityItemText"> 
+               <p class="activity-commit"> <span class="mention" data-link-type="mention" data-screen-name="blink1073">blink1073</span> on main </p> 
+               <p class="activity-commit"> <span data-link-type="commit" data-commit-sha="ba334d5e0837fcf7433370fa2ca93f94598bba94" data-commit-repo="ipython/traitlets" class="commit">back to dev version</span> <a href="https://github.com/ipython/traitlets/compare/f39689f0b1f9...ba334d5e0837" target="_blank" style="opacity: 0.6">(compare)</a> </p> 
+              </div> 
+             </div> </li>
+            <li class="activity-item model-id-62824dba9db19366b22f5d53">
+             <div class="activity-item-inner github-push"> <i class="octicon octicon-repo-push activity-item__icon"></i> 
+              <div class="activity-time" id="time">
+               May 16 13:12
+              </div> 
+              <div class="gtrActivityItemText"> 
+               <p class="activity-commit"> <span class="mention" data-link-type="mention" data-screen-name="blink1073">blink1073</span> on 5.2.1.post0 </p> 
+               <p class="activity-commit"> <a href="https://github.com/ipython/traitlets/compare/5.2.1.post0" target="_blank" style="opacity: 0.6">(compare)</a> </p> 
+              </div> 
+             </div> </li>
+            <li class="activity-item model-id-62824db99db19366b22f5d51">
+             <div class="activity-item-inner github-push"> <i class="octicon octicon-repo-push activity-item__icon"></i> 
+              <div class="activity-time" id="time">
+               May 16 13:12
+              </div> 
+              <div class="gtrActivityItemText"> 
+               <p class="activity-commit"> <span class="mention" data-link-type="mention" data-screen-name="blink1073">blink1073</span> on main </p> 
+               <p class="activity-commit"> <span data-link-type="commit" data-commit-sha="f39689f0b1f91eb90e66fb1f60d071b6abf88cef" data-commit-repo="ipython/traitlets" class="commit">Release 5.2.1.post0</span> <a href="https://github.com/ipython/traitlets/compare/3de8973d137d...f39689f0b1f9" target="_blank" style="opacity: 0.6">(compare)</a> </p> 
+              </div> 
+             </div> </li>
+            <li class="activity-item model-id-62824a1ea687887f8daa1c32">
+             <div class="activity-item-inner github-comment"> <i class="octicon octicon-comment activity-item__icon"></i> 
+              <div class="activity-time" id="time">
+               May 16 12:57
+              </div> 
+              <div class="gtrActivityItemText">
+               <span class="mention" data-link-type="mention" data-screen-name="blink1073">blink1073</span> commented <span class="issue closed" data-link-type="issue" data-issue="727" data-issue-repo="ipython/traitlets">#727</span>
+              </div> 
+             </div> </li>
+            <li class="activity-item model-id-628249a089dcc96e9c0541ed">
+             <div class="activity-item-inner github-push"> <i class="octicon octicon-repo-push activity-item__icon"></i> 
+              <div class="activity-time" id="time">
+               May 16 12:54
+              </div> 
+              <div class="gtrActivityItemText"> 
+               <p class="activity-commit"> <span class="mention" data-link-type="mention" data-screen-name="blink1073">blink1073</span> on 5.2.1 </p> 
+               <p class="activity-commit"> <a href="https://github.com/ipython/traitlets/compare/5.2.1" target="_blank" style="opacity: 0.6">(compare)</a> </p> 
+              </div> 
+             </div> </li>
+            <li class="activity-item model-id-6282496feaf3267f8562e21d">
+             <div class="activity-item-inner github-push"> <i class="octicon octicon-repo-push activity-item__icon"></i> 
+              <div class="activity-time" id="time">
+               May 16 12:54
+              </div> 
+              <div class="gtrActivityItemText"> 
+               <p class="activity-commit"> <span class="mention" data-link-type="mention" data-screen-name="blink1073">blink1073</span> on main </p> 
+               <p class="activity-commit"> <span data-link-type="commit" data-commit-sha="3de8973d137d53db0bde18985e6e2014f1ec2088" data-commit-repo="ipython/traitlets" class="commit">Release</span> <a href="https://github.com/ipython/traitlets/compare/18b2f47a6c04...3de8973d137d" target="_blank" style="opacity: 0.6">(compare)</a> </p> 
+              </div> 
+             </div> </li>
+            <li class="activity-item model-id-62824591bb0de60c72408ba9">
+             <div class="activity-item-inner github-push"> <i class="octicon octicon-repo-push activity-item__icon"></i> 
+              <div class="activity-time" id="time">
+               May 16 12:37
+              </div> 
+              <div class="gtrActivityItemText"> 
+               <p class="activity-commit"> <span class="mention" data-link-type="mention" data-screen-name="blink1073">blink1073</span> on main </p> 
+               <p class="activity-commit"> <span data-link-type="commit" data-commit-sha="e1b7f7d38adf64724b60ab331e85405f29e8e669" data-commit-repo="ipython/traitlets" class="commit">logging: don't attmpt to close …</span> <span data-link-type="commit" data-commit-sha="4f58814bb503aa342cc0238ce104df11cd7a39f1" data-commit-repo="ipython/traitlets" class="commit">[pre-commit.ci] auto fixes from…</span> <span data-link-type="commit" data-commit-sha="83ac6f9925c7f980158838284f82a0f3feab4e31" data-commit-repo="ipython/traitlets" class="commit">logging: fix test for Python 3.…</span> and 1 more <a href="https://github.com/ipython/traitlets/compare/af66cc021e60...18b2f47a6c04" target="_blank" style="opacity: 0.6">(compare)</a> </p> 
+              </div> 
+             </div> </li>
+            <li class="activity-item model-id-6282459146495f47cfe2f500">
+             <div class="activity-item-inner github-pull-request"> <i class="octicon octicon-git-pull-request activity-item__icon"></i> 
+              <div class="activity-time" id="time">
+               May 16 12:37
+              </div> 
+              <div class="gtrActivityItemText">
+               <span class="mention" data-link-type="mention" data-screen-name="blink1073">blink1073</span> closed <a class="issue closed" href="https://github.com/ipython/traitlets/pull/727" target="_blank" data-link-type="issue" data-issue="727" data-issue-repo="ipython/traitlets">#727</a>
+              </div> 
+             </div> </li>
+            <li class="activity-item model-id-62824590a687887f8daa135b">
+             <div class="activity-item-inner github-issue github-issue-closed"> <i class="octicon octicon-issue-opened activity-item__icon"></i> 
+              <div class="activity-time" id="time">
+               May 16 12:37
+              </div> 
+              <div class="gtrActivityItemText">
+               <span class="mention" data-link-type="mention" data-screen-name="blink1073">blink1073</span> closed <span class="issue closed" data-link-type="issue" data-issue="722" data-issue-repo="ipython/traitlets">#722</span>
+              </div> 
+             </div> </li>
+            <li class="activity-item model-id-6282433b41f4560c6fa230b3">
+             <div class="activity-item-inner github-comment"> <i class="octicon octicon-comment activity-item__icon"></i> 
+              <div class="activity-time" id="time">
+               May 16 12:27
+              </div> 
+              <div class="gtrActivityItemText">
+               <span class="mention" data-link-type="mention" data-screen-name="MrMino">MrMino</span> commented <span class="issue open" data-link-type="issue" data-issue="13672" data-issue-repo="ipython/ipython">#13672</span>
+              </div> 
+             </div> </li>
+           </ul> 
+          </div> 
+         </div> 
+        </div> 
+        <div id="right-toolbar-footer-region" class="right-toolbar-region__footer"> 
+         <svg class="menu-toggle-icon js-menu-toggle-icon" width="30px" height="34px" viewbox="0 0 30 34"> <path d="M0,6 l15,0 l15,0" /> <path d="M0,17 l15,0 l15,0" /> <path d="M0,28 l15,0 l15,0" /> 
+         </svg> 
+        </div> 
+       </div> 
+      </div> 
+      <script>window.__INITIAL_STATE__={"search":{"repo":{"loading":false,"error":null,"results":[]},"room":{"loading":false,"error":null,"results":[]},"people":{"loading":false,"error":null,"results":[]},"message":{"loading":false,"error":null,"results":[]},"searchInputValue":"","current":{"results":[]}},"joinRoomRequest":{"loading":false,"error":null,"results":[]},"isMobile":false,"isLoggedIn":false,"darkTheme":false,"groupMap":{},"roomMap":{"52ebe3e15e986b0712ef4106":{"id":"52ebe3e15e986b0712ef4106","name":"ipython\u002Fipython","topic":"Talking about cool IPython features!","avatarUrl":"https:\u002F\u002Favatars-04.gitter.im\u002Fgroup\u002Fiv\u002F4\u002F57542d0dc43b8c60197791cc","uri":"ipython\u002Fipython","userCount":1779,"url":"\u002Fipython\u002Fipython","githubType":"REPO","security":"PUBLIC","premium":true,"groupId":"57542d0dc43b8c60197791cc","public":true,"matrixRoomLink":"https:\u002F\u002Fmatrix.to\u002F#\u002F#ipython_ipython:gitter.im?utm_source=gitter","v":991}},"messageMap":{},"displayedRoomId":"52ebe3e15e986b0712ef4106","hightLightedMessageId":null,"leftMenuState":"all","leftMenuPinnedState":true,"leftMenuExpandedState":false,"favouriteDraggingInProgress":false,"threadMessageFeed":{"isVisible":false,"draftMessage":"","messageEditState":{"id":null,"text":null},"atTop":false,"atBottom":false,"parentId":null,"childMessagesRequest":{"loading":false,"error":null,"results":[]}},"createCommunity":{"currentStep":"step-main","communityName":"","communityNameError":null,"communitySlug":"","slugAvailabilityStatus":null,"communitySlugError":null,"selectedBackingEntity":null,"allowBadger":true,"orgs":[],"repos":[],"entityTypeTabState":"tab-orgs","orgsRequest":{"loading":false,"error":null,"results":[]},"reposRequest":{"loading":false,"error":null,"results":[]},"communitySubmitRequest":{"loading":false,"error":null,"results":[]}},"createRoom":{"adminGroupMap":{},"groupFilterText":"","selectedGroupId":null,"groupError":null,"roomName":"","roomNameError":null,"roomNameAvailabilityStatus":null,"adminRepoMap":{},"repoFilterText":"","selectedRepoId":null,"roomSecurity":"PUBLIC","onlyGithubUsers":false,"allowGroupAdmins":false,"allowBadger":true,"repos":[],"groupsRequest":{"loading":false,"error":null,"results":[]},"reposRequest":{"loading":false,"error":null,"results":[]},"roomSubmitRequest":{"loading":false,"error":null,"results":[]}}}</script>
+      <style data-vue-ssr-id="7c73d085:0">.root[data-v-3b2f1a78] {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  order: 2;
+  display: none;
+  /*
+  The TMF width changes between 300px and 600px boundaries.
+  Within this boundary it tries to be 40% of the space taken by
+  both panels (MMF - 60%, TMF - 40%)
+  */
+  min-width: 300px;
+  max-width: 600px;
+  width: 40%;
+  color: #333;
+  text-align: left;
+  box-sizing: border-box;
+}
+.root.opened[data-v-3b2f1a78] {
+  display: flex;
+}
+.mobile .root.opened[data-v-3b2f1a78] {
+  position: absolute;
+  z-index: 1001;
+  width: 100%;
+}
+.root[data-v-3b2f1a78] *,
+.root[data-v-3b2f1a78] *:before,
+.root[data-v-3b2f1a78] *:after {
+  box-sizing: inherit;
+}
+.body[data-v-3b2f1a78] {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #fdfdfd;
+  border-left: 1px solid #f1f1f1;
+}
+.dark-theme .body[data-v-3b2f1a78] {
+  background-color: #383736;
+  border-left-color: #2d2c2c;
+}
+.content[data-v-3b2f1a78] {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.error-box[data-v-3b2f1a78] {
+  margin: 10px;
+}
+.chat-messages .error-box[data-v-3b2f1a78] {
+  margin-left: 50px;
+}
+.loading-message[data-v-3b2f1a78] {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 30px;
+  width: 100%;
+  text-align: center;
+}
+.chat-messages[data-v-3b2f1a78] {
+  width: 100%;
+  display: inline-block;
+  overflow: auto;
+  flex-grow: 1;
+}
+</style>
+      <div data-server-rendered="true" class="js-thread-message-feed-root root" data-v-3b2f1a78>
+       <!---->
+      </div> 
+      <div class="chat-app"> 
+       <div class="collaborators-container" id="collaborators-container"></div> 
+       <div class="trpContentPanel" id="content-wrapper"> 
+        <div> 
+         <div class="trpChatPanel"> 
+          <div id="unread-banner" style="display:none"></div> 
+          <div id="bottom-unread-banner" style="display:none"></div> 
+          <div id="content-frame" class="trpChatContainer primary-scroll chat-container" role="log" aria-live="polite" aria-atomic="false" aria-relevant="additions text"> 
+           <div id="chat-container" role="list"> 
+            <div> 
+             <div class="chat-item model-id-6001483691e9b71badd992d5 burstStart read  " role="listitem">
+              <div class="chat-item__container"> 
+               <div class="chat-item__aside"> 
+                <div class="chat-item__avatar"> 
+                 <div class="trpDisplayPicture avatar-529c6cc9ed5ab0b3bf04d9eb avatar-s offline  "> 
+                  <img src="https://avatars1.githubusercontent.com/u/151929?v=4&amp;s=30" srcset="https://avatars1.githubusercontent.com/u/151929?v=4&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="chat-item__actions js-chat-item-actions"> <i class="chat-item__icon icon-check chat-item__icon--read js-chat-item-readby"></i> <i class="chat-item__icon icon-ellipsis"></i> 
+               </div> 
+               <div class="chat-item__content"> 
+                <div class="chat-item__details"> 
+                 <div class="chat-item__from js-chat-item-from">
+                  Min RK
+                 </div> 
+                 <div class="chat-item__username js-chat-item-from">
+                  @minrk
+                 </div> <a class="chat-item__time js-chat-time" href="https://gitter.im/ipython/ipython?at=6001483691e9b71badd992d5" title=""></a> 
+                </div> 
+                <div class="chat-item__text js-chat-item-text">
+                  Not currently, I believe. Do you have a specific use case in mind? Since objects come from multiple sources, e.g. <code>set(dir(obj)) | set(dir(obj.__class__))</code>, ordering is enforced to be alphabetical. 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="chat-item model-id-6001497e5562a61e9aa84bfb burstStart read  " role="listitem">
+              <div class="chat-item__container"> 
+               <div class="chat-item__aside"> 
+                <div class="chat-item__avatar"> 
+                 <div class="trpDisplayPicture avatar-529c6cc9ed5ab0b3bf04d9eb avatar-s offline  "> 
+                  <img src="https://avatars1.githubusercontent.com/u/151929?v=4&amp;s=30" srcset="https://avatars1.githubusercontent.com/u/151929?v=4&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="chat-item__actions js-chat-item-actions"> <i class="chat-item__icon icon-check chat-item__icon--read js-chat-item-readby"></i> <i class="chat-item__icon icon-ellipsis"></i> 
+               </div> 
+               <div class="chat-item__content"> 
+                <div class="chat-item__details"> 
+                 <div class="chat-item__from js-chat-item-from">
+                  Min RK
+                 </div> 
+                 <div class="chat-item__username js-chat-item-from">
+                  @minrk
+                 </div> <a class="chat-item__time js-chat-time" href="https://gitter.im/ipython/ipython?at=6001497e5562a61e9aa84bfb" title=""></a> 
+                </div> 
+                <div class="chat-item__text js-chat-item-text">
+                  However, completions that come from jedi may be grouped by type in the UI, I believe 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="chat-item model-id-6001cd1e81c55b09c70d84bc burstStart read  " role="listitem">
+              <div class="chat-item__container"> 
+               <div class="chat-item__aside"> 
+                <div class="chat-item__avatar"> 
+                 <div class="trpDisplayPicture avatar-54d4a1d6db8155e6700f853b avatar-s offline  "> 
+                  <img src="https://avatars1.githubusercontent.com/u/449558?v=4&amp;s=30" srcset="https://avatars1.githubusercontent.com/u/449558?v=4&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="chat-item__actions js-chat-item-actions"> <i class="chat-item__icon icon-check chat-item__icon--read js-chat-item-readby"></i> <i class="chat-item__icon icon-ellipsis"></i> 
+               </div> 
+               <div class="chat-item__content"> 
+                <div class="chat-item__details"> 
+                 <div class="chat-item__from js-chat-item-from">
+                  Andreas Mueller
+                 </div> 
+                 <div class="chat-item__username js-chat-item-from">
+                  @amueller
+                 </div> <a class="chat-item__time js-chat-time" href="https://gitter.im/ipython/ipython?at=6001cd1e81c55b09c70d84bc" title=""></a> 
+                </div> 
+                <div class="chat-item__text js-chat-item-text">
+                  Thanks <span data-link-type="mention" data-screen-name="minrk" class="mention">@minrk</span>! Well, basically I'm trying to make suggestions better for my particular use-case (which is data-science related, shocker). I want nice autocomplete in notebooks. If you look at autocomplete in IDEs, they are ranked by relevance which makes it much more likely that you can do &lt;tab&gt;&lt;return&gt; to finish the command. Hm jedi is pretty deeply integrated in ipython, right? I figure I could monkey-patch ipython but that seems not very sustainable ;) I could try to hook into Jupyter but I would love it to work across different notebook implementations, so IPython would be the easiest place to do it. 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="chat-item model-id-6001e21efe007479e413eb07 burstStart read  " role="listitem">
+              <div class="chat-item__container"> 
+               <div class="chat-item__aside"> 
+                <div class="chat-item__avatar"> 
+                 <div class="trpDisplayPicture avatar-5b1ff060d73408ce4f9d1606 avatar-s offline  "> 
+                  <img src="https://avatars2.githubusercontent.com/u/5832902?v=4&amp;s=30" srcset="https://avatars2.githubusercontent.com/u/5832902?v=4&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="chat-item__actions js-chat-item-actions"> <i class="chat-item__icon icon-check chat-item__icon--read js-chat-item-readby"></i> <i class="chat-item__icon icon-ellipsis"></i> 
+               </div> 
+               <div class="chat-item__content"> 
+                <div class="chat-item__details"> 
+                 <div class="chat-item__from js-chat-item-from">
+                  Micha? Krassowski
+                 </div> 
+                 <div class="chat-item__username js-chat-item-from">
+                  @krassowski
+                 </div> <a class="chat-item__time js-chat-time" href="https://gitter.im/ipython/ipython?at=6001e21efe007479e413eb07" title=""></a> 
+                </div> 
+                <div class="chat-item__text js-chat-item-text"> <span data-link-type="mention" data-screen-name="amueller" class="mention">@amueller</span> if you are using jupyter notebook check out:
+                 <ul> 
+                  <li><a href="https://github.com/wenmin-wu/jupyter-tabnine" rel="nofollow noopener noreferrer" target="_blank" class="link ">https://github.com/wenmin-wu/jupyter-tabnine</a></li> 
+                  <li><a href="https://jupyter-contrib-nbextensions.readthedocs.io/en/latest/nbextensions/hinterland/README.html" rel="nofollow noopener noreferrer" target="_blank" class="link ">https://jupyter-contrib-nbextensions.readthedocs.io/en/latest/nbextensions/hinterland/README.html</a><br>For JuypterLab:</li> 
+                  <li><a href="https://github.com/kiteco/jupyterlab-kite" rel="nofollow noopener noreferrer" target="_blank" class="link ">https://github.com/kiteco/jupyterlab-kite</a></li> 
+                  <li><a href="https://github.com/krassowski/jupyterlab-lsp" rel="nofollow noopener noreferrer" target="_blank" class="link ">https://github.com/krassowski/jupyterlab-lsp</a></li> 
+                 </ul> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="chat-item model-id-6001e6d291e9b71baddb3de2 burstStart read  " role="listitem">
+              <div class="chat-item__container"> 
+               <div class="chat-item__aside"> 
+                <div class="chat-item__avatar"> 
+                 <div class="trpDisplayPicture avatar-5b1ff060d73408ce4f9d1606 avatar-s offline  "> 
+                  <img src="https://avatars2.githubusercontent.com/u/5832902?v=4&amp;s=30" srcset="https://avatars2.githubusercontent.com/u/5832902?v=4&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="chat-item__actions js-chat-item-actions"> <i class="chat-item__icon icon-check chat-item__icon--read js-chat-item-readby"></i> <i class="chat-item__icon icon-ellipsis"></i> 
+               </div> 
+               <div class="chat-item__content"> 
+                <div class="chat-item__details"> 
+                 <div class="chat-item__from js-chat-item-from">
+                  Micha? Krassowski
+                 </div> 
+                 <div class="chat-item__username js-chat-item-from">
+                  @krassowski
+                 </div> <a class="chat-item__time js-chat-time" href="https://gitter.im/ipython/ipython?at=6001e6d291e9b71baddb3de2" title=""></a> 
+                </div> 
+                <div class="chat-item__text js-chat-item-text">
+                  But if you just want to add new suggestions you could use <code>complete_command</code> hook I believe <code>get_ipython().set_hook('complete_command', your_func, re_key='.*')</code> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="chat-item model-id-6007a144cae490555f564eba burstStart read  " role="listitem">
+              <div class="chat-item__container"> 
+               <div class="chat-item__aside"> 
+                <div class="chat-item__avatar"> 
+                 <div class="trpDisplayPicture avatar-54d4a1d6db8155e6700f853b avatar-s offline  "> 
+                  <img src="https://avatars1.githubusercontent.com/u/449558?v=4&amp;s=30" srcset="https://avatars1.githubusercontent.com/u/449558?v=4&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="chat-item__actions js-chat-item-actions"> <i class="chat-item__icon icon-check chat-item__icon--read js-chat-item-readby"></i> <i class="chat-item__icon icon-ellipsis"></i> 
+               </div> 
+               <div class="chat-item__content"> 
+                <div class="chat-item__details"> 
+                 <div class="chat-item__from js-chat-item-from">
+                  Andreas Mueller
+                 </div> 
+                 <div class="chat-item__username js-chat-item-from">
+                  @amueller
+                 </div> <a class="chat-item__time js-chat-time" href="https://gitter.im/ipython/ipython?at=6007a144cae490555f564eba" title=""></a> 
+                </div> 
+                <div class="chat-item__text js-chat-item-text">
+                  Thanks <span data-link-type="mention" data-screen-name="krassowski" class="mention">@krassowski</span>. The reason I was looking at ipython was that I'd love to have this work across front-ends. I'm at Microsoft these days and having this work in their web interfaces as well as VSCode and JupyterLab and classic notebook would be great ;) I'll look at those extensions though, thanks! It's a bit unfortunate that there is no more homogeneous plug-in ecosystem for the frontends right now :-/ 
+                </div> 
+                <div class="chat-item__thread-message-indicator parent-message-indicator js-parent-message-indicator"> 
+                 <img class="chat-item__pmi-icon" src="//cdn01.gitter.im/_s/39e3eb229/images/svg/corner-down-right.svg"> 6 replies 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="chat-item model-id-601618010eed905f188081c3 burstStart read  " role="listitem">
+              <div class="chat-item__container"> 
+               <div class="chat-item__aside"> 
+                <div class="chat-item__avatar"> 
+                 <div class="trpDisplayPicture avatar-552893ce15522ed4b3ded6d8 avatar-s offline  "> 
+                  <img src="https://avatars1.githubusercontent.com/u/8541009?v=4&amp;s=30" srcset="https://avatars1.githubusercontent.com/u/8541009?v=4&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="chat-item__actions js-chat-item-actions"> <i class="chat-item__icon icon-check chat-item__icon--read js-chat-item-readby"></i> <i class="chat-item__icon icon-ellipsis"></i> 
+               </div> 
+               <div class="chat-item__content"> 
+                <div class="chat-item__details"> 
+                 <div class="chat-item__from js-chat-item-from">
+                  RK
+                 </div> 
+                 <div class="chat-item__username js-chat-item-from">
+                  @sonthonaxrk
+                 </div> <a class="chat-item__time js-chat-time" href="https://gitter.im/ipython/ipython?at=601618010eed905f188081c3" title=""></a> 
+                </div> 
+                <div class="chat-item__text js-chat-item-text"> 
+                 <p>Hey IPython developers :) thanks for all your awesome work. </p>
+                 <p>Recently I've been trying out some GUI based workflows in Jupyter, and I've hit some stumbling blocks around asyncio. Where I get deadlocks when trying to wait on <code>Comm</code> events. As it turns out the kernel will do process one message at a time. Since running a cell creates a message, and waiting for a <code>Comm</code> depends on a message, the kernel will hang if I try to wait for a Comm in a cell.</p>
+                 <p>I thought the problem would be somewhat intractable, but actually I think it's quite simple to solve. I'm happy to do it myself. I think all I would need to do is to treat <code>Comm</code> events as a special case that can send asynchronous messages. I think this makes sense, because the other message types are definitely synchronous (like <code>execute_request</code>); but <code>Comm</code> events are not. For example, cell execution obviously needs to happen atomically; but should a button click really be blocked by another cell doing an <code>await asyncio.sleep()</code>?</p>
+                 <p>Happy to do this work myself, as I've spent quite a bit of time figuring out how IPython works. Just wondering what you all think :)</p> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="chat-item model-id-601697789238c531ad1521ed burstStart read  " role="listitem">
+              <div class="chat-item__container"> 
+               <div class="chat-item__aside"> 
+                <div class="chat-item__avatar"> 
+                 <div class="trpDisplayPicture avatar-552893ce15522ed4b3ded6d8 avatar-s offline  "> 
+                  <img src="https://avatars1.githubusercontent.com/u/8541009?v=4&amp;s=30" srcset="https://avatars1.githubusercontent.com/u/8541009?v=4&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="chat-item__actions js-chat-item-actions"> <i class="chat-item__icon icon-check chat-item__icon--read js-chat-item-readby"></i> <i class="chat-item__icon icon-ellipsis"></i> 
+               </div> 
+               <div class="chat-item__content"> 
+                <div class="chat-item__details"> 
+                 <div class="chat-item__from js-chat-item-from">
+                  RK
+                 </div> 
+                 <div class="chat-item__username js-chat-item-from">
+                  @sonthonaxrk
+                 </div> <a class="chat-item__time js-chat-time" href="https://gitter.im/ipython/ipython?at=601697789238c531ad1521ed" title=""></a> 
+                </div> 
+                <div class="chat-item__text js-chat-item-text"> 
+                 <p>Hey all,</p>
+                 <p>Quick question: how do I add custom kernels to the registry of kernels Jupyter can use? Is there a hook for that?</p> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="chat-item model-id-601697d3428d9727dd467083 burstContinued read  " role="listitem">
+              <div class="chat-item__container"> 
+               <div class="chat-item__actions js-chat-item-actions"> <i class="chat-item__icon icon-check chat-item__icon--read js-chat-item-readby"></i> <i class="chat-item__icon icon-ellipsis"></i> 
+               </div> 
+               <div class="chat-item__content"> 
+                <div class="chat-item__text js-chat-item-text">
+                  So, for instance, when I install xeus-python, how does Jupyter know it's installed? 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="chat-item model-id-601698b224cd6b60d80b9323 burstStart read  " role="listitem">
+              <div class="chat-item__container"> 
+               <div class="chat-item__aside"> 
+                <div class="chat-item__avatar"> 
+                 <div class="trpDisplayPicture avatar-552893ce15522ed4b3ded6d8 avatar-s offline  "> 
+                  <img src="https://avatars1.githubusercontent.com/u/8541009?v=4&amp;s=30" srcset="https://avatars1.githubusercontent.com/u/8541009?v=4&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="chat-item__actions js-chat-item-actions"> <i class="chat-item__icon icon-check chat-item__icon--read js-chat-item-readby"></i> <i class="chat-item__icon icon-ellipsis"></i> 
+               </div> 
+               <div class="chat-item__content"> 
+                <div class="chat-item__details"> 
+                 <div class="chat-item__from js-chat-item-from">
+                  RK
+                 </div> 
+                 <div class="chat-item__username js-chat-item-from">
+                  @sonthonaxrk
+                 </div> <a class="chat-item__time js-chat-time" href="https://gitter.im/ipython/ipython?at=601698b224cd6b60d80b9323" title=""></a> 
+                </div> 
+                <div class="chat-item__text js-chat-item-text"> 
+                 <p><a href="https://jupyter-client.readthedocs.io/en/stable/api/kernelspec.html?highlight=install-kernel.html#jupyter_client.kernelspec.KernelSpecManager.install_kernel_spec" rel="nofollow noopener noreferrer" target="_blank" class="link ">https://jupyter-client.readthedocs.io/en/stable/api/kernelspec.html?highlight=install-kernel.html#jupyter_client.kernelspec.KernelSpecManager.install_kernel_spec</a></p>
+                 <p>Cool found it :)</p>
+                 <p>Sorry should have searched more. I suppose disperate docs is the side effect of splitting everything up into different concerns.</p> 
+                </div> 
+                <div class="chat-item__thread-message-indicator parent-message-indicator js-parent-message-indicator"> 
+                 <img class="chat-item__pmi-icon" src="//cdn01.gitter.im/_s/39e3eb229/images/svg/corner-down-right.svg"> 5 replies 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="chat-item model-id-601698d99fa6765ef8eb1a5f burstContinued read  " role="listitem">
+              <div class="chat-item__container"> 
+               <div class="chat-item__actions js-chat-item-actions"> <i class="chat-item__icon icon-check chat-item__icon--read js-chat-item-readby"></i> <i class="chat-item__icon icon-ellipsis"></i> 
+               </div> 
+               <div class="chat-item__content"> 
+                <div class="chat-item__text js-chat-item-text">
+                  ipython, jupyter, jupyter-client, ipykernel, ends up being a lot. 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="chat-item model-id-6016e02a9d5c644f663fd559 burstStart read  " role="listitem">
+              <div class="chat-item__container"> 
+               <div class="chat-item__aside"> 
+                <div class="chat-item__avatar"> 
+                 <div class="trpDisplayPicture avatar-552893ce15522ed4b3ded6d8 avatar-s offline  "> 
+                  <img src="https://avatars1.githubusercontent.com/u/8541009?v=4&amp;s=30" srcset="https://avatars1.githubusercontent.com/u/8541009?v=4&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="chat-item__actions js-chat-item-actions"> <i class="chat-item__icon icon-check chat-item__icon--read js-chat-item-readby"></i> <i class="chat-item__icon icon-ellipsis"></i> 
+               </div> 
+               <div class="chat-item__content"> 
+                <div class="chat-item__details"> 
+                 <div class="chat-item__from js-chat-item-from">
+                  RK
+                 </div> 
+                 <div class="chat-item__username js-chat-item-from">
+                  @sonthonaxrk
+                 </div> <a class="chat-item__time js-chat-time" href="https://gitter.im/ipython/ipython?at=6016e02a9d5c644f663fd559" title=""></a> 
+                </div> 
+                <div class="chat-item__text js-chat-item-text"> 
+                 <p><a href="https://github.com/sonthonaxrk/async_gui_ipython_kernel" rel="nofollow noopener noreferrer" target="_blank" class="link ">https://github.com/sonthonaxrk/async_gui_ipython_kernel</a></p>
+                 <p>I think I've done something kinda cool and opens up some possibilities with IPython.</p> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="chat-item model-id-6018475932e01b4f716a4afa burstStart read  " role="listitem">
+              <div class="chat-item__container"> 
+               <div class="chat-item__aside"> 
+                <div class="chat-item__avatar"> 
+                 <div class="trpDisplayPicture avatar-552893ce15522ed4b3ded6d8 avatar-s offline  "> 
+                  <img src="https://avatars1.githubusercontent.com/u/8541009?v=4&amp;s=30" srcset="https://avatars1.githubusercontent.com/u/8541009?v=4&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="chat-item__actions js-chat-item-actions"> <i class="chat-item__icon icon-check chat-item__icon--read js-chat-item-readby"></i> <i class="chat-item__icon icon-ellipsis"></i> 
+               </div> 
+               <div class="chat-item__content"> 
+                <div class="chat-item__details"> 
+                 <div class="chat-item__from js-chat-item-from">
+                  RK
+                 </div> 
+                 <div class="chat-item__username js-chat-item-from">
+                  @sonthonaxrk
+                 </div> <a class="chat-item__time js-chat-time" href="https://gitter.im/ipython/ipython?at=6018475932e01b4f716a4afa" title=""></a> 
+                </div> 
+                <div class="chat-item__text js-chat-item-text">
+                  Hey I've written a pull request, that I think could be really useful for IPython. <a target="_blank" data-link-type="pr" data-issue="589" href="https://github.com/ipython/ipykernel/pull/589" data-provider="github" data-issue-repo="ipython/ipykernel" class="pr">ipython/ipykernel#589</a> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="chat-item model-id-60184771a0246860dc24fdf3 burstContinued read  " role="listitem">
+              <div class="chat-item__container"> 
+               <div class="chat-item__actions js-chat-item-actions"> <i class="chat-item__icon icon-check chat-item__icon--read js-chat-item-readby"></i> <i class="chat-item__icon icon-ellipsis"></i> 
+               </div> 
+               <div class="chat-item__content"> 
+                <div class="chat-item__text js-chat-item-text">
+                  That fixes the issue I described in my earlier messages. 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="chat-item model-id-601848161ed88c58d813ccef burstContinued read  " role="listitem">
+              <div class="chat-item__container"> 
+               <div class="chat-item__actions js-chat-item-actions"> <i class="chat-item__icon icon-check chat-item__icon--read js-chat-item-readby"></i> <i class="chat-item__icon icon-ellipsis"></i> 
+               </div> 
+               <div class="chat-item__content"> 
+                <div class="chat-item__text js-chat-item-text">
+                  However, I'm getting test failures on (ubuntu, 3.6) and (macos, pypy3), but not on (macos, 3.6) or (ubuntu pypy3). I'm really struggling to reproduce them locally. 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="chat-item model-id-6018483aa0246860dc250033 burstContinued read  " role="listitem">
+              <div class="chat-item__container"> 
+               <div class="chat-item__actions js-chat-item-actions"> <i class="chat-item__icon icon-check chat-item__icon--read js-chat-item-readby"></i> <i class="chat-item__icon icon-ellipsis"></i> 
+               </div> 
+               <div class="chat-item__content"> 
+                <div class="chat-item__text js-chat-item-text">
+                  Is this an issue with the tests or my code? 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="chat-item model-id-601849989fa6765ef8ef8bc1 burstStart read  " role="listitem">
+              <div class="chat-item__container"> 
+               <div class="chat-item__aside"> 
+                <div class="chat-item__avatar"> 
+                 <div class="trpDisplayPicture avatar-552893ce15522ed4b3ded6d8 avatar-s offline  "> 
+                  <img src="https://avatars1.githubusercontent.com/u/8541009?v=4&amp;s=30" srcset="https://avatars1.githubusercontent.com/u/8541009?v=4&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="chat-item__actions js-chat-item-actions"> <i class="chat-item__icon icon-check chat-item__icon--read js-chat-item-readby"></i> <i class="chat-item__icon icon-ellipsis"></i> 
+               </div> 
+               <div class="chat-item__content"> 
+                <div class="chat-item__details"> 
+                 <div class="chat-item__from js-chat-item-from">
+                  RK
+                 </div> 
+                 <div class="chat-item__username js-chat-item-from">
+                  @sonthonaxrk
+                 </div> <a class="chat-item__time js-chat-time" href="https://gitter.im/ipython/ipython?at=601849989fa6765ef8ef8bc1" title=""></a> 
+                </div> 
+                <div class="chat-item__text js-chat-item-text">
+                  Ah, it's just flakey. Rerunning the tests. 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="chat-item model-id-601849e284e66b7f7ec5b4e1 burstContinued read  " role="listitem">
+              <div class="chat-item__container"> 
+               <div class="chat-item__actions js-chat-item-actions"> <i class="chat-item__icon icon-check chat-item__icon--read js-chat-item-readby"></i> <i class="chat-item__icon icon-ellipsis"></i> 
+               </div> 
+               <div class="chat-item__content"> 
+                <div class="chat-item__text js-chat-item-text">
+                  Some sort of timeout, maybe the github ci runners share some state. 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="chat-item model-id-601a0146aa6a6f319dfef2c3 burstStart read  " role="listitem">
+              <div class="chat-item__container"> 
+               <div class="chat-item__aside"> 
+                <div class="chat-item__avatar"> 
+                 <div class="trpDisplayPicture avatar-matrix-Evidlo:matrix.org avatar-s offline  "> 
+                  <img src="https://user-content.gitter-static.net/806ce63cfaa4cbc5359037001a885556c8ebfcb6/68747470733a2f2f6769747465722e656d732e686f73742f5f6d61747269782f6d656469612f72302f646f776e6c6f61642f6d61747269782e6f72672f644a55664f4c71634b534a66696b4f5a62495468574f6868" srcset="https://user-content.gitter-static.net/806ce63cfaa4cbc5359037001a885556c8ebfcb6/68747470733a2f2f6769747465722e656d732e686f73742f5f6d61747269782f6d656469612f72302f646f776e6c6f61642f6d61747269782e6f72672f644a55664f4c71634b534a66696b4f5a62495468574f6868 2x" height="30" width="30" class="avatar__image" alt=""> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="chat-item__actions js-chat-item-actions"> <i class="chat-item__icon icon-check chat-item__icon--read js-chat-item-readby"></i> <i class="chat-item__icon icon-ellipsis"></i> 
+               </div> 
+               <div class="chat-item__content"> 
+                <div class="chat-item__details"> 
+                 <div class="chat-item__from js-chat-item-from">
+                  evidlo
+                 </div> 
+                 <div class="chat-item__username js-chat-item-from">
+                  @Evidlo:matrix.org
+                 </div> <a class="chat-item__flair chat-item__flair--matrix" href="https://matrix.to/#/@Evidlo:matrix.org?utm_source=gitter" target="_blank" title="This user is being bridged from Matrix"> [m] </a> <a class="chat-item__time js-chat-time" href="https://gitter.im/ipython/ipython?at=601a0146aa6a6f319dfef2c3" title=""></a> 
+                </div> 
+                <div class="chat-item__text js-chat-item-text">
+                  A few months ago I work on a plugin for supporting 'cells' in a regular .py file 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="chat-item model-id-601a0157ae4b9b27c1965766 burstContinued read  " role="listitem">
+              <div class="chat-item__container"> 
+               <div class="chat-item__actions js-chat-item-actions"> <i class="chat-item__icon icon-check chat-item__icon--read js-chat-item-readby"></i> <i class="chat-item__icon icon-ellipsis"></i> 
+               </div> 
+               <div class="chat-item__content"> 
+                <div class="chat-item__text js-chat-item-text">
+                  I was hoping somebody might give input or comment on its usefulness: <a href="https://github.com/UIUC-SINE/ipython-cells" rel="nofollow noopener noreferrer" target="_blank" class="link ">https://github.com/UIUC-SINE/ipython-cells</a> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="chat-item model-id-6037e96242f30f75c7c93e84 burstStart read  " role="listitem">
+              <div class="chat-item__container"> 
+               <div class="chat-item__aside"> 
+                <div class="chat-item__avatar"> 
+                 <div class="trpDisplayPicture avatar-58a34e3fd73408ce4f4a5b4a avatar-s offline  "> 
+                  <img src="https://abs.twimg.com/sticky/default_profile_images/default_profile_0_normal.png?s=30" srcset="https://abs.twimg.com/sticky/default_profile_images/default_profile_0_normal.png?s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="chat-item__actions js-chat-item-actions"> <i class="chat-item__icon icon-check chat-item__icon--read js-chat-item-readby"></i> <i class="chat-item__icon icon-ellipsis"></i> 
+               </div> 
+               <div class="chat-item__content"> 
+                <div class="chat-item__details"> 
+                 <div class="chat-item__from js-chat-item-from">
+                  onus tepolov
+                 </div> 
+                 <div class="chat-item__username js-chat-item-from">
+                  @blastoporeus_twitter
+                 </div> <a class="chat-item__time js-chat-time" href="https://gitter.im/ipython/ipython?at=6037e96242f30f75c7c93e84" title=""></a> 
+                </div> 
+                <div class="chat-item__text js-chat-item-text">
+                  can %run accept a variable as a file name? I can't seem to get it to work. eg) %run '/some/path/file.ipynb' works, but if I have target = 'some/path/file.ipynb' then %run target, it says ERROR:root:File <code>'target.py'</code> not found. 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="chat-item model-id-6038d7abe5f1d949d465cc5f burstStart read  " role="listitem">
+              <div class="chat-item__container"> 
+               <div class="chat-item__aside"> 
+                <div class="chat-item__avatar"> 
+                 <div class="trpDisplayPicture avatar-529c6cc9ed5ab0b3bf04d9eb avatar-s offline  "> 
+                  <img src="https://avatars1.githubusercontent.com/u/151929?v=4&amp;s=30" srcset="https://avatars1.githubusercontent.com/u/151929?v=4&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="chat-item__actions js-chat-item-actions"> <i class="chat-item__icon icon-check chat-item__icon--read js-chat-item-readby"></i> <i class="chat-item__icon icon-ellipsis"></i> 
+               </div> 
+               <div class="chat-item__content"> 
+                <div class="chat-item__details"> 
+                 <div class="chat-item__from js-chat-item-from">
+                  Min RK
+                 </div> 
+                 <div class="chat-item__username js-chat-item-from">
+                  @minrk
+                 </div> <a class="chat-item__time js-chat-time" href="https://gitter.im/ipython/ipython?at=6038d7abe5f1d949d465cc5f" title=""></a> 
+                </div> 
+                <div class="chat-item__text js-chat-item-text"> <span data-link-type="mention" data-screen-name="blastoporeus_twitter" class="mention">@blastoporeus_twitter</span> try <code>%run $target</code> to get variable expansion 
+                </div> 
+                <div class="chat-item__thread-message-indicator parent-message-indicator js-parent-message-indicator"> 
+                 <img class="chat-item__pmi-icon" src="//cdn01.gitter.im/_s/39e3eb229/images/svg/corner-down-right.svg"> 1 reply 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="chat-item model-id-606553693153ce63a3b0d37e burstStart read  " role="listitem">
+              <div class="chat-item__container"> 
+               <div class="chat-item__aside"> 
+                <div class="chat-item__avatar"> 
+                 <div class="trpDisplayPicture avatar-5683ff0716b6c7089cc09d55 avatar-s offline  "> 
+                  <img src="https://avatars0.githubusercontent.com/u/16491041?v=4&amp;s=30" srcset="https://avatars0.githubusercontent.com/u/16491041?v=4&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="chat-item__actions js-chat-item-actions"> <i class="chat-item__icon icon-check chat-item__icon--read js-chat-item-readby"></i> <i class="chat-item__icon icon-ellipsis"></i> 
+               </div> 
+               <div class="chat-item__content"> 
+                <div class="chat-item__details"> 
+                 <div class="chat-item__from js-chat-item-from">
+                  nbuntrust
+                 </div> 
+                 <div class="chat-item__username js-chat-item-from">
+                  @nbuntrust
+                 </div> <a class="chat-item__time js-chat-time" href="https://gitter.im/ipython/ipython?at=606553693153ce63a3b0d37e" title=""></a> 
+                </div> 
+                <div class="chat-item__text js-chat-item-text">
+                  Is there any way to gain access to the SingleUserNotebookApp data from an ipython extension? 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="chat-item model-id-606556731dbd860a23247dac burstStart read  " role="listitem">
+              <div class="chat-item__container"> 
+               <div class="chat-item__aside"> 
+                <div class="chat-item__avatar"> 
+                 <div class="trpDisplayPicture avatar-5683ff0716b6c7089cc09d55 avatar-s offline  "> 
+                  <img src="https://avatars0.githubusercontent.com/u/16491041?v=4&amp;s=30" srcset="https://avatars0.githubusercontent.com/u/16491041?v=4&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="chat-item__actions js-chat-item-actions"> <i class="chat-item__icon icon-check chat-item__icon--read js-chat-item-readby"></i> <i class="chat-item__icon icon-ellipsis"></i> 
+               </div> 
+               <div class="chat-item__content"> 
+                <div class="chat-item__details"> 
+                 <div class="chat-item__from js-chat-item-from">
+                  nbuntrust
+                 </div> 
+                 <div class="chat-item__username js-chat-item-from">
+                  @nbuntrust
+                 </div> <a class="chat-item__time js-chat-time" href="https://gitter.im/ipython/ipython?at=606556731dbd860a23247dac" title=""></a> 
+                </div> 
+                <div class="chat-item__text js-chat-item-text">
+                  Right now I'm parsing syslog data on the fly to get the IP of the connected user, but of course if SingleUserNotebookApp is writing it into a log, it knows it somewhere that I would think I could access more efficiently... :-) 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="chat-item model-id-6065b72e63fb5651c1e3c72f burstStart read  " role="listitem">
+              <div class="chat-item__container"> 
+               <div class="chat-item__aside"> 
+                <div class="chat-item__avatar"> 
+                 <div class="trpDisplayPicture avatar-532d79db5e986b0712eff728 avatar-s offline  "> 
+                  <img src="https://avatars0.githubusercontent.com/u/45380?v=4&amp;s=30" srcset="https://avatars0.githubusercontent.com/u/45380?v=4&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="chat-item__actions js-chat-item-actions"> <i class="chat-item__icon icon-check chat-item__icon--read js-chat-item-readby"></i> <i class="chat-item__icon icon-ellipsis"></i> 
+               </div> 
+               <div class="chat-item__content"> 
+                <div class="chat-item__details"> 
+                 <div class="chat-item__from js-chat-item-from">
+                  Nicholas Bollweg
+                 </div> 
+                 <div class="chat-item__username js-chat-item-from">
+                  @bollwyvl
+                 </div> <a class="chat-item__time js-chat-time" href="https://gitter.im/ipython/ipython?at=6065b72e63fb5651c1e3c72f" title=""></a> 
+                </div> 
+                <div class="chat-item__text js-chat-item-text">
+                  they are in different processes. you can talk to the API like any other client, however. 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="chat-item model-id-6066442115cd52559d742fa7 burstStart read  " role="listitem">
+              <div class="chat-item__container"> 
+               <div class="chat-item__aside"> 
+                <div class="chat-item__avatar"> 
+                 <div class="trpDisplayPicture avatar-5683ff0716b6c7089cc09d55 avatar-s offline  "> 
+                  <img src="https://avatars0.githubusercontent.com/u/16491041?v=4&amp;s=30" srcset="https://avatars0.githubusercontent.com/u/16491041?v=4&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="chat-item__actions js-chat-item-actions"> <i class="chat-item__icon icon-check chat-item__icon--read js-chat-item-readby"></i> <i class="chat-item__icon icon-ellipsis"></i> 
+               </div> 
+               <div class="chat-item__content"> 
+                <div class="chat-item__details"> 
+                 <div class="chat-item__from js-chat-item-from">
+                  nbuntrust
+                 </div> 
+                 <div class="chat-item__username js-chat-item-from">
+                  @nbuntrust
+                 </div> <a class="chat-item__time js-chat-time" href="https://gitter.im/ipython/ipython?at=6066442115cd52559d742fa7" title=""></a> 
+                </div> 
+                <div class="chat-item__text js-chat-item-text">
+                  This API is documented somewhere? I guess that's what I'm trying to find 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="chat-item model-id-60788131969f8b38ee7e9972 burstStart read  " role="listitem">
+              <div class="chat-item__container"> 
+               <div class="chat-item__aside"> 
+                <div class="chat-item__avatar"> 
+                 <div class="trpDisplayPicture avatar-5c5a17e2d73408ce4fb6fc70 avatar-s offline  "> 
+                  <img src="https://avatars1.githubusercontent.com/u/3825449?v=4&amp;s=30" srcset="https://avatars1.githubusercontent.com/u/3825449?v=4&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="chat-item__actions js-chat-item-actions"> <i class="chat-item__icon icon-check chat-item__icon--read js-chat-item-readby"></i> <i class="chat-item__icon icon-ellipsis"></i> 
+               </div> 
+               <div class="chat-item__content"> 
+                <div class="chat-item__details"> 
+                 <div class="chat-item__from js-chat-item-from">
+                  siddharth99
+                 </div> 
+                 <div class="chat-item__username js-chat-item-from">
+                  @siddharth99
+                 </div> <a class="chat-item__time js-chat-time" href="https://gitter.im/ipython/ipython?at=60788131969f8b38ee7e9972" title=""></a> 
+                </div> 
+                <div class="chat-item__text js-chat-item-text">
+                  Hi, I am running into an error with cython code and the jupyter kernel ends up restarting itself.. I don't see where the actual error happens, don't see a core file and not sure how to debug further
+                 <br><code>[I 13:59:36.224 NotebookApp] KernelRestarter: restarting kernel (1/5), keep random ports kernel b4f40812-cf7d-4f97-925b-84780f946bc9 restarted</code>
+                 <br>anyone has any suggestions? 
+                </div> 
+                <div class="chat-item__thread-message-indicator parent-message-indicator js-parent-message-indicator"> 
+                 <img class="chat-item__pmi-icon" src="//cdn01.gitter.im/_s/39e3eb229/images/svg/corner-down-right.svg"> 1 reply 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="chat-item model-id-60bb04d402f6ee5b91d5dd60 burstStart read  " role="listitem">
+              <div class="chat-item__container"> 
+               <div class="chat-item__aside"> 
+                <div class="chat-item__avatar"> 
+                 <div class="trpDisplayPicture avatar-60bb04c96da03739847e2d7d avatar-s offline  "> 
+                  <img src="https://avatars1.githubusercontent.com/u/85382528?v=4&amp;s=30" srcset="https://avatars1.githubusercontent.com/u/85382528?v=4&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="chat-item__actions js-chat-item-actions"> <i class="chat-item__icon icon-check chat-item__icon--read js-chat-item-readby"></i> <i class="chat-item__icon icon-ellipsis"></i> 
+               </div> 
+               <div class="chat-item__content"> 
+                <div class="chat-item__details"> 
+                 <div class="chat-item__from js-chat-item-from">
+                  pritimanbala
+                 </div> 
+                 <div class="chat-item__username js-chat-item-from">
+                  @pritimanbala
+                 </div> <a class="chat-item__time js-chat-time" href="https://gitter.im/ipython/ipython?at=60bb04d402f6ee5b91d5dd60" title=""></a> 
+                </div> 
+                <div class="chat-item__text js-chat-item-text">
+                  hii 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="chat-item model-id-60bb04d620e86942d2447f93 burstContinued read  " role="listitem">
+              <div class="chat-item__container"> 
+               <div class="chat-item__actions js-chat-item-actions"> <i class="chat-item__icon icon-check chat-item__icon--read js-chat-item-readby"></i> <i class="chat-item__icon icon-ellipsis"></i> 
+               </div> 
+               <div class="chat-item__content"> 
+                <div class="chat-item__text js-chat-item-text">
+                  there 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="chat-item model-id-60bb051b5bf7ed10d3e21d59 burstContinued read  " role="listitem">
+              <div class="chat-item__container"> 
+               <div class="chat-item__actions js-chat-item-actions"> <i class="chat-item__icon icon-check chat-item__icon--read js-chat-item-readby"></i> <i class="chat-item__icon icon-ellipsis"></i> 
+               </div> 
+               <div class="chat-item__content"> 
+                <div class="chat-item__text js-chat-item-text">
+                  there is a problem that i am running code in the for loop of python and now I cant configure it out that how can I run my loop in the cmd of my pc 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="chat-item model-id-60d1f6204e325e613299f6f9 burstStart read  " role="listitem">
+              <div class="chat-item__container"> 
+               <div class="chat-item__aside"> 
+                <div class="chat-item__avatar"> 
+                 <div class="trpDisplayPicture avatar-matrix-wraptile:matrix.org avatar-s offline  "> 
+                  <img src="https://user-content.gitter-static.net/79166bc796f2379dc0645aa305b9272701068e8f/68747470733a2f2f6769747465722e656d732e686f73742f5f6d61747269782f6d656469612f72302f646f776e6c6f61642f6d61747269782e6f72672f536275735273657a456b4771526e4d737956474767475847" srcset="https://user-content.gitter-static.net/79166bc796f2379dc0645aa305b9272701068e8f/68747470733a2f2f6769747465722e656d732e686f73742f5f6d61747269782f6d656469612f72302f646f776e6c6f61642f6d61747269782e6f72672f536275735273657a456b4771526e4d737956474767475847 2x" height="30" width="30" class="avatar__image" alt=""> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="chat-item__actions js-chat-item-actions"> <i class="chat-item__icon icon-check chat-item__icon--read js-chat-item-readby"></i> <i class="chat-item__icon icon-ellipsis"></i> 
+               </div> 
+               <div class="chat-item__content"> 
+                <div class="chat-item__details"> 
+                 <div class="chat-item__from js-chat-item-from">
+                  wraptile
+                 </div> 
+                 <div class="chat-item__username js-chat-item-from">
+                  @wraptile:matrix.org
+                 </div> <a class="chat-item__flair chat-item__flair--matrix" href="https://matrix.to/#/@wraptile:matrix.org?utm_source=gitter" target="_blank" title="This user is being bridged from Matrix"> [m] </a> <a class="chat-item__time js-chat-time" href="https://gitter.im/ipython/ipython?at=60d1f6204e325e613299f6f9" title=""></a> 
+                </div> 
+                <div class="chat-item__text js-chat-item-text"> 
+                 <p>Hello, can I embed ipython in an async program? can't seem to find any docs on it. I've tried:</p>
+                 <pre><code>    import nest_asyncio
+    nest_asyncio.<span class="function"><span class="title">apply</span><span class="params">()</span></span>
+    IPython.<span class="function"><span class="title">embed</span><span class="params">(using=<span class="string">'asyncio'</span>)</span></span></code></pre>
+                 <p>with no luck ?? </p> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="chat-item model-id-61522cdd99b7d97528324d07 burstStart read  " role="listitem">
+              <div class="chat-item__container"> 
+               <div class="chat-item__aside"> 
+                <div class="chat-item__avatar"> 
+                 <div class="trpDisplayPicture avatar-53c93bd4107e137846ba7153 avatar-s offline  "> 
+                  <img src="https://avatars0.githubusercontent.com/u/199813?v=4&amp;s=30" srcset="https://avatars0.githubusercontent.com/u/199813?v=4&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="chat-item__actions js-chat-item-actions"> <i class="chat-item__icon icon-check chat-item__icon--read js-chat-item-readby"></i> <i class="chat-item__icon icon-ellipsis"></i> 
+               </div> 
+               <div class="chat-item__content"> 
+                <div class="chat-item__details"> 
+                 <div class="chat-item__from js-chat-item-from">
+                  Thomas A Caswell
+                 </div> 
+                 <div class="chat-item__username js-chat-item-from">
+                  @tacaswell
+                 </div> <a class="chat-item__time js-chat-time" href="https://gitter.im/ipython/ipython?at=61522cdd99b7d97528324d07" title=""></a> 
+                </div> 
+                <div class="chat-item__text js-chat-item-text">
+                  On a very new version of everything (CPython, traitlets, and IPython) I'm seeing <code>AttributeError: 'Namespace' object has no attribute '_flags'</code> when starting with <code>ipython --simple-prompt</code>. Has anyone else seen this or have hints of where to start looking?
+                 <br>` 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="chat-item model-id-61522ebe4c7be06b79df75e9 burstStart read  " role="listitem">
+              <div class="chat-item__container"> 
+               <div class="chat-item__aside"> 
+                <div class="chat-item__avatar"> 
+                 <div class="trpDisplayPicture avatar-53c93bd4107e137846ba7153 avatar-s offline  "> 
+                  <img src="https://avatars0.githubusercontent.com/u/199813?v=4&amp;s=30" srcset="https://avatars0.githubusercontent.com/u/199813?v=4&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="chat-item__actions js-chat-item-actions"> <i class="chat-item__icon icon-check chat-item__icon--read js-chat-item-readby"></i> <i class="chat-item__icon icon-ellipsis"></i> 
+               </div> 
+               <div class="chat-item__content"> 
+                <div class="chat-item__details"> 
+                 <div class="chat-item__from js-chat-item-from">
+                  Thomas A Caswell
+                 </div> 
+                 <div class="chat-item__username js-chat-item-from">
+                  @tacaswell
+                 </div> <a class="chat-item__time js-chat-time" href="https://gitter.im/ipython/ipython?at=61522ebe4c7be06b79df75e9" title=""></a> 
+                </div> 
+                <div class="chat-item__text js-chat-item-text">
+                  Looks like this is a change it CPython :/ 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="chat-item model-id-6152b799cd4972068b1966a1 burstStart read  " role="listitem">
+              <div class="chat-item__container"> 
+               <div class="chat-item__aside"> 
+                <div class="chat-item__avatar"> 
+                 <div class="trpDisplayPicture avatar-529c6cc9ed5ab0b3bf04d9eb avatar-s offline  "> 
+                  <img src="https://avatars1.githubusercontent.com/u/151929?v=4&amp;s=30" srcset="https://avatars1.githubusercontent.com/u/151929?v=4&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="chat-item__actions js-chat-item-actions"> <i class="chat-item__icon icon-check chat-item__icon--read js-chat-item-readby"></i> <i class="chat-item__icon icon-ellipsis"></i> 
+               </div> 
+               <div class="chat-item__content"> 
+                <div class="chat-item__details"> 
+                 <div class="chat-item__from js-chat-item-from">
+                  Min RK
+                 </div> 
+                 <div class="chat-item__username js-chat-item-from">
+                  @minrk
+                 </div> <a class="chat-item__time js-chat-time" href="https://gitter.im/ipython/ipython?at=6152b799cd4972068b1966a1" title=""></a> 
+                </div> 
+                <div class="chat-item__text js-chat-item-text"> <span data-link-type="mention" data-screen-name="tacaswell" class="mention">@tacaswell</span> 3.10 or 3.9? 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="chat-item model-id-6152d5c5cd4972068b19acb8 burstStart read  " role="listitem">
+              <div class="chat-item__container"> 
+               <div class="chat-item__aside"> 
+                <div class="chat-item__avatar"> 
+                 <div class="trpDisplayPicture avatar-529c6cc9ed5ab0b3bf04d9eb avatar-s offline  "> 
+                  <img src="https://avatars1.githubusercontent.com/u/151929?v=4&amp;s=30" srcset="https://avatars1.githubusercontent.com/u/151929?v=4&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="chat-item__actions js-chat-item-actions"> <i class="chat-item__icon icon-check chat-item__icon--read js-chat-item-readby"></i> <i class="chat-item__icon icon-ellipsis"></i> 
+               </div> 
+               <div class="chat-item__content"> 
+                <div class="chat-item__details"> 
+                 <div class="chat-item__from js-chat-item-from">
+                  Min RK
+                 </div> 
+                 <div class="chat-item__username js-chat-item-from">
+                  @minrk
+                 </div> <a class="chat-item__time js-chat-time" href="https://gitter.im/ipython/ipython?at=6152d5c5cd4972068b19acb8" title=""></a> 
+                </div> 
+                <div class="chat-item__text js-chat-item-text">
+                  Ah, I see it. Merged, thanks! 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="chat-item model-id-615308d6a41fd20699b3827f burstStart read  " role="listitem">
+              <div class="chat-item__container"> 
+               <div class="chat-item__aside"> 
+                <div class="chat-item__avatar"> 
+                 <div class="trpDisplayPicture avatar-53c93bd4107e137846ba7153 avatar-s offline  "> 
+                  <img src="https://avatars0.githubusercontent.com/u/199813?v=4&amp;s=30" srcset="https://avatars0.githubusercontent.com/u/199813?v=4&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="chat-item__actions js-chat-item-actions"> <i class="chat-item__icon icon-check chat-item__icon--read js-chat-item-readby"></i> <i class="chat-item__icon icon-ellipsis"></i> 
+               </div> 
+               <div class="chat-item__content"> 
+                <div class="chat-item__details"> 
+                 <div class="chat-item__from js-chat-item-from">
+                  Thomas A Caswell
+                 </div> 
+                 <div class="chat-item__username js-chat-item-from">
+                  @tacaswell
+                 </div> <a class="chat-item__time js-chat-time" href="https://gitter.im/ipython/ipython?at=615308d6a41fd20699b3827f" title=""></a> 
+                </div> 
+                <div class="chat-item__text js-chat-item-text">
+                  Thanks <span data-link-type="mention" data-screen-name="minrk" class="mention">@minrk</span> ! 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="chat-item model-id-6182d6952197144e84a47bf0 burstStart read  " role="listitem">
+              <div class="chat-item__container"> 
+               <div class="chat-item__aside"> 
+                <div class="chat-item__avatar"> 
+                 <div class="trpDisplayPicture avatar-57ddf92440f3a6eec065d3f9 avatar-s offline  "> 
+                  <img src="https://avatars1.githubusercontent.com/u/22267660?v=4&amp;s=30" srcset="https://avatars1.githubusercontent.com/u/22267660?v=4&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="chat-item__actions js-chat-item-actions"> <i class="chat-item__icon icon-check chat-item__icon--read js-chat-item-readby"></i> <i class="chat-item__icon icon-ellipsis"></i> 
+               </div> 
+               <div class="chat-item__content"> 
+                <div class="chat-item__details"> 
+                 <div class="chat-item__from js-chat-item-from">
+                  Cassiel-girl
+                 </div> 
+                 <div class="chat-item__username js-chat-item-from">
+                  @Cassiel-girl
+                 </div> <a class="chat-item__time js-chat-time" href="https://gitter.im/ipython/ipython?at=6182d6952197144e84a47bf0" title=""></a> 
+                </div> 
+                <div class="chat-item__text js-chat-item-text">
+                  When I enter ipython, I enter python code and the result is returned. Which function can realize that the input parameter is Python code and the result of function execution is similar to the result of ipython after executing that python code? 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="chat-item model-id-61837a2ad3ae402e478a88e0 burstStart read  " role="listitem">
+              <div class="chat-item__container"> 
+               <div class="chat-item__aside"> 
+                <div class="chat-item__avatar"> 
+                 <div class="trpDisplayPicture avatar-57ddf92440f3a6eec065d3f9 avatar-s offline  "> 
+                  <img src="https://avatars1.githubusercontent.com/u/22267660?v=4&amp;s=30" srcset="https://avatars1.githubusercontent.com/u/22267660?v=4&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="chat-item__actions js-chat-item-actions"> <i class="chat-item__icon icon-check chat-item__icon--read js-chat-item-readby"></i> <i class="chat-item__icon icon-ellipsis"></i> 
+               </div> 
+               <div class="chat-item__content"> 
+                <div class="chat-item__details"> 
+                 <div class="chat-item__from js-chat-item-from">
+                  Cassiel-girl
+                 </div> 
+                 <div class="chat-item__username js-chat-item-from">
+                  @Cassiel-girl
+                 </div> <a class="chat-item__time js-chat-time" href="https://gitter.im/ipython/ipython?at=61837a2ad3ae402e478a88e0" title=""></a> 
+                </div> 
+                <div class="chat-item__text js-chat-item-text">
+                  An ipython backend is running on one machine A. This backend receives commands from a user on another machine B, sends them to A for execution, and then returns the results to B. The program running on the other machine B is a pyqt5 GUI that can type strings, but machine B cannot install anything ipython related. What programming interface should the program on machine A call to implement? Or an example of the relevant code. 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="chat-item model-id-6183c574fb3dcd4e88684c9d burstStart read  " role="listitem">
+              <div class="chat-item__container"> 
+               <div class="chat-item__aside"> 
+                <div class="chat-item__avatar"> 
+                 <div class="trpDisplayPicture avatar-529c6cc9ed5ab0b3bf04d9eb avatar-s offline  "> 
+                  <img src="https://avatars1.githubusercontent.com/u/151929?v=4&amp;s=30" srcset="https://avatars1.githubusercontent.com/u/151929?v=4&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="chat-item__actions js-chat-item-actions"> <i class="chat-item__icon icon-check chat-item__icon--read js-chat-item-readby"></i> <i class="chat-item__icon icon-ellipsis"></i> 
+               </div> 
+               <div class="chat-item__content"> 
+                <div class="chat-item__details"> 
+                 <div class="chat-item__from js-chat-item-from">
+                  Min RK
+                 </div> 
+                 <div class="chat-item__username js-chat-item-from">
+                  @minrk
+                 </div> <a class="chat-item__time js-chat-time" href="https://gitter.im/ipython/ipython?at=6183c574fb3dcd4e88684c9d" title=""></a> 
+                </div> 
+                <div class="chat-item__text js-chat-item-text">
+                  That's potentically a big task, but the main core function for evaluating code is <a href="https://docs.python.org/3/library/functions.html#exec" rel="nofollow noopener noreferrer" target="_blank" class="link ">exec</a>. What 'results' might be is tricky for exec. 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="chat-item model-id-6183c63f9d20982e4ffd602d burstContinued read  " role="listitem">
+              <div class="chat-item__container"> 
+               <div class="chat-item__actions js-chat-item-actions"> <i class="chat-item__icon icon-check chat-item__icon--read js-chat-item-readby"></i> <i class="chat-item__icon icon-ellipsis"></i> 
+               </div> 
+               <div class="chat-item__content"> 
+                <div class="chat-item__text js-chat-item-text">
+                  IPython's implementation is mostly <a href="https://github.com/ipython/ipython/blob/3813660de218fba265ea04a35a3b41cf81bef493/IPython/core/interactiveshell.py#L2909" rel="nofollow noopener noreferrer" target="_blank" class="link ">here</a> but it has lots of handling of different async situations that you probably don't need. Other things to consider include a persistent namespace or not, etc. 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="chat-item model-id-61a5682c8f98cb081198de35 burstStart read  " role="listitem">
+              <div class="chat-item__container"> 
+               <div class="chat-item__aside"> 
+                <div class="chat-item__avatar"> 
+                 <div class="trpDisplayPicture avatar-60d0bb936da03739847f62b8 avatar-s offline  "> 
+                  <img src="https://avatars0.githubusercontent.com/u/5581133?v=4&amp;s=30" srcset="https://avatars0.githubusercontent.com/u/5581133?v=4&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="chat-item__actions js-chat-item-actions"> <i class="chat-item__icon icon-check chat-item__icon--read js-chat-item-readby"></i> <i class="chat-item__icon icon-ellipsis"></i> 
+               </div> 
+               <div class="chat-item__content"> 
+                <div class="chat-item__details"> 
+                 <div class="chat-item__from js-chat-item-from">
+                  Jerry Johns
+                 </div> 
+                 <div class="chat-item__username js-chat-item-from">
+                  @mrjerryjohns
+                 </div> <a class="chat-item__time js-chat-time" href="https://gitter.im/ipython/ipython?at=61a5682c8f98cb081198de35" title=""></a> 
+                </div> 
+                <div class="chat-item__text js-chat-item-text"> 
+                 <p>Hello! I'm seeing an issue with my IPython setup on Mac, where attempting to use <code>await</code> with an async command results in the following error:</p>
+                 <pre><code>    <span class="number">648</span> 
+    <span class="number">649</span>         <span class="keyword">if</span> <span class="keyword">self</span>._local._<span class="keyword">loop</span> is <span class="built_in">None</span>:
+--&gt; <span class="number">650</span>             raise RuntimeError(<span class="string">'There</span> is no current event <span class="keyword">loop</span> <span class="keyword">in</span> thread %r.'
+    <span class="number">651</span>                                % threading.current_thread().name)
+    <span class="number">652</span> 
+
+RuntimeError: There is no current event <span class="keyword">loop</span> <span class="keyword">in</span> thread <span class="string">'MainThread</span>'.</code></pre>
+                 <p>I've traced it to the fact that the following call always errors out:</p>
+                 <pre><code>import asyncio
+asyncio.<span class="function"><span class="title">get_event_loop</span><span class="params">()</span></span></code></pre>
+                 <pre><code><span class="comment">---------------------------------------------------------------------------</span>
+RuntimeError                              Traceback (most recent <span class="operator"><span class="keyword">call</span> <span class="keyword">last</span>)
+&lt;ipython-<span class="keyword">input</span>-<span class="number">6</span>-<span class="number">6908e23590</span>ee&gt; <span class="keyword">in</span> &lt;<span class="keyword">module</span>&gt;
+<span class="comment">----&gt; 1 asyncio.get_event_loop()</span>
+
+/usr/<span class="keyword">local</span>/Cellar/python@<span class="number">3.9</span>/<span class="number">3.9</span><span class="number">.7</span>_1/Frameworks/Python.framework/<span class="keyword">Versions</span>/<span class="number">3.9</span>/lib/python3<span class="number">.9</span>/asyncio/<span class="keyword">events</span>.py <span class="keyword">in</span> get_event_loop(<span class="keyword">self</span>)
+    <span class="number">648</span> 
+    <span class="number">649</span>         <span class="keyword">if</span> <span class="keyword">self</span>._local._loop <span class="keyword">is</span> <span class="keyword">None</span>:
+<span class="comment">--&gt; 650             raise RuntimeError('There is no current event loop in thread %r.'</span>
+    <span class="number">651</span>                                % threading.current_thread().<span class="keyword">name</span>)
+    <span class="number">652</span> 
+
+RuntimeError: There <span class="keyword">is</span> <span class="keyword">no</span> <span class="keyword">current</span> <span class="keyword">event</span> <span class="keyword">loop</span> <span class="keyword">in</span> <span class="keyword">thread</span> <span class="string">'MainThread'</span>.</span></code></pre> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="chat-item model-id-61a568aea9c8eb44c405639a burstContinued read  " role="listitem">
+              <div class="chat-item__container"> 
+               <div class="chat-item__actions js-chat-item-actions"> <i class="chat-item__icon icon-check chat-item__icon--read js-chat-item-readby"></i> <i class="chat-item__icon icon-ellipsis"></i> 
+               </div> 
+               <div class="chat-item__content"> 
+                <div class="chat-item__text js-chat-item-text">
+                  Extensive search of stack-overflow didn't yield any answers unfortunately :( 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="chat-item model-id-61a5ceaba9c8eb44c4062cd1 burstStart read  " role="listitem">
+              <div class="chat-item__container"> 
+               <div class="chat-item__aside"> 
+                <div class="chat-item__avatar"> 
+                 <div class="trpDisplayPicture avatar-529c6cc9ed5ab0b3bf04d9eb avatar-s offline  "> 
+                  <img src="https://avatars1.githubusercontent.com/u/151929?v=4&amp;s=30" srcset="https://avatars1.githubusercontent.com/u/151929?v=4&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="chat-item__actions js-chat-item-actions"> <i class="chat-item__icon icon-check chat-item__icon--read js-chat-item-readby"></i> <i class="chat-item__icon icon-ellipsis"></i> 
+               </div> 
+               <div class="chat-item__content"> 
+                <div class="chat-item__details"> 
+                 <div class="chat-item__from js-chat-item-from">
+                  Min RK
+                 </div> 
+                 <div class="chat-item__username js-chat-item-from">
+                  @minrk
+                 </div> <a class="chat-item__time js-chat-time" href="https://gitter.im/ipython/ipython?at=61a5ceaba9c8eb44c4062cd1" title=""></a> 
+                </div> 
+                <div class="chat-item__text js-chat-item-text"> <span data-link-type="mention" data-screen-name="mrjerryjohns" class="mention">@mrjerryjohns</span> what's your IPython version? I wouldn't expect that on recent IPython. 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="chat-item model-id-61a63748c2cc0e5343d954d5 burstStart read  " role="listitem">
+              <div class="chat-item__container"> 
+               <div class="chat-item__aside"> 
+                <div class="chat-item__avatar"> 
+                 <div class="trpDisplayPicture avatar-60d0bb936da03739847f62b8 avatar-s offline  "> 
+                  <img src="https://avatars0.githubusercontent.com/u/5581133?v=4&amp;s=30" srcset="https://avatars0.githubusercontent.com/u/5581133?v=4&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="chat-item__actions js-chat-item-actions"> <i class="chat-item__icon icon-check chat-item__icon--read js-chat-item-readby"></i> <i class="chat-item__icon icon-ellipsis"></i> 
+               </div> 
+               <div class="chat-item__content"> 
+                <div class="chat-item__details"> 
+                 <div class="chat-item__from js-chat-item-from">
+                  Jerry Johns
+                 </div> 
+                 <div class="chat-item__username js-chat-item-from">
+                  @mrjerryjohns
+                 </div> <a class="chat-item__time js-chat-time" href="https://gitter.im/ipython/ipython?at=61a63748c2cc0e5343d954d5" title=""></a> 
+                </div> 
+                <div class="chat-item__text js-chat-item-text"> 
+                 <p>Python 3.9.7, IPython 7.30.0.</p>
+                 <p>Reproducible test case:</p>
+                 <pre><code>Python 3.9.7 (default, Oct 13 2021, 06:45:31) 
+Type 'copyright', 'credits' or 'license' for more information
+IPython 7.30.0 <span class="comment">-- An enhanced Interactive Python. Type '?' for help.</span>
+
+In [1]: async def ping():
+   ...:     pass
+   ...: 
+
+In [2]: 
+
+In [2]: await ping()
+<span class="comment">---------------------------------------------------------------------------</span>
+RuntimeError                              Traceback (most recent <span class="operator"><span class="keyword">call</span> <span class="keyword">last</span>)
+/usr/<span class="keyword">local</span>/lib/python3<span class="number">.9</span>/site-packages/IPython/core/async_helpers.py <span class="keyword">in</span> __call__(<span class="keyword">self</span>, coro)
+     <span class="number">26</span>         <span class="keyword">import</span> asyncio
+     <span class="number">27</span> 
+<span class="comment">---&gt; 28         return asyncio.get_event_loop().run_until_complete(coro)</span>
+     <span class="number">29</span> 
+     <span class="number">30</span>     <span class="keyword">def</span> __str__(<span class="keyword">self</span>):
+
+/usr/<span class="keyword">local</span>/Cellar/python@<span class="number">3.9</span>/<span class="number">3.9</span><span class="number">.7</span>_1/Frameworks/Python.framework/<span class="keyword">Versions</span>/<span class="number">3.9</span>/lib/python3<span class="number">.9</span>/asyncio/<span class="keyword">events</span>.py <span class="keyword">in</span> get_event_loop(<span class="keyword">self</span>)
+    <span class="number">644</span> 
+    <span class="number">645</span>         <span class="keyword">if</span> <span class="keyword">self</span>._local._loop <span class="keyword">is</span> <span class="keyword">None</span>:
+<span class="comment">--&gt; 646             raise RuntimeError('There is no current event loop in thread %r.'</span>
+    <span class="number">647</span>                                % threading.current_thread().<span class="keyword">name</span>)
+    <span class="number">648</span> 
+
+RuntimeError: There <span class="keyword">is</span> <span class="keyword">no</span> <span class="keyword">current</span> <span class="keyword">event</span> <span class="keyword">loop</span> <span class="keyword">in</span> <span class="keyword">thread</span> <span class="string">'MainThread'</span>.
+
+<span class="keyword">In</span> [<span class="number">2</span>]:</span></code></pre> 
+                </div> 
+                <div class="chat-item__thread-message-indicator parent-message-indicator js-parent-message-indicator"> 
+                 <img class="chat-item__pmi-icon" src="//cdn01.gitter.im/_s/39e3eb229/images/svg/corner-down-right.svg"> 9 replies 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="chat-item model-id-61b7e0fac2cc0e5343ff30d1 burstStart read  " role="listitem">
+              <div class="chat-item__container"> 
+               <div class="chat-item__aside"> 
+                <div class="chat-item__avatar"> 
+                 <div class="trpDisplayPicture avatar-5b1ff060d73408ce4f9d1606 avatar-s offline  "> 
+                  <img src="https://avatars2.githubusercontent.com/u/5832902?v=4&amp;s=30" srcset="https://avatars2.githubusercontent.com/u/5832902?v=4&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="chat-item__actions js-chat-item-actions"> <i class="chat-item__icon icon-check chat-item__icon--read js-chat-item-readby"></i> <i class="chat-item__icon icon-ellipsis"></i> 
+               </div> 
+               <div class="chat-item__content"> 
+                <div class="chat-item__details"> 
+                 <div class="chat-item__from js-chat-item-from">
+                  Micha? Krassowski
+                 </div> 
+                 <div class="chat-item__username js-chat-item-from">
+                  @krassowski
+                 </div> <a class="chat-item__time js-chat-time" href="https://gitter.im/ipython/ipython?at=61b7e0fac2cc0e5343ff30d1" title=""></a> 
+                </div> 
+                <div class="chat-item__text js-chat-item-text">
+                  What is IPython <code>display</code> equivalent of <code>print(something, file=sys.stderr)</code>? Like tracebacks for extensions get printed out on red background, I would have thought there is a 1-1 utility for displaying rich-formatted warnings/errors other than exceptions - is there one? 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="chat-item model-id-61b9cc285a172871a90796e1 burstStart read  " role="listitem">
+              <div class="chat-item__container"> 
+               <div class="chat-item__aside"> 
+                <div class="chat-item__avatar"> 
+                 <div class="trpDisplayPicture avatar-529c6cc9ed5ab0b3bf04d9eb avatar-s offline  "> 
+                  <img src="https://avatars1.githubusercontent.com/u/151929?v=4&amp;s=30" srcset="https://avatars1.githubusercontent.com/u/151929?v=4&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="chat-item__actions js-chat-item-actions"> <i class="chat-item__icon icon-check chat-item__icon--read js-chat-item-readby"></i> <i class="chat-item__icon icon-ellipsis"></i> 
+               </div> 
+               <div class="chat-item__content"> 
+                <div class="chat-item__details"> 
+                 <div class="chat-item__from js-chat-item-from">
+                  Min RK
+                 </div> 
+                 <div class="chat-item__username js-chat-item-from">
+                  @minrk
+                 </div> <a class="chat-item__time js-chat-time" href="https://gitter.im/ipython/ipython?at=61b9cc285a172871a90796e1" title=""></a> 
+                </div> 
+                <div class="chat-item__text js-chat-item-text">
+                  There isn't a stderr-equivalent for display. Just one display channel. 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="chat-item model-id-61b9cc4df20ff23319bff5af burstContinued read  " role="listitem">
+              <div class="chat-item__container"> 
+               <div class="chat-item__actions js-chat-item-actions"> <i class="chat-item__icon icon-check chat-item__icon--read js-chat-item-readby"></i> <i class="chat-item__icon icon-ellipsis"></i> 
+               </div> 
+               <div class="chat-item__content"> 
+                <div class="chat-item__text js-chat-item-text">
+                  It could be reasonable to define a metadata field for this use case 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="chat-item model-id-61db3bc2d41a5853f940a4c5 burstStart read  " role="listitem">
+              <div class="chat-item__container"> 
+               <div class="chat-item__aside"> 
+                <div class="chat-item__avatar"> 
+                 <div class="trpDisplayPicture avatar-5e6f5474d73408ce4fdce702 avatar-s offline  "> 
+                  <img src="https://avatars0.githubusercontent.com/u/35924738?v=4&amp;s=30" srcset="https://avatars0.githubusercontent.com/u/35924738?v=4&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="chat-item__actions js-chat-item-actions"> <i class="chat-item__icon icon-check chat-item__icon--read js-chat-item-readby"></i> <i class="chat-item__icon icon-ellipsis"></i> 
+               </div> 
+               <div class="chat-item__content"> 
+                <div class="chat-item__details"> 
+                 <div class="chat-item__from js-chat-item-from">
+                  Maxime Liquet
+                 </div> 
+                 <div class="chat-item__username js-chat-item-from">
+                  @maximlt
+                 </div> <a class="chat-item__time js-chat-time" href="https://gitter.im/ipython/ipython?at=61db3bc2d41a5853f940a4c5" title=""></a> 
+                </div> 
+                <div class="chat-item__text js-chat-item-text">
+                  Hi all! Running <code>publish_display_data(data={'application/javascript': 'console.log(1)'})</code> in a notebook cell creates an output with an empty <em>div</em> that is displayed (height of 12.23px). Is there a way to hide such output from IPython's API? 
+                </div> 
+                <div class="chat-item__thread-message-indicator parent-message-indicator js-parent-message-indicator"> 
+                 <img class="chat-item__pmi-icon" src="//cdn01.gitter.im/_s/39e3eb229/images/svg/corner-down-right.svg"> 5 replies 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="chat-item model-id-6209ba5f4164105ab097cfe8 burstStart read  " role="listitem">
+              <div class="chat-item__container"> 
+               <div class="chat-item__aside"> 
+                <div class="chat-item__avatar"> 
+                 <div class="trpDisplayPicture avatar-57ddf92440f3a6eec065d3f9 avatar-s offline  "> 
+                  <img src="https://avatars1.githubusercontent.com/u/22267660?v=4&amp;s=30" srcset="https://avatars1.githubusercontent.com/u/22267660?v=4&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="chat-item__actions js-chat-item-actions"> <i class="chat-item__icon icon-check chat-item__icon--read js-chat-item-readby"></i> <i class="chat-item__icon icon-ellipsis"></i> 
+               </div> 
+               <div class="chat-item__content"> 
+                <div class="chat-item__details"> 
+                 <div class="chat-item__from js-chat-item-from">
+                  Cassiel-girl
+                 </div> 
+                 <div class="chat-item__username js-chat-item-from">
+                  @Cassiel-girl
+                 </div> <a class="chat-item__time js-chat-time" href="https://gitter.im/ipython/ipython?at=6209ba5f4164105ab097cfe8" title=""></a> 
+                </div> 
+                <div class="chat-item__text js-chat-item-text">
+                  how to know the data layout of data type in memory? 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="chat-item model-id-621821dc0466b352a4ee3e47 burstStart read  " role="listitem">
+              <div class="chat-item__container"> 
+               <div class="chat-item__aside"> 
+                <div class="chat-item__avatar"> 
+                 <div class="trpDisplayPicture avatar-matrix-aplund:matrix.org avatar-s offline  "> 
+                  <img src="https://avatars0.githubusercontent.com/aplund:matrix.org?&amp;s=30" srcset="https://avatars0.githubusercontent.com/aplund:matrix.org?&amp;s=60 2x" height="30" width="30" class="avatar__image" alt=""> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="chat-item__actions js-chat-item-actions"> <i class="chat-item__icon icon-check chat-item__icon--read js-chat-item-readby"></i> <i class="chat-item__icon icon-ellipsis"></i> 
+               </div> 
+               <div class="chat-item__content"> 
+                <div class="chat-item__details"> 
+                 <div class="chat-item__from js-chat-item-from">
+                  aplund
+                 </div> 
+                 <div class="chat-item__username js-chat-item-from">
+                  @aplund:matrix.org
+                 </div> <a class="chat-item__flair chat-item__flair--matrix" href="https://matrix.to/#/@aplund:matrix.org?utm_source=gitter" target="_blank" title="This user is being bridged from Matrix"> [m] </a> <a class="chat-item__time js-chat-time" href="https://gitter.im/ipython/ipython?at=621821dc0466b352a4ee3e47" title=""></a> 
+                </div> 
+                <div class="chat-item__text js-chat-item-text">
+                  How do I enter mutiple expressions at once? I've tried shift-enter and ctrl-o enter, and neither work for me. I'm using the 'vi' editing_mode. 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <div id="initial" style="height:1px;width:1px;overflow:hidden;opacity:0">
+            <a name="initial"></a>_
+           </div> 
+          </div> 
+         </div> 
+         <div class="chat-connectivity-indicator-wrapper"></div> 
+        </div> 
+       </div> 
+       <footer class="chat-input chat-input-nli" id="chat-input-wrapper"> <a href="/login?action=login" target="_top" class="chat-input__btn"> Sign in to start talking </a> <a href="https://matrix.to/#/#ipython_ipython:gitter.im?utm_source=gitter" class="chat-input__btn chat-input__btn--matrix" target="_blank" rel="nofollow noopener noreferrer"> <img src="//cdn01.gitter.im/_s/39e3eb229/images/svg/matrix-favicon-logo-white.svg" aria-hidden="true"> Chat via Matrix </a> 
+       </footer> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="trpBlankPage"></div> 
+    <script type="text/javascript">
+    var s = document.querySelector('#initial');
+    if(s) setTimeout(function() {
+      s.scrollIntoView();
+    }, 16) ;
+</script> 
+   </div> 
+  </div> 
+  <div class="js-drag-overlay drag-frame hide"> <span class="octicon octicon-arrow-down"></span> 
+  </div> 
+  <script type="text/javascript">window.gitterClientEnv = {"lang":"en","domain":"gitter.im","baseServer":"gitter.im","basePath":"https://gitter.im","apiBasePath":"https://gitter.im/api","homeUrl":"/","badgeBaseUrl":"https://badges.gitter.im","googleTrackingId":"UA-45918290-1","googleTrackingDomain":"gitter.im","env":"prod","cdns":["cdn01.gitter.im","cdn02.gitter.im","cdn03.gitter.im"],"version":"39e3eb","assetTag":"39e3eb229","exportEnabled":true,"logging":false,"ravenUrl":"https://be4e47abe6ae4ed58bd8a5326124638e@sentry.matrix.org/25","websockets":{"fayeUrl":"https://ws.gitter.im/bayeux","options":{"timeout":120,"retry":2}},"avatarsUrl":"https://avatars.gitter.im","avatarCdns":["https://avatars-01.gitter.im","https://avatars-02.gitter.im","https://avatars-03.gitter.im","https://avatars-04.gitter.im","https://avatars-05.gitter.im"],"vapidAppServerKey":"BMhrlZd_I5OFJSJQTbg2mZ5PTHarzenwsKfsRd8C0-HRBygpDj9O3M4VTJIQfB9VPDjAoO_w2eg7Sj_cMXzuLwI","headlineNumbers":{"gitterUsers":"800K+","gitterRooms":"300K+","gitterGroups":"90K+","gitterCountries":"100+"},"inviteEmailAbuseThresholdPerDay":10};window.troupeContext = {"accessToken":"$G08wdP856Fjtreuqv7os4rULRSbYqfeSmJS0Z2+0tqM=","isNativeDesktopApp":false,"locale":{"%d unread message":{"one":"%d unread message","other":"%d unread messages"},"Unread messages in %%s, %%s and one other":{"one":"Unread messages in %%s, %%s and one other","other":"Unread messages in %%s, %%s and %d others"},"Unread messages in %s":"Unread messages in %s","Unread messages in %s and %s":"Unread messages in %s and %s","Unread messages from %s":"Unread messages from %s","Unread messages from %s and %s":"Unread messages from %s and %s","Unread messages from %%s, %%s and one other":{"one":"Unread messages from %%s, %%s and one other","other":"Unread messages from %%s, %%s and %d others"},"Gitter is available in all modern browsers as well as apps for desktops.":"Gitter is available in all modern browsers as well as apps for desktops.","Mac":"Mac","Windows":"Windows","Linux 32":"Linux 32","Linux 64":"Linux 64","The above Mac installer is a signed version of 1.177 (backed by Safari). For an unsigned 5.0.1 installer (backed by <a %s>NW.js<\/a>), <a %s>click here to download<\/a>.":"The above Mac installer is a signed version of 1.177 (backed by Safari). For an unsigned 5.0.1 installer (backed by <a %s>NW.js<\/a>), <a %s>click here to download<\/a>.","Mac users on 10.9 or lower, <a %s>download here<\/a>.":"Mac users on 10.9 or lower, <a %s>download here<\/a>.","We also have a sweet little <a %s>IRC bridge<\/a>.":"We also have a sweet little <a %s>IRC bridge<\/a>.","The dedicated Android/iOS apps are no longer recommended and may be officially <a href='%s'>deprecated in the future<\/a>. For mobile, we recommend using the mobile web version in your browser.":"The dedicated Android/iOS apps are no longer recommended and may be officially <a href='%s'>deprecated in the future<\/a>. For mobile, we recommend using the mobile web version in your browser.","Our efforts are focused on the <a %s>webapp<\/a> which is the backbone of the mobile/desktop apps but mainly focused on the web experience. There are a number of bugs in these desktop/mobile clients and they spread the Gitter team too thin for us to give them proper attention. The apps are open-source if you want to tackle something particularly annoying to you.":"Our efforts are focused on the <a %s>webapp<\/a> which is the backbone of the mobile/desktop apps but mainly focused on the web experience. There are a number of bugs in these desktop/mobile clients and they spread the Gitter team too thin for us to give them proper attention. The apps are open-source if you want to tackle something particularly annoying to you.","desktop":"desktop","iOS":"iOS","Android":"Android","Support":"Support","API":"API","Blog":"Blog","Twitter":"Twitter","The dedicated Gitter Android/iOS apps are no longer recommended and are officially <a href='%s' target='_blank'>deprecated<\/a>. For Android/iOS, we bridge all public rooms over to Matrix, so you can use any <a href='%s' target='_blank'>Matrix client<\/a> like <a href='%s' target='_blank'>Element (Android)<\/a> or <a href='%s' target='_blank'>Element (iOS)<\/a> to access those rooms.":"The dedicated Gitter Android/iOS apps are no longer recommended and are officially <a href='%s' target='_blank'>deprecated<\/a>. For Android/iOS, we bridge all public rooms over to Matrix, so you can use any <a href='%s' target='_blank'>Matrix client<\/a> like <a href='%s' target='_blank'>Element (Android)<\/a> or <a href='%s' target='_blank'>Element (iOS)<\/a> to access those rooms.","The above Mac installer is a signed version of 1.177 (backed by Safari). For an unsigned 5.0.1 installer (backed by <a %s>NW.js<\/a>), <a %s>click here to download<\/a>. Mac users on 10.9 or lower, <a %s>download here<\/a>.":"The above Mac installer is a signed version of 1.177 (backed by Safari). For an unsigned 5.0.1 installer (backed by <a %s>NW.js<\/a>), <a %s>click here to download<\/a>. Mac users on 10.9 or lower, <a %s>download here<\/a>.","Gitter &mdash; Where developers come to talk.":"Gitter &mdash; Where developers come to talk.","Documentation":"Documentation"},"features":[],"roomMember":false,"user":null,"troupe":{"id":"52ebe3e15e986b0712ef4106","name":"ipython/ipython","topic":"Talking about cool IPython features!","avatarUrl":"https://avatars-04.gitter.im/group/iv/4/57542d0dc43b8c60197791cc","uri":"ipython/ipython","userCount":1779,"url":"/ipython/ipython","githubType":"REPO","associatedRepo":"ipython/ipython","security":"PUBLIC","premium":true,"groupId":"57542d0dc43b8c60197791cc","group":{"id":"57542d0dc43b8c60197791cc","name":"ipython","uri":"ipython","homeUri":"ipython/home","backedBy":{"type":"GH_ORG","linkPath":"ipython"},"avatarUrl":"https://avatars-04.gitter.im/group/iv/4/57542d0dc43b8c60197791cc"},"backend":{"type":"GH_REPO","linkPath":"ipython/ipython"},"public":true,"matrixRoomLink":"https://matrix.to/#/#ipython_ipython:gitter.im?utm_source=gitter","v":991},"roomHasWelcomeMessage":false,"snapshots":{"rightToolbar":{},"allRooms":[],"groups":[]}};</script> 
+  <script type="text/javascript">window.webpackPublicPath = '//cdn02.gitter.im/_s/39e3eb229/js/';</script> 
+  <script type="text/javascript" src="//cdn01.gitter.im/_s/39e3eb229/js/runtime.bundle.js"></script> 
+  <script type="text/javascript" src="//cdn03.gitter.im/_s/39e3eb229/js/vendor.chunk.js"></script> 
+  <script type="text/javascript" src="//cdn02.gitter.im/_s/39e3eb229/js/default.chunk.js"></script> 
+  <script type="text/javascript" src="//cdn02.gitter.im/_s/39e3eb229/js/router-nli-chat.chunk.js"></script> 
+  <script type="text/javascript" src="//cdn01.gitter.im/_s/39e3eb229/js/router-app.chunk.js"></script>  
+ </body>
+</html>

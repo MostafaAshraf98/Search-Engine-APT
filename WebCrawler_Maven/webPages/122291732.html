@@ -1,0 +1,182 @@
+<!doctype html>
+<html class="writer-html5" lang="en"> 
+ <head> 
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Roadmap and Sprints — Warehouse  documentation</title> 
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css"> 
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css"> 
+  <link rel="canonical" href="https://warehouse.pypa.io/roadmap.html"> <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]--> 
+  <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script> 
+  <script src="_static/jquery.js"></script> 
+  <script src="_static/underscore.js"></script> 
+  <script src="_static/doctools.js"></script> 
+  <script async src="https://assets.readthedocs.org/static/javascript/readthedocs-doc-embed.js"></script> 
+  <script src="_static/js/theme.js"></script> 
+  <link rel="index" title="Index" href="genindex.html"> 
+  <link rel="search" title="Search" href="search.html"> 
+  <link rel="prev" title="Translations" href="translations.html"> <!-- RTD Extra Head --> 
+  <link rel="stylesheet" href="https://assets.readthedocs.org/static/css/readthedocs-doc-embed.css" type="text/css"> 
+  <script type="application/json" id="READTHEDOCS_DATA">{"ad_free": false, "api_host": "https://readthedocs.org", "build_date": "2022-05-16T21:16:41Z", "builder": "sphinx", "canonical_url": null, "commit": "140a2cc3", "docroot": "/docs/", "features": {"docsearch_disabled": false}, "global_analytics_code": "UA-17997319-1", "language": "en", "page": "roadmap", "programming_language": "py", "project": "warehouse", "proxied_api_host": "/_", "source_suffix": ".rst", "subprojects": {}, "theme": "sphinx_rtd_theme", "user_analytics_code": "", "version": "latest"}</script> <!--
+Using this variable directly instead of using `JSON.parse` is deprecated.
+The READTHEDOCS_DATA global variable will be removed in the future.
+--> 
+  <script type="text/javascript">
+READTHEDOCS_DATA = JSON.parse(document.getElementById('READTHEDOCS_DATA').innerHTML);
+</script> 
+  <script type="text/javascript" src="https://assets.readthedocs.org/static/javascript/readthedocs-analytics.js" async></script> <!-- end RTD <extrahead> --> 
+ </head> 
+ <body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav"> 
+   <nav data-toggle="wy-nav-shift" class="wy-nav-side"> 
+    <div class="wy-side-scroll"> 
+     <div class="wy-side-nav-search"> <a href="index.html" class="icon icon-home"> Warehouse </a> 
+      <div class="version">
+        latest 
+      </div> 
+      <div role="search"> 
+       <form id="rtd-search-form" class="wy-form" action="search.html" method="get"> 
+        <input type="text" name="q" placeholder="Search docs"> 
+        <input type="hidden" name="check_keywords" value="yes"> 
+        <input type="hidden" name="area" value="default"> 
+       </form> 
+      </div> 
+     </div>
+     <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu"> 
+      <ul class="current"> 
+       <li class="toctree-l1"><a class="reference internal" href="development/index.html">Development</a></li> 
+       <li class="toctree-l1"><a class="reference internal" href="application.html">Warehouse codebase</a></li> 
+       <li class="toctree-l1"><a class="reference internal" href="api-reference/index.html">API reference</a></li> 
+       <li class="toctree-l1"><a class="reference internal" href="ui-principles.html">UI principles</a></li> 
+       <li class="toctree-l1"><a class="reference internal" href="security.html">Security</a></li> 
+       <li class="toctree-l1"><a class="reference internal" href="translations.html">Translations</a></li> 
+       <li class="toctree-l1 current"><a class="current reference internal" href="#">Roadmap and Sprints</a>
+        <ul> 
+         <li class="toctree-l2"><a class="reference internal" href="#id1">Roadmap</a>
+          <ul> 
+           <li class="toctree-l3"><a class="reference internal" href="#otf-grant-work">OTF grant work</a></li> 
+           <li class="toctree-l3"><a class="reference internal" href="#package-signing-and-detection-verification">Package signing and detection/verification</a></li> 
+           <li class="toctree-l3"><a class="reference internal" href="#post-legacy-shutdown">Post legacy shutdown</a></li> 
+           <li class="toctree-l3"><a class="reference internal" href="#cool-but-not-urgent">Cool but not urgent</a></li> 
+           <li class="toctree-l3"><a class="reference internal" href="#history">History</a></li> 
+          </ul> </li> 
+         <li class="toctree-l2"><a class="reference internal" href="#sprints">Sprints</a></li> 
+        </ul> </li> 
+      </ul> 
+     </div> 
+    </div> 
+   </nav> 
+   <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+    <nav class="wy-nav-top" aria-label="Mobile navigation menu"> <i data-toggle="wy-nav-top" class="fa fa-bars"></i> <a href="index.html">Warehouse</a> 
+    </nav> 
+    <div class="wy-nav-content"> 
+     <div class="rst-content"> 
+      <div role="navigation" aria-label="Page navigation"> 
+       <ul class="wy-breadcrumbs"> 
+        <li><a href="index.html" class="icon icon-home"></a> »</li> 
+        <li>Roadmap and Sprints</li> 
+        <li class="wy-breadcrumbs-aside"> <a href="https://github.com/pypa/warehouse/blob/main/docs/roadmap.rst" class="fa fa-github"> Edit on GitHub</a> </li> 
+       </ul> 
+       <hr> 
+      </div> 
+      <div role="main" class="document" itemscope itemtype="http://schema.org/Article"> 
+       <div itemprop="articleBody"> 
+        <section id="roadmap-and-sprints"> <span id="roadmap"></span>
+         <h1>Roadmap and Sprints<a class="headerlink" href="#roadmap-and-sprints" title="Permalink to this headline">¶</a></h1> 
+         <section id="id1"> 
+          <h2>Roadmap<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2> 
+          <p>As we develop Warehouse, here are our plans along the way. To talk about them with us, please <a class="reference external" href="https://github.com/pypa/warehouse/blob/master/README.rst#discussion">contact us</a>.</p> 
+          <section id="otf-grant-work"> 
+           <h3>OTF grant work<a class="headerlink" href="#otf-grant-work" title="Permalink to this headline">¶</a></h3> 
+           <p>The current priority: <a class="reference external" href="https://pyfound.blogspot.com/2019/03/commencing-security-accessibility-and.html">security, accessibility, and localization work funded by the Open Technology Fund</a>, starting with <a class="reference external" href="https://github.com/pypa/warehouse/issues/996">two-factor authentication for PyPI</a>.</p> 
+           <p>On GitHub: <a class="reference external" href="https://github.com/pypa/warehouse/milestone/13">Security milestone</a>, <a class="reference external" href="https://github.com/pypa/warehouse/milestone/15">accessibility milestone</a>, <a class="reference external" href="https://github.com/pypa/warehouse/milestone/14">localisation milestone</a>.</p> 
+          </section> 
+          <section id="package-signing-and-detection-verification"> 
+           <h3>Package signing and detection/verification<a class="headerlink" href="#package-signing-and-detection-verification" title="Permalink to this headline">¶</a></h3> 
+           <p>We will work on further improving PyPI security with features such as cryptographic signing, verifying files uploaded to and installed from the index, and automatically detecting malicious uploads. <a class="reference external" href="https://pyfound.blogspot.com/2018/12/upcoming-pypi-improvements-for-2019.html">This work is funded by a gift from Facebook.</a></p> 
+           <p>See <a class="reference external" href="https://github.com/pypa/warehouse/milestone/16">package signing &amp; detection/verification milestone</a> on GitHub.</p> 
+          </section> 
+          <section id="post-legacy-shutdown"> 
+           <h3>Post legacy shutdown<a class="headerlink" href="#post-legacy-shutdown" title="Permalink to this headline">¶</a></h3> 
+           <p>Issues that are unblocked now that legacy is dead (RIP).</p> 
+           <p>See <a class="reference external" href="https://github.com/pypa/warehouse/milestone/12">issues marked with the post-legacy shutdown milestone</a> on GitHub.</p> 
+          </section> 
+          <section id="cool-but-not-urgent"> 
+           <h3>Cool but not urgent<a class="headerlink" href="#cool-but-not-urgent" title="Permalink to this headline">¶</a></h3> 
+           <p>Wishlist.</p> 
+           <p>See <a class="reference external" href="https://github.com/pypa/warehouse/milestone/11">issues marked with the cool-but-not-urgent milestone</a> on GitHub.</p> 
+          </section> 
+          <section id="history"> 
+           <h3>History<a class="headerlink" href="#history" title="Permalink to this headline">¶</a></h3> 
+           <p>You can see <a class="reference external" href="https://wiki.python.org/psf/WarehouseRoadmap">our past roadmap</a>, focusing on replacing legacy PyPI, on the PSF wiki.</p> 
+          </section> 
+         </section> 
+         <section id="sprints"> 
+          <h2>Sprints<a class="headerlink" href="#sprints" title="Permalink to this headline">¶</a></h2> 
+          <p>Please check the Python wiki for a list of upcoming <a class="reference external" href="https://wiki.python.org/psf/PackagingSprints">sprints</a>.</p> 
+          <p>Sprint planners should consider the following checklist for organising events:</p> 
+          <ul class="simple"> 
+           <li><p>Prior to the sprint, tag issues that you identify as appropriate for the attendees. Ensure you have a mix of short achievable tickets, and more complex issues. Do not tag issues that are still under discussion or require specification, unless core team members will be in attendance</p></li> 
+           <li><p>Prior to the sprint, organise with the Working Group to print stickers and/or other swag to give to participants</p></li> 
+           <li><p>If not provided by the venue, bring along snacks. Everybody loves snacks.</p></li> 
+           <li><p>If not provided by the venue, bring nametags. If possible, organise the facilitators to wear the same colored shirt, lanyard or hat, to be easily identified by the group.</p></li> 
+           <li><p>If possible, ask participants to install the codebase <em>prior</em> to the event. This will save on delays caused by many people downloading docker images at once.</p></li> 
+           <li><p>Use a whiteboard or large sheets of paper to direct participants towards the codebase, issue tracker and installation documentation. Keep track of merged PRs in the same location.</p></li> 
+           <li><p>Ask participants to comment on the issues they want to work on. This avoids a situation where two people are unknowingly working towards the same goal.</p></li> 
+           <li><p>Where possible, pair people to work on issues together. This is particularly useful for large issues, or for newer developers.</p></li> 
+          </ul> 
+         </section> 
+        </section> 
+       </div> 
+      </div> 
+      <footer>
+       <div class="rst-footer-buttons" role="navigation" aria-label="Footer"> <a href="translations.html" class="btn btn-neutral float-left" title="Translations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a> 
+       </div> 
+       <hr> 
+       <div role="contentinfo"> 
+        <p>© Copyright 2022. <span class="commit">Revision <code>140a2cc3</code>. </span></p> 
+       </div> Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+      </footer> 
+     </div> 
+    </div> 
+   </section> 
+  </div> 
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="Versions"> <span class="rst-current-version" data-toggle="rst-current-version"> <span class="fa fa-book"> Read the Docs</span> v: latest <span class="fa fa-caret-down"></span> </span> 
+   <div class="rst-other-versions"> 
+    <dl> 
+     <dt>
+      Versions
+     </dt> 
+     <dd>
+      <a href="/en/latest/">latest</a>
+     </dd> 
+     <dd>
+      <a href="/en/stable/">stable</a>
+     </dd> 
+    </dl> 
+    <dl> 
+     <dt>
+      Downloads
+     </dt> 
+    </dl> 
+    <dl> 
+     <dt>
+      On Read the Docs
+     </dt> 
+     <dd> <a href="//readthedocs.org/projects/warehouse/?fromdocs=warehouse">Project Home</a> 
+     </dd> 
+     <dd> <a href="//readthedocs.org/builds/warehouse/?fromdocs=warehouse">Builds</a> 
+     </dd> 
+    </dl> 
+   </div> 
+  </div> 
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+ </body>
+</html>

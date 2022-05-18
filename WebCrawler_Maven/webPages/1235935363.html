@@ -1,0 +1,335 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+ <head> 
+  <script type="text/javascript" nonce="ukMFdAwBYLFmc7iESlkxxw">
+function utmx_section(){}function utmx(){}
+
+</script> 
+  <script type="text/javascript" nonce="ukMFdAwBYLFmc7iESlkxxw">utmx_section("CSS")</script> 
+  <link href="https://fonts.googleapis.com/css?family=Product+Sans" rel="stylesheet"> 
+  <link href="/tools/dlpage/res/c/css/goog.css" rel="stylesheet" type="text/css"> 
+  <link href="/tools/dlpage/res/c/css/dlpage.css" rel="stylesheet" type="text/css">  
+  <link href="/tools/dlpage/res/c/css/dlpage-rtl.css" rel="stylesheet" type="text/css"> 
+  <script type="text/javascript" src="/tools/dlpage/res/c/dlpage.js" nonce="ukMFdAwBYLFmc7iESlkxxw"></script> 
+  <link rel="icon" type="image/ico" href=""> 
+  <script type="text/javascript" nonce="ukMFdAwBYLFmc7iESlkxxw">utmx_section("Page Title")</script> 
+  <title>???? ????? ????? ??????? ???????? ?????? ?????? ?? "??????? Google"</title>  
+  <script type="text/javascript" nonce="ukMFdAwBYLFmc7iESlkxxw">
+  function setHl(newHl) {
+    var query = location.search;
+    if (query.length == 0) {
+      location.search = "?hl=" + newHl;
+      return;
+    }
+    if (-1 == query.indexOf("hl=")) {
+      location.search = query + "&hl=" + newHl;
+      return;
+    }
+    location.search = query.replace(/hl=[^&]*/, "hl=" + newHl);
+  }
+  document.addEventListener('DOMContentLoaded', function () {
+    dlAddEventListener('langmenu', 'change', function() {
+      setHl(this.options[this.selectedIndex].value);
+    });
+
+    _GU_OnloadBody('index');
+  });
+</script> 
+  <script type="text/javascript" src="/tools/dlpage/res/c/gu-util.js" nonce="ukMFdAwBYLFmc7iESlkxxw">
+  
+</script> 
+  <script type="text/javascript" nonce="ukMFdAwBYLFmc7iESlkxxw">
+  // Set up the global update.installscript namespace.
+  if (!window.update) {
+    update = {};
+  }
+  if (!window.update.installscript) {
+    update.installscript = {};
+  }
+
+  
+  
+  function runTagParamsHook(tag, opt_guid) {return tag;}
+  
+  function runThankYouQueryHook(query) {return query;}
+  
+  function runGetAppsPageHook(apps) {return apps;}
+
+  
+  var referer = null;
+
+  
+  
+     update.installscript.updater_expts = '';
+  
+  
+  
+    update.installscript.app_expts = '';
+  
+
+
+  function resetButtons(name) {
+    var buttons = document.getElementsByName(name);
+    for (i = 0; i < buttons.length; ++i) {
+      buttons[i].disabled = false;
+    }
+  }
+  function showThrobber(isVisible) {
+    var divThrobber = document.getElementById('throbber');
+    var imgThrobber = document.getElementById('throbber-img');
+    if (!divThrobber || !imgThrobber) {
+      return;
+    }
+    if (!isVisible) {
+      divThrobber.style.display = 'none';
+    }
+    
+    imgThrobber.src = isVisible ?
+      
+         "/tools/dlpage/res/c/image/loading-16.gif"
+      
+        : "";
+    if (isVisible) {
+      divThrobber.style.display = 'inline';
+    }
+  }
+  
+  function getThankyouUrl(extraQuery) {
+    var thankYouPath = "gaoptout/thankyou.html";
+    if (areStatsEnabled()) {
+      extraQuery += '&statcb=';
+    }
+    var query = "" + extraQuery;
+    if (query.length > 0 && query.charAt(0) != '?') {
+      query = '?' + query;
+    }
+    query = runThankYouQueryHook(query);
+    return thankYouPath + query;
+  }
+  function queueThankyou(timeout, queryString, opt_navDocument) {
+    var page = getThankyouUrl(queryString);
+    var doc = opt_navDocument || this.document;
+
+    function navigateToThankyou() {
+      showThrobber(false);
+      resetButtons("submitbutton");
+      doc.location.href = page;
+    }
+
+    if (!timeout) {
+      navigateToThankyou();
+      return;
+    }
+
+    setTimeout(navigateToThankyou, timeout);
+  }
+  function getApps() {
+    var apps = new Array();
+    
+    
+    
+    
+    
+    
+    
+    return runGetAppsPageHook(apps);
+  }
+  function areStatsEnabled() {
+    var statcb = document.getElementById("statcb");
+    return (statcb && statcb.checked);
+  }
+  function isDownloadTaggingEnabled() {
+    
+    return false;
+  }
+  function getDownloadPath() {
+    
+      
+        return "";
+      
+    
+  }
+  function buildDownloadUrl(statEnable, opt_buildDownloadPath, opt_filePath) {
+     
+
+    var defaultDownloadPath = isDownloadTaggingEnabled() ?
+        _GU_buildDlPath : _GU_buildDlPathNoTag;
+    var buildDownloadPath = opt_buildDownloadPath || defaultDownloadPath;
+    var filePath = opt_filePath || getDownloadPath();
+    var dlServer =
+    "https://dl.google.com";
+    return buildDownloadPath(getApps(),
+                             "ar",
+                             statEnable,
+                             dlServer,
+                             filePath,
+                             update.installscript.updater_expts);
+  }
+  function downloadAndThankYou(delayTime, statEnable, opt_navDocument,
+                               opt_buildDownloadPath, opt_filePath) {
+    
+    if (navigator.appVersion.indexOf('Chrome/') != -1 ||
+        navigator.appVersion.indexOf('Safari/') != -1) {
+      queueThankyou(0, '', opt_navDocument);
+      return;
+    }
+
+    var method = getInstallSource();
+    sendDlPagePing("install", method);
+
+    queueThankyou(delayTime, '', opt_navDocument);
+
+    var downloadUri =
+        buildDownloadUrl(statEnable, opt_buildDownloadPath, opt_filePath);
+
+    if (method === 'clickonce' ||
+        navigator.userAgent.indexOf('Firefox/') != -1) {
+      var windowFeatures = 'toolbar=0,location=no,directories=0,status=0,scrollbars=no,resizable=0,width=1,height=1,top=0,left=0';
+      window.open(downloadUri, '_blank', windowFeatures);
+      window.focus();
+    } else {
+      location.href = downloadUri;
+    }
+
+    showThrobber(true);
+  }
+  function installViaDownload(opt_navDocument) {
+    downloadAndThankYou(4000, areStatsEnabled(), opt_navDocument);
+  }
+  function isClickOnceEnabled() {
+    
+    return false;
+  }
+  function isOneClickEnabled() {
+    return false;
+  }
+  function installViaClickOnce(opt_navDocument) {
+    
+    downloadAndThankYou(10000, areStatsEnabled(), opt_navDocument, _GU_buildClickOncePath, "");
+  }
+  function installViaOneClick(opt_navDocument) {
+    showThrobber(true);
+    window.google.update.oneclick.install(
+      getApps(),
+      "ar",
+      areStatsEnabled(),
+      function() {queueThankyou(4000, '\x26oneclickinstalled=', opt_navDocument);},
+      function(hr) {installViaDownload(opt_navDocument);},
+      update.installscript.updater_expts);
+  }
+  function getInstallSource() {
+    
+      if (isOneClickEnabled() && _GU_isOneClickAvailable()) {
+        return 'oneclick';
+      } else if (isClickOnceEnabled() && _GU_isClickOnceAvailable()) {
+        return 'clickonce';
+      } else {
+        return 'download';
+      }
+    
+  }
+  function installApp(opt_navDocument) {
+    
+
+    var method = getInstallSource();
+    if (method === 'oneclick') {
+      installViaOneClick(opt_navDocument);
+    } else if (method === 'clickonce') {
+      installViaClickOnce(opt_navDocument);
+    } else {
+      installViaDownload(opt_navDocument);
+    }
+  }
+  
+  function sendDlPagePing(stage, installSource) {
+    var img = new Image();
+    var extra = GU_buildGlobalExtra(
+          "ar",
+          areStatsEnabled(),
+          update.installscript.updater_expts);
+    var tag = GU_BuildTag(getApps(), extra);
+    img.src = '//tools.google.com/service/update2/dlpageping?' +
+        tag +
+        '&stage=' + stage +
+        '&installsource=' + installSource;
+  }
+  function downloadInstaller(opt_pageName) {
+    var hasStatcb =
+    
+      false;
+    
+    location.href = buildDownloadUrl(hasStatcb);
+
+    var pageName = opt_pageName || "install";
+    var installMethod = getInstallSource();
+    sendDlPagePing(pageName, installMethod);
+  }
+  var pageTracker;  
+  function doSubmit() {
+    var installMethod = getInstallSource();
+    if (typeof _gaq != 'undefined') {
+      _gaq.push(['_trackPageview'], '/ty/retry_' + installMethod);
+    } else if (pageTracker) {
+      pageTracker._trackPageview("/ty/retry_" + installMethod);
+    }
+    downloadInstaller("retry");
+  }
+  
+  
+  
+  _GU_OnloadHandlerAdd(
+    function() {
+      if (isOneClickEnabled()) {
+      _GU_SetupOneClick();
+      }
+    }, 0); // front of list
+  
+  _GU_OnloadHandlerAdd(
+    function(pagename) {
+      sendDlPagePing(pagename, getInstallSource());
+    });  // added to end of body.onload handler list
+
+
+</script> 
+ </head> 
+ <body>
+  <div id="container">
+   <noscript>
+    ??? ????? ??? ????? ?????? ?? ???? ?????? ?????? ??? ????????. <a href="http://www.google.com/support/bin/answer.py?answer=23852&amp;hl=ar">???? ??? ?????? ???????</a> ????? ???? ?????? ?? ????????.
+   </noscript> 
+   <div id="header">
+    <a href="https://www.google.com"><img class="logo" alt="" src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png"></a> 
+    <form class="langmenu" action="">
+     <select id="langmenu" title="?????"><option value="" selected>Select a language</option> <option value="ar">?????????</option> <option value="de">?Deutsch?</option> <option value="en">?English?</option> <option value="en-GB">?English (UK)?</option> <option value="es">?español?</option> <option value="fr">?français?</option> <option value="it">?italiano?</option> <option value="ja">?????</option> <option value="ko">?????</option> <option value="nl">?Nederlands?</option> <option value="pl">?polski?</option> <option value="pt-BR">?português (Brasil)?</option> <option value="ru">?????????</option> <option value="th">?????</option> <option value="tr">?Türkçe?</option> <option value="zh-CN">??????</option> <option value="zh-TW">????? (??)?</option></select>
+    </form> 
+    <h1>&nbsp;</h1>
+   </div> 
+   <div id="main">
+    <div id="content">
+     <h2><script type="text/javascript" nonce="ukMFdAwBYLFmc7iESlkxxw">utmx_section("Header")</script> ????? ??????? ???????? ?????? ?????? ?? "??????? Google" </h2> 
+     <p><script type="text/javascript" nonce="ukMFdAwBYLFmc7iESlkxxw">utmx_section("Tagline")</script> ?????? ????? ?????? ?????????? ???????? ??? ??????? ???????? ?????? "??????? Google"? ????? ?? ?????? ????? ??????? ???????? ?????? ??????? ?? "??????? Google" ??????? ??????????? ???? ?????? ??????? ??????? ?? ??? JavaScript ?? "??????? Google" ?(analytics.js?? ?gtag.js)?. </p>
+     <p>??? ??? ???? ?? ???????? ??? ????? ????? ????? ????? ????????. ??? ?? ????? ??????? ???????? ?????? "??????? Google" ????? ??????? ?? ????????? ???????: Chrome ?Safari? ?Firefox ?Microsoft Edge. ???? ????? ????? ????? ???????? ??? ?? ???? ??????? ??????? ???????? ?? ??????? ???? ????. ????? ??? ???? ?? ????????? ??? ??????? ?????? ????? ????? ??????? ???????? ????? ???? <a href="https://support.google.com/analytics/answer/181881?hl=ar">?? ???</a>. </p> 
+     <script type="text/javascript" nonce="ukMFdAwBYLFmc7iESlkxxw">utmx_section("Jewel")</script> 
+    </div> 
+    <div id="action">
+     <div class="blue">
+      <div class="button">
+       <span><span><a href="
+      https://chrome.google.com/webstore/detail/google-analytics-opt-out/fllaojicojecljbmefodhfapmkghcbnh?hl=ar
+    "><script type="text/javascript" nonce="ukMFdAwBYLFmc7iESlkxxw">utmx_section("Button Text")</script> ???? ??? ????? ??????? ???????? ?????? ?????? ?? "??????? Google" </a></span></span>
+      </div> 
+      <p><script type="text/javascript" nonce="ukMFdAwBYLFmc7iESlkxxw">utmx_section("Button Subtitle")</script> </p> 
+      <p>????? ????????? ???????: Google Chrome ?Mozilla Firefox ?Apple Safari ?Microsoft Edge.</p>
+     </div> 
+     <script type="text/javascript" nonce="ukMFdAwBYLFmc7iESlkxxw">utmx_section("Bullets")</script>  
+     <p class="links"><script type="text/javascript" nonce="ukMFdAwBYLFmc7iESlkxxw">utmx_section("Learn More Link")</script> <a href="https://support.google.com/analytics/answer/6004245?hl=ar">???? ?? ????????? ?? ?????? "??????? Google" »</a> </p>
+    </div>
+   </div> 
+   <div id="footer">
+    <p>©2022 Google - <a href="https://www.google.com/intl/ar/privacy.html">????? ????????</a> - <a href="
+      https://www.google.com/support/googleanalytics/?hl=ar
+    ">??????</a> </p>
+   </div>
+  </div> 
+ </body>
+</html>

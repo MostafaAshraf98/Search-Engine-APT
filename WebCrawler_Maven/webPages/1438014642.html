@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en"> 
+ <head> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  <meta name="msvalidate.01" content="3667D2FEB238C1BF174F3CB1AE0D3C16"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <link rel="stylesheet" media="all" href="/assets/application-f137914f2814e594981ec2cbd5855b7053835645b7372efeff466bbf5e23cfd6.css" data-turbolinks-track="true"> 
+  <title>twine 4.0.0 on PyPI - Libraries.io</title> 
+  <meta name="description" content="Collection of utilities for publishing packages on PyPI - 4.0.0 - a Python package on PyPI - Libraries.io"> 
+  <meta name="csrf-param" content="authenticity_token"> 
+  <meta name="csrf-token" content="sEzqPA7a3BJSh5SozonzIpdWha4F7uhUODYHLhkLl75I3MCPREdCa582LTZtKIRfy38lgi1s/KX7Awj4/6jRHg=="> 
+  <link rel="alternate" type="application/atom+xml" title="ATOM" href="https://libraries.io/pypi/twine/versions.atom"> 
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="https://libraries.io/assets/apple-touch-icon-57x57-d2ce1ae09b96b2dcd4548cdab571b2f0f04567fd52bb42acdc158f3e499fb9f2.png"> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://libraries.io/assets/apple-touch-icon-114x114-0b33f62bf1188d522e2a3af36c193aaeabef9f6dbd01fd3321a3aac20270c3f7.png"> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://libraries.io/assets/apple-touch-icon-72x72-0d786ee6083b71a6af882b9ae456f6ef055ac33bfaf3c8ae55eac5d38491d742.png"> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://libraries.io/assets/apple-touch-icon-144x144-e44e66335b196ade90f421758d5d66c4ba3903d891e28431288bae4a76543f91.png"> 
+  <link rel="apple-touch-icon-precomposed" sizes="60x60" href="https://libraries.io/assets/apple-touch-icon-60x60-bdf27a1057418054b28c679717d461ed052fdfa7cc1930e65200562e9c535d77.png"> 
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://libraries.io/assets/apple-touch-icon-120x120-fd2ca061f478b697773e9d1d0144fe1ddf5c5fee5be46c07541271da4bee10fe.png"> 
+  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="https://libraries.io/assets/apple-touch-icon-76x76-788ab56a7ab652c168cad5fef06ec3fec102768f08cd691a4b51e66e474e8538.png"> 
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://libraries.io/assets/apple-touch-icon-152x152-be5ef5b4a68d187f60df08e2415e0ec8553225e5c3be3a7f044279b8a44f8d33.png"> 
+  <meta name="application-name" content="&nbsp;"> 
+  <meta name="msapplication-TileColor" content="#FFFFFF"> 
+  <meta name="msapplication-TileImage" content="https://libraries.io/assets/mstile-144x144-e44e66335b196ade90f421758d5d66c4ba3903d891e28431288bae4a76543f91.png"> 
+  <meta name="msapplication-square70x70logo" content="https://libraries.io/assets/mstile-70x70-9d4251daf8e8befa87287d559f146b72bf061e2a6778f1c337b6f59d6ecdc1b6.png"> 
+  <meta name="msapplication-square150x150logo" content="https://libraries.io/assets/mstile-150x150-2cdc9f4fbbe7573c60d1175e2d56e034e47cb34c53c3dbbae4986e72747f82fb.png"> 
+  <meta name="msapplication-wide310x150logo" content="https://libraries.io/assets/mstile-310x150-52c90e484d1ec5b2d51fb246d837d844b85486a5ac718393e9c09b6555ab373c.png"> 
+  <meta name="msapplication-square310x310logo" content="https://libraries.io/assets/mstile-310x310-3547800cb3aa250b9dcfa0d95ffa675c73580ece85c09edaca209657ad281a34.png"> 
+  <meta property="fb:admins" content="508462908"> 
+  <meta name="yandex-verification" content="2a6b144b8bd37026"> 
+  <meta property="og:type" content="article"> 
+  <meta property="og:site_name" content="Libraries.io"> 
+  <meta property="og:url" content="https://libraries.io/pypi/twine"> 
+  <meta property="og:title" content="twine on Pypi"> 
+  <meta property="og:description" content="Collection of utilities for publishing packages on PyPI"> 
+  <meta property="og:image" content="https://librariesio.github.io/pictogram/pypi/pypi.png"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:site" content="@librariesio"> 
+  <meta name="twitter:title" content="twine on Pypi"> 
+  <meta name="twitter:description" content="Collection of utilities for publishing packages on PyPI"> 
+  <meta name="twitter:image" content="https://librariesio.github.io/pictogram/pypi/pypi.png"> 
+  <link href="/opensearch.xml" title="Libraries.io" rel="search" type="application/opensearchdescription+xml"> 
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-105624087-2', 'auto');
+    </script> 
+  <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script> 
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-P7XSSNL');</script> 
+  <script src="/assets/application-140043a0468c6d4efa0c0e113ad9e74b04cd62cd6ba27fe7f675c1572a17ad69.js" data-turbolinks-track="true"></script> 
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "name": "Libraries.io",
+      "url": "https://libraries.io/",
+      "description": "Discover open source packages, modules and frameworks you can use in your code",
+      "license": "https://github.com/librariesio/libraries.io/blob/main/LICENSE.txt",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://libraries.io/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  </script> 
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "name": "Libraries.io",
+      "description": "Discover open source packages, modules and frameworks you can use in your code",
+      "url": "https://libraries.io/",
+      "logo": "https://libraries.io/assets/apple-touch-icon-152x152-be5ef5b4a68d187f60df08e2415e0ec8553225e5c3be3a7f044279b8a44f8d33.png",
+      "email": "support@libraries.io",
+      "sameAs": [
+        "https://twitter.com/librariesio",
+        "https://www.facebook.com/libraries.io",
+        "https://github.com/librariesio",
+        "https://plus.google.com/101868076054784591044"
+      ]
+    }
+  </script> 
+ </head> 
+ <body> 
+  <div class="navbar navbar-inverse navbar-static-top"> 
+   <div class="container"> 
+    <div class="navbar-header"> <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-main"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> <a class="navbar-brand" href="/"><img width="116" height="22" src="/assets/logo-9a0c71ef3e238cad3e4ee8196e4b11f0d83c43435bb81602f6932bed992812ed.svg"></a> 
+    </div> 
+    <div class="navbar-collapse collapse" id="navbar-main"> 
+     <ul class="nav navbar-nav navbar-left"> 
+      <li class=" "> 
+       <form class="navbar-form search_form" action="/search" accept-charset="UTF-8" method="get"> 
+        <div class="input-group input-group"> 
+         <input type="text" name="q" id="q" value="" placeholder="Search Packages" class="form-control search-input" size="40"> <span class="input-group-btn"> <button class="btn btn-primary" type="submit"> <i class="fa fa-search"></i> </button> </span> 
+        </div> 
+       </form> </li> 
+     </ul> 
+     <ul class="nav navbar-nav navbar-right"> 
+      <li> 
+       <div class="navbar-btn btn-group"> <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Login <span class="caret"></span> </button> 
+        <ul class="dropdown-menu"> 
+         <li> <a href="/login?host_type=github&amp;return_to=https%3A%2F%2Flibraries.io%2Fpypi%2Ftwine%2F"> <i class="fa fa-github"></i> GitHub </a> </li> 
+         <li> <a href="/login?host_type=gitlab&amp;return_to=https%3A%2F%2Flibraries.io%2Fpypi%2Ftwine%2F"> <i class="fa fa-gitlab"></i> GitLab </a> </li> 
+         <li> <a href="/login?host_type=bitbucket&amp;return_to=https%3A%2F%2Flibraries.io%2Fpypi%2Ftwine%2F"> <i class="fa fa-bitbucket"></i> Bitbucket </a> </li> 
+         <li class="divider"></li> 
+         <li class="dropdown-header terms"> By logging in you accept <br>our <a href="/terms">terms of service</a> <br>and <a href="/privacy">privacy policy</a> </li> 
+        </ul> 
+       </div> </li> 
+     </ul> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="container"> 
+   <div class="alert alert-info hidden-xs" role="alert" style="background-color: #F6914D; border-color: #F6914D; color: white;"> 
+    <img src="https://libraries.io/assets/tidelift-small-320609bbe2086f5c36ab08d4d302b0867060b5d9a8c5af80ad1fc747c70d5d9b.png" width="36px" style="padding-right: 12px;"> At Upstream this year we ask: What is our responsibility to each other? <strong> <a href="https://upstream.live/?utm_source=libraries.io&amp;utm_medium=referral&amp;utm_campaign=upstream-3" target="_blank" style="text-decoration:underline;color: white;"> RSVP </a> </strong> 
+   </div> 
+   <div class="row"> 
+    <div class="col-md-8"> 
+     <div class="row"> 
+      <div class="col-md-7"> 
+       <h1> twine <br> <small class="hidden-xs"> Release 4.0.0 </small> </h1> 
+      </div> 
+      <div class="col-md-5 sidebar"> 
+       <h1> 
+        <div class="btn-group visible-xs"> <span class="btn btn-default"> Release 4.0.0 </span> <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span class="caret"></span> <span class="sr-only">Toggle Dropdown</span> </button> 
+         <ul class="dropdown-menu"> 
+          <li> <a href="/pypi/twine/4.0.0"> <i class="fa fa-check"></i> 4.0.0 </a> </li> 
+          <li> <a href="/pypi/twine/3.8.0"> <span class="fa-blank"></span> 3.8.0 </a> </li> 
+          <li> <a href="/pypi/twine/3.7.1"> <span class="fa-blank"></span> 3.7.1 </a> </li> 
+          <li> <a href="/pypi/twine/3.7.0"> <span class="fa-blank"></span> 3.7.0 </a> </li> 
+          <li> <a href="/pypi/twine/3.6.0"> <span class="fa-blank"></span> 3.6.0 </a> </li> 
+          <li> <a href="/pypi/twine/3.5.0"> <span class="fa-blank"></span> 3.5.0 </a> </li> 
+          <li> <a href="/pypi/twine/3.4.2"> <span class="fa-blank"></span> 3.4.2 </a> </li> 
+          <li> <a href="/pypi/twine/3.4.0"> <span class="fa-blank"></span> 3.4.0 </a> </li> 
+          <li> <a href="/pypi/twine/3.3.0"> <span class="fa-blank"></span> 3.3.0 </a> </li> 
+          <li> <a href="/pypi/twine/3.3.0rc1"> <span class="fa-blank"></span> 3.3.0rc1 </a> </li> 
+         </ul> 
+         <br> 
+        </div> </h1> 
+      </div> 
+     </div> 
+     <p> Collection of utilities for publishing packages on PyPI </p> 
+     <p class="project-links"> <span><a rel="nofollow" href="https://twine.readthedocs.io/">Homepage</a></span> <span><a rel="nofollow" href="https://github.com/pypa/twine">Repository</a></span> <span><a href="https://pypi.org/project/twine/4.0.0">PyPI</a></span> <span><a href="/languages/Python">Python</a></span> </p> 
+     <hr> 
+     <dl> 
+      <dt>
+        Keywords 
+      </dt> 
+      <dd> <a href="/search?keywords=pypi">pypi</a>, <a href="/search?keywords=pypi-package">pypi-package</a>, <a href="/search?keywords=pypi-upload">pypi-upload</a>, <a href="/search?keywords=python">python</a>, <a href="/search?keywords=python-wheel">python-wheel</a>, <a href="/search?keywords=python3">python3</a>, <a href="/search?keywords=wheel">wheel</a> 
+      </dd> 
+      <dt>
+        License 
+      </dt> 
+      <dd> <a href="/licenses/Apache-2.0">Apache-2.0</a> 
+      </dd> 
+      <dt>
+        Install 
+      </dt> 
+      <dd class="well"> <code> pip install twine==4.0.0 </code> 
+      </dd> 
+     </dl> 
+    </div> 
+    <div class="col-md-4 sidebar"> 
+     <dl class="row"> 
+      <h2> 
+       <dt class="col-xs-8">
+         SourceRank 
+       </dt> 
+       <dd class="col-xs-4"> <a href="/pypi/twine/sourcerank">25</a> 
+       </dd> </h2> 
+     </dl> 
+     <hr> 
+     <dl class="row"> 
+      <dt class="col-xs-8">
+        Dependencies 
+      </dt> 
+      <dd class="col-xs-4">
+        9 
+      </dd> 
+      <dt class="col-xs-8">
+        Dependent packages 
+      </dt> 
+      <dd class="col-xs-4"> <a href="/pypi/twine/dependents">3.56K</a> 
+      </dd> 
+      <dt class="col-xs-8">
+        Dependent repositories 
+      </dt> 
+      <dd class="col-xs-4">
+        8.75K 
+      </dd> 
+      <dt class="col-xs-8">
+        Total releases 
+      </dt> 
+      <dd class="col-xs-4"> <a href="/pypi/twine/versions">49</a> 
+      </dd> 
+      <dt class="col-xs-8">
+        Latest release 
+      </dt> 
+      <dd class="col-xs-4"> <time datetime="2022-03-31T12:51:28Z" title="Mar 31, 2022" data-time-ago="2022-03-31T12:51:28Z">about 2 months ago</time> 
+      </dd> 
+      <dt class="col-xs-8">
+        First release 
+      </dt> 
+      <dd class="col-xs-4"> <time datetime="2013-09-26T12:48:13Z" title="Sep 26, 2013">Sep 26, 2013</time> 
+      </dd> 
+      <dt class="col-xs-8">
+        Stars 
+      </dt> 
+      <dd class="col-xs-4"> <a href="https://github.com/pypa/twine/stargazers">1.25K</a> 
+      </dd> 
+      <dt class="col-xs-8">
+        Forks 
+      </dt> 
+      <dd class="col-xs-4"> <a href="https://github.com/pypa/twine/network">261</a> 
+      </dd> 
+      <dt class="col-xs-8">
+        Watchers 
+      </dt> 
+      <dd class="col-xs-4"> <a href="https://github.com/pypa/twine/watchers">28</a> 
+      </dd> 
+      <dt class="col-xs-8">
+        Contributors 
+      </dt> 
+      <dd class="col-xs-4"> <a href="https://github.com/pypa/twine/graphs/contributors">104</a> 
+      </dd> 
+      <dt class="col-xs-8">
+        Repository size 
+      </dt> 
+      <dd class="col-xs-4">
+        1.49 MB 
+      </dd> 
+     </dl> 
+    </div> 
+   </div> 
+   <div class="row"> 
+    <div class="col-md-8"> 
+     <hr> 
+     <h3 data-ga-tracked-el="readme">Documentation</h3> 
+     <div class="well well-large" id="readme"> 
+      <div id="readme" class="rst" data-path="README.rst">
+       <article class="markdown-body entry-content container-lg" itemprop="text">
+        <a href="https://pypi.org/project/twine" rel="nofollow"><img src="https://camo.githubusercontent.com/c3a5c4222effa3897914aec062e04879ce3f543669d2323f0ce9f1de6e84a144/68747470733a2f2f696d672e736869656c64732e696f2f707970692f762f7477696e652e737667" data-canonical-src="https://img.shields.io/pypi/v/twine.svg" style="max-width: 100%;"> </a> <a href="https://pypi.org/project/twine" rel="nofollow"><img src="https://camo.githubusercontent.com/f0a9c0f1d5a843f53ca6e11a337684a6428b9dee1c675e15d66fa2fced87213b/68747470733a2f2f696d672e736869656c64732e696f2f707970692f707976657273696f6e732f7477696e652e737667" data-canonical-src="https://img.shields.io/pypi/pyversions/twine.svg" style="max-width: 100%;"> </a> <a href="https://twine.readthedocs.io" rel="nofollow"><img alt="https://img.shields.io/readthedocs/twine" src="https://camo.githubusercontent.com/9c95f22387196f60fe23b5a40f390df1db77ef32a510cda04bf0bb29f8a55071/68747470733a2f2f696d672e736869656c64732e696f2f72656164746865646f63732f7477696e65" data-canonical-src="https://img.shields.io/readthedocs/twine" style="max-width: 100%;"></a> <a href="https://github.com/pypa/twine/actions"><img alt="https://img.shields.io/github/workflow/status/pypa/twine/Main" src="https://camo.githubusercontent.com/5ea2fd552592e48822e74b7e9dc60cda86d02bb26cf579282cdfc7184d0bdd64/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f776f726b666c6f772f7374617475732f707970612f7477696e652f4d61696e" data-canonical-src="https://img.shields.io/github/workflow/status/pypa/twine/Main" style="max-width: 100%;"></a> <a href="https://codecov.io/gh/pypa/twine" rel="nofollow"><img alt="https://img.shields.io/codecov/c/github/pypa/twine" src="https://camo.githubusercontent.com/878c401a1fc7eaf4994ad32a880682464763095b94c696979de06ed57b203462/68747470733a2f2f696d672e736869656c64732e696f2f636f6465636f762f632f6769746875622f707970612f7477696e65" data-canonical-src="https://img.shields.io/codecov/c/github/pypa/twine" style="max-width: 100%;"></a> <a name="user-content-twine"></a> 
+        <h2 dir="auto"> <a id="user-content-twine" class="anchor" aria-hidden="true" href="#twine">
+          <svg class="octicon octicon-link" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+           <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+          </svg></a>twine</h2> 
+        <p dir="auto">Twine is a utility for <a href="https://packaging.python.org/tutorials/packaging-projects/" rel="nofollow">publishing</a> Python packages on <a href="https://pypi.org" rel="nofollow">PyPI</a>.</p> 
+        <p dir="auto">It provides build system independent uploads of source and binary <a href="https://packaging.python.org/glossary/#term-Distribution-Package" rel="nofollow">distribution artifacts</a> for both new and existing <a href="https://packaging.python.org/glossary/#term-Project" rel="nofollow">projects</a>.</p> 
+        <p dir="auto">See our <a href="https://twine.readthedocs.io/" rel="nofollow">documentation</a> for a description of features, installation and usage instructions, and links to additional resources.</p> <a name="user-content-contributing"></a> 
+        <h3 dir="auto"> <a id="user-content-contributing" class="anchor" aria-hidden="true" href="#contributing">
+          <svg class="octicon octicon-link" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+           <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+          </svg></a>Contributing</h3> 
+        <p dir="auto">See our <a href="https://twine.readthedocs.io/en/latest/contributing.html" rel="nofollow">developer documentation</a> for how to get started, an architectural overview, and our future development plans.</p> <a name="user-content-code-of-conduct"></a> 
+        <h3 dir="auto"> <a id="user-content-code-of-conduct" class="anchor" aria-hidden="true" href="#code-of-conduct">
+          <svg class="octicon octicon-link" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+           <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+          </svg></a>Code of Conduct</h3> 
+        <p dir="auto">Everyone interacting in the Twine project's codebases, issue trackers, chat rooms, and mailing lists is expected to follow the <a href="https://github.com/pypa/.github/blob/main/CODE_OF_CONDUCT.md">PSF Code of Conduct</a>.</p> 
+       </article>
+      </div> 
+     </div> 
+    </div> 
+    <div class="col-md-4 sidebar"> 
+     <hr> 
+     <h4 data-ga-tracked-el="releases"> Releases <a class="rss" href="https://libraries.io/pypi/twine/versions.atom"> <i class="fa fa-rss-square"></i> </a> </h4> 
+     <dl class="releases row"> 
+      <dt class="col-xs-12 col-sm-8"> <a href="/pypi/twine/4.0.0">4.0.0</a> <small class="text-muted"> <a class="tip" title="Browse source on GitHub" href="https://github.com/pypa/twine/releases/tag/4.0.0"> <i class="fa fa-tag"></i> </a> </small> <small class="text-muted"> <a class="tip" title="View diff between 4.0.0 and 3.8.0" href="https://github.com/pypa/twine/compare/3.8.0...4.0.0"> <span><i class="fa fa-random"></i></span> </a> </small> 
+      </dt> 
+      <dd class="col-sm-4 hidden-xs"> <small class="text-muted"> Mar 31, 2022 </small> 
+      </dd> 
+      <dt class="col-xs-12 col-sm-8"> <a href="/pypi/twine/3.8.0">3.8.0</a> <small class="text-muted"> <a class="tip" title="Browse source on GitHub" href="https://github.com/pypa/twine/releases/tag/3.8.0"> <i class="fa fa-tag"></i> </a> </small> <small class="text-muted"> <a class="tip" title="View diff between 3.8.0 and 3.7.1" href="https://github.com/pypa/twine/compare/3.7.1...3.8.0"> <span><i class="fa fa-random"></i></span> </a> </small> 
+      </dt> 
+      <dd class="col-sm-4 hidden-xs"> <small class="text-muted"> Feb 2, 2022 </small> 
+      </dd> 
+      <dt class="col-xs-12 col-sm-8"> <a href="/pypi/twine/3.7.1">3.7.1</a> <small class="text-muted"> <a class="tip" title="Browse source on GitHub" href="https://github.com/pypa/twine/releases/tag/3.7.1"> <i class="fa fa-tag"></i> </a> </small> <small class="text-muted"> <a class="tip" title="View diff between 3.7.1 and 3.7.0" href="https://github.com/pypa/twine/compare/3.7.0...3.7.1"> <span><i class="fa fa-random"></i></span> </a> </small> 
+      </dt> 
+      <dd class="col-sm-4 hidden-xs"> <small class="text-muted"> Dec 7, 2021 </small> 
+      </dd> 
+      <dt class="col-xs-12 col-sm-8"> <a href="/pypi/twine/3.7.0">3.7.0</a> <small class="text-muted"> <a class="tip" title="Browse source on GitHub" href="https://github.com/pypa/twine/releases/tag/3.7.0"> <i class="fa fa-tag"></i> </a> </small> <small class="text-muted"> <a class="tip" title="View diff between 3.7.0 and 3.6.0" href="https://github.com/pypa/twine/compare/3.6.0...3.7.0"> <span><i class="fa fa-random"></i></span> </a> </small> 
+      </dt> 
+      <dd class="col-sm-4 hidden-xs"> <small class="text-muted"> Dec 1, 2021 </small> 
+      </dd> 
+      <dt class="col-xs-12 col-sm-8"> <a href="/pypi/twine/3.6.0">3.6.0</a> <small class="text-muted"> <a class="tip" title="Browse source on GitHub" href="https://github.com/pypa/twine/releases/tag/3.6.0"> <i class="fa fa-tag"></i> </a> </small> <small class="text-muted"> <a class="tip" title="View diff between 3.6.0 and 3.5.0" href="https://github.com/pypa/twine/compare/3.5.0...3.6.0"> <span><i class="fa fa-random"></i></span> </a> </small> 
+      </dt> 
+      <dd class="col-sm-4 hidden-xs"> <small class="text-muted"> Nov 10, 2021 </small> 
+      </dd> 
+      <dt class="col-xs-12 col-sm-8"> <a href="/pypi/twine/3.5.0">3.5.0</a> <small class="text-muted"> <a class="tip" title="Browse source on GitHub" href="https://github.com/pypa/twine/releases/tag/3.5.0"> <i class="fa fa-tag"></i> </a> </small> <small class="text-muted"> <a class="tip" title="View diff between 3.5.0 and 3.4.2" href="https://github.com/pypa/twine/compare/3.4.2...3.5.0"> <span><i class="fa fa-random"></i></span> </a> </small> 
+      </dt> 
+      <dd class="col-sm-4 hidden-xs"> <small class="text-muted"> Nov 3, 2021 </small> 
+      </dd> 
+      <dt class="col-xs-12 col-sm-8"> <a href="/pypi/twine/3.4.2">3.4.2</a> <small class="text-muted"> <a class="tip" title="Browse source on GitHub" href="https://github.com/pypa/twine/releases/tag/3.4.2"> <i class="fa fa-tag"></i> </a> </small> <small class="text-muted"> <a class="tip" title="View diff between 3.4.2 and 3.4.0" href="https://github.com/pypa/twine/compare/3.4.0...3.4.2"> <span><i class="fa fa-random"></i></span> </a> </small> 
+      </dt> 
+      <dd class="col-sm-4 hidden-xs"> <small class="text-muted"> Jul 20, 2021 </small> 
+      </dd> 
+      <dt class="col-xs-12 col-sm-8"> <a href="/pypi/twine/3.4.0">3.4.0</a> <small class="text-muted"> <a class="tip" title="Browse source on GitHub" href="https://github.com/pypa/twine/releases/tag/3.4.0"> <i class="fa fa-tag"></i> </a> </small> <small class="text-muted"> <a class="tip" title="View diff between 3.4.0 and 3.3.0" href="https://github.com/pypa/twine/compare/3.3.0...3.4.0"> <span><i class="fa fa-random"></i></span> </a> </small> 
+      </dt> 
+      <dd class="col-sm-4 hidden-xs"> <small class="text-muted"> Mar 15, 2021 </small> 
+      </dd> 
+      <dt class="col-xs-12 col-sm-8"> <a href="/pypi/twine/3.3.0">3.3.0</a> <small class="text-muted"> <a class="tip" title="Browse source on GitHub" href="https://github.com/pypa/twine/releases/tag/3.3.0"> <i class="fa fa-tag"></i> </a> </small> <small class="text-muted"> <a class="tip" title="View diff between 3.3.0 and 3.3.0rc1" href="https://github.com/pypa/twine/compare/3.3.0rc1...3.3.0"> <span><i class="fa fa-random"></i></span> </a> </small> 
+      </dt> 
+      <dd class="col-sm-4 hidden-xs"> <small class="text-muted"> Dec 24, 2020 </small> 
+      </dd> 
+      <dt class="col-xs-12 col-sm-8"> <a href="/pypi/twine/3.3.0rc1">3.3.0rc1</a> <small class="text-muted"> <a class="tip" title="Browse source on GitHub" href="https://github.com/pypa/twine/releases/tag/3.3.0rc1"> <i class="fa fa-tag"></i> </a> </small> <small class="text-muted"> <a class="tip" title="View diff between 3.3.0rc1 and 3.2.0" href="https://github.com/pypa/twine/compare/3.2.0...3.3.0rc1"> <span><i class="fa fa-random"></i></span> </a> </small> 
+      </dt> 
+      <dd class="col-sm-4 hidden-xs"> <small class="text-muted"> Dec 23, 2020 </small> 
+      </dd> 
+     </dl> <a href="/pypi/twine/versions">See all 49 releases</a> 
+     <hr> 
+     <div class="row"> 
+      <div class="col-md-12"> 
+       <h3 data-ga-tracked-el="top-contributors">Contributors</h3> <a title="Ian Stapleton Cordasco" href="/github/sigmavirus24"><img width="60" height="60" alt="Ian Stapleton Cordasco" class="pull-left" src="https://avatars.githubusercontent.com/u/240830?size=120"></a> <a title="Brian Rutledge" href="/github/bhrutledge"><img width="60" height="60" alt="Brian Rutledge" class="pull-left" src="https://avatars.githubusercontent.com/u/1326704?size=120"></a> <a title="Jason R. Coombs" href="/github/jaraco"><img width="60" height="60" alt="Jason R. Coombs" class="pull-left" src="https://avatars.githubusercontent.com/u/308610?size=120"></a> <a title="Donald Stufft" href="/github/dstufft"><img width="60" height="60" alt="Donald Stufft" class="pull-left" src="https://avatars.githubusercontent.com/u/145979?size=120"></a> <a title="Sumana Harihareswara" href="/github/brainwane"><img width="60" height="60" alt="Sumana Harihareswara" class="pull-left" src="https://avatars.githubusercontent.com/u/842790?size=120"></a> <a title="Devesh Kumar Singh" href="/github/deveshks"><img width="60" height="60" alt="Devesh Kumar Singh" class="pull-left" src="https://avatars.githubusercontent.com/u/13155849?size=120"></a> <a title="Dustin Ingram" href="/github/di"><img width="60" height="60" alt="Dustin Ingram" class="pull-left" src="https://avatars.githubusercontent.com/u/294415?size=120"></a> <a title="Jon Dufresne" href="/github/jdufresne"><img width="60" height="60" alt="Jon Dufresne" class="pull-left" src="https://avatars.githubusercontent.com/u/347634?size=120"></a> <a title="Pradyun Gedam" href="/github/pradyunsg"><img width="60" height="60" alt="Pradyun Gedam" class="pull-left" src="https://avatars.githubusercontent.com/u/3275593?size=120"></a> <a title="Steve Dower" href="/github/zooba"><img width="60" height="60" alt="Steve Dower" class="pull-left" src="https://avatars.githubusercontent.com/u/1693688?size=120"></a> <a title="Jannis Leidel" href="/github/jezdez"><img width="60" height="60" alt="Jannis Leidel" class="pull-left" src="https://avatars.githubusercontent.com/u/1610?size=120"></a> <a title="Marc Abramowitz" href="/github/msabramo"><img width="60" height="60" alt="Marc Abramowitz" class="pull-left" src="https://avatars.githubusercontent.com/u/305268?size=120"></a> <a title="S. Co1" href="/github/sco1"><img width="60" height="60" alt="S. Co1" class="pull-left" src="https://avatars.githubusercontent.com/u/5323929?size=120"></a> <a title="Tyrel Souza" href="/github/tyrelsouza"><img width="60" height="60" alt="Tyrel Souza" class="pull-left" src="https://avatars.githubusercontent.com/u/923113?size=120"></a> <a title="Sviatoslav Sydorenko" href="/github/webknjaz"><img width="60" height="60" alt="Sviatoslav Sydorenko" class="pull-left" src="https://avatars.githubusercontent.com/u/578543?size=120"></a> <a title="annaraven" href="/github/annaraven"><img width="60" height="60" alt="annaraven" class="pull-left" src="https://avatars.githubusercontent.com/u/2205731?size=120"></a> <a title="Kevin Harper" href="/github/khdc-me"><img width="60" height="60" alt="Kevin Harper" class="pull-left" src="https://avatars.githubusercontent.com/u/29671364?size=120"></a> <a title="Daniel Alley" href="/github/dralley"><img width="60" height="60" alt="Daniel Alley" class="pull-left" src="https://avatars.githubusercontent.com/u/2751996?size=120"></a> <a title="Laura " href="/github/lgh2"><img width="60" height="60" alt="Laura " class="pull-left" src="https://avatars.githubusercontent.com/u/17437250?size=120"></a> <a title="Peter Stensmyr" href="/github/allhailwesttexas"><img width="60" height="60" alt="Peter Stensmyr" class="pull-left" src="https://avatars.githubusercontent.com/u/1276647?size=120"></a> <a title="Thiago Colares" href="/github/thicolares"><img width="60" height="60" alt="Thiago Colares" class="pull-left" src="https://avatars.githubusercontent.com/u/849493?size=120"></a> <a title="Rodrigue Cloutier" href="/github/rodcloutier"><img width="60" height="60" alt="Rodrigue Cloutier" class="pull-left" src="https://avatars.githubusercontent.com/u/97381?size=120"></a> <a title="meowmeowcat" href="/github/meowmeowmeowcat"><img width="60" height="60" alt="meowmeowcat" class="pull-left" src="https://avatars.githubusercontent.com/u/68463158?size=120"></a> <a title="VikramJayanthi17" href="/github/VikramJayanthi17"><img width="60" height="60" alt="VikramJayanthi17" class="pull-left" src="https://avatars.githubusercontent.com/u/35483161?size=120"></a> 
+      </div> 
+     </div> 
+     <p> <br><a href="/github/pypa/twine/contributors">See all contributors</a> </p> 
+     <div id="version_dependencies" style="display:none;" data-url="/pypi/twine/4.0.0/dependencies"></div> 
+     <div id="top_dependent_repos" style="display:none;" data-url="/pypi/twine/top_dependent_repos"></div> 
+     <p> <i class="fa fa-question-circle"></i> Something wrong with this page? <a href="/pypi/twine/suggestions">Make a suggestion</a> </p> 
+     <p> <i class="fa fa-download"></i> <a href="/pypi/twine/4.0.0.about">Export .ABOUT file for this package</a> </p> 
+     <p> <small class="text-muted">Last synced: 2022-03-31 13:04:11 UTC</small> </p> 
+     <p> <small class="text-muted"> <a href="/login?return_to=https%3A%2F%2Flibraries.io%2Fpypi%2Ftwine%2F">Login</a> to resync this project </small> </p> 
+    </div> 
+   </div> 
+  </div> 
+  <footer data-ga-tracked-el="footer"> 
+   <div class="container"> 
+    <div class="row"> 
+     <div class="col-xs-12 col-sm-6 col-md-4"> 
+      <p> <a href="/">Libraries.io</a> helps you find new open source packages, modules and frameworks and keep track of ones you depend upon. </p> 
+      <p> <a href="https://github.com/librariesio" title="GitHub"><i class="fa fa-github"></i></a>&nbsp; <a href="mailto:support@libraries.io" title="Email"><i class="fa fa-envelope"></i></a>&nbsp; <a href="https://github.com/librariesio/libraries.io/issues/new" title="Support"><i class="fa fa-question-circle"></i></a>&nbsp; </p> 
+      <hr> 
+      <p> <a href="https://tidelift.com"><img width="160" src="/assets/Tidelift_project_logo_white-eb4d67a698f88ef27b665cf10d43d989c960f6c0c40aa929a440f02864d177b8.svg"></a> </p> 
+      <p class="text-muted"> Copyright © 2022 Tidelift, Inc<br> Code is Open Source under <a href="https://github.com/librariesio/libraries.io/blob/main/LICENSE.txt">AGPLv3</a> license<br> Data is available under <a href="https://libraries.io/data">CC-BY-SA 4.0</a> license </p> 
+     </div> 
+     <div class="col-xs-12 col-md-2"> <strong><a href="/explore">Explore</a></strong> 
+      <ul> 
+       <li><a href="/platforms">Platforms</a></li> 
+       <li><a href="/languages">Languages</a></li> 
+       <li><a href="/licenses">Licenses</a></li> 
+      </ul> 
+     </div> 
+     <div class="col-xs-12 col-md-2"> 
+      <ul class="list-unstyled"> 
+       <li><strong><a href="/about">About</a></strong></li> 
+       <li><strong><a href="/team">Team</a></strong></li> 
+       <li><strong><a href="/terms">Terms and Conditions</a></strong></li> 
+       <li><strong><a href="/privacy">Privacy Policy</a></strong></li> 
+       <li><strong><a href="/api">API</a></strong></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </footer> 
+  <script>
+    if (typeof ga === 'function') { ga('send', 'pageview', location.pathname+location.search) }
+  </script>  
+ </body>
+</html>

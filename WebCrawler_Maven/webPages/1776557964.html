@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en"> 
+ <head> 
+  <title>PostgreSQL: Documentation</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+  <meta http-equiv="Content-Type" content="text/xhtml; charset=utf-8"> 
+  <meta name="theme-color" content="#336791"> 
+  <meta name="copyright" content="The PostgreSQL Global Development Group"> 
+  <link href="/media/css/fontawesome.css?b6f8b0c4" rel="stylesheet"> 
+  <link rel="stylesheet" href="/media/css/bootstrap-4.4.1.min.css"> 
+  <link rel="shortcut icon" href="/favicon.ico"> 
+  <link rel="stylesheet" type="text/css" href="/dyncss/base.css?b6f8b0c4"> 
+ </head> 
+ <body> 
+  <div class="container-fluid"> 
+   <div class="row justify-content-md-center"> 
+    <div class="col"> <!-- Header --> 
+     <nav class="navbar navbar-expand-lg navbar-light bg-light"> <a class="navbar-brand p-0" href="/"> <img class="logo" src="/media/img/about/press/elephant.png" alt="PostgreSQL Elephant Logo"> </a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#pgNavbar" aria-controls="pgNavbar" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button> 
+      <div class="collapse navbar-collapse" id="pgNavbar"> 
+       <ul class="navbar-nav mr-auto"> 
+        <li class="nav-item p-2"><a href="/" title="Home">Home</a></li> 
+        <li class="nav-item p-2"><a href="/about/" title="About">About</a></li> 
+        <li class="nav-item p-2"><a href="/download/" title="Download">Download</a></li> 
+        <li class="nav-item p-2"><a href="/docs/" title="Documentation">Documentation</a></li> 
+        <li class="nav-item p-2"><a href="/community/" title="Community">Community</a></li> 
+        <li class="nav-item p-2"><a href="/developer/" title="Developers">Developers</a></li> 
+        <li class="nav-item p-2"><a href="/support/" title="Support">Support</a></li> 
+        <li class="nav-item p-2"><a href="/about/donate/" title="Donate">Donate</a></li> 
+        <li class="nav-item p-2"><a href="/account/" title="Your account">Your account</a></li> 
+       </ul> 
+       <form role="search" method="get" action="/search/"> 
+        <div class="input-group"> 
+         <input id="q" name="q" type="text" size="20" maxlength="255" accesskey="s" class="form-control" placeholder="Search for..."> <span class="input-group-btn"> <button class="btn btn-default" type="submit"><i class="fas fa-search"></i></button> </span> 
+        </div><!-- /input-group --> 
+       </form> 
+      </div> 
+     </nav> 
+    </div> 
+   </div> 
+   <div class="row justify-content-center pg-shout-box"> 
+    <div class="col text-white text-center">
+     12th May 2022: <a href="https://www.postgresql.org/about/news/postgresql-143-137-1211-1116-and-1021-released-2449/"> PostgreSQL 14.3, 13.7, 12.11, 11.16, and 10.21 Released</a>! 
+    </div> 
+   </div> 
+  </div> 
+  <div class="container-fluid margin"> 
+   <div class="row"> 
+    <div class="col-lg-2"> 
+     <div id="pgSideWrap"> 
+      <div id="pgSideNav"> 
+       <h2>Quick Links</h2> 
+       <ul> 
+        <li><a href="/docs/">Documentation</a> </li> 
+        <li><a href="/docs/">Manuals</a> 
+         <ul> 
+          <li class="last-child"><a href="/docs/manuals/archive/">Archive</a></li> 
+         </ul> </li> 
+        <li><a href="/docs/release/">Release Notes</a> </li> 
+        <li><a href="/docs/books/">Books</a> </li> 
+        <li><a href="/docs/online-resources/">Tutorials &amp; Other Resources</a> </li> 
+        <li><a href="/docs/faq/">FAQ</a> </li> 
+        <li class="last-child"><a href="https://wiki.postgresql.org">Wiki</a> </li> 
+       </ul> 
+      </div> 
+     </div> <!-- pgSideWrap --> 
+    </div> 
+    <div class="col-lg-10"> 
+     <div id="pgContentWrap"> 
+      <div class="row"> 
+       <div class="col-md-9"> 
+        <section> 
+         <h1>Documentation <i class="far fa-file-alt"></i></h1> 
+        </section> 
+        <p> <a class="btn btn-primary btn-double-width" href="/docs/current/">View the manual</a> </p> 
+        <h2>Manuals <i class="fas fa-book"></i></h2> 
+        <p> You can view the manual for an older version or download a PDF of a manual from the below table. </p> 
+        <table class="table table-striped"> 
+         <thead class="thead-light"> 
+          <tr> 
+           <th class="w-25">Online Version</th> 
+           <th>PDF Version</th> 
+          </tr> 
+         </thead> 
+         <tbody> 
+          <tr> 
+           <td> <a href="/docs/14/index.html">14</a> / <a href="/docs/current/index.html">Current</a> </td> 
+           <td> <a href="/files/documentation/pdf/14/postgresql-14-A4.pdf">A4 PDF</a> <span class="txtMediumGrey">(13.2&nbsp;MB)</span> • <a href="/files/documentation/pdf/14/postgresql-14-US.pdf">US PDF</a> <span class="txtMediumGrey">(13.1&nbsp;MB)</span> </td>
+          </tr> 
+          <tr> 
+           <td> <a href="/docs/13/index.html">13</a> </td> 
+           <td> <a href="/files/documentation/pdf/13/postgresql-13-A4.pdf">A4 PDF</a> <span class="txtMediumGrey">(12.9&nbsp;MB)</span> • <a href="/files/documentation/pdf/13/postgresql-13-US.pdf">US PDF</a> <span class="txtMediumGrey">(12.8&nbsp;MB)</span> </td>
+          </tr> 
+          <tr> 
+           <td> <a href="/docs/12/index.html">12</a> </td> 
+           <td> <a href="/files/documentation/pdf/12/postgresql-12-A4.pdf">A4 PDF</a> <span class="txtMediumGrey">(12.6&nbsp;MB)</span> • <a href="/files/documentation/pdf/12/postgresql-12-US.pdf">US PDF</a> <span class="txtMediumGrey">(12.5&nbsp;MB)</span> </td>
+          </tr> 
+          <tr> 
+           <td> <a href="/docs/11/index.html">11</a> </td> 
+           <td> <a href="/files/documentation/pdf/11/postgresql-11-A4.pdf">A4 PDF</a> <span class="txtMediumGrey">(12.3&nbsp;MB)</span> • <a href="/files/documentation/pdf/11/postgresql-11-US.pdf">US PDF</a> <span class="txtMediumGrey">(12.2&nbsp;MB)</span> </td>
+          </tr> 
+          <tr> 
+           <td> <a href="/docs/10/index.html">10</a> </td> 
+           <td> <a href="/files/documentation/pdf/10/postgresql-10-A4.pdf">A4 PDF</a> <span class="txtMediumGrey">(12.0&nbsp;MB)</span> • <a href="/files/documentation/pdf/10/postgresql-10-US.pdf">US PDF</a> <span class="txtMediumGrey">(11.9&nbsp;MB)</span> </td>
+          </tr> 
+          <tr> 
+           <td><a href="/docs/devel/index.html">Development snapshot</a></td> 
+           <td>PDF version not available</td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <p> Looking for documentation for an older, unsupported, version? Check the <a href="/docs/manuals/archive/">archive</a> of older manuals. </p> 
+       </div> 
+       <div class="col-md-3"> 
+        <section> 
+         <h2>Translated Manuals</h2> 
+        </section> 
+        <ul> 
+         <li><a href="http://www.postgres.cn/docs" target="_blank" rel="noopener">Chinese</a></li> 
+         <li><a href="https://docs.postgresql.fr" target="_blank" rel="noopener">French</a></li> 
+         <li><a href="https://www.postgresql.jp/document/" target="_blank" rel="noopener">Japanese</a></li> 
+         <li><a href="https://postgrespro.ru/docs/postgresql" target="_blank" rel="noopener">Russian</a></li> 
+        </ul> 
+       </div> 
+      </div> 
+     </div> <!-- pgContentWrap --> 
+    </div> 
+   </div> 
+  </div> <!-- Footer --> 
+  <footer id="footer"> 
+   <div class="container"> 
+    <div class="row"> 
+     <div class="col-md-12"> 
+      <ul> 
+       <li><a href="https://twitter.com/postgresql"><img src="/media/img/atpostgresql.png" alt="@postgresql"></a></li> 
+       <li><a href="https://git.postgresql.org/gitweb/?p=postgresql.git"><img src="/media/img/git.png" alt="Git"></a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> <!-- Copyright --> 
+   <div class="container"> <a href="/about/policies/">Policies</a> | <a href="/about/policies/coc/">Code of Conduct</a> | <a href="/about/">About PostgreSQL</a> | <a href="/about/contact/">Contact</a>
+    <br> 
+    <p>Copyright © 1996-2022 The PostgreSQL Global Development Group</p> 
+   </div> 
+  </footer> 
+  <script src="/media/js/jquery-3.4.1.slim.min.js"></script> 
+  <script src="/media/js/popper-1.16.0.min.js"></script> 
+  <script src="/media/js/bootstrap-4.4.1.min.js"></script> 
+  <script src="/media/js/main.js?b6f8b0c4"></script>  
+ </body>
+</html>

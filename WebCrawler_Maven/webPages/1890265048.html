@@ -1,0 +1,970 @@
+<!doctype html>
+<html lang="en" dir="ltr"> 
+ <head> 
+  <meta charset="utf-8"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <meta name="defaultLanguage" content="en"> 
+  <meta name="availableLanguages" content="en, es, fr, ja, pt_BR, uk, el, de, zh_Hans, zh_Hant, ru, he, eo"> 
+  <title>bandersnatch · PyPI</title> 
+  <meta name="description" content="Mirroring tool that implements the client (mirror) side of PEP 381"> 
+  <link rel="stylesheet" href="/static/css/warehouse-ltr.ded6edb1.css"> 
+  <link rel="stylesheet" href="/static/css/fontawesome.6002a161.css"> 
+  <link rel="stylesheet" href="/static/css/regular.98fbf39a.css"> 
+  <link rel="stylesheet" href="/static/css/solid.c3b5f0b5.css"> 
+  <link rel="stylesheet" href="/static/css/brands.2c303be1.css"> 
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,600,600italic,700,700italic%7CSource+Code+Pro:500"> 
+  <noscript> 
+   <link rel="stylesheet" href="/static/css/noscript.d4ce1e76.css"> 
+  </noscript> 
+  <link rel="icon" href="/static/images/favicon.6a76275d.ico" type="image/x-icon"> 
+  <link rel="alternate" type="application/rss+xml" title="RSS: 40 latest updates" href="/rss/updates.xml"> 
+  <link rel="alternate" type="application/rss+xml" title="RSS: 40 newest packages" href="/rss/packages.xml"> 
+  <link rel="alternate" type="application/rss+xml" title="RSS: latest releases for bandersnatch" href="/rss/project/bandersnatch/releases.xml"> 
+  <link rel="canonical" href="https://pypi.org/project/bandersnatch/"> 
+  <meta property="og:url" content="https://pypi.org/project/bandersnatch/"> 
+  <meta property="og:site_name" content="PyPI"> 
+  <meta property="og:type" content="website"> 
+  <meta property="og:image" content="https://pypi.org/static/images/twitter.6fecba6f.jpg"> 
+  <meta property="og:title" content="bandersnatch"> 
+  <meta property="og:description" content="Mirroring tool that implements the client (mirror) side of PEP 381"> 
+  <link rel="search" type="application/opensearchdescription+xml" title="PyPI" href="/opensearch.xml"> 
+  <script async data-ga-id="UA-55961911-1" src="/static/js/warehouse.deaaafda.js">
+    </script> 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-55961911-1"></script> 
+  <script defer src="https://www.fastly-insights.com/insights.js?k=6a52360a-f306-421e-8ed5-7417d0d4a4e9&amp;dnt=true"></script> 
+  <script async src="https://media.ethicalads.io/media/client/v1.4.0/ethicalads.min.js" integrity="sha256-U3hKDidudIaxBDEzwGJApJgPEf2mWk6cfMWghrAa6i0= sha384-UcmsCqcNRSLW/dV3Lo1oCi2/VaurXbib6p4HyUEOeIa/4OpsrnucrugAefzVZJfI sha512-q4t1L4xEjGV2R4hzqCa41P8jrgFUS8xTb8rdNv4FGvw7FpydVj/kkxBJHOiaoxHa8olCcx1Slk9K+3sNbsM4ug==" crossorigin="anonymous"></script> 
+ </head> 
+ <body data-controller="viewport-toggle"> <!-- Accessibility: this link should always be the first piece of content inside the body--> <a href="#content" class="skip-to-content">Skip to main content</a> <button type="button" class="button button--primary button--switch-to-mobile hidden" data-target="viewport-toggle.switchToMobile" data-action="viewport-toggle#switchToMobile"> Switch to mobile version </button> 
+  <div id="sticky-notifications" class="stick-to-top js-stick-to-top"> <!-- Add browser warning. Will show for ie9 and below --> <!--[if IE]>
+      <div class="notification-bar notification-bar--warning" role="status">
+        <span class="notification-bar__icon">
+          <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+          <span class="sr-only">Warning</span>
+        </span>
+        <span class="notification-bar__message">You are using an unsupported browser, upgrade to a newer version.</span>
+      </div>
+      <![endif]--> 
+   <noscript> 
+    <div class="notification-bar notification-bar--warning" role="status"> <span class="notification-bar__icon"> <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <span class="sr-only">Warning</span> </span> <span class="notification-bar__message">Some features may not work without JavaScript. Please try enabling it if you encounter problems.</span> 
+    </div> 
+   </noscript> 
+   <div data-html-include="/_includes/notification-banners/"> 
+   </div> 
+  </div> 
+  <div data-html-include="/_includes/flash-messages/"> 
+  </div> 
+  <div data-html-include="/_includes/session-notifications/"> 
+  </div> 
+  <header class="site-header "> 
+   <div class="site-container"> 
+    <div class="split-layout"> 
+     <div class="split-layout"> 
+      <div> <a class="site-header__logo" href="/"> <img alt="PyPI" src="/static/images/logo-small.95de8436.svg"> </a> 
+      </div> 
+      <form class="search-form search-form--primary" action="/search/" role="search"> <label for="search" class="sr-only">Search PyPI</label> 
+       <input id="search" class="search-form__search" type="text" name="q" placeholder="Search projects" value="" autocomplete="off" autocapitalize="off" spellcheck="false" data-controller="search-focus" data-action="keydown@window->search-focus#focusSearchField" data-target="search-focus.searchField"> <button type="submit" class="search-form__button"> <i class="fa fa-search" aria-hidden="true"></i> <span class="sr-only">Search</span> </button> 
+      </form> 
+     </div> 
+     <div data-html-include="/_includes/current-user-indicator/"> 
+      <div id="user-indicator" class="horizontal-menu horizontal-menu--light horizontal-menu--tall"> 
+       <nav class="horizontal-menu horizontal-menu--light horizontal-menu--tall hide-on-tablet" aria-label="Main navigation"> 
+        <ul> 
+         <li class="horizontal-menu__item"><a href="/help/" class="horizontal-menu__link">Help</a></li> 
+         <li class="horizontal-menu__item"><a href="/sponsors/" class="horizontal-menu__link">Sponsors</a></li> 
+         <li class="horizontal-menu__item"><a href="/account/login/" class="horizontal-menu__link">Log in</a></li> 
+         <li class="horizontal-menu__item"><a href="/account/register/" class="horizontal-menu__link">Register</a></li> 
+        </ul> 
+       </nav> 
+       <nav class="dropdown dropdown--on-menu hidden show-on-tablet" aria-label="Main navigation"> <button type="button" class="horizontal-menu__link dropdown__trigger" aria-haspopup="true" aria-expanded="false" aria-label="View menu"> Menu <span class="dropdown__trigger-caret"> <i class="fa fa-caret-down" aria-hidden="true"></i> </span> </button> 
+        <ul class="dropdown__content" aria-hidden="true" aria-label="Main menu"> 
+         <li><a class="dropdown__link" href="/help/">Help</a></li> 
+         <li><a class="dropdown__link" href="/sponsors/">Sponsors</a></li> 
+         <li><a class="dropdown__link" href="/account/login/">Log in</a></li> 
+         <li><a class="dropdown__link" href="/account/register/">Register</a></li> 
+        </ul> 
+       </nav> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </header> 
+  <div class="mobile-search"> 
+   <form class="search-form search-form--fullwidth" action="/search/" role="search"> <label for="mobile-search" class="sr-only">Search PyPI</label> 
+    <input id="mobile-search" class="search-form__search" type="text" name="q" placeholder="Search projects" value="" autocomplete="off" autocapitalize="off" spellcheck="false"> <button type="submit" class="search-form__button"> <i class="fa fa-search" aria-hidden="true"></i> <span class="sr-only">Search</span> </button> 
+   </form> 
+  </div> 
+  <main id="content"> 
+   <div data-html-include="/_includes/administer-project-include/bandersnatch"> 
+   </div> 
+   <div class="banner"> 
+    <div class="package-header"> 
+     <div class="package-header__left"> 
+      <h1 class="package-header__name"> bandersnatch 5.2.0 </h1> 
+      <p class="package-header__pip-instructions"> <span id="pip-command">pip install bandersnatch</span> <button type="button" class="copy-tooltip copy-tooltip-s" data-clipboard-target="#pip-command" data-tooltip-label="Copy to clipboard"> <i class="fa fa-copy" aria-hidden="true"></i> <span class="sr-only">Copy PIP instructions</span> </button> </p> 
+     </div> 
+     <div class="package-header__right"> <a class="status-badge status-badge--good" href="/project/bandersnatch/"> <span>Latest version</span> </a> 
+      <p class="package-header__date"> Released: <time datetime="2022-05-02T20:14:26+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false"> May 2, 2022 </time> </p> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="horizontal-section horizontal-section--grey horizontal-section--thin"> 
+    <div class="site-container"> 
+     <div class="split-layout split-layout--middle package-description"> 
+      <p class="package-description__summary">Mirroring tool that implements the client (mirror) side of PEP 381</p> 
+      <div data-html-include="/_includes/edit-project-button/bandersnatch"> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div data-controller="project-tabs"> 
+    <div class="tabs-container"> 
+     <div class="vertical-tabs"> 
+      <div class="vertical-tabs__tabs"> 
+       <div class="sidebar-section"> 
+        <h3 class="sidebar-section__title">Navigation</h3> 
+        <nav aria-label="Navigation for bandersnatch"> 
+         <ul class="vertical-tabs__list" role="tablist"> 
+          <li role="tab"> <a id="description-tab" href="#description" data-target="project-tabs.tab" data-action="project-tabs#onTabClick" class="vertical-tabs__tab vertical-tabs__tab--with-icon vertical-tabs__tab--is-active" aria-selected="true" aria-label="Project description. Focus will be moved to the description."> <i class="fa fa-align-left" aria-hidden="true"></i> Project description </a> </li> 
+          <li role="tab"> <a id="history-tab" href="#history" data-target="project-tabs.tab" data-action="project-tabs#onTabClick" class="vertical-tabs__tab vertical-tabs__tab--with-icon" aria-label="Release history. Focus will be moved to the history panel."> <i class="fa fa-history" aria-hidden="true"></i> Release history </a> </li> 
+          <li role="tab"> <a id="files-tab" href="#files" data-target="project-tabs.tab" data-action="project-tabs#onTabClick" class="vertical-tabs__tab vertical-tabs__tab--with-icon" aria-label="Download files. Focus will be moved to the project files."> <i class="fa fa-download" aria-hidden="true"></i> Download files </a> </li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar-section"> 
+        <h3 class="sidebar-section__title">Project links</h3> 
+        <ul class="vertical-tabs__list"> 
+         <li> <a class="vertical-tabs__tab vertical-tabs__tab--with-icon vertical-tabs__tab--condensed" href="https://github.com/pypa/bandersnatch/" rel="nofollow"> <i class="fas fa-home" aria-hidden="true"></i>Homepage </a> </li> 
+         <li> <a class="vertical-tabs__tab vertical-tabs__tab--with-icon vertical-tabs__tab--condensed" href="https://github.com/pypa/bandersnatch/blob/master/CHANGES.md" rel="nofollow"> <i class="fas fa-scroll" aria-hidden="true"></i>Change Log </a> </li> 
+         <li> <a class="vertical-tabs__tab vertical-tabs__tab--with-icon vertical-tabs__tab--condensed" href="https://github.com/pypa/bandersnatch" rel="nofollow"> <i class="fab fa-github" aria-hidden="true"></i>Source Code </a> </li> 
+        </ul> 
+       </div> 
+       <div class="sidebar-section"> 
+        <h3 class="sidebar-section__title">Statistics</h3> 
+        <div class="github-repo-info hidden" data-url="https://api.github.com/repos/pypa/bandersnatch">
+          GitHub statistics: 
+         <ul class="vertical-tabs__list"> 
+          <li> <a class="vertical-tabs__tab vertical-tabs__tab--with-icon vertical-tabs__tab--condensed github-repo-info__item" data-key="html_url" data-attr="href" data-supplement="/stargazers" rel="noopener"> <i class="fa fa-star" aria-hidden="true"></i> <strong>Stars:</strong> <span class="github-repo-info__item" data-key="stargazers_count"></span> </a> </li> 
+          <li> <a class="vertical-tabs__tab vertical-tabs__tab--with-icon vertical-tabs__tab--condensed github-repo-info__item" data-key="html_url" data-attr="href" data-supplement="/network/members" rel="noopener"> <i class="fa fa-code-branch" aria-hidden="true"></i> <strong>Forks:</strong> <span class="github-repo-info__item" data-key="forks_count"></span> </a> </li> 
+          <li> <a class="vertical-tabs__tab vertical-tabs__tab--with-icon vertical-tabs__tab--condensed github-repo-info__item" data-key="html_url" data-attr="href" data-supplement="/issues" rel="noopener"> <i class="fa fa-exclamation-circle" aria-hidden="true"></i> <strong>Open issues/PRs:</strong> <span class="github-repo-info__item" data-key="open_issues_count"></span> </a> </li> 
+         </ul> 
+        </div> 
+        <p> View statistics for this project via <a href="https://libraries.io/pypi/bandersnatch" title="External link" target="_blank" rel="noopener">Libraries.io</a>, or by using <a href="https://packaging.python.org/guides/analyzing-pypi-package-downloads/" target="_blank" rel="noopener">our public dataset on Google BigQuery</a> </p> 
+       </div> 
+       <div class="sidebar-section"> 
+        <h3 class="sidebar-section__title">Meta</h3> 
+        <p><strong>License:</strong> Academic Free License, version 3</p> 
+        <p><strong>Author:</strong> <a href="mailto:ct@flyingcircus.io">Christian Theune</a></p> 
+        <p> <strong>Requires:</strong> Python &gt;=3.8 </p> 
+       </div> 
+       <div class="sidebar-section"> 
+        <h3 class="sidebar-section__title">Maintainers</h3> <span class="sidebar-section__maintainer"> <a href="/user/abittner/" aria-label="abittner"> <span class="sidebar-section__user-gravatar"> <img src="https://warehouse-camo.ingress.cmh1.psfhosted.org/7f8173a371b017c09e1fa4a1b729988b175c036b/68747470733a2f2f7365637572652e67726176617461722e636f6d2f6176617461722f64313562646533373861326230336636373261383238336663393834636366383f73697a653d3530" height="50" width="50" alt="Avatar for abittner from gravatar.com" title="Avatar for abittner from gravatar.com"> </span> <span class="sidebar-section__user-gravatar-text"> abittner </span> </a> </span> <span class="sidebar-section__maintainer"> <a href="/user/ckauhaus/" aria-label="ckauhaus"> <span class="sidebar-section__user-gravatar"> <img src="https://warehouse-camo.ingress.cmh1.psfhosted.org/99ddde91747d91860d07513c6dda324d901bdb1e/68747470733a2f2f7365637572652e67726176617461722e636f6d2f6176617461722f66663561326238306632643132656639313437333466323030393066366262663f73697a653d3530" height="50" width="50" alt="Avatar for ckauhaus from gravatar.com" title="Avatar for ckauhaus from gravatar.com"> </span> <span class="sidebar-section__user-gravatar-text"> ckauhaus </span> </a> </span> <span class="sidebar-section__maintainer"> <a href="/user/cooperlees/" aria-label="cooperlees"> <span class="sidebar-section__user-gravatar"> <img src="https://warehouse-camo.ingress.cmh1.psfhosted.org/86d9cc6f6ca5e173e5d215f1bdfc983055008426/68747470733a2f2f7365637572652e67726176617461722e636f6d2f6176617461722f61613938353738633439313866666134323537633637303837313261373865323f73697a653d3530" height="50" width="50" alt="Avatar for cooperlees from gravatar.com" title="Avatar for cooperlees from gravatar.com"> </span> <span class="sidebar-section__user-gravatar-text"> cooperlees </span> </a> </span> <span class="sidebar-section__maintainer"> <a href="/user/ctheune/" aria-label="ctheune"> <span class="sidebar-section__user-gravatar"> <img src="https://warehouse-camo.ingress.cmh1.psfhosted.org/cdc9f1a1f20f0139ae1ef8834b004dbba141c5f4/68747470733a2f2f7365637572652e67726176617461722e636f6d2f6176617461722f34333562373866316131313135633865626364303032313861343030363563343f73697a653d3530" height="50" width="50" alt="Avatar for ctheune from gravatar.com" title="Avatar for ctheune from gravatar.com"> </span> <span class="sidebar-section__user-gravatar-text"> ctheune </span> </a> </span> <span class="sidebar-section__maintainer"> <a href="/user/swalluhn/" aria-label="swalluhn"> <span class="sidebar-section__user-gravatar"> <img src="https://warehouse-camo.ingress.cmh1.psfhosted.org/51d68865a607b68188beed0578d2fdd1ddc426db/68747470733a2f2f7365637572652e67726176617461722e636f6d2f6176617461722f65326435623938396265323531646234343862373261313437383139313363373f73697a653d3530" height="50" width="50" alt="Avatar for swalluhn from gravatar.com" title="Avatar for swalluhn from gravatar.com"> </span> <span class="sidebar-section__user-gravatar-text"> swalluhn </span> </a> </span> <span class="sidebar-section__maintainer"> <a href="/user/wosc/" aria-label="wosc"> <span class="sidebar-section__user-gravatar"> <img src="https://warehouse-camo.ingress.cmh1.psfhosted.org/bdf988c76950c65e0ce17637d706df421f3cdb05/68747470733a2f2f7365637572652e67726176617461722e636f6d2f6176617461722f37313232396330313637313732353230653035383264626632396362643838663f73697a653d3530" height="50" width="50" alt="Avatar for wosc from gravatar.com" title="Avatar for wosc from gravatar.com"> </span> <span class="sidebar-section__user-gravatar-text"> wosc </span> </a> </span> <span class="sidebar-section__maintainer"> <a href="/user/zagy/" aria-label="zagy"> <span class="sidebar-section__user-gravatar"> <img src="https://warehouse-camo.ingress.cmh1.psfhosted.org/16b19946bb07e3a34357e50cd1611a1504b9c158/68747470733a2f2f7365637572652e67726176617461722e636f6d2f6176617461722f34313636666566303035666334313335613931383039306263316237383066373f73697a653d3530" height="50" width="50" alt="Avatar for zagy from gravatar.com" title="Avatar for zagy from gravatar.com"> </span> <span class="sidebar-section__user-gravatar-text"> zagy </span> </a> </span> 
+       </div> 
+       <div class="sidebar-section"> 
+        <h3 class="sidebar-section__title">Classifiers</h3> 
+        <ul class="sidebar-section__classifiers"> 
+         <li> <strong>Programming Language</strong> 
+          <ul> 
+           <li> <a href="/search/?c=Programming+Language+%3A%3A+Python+%3A%3A+3+%3A%3A+Only"> Python :: 3 :: Only </a> </li> 
+           <li> <a href="/search/?c=Programming+Language+%3A%3A+Python+%3A%3A+3.8"> Python :: 3.8 </a> </li> 
+           <li> <a href="/search/?c=Programming+Language+%3A%3A+Python+%3A%3A+3.9"> Python :: 3.9 </a> </li> 
+           <li> <a href="/search/?c=Programming+Language+%3A%3A+Python+%3A%3A+3.10"> Python :: 3.10 </a> </li> 
+          </ul> </li> 
+        </ul> 
+       </div> 
+       <div class="sidebar-section" data-ea-publisher="psf" data-ea-type="psf" data-ea-keywords="pypi-sidebar"></div> 
+      </div> 
+      <div class="vertical-tabs__panel"> <!-- mobile menu --> 
+       <nav aria-label="Navigation for bandersnatch"> 
+        <ul class="vertical-tabs__list" role="tablist"> 
+         <li role="tab"> <a id="mobile-description-tab" href="#description" data-target="project-tabs.mobileTab" data-action="project-tabs#onTabClick" class="vertical-tabs__tab vertical-tabs__tab--with-icon vertical-tabs__tab--mobile vertical-tabs__tab--no-top-border vertical-tabs__tab--is-active" aria-selected="true" aria-label="Project description. Focus will be moved to the description."> <i class="fa fa-align-left" aria-hidden="true"></i> Project description </a> </li> 
+         <li role="tab"> <a id="mobile-data-tab" href="#data" data-target="project-tabs.mobileTab" data-action="project-tabs#onTabClick" class="vertical-tabs__tab vertical-tabs__tab--with-icon vertical-tabs__tab--mobile" aria-label="Project details. Focus will be moved to the project details."> <i class="fa fa-info-circle" aria-hidden="true"></i> Project details </a> </li> 
+         <li role="tab"> <a id="mobile-history-tab" href="#history" data-target="project-tabs.mobileTab" data-action="project-tabs#onTabClick" class="vertical-tabs__tab vertical-tabs__tab--with-icon vertical-tabs__tab--mobile" aria-label="Release history. Focus will be moved to the history panel."> <i class="fa fa-history" aria-hidden="true"></i> Release history </a> </li> 
+         <li role="tab"> <a id="mobile-files-tab" href="#files" data-target="project-tabs.mobileTab" data-action="project-tabs#onTabClick" class="vertical-tabs__tab vertical-tabs__tab--with-icon vertical-tabs__tab--mobile" aria-label="Download files. Focus will be moved to the project files."> <i class="fa fa-download" aria-hidden="true"></i> Download files </a> </li> 
+        </ul> 
+       </nav> 
+       <div id="description" data-target="project-tabs.content" class="vertical-tabs__content" role="tabpanel" aria-labelledby="description-tab mobile-description-tab" tabindex="-1"> 
+        <h2 class="page-title">Project description</h2> 
+        <div class="project-description"> 
+         <p><a href="https://github.com/ambv/black" rel="nofollow"><img src="https://warehouse-camo.ingress.cmh1.psfhosted.org/fbfdc7754183ecf079bc71ddeabaf88f6cbc5c00/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f636f64652532307374796c652d626c61636b2d3030303030302e737667" alt="Code style: black"></a> <a href="https://github.com/pypa/bandersnatch/actions" rel="nofollow"><img src="https://warehouse-camo.ingress.cmh1.psfhosted.org/8b12cbacbfc35f45de737030f688cd5470b055d1/68747470733a2f2f6769746875622e636f6d2f707970612f62616e646572736e617463682f776f726b666c6f77732f62616e646572736e617463685f63692f62616467652e737667" alt="Actions Status"></a> <a href="https://codecov.io/github/pypa/bandersnatch" rel="nofollow"><img src="https://warehouse-camo.ingress.cmh1.psfhosted.org/42a6663d71b0dd95f58c6281e5026e99c8fc58ad/68747470733a2f2f636f6465636f762e696f2f6769746875622f707970612f62616e646572736e617463682f636f7665726167652e7376673f6272616e63683d6d6173746572" alt="codecov.io"></a> <a href="http://bandersnatch.readthedocs.io/en/latest/?badge=latest" rel="nofollow"><img src="https://warehouse-camo.ingress.cmh1.psfhosted.org/6c0b6917077e72f601b5fa38d8bd20b62b580ccd/68747470733a2f2f72656164746865646f63732e6f72672f70726f6a656374732f62616e646572736e617463682f62616467652f3f76657273696f6e3d6c6174657374" alt="Documentation Status"></a> <a href="https://pyup.io/repos/github/pypa/bandersnatch/" rel="nofollow"><img src="https://warehouse-camo.ingress.cmh1.psfhosted.org/1a560b8e30fd9996ed6304f267aa184d15bd7086/68747470733a2f2f707975702e696f2f7265706f732f6769746875622f707970612f62616e646572736e617463682f736869656c642e737667" alt="Updates"></a> <a href="https://pepy.tech/project/bandersnatch" rel="nofollow"><img src="https://warehouse-camo.ingress.cmh1.psfhosted.org/9f4968625cd708a5770d23dae5ce60b81e629790/68747470733a2f2f706570792e746563682f62616467652f62616e646572736e61746368" alt="Downloads"></a></p> 
+         <hr> 
+         <p>This is a PyPI mirror client according to <code>PEP 381</code> + <code>PEP 503</code> <a href="http://www.python.org/dev/peps/pep-0381/" rel="nofollow">http://www.python.org/dev/peps/pep-0381/</a>.</p> 
+         <ul> 
+          <li>bandersnatch &gt;=4.0 supports <em>Linux</em>, <em>MacOSX</em> + <em>Windows</em></li> 
+          <li><a href="https://bandersnatch.readthedocs.io/en/latest/" rel="nofollow">Documentation</a></li> 
+         </ul> 
+         <p><strong>bandersnatch maintainers</strong> are looking for more <strong>help</strong>! Please refer to our <a href="https://github.com/pypa/bandersnatch/blob/master/MAINTAINERS.md" rel="nofollow">MAINTAINER</a> documentation to see the roles and responsibilities. We would also ask you read our <strong>Mission Statement</strong> to ensure it aligns with your thoughts for this project.</p> 
+         <ul> 
+          <li>If interested contact @cooperlees</li> 
+         </ul> 
+         <p><code>bandersnatch</code> has its dependencies kept up to date by <strong><a href="https://pyup.io/" rel="nofollow">pyup.io</a></strong>!</p> 
+         <ul> 
+          <li>If you'd like to have your dependencies kept up to date in your <code>requirements.txt</code> or <code>setup.cfg</code>, this is the service for you!</li> 
+         </ul> 
+         <h2>Installation</h2> 
+         <p>The following instructions will place the bandersnatch executable in a virtualenv under <code>bandersnatch/bin/bandersnatch</code>.</p> 
+         <ul> 
+          <li>bandersnatch <strong>requires</strong> <code>&gt;= Python 3.8.0</code></li> 
+         </ul> 
+         <h2>Docker</h2> 
+         <p>This will pull latest build. Please use a specific tag if desired.</p> 
+         <ul> 
+          <li>Docker image includes <code>/bandersnatch/src/runner.py</code> to periodically run a <code>bandersnatch mirror</code> 
+           <ul> 
+            <li>Please <code>/bandersnatch/src/runner.py --help</code> for usage</li> 
+           </ul> </li> 
+          <li>With docker, we recommend bind mounting in a read only <code>bandersnatch.conf</code> 
+           <ul> 
+            <li>Defaults to <code>/conf/bandersnatch.conf</code></li> 
+           </ul> </li> 
+         </ul> 
+         <pre>docker pull pypa/bandersnatch
+docker run pypa/bandersnatch bandersnatch --help
+</pre> 
+         <h3>pip</h3> 
+         <p>This installs the latest stable, released version.</p> 
+         <pre>python3 -m venv bandersnatch
+bandersnatch/bin/pip install bandersnatch
+bandersnatch/bin/bandersnatch --help
+</pre> 
+         <h2>Quickstart</h2> 
+         <ul> 
+          <li>Run <code>bandersnatch mirror</code> - it will create an empty configuration file for you in <code>/etc/bandersnatch.conf</code>.</li> 
+          <li>Review <code>/etc/bandersnatch.conf</code> and adapt to your needs.</li> 
+          <li>Run <code>bandersnatch mirror</code> again. It will populate your mirror with the current status of all PyPI packages. Current mirror package size can be seen here: <a href="https://pypi.org/stats/" rel="nofollow">https://pypi.org/stats/</a></li> 
+          <li>A <code>blocklist</code> or <code>allowlist</code> can be created to cut down your mirror size. You might want to <a href="https://packaging.python.org/guides/analyzing-pypi-package-downloads/" rel="nofollow">Analyze PyPI downloads</a> to determine which packages to add to your list.</li> 
+          <li>Run <code>bandersnatch mirror</code> regularly to update your mirror with any intermediate changes.</li> 
+         </ul> 
+         <h3>Webserver</h3> 
+         <p>Configure your webserver to serve the <code>web/</code> sub-directory of the mirror. For nginx it should look something like this:</p> 
+         <pre>    server {
+        listen 127.0.0.1:80;
+        listen [::1]:80;
+        server_name &lt;mymirrorname&gt;;
+        root &lt;path-to-mirror&gt;/web;
+        autoindex on;
+        charset utf-8;
+    }
+</pre> 
+         <ul> 
+          <li> <p>Note that it is a good idea to have your webserver publish the HTML index files correctly with UTF-8 as the charset. The index pages will work without it but if humans look at the pages the characters will end up looking funny.</p> </li> 
+          <li> <p>Make sure that the webserver uses UTF-8 to look up unicode path names. nginx gets this right by default - not sure about others.</p> </li> 
+         </ul> 
+         <p>For more information visit out <a href="https://bandersnatch.readthedocs.io/" rel="nofollow">official documentation</a> for instructions on how to use a NGINX example Docker Image.</p> 
+         <h3>Cron jobs</h3> 
+         <p>You need to set up one cron job to run the mirror itself.</p> 
+         <p>Here's a sample that you could place in <code>/etc/cron.d/bandersnatch</code>:</p> 
+         <pre>    LC_ALL=en_US.utf8
+    */2 * * * * root bandersnatch mirror |&amp; logger -t bandersnatch[mirror]
+</pre> 
+         <p>This assumes that you have a <code>logger</code> utility installed that will convert the output of the commands to syslog entries.</p> 
+         <p><a href="https://www.freedesktop.org/software/systemd/man/systemd.timer.html" rel="nofollow">SystemD Timers</a> are also another alternative in today's modern world.</p> 
+         <h3>Maintenance</h3> 
+         <p>bandersnatch does not keep much local state in addition to the mirrored data. In general you can just keep rerunning <code>bandersnatch mirror</code> to make it fix errors.</p> 
+         <p>If you want to force bandersnatch to check everything against the master PyPI:</p> 
+         <ul> 
+          <li>run <code>bandersnatch mirror --force-check</code> to move status files if they exist in your mirror directory in order get a full sync.</li> 
+         </ul> 
+         <p>Be aware that full syncs likely take hours depending on PyPI's performance and your network latency and bandwidth.</p> 
+         <h4>Other Commands</h4> 
+         <ul> 
+          <li><code>bandersnatch delete --help</code> - Allows you to specify package(s) to be removed from your mirror (<em>dangerous</em>)</li> 
+          <li><code>bandersnatch verify --help</code> - Crawls your repo and fixes any missed files + deletes any unowned files found (<em>dangerous</em>)</li> 
+         </ul> 
+         <h3>Operational notes</h3> 
+         <h4>Case-sensitive filesystem needed</h4> 
+         <p>You need to run bandersnatch on a case-sensitive filesystem.</p> 
+         <p>OS X natively does this OK even though the filesystem is not strictly case-sensitive and bandersnatch will work fine when running on OS X. However, tarring a bandersnatch data directory and moving it to, e.g. Linux with a case-sensitive filesystem will lead to inconsistencies. You can fix those by deleting the status files and have bandersnatch run a full check on your data.</p> 
+         <h4>Windows requires elevated prompt</h4> 
+         <p>Bandersnatch makes use of symbolic links. On Windows, this permission is turned off by default for non-admin users. In order to run bandersnatch on Windows either call it from an elevated command prompt (i.e. right-click, run-as Administrator) or give yourself symlink permissions in the group policy editor.</p> 
+         <h4>Many sub-directories needed</h4> 
+         <p>The PyPI has a quite extensive list of packages that we need to maintain in a flat directory. Filesystems with small limits on the number of sub-directories per directory can run into a problem like this:</p> 
+         <pre><span class="go">    2013-07-09 16:11:33,331 ERROR: Error syncing package: zweb@802449</span>
+<span class="go">    OSError: [Errno 31] Too many links: '../pypi/web/simple/zweb'</span>
+</pre> 
+         <p>Specifically we recommend to avoid using ext3. Ext4 and newer does not have the limitation of 32k sub-directories.</p> 
+         <h4>Client Compatibility</h4> 
+         <p>A bandersnatch static mirror is compatible only to the "static", cacheable parts of PyPI that are needed to support package installation. It does not support more dynamic APIs of PyPI that maybe be used by various clients for other purposes.</p> 
+         <p>An example of an unsupported API is <a href="https://warehouse.readthedocs.io/api-reference/xml-rpc/" rel="nofollow">PyPI's XML-RPC interface</a>, which is used when running <code>pip search</code>.</p> 
+         <h3>Bandersnatch Mission</h3> 
+         <p>The bandersnatch project strives to:</p> 
+         <ul> 
+          <li>Mirror all static objects of the Python Package Index (<a href="https://pypi.org/" rel="nofollow">https://pypi.org/</a>)</li> 
+          <li>bandersnatch's main goal is to support the main global index to local syncing <strong>only</strong></li> 
+          <li>This will allow organizations to have lower latency access to PyPI and save bandwidth on their WAN connections and more importantly the PyPI CDN</li> 
+          <li>Custom features and requests may be accepted if they can be of a <em>plugin</em> form 
+           <ul> 
+            <li>e.g. refer to the <code>blocklist</code> and <code>allowlist</code> plugins</li> 
+           </ul> </li> 
+         </ul> 
+         <h3>Contact</h3> 
+         <p>If you have questions or comments, please submit a bug report to <a href="https://github.com/pypa/bandersnatch/issues/new" rel="nofollow">https://github.com/pypa/bandersnatch/issues/new</a></p> 
+         <ul> 
+          <li>Discord: #bandersnatch now sit in the <em>PyPA Discord</em> server. To join visit <a href="https://discord.com/invite/pypa" rel="nofollow">https://discord.com/invite/pypa</a></li> 
+         </ul> 
+         <h3>Code of Conduct</h3> 
+         <p>Everyone interacting in the bandersnatch project's codebases, issue trackers, chat rooms, and mailing lists is expected to follow the <a href="https://github.com/pypa/.github/blob/main/CODE_OF_CONDUCT.md" rel="nofollow">PSF Code of Conduct</a>.</p> 
+         <h3>Kudos</h3> 
+         <p>This client is based on the original pep381client by <em>Martin v. Loewis</em>.</p> 
+         <p><em>Richard Jones</em> was very patient answering questions at PyCon 2013 and made the protocol more reliable by implementing some PyPI enhancements.</p> 
+         <p><em>Christian Theune</em> for creating and maintaining <code>bandersnatch</code> for many years!</p> 
+        </div> 
+       </div> 
+       <div id="data" data-target="project-tabs.content" class="vertical-tabs__content" role="tabpanel" aria-labelledby="mobile-data-tab" tabindex="-1"> 
+        <h2 class="page-title">Project details</h2> 
+        <div class="sidebar-section"> 
+         <h3 class="sidebar-section__title">Project links</h3> 
+         <ul class="vertical-tabs__list"> 
+          <li> <a class="vertical-tabs__tab vertical-tabs__tab--with-icon vertical-tabs__tab--condensed" href="https://github.com/pypa/bandersnatch/" rel="nofollow"> <i class="fas fa-home" aria-hidden="true"></i>Homepage </a> </li> 
+          <li> <a class="vertical-tabs__tab vertical-tabs__tab--with-icon vertical-tabs__tab--condensed" href="https://github.com/pypa/bandersnatch/blob/master/CHANGES.md" rel="nofollow"> <i class="fas fa-scroll" aria-hidden="true"></i>Change Log </a> </li> 
+          <li> <a class="vertical-tabs__tab vertical-tabs__tab--with-icon vertical-tabs__tab--condensed" href="https://github.com/pypa/bandersnatch" rel="nofollow"> <i class="fab fa-github" aria-hidden="true"></i>Source Code </a> </li> 
+         </ul> 
+        </div> 
+        <div class="sidebar-section"> 
+         <h3 class="sidebar-section__title">Statistics</h3> 
+         <div class="github-repo-info hidden" data-url="https://api.github.com/repos/pypa/bandersnatch">
+           GitHub statistics: 
+          <ul class="vertical-tabs__list"> 
+           <li> <a class="vertical-tabs__tab vertical-tabs__tab--with-icon vertical-tabs__tab--condensed github-repo-info__item" data-key="html_url" data-attr="href" data-supplement="/stargazers" rel="noopener"> <i class="fa fa-star" aria-hidden="true"></i> <strong>Stars:</strong> <span class="github-repo-info__item" data-key="stargazers_count"></span> </a> </li> 
+           <li> <a class="vertical-tabs__tab vertical-tabs__tab--with-icon vertical-tabs__tab--condensed github-repo-info__item" data-key="html_url" data-attr="href" data-supplement="/network/members" rel="noopener"> <i class="fa fa-code-branch" aria-hidden="true"></i> <strong>Forks:</strong> <span class="github-repo-info__item" data-key="forks_count"></span> </a> </li> 
+           <li> <a class="vertical-tabs__tab vertical-tabs__tab--with-icon vertical-tabs__tab--condensed github-repo-info__item" data-key="html_url" data-attr="href" data-supplement="/issues" rel="noopener"> <i class="fa fa-exclamation-circle" aria-hidden="true"></i> <strong>Open issues/PRs:</strong> <span class="github-repo-info__item" data-key="open_issues_count"></span> </a> </li> 
+          </ul> 
+         </div> 
+         <p> View statistics for this project via <a href="https://libraries.io/pypi/bandersnatch" title="External link" target="_blank" rel="noopener">Libraries.io</a>, or by using <a href="https://packaging.python.org/guides/analyzing-pypi-package-downloads/" target="_blank" rel="noopener">our public dataset on Google BigQuery</a> </p> 
+        </div> 
+        <div class="sidebar-section"> 
+         <h3 class="sidebar-section__title">Meta</h3> 
+         <p><strong>License:</strong> Academic Free License, version 3</p> 
+         <p><strong>Author:</strong> <a href="mailto:ct@flyingcircus.io">Christian Theune</a></p> 
+         <p> <strong>Requires:</strong> Python &gt;=3.8 </p> 
+        </div> 
+        <div class="sidebar-section"> 
+         <h3 class="sidebar-section__title">Maintainers</h3> <span class="sidebar-section__maintainer"> <a href="/user/abittner/" aria-label="abittner"> <span class="sidebar-section__user-gravatar"> <img src="https://warehouse-camo.ingress.cmh1.psfhosted.org/7f8173a371b017c09e1fa4a1b729988b175c036b/68747470733a2f2f7365637572652e67726176617461722e636f6d2f6176617461722f64313562646533373861326230336636373261383238336663393834636366383f73697a653d3530" height="50" width="50" alt="Avatar for abittner from gravatar.com" title="Avatar for abittner from gravatar.com"> </span> <span class="sidebar-section__user-gravatar-text"> abittner </span> </a> </span> <span class="sidebar-section__maintainer"> <a href="/user/ckauhaus/" aria-label="ckauhaus"> <span class="sidebar-section__user-gravatar"> <img src="https://warehouse-camo.ingress.cmh1.psfhosted.org/99ddde91747d91860d07513c6dda324d901bdb1e/68747470733a2f2f7365637572652e67726176617461722e636f6d2f6176617461722f66663561326238306632643132656639313437333466323030393066366262663f73697a653d3530" height="50" width="50" alt="Avatar for ckauhaus from gravatar.com" title="Avatar for ckauhaus from gravatar.com"> </span> <span class="sidebar-section__user-gravatar-text"> ckauhaus </span> </a> </span> <span class="sidebar-section__maintainer"> <a href="/user/cooperlees/" aria-label="cooperlees"> <span class="sidebar-section__user-gravatar"> <img src="https://warehouse-camo.ingress.cmh1.psfhosted.org/86d9cc6f6ca5e173e5d215f1bdfc983055008426/68747470733a2f2f7365637572652e67726176617461722e636f6d2f6176617461722f61613938353738633439313866666134323537633637303837313261373865323f73697a653d3530" height="50" width="50" alt="Avatar for cooperlees from gravatar.com" title="Avatar for cooperlees from gravatar.com"> </span> <span class="sidebar-section__user-gravatar-text"> cooperlees </span> </a> </span> <span class="sidebar-section__maintainer"> <a href="/user/ctheune/" aria-label="ctheune"> <span class="sidebar-section__user-gravatar"> <img src="https://warehouse-camo.ingress.cmh1.psfhosted.org/cdc9f1a1f20f0139ae1ef8834b004dbba141c5f4/68747470733a2f2f7365637572652e67726176617461722e636f6d2f6176617461722f34333562373866316131313135633865626364303032313861343030363563343f73697a653d3530" height="50" width="50" alt="Avatar for ctheune from gravatar.com" title="Avatar for ctheune from gravatar.com"> </span> <span class="sidebar-section__user-gravatar-text"> ctheune </span> </a> </span> <span class="sidebar-section__maintainer"> <a href="/user/swalluhn/" aria-label="swalluhn"> <span class="sidebar-section__user-gravatar"> <img src="https://warehouse-camo.ingress.cmh1.psfhosted.org/51d68865a607b68188beed0578d2fdd1ddc426db/68747470733a2f2f7365637572652e67726176617461722e636f6d2f6176617461722f65326435623938396265323531646234343862373261313437383139313363373f73697a653d3530" height="50" width="50" alt="Avatar for swalluhn from gravatar.com" title="Avatar for swalluhn from gravatar.com"> </span> <span class="sidebar-section__user-gravatar-text"> swalluhn </span> </a> </span> <span class="sidebar-section__maintainer"> <a href="/user/wosc/" aria-label="wosc"> <span class="sidebar-section__user-gravatar"> <img src="https://warehouse-camo.ingress.cmh1.psfhosted.org/bdf988c76950c65e0ce17637d706df421f3cdb05/68747470733a2f2f7365637572652e67726176617461722e636f6d2f6176617461722f37313232396330313637313732353230653035383264626632396362643838663f73697a653d3530" height="50" width="50" alt="Avatar for wosc from gravatar.com" title="Avatar for wosc from gravatar.com"> </span> <span class="sidebar-section__user-gravatar-text"> wosc </span> </a> </span> <span class="sidebar-section__maintainer"> <a href="/user/zagy/" aria-label="zagy"> <span class="sidebar-section__user-gravatar"> <img src="https://warehouse-camo.ingress.cmh1.psfhosted.org/16b19946bb07e3a34357e50cd1611a1504b9c158/68747470733a2f2f7365637572652e67726176617461722e636f6d2f6176617461722f34313636666566303035666334313335613931383039306263316237383066373f73697a653d3530" height="50" width="50" alt="Avatar for zagy from gravatar.com" title="Avatar for zagy from gravatar.com"> </span> <span class="sidebar-section__user-gravatar-text"> zagy </span> </a> </span> 
+        </div> 
+        <div class="sidebar-section"> 
+         <h3 class="sidebar-section__title">Classifiers</h3> 
+         <ul class="sidebar-section__classifiers"> 
+          <li> <strong>Programming Language</strong> 
+           <ul> 
+            <li> <a href="/search/?c=Programming+Language+%3A%3A+Python+%3A%3A+3+%3A%3A+Only"> Python :: 3 :: Only </a> </li> 
+            <li> <a href="/search/?c=Programming+Language+%3A%3A+Python+%3A%3A+3.8"> Python :: 3.8 </a> </li> 
+            <li> <a href="/search/?c=Programming+Language+%3A%3A+Python+%3A%3A+3.9"> Python :: 3.9 </a> </li> 
+            <li> <a href="/search/?c=Programming+Language+%3A%3A+Python+%3A%3A+3.10"> Python :: 3.10 </a> </li> 
+           </ul> </li> 
+         </ul> 
+        </div> 
+        <br> 
+       </div> 
+       <div id="history" data-target="project-tabs.content" class="vertical-tabs__content" role="tabpanel" aria-labelledby="history-tab mobile-history-tab" tabindex="-1"> 
+        <h2 class="page-title split-layout"> <span>Release history</span> <span class="reset-text margin-top"> <a href="/help/#project-release-notifications">Release notifications</a> | <a href="/rss/project/bandersnatch/releases.xml">RSS feed <i class="fa fa-rss" aria-hidden="true"></i></a> </span> </h2> 
+        <div class="release-timeline"> 
+         <div class="release release--latest release--current"> 
+          <div class="release__meta"> <span class="badge">This version</span> 
+          </div> 
+          <div class="release__graphic"> 
+           <div class="release__line"></div> 
+           <img class="release__node" alt="" src="https://pypi.org/static/images/blue-cube.e6165d35.svg"> 
+          </div> <a class="card release__card" href="/project/bandersnatch/5.2.0/"> <p class="release__version"> 5.2.0 </p> <p class="release__version-date"> <time datetime="2022-05-02T20:14:26+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false"> May 2, 2022 </time> </p> </a> 
+         </div> 
+         <div class="release"> 
+          <div class="release__meta"> 
+          </div> 
+          <div class="release__graphic"> 
+           <div class="release__line"></div> 
+           <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg"> 
+          </div> <a class="card release__card" href="/project/bandersnatch/5.1.1/"> <p class="release__version"> 5.1.1 </p> <p class="release__version-date"> <time datetime="2021-12-15T05:02:26+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false"> Dec 15, 2021 </time> </p> </a> 
+         </div> 
+         <div class="release"> 
+          <div class="release__meta"> 
+          </div> 
+          <div class="release__graphic"> 
+           <div class="release__line"></div> 
+           <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg"> 
+          </div> <a class="card release__card" href="/project/bandersnatch/5.1.0/"> <p class="release__version"> 5.1.0 </p> <p class="release__version-date"> <time datetime="2021-11-03T03:09:09+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false"> Nov 3, 2021 </time> </p> </a> 
+         </div> 
+         <div class="release"> 
+          <div class="release__meta"> 
+          </div> 
+          <div class="release__graphic"> 
+           <div class="release__line"></div> 
+           <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg"> 
+          </div> <a class="card release__card" href="/project/bandersnatch/5.0.0/"> <p class="release__version"> 5.0.0 </p> <p class="release__version-date"> <time datetime="2021-04-28T15:25:06+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false"> Apr 28, 2021 </time> </p> </a> 
+         </div> 
+         <div class="release"> 
+          <div class="release__meta"> 
+          </div> 
+          <div class="release__graphic"> 
+           <div class="release__line"></div> 
+           <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg"> 
+          </div> <a class="card release__card" href="/project/bandersnatch/4.4.0/"> <p class="release__version"> 4.4.0 </p> <p class="release__version-date"> <time datetime="2020-12-31T17:59:51+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false"> Dec 31, 2020 </time> </p> </a> 
+         </div> 
+         <div class="release"> 
+          <div class="release__meta"> 
+          </div> 
+          <div class="release__graphic"> 
+           <div class="release__line"></div> 
+           <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg"> 
+          </div> <a class="card release__card" href="/project/bandersnatch/4.3.0/"> <p class="release__version"> 4.3.0 </p> <p class="release__version-date"> <time datetime="2020-08-25T14:47:39+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false"> Aug 25, 2020 </time> </p> </a> 
+         </div> 
+         <div class="release"> 
+          <div class="release__meta"> 
+          </div> 
+          <div class="release__graphic"> 
+           <div class="release__line"></div> 
+           <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg"> 
+          </div> <a class="card release__card" href="/project/bandersnatch/4.2.0/"> <p class="release__version"> 4.2.0 </p> <p class="release__version-date"> <time datetime="2020-08-21T01:17:08+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false"> Aug 21, 2020 </time> </p> </a> 
+         </div> 
+         <div class="release"> 
+          <div class="release__meta"> 
+          </div> 
+          <div class="release__graphic"> 
+           <div class="release__line"></div> 
+           <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg"> 
+          </div> <a class="card release__card" href="/project/bandersnatch/4.1.1/"> <p class="release__version"> 4.1.1 </p> <p class="release__version-date"> <time datetime="2020-08-12T23:16:26+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false"> Aug 12, 2020 </time> </p> </a> 
+         </div> 
+         <div class="release"> 
+          <div class="release__meta"> 
+          </div> 
+          <div class="release__graphic"> 
+           <div class="release__line"></div> 
+           <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg"> 
+          </div> <a class="card release__card" href="/project/bandersnatch/4.1.0/"> <p class="release__version"> 4.1.0 </p> <p class="release__version-date"> <time datetime="2020-08-10T01:08:35+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false"> Aug 10, 2020 </time> </p> </a> 
+         </div> 
+         <div class="release"> 
+          <div class="release__meta"> 
+          </div> 
+          <div class="release__graphic"> 
+           <div class="release__line"></div> 
+           <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg"> 
+          </div> <a class="card release__card" href="/project/bandersnatch/4.0.3/"> <p class="release__version"> 4.0.3 </p> <p class="release__version-date"> <time datetime="2020-05-07T16:39:12+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false"> May 7, 2020 </time> </p> </a> 
+         </div> 
+         <div class="release"> 
+          <div class="release__meta"> 
+          </div> 
+          <div class="release__graphic"> 
+           <div class="release__line"></div> 
+           <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg"> 
+          </div> <a class="card release__card" href="/project/bandersnatch/4.0.2/"> <p class="release__version"> 4.0.2 </p> <p class="release__version-date"> <time datetime="2020-04-26T21:49:59+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false"> Apr 26, 2020 </time> </p> </a> 
+         </div> 
+         <div class="release"> 
+          <div class="release__meta"> 
+          </div> 
+          <div class="release__graphic"> 
+           <div class="release__line"></div> 
+           <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg"> 
+          </div> <a class="card release__card" href="/project/bandersnatch/4.0.1/"> <p class="release__version"> 4.0.1 </p> <p class="release__version-date"> <time datetime="2020-04-05T17:23:59+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false"> Apr 5, 2020 </time> </p> </a> 
+         </div> 
+         <div class="release"> 
+          <div class="release__meta"> 
+          </div> 
+          <div class="release__graphic"> 
+           <div class="release__line"></div> 
+           <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg"> 
+          </div> <a class="card release__card" href="/project/bandersnatch/4.0.0/"> <p class="release__version"> 4.0.0 </p> <p class="release__version-date"> <time datetime="2020-03-29T19:54:44+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false"> Mar 29, 2020 </time> </p> </a> 
+         </div> 
+         <div class="release"> 
+          <div class="release__meta"> 
+          </div> 
+          <div class="release__graphic"> 
+           <div class="release__line"></div> 
+           <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg"> 
+          </div> <a class="card release__card" href="/project/bandersnatch/3.6.0/"> <p class="release__version"> 3.6.0 </p> <p class="release__version-date"> <time datetime="2019-09-24T21:33:33+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false"> Sep 24, 2019 </time> </p> </a> 
+         </div> 
+         <div class="release"> 
+          <div class="release__meta"> 
+          </div> 
+          <div class="release__graphic"> 
+           <div class="release__line"></div> 
+           <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg"> 
+          </div> <a class="card release__card" href="/project/bandersnatch/3.5.0/"> <p class="release__version"> 3.5.0 </p> <p class="release__version-date"> <time datetime="2019-09-14T16:41:24+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false"> Sep 14, 2019 </time> </p> </a> 
+         </div> 
+         <div class="release"> 
+          <div class="release__meta"> 
+          </div> 
+          <div class="release__graphic"> 
+           <div class="release__line"></div> 
+           <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg"> 
+          </div> <a class="card release__card" href="/project/bandersnatch/3.4.1/"> <p class="release__version"> 3.4.1 </p> <p class="release__version-date"> <time datetime="2019-06-18T13:11:11+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false"> Jun 18, 2019 </time> </p> </a> 
+         </div> 
+         <div class="release"> 
+          <div class="release__meta"> 
+          </div> 
+          <div class="release__graphic"> 
+           <div class="release__line"></div> 
+           <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg"> 
+          </div> <a class="card release__card" href="/project/bandersnatch/3.4.0/"> <p class="release__version"> 3.4.0 </p> <p class="release__version-date"> <time datetime="2019-05-30T23:28:20+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false"> May 30, 2019 </time> </p> </a> 
+         </div> 
+         <div class="release"> 
+          <div class="release__meta"> 
+          </div> 
+          <div class="release__graphic"> 
+           <div class="release__line"></div> 
+           <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg"> 
+          </div> <a class="card release__card" href="/project/bandersnatch/3.3.1/"> <p class="release__version"> 3.3.1 </p> <p class="release__version-date"> <time datetime="2019-04-14T16:48:00+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false"> Apr 14, 2019 </time> </p> </a> 
+         </div> 
+         <div class="release"> 
+          <div class="release__meta"> 
+          </div> 
+          <div class="release__graphic"> 
+           <div class="release__line"></div> 
+           <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg"> 
+          </div> <a class="card release__card" href="/project/bandersnatch/3.3.0/"> <p class="release__version"> 3.3.0 </p> <p class="release__version-date"> <time datetime="2019-04-12T01:33:43+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false"> Apr 12, 2019 </time> </p> </a> 
+         </div> 
+         <div class="release"> 
+          <div class="release__meta"> 
+          </div> 
+          <div class="release__graphic"> 
+           <div class="release__line"></div> 
+           <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg"> 
+          </div> <a class="card release__card" href="/project/bandersnatch/3.2.0/"> <p class="release__version"> 3.2.0 </p> <p class="release__version-date"> <time datetime="2019-01-25T19:50:00+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false"> Jan 25, 2019 </time> </p> </a> 
+         </div> 
+         <div class="release"> 
+          <div class="release__meta"> 
+          </div> 
+          <div class="release__graphic"> 
+           <div class="release__line"></div> 
+           <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg"> 
+          </div> <a class="card release__card" href="/project/bandersnatch/3.1.3/"> <p class="release__version"> 3.1.3 </p> <p class="release__version-date"> <time datetime="2018-12-26T19:25:33+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false"> Dec 26, 2018 </time> </p> </a> 
+         </div> 
+         <div class="release"> 
+          <div class="release__meta"> 
+          </div> 
+          <div class="release__graphic"> 
+           <div class="release__line"></div> 
+           <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg"> 
+          </div> <a class="card release__card" href="/project/bandersnatch/3.1.2/"> <p class="release__version"> 3.1.2 </p> <p class="release__version-date"> <time datetime="2018-12-03T02:22:49+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false"> Dec 3, 2018 </time> </p> </a> 
+         </div> 
+         <div class="release"> 
+          <div class="release__meta"> 
+          </div> 
+          <div class="release__graphic"> 
+           <div class="release__line"></div> 
+           <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg"> 
+          </div> <a class="card release__card" href="/project/bandersnatch/3.1.1/"> <p class="release__version"> 3.1.1 </p> <p class="release__version-date"> <time datetime="2018-11-26T04:56:13+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false"> Nov 26, 2018 </time> </p> </a> 
+         </div> 
+         <div class="release"> 
+          <div class="release__meta"> 
+          </div> 
+          <div class="release__graphic"> 
+           <div class="release__line"></div> 
+           <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg"> 
+          </div> <a class="card release__card" href="/project/bandersnatch/3.1.0/"> <p class="release__version"> 3.1.0 </p> <p class="release__version-date"> <time datetime="2018-11-26T02:03:04+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false"> Nov 26, 2018 </time> </p> </a> 
+         </div> 
+         <div class="release"> 
+          <div class="release__meta"> 
+          </div> 
+          <div class="release__graphic"> 
+           <div class="release__line"></div> 
+           <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg"> 
+          </div> <a class="card release__card" href="/project/bandersnatch/3.0.1/"> <p class="release__version"> 3.0.1 </p> <p class="release__version-date"> <time datetime="2018-10-30T16:46:18+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false"> Oct 30, 2018 </time> </p> </a> 
+         </div> 
+         <div class="release"> 
+          <div class="release__meta"> 
+          </div> 
+          <div class="release__graphic"> 
+           <div class="release__line"></div> 
+           <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg"> 
+          </div> <a class="card release__card" href="/project/bandersnatch/3.0.0/"> <p class="release__version"> 3.0.0 </p> <p class="release__version-date"> <time datetime="2018-10-30T16:28:17+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false"> Oct 30, 2018 </time> </p> </a> 
+         </div> 
+         <div class="release"> 
+          <div class="release__meta"> 
+          </div> 
+          <div class="release__graphic"> 
+           <div class="release__line"></div> 
+           <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg"> 
+          </div> <a class="card release__card" href="/project/bandersnatch/2.2.1/"> <p class="release__version"> 2.2.1 </p> <p class="release__version-date"> <time datetime="2018-05-01T18:21:12+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false"> May 1, 2018 </time> </p> </a> 
+         </div> 
+         <div class="release"> 
+          <div class="release__meta"> 
+          </div> 
+          <div class="release__graphic"> 
+           <div class="release__line"></div> 
+           <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg"> 
+          </div> <a class="card release__card" href="/project/bandersnatch/2.2.0/"> <p class="release__version"> 2.2.0 </p> <p class="release__version-date"> <time datetime="2018-03-28T20:56:11+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false"> Mar 28, 2018 </time> </p> </a> 
+         </div> 
+         <div class="release"> 
+          <div class="release__meta"> 
+          </div> 
+          <div class="release__graphic"> 
+           <div class="release__line"></div> 
+           <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg"> 
+          </div> <a class="card release__card" href="/project/bandersnatch/2.1.3/"> <p class="release__version"> 2.1.3 </p> <p class="release__version-date"> <time datetime="2018-03-04T17:21:28+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false"> Mar 4, 2018 </time> </p> </a> 
+         </div> 
+         <div class="release"> 
+          <div class="release__meta"> 
+          </div> 
+          <div class="release__graphic"> 
+           <div class="release__line"></div> 
+           <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg"> 
+          </div> <a class="card release__card" href="/project/bandersnatch/2.0.0/"> <p class="release__version"> 2.0.0 </p> <p class="release__version-date"> <time datetime="2017-04-05T12:36:53+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false"> Apr 5, 2017 </time> </p> </a> 
+         </div> 
+         <div class="release"> 
+          <div class="release__meta"> 
+          </div> 
+          <div class="release__graphic"> 
+           <div class="release__line"></div> 
+           <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg"> 
+          </div> <a class="card release__card" href="/project/bandersnatch/1.11/"> <p class="release__version"> 1.11 </p> <p class="release__version-date"> <time datetime="2016-05-18T14:52:49+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false"> May 18, 2016 </time> </p> </a> 
+         </div> 
+         <div class="release"> 
+          <div class="release__meta"> 
+          </div> 
+          <div class="release__graphic"> 
+           <div class="release__line"></div> 
+           <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg"> 
+          </div> <a class="card release__card" href="/project/bandersnatch/1.10/"> <p class="release__version"> 1.10 </p> <p class="release__version-date"> <time datetime="2016-05-11T16:49:14+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false"> May 11, 2016 </time> </p> </a> 
+         </div> 
+         <div class="release"> 
+          <div class="release__meta"> 
+          </div> 
+          <div class="release__graphic"> 
+           <div class="release__line"></div> 
+           <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg"> 
+          </div> <a class="card release__card" href="/project/bandersnatch/1.9/"> <p class="release__version"> 1.9 </p> <p class="release__version-date"> <time datetime="2016-04-21T05:36:55+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false"> Apr 21, 2016 </time> </p> </a> 
+         </div> 
+         <div class="release"> 
+          <div class="release__meta"> 
+          </div> 
+          <div class="release__graphic"> 
+           <div class="release__line"></div> 
+           <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg"> 
+          </div> <a class="card release__card" href="/project/bandersnatch/1.8/"> <p class="release__version"> 1.8 </p> <p class="release__version-date"> <time datetime="2015-03-16T15:56:45+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false"> Mar 16, 2015 </time> </p> </a> 
+         </div> 
+         <div class="release"> 
+          <div class="release__meta"> 
+          </div> 
+          <div class="release__graphic"> 
+           <div class="release__line"></div> 
+           <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg"> 
+          </div> <a class="card release__card" href="/project/bandersnatch/1.7/"> <p class="release__version"> 1.7 </p> <p class="release__version-date"> <time datetime="2014-12-14T10:50:05+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false"> Dec 14, 2014 </time> </p> </a> 
+         </div> 
+         <div class="release"> 
+          <div class="release__meta"> 
+          </div> 
+          <div class="release__graphic"> 
+           <div class="release__line"></div> 
+           <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg"> 
+          </div> <a class="card release__card" href="/project/bandersnatch/1.6.1/"> <p class="release__version"> 1.6.1 </p> <p class="release__version-date"> <time datetime="2014-09-24T05:11:28+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false"> Sep 24, 2014 </time> </p> </a> 
+         </div> 
+         <div class="release"> 
+          <div class="release__meta"> 
+          </div> 
+          <div class="release__graphic"> 
+           <div class="release__line"></div> 
+           <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg"> 
+          </div> <a class="card release__card" href="/project/bandersnatch/1.6/"> <p class="release__version"> 1.6 </p> <p class="release__version-date"> <time datetime="2014-09-24T04:56:59+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false"> Sep 24, 2014 </time> </p> </a> 
+         </div> 
+         <div class="release"> 
+          <div class="release__meta"> 
+          </div> 
+          <div class="release__graphic"> 
+           <div class="release__line"></div> 
+           <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg"> 
+          </div> <a class="card release__card" href="/project/bandersnatch/1.5/"> <p class="release__version"> 1.5 </p> <p class="release__version-date"> <time datetime="2014-07-21T10:58:14+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false"> Jul 21, 2014 </time> </p> </a> 
+         </div> 
+         <div class="release"> 
+          <div class="release__meta"> 
+          </div> 
+          <div class="release__graphic"> 
+           <div class="release__line"></div> 
+           <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg"> 
+          </div> <a class="card release__card" href="/project/bandersnatch/1.4/"> <p class="release__version"> 1.4 </p> <p class="release__version-date"> <time datetime="2014-04-15T18:53:01+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false"> Apr 15, 2014 </time> </p> </a> 
+         </div> 
+         <div class="release"> 
+          <div class="release__meta"> 
+          </div> 
+          <div class="release__graphic"> 
+           <div class="release__line"></div> 
+           <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg"> 
+          </div> <a class="card release__card" href="/project/bandersnatch/1.3/"> <p class="release__version"> 1.3 </p> <p class="release__version-date"> <time datetime="2014-02-16T17:23:32+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false"> Feb 16, 2014 </time> </p> </a> 
+         </div> 
+         <div class="release"> 
+          <div class="release__meta"> 
+          </div> 
+          <div class="release__graphic"> 
+           <div class="release__line"></div> 
+           <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg"> 
+          </div> <a class="card release__card" href="/project/bandersnatch/1.2/"> <p class="release__version"> 1.2 </p> <p class="release__version-date"> <time datetime="2014-01-08T12:14:26+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false"> Jan 8, 2014 </time> </p> </a> 
+         </div> 
+         <div class="release"> 
+          <div class="release__meta"> 
+          </div> 
+          <div class="release__graphic"> 
+           <div class="release__line"></div> 
+           <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg"> 
+          </div> <a class="card release__card" href="/project/bandersnatch/1.1/"> <p class="release__version"> 1.1 </p> <p class="release__version-date"> <time datetime="2013-11-26T07:49:31+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false"> Nov 26, 2013 </time> </p> </a> 
+         </div> 
+         <div class="release"> 
+          <div class="release__meta"> 
+          </div> 
+          <div class="release__graphic"> 
+           <div class="release__line"></div> 
+           <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg"> 
+          </div> <a class="card release__card" href="/project/bandersnatch/1.0.5/"> <p class="release__version"> 1.0.5 </p> <p class="release__version-date"> <time datetime="2013-07-25T06:25:55+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false"> Jul 25, 2013 </time> </p> </a> 
+         </div> 
+         <div class="release"> 
+          <div class="release__meta"> 
+          </div> 
+          <div class="release__graphic"> 
+           <div class="release__line"></div> 
+           <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg"> 
+          </div> <a class="card release__card" href="/project/bandersnatch/1.0.4/"> <p class="release__version"> 1.0.4 </p> <p class="release__version-date"> <time datetime="2013-07-10T13:49:19+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false"> Jul 10, 2013 </time> </p> </a> 
+         </div> 
+         <div class="release"> 
+          <div class="release__meta"> 
+          </div> 
+          <div class="release__graphic"> 
+           <div class="release__line"></div> 
+           <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg"> 
+          </div> <a class="card release__card" href="/project/bandersnatch/1.0.3/"> <p class="release__version"> 1.0.3 </p> <p class="release__version-date"> <time datetime="2013-07-08T13:05:40+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false"> Jul 8, 2013 </time> </p> </a> 
+         </div> 
+         <div class="release"> 
+          <div class="release__meta"> 
+          </div> 
+          <div class="release__graphic"> 
+           <div class="release__line"></div> 
+           <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg"> 
+          </div> <a class="card release__card" href="/project/bandersnatch/1.0.2/"> <p class="release__version"> 1.0.2 </p> <p class="release__version-date"> <time datetime="2013-07-08T07:50:30+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false"> Jul 8, 2013 </time> </p> </a> 
+         </div> 
+         <div class="release"> 
+          <div class="release__meta"> 
+          </div> 
+          <div class="release__graphic"> 
+           <div class="release__line"></div> 
+           <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg"> 
+          </div> <a class="card release__card" href="/project/bandersnatch/1.0.2.dev0/"> <p class="release__version"> 1.0.2.dev0 <span class="badge badge--warning release__version-badge"> pre-release </span> </p> <p class="release__version-date"> <time datetime="2013-06-13T12:24:38+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false"> Jun 13, 2013 </time> </p> </a> 
+         </div> 
+         <div class="release"> 
+          <div class="release__meta"> 
+          </div> 
+          <div class="release__graphic"> 
+           <div class="release__line"></div> 
+           <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg"> 
+          </div> <a class="card release__card" href="/project/bandersnatch/1.0.1/"> <p class="release__version"> 1.0.1 </p> <p class="release__version-date"> <time datetime="2013-04-18T18:11:14+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false"> Apr 18, 2013 </time> </p> </a> 
+         </div> 
+         <div class="release"> 
+          <div class="release__meta"> 
+          </div> 
+          <div class="release__graphic"> 
+           <div class="release__line"></div> 
+           <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg"> 
+          </div> <a class="card release__card" href="/project/bandersnatch/1.0/"> <p class="release__version"> 1.0 </p> <p class="release__version-date"> <time datetime="2013-04-09T20:46:45+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false"> Apr 9, 2013 </time> </p> </a> 
+         </div> 
+         <div class="release"> 
+          <div class="release__meta"> 
+          </div> 
+          <div class="release__graphic"> 
+           <div class="release__line"></div> 
+           <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg"> 
+          </div> <a class="card release__card" href="/project/bandersnatch/1.0rc6/"> <p class="release__version"> 1.0rc6 <span class="badge badge--warning release__version-badge"> pre-release </span> </p> <p class="release__version-date"> <time datetime="2013-04-09T17:24:05+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false"> Apr 9, 2013 </time> </p> </a> 
+         </div> 
+         <div class="release"> 
+          <div class="release__meta"> 
+          </div> 
+          <div class="release__graphic"> 
+           <div class="release__line"></div> 
+           <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg"> 
+          </div> <a class="card release__card" href="/project/bandersnatch/1.0rc2/"> <p class="release__version"> 1.0rc2 <span class="badge badge--warning release__version-badge"> pre-release </span> </p> <p class="release__version-date"> <time datetime="2013-04-09T16:58:19+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false"> Apr 9, 2013 </time> </p> </a> 
+         </div> 
+         <div class="release"> 
+          <div class="release__meta"> 
+          </div> 
+          <div class="release__graphic"> 
+           <div class="release__line"></div> 
+           <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg"> 
+          </div> <a class="card release__card" href="/project/bandersnatch/1.0rc1/"> <p class="release__version"> 1.0rc1 <span class="badge badge--warning release__version-badge"> pre-release </span> </p> <p class="release__version-date"> <time datetime="2013-04-09T15:41:18+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false"> Apr 9, 2013 </time> </p> </a> 
+         </div> 
+         <div class="release release--oldest"> 
+          <div class="release__meta"> 
+          </div> 
+          <div class="release__graphic"> 
+           <div class="release__line"></div> 
+           <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg"> 
+          </div> <a class="card release__card" href="/project/bandersnatch/1.0dev/"> <p class="release__version"> 1.0dev <span class="badge badge--warning release__version-badge"> pre-release </span> </p> <p class="release__version-date"> <time datetime="2013-03-21T00:03:31+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false"> Mar 21, 2013 </time> </p> </a> 
+         </div> 
+        </div> 
+       </div> 
+       <div id="files" data-target="project-tabs.content" class="vertical-tabs__content" role="tabpanel" aria-labelledby="files-tab mobile-files-tab" tabindex="-1"> 
+        <h2 class="page-title">Download files</h2> 
+        <p>Download the file for your platform. If you're not sure which to choose, learn more about <a href="https://packaging.python.org/installing/" title="External link" target="_blank" rel="noopener">installing packages</a>.</p> 
+        <h3> Source Distribution </h3> 
+        <div class="file"> 
+         <div class="file__graphic"> <i class="far fa-file" aria-hidden="true"></i> 
+         </div> 
+         <div class="card file__card"> <a href="https://files.pythonhosted.org/packages/b6/17/4635851a6f5a5991c0d2666cea432bca4bdc3b1d4a7832b39d7b04285725/bandersnatch-5.2.0.tar.gz"> bandersnatch-5.2.0.tar.gz </a> (66.3 kB <a href="#copy-hash-modal-6bd7d876-b3d4-4629-9089-4105403245d4">view hashes</a>) 
+          <p class="file__meta"> Uploaded <time datetime="2022-05-02T20:14:29+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false"> May 2, 2022 </time> <code>source</code> </p> 
+         </div> 
+        </div> 
+        <h3> Built Distribution </h3> 
+        <div class="file"> 
+         <div class="file__graphic"> <i class="far fa-file" aria-hidden="true"></i> 
+         </div> 
+         <div class="card file__card"> <a href="https://files.pythonhosted.org/packages/dd/3d/25d862ee8ea6ecd30f35262cd913a0b521c264a367594494f7ba4101a253/bandersnatch-5.2.0-py3-none-any.whl"> bandersnatch-5.2.0-py3-none-any.whl </a> (77.0 kB <a href="#copy-hash-modal-0c1f0ad0-adad-4d76-9596-265868c0676f">view hashes</a>) 
+          <p class="file__meta"> Uploaded <time datetime="2022-05-02T20:14:26+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false"> May 2, 2022 </time> <code>py3</code> </p> 
+         </div> 
+        </div> 
+       </div> 
+       <div id="copy-hash-modal-6bd7d876-b3d4-4629-9089-4105403245d4" class="modal modal--wide"> 
+        <div class="modal__content" role="dialog"> <a href="#modal-close" title="Close" class="modal__close"> <i class="fa fa-times" aria-hidden="true"></i> <span class="sr-only">Close</span> </a> 
+         <div class="modal__body"> 
+          <h3 class="modal__title"> <a href="https://pip.pypa.io/en/stable/cli/pip_install/#hash-checking-mode" title="External link" target="_blank" rel="noopener">Hashes</a> for bandersnatch-5.2.0.tar.gz </h3> 
+          <table class="table table--hashes"> 
+           <caption class="sr-only">
+            Hashes for bandersnatch-5.2.0.tar.gz
+           </caption> 
+           <thead> 
+            <tr> 
+             <th scope="col">Algorithm</th> 
+             <th scope="col">Hash digest</th> 
+             <th></th> 
+            </tr> 
+           </thead> 
+           <tbody> 
+            <tr> 
+             <th scope="row">SHA256</th> 
+             <td><code>771845545e4a192586569e2580a0ba496401a82f457a0b7a7e5433b123eeac82</code></td> 
+             <td class="table__align-right"> <button type="button" class="button button--small copy-tooltip copy-tooltip-w" data-tooltip-label="Copy to clipboard" data-clipboard-text="771845545e4a192586569e2580a0ba496401a82f457a0b7a7e5433b123eeac82"> Copy </button> </td> 
+            </tr> 
+            <tr> 
+             <th scope="row">MD5</th> 
+             <td><code>73db27c7d4c8b730f28e994ccaab753c</code></td> 
+             <td class="table__align-right"> <button type="button" class="button button--small copy-tooltip copy-tooltip-w" data-tooltip-label="Copy to clipboard" data-clipboard-text="73db27c7d4c8b730f28e994ccaab753c"> Copy </button> </td> 
+            </tr> 
+            <tr> 
+             <th scope="row">BLAKE2-256</th> 
+             <td><code>b6174635851a6f5a5991c0d2666cea432bca4bdc3b1d4a7832b39d7b04285725</code></td> 
+             <td class="table__align-right"> <button type="button" class="button button--small copy-tooltip copy-tooltip-w" data-tooltip-label="Copy to clipboard" data-clipboard-text="b6174635851a6f5a5991c0d2666cea432bca4bdc3b1d4a7832b39d7b04285725"> Copy </button> </td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="modal__footer"> <a href="#modal-close" class="button button--primary modal__action">Close</a> 
+         </div> 
+        </div> 
+       </div> 
+       <div id="copy-hash-modal-0c1f0ad0-adad-4d76-9596-265868c0676f" class="modal modal--wide"> 
+        <div class="modal__content" role="dialog"> <a href="#modal-close" title="Close" class="modal__close"> <i class="fa fa-times" aria-hidden="true"></i> <span class="sr-only">Close</span> </a> 
+         <div class="modal__body"> 
+          <h3 class="modal__title"> <a href="https://pip.pypa.io/en/stable/cli/pip_install/#hash-checking-mode" title="External link" target="_blank" rel="noopener">Hashes</a> for bandersnatch-5.2.0-py3-none-any.whl </h3> 
+          <table class="table table--hashes"> 
+           <caption class="sr-only">
+            Hashes for bandersnatch-5.2.0-py3-none-any.whl
+           </caption> 
+           <thead> 
+            <tr> 
+             <th scope="col">Algorithm</th> 
+             <th scope="col">Hash digest</th> 
+             <th></th> 
+            </tr> 
+           </thead> 
+           <tbody> 
+            <tr> 
+             <th scope="row">SHA256</th> 
+             <td><code>2d5c25b275a7f4aad5d9835ff9d7feae0d50034dcc4945c1b36384393383f90c</code></td> 
+             <td class="table__align-right"> <button type="button" class="button button--small copy-tooltip copy-tooltip-w" data-tooltip-label="Copy to clipboard" data-clipboard-text="2d5c25b275a7f4aad5d9835ff9d7feae0d50034dcc4945c1b36384393383f90c"> Copy </button> </td> 
+            </tr> 
+            <tr> 
+             <th scope="row">MD5</th> 
+             <td><code>5e8eb05cffb7c0c684541add2d5b1d89</code></td> 
+             <td class="table__align-right"> <button type="button" class="button button--small copy-tooltip copy-tooltip-w" data-tooltip-label="Copy to clipboard" data-clipboard-text="5e8eb05cffb7c0c684541add2d5b1d89"> Copy </button> </td> 
+            </tr> 
+            <tr> 
+             <th scope="row">BLAKE2-256</th> 
+             <td><code>dd3d25d862ee8ea6ecd30f35262cd913a0b521c264a367594494f7ba4101a253</code></td> 
+             <td class="table__align-right"> <button type="button" class="button button--small copy-tooltip copy-tooltip-w" data-tooltip-label="Copy to clipboard" data-clipboard-text="dd3d25d862ee8ea6ecd30f35262cd913a0b521c264a367594494f7ba4101a253"> Copy </button> </td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="modal__footer"> <a href="#modal-close" class="button button--primary modal__action">Close</a> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </main> 
+  <footer class="footer"> 
+   <div class="footer__logo"> 
+    <img src="/static/images/white-cube.8c3a6fe9.svg" alt="" class="-js-white-cube"> 
+   </div> 
+   <div class="footer__menus"> 
+    <div class="footer__menu"> 
+     <h2>Help</h2> 
+     <nav aria-label="Help navigation"> 
+      <ul> 
+       <li><a href="https://packaging.python.org/installing/" title="External link" target="_blank" rel="noopener">Installing packages</a></li> 
+       <li><a href="https://packaging.python.org/tutorials/packaging-projects/" title="External link" target="_blank" rel="noopener">Uploading packages</a></li> 
+       <li><a href="https://packaging.python.org/" title="External link" target="_blank" rel="noopener">User guide</a></li> 
+       <li><a href="/help/">FAQs</a></li> 
+      </ul> 
+     </nav> 
+    </div> 
+    <div class="footer__menu"> 
+     <h2>About PyPI</h2> 
+     <nav aria-label="About PyPI navigation"> 
+      <ul> 
+       <li><a href="https://twitter.com/PyPI" title="External link" target="_blank" rel="noopener">PyPI on Twitter</a></li> 
+       <li><a href="https://dtdg.co/pypi" title="External link" target="_blank" rel="noopener">Infrastructure dashboard</a></li> 
+       <li><a href="https://www.python.org/dev/peps/pep-0541/" title="External link" target="_blank" rel="noopener">Package index name retention</a></li> 
+       <li><a href="/sponsors/">Our sponsors</a></li> 
+      </ul> 
+     </nav> 
+    </div> 
+    <div class="footer__menu"> 
+     <h2>Contributing to PyPI</h2> 
+     <nav aria-label="How to contribute navigation"> 
+      <ul> 
+       <li><a href="/help/#feedback">Bugs and feedback</a></li> 
+       <li><a href="https://github.com/pypa/warehouse" title="External link" target="_blank" rel="noopener">Contribute on GitHub</a></li> 
+       <li><a href="https://hosted.weblate.org/projects/pypa/warehouse/" title="External link" target="_blank" rel="noopener">Translate PyPI</a></li> 
+       <li><a href="https://github.com/pypa/warehouse/graphs/contributors" title="External link" target="_blank" rel="noopener">Development credits</a></li> 
+      </ul> 
+     </nav> 
+    </div> 
+    <div class="footer__menu"> 
+     <h2>Using PyPI</h2> 
+     <nav aria-label="Using PyPI navigation"> 
+      <ul> 
+       <li><a href="https://github.com/pypa/.github/blob/main/CODE_OF_CONDUCT.md" title="External link" target="_blank" rel="noopener">Code of conduct</a></li> 
+       <li><a href="/security/">Report security issue</a></li> 
+       <li><a href="https://www.python.org/privacy/" title="External link" target="_blank" rel="noopener">Privacy policy</a></li> 
+       <li><a href="/policy/terms-of-use/">Terms of use</a></li> 
+      </ul> 
+     </nav> 
+    </div> 
+   </div> 
+   <hr class="footer__divider"> 
+   <div class="footer__text"> 
+    <p>Status: <a href="https://status.python.org/" title="External link" target="_blank" rel="noopener"> <span data-statuspage-domain="https://2p66nmmycsj3.statuspage.io">all systems operational</span></a> </p> 
+    <p> Developed and maintained by the Python community, for the Python community. <br> <a href="https://donate.pypi.org">Donate today!</a> </p> 
+    <p>© 2022 <a href="https://www.python.org/psf/" title="External link" target="_blank" rel="noopener">Python Software Foundation</a><br> <a href="/sitemap/">Site map</a> </p> 
+   </div> 
+   <div class="centered hide-on-desktop"> <button type="button" class="button button--switch-to-desktop hidden" data-target="viewport-toggle.switchToDesktop" data-action="viewport-toggle#switchToDesktop"> Switch to desktop version </button> 
+   </div> 
+  </footer> 
+  <div class="language-switcher"> 
+   <form action="/locale/"> 
+    <ul> 
+     <li> <button class="language-switcher__selected" name="locale_id" value="en" type="submit"> English </button> </li> 
+     <li> <button name="locale_id" value="es" type="submit"> español </button> </li> 
+     <li> <button name="locale_id" value="fr" type="submit"> français </button> </li> 
+     <li> <button name="locale_id" value="ja" type="submit"> ??? </button> </li> 
+     <li> <button name="locale_id" value="pt_BR" type="submit"> português (Brasil) </button> </li> 
+     <li> <button name="locale_id" value="uk" type="submit"> ?????????? </button> </li> 
+     <li> <button name="locale_id" value="el" type="submit"> ???????? </button> </li> 
+     <li> <button name="locale_id" value="de" type="submit"> Deutsch </button> </li> 
+     <li> <button name="locale_id" value="zh_Hans" type="submit"> ?? (??) </button> </li> 
+     <li> <button name="locale_id" value="zh_Hant" type="submit"> ?? (??) </button> </li> 
+     <li> <button name="locale_id" value="ru" type="submit"> ??????? </button> </li> 
+     <li> <button name="locale_id" value="he" type="submit"> ????? </button> </li> 
+     <li> <button name="locale_id" value="eo" type="submit"> esperanto </button> </li> 
+    </ul> 
+   </form> 
+  </div> 
+  <div class="sponsors"> 
+   <p class="sponsors__title">Supported by</p> <a class="sponsors__sponsor" target="_blank" rel="noopener" href="https://aws.amazon.com/"> <img class="sponsors__image" src="https://warehouse-camo.ingress.cmh1.psfhosted.org/ed7074cadad1a06f56bc520ad9bd3e00d0704c5b/68747470733a2f2f73746f726167652e676f6f676c65617069732e636f6d2f707970692d6173736574732f73706f6e736f726c6f676f732f6177732d77686974652d6c6f676f2d7443615473387a432e706e67" alt="AWS"> <span class="sponsors__name">AWS</span> <span class="sponsors__service"> Cloud computing </span> </a> <a class="sponsors__sponsor" target="_blank" rel="noopener" href="https://www.datadoghq.com/"> <img class="sponsors__image" src="https://warehouse-camo.ingress.cmh1.psfhosted.org/8855f7c063a3bdb5b0ce8d91bfc50cf851cc5c51/68747470733a2f2f73746f726167652e676f6f676c65617069732e636f6d2f707970692d6173736574732f73706f6e736f726c6f676f732f64617461646f672d77686974652d6c6f676f2d6668644c4e666c6f2e706e67" alt="Datadog"> <span class="sponsors__name">Datadog</span> <span class="sponsors__service"> Monitoring </span> </a> <a class="sponsors__sponsor" target="_blank" rel="noopener" href="https://research.fb.com/"> <img class="sponsors__image" src="https://warehouse-camo.ingress.cmh1.psfhosted.org/e338a8302eed851d9793e0a4a92f57b315eb5998/68747470733a2f2f73746f726167652e676f6f676c65617069732e636f6d2f707970692d6173736574732f73706f6e736f726c6f676f732f66616365626f6f6b2d696e7374616772616d2d77686974652d6c6f676f2d6750686a57647a722e706e67" alt="Facebook / Instagram"> <span class="sponsors__name">Facebook / Instagram</span> <span class="sponsors__service"> PSF Sponsor </span> </a> <a class="sponsors__sponsor" target="_blank" rel="noopener" href="https://www.fastly.com/"> <img class="sponsors__image" src="https://warehouse-camo.ingress.cmh1.psfhosted.org/df6fe8829cbff2d7f668d98571df1fd011f36192/68747470733a2f2f73746f726167652e676f6f676c65617069732e636f6d2f707970692d6173736574732f73706f6e736f726c6f676f732f666173746c792d77686974652d6c6f676f2d65684d3077735f6f2e706e67" alt="Fastly"> <span class="sponsors__name">Fastly</span> <span class="sponsors__service"> CDN </span> </a> <a class="sponsors__sponsor" target="_blank" rel="noopener" href="https://careers.google.com/"> <img class="sponsors__image" src="https://warehouse-camo.ingress.cmh1.psfhosted.org/420cc8cf360bac879e24c923b2f50ba7d1314fb0/68747470733a2f2f73746f726167652e676f6f676c65617069732e636f6d2f707970692d6173736574732f73706f6e736f726c6f676f732f676f6f676c652d77686974652d6c6f676f2d616734424e3774332e706e67" alt="Google"> <span class="sponsors__name">Google</span> <span class="sponsors__service"> Object Storage and Download Analytics </span> </a> <a class="sponsors__sponsor" target="_blank" rel="noopener" href="https://www.python.org/psf/sponsors/#huawei"> <img class="sponsors__image" src="https://warehouse-camo.ingress.cmh1.psfhosted.org/656ae2011c837dba1e2de4c8f85815eed86c0878/68747470733a2f2f73746f726167652e676f6f676c65617069732e636f6d2f707970692d6173736574732f73706f6e736f726c6f676f732f6875617765692d77686974652d6c6f676f2d416a465f553652312e706e67" alt="Huawei"> <span class="sponsors__name">Huawei</span> <span class="sponsors__service"> PSF Sponsor </span> </a> <a class="sponsors__sponsor" target="_blank" rel="noopener" href="https://www.python.org/psf/sponsors/#microsoft"> <img class="sponsors__image" src="https://warehouse-camo.ingress.cmh1.psfhosted.org/524d1ce72f7772294ca4c1fe05d21dec8fa3f8ea/68747470733a2f2f73746f726167652e676f6f676c65617069732e636f6d2f707970692d6173736574732f73706f6e736f726c6f676f732f6d6963726f736f66742d77686974652d6c6f676f2d5a443172685444462e706e67" alt="Microsoft"> <span class="sponsors__name">Microsoft</span> <span class="sponsors__service"> PSF Sponsor </span> </a> <a class="sponsors__sponsor" target="_blank" rel="noopener" href="https://www.python.org/psf/sponsors/#nvidia"> <img class="sponsors__image" src="https://warehouse-camo.ingress.cmh1.psfhosted.org/19eae9e26a9a9ffacc134095642b1392737c58fb/68747470733a2f2f73746f726167652e676f6f676c65617069732e636f6d2f707970692d6173736574732f73706f6e736f726c6f676f732f6e76696469612d77686974652d6c6f676f2d46394c393761474c2e706e67" alt="NVIDIA"> <span class="sponsors__name">NVIDIA</span> <span class="sponsors__service"> PSF Sponsor </span> </a> <a class="sponsors__sponsor" target="_blank" rel="noopener" href="https://www.pingdom.com/"> <img class="sponsors__image" src="https://warehouse-camo.ingress.cmh1.psfhosted.org/d01053c02f3a626b73ffcb06b96367fdbbf9e230/68747470733a2f2f73746f726167652e676f6f676c65617069732e636f6d2f707970692d6173736574732f73706f6e736f726c6f676f732f70696e67646f6d2d77686974652d6c6f676f2d67355831547546362e706e67" alt="Pingdom"> <span class="sponsors__name">Pingdom</span> <span class="sponsors__service"> Monitoring </span> </a> <a class="sponsors__sponsor" target="_blank" rel="noopener" href="https://opensource.salesforce.com/"> <img class="sponsors__image" src="https://warehouse-camo.ingress.cmh1.psfhosted.org/932f54a6c688f0bbc0e2f4e7b7dc5c067eed6c55/68747470733a2f2f73746f726167652e676f6f676c65617069732e636f6d2f707970692d6173736574732f73706f6e736f726c6f676f732f73616c6573666f7263652d77686974652d6c6f676f2d4539677a3053782d2e706e67" alt="Salesforce"> <span class="sponsors__name">Salesforce</span> <span class="sponsors__service"> PSF Sponsor </span> </a> <a class="sponsors__sponsor" target="_blank" rel="noopener" href="https://getsentry.com/for/python"> <img class="sponsors__image" src="https://warehouse-camo.ingress.cmh1.psfhosted.org/b1dc2c04aa1a8efbacd6dc6254bb63429af47b41/68747470733a2f2f73746f726167652e676f6f676c65617069732e636f6d2f707970692d6173736574732f73706f6e736f726c6f676f732f73656e7472792d77686974652d6c6f676f2d31556836754c32452e706e67" alt="Sentry"> <span class="sponsors__name">Sentry</span> <span class="sponsors__service"> Error logging </span> </a> <a class="sponsors__sponsor" target="_blank" rel="noopener" href="https://statuspage.io"> <img class="sponsors__image" src="https://warehouse-camo.ingress.cmh1.psfhosted.org/b611884ff90435a0575dbab7d9b0d3e60f136466/68747470733a2f2f73746f726167652e676f6f676c65617069732e636f6d2f707970692d6173736574732f73706f6e736f726c6f676f732f737461747573706167652d77686974652d6c6f676f2d5467476c6a4a2d502e706e67" alt="StatusPage"> <span class="sponsors__name">StatusPage</span> <span class="sponsors__service"> Status page </span> </a> 
+  </div>  
+ </body>
+</html>

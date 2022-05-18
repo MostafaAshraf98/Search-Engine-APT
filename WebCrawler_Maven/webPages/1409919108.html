@@ -1,0 +1,1162 @@
+<!doctype html><!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en" ng-app="bccom"> <![endif]--><!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en" ng-app="bccom"> <![endif]--><!--[if IE 8]>    <html class="no-js lt-ie9" lang="en" ng-app="bccom"> <![endif]--><!--[if gt IE 8]><!-->
+<html class="no-js" lang="en" ng-app="bccom"> <!--<![endif]--> 
+ <head> 
+  <meta charset="utf-8"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  <title>
+		Ecommerce Fulfillment: 3 Strategies To Fulfill Online Orders	</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <meta class="foundation-mq"> <!-- Google Tag Manager --> 
+  <script>
+		(function(w, d, s, l, i) {
+			w[l] = w[l] || [];
+			w[l].push({
+				'gtm.start': new Date().getTime(),
+				event: 'gtm.js'
+			});
+			var f = d.getElementsByTagName(s)[0],
+				j = d.createElement(s),
+				dl = l != 'dataLayer' ? '&l=' + l : '';
+			j.async = true;
+			j.src =
+				'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+			f.parentNode.insertBefore(j, f);
+		})(window, document, 'script', 'dataLayer', 'GTM-D9S9');
+	</script> <!-- End Google Tag Manager --> <!-- If Site Icon isn't set in customizer --> 
+  <link rel="pingback" href="https://www.bigcommerce.com/blog/xmlrpc.php"> 
+  <meta name="environment" content="production"> <!-- Load analytics.js --> 
+  <script>
+  ! function() {
+    var analytics = window.analytics = window.analytics || [];
+    if (!analytics.initialize)
+      if (analytics.invoked) window.console && console.error && console.error("Segment snippet included twice.");
+      else {
+        analytics.invoked = !0;
+        analytics.methods = ["trackSubmit", "trackClick", "trackLink", "trackForm", "pageview", "identify", "reset", "group", "track", "ready", "alias", "debug", "page", "once", "off", "on"];
+        analytics.factory = function(t) {
+          return function() {
+            var e = Array.prototype.slice.call(arguments);
+            e.unshift(t);
+            analytics.push(e);
+            return analytics
+          }
+        };
+        for (var t = 0; t < analytics.methods.length; t++) {
+          var e = analytics.methods[t];
+          analytics[e] = analytics.factory(e)
+        }
+        analytics.load = function(t, e) {
+          var n = document.createElement("script");
+          n.type = "text/javascript";
+          n.async = !0;
+          n.src = "https://cdn.segment.com/analytics.js/v1/" + t + "/analytics.min.js";
+          var a = document.getElementsByTagName("script")[0];
+          a.parentNode.insertBefore(n, a);
+          analytics._loadOptions = e
+        };
+        analytics.SNIPPET_VERSION = "4.1.0";
+        analytics.page();
+      }
+  }();
+</script> 
+  <script type="application/javascript">
+  function getCookie(cookieName) {
+    var cookie = document.cookie.match('(^|[^;]+)\\s*' + cookieName + '\\s*=\\s*([^;]+)');
+    var cookieVal = cookie ? cookie.pop() : '';
+    return cookieVal;
+  }
+
+  function initLoad() {
+    window.consentManagerConfig = function(exports) {
+      var React = exports.React;
+      var inEU = exports.inEU;
+      var inCA = window.inCA;
+
+      // console.log("inCA", inCA);
+
+      var writeKeySegment = "zEvwxXJWb3m1YY4SUrCC17Xjz0cQV3OH";
+
+
+      var otherWriteKeys = [
+        'BTmUWLubCbJjBopJwsDTxC0594E6Z5ex', // Developer Documentation
+        'pcIxZ9NO06csZFSFyDQ0akcPcQadO4M5', // Developer Portal
+        'Hk5ZBVORHL7NP3CfOXSyFXuYVuk6tv1j', // Impartner
+        'facRwgayTgyKQCya6Y3ykhpfYVHSkKNf', // segment_support
+        '8z6A0VG5UxD5lvVNAJXGuEvFxdeqLsKY', // Android
+        'rQ7w49xyp8c3AXdjrxsFo9HK4JikVYJm' // iOS
+      ];
+
+      var initialPreferences = {
+        'Functional': true,
+        'Analytics': true,
+        'Targeting and Advertising': true
+      }
+      if (inEU()) {
+        initialPreferences = {
+          'Functional': true
+        }
+      }
+
+      var customCategories = {
+        'Targeting and Advertising': {
+          purpose: 'Used to create profiles or personalize content to enhance your shopping experience.',
+          integrations: ['Google Ads (Classic)', 'Facebook Pixel', 'Personas Facebook Custom Audiences', 'Facebook Conversions API']
+        },
+        'Analytics': {
+          purpose: 'Provide statistical information on site usage, e.g., web analytics so we can improve this website over time.',
+          integrations: ['Google Universal Analytics', 'Marketplace App Event Forwarding (Bigcommerce)', 'Amplitude']
+        },
+        'Functional': {
+          purpose: 'Enables enhanced functionality, such as videos and live chat. If you do not allow these, then some or all of these functions may not work properly.',
+          integrations: ['Optimizely Web', 'Marketo V2', 'Salesforce', 'Natero', 'Pendo', 'Optimizely Customer Profiles (Bigcommerce)', 'Drift Contacts API (Bigcommerce)', 'Amazon Kinesis Firehose'],
+        },
+      }
+
+      var onOptionsClick = function() {
+        exports.openConsentManager();
+      }
+
+      var shouldRequireConsent = function() {
+        return inEU() || inCA;
+      };
+
+      var bannerContent = React.createElement(
+        'div', {
+          class: 'consentBannerText',
+          style: 'display: flex; align-items: center; justify-content: flex-end; padding: 10px 10px;'
+        },
+        React.createElement(
+          'span', {
+            style: 'flex-grow: 1; text-align: left;'
+          },
+          'We use cookies (and other similar technologies) to improve your experience on our site and to serve you better. By using our website, you are agreeing to the collection of data as described in our',
+          '\u00a0',
+          React.createElement(
+            'a', {
+              href: '/privacy/',
+              target: '_blank'
+            },
+            'Privacy Policy'
+          ),
+          '. You can',
+          '\u00a0',
+          React.createElement(
+            'a', {
+              onClick: function() {
+                onOptionsClick()
+              }
+            },
+            'change your preferences'
+          ),
+          '\u00a0',
+          'at any time.'
+        ),
+      );
+
+      var prefs = {
+        container: '#consent-manager',
+        writeKey: writeKeySegment,
+        otherWriteKeys: otherWriteKeys,
+        initialPreferences: initialPreferences,
+        shouldRequireConsent: shouldRequireConsent,
+        bannerContent: bannerContent,
+        bannerSubContent: null,
+        bannerBackgroundColor: '#313441',
+        preferencesDialogTitle: 'Website Data Collection Preferences',
+        preferencesDialogContent: 'We use data collected by cookies and JavaScript libraries, which are necessary for website functioning, to improve user’s browsing experience, analyze site traffic, deliver personalized advertisements, and increase the overall performance of our site.',
+        cancelDialogTitle: 'Are you sure you want to cancel?',
+        cancelDialogContent: 'Your preferences have not been saved. By continuing to use our website, you are agreeing to our Website Data Collection Policy',
+        customCategories: customCategories,
+        closeBehavior: 'accept',
+        implyConsentOnInteraction: false
+      }
+      return prefs;
+    }
+
+    function loadScripts(scriptType) {
+      // console.log('loadScripts ' + scriptType);
+
+      // Load functional scripts
+      if (scriptType === 'functional' || scriptType === 'all') {
+        // Optimizely
+        var optimizely_script = document.createElement('script');
+        optimizely_script.setAttribute('type', 'text/javascript');
+        optimizely_script.setAttribute('src', '//cdn.optimizely.com/js/134769299.js');
+        document.head.appendChild(optimizely_script);
+      }
+
+      // Load advertising scripts
+      if (scriptType === 'advertising' || scriptType === 'all') {}
+
+      // Load marketing and analytics scripts
+      if (scriptType === 'analytics' || scriptType === 'all') {}
+
+    }
+
+    // Fire an event passing users tracking preferences and locale
+    analytics.ready(function() {
+
+      var trackingPreferences = getCookie('tracking-preferences');
+      if (trackingPreferences !== '') {
+        trackingPreferences = JSON.parse(decodeURIComponent(trackingPreferences));
+        if (trackingPreferences.custom['Functional']) loadScripts('functional');
+        if (trackingPreferences.custom['Targeting and Advertising']) loadScripts('advertising');
+        if (trackingPreferences.custom['Analytics']) loadScripts('analytics');
+      } else {
+        loadScripts('all');
+      }
+
+      // console.log('Fire "Consent Preferences" event');
+      analytics.track('Consent Preferences', {
+        trackingPreferences: trackingPreferences,
+        inEU: window.consentManager.inEU(),
+        inCA: window.inCA
+      });
+    });
+
+    // Load Segment Consent Manager
+    // console.log("Load Segment Consent Manager");
+    var segment_script = document.createElement('script');
+    segment_script.setAttribute('type', 'text/javascript');
+    segment_script.setAttribute('src', '//unpkg.com/@segment/consent-manager@4.1.0/standalone/consent-manager.js');
+    segment_script.setAttribute('defer', '');
+    document.head.appendChild(segment_script);
+  }
+
+  var bcLocTime = 0;
+  var bcLocTimeout = 3000;
+
+  function awaitBCLocation() {
+    if (window.inCA == undefined && bcLocTime < bcLocTimeout) {
+      // console.log("inCA is undefined, total time elapsed:" + bcLocTime);
+      var bcLocation = getCookie('bcLocation');
+      if (bcLocation !== '') {
+        bcLocation = JSON.parse(decodeURIComponent(bcLocation));
+        window.inCA = bcLocation.state && bcLocation.state == 'CA';
+      }
+      bcLocTime += 100;
+      setTimeout(awaitBCLocation, 100);
+    } else {
+      // console.log("inCA is set:" + window.inCA);
+      initLoad()
+    }
+  }
+  setTimeout(awaitBCLocation, 100);
+</script> 
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"> 
+  <link rel="alternate" hreflang="en-us" href="https://www.bigcommerce.com/blog/ecommerce-fulfillment/"> 
+  <link rel="alternate" hreflang="en-au" href="https://www.bigcommerce.com.au/blog/ecommerce-fulfillment/"> 
+  <link rel="alternate" hreflang="en-gb" href="https://bigcommerce.co.uk/blog/ecommerce-fulfillment/"> 
+  <link rel="alternate" hreflang="x-default" href="https://www.bigcommerce.com/blog/ecommerce-fulfillment/"> <!-- This site is optimized with the Yoast SEO plugin v18.6 - https://yoast.com/wordpress/plugins/seo/ --> 
+  <meta name="description" content="Ecommerce fulfillment has never been more important. Learn about 3 order fulfillment strategies you can execute to drive customer satisfaction in 2022."> 
+  <link rel="canonical" href="https://www.bigcommerce.com/blog/ecommerce-fulfillment/"> 
+  <meta property="og:locale" content="en_US"> 
+  <meta property="og:type" content="article"> 
+  <meta property="og:title" content="Ecommerce Fulfillment: 3 Strategies To Fulfill Online Orders (2020)"> 
+  <meta property="og:description" content="Ecommerce fulfillment has never been more important. Learn about 3 order fulfillment strategies you can execute to drive customer satisfaction in 2020."> 
+  <meta property="og:url" content="https://www.bigcommerce.com/blog/ecommerce-fulfillment/"> 
+  <meta property="og:site_name" content="The BigCommerce Blog"> 
+  <meta property="article:publisher" content="https://www.facebook.com/bigcommerce"> 
+  <meta property="article:published_time" content="2018-09-28T16:00:38+00:00"> 
+  <meta property="article:modified_time" content="2022-03-10T06:04:20+00:00"> 
+  <meta property="og:image" content="https://www.bigcommerce.es/blog/wp-content/uploads/2018/09/ecommerce-fulfillment.jpg"> 
+  <meta property="og:image:width" content="1600"> 
+  <meta property="og:image:height" content="584"> 
+  <meta property="og:image:type" content="image/jpeg"> 
+  <meta name="twitter:card" content="summary_large_image"> 
+  <meta name="twitter:title" content="Ecommerce Fulfillment: 3 Strategies To Fulfill Online Orders (2020)"> 
+  <meta name="twitter:description" content="Ecommerce fulfillment has never been more important. Learn about 3 order fulfillment strategies you can execute to drive customer satisfaction in 2020."> 
+  <meta name="twitter:image" content="https://www.bigcommerce.com/blog/wp-content/uploads/2018/09/ecommerce-fulfillment.jpg"> 
+  <meta name="twitter:creator" content="@bigcommerce"> 
+  <meta name="twitter:site" content="@bigcommerce"> 
+  <meta name="twitter:label1" content="Written by"> 
+  <meta name="twitter:data1" content="Kristina Lopienski"> 
+  <meta name="twitter:label2" content="Est. reading time"> 
+  <meta name="twitter:data2" content="16 minutes"> 
+  <script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.bigcommerce.nl/blog/#organization","name":"Bigcommerce Ltd Pty","url":"https://www.bigcommerce.nl/blog/","sameAs":["https://www.facebook.com/bigcommerce","https://www.instagram.com/bigcommerce/","https://www.linkedin.com/company/bigcommerce/","https://www.youtube.com/user/bigcommercedotcom","https://twitter.com/bigcommerce"],"logo":{"@type":"ImageObject","@id":"https://www.bigcommerce.nl/blog/#logo","inLanguage":"en-US","url":"https://www.bigcommerce.com/blog/wp-content/uploads/2018/05/BigCommerce-Logo.png","contentUrl":"https://www.bigcommerce.com/blog/wp-content/uploads/2018/05/BigCommerce-Logo.png","width":1920,"height":1080,"caption":"Bigcommerce Ltd Pty"},"image":{"@id":"https://www.bigcommerce.nl/blog/#logo"}},{"@type":"WebSite","@id":"https://www.bigcommerce.nl/blog/#website","url":"https://www.bigcommerce.nl/blog/","name":"The BigCommerce Blog","description":"Ecommerce Blog delivering news, strategy and success stories to power 2x growth for scaling brands.","publisher":{"@id":"https://www.bigcommerce.nl/blog/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.bigcommerce.nl/blog/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"ImageObject","@id":"https://www.bigcommerce.com/blog/ecommerce-fulfillment/#primaryimage","inLanguage":"en-US","url":"https://www.bigcommerce.com/blog/wp-content/uploads/2018/09/ecommerce-fulfillment.jpg","contentUrl":"https://www.bigcommerce.com/blog/wp-content/uploads/2018/09/ecommerce-fulfillment.jpg","width":1600,"height":584,"caption":"ecommerce fulfillment"},{"@type":"WebPage","@id":"https://www.bigcommerce.com/blog/ecommerce-fulfillment/#webpage","url":"https://www.bigcommerce.com/blog/ecommerce-fulfillment/","name":"Ecommerce Fulfillment: 3 Strategies To Fulfill Online Orders","isPartOf":{"@id":"https://www.bigcommerce.nl/blog/#website"},"primaryImageOfPage":{"@id":"https://www.bigcommerce.com/blog/ecommerce-fulfillment/#primaryimage"},"datePublished":"2018-09-28T16:00:38+00:00","dateModified":"2022-03-10T06:04:20+00:00","description":"Ecommerce fulfillment has never been more important. Learn about 3 order fulfillment strategies you can execute to drive customer satisfaction in 2022.","breadcrumb":{"@id":"https://www.bigcommerce.com/blog/ecommerce-fulfillment/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.bigcommerce.com/blog/ecommerce-fulfillment/"]}]},{"@type":"BreadcrumbList","@id":"https://www.bigcommerce.com/blog/ecommerce-fulfillment/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.bigcommerce.nl/blog/"},{"@type":"ListItem","position":2,"name":"Ecommerce Fulfillment: The Unappreciated Yet Vital Strategy Brands Use to Win Loyal Customers"}]},{"@type":"Article","@id":"https://www.bigcommerce.com/blog/ecommerce-fulfillment/#article","isPartOf":{"@id":"https://www.bigcommerce.com/blog/ecommerce-fulfillment/#webpage"},"author":{"@id":"https://www.bigcommerce.nl/blog/#/schema/person/8314ed3e1e331ce0712702124bf7555a"},"headline":"Ecommerce Fulfillment: The Unappreciated Yet Vital Strategy Brands Use to Win Loyal Customers","datePublished":"2018-09-28T16:00:38+00:00","dateModified":"2022-03-10T06:04:20+00:00","mainEntityOfPage":{"@id":"https://www.bigcommerce.com/blog/ecommerce-fulfillment/#webpage"},"wordCount":3370,"commentCount":1,"publisher":{"@id":"https://www.bigcommerce.nl/blog/#organization"},"image":{"@id":"https://www.bigcommerce.com/blog/ecommerce-fulfillment/#primaryimage"},"thumbnailUrl":"https://www.bigcommerce.com/blog/wp-content/uploads/2018/09/ecommerce-fulfillment.jpg","keywords":["3pl","dropshipping","fulfillment"],"articleSection":["Shipping &amp; Fulfillment"],"inLanguage":"en-US","potentialAction":[{"@type":"CommentAction","name":"Comment","target":["https://www.bigcommerce.com/blog/ecommerce-fulfillment/#respond"]}]},{"@type":"Person","@id":"https://www.bigcommerce.nl/blog/#/schema/person/8314ed3e1e331ce0712702124bf7555a","name":"Kristina Lopienski","image":{"@type":"ImageObject","@id":"https://www.bigcommerce.nl/blog/#personlogo","inLanguage":"en-US","url":"https://secure.gravatar.com/avatar/cda5ed1e983cfd78d6f8e6ac891bfac1?s=96&d=mm&r=g","contentUrl":"https://secure.gravatar.com/avatar/cda5ed1e983cfd78d6f8e6ac891bfac1?s=96&d=mm&r=g","caption":"Kristina Lopienski"},"description":"Kristina Lopienski is the Content Marketing Manager at ShipBob. ShipBob allows ecommerce businesses to strategically distribute their inventory to our fulfillment centers across the US. By shipping orders out from near where their customers reiside, they can reduce transit times and shipping costs by leveraging ground shipping.","url":"https://www.bigcommerce.com/blog/author/kristina-lopienski/"}]}</script> <!-- / Yoast SEO plugin. --> 
+  <link rel="dns-prefetch" href="//app-ab15.marketo.com"> 
+  <link rel="alternate" type="application/rss+xml" title="The BigCommerce Blog » Feed" href="https://www.bigcommerce.com/blog/feed/"> 
+  <link data-minify="1" rel="stylesheet" id="ultimate-tables-style-css" href="https://www.bigcommerce.com/blog/wp-content/cache/min/1/blog/wp-content/plugins/ultimate-tables/css/ultimate-tables.css?ver=1651084242" type="text/css" media="all"> 
+  <link data-minify="1" rel="stylesheet" id="ultimate-datatables-style-css" href="https://www.bigcommerce.com/blog/wp-content/cache/min/1/blog/wp-content/plugins/ultimate-tables/css/jquery.dataTables.css?ver=1651084242" type="text/css" media="all"> 
+  <link rel="stylesheet" id="wp-block-library-css" href="https://www.bigcommerce.com/blog/wp-includes/css/dist/block-library/style.min.css?ver=5.9.3" type="text/css" media="all"> 
+  <link rel="stylesheet" id="wp-components-css" href="https://www.bigcommerce.com/blog/wp-includes/css/dist/components/style.min.css?ver=5.9.3" type="text/css" media="all"> 
+  <link rel="stylesheet" id="wp-block-editor-css" href="https://www.bigcommerce.com/blog/wp-includes/css/dist/block-editor/style.min.css?ver=5.9.3" type="text/css" media="all"> 
+  <link rel="stylesheet" id="wp-nux-css" href="https://www.bigcommerce.com/blog/wp-includes/css/dist/nux/style.min.css?ver=5.9.3" type="text/css" media="all"> 
+  <link rel="stylesheet" id="wp-reusable-blocks-css" href="https://www.bigcommerce.com/blog/wp-includes/css/dist/reusable-blocks/style.min.css?ver=5.9.3" type="text/css" media="all"> 
+  <link rel="stylesheet" id="wp-editor-css" href="https://www.bigcommerce.com/blog/wp-includes/css/dist/editor/style.min.css?ver=5.9.3" type="text/css" media="all"> 
+  <link data-minify="1" rel="stylesheet" id="drop_shadow_block-style-css-css" href="https://www.bigcommerce.com/blog/wp-content/cache/min/1/blog/wp-content/plugins/drop-shadow-boxes/block/blocks.style.build.css?ver=1651084242" type="text/css" media="all"> 
+  <style id="global-styles-inline-css" type="text/css">
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style> 
+  <link data-minify="1" rel="stylesheet" id="tm_clicktotweet-css" href="https://www.bigcommerce.com/blog/wp-content/cache/min/1/blog/wp-content/plugins/click-to-tweet-by-todaymade/assets/css/styles.css?ver=1651084242" type="text/css" media="all"> 
+  <link data-minify="1" rel="stylesheet" id="cta-front-css-css" href="https://www.bigcommerce.com/blog/wp-content/cache/min/1/blog/wp-content/plugins/cta-mat-plugin/assets/css/frontend.css?ver=1651084242" type="text/css" media="all"> 
+  <link data-minify="1" rel="stylesheet" id="theme-style-css" href="https://www.bigcommerce.com/blog/wp-content/cache/min/1/blog/wp-content/themes/bigcommerce/css/style.min.css?ver=1651084242" type="text/css" media="all"> 
+  <style id="rocket-lazyload-inline-css" type="text/css">
+.rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;cursor:pointer;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:72px;width:72px;left:50%;top:50%;margin-left:-36px;margin-top:-36px;position:absolute;background:url(https://www.bigcommerce.com/blog/wp-content/plugins/wp-rocket/assets/img/youtube.png) no-repeat;cursor:pointer}
+</style> 
+  <script type="text/javascript" src="https://www.bigcommerce.com/blog/wp-includes/js/jquery/jquery.min.js?ver=3.6.0" id="jquery-core-js" defer></script> 
+  <script type="text/javascript" src="https://www.bigcommerce.com/blog/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2" id="jquery-migrate-js" defer></script> 
+  <script type="text/javascript" id="wpml-cookie-js-extra">
+/* <![CDATA[ */
+var wpml_cookies = {"wp-wpml_current_language":{"value":"en","expires":1,"path":"\/"}};
+var wpml_cookies = {"wp-wpml_current_language":{"value":"en","expires":1,"path":"\/"}};
+/* ]]> */
+</script> 
+  <script data-minify="1" type="text/javascript" src="https://www.bigcommerce.com/blog/wp-content/cache/min/1/blog/wp-content/plugins/sitepress-multilingual-cms/res/js/cookies/language-cookie.js?ver=1651084242" id="wpml-cookie-js" defer></script> 
+  <script data-minify="1" type="text/javascript" src="https://www.bigcommerce.com/blog/wp-content/cache/min/1/js/forms2/js/forms2.min.js?ver=1651084243" id="forms2-js" defer></script> 
+  <script type="text/javascript" id="wpml-xdomain-data-js-extra">
+/* <![CDATA[ */
+var wpml_xdomain_data = {"css_selector":"wpml-ls-item","ajax_url":"https:\/\/www.bigcommerce.com\/blog\/wp-admin\/admin-ajax.php","current_lang":"en"};
+/* ]]> */
+</script> 
+  <script data-minify="1" type="text/javascript" src="https://www.bigcommerce.com/blog/wp-content/cache/min/1/blog/wp-content/plugins/sitepress-multilingual-cms/res/js/xdomain-data.js?ver=1651084243" id="wpml-xdomain-data-js" defer></script> 
+  <script type="text/javascript" id="ajax-test-js-extra">
+/* <![CDATA[ */
+var the_ajax_script = {"ajaxurl":"https:\/\/www.bigcommerce.com\/blog\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script> 
+  <script data-minify="1" type="text/javascript" src="https://www.bigcommerce.com/blog/wp-content/cache/min/1/blog/wp-content/plugins/google-site-verification-using-meta-tag/verification.js?ver=1651084243" id="ajax-test-js" defer></script> 
+  <link rel="https://api.w.org/" href="https://www.bigcommerce.com/blog/wp-json/">
+  <link rel="alternate" type="application/json" href="https://www.bigcommerce.com/blog/wp-json/wp/v2/posts/21281">
+  <link rel="shortlink" href="https://www.bigcommerce.com/blog/?p=21281"> 
+  <link rel="alternate" type="application/json+oembed" href="https://www.bigcommerce.com/blog/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.bigcommerce.com%2Fblog%2Fecommerce-fulfillment%2F"> 
+  <link rel="alternate" type="text/xml+oembed" href="https://www.bigcommerce.com/blog/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.bigcommerce.com%2Fblog%2Fecommerce-fulfillment%2F&amp;format=xml"> 
+  <meta name="generator" content="WPML ver:4.5.5 stt:1,65,64;"> 
+  <script data-minify="1" async src="https://www.bigcommerce.com/blog/wp-content/cache/min/1/analytics_e3e564133bb14fcb8086e62d228ed2c9.js?ver=1651084243"></script>
+  <link rel="icon" href="https://www.bigcommerce.com/blog/wp-content/uploads/2016/05/cropped-e8d7fa0a-3b0e-4069-91b1-78460a4d4af1-150x150.png" sizes="32x32"> 
+  <link rel="icon" href="https://www.bigcommerce.com/blog/wp-content/uploads/2016/05/cropped-e8d7fa0a-3b0e-4069-91b1-78460a4d4af1-300x300.png" sizes="192x192"> 
+  <link rel="apple-touch-icon" href="https://www.bigcommerce.com/blog/wp-content/uploads/2016/05/cropped-e8d7fa0a-3b0e-4069-91b1-78460a4d4af1-300x300.png"> 
+  <meta name="msapplication-TileImage" content="https://www.bigcommerce.com/blog/wp-content/uploads/2016/05/cropped-e8d7fa0a-3b0e-4069-91b1-78460a4d4af1-300x300.png"> 
+  <style type="text/css" id="wp-custom-css">
+			/*
+You can add your own CSS here.
+
+Click the help icon above to learn more.
+*/
+
+h6.snippet {font-size: 22px; font-weight:bold; margin-top:0px;}
+
+table.blog-table {
+  border: 1px solid #333333;
+  background-color: #FFFFFF;
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+}
+table.blog-table td, table.blog-table th {
+  border: 1px solid #333333;
+  padding: 3px 2px;
+}
+table.blog-table tbody td {
+  font-size: 16px;
+  color: #330000;
+}
+table.blog-table thead {
+  background: -moz-linear-gradient(top, #f8f9fa 0%, #f7f7f9 66%, #F6F7F9 100%);
+  background: -webkit-linear-gradient(top, #f8f9fa 0%, #f7f7f9 66%, #F6F7F9 100%);
+  background: linear-gradient(to bottom, #f8f9fa 0%, #f7f7f9 66%, #F6F7F9 100%);
+  border-bottom: 1px solid #333333;
+}
+table.blog-table thead th {
+  background: #3f5cd6;
+font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  border-left: 1px solid #333333;
+width: 33%;
+}
+table.blog-table thead th:first-child {
+  border-left: none;
+}
+
+table.blog-table tfoot {
+  font-size: 14px;
+  font-weight: bold;
+  color: #FFFFFF;
+  background: #D0E4F5;
+  background: -moz-linear-gradient(top, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
+  background: -webkit-linear-gradient(top, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
+  background: linear-gradient(to bottom, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
+  border-top: 2px solid #444444;
+}
+table.blog-table tfoot td {
+  font-size: 14px;
+}
+table.blog-table tfoot .links {
+  text-align: right;
+}
+table.blog-table tfoot .links a{
+  display: inline-block;
+  background: #1C6EA4;
+  color: #FFFFFF;
+  padding: 2px 8px;
+  border-radius: 5px;
+}		</style> <!--
+Plugin: Google meta tag Site Verification Plugin
+Tracking Code.
+
+--> 
+  <meta name="google-site-verification" content="google631fa914ea26a44b.html">
+  <noscript>
+   <style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style>
+  </noscript> 
+  <meta name="host" value="www.bigcommerce.com"> 
+  <meta name="home_url" value="https://www.bigcommerce.com/blog"> 
+  <meta name="site_url" value="https://www.bigcommerce.com/blog"> 
+  <meta name="rest_url" value="https://www.bigcommerce.com/blog/wp-json/"> 
+ </head> 
+ <body class="post-template-default single single-post postid-21281 single-format-standard bigcommerce-blog"> 
+  <div class="off-canvas position-right" id="menu" data-off-canvas> <!-- Your menu or Off-canvas content goes here --> 
+   <ul id="menu-main-navigation" class="menuItems">
+    <li id="menu-item-50968" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50968"><a href="/blog/">Latest Articles</a></li> 
+    <li id="menu-item-62282" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-62282"><a href="https://www.bigcommerce.com/blog/category/customer-stories/">Success Stories</a></li> 
+    <li id="menu-item-50971" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50971"><a href="/resources/">Resources</a></li> 
+    <li id="menu-item-62871" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-62871"><a href="https://www.bigcommerce.com/blog/category/ecommerce-holiday-ideas/">Holiday Ideas &amp; Strategies</a></li> 
+   </ul> 
+   <div class="menu-actions"> <a href="/start-your-trial/" class="button button--action button--small">Get Started</a> 
+   </div> 
+  </div> 
+  <div id="bodyWrapper" class="wrapper off-canvas-content" data-off-canvas-content> 
+   <div id="consent-manager"></div> <!-- <button
+  type="button"
+  onclick="event.stopPropagation(); window.consentManager.openConsentManager()"
+>
+  Data Collection and Cookie Preferences
+</button> --> 
+   <div class="siteStyleBar-container"> 
+    <div class="siteStyleBar"> 
+     <ul class="siteStyleBar-list siteStyleBar-tabs"> 
+      <li class="tabs-tab"><a class="tab-link" href="/" title="Enterprise">Enterprise</a></li> 
+      <li class="tabs-tab"><a class="tab-link" href="/essentials/" title="Essentials">Essentials</a></li> 
+     </ul> 
+     <ul class="siteStyleBar-list siteStyleBar-linksList"> 
+      <li class="linksList-item"><a class="linksList-link" href="tel:+1-888-248-9325" title="1-888-248-9325">1-888-248-9325</a></li> 
+      <li class="linksList-item"><a class="linksList-link" href="https://support.bigcommerce.com/" title="Help Center">Help Center</a></li> 
+      <li class="linksList-item"><a class="linksList-link" href="https://login.bigcommerce.com/login" title="Log In">Log In</a></li> 
+     </ul> 
+    </div> 
+   </div> 
+   <header class="header"> 
+    <div class="header__inner"> 
+     <div class="topBar-container headerColorScheme-transparentWhite topBar-container title-bar" role="menu"> 
+      <div class="title-bar-left"> 
+       <div class="top-bar"> 
+        <ul class="title-area menu"> 
+         <li class="name"> <a href="/"> <img class="lazyload" class="title-area-logo--hover" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20132%2030'%3E%3C/svg%3E" alt="bc-logo-dark" scale="0" width="132" height="30" data-lazy-src="https://www.bigcommerce.com/blog/wp-content/themes/bigcommerce/assets/images/bc-logo-bright.svg">
+           <noscript>
+            <img class="lazyload" class="title-area-logo--hover" src="https://www.bigcommerce.com/blog/wp-content/themes/bigcommerce/assets/images/bc-logo-bright.svg" alt="bc-logo-dark" scale="0" width="132" height="30">
+           </noscript> <!-- <img class="title-area-logo" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="bc-logo-dark" scale="0" data-lazy-src="https://www.bigcommerce.com/blog/wp-content/themes/bigcommerce/assets/images/bc-logo-dark.svg"><noscript><img class="title-area-logo" src="https://www.bigcommerce.com/blog/wp-content/themes/bigcommerce/assets/images/bc-logo-dark.svg" alt="bc-logo-dark" scale="0"></noscript> --> </a> </li> 
+        </ul> 
+        <section class="top-bar-section"> 
+         <ul id="menu-main-navigation-1" class="menuItems">
+          <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50968"><a href="/blog/">Latest Articles</a></li> 
+          <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-62282"><a href="https://www.bigcommerce.com/blog/category/customer-stories/">Success Stories</a></li> 
+          <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50971"><a href="/resources/">Resources</a></li> 
+          <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-62871"><a href="https://www.bigcommerce.com/blog/category/ecommerce-holiday-ideas/">Holiday Ideas &amp; Strategies</a></li> 
+         </ul> <button id="menu-toggle" class="menu-icon" type="button" data-toggle="menu" data-open="offCanvasRight"> <i class="icon icon-hamburger"></i> </button> 
+        </section> 
+        <div class="top-bar-actions"> <a href="/start-your-trial/" class="button button--action button--small">Get Started</a> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> <progress ng-non-bindable value="0"></progress> 
+   </header> 
+   <div id="content"> 
+    <div class="post-wrapper"> 
+     <div class="post-detail"> 
+      <div class="post-detail__title"> 
+       <div class="post-detail__title-inner"> 
+        <p class="post-detail__categories"><a href="https://www.bigcommerce.com/blog/category/how-to-sell-online/shipping-fulfillment/" rel="category tag">Shipping &amp; Fulfillment</a></p> 
+        <h1 itemprop="headline">Ecommerce Fulfillment: The Unappreciated Yet Vital Strategy Brands Use to Win Loyal Customers</h1> 
+        <div class="post-detail__meta"> <span class="post-detail__meta-authorimage"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20150%20149'%3E%3C/svg%3E" alt="Kristina Lopienski" width="150" height="149" class="photo" data-lazy-src="https://www.bigcommerce.com/blog/wp-content/uploads/userphoto/363.thumbnail.png">
+          <noscript>
+           <img src="https://www.bigcommerce.com/blog/wp-content/uploads/userphoto/363.thumbnail.png" alt="Kristina Lopienski" width="150" height="149" class="photo">
+          </noscript></span> <span><a href="https://www.bigcommerce.com/blog/author/kristina-lopienski/" title="Posts by Kristina Lopienski" rel="author">Kristina Lopienski</a></span> <span class="sep">/</span> 11 min read 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="post-detail__hero"> 
+      <img width="1600" height="584" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201600%20584'%3E%3C/svg%3E" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="ecommerce fulfillment" data-lazy-srcset="https://www.bigcommerce.com/blog/wp-content/uploads/2018/09/ecommerce-fulfillment.jpg 1600w, https://www.bigcommerce.com/blog/wp-content/uploads/2018/09/ecommerce-fulfillment-1280x467.jpg 1280w, https://www.bigcommerce.com/blog/wp-content/uploads/2018/09/ecommerce-fulfillment-300x110.jpg 300w, https://www.bigcommerce.com/blog/wp-content/uploads/2018/09/ecommerce-fulfillment-750x274.jpg 750w, https://www.bigcommerce.com/blog/wp-content/uploads/2018/09/ecommerce-fulfillment-1200x438.jpg 1200w, https://www.bigcommerce.com/blog/wp-content/uploads/2018/09/ecommerce-fulfillment-800x292.jpg 800w, https://www.bigcommerce.com/blog/wp-content/uploads/2018/09/ecommerce-fulfillment-1596x584.jpg 1596w" data-lazy-sizes="(max-width: 1600px) 100vw, 1600px" data-lazy-src="https://www.bigcommerce.com/blog/wp-content/uploads/2018/09/ecommerce-fulfillment.jpg">
+      <noscript>
+       <img width="1600" height="584" src="https://www.bigcommerce.com/blog/wp-content/uploads/2018/09/ecommerce-fulfillment.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="ecommerce fulfillment" srcset="https://www.bigcommerce.com/blog/wp-content/uploads/2018/09/ecommerce-fulfillment.jpg 1600w, https://www.bigcommerce.com/blog/wp-content/uploads/2018/09/ecommerce-fulfillment-1280x467.jpg 1280w, https://www.bigcommerce.com/blog/wp-content/uploads/2018/09/ecommerce-fulfillment-300x110.jpg 300w, https://www.bigcommerce.com/blog/wp-content/uploads/2018/09/ecommerce-fulfillment-750x274.jpg 750w, https://www.bigcommerce.com/blog/wp-content/uploads/2018/09/ecommerce-fulfillment-1200x438.jpg 1200w, https://www.bigcommerce.com/blog/wp-content/uploads/2018/09/ecommerce-fulfillment-800x292.jpg 800w, https://www.bigcommerce.com/blog/wp-content/uploads/2018/09/ecommerce-fulfillment-1596x584.jpg 1596w" sizes="(max-width: 1600px) 100vw, 1600px">
+      </noscript> 
+     </div> 
+     <div class="post-detail"> 
+      <div class="post-detail__body"> 
+       <div class="post-detail__body-main"> 
+        <div class="post-detail__toc" style="display:none;"> 
+         <div class="toc_container"> 
+          <div class="toc_title">
+           Table of Contents
+          </div> 
+          <ul class="toc_list"></ul> 
+         </div> 
+        </div> 
+        <div class="post-detail__body-inner" itemprop="text"> 
+         <p>Thanks to Amazon Prime, and other retail giants who have followed suit to offer free 2-day shipping, customer expectations around the speed and cost of shipping are constantly shifting.</p> 
+         <p>As consumers, when we want something, we want it now.</p> 
+         <p>As sellers, fulfilling those demands is easier said than done.</p> 
+         <p>While order fulfillment may not be the most glamorous aspect of running an ecommerce business, it is a function that directly impacts an online merchant’s bottom line.</p> 
+         <p>Did you know:</p> 
+         <ul> 
+          <li><a href="https://baymard.com/lists/cart-abandonment-rate">61% of shoppers</a> will abandon their cart if shipping, taxes, and other fees are too high.</li> 
+          <li><a href="https://www.prnewswire.com/news-releases/retailers-must-deliver-on-fulfillment-to-drive-conversions-a-new-study-by-arvato-reveals-668024593.html">53% of shoppers</a> say that speed of delivery is an important factor when it comes to evaluating their online orders.</li> 
+          <li><a href="http://www.metapack.com/state-of-ecommerce-delivery/">38% of shoppers</a> will never shop with a retailer again if they had a poor delivery experience.</li> 
+          <li><a href="https://www.prnewswire.com/news-releases/retailers-must-deliver-on-fulfillment-to-drive-conversions-a-new-study-by-arvato-reveals-668024593.html">25% of shoppers</a> have canceled an order because of slow delivery speeds.</li> 
+         </ul> 
+         <div class="post-detail__quote">
+          <p></p> 
+          <p>Getting ecommerce order fulfillment right has never been more important.</p> 
+          <p></p>
+          <div class="post-detail__quote-author"></div>
+         </div> 
+         <p>But before your online store can master order fulfillment, you need to understand how it works.</p> 
+         <h2>What is Order Fulfillment?</h2> 
+         <p>Order fulfillment is the process of storing inventory, picking and packing products, and <a href="/articles/business-management/ecommerce-shipping/">shipping online orders to customers</a>.</p> 
+         <div class="post-detail__quote">
+          <p></p> 
+          <p>This process can be completed in-house by an ecommerce company or outsourced to a <a href="https://www.bigcommerce.com/blog/3pl-logistics-tips/">third-party logistics (3PL) provider</a>.</p> 
+          <p></p>
+          <div class="post-detail__quote-author"></div>
+         </div> 
+         <p><a href="https://www.shipbob.com/ecommerce-fulfillment/">Ecommerce order fulfillment</a> applies to both <a href="/articles/b2b-ecommerce/">business-to-business (B2B)</a> orders — where large quantities of product are shipped to big-box retailers — as well as business-to-consumer (B2C) orders that are shipped directly to a single shopper’s home.</p> 
+         <p>For B2C orders, the end consumer may place the order on the merchant’s website or through an online marketplace.</p> 
+         <p>After the customer completes their purchase, the fulfillment process begins.</p> 
+         <h2>Understanding The Order Fulfillment Process</h2> 
+         <p>If you are new to the fulfillment world, you may not have put much thought into how an online order ends up at your doorstep.</p> 
+         <p>However, there are many moving pieces — from routing and managing inventory to choosing the correct packaging for the lowest practical dimensional weight — that make up the entire fulfillment process.</p> 
+         <div class="post-detail__quote">
+          <p></p> 
+          <p>There are nuances of each step of the fulfillment workflow, including receiving inventory, <a href="/blog?p=20013">warehousing products</a>, picking and packing items, and shipping orders.</p> 
+          <p></p>
+          <div class="post-detail__quote-author"></div>
+         </div> 
+         <h3>1. Receiving.</h3> 
+         <p>Before you can fulfill orders from your online sales channels, you need inventory.</p> 
+         <p>If you choose to fulfill orders in-house, your inventory must be on-hand.</p> 
+         <p>If you are outsourcing fulfillment, inventory must be sent to the provider that will fulfill on your behalf.</p> 
+         <h3>2. Inventory storage.</h3> 
+         <p>Inventory storage, also known as warehousing, is the organization and storage of your products.</p> 
+         <div class="post-detail__quote">
+          <p></p> 
+          <p>Each unique product or <a href="/ecommerce-answers/what-is-a-sku-how-online-business-use-it/">SKU</a> must have a separate dedicated storage location.</p> 
+          <p>For larger operations, this will be on a shelf, in a bin, or on a pallet.</p> 
+          <p></p>
+          <div class="post-detail__quote-author"></div>
+         </div> 
+         <p>Proper inventory storage will keep your products secure and protected and help give you visibility into what is available to ship to your customers.</p> 
+         <h3>3. Order processing.</h3> 
+         <p>Once an order has been submitted, it will get processed.</p> 
+         <p>These steps involve picking, or the retrieval of items from where they are stored, and packing, or getting the order ready to ship.</p> 
+         <div class="post-detail__quote">
+          <p></p> 
+          <p>Often a packing slip is used, which notes the quantities and storage locations of each product ordered.</p> 
+          <p></p>
+          <div class="post-detail__quote-author"></div>
+         </div> 
+         <p>This may also include instructions on which packing materials to use — boxes, bubble mailers, poly bags, packing tape, bubble wrap, airfill, etc. — or any custom packaging and inserts to create the intended unboxing experience for the end customer.</p> 
+         <p>Finally, a shipping label must be added to the package.</p> 
+         <h3>4. Shipping.</h3> 
+         <p>Once the order has been processed and is ready to send, the merchant must get it shipped.</p> 
+         <p>This may involve a run to the local post office or UPS Store, or having a carrier pick up the orders from the fulfillment location.</p> 
+         <div class="post-detail__quote">
+          <p></p> 
+          <p>Once the order ships, you should receive tracking info that can be shared with customers to keep them up-to-date with their deliveries.</p> 
+          <p></p>
+          <div class="post-detail__quote-author"></div>
+         </div> 
+         <h3>5. Returns processing.</h3> 
+         <p><a href="https://www.bigcommerce.com/blog/create-a-returns-and-exchanges-policy-that-sells/">If a customer returns an order</a>, you must be prepared to process it.</p> 
+         <p>They may ship it directly back to you or the fulfillment provider where it will be evaluated.</p> 
+         <p>Depending on the item quality, return reason, and your returns policy, the product can either be restocked as available inventory or disposed of due to malfunction.</p> 
+         <div class="callout__rss">
+          <div class="callout__rss-inner">
+           <div class="callout__rss-wrapper">
+            <div class="callout__rss-table">
+             <div class="callout__rss-text">
+              <p class="h3">Want more insights like this?</p>
+              <p><span style="font-weight: 400;">Subscribe to our bi-weekly newsletter to get the latest thought leadership content delivered right to your inbox — from blogs and resource articles, to podcast episodes, webinars and more.</span></p> 
+             </div>
+             <div class="callout__rss-form clearfix">
+              <form class="mktoForm" data-formid="2142" data-forminstance="post-rss-1" ng-non-bindable></form>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div> 
+         <h2>Planning Your Order Fulfilment Strategy</h2> 
+         <p>Ecommerce order fulfillment requires a sound strategy behind it — especially if you plan to grow your business.</p> 
+         <div class="post-detail__quote">
+          <p></p> 
+          <p>Good planning is necessary to secure the infrastructure, systems, processes, and team you’ll need for success.</p> 
+          <p></p>
+          <div class="post-detail__quote-author"></div>
+         </div> 
+         <p>Let’s dive into some important considerations to think through before scaling your fulfillment operations.</p> 
+         <h3>1. Location is everything.</h3> 
+         <div class="post-detail__quote">
+          <p></p> 
+          <p>Even if you don’t operate a <a href="https://www.bigcommerce.com/blog/?p=30006">brick-and-mortar store</a>, physical location still matters in ecommerce.</p> 
+          <p></p>
+          <div class="post-detail__quote-author"></div>
+         </div> 
+         <p>Aside from the size of your storage space, where you fulfill orders from is one of the most important factors in meeting customer expectations around delivery costs and speeds.</p> 
+         <p>Since both affordable and fast shipping options are important to consumers, optimizing your fulfillment operation based on where your customers reside will help you reach the most people in the most cost-efficient manner.</p> 
+         <p>For example, shipping orders to US customers from overseas can take significant time unless they are willing to pay significantly more for expedited delivery.</p> 
+         <p>Even domestically, if you ship orders from rural areas or from one side of the country to another, you are shipping to higher <a href="https://www.shipbob.com/blog/how-shipping-zones-work-fulfillment/">shipping zones</a>.</p> 
+         <div class="post-detail__quote">
+          <p></p> 
+          <p>Reducing shipping zones, or the distance packages travel, will typically reduce the cost of shipping and time in transit.</p> 
+          <p></p>
+          <div class="post-detail__quote-author"></div>
+         </div> 
+         <p>Urban fulfillment centers are on the rise as they allow merchants to quickly and affordably ship to customers in big cities with large populations.</p> 
+         <p>Another strategic step in optimizing fulfillment is to distribute inventory to multiple locations that are within close proximity of your customers.</p> 
+         <p>The more fulfillment locations near common shipping destinations, the more ground shipping can be leveraged, which is significantly cheaper than expedited air and faster than shipping from a greater distance.</p> 
+         <h3>2. Technology integrations.</h3> 
+         <p>Software that <a href="/articles/ecommerce/ecommerce-platforms/">integrates seamlessly with ecommerce platforms</a> and <a href="/blog?p=24773">online marketplaces</a> can help manage orders across sales channels without requiring any manual uploads or duplicate data entry.</p> 
+         <div class="post-detail__quote">
+          <p></p> 
+          <p>This means that as soon as an order is placed online, fulfillment staff can quickly be alerted to pick, pack, and ship the items to the customer.</p> 
+          <p></p>
+          <div class="post-detail__quote-author"></div>
+         </div> 
+         <p>Tracking information can then be sent back to the platform or marketplace and shared with the customer.</p> 
+         <p>Another important piece of the fulfillment puzzle is visibility into inventory quantities on hand across fulfillment locations.</p> 
+         <p>This helps online retailers understand when to proactively order more inventory to prevent stockouts.</p> 
+         <p><a href="https://www.bigcommerce.com/blog/ecommerce-business-ideas/">Ecommerce businesses</a> need to leverage their integrations to connect the upstream activities of purchasing and manufacturing to the downstream activities of sales and product demand to make more accurate purchasing and production decisions. For example, if you need customer signatures to close sales, you can use electronic signature software to <a href="https://www.pandadoc.com/electronic-signature-software/" target="_blank" rel="noopener noreferrer">increase close rates by 28%</a>.</p> 
+         <h3>3. Free 2-day shipping.</h3> 
+         <p>With fast shipping speeds like 2-day and even same-day becoming more prevalent, keeping transit times down and costs low will appeal to customers.</p> 
+         <p>However, pricing your shipping can be challenging as there is no one-size-fits-all approach or magic formula.</p> 
+         <p>And shipping is expensive — and certainly not free — for the merchant.</p> 
+         <div class="post-detail__quote">
+          <p></p> 
+          <p>Strategic ecommerce order fulfillment can achieve higher conversion rates without hurting your margins.</p> 
+          <p></p>
+          <div class="post-detail__quote-author"></div>
+         </div> 
+         <div class="post-detail__recommended"> 
+          <h6 class="snippet">Ecommerce Order Fulfillment Strategies For Profitable Shipping Options</h6> 
+          <ul> 
+           <li>Bake the cost of shipping into the product price using the average shipping cost.</li> 
+           <li>Require a minimum spend threshold for free shipping to increase the average order value</li> 
+          </ul> 
+          <p>Offering free shipping has a major impact on shoppers’ behavior.</p> 
+         </div> 
+         <p>Offering free 2-day shipping helps lessen cart abandonment rates and get more shoppers to your checkout page in the first place; but the goal is to do this without increasing your returns rate.</p> 
+         <p>For inexpensive products, absorbing the cost of shipping will make you lose money, while increasing your product price may turn visitors elsewhere.</p> 
+         <div class="post-detail__quote">
+          <p></p> 
+          <p>A free 2-day shipping strategy often works best for more expensive products or stores with shoppers that generally spend more on average.</p> 
+          <p></p>
+          <div class="post-detail__quote-author"></div>
+         </div> 
+         <p>BigCommerce merchants can now use <a href="https://deliverr.com/bigcommerce" target="_blank" rel="noopener noreferrer">Deliverr</a> to get 2-day delivery on their stores and other marketplace channels, like eBay, Walmart, Wish and more.</p> 
+         <h2>Deciding Which Ecommerce Order Fulfillment Model to Use</h2> 
+         <p>Making the right choice for how you fulfill orders will depend on several factors, including your order volume, your products, what you’re willing to manage yourself, and more.</p> 
+         <p>There are three common methods of order fulfillment — see which might be the best for you.</p> 
+         <h3>1. In-house order fulfillment.</h3> 
+         <p>In-house order fulfillment, also known as self-fulfillment, occurs when the merchant completes each step of the fulfillment process internally, without the help of a dropshipper or third-party logistics provider.</p> 
+         <div class="post-detail__quote">
+          <p></p> 
+          <p>This model ranges from small order volumes fulfilled from home to investments in a larger scale operation and more extensive facility.</p> 
+          <p></p>
+          <div class="post-detail__quote-author"></div>
+         </div> 
+         <p>It’s common for merchants that are just starting out to manage inventory and pack orders in their home.</p> 
+         <p>In-house fulfillment at this stage typically takes up a lot of valuable time that could otherwise be spent on acquiring more customers, developing new products, and launching marketing campaigns.</p> 
+         <p>Once merchants grow to a certain point and can no longer manage fulfillment alone, they are faced with either outsourcing fulfillment or building out the fulfillment infrastructure themselves.</p> 
+         <p>The DIY route entails:</p> 
+         <ul> 
+          <li>Securing warehouse space.</li> 
+          <li>Recruiting and staffing it.</li> 
+          <li>Purchasing the necessary equipment.</li> 
+          <li>Licensing <a href="/apps/warehouse-management/">warehouse management software.</a></li> 
+          <li>Getting workers’ comp and liability insurance.</li> 
+          <li>And more.</li> 
+         </ul> 
+         <p><img class="aligncenter size-full wp-image-31300" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20641%20384'%3E%3C/svg%3E" alt="ecommerce fulfillment self-fulfillment" width="641" height="384" data-lazy-srcset="https://www.bigcommerce.com/blog/wp-content/uploads/2018/09/ecommerce-fulfillment-self-fulfillment.png 641w, https://www.bigcommerce.com/blog/wp-content/uploads/2018/09/ecommerce-fulfillment-self-fulfillment-300x180.png 300w" data-lazy-sizes="(max-width: 641px) 100vw, 641px" data-lazy-src="https://www.bigcommerce.com/blog/wp-content/uploads/2018/09/ecommerce-fulfillment-self-fulfillment.png">
+          <noscript>
+           <img class="aligncenter size-full wp-image-31300" src="https://www.bigcommerce.com/blog/wp-content/uploads/2018/09/ecommerce-fulfillment-self-fulfillment.png" alt="ecommerce fulfillment self-fulfillment" width="641" height="384" srcset="https://www.bigcommerce.com/blog/wp-content/uploads/2018/09/ecommerce-fulfillment-self-fulfillment.png 641w, https://www.bigcommerce.com/blog/wp-content/uploads/2018/09/ecommerce-fulfillment-self-fulfillment-300x180.png 300w" sizes="(max-width: 641px) 100vw, 641px">
+          </noscript></p> 
+         <p><strong>Advantages:</strong></p> 
+         <ul> 
+          <li>It offers 100% control of inventory and the pick, pack, and ship process.</li> 
+          <li>It can be low-cost when the business is small because you are just paying for shipping (and doing the work yourself).</li> 
+          <li>Anyone can do it. You don’t need any contacts (as long as you have space to store products, address labels, and packing resources such as packing slips).</li> 
+          <li>For businesses shipping significant volume, negotiated shipping rates through FedEx, UPS, and/or USPS can become a competitive advantage.</li> 
+         </ul> 
+         <p><strong>Disadvantages:</strong></p> 
+         <ul> 
+          <li>It is time-consuming. Packing all of the products yourself will take time. As orders increase, this can take up most of your day.</li> 
+          <li>It is costly as the business grows and can be very burdensome for a young business. You need the following: 
+           <ul> 
+            <li>Warehouse space.</li> 
+            <li>Warehouse equipment.</li> 
+            <li>Additional staff.</li> 
+            <li>Order fulfillment software requirements.</li> 
+           </ul> </li> 
+         </ul> 
+         <h3>2. Third-party fulfillment.</h3> 
+         <p>Handing off ecommerce fulfillment to a third-party often occurs when a merchant is spending too much time packing boxes and shipping orders, has run out of space to store their inventory, needs more time for strategic projects, and has no interest in managing their own distribution infrastructure.</p> 
+         <div class="post-detail__quote">
+          <p></p> 
+          <p>When you <a href="https://www.shipbob.com/blog/self-fulfillment-vs-outsourcing-3pl-right-e-commerce-business/">outsource fulfillment to a 3PL company</a>, they handle the entire fulfillment process for you — from receiving your inventory from your manufacturer to restocking returned products.</p> 
+          <p></p>
+          <div class="post-detail__quote-author"></div>
+         </div> 
+         <p>Because 3PLs work with many merchants and typically operate a number of <a href="/ecommerce-answers/what-fulfillment-center-and-why-it-important/">fulfillment centers</a>, they have the logistical expertise and capacity and are able to negotiate substantial discounted bulk shipping rates from carriers due to the pure volume of shipments they are shipping out each day.</p> 
+         <p>The 3PL’s staff will complete all tasks of the order fulfillment process within their fulfillment center:</p> 
+         <ul> 
+          <li>Receiving.</li> 
+          <li>Picking.</li> 
+          <li>Packing.</li> 
+          <li>Labeling.</li> 
+          <li>Returns processing.</li> 
+          <li>Quality control.</li> 
+          <li>Other specialized projects.</li> 
+         </ul> 
+         <p>Each 3PL is unique and has their own services that will vary depending on your needs, including kitting, custom packaging, B2B orders, <a href="https://www.bigcommerce.com/blog/amazon-selling-pitfalls-problems/">FBA</a> prep, temperature control or refrigeration, and more.</p> 
+         <p><img class="aligncenter size-full wp-image-31301" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20512%20346'%3E%3C/svg%3E" alt="ecommerce fulfillment 3rd party fulfillment" width="512" height="346" data-lazy-srcset="https://www.bigcommerce.com/blog/wp-content/uploads/2018/09/ecommerce-fulfillment-3rd-party-fulfillment.png 512w, https://www.bigcommerce.com/blog/wp-content/uploads/2018/09/ecommerce-fulfillment-3rd-party-fulfillment-300x203.png 300w" data-lazy-sizes="(max-width: 512px) 100vw, 512px" data-lazy-src="https://www.bigcommerce.com/blog/wp-content/uploads/2018/09/ecommerce-fulfillment-3rd-party-fulfillment.png">
+          <noscript>
+           <img class="aligncenter size-full wp-image-31301" src="https://www.bigcommerce.com/blog/wp-content/uploads/2018/09/ecommerce-fulfillment-3rd-party-fulfillment.png" alt="ecommerce fulfillment 3rd party fulfillment" width="512" height="346" srcset="https://www.bigcommerce.com/blog/wp-content/uploads/2018/09/ecommerce-fulfillment-3rd-party-fulfillment.png 512w, https://www.bigcommerce.com/blog/wp-content/uploads/2018/09/ecommerce-fulfillment-3rd-party-fulfillment-300x203.png 300w" sizes="(max-width: 512px) 100vw, 512px">
+          </noscript></p> 
+         <p><strong>Advantages:</strong></p> 
+         <ul> 
+          <li>Inventory can be purchased in bulk in order to improve profit margins.</li> 
+          <li>No investment is required for warehouse space/real estate, WMS software, or a workforce to pick and pack orders.</li> 
+          <li>There is an added convenience of outsourcing the process to a trusted professional.</li> 
+          <li>Shipping discounts can be much better than if you were to negotiate on your own. 
+           <ul> 
+            <li>i.e: Your business ships 5,000 packages per month, but the third-party ecommerce fulfillment company may be handling 150,000 orders per month. They’re going to be able to get better shipping rates with FedEx/UPS than you can alone.</li> 
+           </ul> </li> 
+         </ul> 
+         <p><strong>Disadvantages:</strong></p> 
+         <ul> 
+          <li>Quality can be compromised. 
+           <ul> 
+            <li>You have to do your due diligence: a third-party ecommerce fulfillment company controls your ecommerce businesses’ final handoff of value to your customers. In other words, they have the opportunity to make or break your customer satisfaction levels, which affects the lifetime value of these customers on your business.</li> 
+           </ul> </li> 
+         </ul> 
+         <p>&nbsp;</p> 
+         <h3>3. Dropshipping.</h3> 
+         <p><a href="https://www.bigcommerce.com/blog/dropshipping/">Dropshipping</a> means that the merchant never holds the products they sell in their online store; instead, the products are produced, stored, and shipped by the manufacturer.</p> 
+         <p>When a customer places an order on the merchant’s online store, the order is forwarded either manually or automatically to the <a href="/articles/b2b-ecommerce/ecommerce-for-manufacturers/">manufacturer</a>.</p> 
+         <p>Then, the manufacturer dropships the product directly to the end customer.</p> 
+         <div class="post-detail__quote">
+          <p></p> 
+          <p>With dropshipping, the shipping process is completely in the hands of the manufacturer, who is often overseas.</p> 
+          <p></p>
+          <div class="post-detail__quote-author"></div>
+         </div> 
+         <p>This means that your customers might have to wait for a product to be shipped from across the world.</p> 
+         <p>In addition, dropshipping does not necessarily allow you full control over inventory management and order fulfillment.</p> 
+         <p><img class="aligncenter size-full wp-image-31302" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20641%20514'%3E%3C/svg%3E" alt="ecommerce fulfillment dropship fulfillment" width="641" height="514" data-lazy-srcset="https://www.bigcommerce.com/blog/wp-content/uploads/2018/09/ecommerce-fulfillment-dropship-fulfillment.png 641w, https://www.bigcommerce.com/blog/wp-content/uploads/2018/09/ecommerce-fulfillment-dropship-fulfillment-300x241.png 300w" data-lazy-sizes="(max-width: 641px) 100vw, 641px" data-lazy-src="https://www.bigcommerce.com/blog/wp-content/uploads/2018/09/ecommerce-fulfillment-dropship-fulfillment.png">
+          <noscript>
+           <img class="aligncenter size-full wp-image-31302" src="https://www.bigcommerce.com/blog/wp-content/uploads/2018/09/ecommerce-fulfillment-dropship-fulfillment.png" alt="ecommerce fulfillment dropship fulfillment" width="641" height="514" srcset="https://www.bigcommerce.com/blog/wp-content/uploads/2018/09/ecommerce-fulfillment-dropship-fulfillment.png 641w, https://www.bigcommerce.com/blog/wp-content/uploads/2018/09/ecommerce-fulfillment-dropship-fulfillment-300x241.png 300w" sizes="(max-width: 641px) 100vw, 641px">
+          </noscript></p> 
+         <p><strong>Advantages:</strong></p> 
+         <ul> 
+          <li><strong>Easy to start:</strong> <a href="https://www.bigcommerce.com/blog/dropshipping-companies/">Dropshippers provide the products and the shipping</a>, so all you need to do is focus on sales.</li> 
+          <li><strong>Minimal business development:</strong> You’re leveraging the network of your dropshipper, instead of personally building the relationships with every supplier. Essentially, every new partner allows you to grow by a significantly large number of new products.</li> 
+          <li><strong>More products, faster:</strong> Growth in ecommerce begins with adding more products to your website. Integrating a dropshipper’s products with your business is simple and straightforward because all you’re doing is supporting the links and learning the prices—not lining up any other part of the logistics.This allows more people to discover you and increases the number of touchpoints by which interested shoppers can encounter your brand.</li> 
+          <li><strong>Affordable:</strong> Low overhead makes dropshipping a great starting place for online retailers. All you do is pay for inventory when a sale is made, so you avoid operational expenses like warehousing. Profitability is not guaranteed, though, which we’ll get to in the next section.</li> 
+          <li><strong>Test before committing:</strong> Since you don’t incur overhead, you can test out the viability of new markets for existing products anywhere you can establish a drop-shipper service.</li> 
+          <li><strong>Focus on what you do well:</strong> The convenience of a hands-off product fulfillment experience thereby enables businesses to focus on other priorities, which is especially advantageous to new companies.</li> 
+         </ul> 
+         <p><strong>Disadvantages:</strong></p> 
+         <ul> 
+          <li><strong>No customization:</strong> Dropshipping usually means virtually no support for custom products. To achieve this type of support and customization, your dropshipper would have to function as a warehouse. Unfortunately, this is not likely unless their margins on custom products were worth the time and effort — in which case, the margins would likely not make sense for you.</li> 
+          <li><strong>Lower quality control:</strong> Since the seller is removed from the fulfillment process, you’re entrusting your brand’s reputation to another party — while maintaining accountability. Buyers usually don’t think about fulfillment models or dropshippers. If a defective product arrives or there is a miscommunication about the shipment, your customer doesn’t want to hear that it was out of your control; all they care about is the overall experience.</li> 
+          <li><strong>Reduced brand power:</strong> Your products are produced by others, so it’s more difficult to establish a unique brand. The reduced quality control only increases the risk to your brand.</li> 
+          <li><strong>Competitive disadvantage:</strong> Low barriers to entry mean it’s hard to establish a competitive advantage over other businesses. You’re competing on price, and that can easily become a losing game.</li> 
+          <li><strong>Scale:</strong> Logistics can become challenging as a business scales up, especially when coordinating with multiple dropshippers.</li> 
+         </ul> 
+         <h2>Ecommerce Fulfillment Process Challenges</h2> 
+         <p>Ecommerce order fulfillment is not always as straightforward as it seems.</p> 
+         <p>Unexpected challenges may arise that can prevent a business from scaling and orders from getting out on time.</p> 
+         <p>There are several common logistical pain points faced by ecommerce merchants.</p> 
+         <h3>1. You don’t have the fulfillment expertise in-house.</h3> 
+         <p>Becoming a fulfillment expert is not typically the main reason that someone starts an ecommerce business, nor is it the best use of an individual’s time who already wears many hats.</p> 
+         <div class="post-detail__quote">
+          <p></p> 
+          <p>Very few businesses have their distribution network as a core competency or have built out their own supply chain.</p> 
+          <p></p>
+          <div class="post-detail__quote-author"></div>
+         </div> 
+         <p>With all the complexities of shipping, understanding the ins and outs of it can be overwhelming. Many ecommerce teams find that they don’t want to be setting up and running operations in a warehouse — or even know where to start.</p> 
+         <h3>2. You aren’t prepared for changes in volume (or the holidays).</h3> 
+         <p>With Q4 around the corner, merchants must be ready to ramp up operations throughout the holiday season.</p> 
+         <p>However, it can be challenging to keep up with unprecedented demand.</p> 
+         <p>As more orders are placed, more people are required to help ship them out.</p> 
+         <div class="post-detail__quote">
+          <p></p> 
+          <p>From scaling the workforce to managing a greater number of returns, changes in volume are challenging.</p> 
+          <p></p>
+          <div class="post-detail__quote-author"></div>
+         </div> 
+         <p>Additionally, you may not be able to anticipate a larger number of staff quitting during peak season or you needing to lay people off during a lull due to seasonality.</p> 
+         <p>It can be difficult to plan for and afford future infrastructure needs on your own, especially major expenditures associated with managing logistics in-house.</p> 
+         <h3>3. You’re unable to focus on strategic tasks.</h3> 
+         <p>When self-fulfilling ecommerce orders, you don’t spend as much time on growth-oriented tasks that improve your business.</p> 
+         <div class="post-detail__quote">
+          <p></p> 
+          <p>Packing boxes and running to the post office takes you away from growing your customer base, creating new products, marketing to your audience, and more relevant growth tasks.</p> 
+          <p></p>
+          <div class="post-detail__quote-author"></div>
+         </div> 
+         <p>Making use of limited time means focusing on the higher-dollar tasks that will generate more revenue and scale your business much more quickly.</p> 
+         <h3>4. You can’t compete with Amazon.</h3> 
+         <p>If your customers are like most consumers today, they expect a fast turnaround for their deliveries after they check out online.</p> 
+         <p>When you are limited to fulfilling orders out of a single location, you can’t offer affordable options for all customers as Amazon does with the use of their fulfillment centers across different cities and regions.</p> 
+         <p>Furthermore, selling on marketplaces like Amazon can be limiting without the ability to market directly to customers or build an email list.</p> 
+         <h3>5. You struggle to strengthen your brand.</h3> 
+         <p>Online business owners need to focus on translating their online brand into an in-person experience beyond the product itself.</p> 
+         <div class="post-detail__quote">
+          <p></p> 
+          <p>Yet, very few create a memorable experience through branded packaging.</p> 
+          <p></p>
+          <div class="post-detail__quote-author"></div>
+         </div> 
+         <p>While some sellers may use generic packaging, or must even conform to packaging that elevates a brand that is not their own, others aim to enhance their brand during the unboxing experience — which is often your customers’ first in-person experience with your brand.</p> 
+         <p>And before your customer sees your product, they first see the package it’s in.</p> 
+         <p>Not only does this showcase your brand in a cohesive way, but it may also result in customers sharing photos of your unique packages on social media.</p> 
+         <h3>6. You are not using the right technology.</h3> 
+         <p>Many ecommerce businesses are stuck using outdated or manual systems and software with limited technological capabilities that lack insight into the business.</p> 
+         <div class="post-detail__quote">
+          <p></p> 
+          <p>Without modern, connected technologies, you lose speed, automation, and data that drive decisions and transparency.</p> 
+          <p></p>
+          <div class="post-detail__quote-author"></div>
+         </div> 
+         <p>Instead, you’re stuck using guesswork around everything from inventory planning to cart abandonment.</p> 
+         <h2>Executive Summary</h2> 
+         <p>Offering fast and affordable shipping options to your customers helps prevent any surprises at checkout.</p> 
+         <p>Yet, without the proper order fulfillment process in place, ecommerce businesses won’t be able to deliver on their promise — and making your customers wait can be costly.</p> 
+         <div class="post-detail__quote">
+          <p></p> 
+          <p>The reality is if consumers can’t get the shipping speed and price they want from you, they will look elsewhere.</p> 
+          <p></p>
+          <div class="post-detail__quote-author"></div>
+         </div> 
+         <p>To meet customer expectations, you must understand:</p> 
+         <ul> 
+          <li>The overall ecommerce order fulfillment process.</li> 
+          <li>Which fulfillment model makes the most sense for your business.</li> 
+          <li>How to be strategic in your operation.</li> 
+         </ul> 
+         <p>Then, you should be able to overcome any challenges you face along the way.</p> 
+         <p>And as your business grows, your ecommerce order fulfillment strategy will shift over time.</p> 
+         <p>If you’re looking to offer Amazon-level logistics, you’re in luck — there are modern, tech-enabled 3PLs that can help you compete.</p> 
+         <div class="callout__rss">
+          <div class="callout__rss-inner">
+           <div class="callout__rss-wrapper">
+            <div class="callout__rss-table">
+             <div class="callout__rss-text">
+              <p class="h3">Want more insights like this?</p>
+              <p><span style="font-weight: 400;">Subscribe to our bi-weekly newsletter to get the latest thought leadership content delivered right to your inbox — from blogs and resource articles, to podcast episodes, webinars and more.</span></p> 
+             </div>
+             <div class="callout__rss-form clearfix">
+              <form class="mktoForm" data-formid="2142" data-forminstance="post-rss-2" ng-non-bindable></form>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div> 
+        </div> 
+        <div id="sidebar" class="post-detail__sidebar" data-sticky-container> 
+         <div class="sticky-sidebar sticky" data-sticky data-margin-top="30px"> 
+          <div class="post-detail__toc" style="display:block;"> 
+           <div class="toc_container"> 
+            <div class="toc_title">
+             Table of Contents
+            </div> 
+            <ul class="toc_list"></ul> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="post-detail__body-share" data-sticky-container> 
+        <div id="sticky-share" class="sticky" data-sticky data-margin-top="30px"> 
+         <p class="h4">SHARE</p> 
+         <ul> 
+          <li> <a href="https://twitter.com/share?url=https%3A%2F%2Fwww.bigcommerce.com%2Fblog%2Fecommerce-fulfillment%2F" target="_blank"> 
+            <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+             <path d="M23.954 4.569a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.691 8.094 4.066 6.13 1.64 3.161a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.061a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.937 4.937 0 004.604 3.417 9.868 9.868 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63a9.936 9.936 0 002.46-2.548l-.047-.02z" />
+            </svg> </a> </li> 
+          <li> <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fwww.bigcommerce.com%2Fblog%2Fecommerce-fulfillment%2F" target="_blank"> 
+            <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+             <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+            </svg> </a> </li> 
+          <li> <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.bigcommerce.com%2Fblog%2Fecommerce-fulfillment%2F" target="_blank"> 
+            <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+             <path d="M23.998 12c0-6.628-5.372-12-11.999-12C5.372 0 0 5.372 0 12c0 5.988 4.388 10.952 10.124 11.852v-8.384H7.078v-3.469h3.046V9.356c0-3.008 1.792-4.669 4.532-4.669 1.313 0 2.686.234 2.686.234v2.953H15.83c-1.49 0-1.955.925-1.955 1.874V12h3.328l-.532 3.469h-2.796v8.384c5.736-.9 10.124-5.864 10.124-11.853z" />
+            </svg> </a> </li> 
+         </ul> 
+        </div> 
+       </div> 
+      </div> 
+      <div id="footer" class="post-detail__footer"> 
+       <div class="post-detail__footer-inner "> 
+        <div class="post-detail__author"> 
+         <div class="post-detail__author-image" itemprop="image"> 
+          <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20150%20149'%3E%3C/svg%3E" alt="Kristina Lopienski" width="150" height="149" class="photo" data-lazy-src="https://www.bigcommerce.com/blog/wp-content/uploads/userphoto/363.thumbnail.png">
+          <noscript>
+           <img src="https://www.bigcommerce.com/blog/wp-content/uploads/userphoto/363.thumbnail.png" alt="Kristina Lopienski" width="150" height="149" class="photo">
+          </noscript> 
+         </div> 
+         <div class="post-detail__author-header"> 
+          <p class="h3" itemprop="name">Kristina Lopienski</p> 
+          <p class="h4" itemprop="jobTitle"></p> 
+         </div> 
+         <div class="post-detail__author-text"> 
+          <p class="description" itemprop="description">Kristina Lopienski is the Content Marketing Manager at ShipBob. ShipBob allows ecommerce businesses to strategically distribute their inventory to our fulfillment centers across the US. By shipping orders out from near where their customers reiside, they can reduce transit times and shipping costs by leveraging ground shipping.</p> <a href="https://www.bigcommerce.com/blog/author/kristina-lopienski/">View all posts by Kristina Lopienski <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="post-detail__comments clearfix"> 
+       <div class="post-detail__comments-inner"> 
+        <div id="disqus_thread"> 
+         <div id="comments" class="comments-area"> 
+          <h2 class="comments-title"> One comment on “<span>Ecommerce Fulfillment: The Unappreciated Yet Vital Strategy Brands Use to Win Loyal Customers</span>” </h2> 
+          <ol class="commentlist"> 
+           <li class="comment even thread-even depth-1 panel"> 
+            <div class="media-object"> 
+             <div class="media-object-section"> 
+              <img alt="" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2075%2075'%3E%3C/svg%3E" data-lazy-srcset="https://secure.gravatar.com/avatar/d2df0a08ed977d1f03607fbc004bb371?s=150&amp;d=mm&amp;r=g 2x" class="avatar avatar-75 photo" height="75" width="75" data-lazy-src="https://secure.gravatar.com/avatar/d2df0a08ed977d1f03607fbc004bb371?s=75&amp;d=mm&amp;r=g">
+              <noscript>
+               <img alt="" src="https://secure.gravatar.com/avatar/d2df0a08ed977d1f03607fbc004bb371?s=75&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/d2df0a08ed977d1f03607fbc004bb371?s=150&amp;d=mm&amp;r=g 2x" class="avatar avatar-75 photo" height="75" width="75">
+              </noscript> 
+             </div> 
+             <div class="media-object-section"> 
+              <article id="comment-335607" class="clearfix large-12 columns"> 
+               <header class="comment-author"> <a href="http://holisolscs.ae/" rel="external nofollow ugc" class="url">charu sharma</a> on <time datetime="2018-02-19"><a href="https://www.bigcommerce.com/blog/ecommerce-fulfillment/#comment-335607"> February 19th, 2018 - 3:45am </a></time> 
+               </header> 
+               <section class="comment_content clearfix"> 
+                <p>Its a great read and provides a good piece of information. Well, e commerce fulfillment solution is highly needed for overall e commerce supply chain process.</p> 
+               </section> 
+              </article> 
+             </div> 
+            </div> <!-- </li> is added by WordPress automatically --> </li><!-- #comment-## --> 
+          </ol> 
+          <div id="respond" class="comment-respond"> 
+           <h3 id="reply-title" class="comment-reply-title">Leave a Reply</h3>
+           <form action="https://www.bigcommerce.com/blog/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+            <p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> <span class="required-field-message" aria-hidden="true">Required fields are marked <span class="required" aria-hidden="true">*</span></span></p>
+            <p class="comment-form-comment"><label for="comment">Comment <span class="required" aria-hidden="true">*</span></label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required></textarea></p>
+            <input name="wpml_language_code" type="hidden" value="en">
+            <p class="comment-form-author"><label for="author">Name <span class="required" aria-hidden="true">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required></p> 
+            <p class="comment-form-email"><label for="email">Email <span class="required" aria-hidden="true">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required></p> 
+            <p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200"></p> 
+            <p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"> <label for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label></p> 
+            <p class="form-submit"><input name="submit" type="submit" id="submit" class="button" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="21281" id="comment_post_ID"> <input type="hidden" name="comment_parent" id="comment_parent" value="0"> </p>
+            <p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="066e6d4c62"></p>
+            <input type="hidden" id="ak_js" name="ak_js" value="234"><textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100" style="display: none !important;"></textarea>
+           </form> 
+          </div><!-- #respond --> 
+         </div><!-- #comments --> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="callout__trial"> 
+     <div class="callout__trial-inner"> 
+      <div class="callout__trial-text"> 
+       <p class="h2">Less Development. More Marketing.</p> 
+       <p>Let us future-proof your backend. You focus on building your brand.</p> 
+      </div> 
+      <div class="callout__trial-button"> <a class="button" href="/start-your-trial/">Start Your Free Trial</a> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="ctaWrapper"> 
+     <div class="ctaContent"> 
+      <div class="ctaBody"> 
+       <div class="ctaHeading"> 
+        <p class="h2"> Better shipping and fulfillment, happier customers </p> 
+       </div> 
+       <div class="ctaSubheading"> 
+        <p> BigCommerce integrates with popular shipping and fulfillment apps </p> 
+       </div> 
+       <div class="ctaButton beforeImage"> <a class="button buttonPrimary" href="/apps/shipping-fulfillment/" target="_blank"> Browse Integrations </a> 
+       </div> 
+      </div> 
+      <div class="ctaImg"> 
+       <img width="750" height="425" class="lazyload" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20750%20425'%3E%3C/svg%3E" data-lazy-src="https://www.bigcommerce.com/blog/wp-content/uploads/2018/08/integrations-750x425.png">
+       <noscript>
+        <img width="750" height="425" class="lazyload" src="https://www.bigcommerce.com/blog/wp-content/uploads/2018/08/integrations-750x425.png">
+       </noscript> 
+      </div> 
+     </div> 
+    </div>
+    <div class="blog__header"> 
+     <div class="blog__header-home"> <a href="https://www.bigcommerce.com/blog/"><span class="arrow-left-link"></span> BLOG HOME</a> 
+     </div> 
+     <div class="blog__header-nav clearfix"> 
+      <div class="blog__header-nav-categories"> <a class="blog__header-nav-trigger"> Shipping &amp; Fulfillment </a> 
+       <div class="blog__header-nav-dropdown"> 
+        <ul> 
+         <li><a href="https://www.bigcommerce.com/blog/category/customer-stories/">Customer Stories</a></li> 
+         <li><a href="https://www.bigcommerce.com/blog/category/ecommerce-research/">Ecommerce Research</a></li> 
+         <li><a href="https://www.bigcommerce.com/blog/category/enterprise-ecommerce/">Enterprise Ecommerce</a></li> 
+         <li><a href="https://www.bigcommerce.com/blog/category/enterprise-ecommerce/b2b-ecommerce/">B2B Ecommerce</a></li> 
+         <li><a href="https://www.bigcommerce.com/blog/category/how-to-sell-online/">How to Sell Online</a></li> 
+         <li><a href="https://www.bigcommerce.com/blog/category/omnichannel/">Omnichannel Strategies</a></li> 
+         <li><a href="https://www.bigcommerce.com/blog/category/product-news/">Product News</a></li> 
+        </ul> 
+       </div> 
+      </div> 
+      <div class="blog__header-nav-label">
+        CATEGORY 
+      </div> 
+      <div class="blog__header-nav-search"> <a class="search-trigger blog__header-search-trigger">Search</a> 
+      </div> 
+      <div class="blog__header-search archive-page__search"> 
+       <div class="archive-page__search-inner"> 
+        <form method="get" id="searchform" action="https://www.bigcommerce.com/blog/"> 
+         <input type="text" value="" name="s" id="s"> <a class="archive-page__search-close">Close</a> 
+        </form> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> <!--</END CONTENT>--> 
+   <footer class="footer--decorated"> 
+    <div class="footer">
+     <div class="footer-nav">
+      <div class="footer-nav-column footer-nav-column--legacy">
+       <h4 class="footer-nav-heading">Product</h4>
+       <ul class="footer-links">
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/product/" title="Features" class="footer-links-link ">Features</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/services/" title="Services" class="footer-links-link ">Services</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/enterprise-pricing/" title="Enterprise Pricing" class="footer-links-link ">Enterprise Pricing</a></li>
+       </ul>
+      </div><!--//Footer Column -->
+      <div class="footer-nav-column footer-nav-column--legacy">
+       <h4 class="footer-nav-heading">Partners</h4>
+       <ul class="footer-links">
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/partners/" title="Overview" class="footer-links-link ">Overview</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/partners/become-a-partner/" title="Become a Partner" class="footer-links-link ">Become a Partner</a></li>
+        <li class="footer-links-item"><a href="https://partners.bigcommerce.com/directory/home.aspx" title="Find a Partner" target="_blank" class="footer-links-link ">Find a Partner</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/partners/become-a-partner/affiliate/" title="Affiliates" class="footer-links-link ">Affiliates</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/offers/" title="Partner Offers" class="footer-links-link ">Partner Offers</a></li>
+       </ul>
+      </div><!--//Footer Column -->
+      <div class="footer-nav-column footer-nav-column--legacy">
+       <h4 class="footer-nav-heading">Customers</h4>
+       <ul class="footer-links">
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/case-study/" title="Case Studies" class="footer-links-link ">Case Studies</a></li>
+        <li class="footer-links-item"><a href="/showcase/" title="Store Examples" class="footer-links-link ">Store Examples</a></li>
+       </ul>
+      </div><!--//Footer Column -->
+      <div class="footer-nav-column footer-nav-column--legacy">
+       <h4 class="footer-nav-heading">Resources</h4>
+       <ul class="footer-links">
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/resources/" title="Overview" class="footer-links-link ">Overview</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/articles/" title="Articles" class="footer-links-link ">Articles</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/resources/guides/" title="Guides &amp; White Papers" class="footer-links-link ">Guides &amp; White Papers</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/resources/webinars/" title="Webinars" class="footer-links-link ">Webinars</a></li>
+        <li class="footer-links-item"><a href="/events/" title="Events" class="footer-links-link ">Events</a></li>
+        <li class="footer-links-item"><a href="/blog/" title="Ecommerce Blog" class="footer-links-link ">Ecommerce Blog</a></li>
+        <li class="footer-links-item"><a href="https://medium.com/bigcommerce-developer-blog" title="Developer Blog" target="_blank" class="footer-links-link ">Developer Blog</a></li>
+       </ul>
+      </div><!--//Footer Column -->
+      <div class="footer-nav-column footer-nav-column--legacy">
+       <h4 class="footer-nav-heading">Use Case Solutions</h4>
+       <ul class="footer-links">
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/solutions/headless-commerce/" title="Headless Commerce" class="footer-links-link ">Headless Commerce</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/solutions/b2b-ecommerce-platform/" title="B2B" class="footer-links-link ">B2B</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/solutions/wholesale-ecommerce-platform/" title="Wholesale" class="footer-links-link ">Wholesale</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/solutions/multi-channel/" title="Multi-Channel" class="footer-links-link ">Multi-Channel</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/solutions/international/" title="International" class="footer-links-link ">International</a></li>
+       </ul>
+      </div><!--//Footer Column -->
+      <div class="footer-nav-column footer-nav-column--legacy">
+       <h4 class="footer-nav-heading">Industry Solutions</h4>
+       <ul class="footer-links">
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/solutions/fashion/" title="Apparel &amp; Fashion" class="footer-links-link ">Apparel &amp; Fashion</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/solutions/health-beauty/" title="Health &amp; Beauty" class="footer-links-link ">Health &amp; Beauty</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/solutions/food-beverage/" title="Food &amp; Beverage" class="footer-links-link ">Food &amp; Beverage</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/solutions/manufacturing/" title="Manufacturing" class="footer-links-link ">Manufacturing</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/solutions/automotive/" title="Automotive" class="footer-links-link ">Automotive</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/solutions/cbd/" title="CBD" class="footer-links-link ">CBD</a></li>
+       </ul>
+      </div><!--//Footer Column -->
+      <div class="footer-nav-column footer-nav-column--legacy">
+       <h4 class="footer-nav-heading">Company</h4>
+       <ul class="footer-links">
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/company/leaders/" title="Leaders" class="footer-links-link ">Leaders</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/company/" title="About Us" class="footer-links-link ">About Us</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/press/" title="Press" class="footer-links-link ">Press</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/company/awards/" title="Awards" class="footer-links-link ">Awards</a></li>
+        <li class="footer-links-item"><a href="https://investors.bigcommerce.com/" title="Investor Relations" target="_blank" class="footer-links-link ">Investor Relations</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/terms/" title="Terms of Service" class="footer-links-link ">Terms of Service</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/privacy/" title="Privacy Policy" class="footer-links-link ">Privacy Policy</a></li>
+        <li class="footer-links-item"><a href="https://www.bigcommerce.com/contact/" title="Contact Us" class="footer-links-link ">Contact Us</a></li>
+       </ul>
+      </div><!--//Footer Column -->
+      <div class="footer-nav-column footer-nav-column--legacy">
+       <h4 class="footer-nav-heading">Help Center</h4>
+       <ul class="footer-links">
+        <li class="footer-links-item"><a href="https://support.bigcommerce.com/s/community" title="BigCommerce Community" target="_blank" class="footer-links-link ">BigCommerce Community</a></li>
+        <li class="footer-links-item"><a href="https://support.bigcommerce.com/s/knowledge" title="Knowledge Base" target="_blank" class="footer-links-link ">Knowledge Base</a></li>
+        <li class="footer-links-item"><a href="https://support.bigcommerce.com/s/videos" title="Videos" target="_blank" class="footer-links-link ">Videos</a></li>
+        <li class="footer-links-item"><a href="https://support.bigcommerce.com/s/contact" title="Contact Tech Support" target="_blank" class="footer-links-link ">Contact Tech Support</a></li>
+        <li class="footer-links-item"><a href="https://developer.bigcommerce.com/" title="Developer Center" target="_blank" class="footer-links-link ">Developer Center</a></li>
+        <li class="footer-links-item"><a href="https://developer.bigcommerce.com/api-docs" title="API Documentation" target="_blank" class="footer-links-link ">API Documentation</a></li>
+        <li class="footer-links-item"><a href="https://developer.bigcommerce.com/stencil-docs" title="Theme Documentation" target="_blank" class="footer-links-link ">Theme Documentation</a></li>
+       </ul>
+      </div><!--//Footer Column -->
+     </div><!-- //Footer Nav -->
+     <div class="footer-bottom">
+      <div class="footer-bottom-copyright">
+       <a href="/"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="footer-bottom-logo" data-lazy-src="/assets/svg/bc-logo-bright.svg">
+        <noscript>
+         <img src="/assets/svg/bc-logo-bright.svg" class="footer-bottom-logo">
+        </noscript></a> © Copyright 2003 - 2022 BigCommerce Pty. Ltd. <a href="/" class="footer-links-link">Ecommerce Platform</a>
+      </div>
+      <div class="footer-bottom-social">
+       <ul class="footer-links footer-links--horizontal">
+        <li class="footer-links-item"><a href="http://twitter.com/Bigcommerce" title="Twitter" target="_blank" class="footer-links-link">Twitter</a></li>
+        <li class="footer-links-item"><a href="http://www.facebook.com/Bigcommerce" title="Facebook" target="_blank" class="footer-links-link">Facebook</a></li>
+        <li class="footer-links-item"><a href="http://www.linkedin.com/company/bigcommerce" title="LinkedIn" target="_blank" class="footer-links-link">LinkedIn</a></li>
+        <li class="footer-links-item"><a href="https://www.youtube.com/c/bigcommerce" title="YouTube" target="_blank" class="footer-links-link">YouTube</a></li>
+        <li class="footer-links-item"><a href="http://pinterest.com/bigcommerce/" title="Pinterest" target="_blank" class="footer-links-link">Pinterest</a></li>
+        <li class="footer-links-item"><a href="https://www.instagram.com/bigcommerce/" title="Instagram" target="_blank" class="footer-links-link">Instagram</a></li>
+       </ul>
+      </div>
+     </div><!-- //Footer Bottom --><a href="tel:1-888-699-8911" class="footer-mobileCta">Call us toll-free at 1-888-699-8911</a>
+    </div> 
+   </footer> 
+  </div> 
+  <script type="text/javascript" src="https://www.bigcommerce.com/blog/wp-content/plugins/ultimate-tables/js/jquery.dataTables.min.js?ver=1.0" id="ultimatetables-js" defer></script> 
+  <script type="text/javascript" id="rocket-browser-checker-js-after">
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script> 
+  <script type="text/javascript" id="rocket-preload-links-js-extra">
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/blog(\/(.+\/)?feed\/?.+\/?|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$))|\/wp-admin\/|\/logout\/|\/wp-login.php","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|php|pdf|html|htm","siteUrl":"https:\/\/www.bigcommerce.com\/blog","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script> 
+  <script type="text/javascript" id="rocket-preload-links-js-after">
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script> 
+  <script type="text/javascript" src="https://www.bigcommerce.com/blog/wp-content/themes/bigcommerce/js/theme.min.js?ver=5.9.3" id="site-js-js" defer></script> 
+  <script data-minify="1" type="text/javascript" src="https://www.bigcommerce.com/blog/wp-content/cache/min/1/blog/wp-content/themes/bigcommerce/js/devicepx-jetpack.js?ver=1651084243" id="devicepx-js" defer></script> 
+  <script data-minify="1" defer type="text/javascript" src="https://www.bigcommerce.com/blog/wp-content/cache/min/1/blog/wp-content/plugins/akismet/_inc/form.js?ver=1651084253" id="akismet-form-js"></script> 
+  <script>window.lazyLoadOptions={elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}};window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script>
+  <script data-no-minify="1" async src="https://www.bigcommerce.com/blog/wp-content/plugins/wp-rocket/assets/js/lazyload/16.1/lazyload.min.js"></script>
+  <script>function lazyLoadThumb(e){var t='<img loading="lazy" data-lazy-src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"><noscript><img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"></noscript>',a='<div class="play"></div>';return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.dataset.query.length?'':'&'+this.dataset.query;e.setAttribute("src",t.replace("ID",this.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.replaceChild(e,this)}document.addEventListener("DOMContentLoaded",function(){var e,t,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)e=document.createElement("div"),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query", a[t].dataset.query),e.setAttribute("data-src", a[t].dataset.src),e.innerHTML=lazyLoadThumb(a[t].dataset.id),e.onclick=lazyLoadYoutubeIframe,a[t].appendChild(e)});</script>  <!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1652827519 -->
+ </body>
+</html>

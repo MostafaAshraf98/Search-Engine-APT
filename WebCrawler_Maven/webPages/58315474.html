@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en"> 
+ <head> 
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <title>Foreword for Experienced Programmers — Flask Documentation (2.1.x)</title> 
+  <link rel="stylesheet" type="text/css" href="../_static/pygments.css"> 
+  <link rel="stylesheet" type="text/css" href="../_static/flask.css"> 
+  <link rel="stylesheet" type="text/css" href="../_static/tabs.css"> 
+  <link rel="stylesheet" type="text/css" href="https://assets.readthedocs.org/static/css/badge_only.css"> 
+  <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script> 
+  <script src="../_static/jquery.js"></script> 
+  <script src="../_static/underscore.js"></script> 
+  <script src="../_static/doctools.js"></script> 
+  <script async src="https://assets.readthedocs.org/static/javascript/readthedocs-doc-embed.js"></script> 
+  <link rel="canonical" href="https://flask.palletsprojects.com/en/2.1.x/advanced_foreword/"> 
+  <link rel="shortcut icon" href="../_static/flask-icon.png"> 
+  <link rel="index" title="Index" href="../genindex/"> 
+  <link rel="search" title="Search" href="../search/"> 
+  <link rel="next" title="Installation" href="../installation/"> 
+  <link rel="prev" title="Foreword" href="../foreword/"> <!-- RTD Extra Head --> 
+  <link rel="stylesheet" href="https://assets.readthedocs.org/static/css/readthedocs-doc-embed.css" type="text/css"> 
+  <script type="application/json" id="READTHEDOCS_DATA">{"ad_free": false, "api_host": "https://readthedocs.org", "build_date": "2022-05-10T16:36:20Z", "builder": "sphinx", "canonical_url": null, "commit": "e322f32e", "docroot": "/docs/", "features": {"docsearch_disabled": true}, "global_analytics_code": "UA-17997319-1", "language": "en", "page": "advanced_foreword", "programming_language": "py", "project": "flask", "proxied_api_host": "/_", "source_suffix": ".rst", "subprojects": {}, "theme": "flask", "user_analytics_code": "UA-162825511-1", "version": "2.1.x"}</script> <!--
+Using this variable directly instead of using `JSON.parse` is deprecated.
+The READTHEDOCS_DATA global variable will be removed in the future.
+--> 
+  <script type="text/javascript">
+READTHEDOCS_DATA = JSON.parse(document.getElementById('READTHEDOCS_DATA').innerHTML);
+</script> 
+  <script type="text/javascript" src="https://assets.readthedocs.org/static/javascript/readthedocs-analytics.js" async></script> <!-- end RTD <extrahead> --> 
+ </head>
+ <body> 
+  <div class="related" role="navigation" aria-label="related navigation"> 
+   <h3>Navigation</h3> 
+   <ul> 
+    <li class="right" style="margin-right: 10px"> <a href="../genindex/" title="General Index" accesskey="I">index</a></li> 
+    <li class="right"> <a href="../py-modindex/" title="Python Module Index">modules</a> |</li> 
+    <li class="right"> <a href="../installation/" title="Installation" accesskey="N">next</a> |</li> 
+    <li class="right"> <a href="../foreword/" title="Foreword" accesskey="P">previous</a> |</li> 
+    <li class="nav-item nav-item-0"><a href="../">Flask Documentation (2.1.x)</a> »</li> 
+    <li class="nav-item nav-item-this"><a href="">Foreword for Experienced Programmers</a></li> 
+   </ul> 
+  </div> 
+  <div class="document"> 
+   <div class="documentwrapper"> 
+    <div class="bodywrapper"> 
+     <div class="body" role="main"> 
+      <section id="foreword-for-experienced-programmers"> 
+       <h1>Foreword for Experienced Programmers<a class="headerlink" href="#foreword-for-experienced-programmers" title="Permalink to this headline">¶</a></h1> 
+       <section id="thread-locals-in-flask"> 
+        <h2>Thread-Locals in Flask<a class="headerlink" href="#thread-locals-in-flask" title="Permalink to this headline">¶</a></h2> 
+        <p>One of the design decisions in Flask was that simple tasks should be simple; they should not take a lot of code and yet they should not limit you. Because of that, Flask has a few design choices that some people might find surprising or unorthodox. For example, Flask uses thread-local objects internally so that you don’t have to pass objects around from function to function within a request in order to stay threadsafe. This approach is convenient, but requires a valid request context for dependency injection or when attempting to reuse code which uses a value pegged to the request. The Flask project is honest about thread-locals, does not hide them, and calls out in the code and documentation where they are used.</p> 
+       </section> 
+       <section id="develop-for-the-web-with-caution"> 
+        <h2>Develop for the Web with Caution<a class="headerlink" href="#develop-for-the-web-with-caution" title="Permalink to this headline">¶</a></h2> 
+        <p>Always keep security in mind when building web applications.</p> 
+        <p>If you write a web application, you are probably allowing users to register and leave their data on your server. The users are entrusting you with data. And even if you are the only user that might leave data in your application, you still want that data to be stored securely.</p> 
+        <p>Unfortunately, there are many ways the security of a web application can be compromised. Flask protects you against one of the most common security problems of modern web applications: cross-site scripting (XSS). Unless you deliberately mark insecure HTML as secure, Flask and the underlying Jinja2 template engine have you covered. But there are many more ways to cause security problems.</p> 
+        <p>The documentation will warn you about aspects of web development that require attention to security. Some of these security concerns are far more complex than one might think, and we all sometimes underestimate the likelihood that a vulnerability will be exploited - until a clever attacker figures out a way to exploit our applications. And don’t think that your application is not important enough to attract an attacker. Depending on the kind of attack, chances are that automated bots are probing for ways to fill your database with spam, links to malicious software, and the like.</p> 
+        <p>Flask is no different from any other framework in that you the developer must build with caution, watching for exploits when building to your requirements.</p> 
+       </section> 
+      </section> 
+      <div class="clearer"></div> 
+     </div> 
+    </div> 
+   </div> <span id="sidebar-top"></span> 
+   <div class="sphinxsidebar" role="navigation" aria-label="main navigation"> 
+    <div class="sphinxsidebarwrapper"> 
+     <p class="logo"><a href="../"> <img class="logo" src="../_static/flask-icon.png" alt="Logo"> </a></p> 
+     <h3>Contents</h3> 
+     <ul> 
+      <li><a class="reference internal" href="#">Foreword for Experienced Programmers</a>
+       <ul> 
+        <li><a class="reference internal" href="#thread-locals-in-flask">Thread-Locals in Flask</a></li> 
+        <li><a class="reference internal" href="#develop-for-the-web-with-caution">Develop for the Web with Caution</a></li> 
+       </ul> </li> 
+     </ul> 
+     <h3>Navigation</h3> 
+     <ul> 
+      <li><a href="../">Overview</a> 
+       <ul> 
+        <li>Previous: <a href="../foreword/" title="previous chapter">Foreword</a> </li>
+        <li>Next: <a href="../installation/" title="next chapter">Installation</a> </li>
+       </ul> </li> 
+     </ul> 
+     <div id="searchbox" style="display: none" role="search"> 
+      <h3 id="searchlabel">Quick search</h3> 
+      <div class="searchformwrapper"> 
+       <form class="search" action="../search/" method="get"> 
+        <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"> 
+        <input type="submit" value="Go"> 
+       </form> 
+      </div> 
+     </div> 
+     <script>$('#searchbox').show(0);</script>
+     <div id="ethical-ad-placement"></div> 
+    </div> 
+   </div> 
+   <div class="clearer"></div> 
+  </div> 
+  <div class="footer" role="contentinfo">
+    © Copyright 2010 Pallets. Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.5.0. 
+  </div> 
+  <script src="../_static/version_warning_offset.js"></script>  
+ </body>
+</html>

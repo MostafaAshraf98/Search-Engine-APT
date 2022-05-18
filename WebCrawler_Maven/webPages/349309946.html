@@ -1,0 +1,560 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#c62828">
+  <meta data-react-helmet="true" name="twitter:image" content="https://developer.bigcommerce.com/dev-library/logos/logo-1024.png">
+  <meta data-react-helmet="true" name="twitter:description" content="Searchable repository of BigCommerce developer solutions to help deliver your perfect ecommerce experience.">
+  <meta data-react-helmet="true" name="twitter:title" content="BigCommerce Dev Library">
+  <meta data-react-helmet="true" name="twitter:creator" content="">
+  <meta data-react-helmet="true" name="twitter:card" content="summary_large_image">
+  <meta data-react-helmet="true" property="fb:app_id" content="">
+  <meta data-react-helmet="true" property="og:image" content="https://developer.bigcommerce.com/dev-library/logos/logo-1024.png">
+  <meta data-react-helmet="true" property="og:description" content="Searchable repository of BigCommerce developer solutions to help deliver your perfect ecommerce experience.">
+  <meta data-react-helmet="true" property="og:title" content="BigCommerce Dev Library">
+  <meta data-react-helmet="true" property="og:url" content="https://developer.bigcommerce.com/dev-library">
+  <meta data-react-helmet="true" name="image" content="https://developer.bigcommerce.com/dev-library/logos/logo-1024.png">
+  <meta data-react-helmet="true" name="description" content="Searchable repository of BigCommerce developer solutions to help deliver your perfect ecommerce experience.">
+  <meta name="generator" content="Gatsby 4.9.1">
+  <style data-href="/dev-library/styles.df5881bd00c3c2f9670c.css" data-identity="gatsby-global-css">.Default-module--base--ulBmb{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;height:100%;min-height:1px}.Default-module--base--ulBmb,.Default-module--wrapper--0SZTp{display:-webkit-box;display:-ms-flexbox;display:flex}.Default-module--wrapper--0SZTp{-webkit-box-flex:1;background:#fff;-ms-flex:1;flex:1;min-height:0;padding-top:0;position:relative}.Default-module--links--R\+F1h{margin-top:10px}.Default-module--links--R\+F1h a{display:block;padding:5px 0}.Default-module--content--6LnGc{-webkit-overflow-scrolling:touch;-webkit-box-flex:1;background:#f6f7fc;-ms-flex:1;flex:1;min-height:0;overflow-y:scroll;width:100%}.Default-module--content--6LnGc h1:first-of-type{margin-top:0}@media (max-width:900px){.Default-module--wrapper--0SZTp{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}.Default-module--content--6LnGc{width:100%}}.FullPage-module--base--sIWQz{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;height:100%;min-height:1px}.FullPage-module--base--sIWQz,.FullPage-module--wrapper--LzcwE{display:-webkit-box;display:-ms-flexbox;display:flex}.FullPage-module--wrapper--LzcwE{-webkit-box-flex:1;background:#fff;-ms-flex:1;flex:1;min-height:0;padding-top:0;position:relative}.FullPage-module--links--ccmvi{margin-top:10px}.FullPage-module--links--ccmvi a{display:block;padding:5px 0}.FullPage-module--content--3G3Zz{-webkit-overflow-scrolling:touch;-webkit-box-flex:1;background:#f6f7fc;-ms-flex:1;flex:1;min-height:0;overflow-y:scroll;width:100%}.FullPage-module--content--3G3Zz h1:first-of-type{margin-top:0}@media (max-width:900px){.FullPage-module--wrapper--LzcwE{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}.FullPage-module--content--3G3Zz{width:100%}}.Icon-module--wrapper--p8Cwr{fill:inherit;display:inline-block;position:relative}.Icon-module--icon--YA2IH{display:-webkit-box;display:-ms-flexbox;display:flex;height:35px;width:35px}.Icon-module--icon--YA2IH.Icon-module--spinning--UTUOY{-webkit-animation:Icon-module--spin--py\+NL 1s linear infinite;animation:Icon-module--spin--py\+NL 1s linear infinite}.Icon-module--hasClick--Ccf8R{cursor:pointer}@-webkit-keyframes Icon-module--spin--py\+NL{to{-webkit-transform:rotate(1turn);transform:rotate(1turn)}}@keyframes Icon-module--spin--py\+NL{to{-webkit-transform:rotate(1turn);transform:rotate(1turn)}}html{-webkit-box-sizing:border-box;box-sizing:border-box;font-size:62.5%}*,:after,:before{fill:#343340;-webkit-box-sizing:inherit;box-sizing:inherit}::-moz-selection{background:#eceef5}::selection{background:#eceef5}body,html{margin:0;padding:0}body{font-size:14px}html{background:#fff;min-height:100%}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}body{color:#313440;font-family:Source Sans Pro,Helvetica Neue,Arial,sans-serif;font-size:1.6rem;line-height:1.9}h1,h2,h3,h4,h5,h6{margin-bottom:1.5rem;margin-top:2rem}h1{font-size:3rem;letter-spacing:-.05rem;line-height:1.2}h2{font-size:2.5rem;letter-spacing:-.03rem;line-height:1.25}h3{font-size:2rem;letter-spacing:-.025rem;line-height:1.3}h4{color:#424242;font-size:1.8rem;line-height:1.35}h4,h5{letter-spacing:-.02rem}h5{font-size:1.6rem;line-height:1.5}h6{font-size:1.2rem;line-height:1.6}h6,p{letter-spacing:0}#___gatsby,body,div#gatsby-focus-wrapper[tabindex],html{height:100%}.Sidebar-module--sidebar--yipdp{border-right:1px solid #e3e3e3;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;z-index:1}.Sidebar-module--sidebar--yipdp,.Sidebar-module--sidebarFixed--tJPzd{min-width:23%;width:23%}.Sidebar-module--sidebarFixed--tJPzd{-webkit-box-orient:vertical;-webkit-box-direction:normal;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;height:100vh;position:fixed}.Sidebar-module--sidebarFixed--tJPzd a{color:#8b8b8b;font-weight:300;text-decoration:none}.Sidebar-module--sidebarInner--IUJju{padding:20px 20px 20px 25px}.Sidebar-module--links--sFxFv{font-size:16px;margin-top:10px}.Sidebar-module--links--sFxFv a{display:block;padding:5px 0}.Sidebar-module--links--sFxFv a.Sidebar-module--active--GIr3a,.Sidebar-module--links--sFxFv a.Sidebar-module--active--GIr3a:hover{color:#000}.Sidebar-module--links--sFxFv a:hover{color:#2a2a2a}@media (max-width:900px){.Sidebar-module--sidebar--yipdp,.Sidebar-module--sidebarFixed--tJPzd{-webkit-box-shadow:0 0 4px 0 rgba(0,0,0,.25);box-shadow:0 0 4px 0 rgba(0,0,0,.25);width:100%}.Sidebar-module--sidebarFixed--tJPzd{height:auto;position:inherit}}@media (max-width:720px){.Sidebar-module--sidebar--yipdp{border-right:none}.Sidebar-module--sidebarInner--IUJju{padding-bottom:10px}}.Logo-module--logo--DBG6W{-webkit-box-align:center;-ms-flex-align:center;align-items:center;color:#0e1e25;display:-webkit-box;display:-ms-flexbox;display:flex}.Logo-module--logo--DBG6W svg{height:50px;width:40px}.Logo-module--word--TVLf5{color:#343340;font-weight:600}@media (max-width:1245px){.Logo-module--word--TVLf5{font-size:19px}}.Navbar-module--headerDesktopRight---it\+8 .Navbar-module--headerDesktopLink--1Svuo:last-of-type{border-radius:15px;border-style:solid;border-width:1px;font-size:11px;line-height:1;margin-top:7px;text-transform:uppercase}.Navbar-module--headerDesktopRight---it\+8 .Navbar-module--headerDesktopLink--1Svuo:last-of-type:hover{background-color:#341b77;border-color:#341b77}.Navbar-module--headerDesktopLink--1Svuo.Navbar-module--headerDesktopLinkText--nJBcy:last-of-type:hover{color:#fff}.Navbar-module--headerWrapper--4sr\+J{-webkit-box-pack:start;-ms-flex-pack:start;background:#4d34c6;-webkit-box-shadow:0 0 4px 0 rgba(0,0,0,.75)!important;box-shadow:0 0 4px 0 rgba(0,0,0,.75)!important;color:#fff;justify-content:flex-start;min-height:30px;padding-top:0;position:relative;z-index:19}.Navbar-module--headerDesktop--LkTuz{height:80px!important;margin:auto;max-width:100%;padding:0 20px}.Navbar-module--headerDesktop--LkTuz,.Navbar-module--headerDesktopLeft--8M\+UE{-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:-webkit-box;display:-ms-flexbox;display:flex}.Navbar-module--headerDesktopLeft--8M\+UE{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;min-height:35px}.Navbar-module--headerDesktopRight---it\+8{-webkit-box-flex:0;-ms-flex:none;flex:none;height:40px;min-height:35px}.Navbar-module--headerDesktopLink--1Svuo{-webkit-box-align:center;-ms-flex-align:center;align-items:center;background-color:transparent;background-color:initial;border-radius:1px;color:#fff;cursor:pointer;display:-webkit-box;display:-ms-flexbox;display:flex;float:left;font-size:14px;font-weight:400!important;margin-left:4px;margin-right:4px;outline:0;padding:6px 13px;text-decoration:none!important;-webkit-transition:all .3s ease;transition:all .3s ease;-webkit-user-select:auto;-moz-user-select:auto;-ms-user-select:auto;user-select:auto}.Navbar-module--headerDesktopLink--1Svuo,.Navbar-module--headerDesktopLinkText--nJBcy{font-family:source_sans_proregular,Arial,sans-serif}.Navbar-module--headerDesktopLinkText--nJBcy{-webkit-transition:.2s ease-out;transition:.2s ease-out}.Navbar-module--headerDesktopLinkText--nJBcy:hover{color:#949494}.Navbar-module--headerDesktopHomeImgWrapper--kknMG{-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:-webkit-box;display:-ms-flexbox;display:flex}.Navbar-module--headerDesktopHomeImg--FaYtU{height:auto;max-height:40px;max-width:100%}.Navbar-module--headerDesktopHomeText--8vsuO{margin-left:13px}.Navbar-module--headerDesktopSearchWrapper--k\+5-E{height:5rem!important;width:120px}.Navbar-module--headerDesktopSearchWrapper--k\+5-E,.Navbar-module--headerMobile--hKwXF{-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:-webkit-box;display:-ms-flexbox;display:flex}.Navbar-module--headerMobile--hKwXF{display:none;height:5rem;max-width:1448px!important;padding:0;position:relative}.Navbar-module--headerMobileSideIcons--YI-w1{-webkit-box-align:center;-ms-flex-align:center;-webkit-box-pack:center;-ms-flex-pack:center;align-items:center;color:#fff;display:-webkit-box;display:-ms-flexbox;display:flex;font-size:16px;height:4rem;justify-content:center;visibility:hidden;width:4rem}.Navbar-module--headerMobileCenter--Wj6cD{-webkit-box-flex:1;-ms-flex-positive:1;color:#fff;flex-grow:1;font-size:20px;font-weight:400!important;text-align:center}.Navbar-module--headerMobileCenterDropdown--YZ0YB{-webkit-tap-highlight-color:transparent;cursor:pointer;display:inline-block;outline:0;position:inherit;position:relative;-webkit-transition:width .1s ease,-webkit-box-shadow .1s ease;transition:width .1s ease,-webkit-box-shadow .1s ease;transition:box-shadow .1s ease,width .1s ease;transition:box-shadow .1s ease,width .1s ease,-webkit-box-shadow .1s ease;width:100%;word-break:break-word!important}.Navbar-module--headerMobileCenterDropdownText--8kxEJ{display:inline-block;-webkit-transition:none;transition:none}.Navbar-module--headerMobileCenterDropdownIcon--fSz4h{speak:none;font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;-webkit-backface-visibility:hidden;backface-visibility:hidden;display:inline-block;font-family:Dropdown;font-family:Icons;font-size:8px;font-style:normal;font-weight:400;height:1em;line-height:1;margin:17px .25rem 0 0;opacity:1;padding-left:10px;position:relative;text-align:center;-webkit-text-decoration:inheri;text-decoration:inheri;vertical-align:top;width:auto;width:1.18em}.Navbar-module--headerMobileCenterDropdownIconText--oqGSL{content:"\f0d7"}.Navbar-module--headerMobileCenterDropdownIconSVG--FyhXo{display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em;width:1em}.Navbar-module--headerMobileCenterDropdownMenu--ZuGCx{-webkit-animation-duration:.3s;animation-duration:.3s;-webkit-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-iteration-count:1;animation-iteration-count:1;-webkit-animation-timing-function:ease;animation-timing-function:ease;background:#fff;border:1px solid rgba(34,36,38,.15);border-radius:.14285714rem!important;-webkit-box-shadow:0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.15)!important;box-shadow:0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.15)!important;cursor:auto;font-size:1em;left:-40px;margin-top:0!important;margin:0;min-width:120%;outline:0;padding:0;position:absolute;right:auto;text-align:left;text-shadow:none;top:100%;-webkit-transition:opacity .1s ease;transition:opacity .1s ease;will-change:transform,opacity;z-index:11}.Navbar-module--headerMobileCenterDropdownMenuItem--728EI{-webkit-touch-callout:none;border:none;-webkit-box-shadow:none;box-shadow:none;color:rgba(0,0,0,.87);cursor:pointer;display:block;font-size:1rem;font-weight:400;height:auto;line-height:1em;padding:.78571429rem 1.14285714rem!important;pointer-events:all;position:relative;text-align:left;text-transform:none;white-space:nowrap}.Navbar-module--headerMobileCenterDropdownMenuItem--728EI:hover{background-color:#eceef5}.Navbar-module--headerMobileCenterDropdownMenuItemLink--Yj9Q\+{-webkit-box-align:center;-ms-flex-align:center;align-items:center;border-radius:1px;color:#000;cursor:pointer;display:-webkit-box;display:-ms-flexbox;display:flex;font-family:source_sans_proregular,Arial,sans-serif;font-size:16px;font-weight:400!important;margin-left:4px;margin-right:4px;outline:0;padding:6px 13px;text-decoration:none!important;-webkit-user-select:auto;-moz-user-select:auto;-ms-user-select:auto;user-select:auto}.Navbar-module--headerMobileCenterDropdownMenuItemLinkText--4I6m4{font-family:source_sans_proregular,Arial,sans-serif;-webkit-transition:.2s ease-out;transition:.2s ease-out}.Navbar-module--headerMobileCenterDropdownMenuHomeImg--kbNPp{-webkit-box-align:center;-ms-flex-align:center;align-items:center;background-image:url(https://wwwcdn.bigcommerce.com/www1.bigcommerce.com/assets/mediakit/logomark-plain.png?mtime=20160412112918);background-repeat:no-repeat;background-size:contain;display:-webkit-box;display:-ms-flexbox;display:flex;height:40px}.Navbar-module--headerMobileCenterDropdownMenuHomeLink--SOd6a{margin-left:53px}@media (max-width:900px){.Navbar-module--headerDesktop--LkTuz{display:none}.Navbar-module--headerMobile--hKwXF{display:-webkit-box;display:-ms-flexbox;display:flex}}.Copy-module--copy--eDtW7:after{-ms-flex-align:center;-webkit-box-align:center;-ms-flex-pack:center;-webkit-box-pack:center;align-items:center;background-color:#191919;border-radius:3px;color:#fff;content:"copy link";display:-ms-flexbox;display:-webkit-box;display:flex;font-size:11px;height:20px;justify-content:center;left:8px;opacity:.4;padding:3px 5px;position:absolute;text-align:center;top:85%;-webkit-transform:none;transform:none;-webkit-transition:.25s ease-in-out 0s;transition:.25s ease-in-out 0s;visibility:hidden;width:55px}.Copy-module--copy--eDtW7:active:after{background-color:#787878;content:"copied!"}.Copy-module--copy--eDtW7:hover:after{visibility:visible}.Input-module--inputWrapper--O42k9{position:relative}.Input-module--inputWrapper--O42k9:hover .Input-module--copyIcon--4Z014{opacity:1}.Input-module--input--UEkCX,.Input-module--inputWrapper--O42k9{width:100%}.Input-module--input--UEkCX{border:1px solid #949494;font-size:16px;padding:10px}.Input-module--input--UEkCX:focus{border:1px solid #000;outline:none}.Input-module--input--UEkCX:disabled{background:#e6e6e6;cursor:not-allowed}.Input-module--input--UEkCX:-moz-read-only{cursor:pointer}.Input-module--input--UEkCX:read-only{cursor:pointer}.Input-module--input--UEkCX.Input-module--hasIcon--sE505{padding-left:30px}.Input-module--input--UEkCX.Input-module--transparent--o2kYU{background-color:transparent;border:1px solid transparent;color:#fff}.Input-module--input--UEkCX.Input-module--base--2rw1u{border:none;border-radius:2px;-webkit-box-shadow:0 0 0 2px rgba(120,130,152,.25);box-shadow:0 0 0 2px rgba(120,130,152,.25);display:inline-block;font-size:16px;min-width:95%;outline:none;padding:11px 15px;-webkit-transition:all .3s ease;transition:all .3s ease}.Input-module--input--UEkCX.Input-module--base--2rw1u.Input-module--valid--8wYzs{color:#3c64f4}.Input-module--input--UEkCX.Input-module--base--2rw1u:active,.Input-module--input--UEkCX.Input-module--base--2rw1u:focus,.Input-module--input--UEkCX.Input-module--base--2rw1u:hover{-webkit-box-shadow:0 0 0 2px #3c64f4;box-shadow:0 0 0 2px #3c64f4}.Input-module--input--UEkCX.Input-module--base--2rw1u.Input-module--invalid--jAKyL{-webkit-box-shadow:0 0 0 2px rgba(216,0,50,.54);box-shadow:0 0 0 2px rgba(216,0,50,.54)}.Input-module--input--UEkCX.Input-module--base--2rw1u::-webkit-input-placeholder{color:#5e637a}.Input-module--input--UEkCX.Input-module--base--2rw1u::-moz-placeholder{color:#5e637a}.Input-module--input--UEkCX.Input-module--base--2rw1u:-ms-input-placeholder{color:#5e637a}.Input-module--input--UEkCX.Input-module--base--2rw1u:-moz-placeholder{color:#5e637a}.Input-module--input--UEkCX.Input-module--otherFormKind--hFva8{color:#000}textarea.Input-module--input--UEkCX{padding:13px 10px}.Input-module--iconWrapper--ybPDt{position:absolute;top:0}.Input-module--iconWrapper--ybPDt,.Input-module--validation--JUb-B{-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:-webkit-box;display:-ms-flexbox;display:flex;height:100%}.Input-module--validation--JUb-B{-webkit-box-pack:end;-ms-flex-pack:end;font-size:1.3rem;justify-content:flex-end;pointer-events:none;top:-33px;width:100%}.Input-module--copyIcon--4Z014,.Input-module--validation--JUb-B{cursor:pointer;position:absolute;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.Input-module--copyIcon--4Z014{opacity:.2;right:-2em;top:.5em;-webkit-transition:opacity .5s;transition:opacity .5s}@media (max-width:768px){.Input-module--validation--JUb-B{font-size:11px}}.SearchBox-module--searchBox--MMTHF{-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:-webkit-box;display:-ms-flexbox;display:flex;position:relative}.SearchBox-module--searchBox--MMTHF input{max-width:200px;padding-left:40px!important}.SearchBox-module--icon--rJjbO{border:2px solid #717171;border-radius:100%;height:12px;left:12px;position:relative;top:30%;width:12px;z-index:10}.SearchBox-module--icon--rJjbO,.SearchBox-module--icon--rJjbO:before{display:inline-block;position:absolute}.SearchBox-module--icon--rJjbO:before{background:#717171;bottom:-3px;content:"";height:2px;right:-5px;-webkit-transform:rotate(45deg);transform:rotate(45deg);width:7px}.Card-module--card--9eMFu{cursor:pointer;padding:10px}.Card-module--card--9eMFu,.Card-module--cardInner--oGO17{display:-webkit-box;display:-ms-flexbox;display:flex}.Card-module--cardInner--oGO17{-webkit-box-align:start;-ms-flex-align:start;-webkit-box-orient:vertical;-webkit-box-direction:normal;align-items:flex-start;background:#fff;border-radius:5px;-webkit-box-shadow:0 4px 10px 0 rgba(35,46,105,.1);box-shadow:0 4px 10px 0 rgba(35,46,105,.1);-ms-flex-direction:column;flex-direction:column;padding:20px;position:relative;width:100%}.Card-module--cardInner--oGO17,.Card-module--cardInner--oGO17:hover{-webkit-transition:all .3s ease;transition:all .3s ease}.Card-module--cardInner--oGO17:hover{-webkit-box-shadow:0 15px 30px 0 rgba(35,46,105,.1);box-shadow:0 15px 30px 0 rgba(35,46,105,.1);-webkit-transform:scale(1.05);transform:scale(1.05)}nav.Button-module--button--wX7-j{border:1px solid #3c64f4;-webkit-box-shadow:none;box-shadow:none;padding:0}nav.Button-module--button--wX7-j:hover{background:#3c64f4}nav.Button-module--button--wX7-j a:hover{color:#fff}nav.Button-module--button--wX7-j a{font-weight:600;padding:5px 10px}a.Button-module--button--wX7-j:hover,nav.Button-module--button--wX7-j a{color:#3c64f4}.Button-module--button--wX7-j{-webkit-box-align:center;-ms-flex-align:center;-webkit-box-pack:center;-ms-flex-pack:center;align-items:center;background-color:#424242;background-color:#fff;border:1px solid #e9ebeb;border-bottom-color:#e1e3e3;border-radius:4px;-webkit-box-shadow:0 2px 4px 0 rgba(14,30,37,.12);box-shadow:0 2px 4px 0 rgba(14,30,37,.12);color:#fff;color:rgba(14,30,37,.87);cursor:pointer;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;font-family:inherit;font-size:15px;font-weight:500;justify-content:center;outline:0;padding:13px 18px;-webkit-transition:all .2s ease;transition:all .2s ease;-webkit-transition-property:background-color,color,border,-webkit-box-shadow;transition-property:background-color,color,border,-webkit-box-shadow;transition-property:background-color,color,border,box-shadow;transition-property:background-color,color,border,box-shadow,-webkit-box-shadow}.Button-module--button--wX7-j.Button-module--hasIcon--u\+akc .Button-module--buttonText--vG-00{padding-top:3px}.Button-module--button--wX7-j:focus,.Button-module--button--wX7-j:hover{-webkit-box-shadow:0 15px 30px 0 rgba(35,46,105,.1);box-shadow:0 15px 30px 0 rgba(35,46,105,.1);text-decoration:none}.Button-module--button--wX7-j.Button-module--primary--LhfXg{border-color:transparent;color:#fff}.Button-module--button--wX7-j.Button-module--primary--LhfXg,.Button-module--button--wX7-j.Button-module--primary--LhfXg:focus,.Button-module--button--wX7-j.Button-module--primary--LhfXg:hover{background:#3c64f4}.Button-module--button--wX7-j.Button-module--secondary--54jUC{background:#424242;color:#fff}.Button-module--button--wX7-j.Button-module--tertiary--xQPfO{background:#fff;color:rgba(14,30,37,.87)}.Button-module--button--wX7-j.Button-module--tertiary--xQPfO:focus,.Button-module--button--wX7-j.Button-module--tertiary--xQPfO:hover{background-color:#f5f5f5;color:rgba(14,30,37,.87)}.Button-module--button--wX7-j.Button-module--danger--3zMNh{color:#fff}.Button-module--button--wX7-j.Button-module--danger--3zMNh,.Button-module--button--wX7-j.Button-module--danger--3zMNh:focus,.Button-module--button--wX7-j.Button-module--danger--3zMNh:hover{background:#db3643}.Button-module--button--wX7-j:focus{outline:none}a.Button-module--button--wX7-j{border:none!important;color:#fff;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;text-decoration:none}.Button-module--icon--lzTFh{fill:#fff;margin-right:10px}.Grid-module--grid--5XlNJ{-webkit-box-align:stretch;-ms-flex-align:stretch;-webkit-box-pack:start;-ms-flex-pack:start;align-items:stretch;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;justify-content:flex-start;margin-left:-10px}.Grid-module--grid--5XlNJ a{color:#343340;text-decoration:none}.Grid-module--gridWrapper--AGq3G{display:-webkit-box;display:-ms-flexbox;display:flex}.Grid-module--gridContent---oRIG{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1}.Grid-module--gridTitle--h6iJL h1{-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:-webkit-box;display:-ms-flexbox;display:flex}.Grid-module--count--LOn5m{color:#5e637a;font-size:14px;font-weight:300;padding-left:5px}.Grid-module--item--lpw6h{width:32%}.Grid-module--itemInner--ZMdMH{-webkit-box-align:center;-ms-flex-align:center;-webkit-box-orient:vertical;-webkit-box-direction:normal;align-items:center;background:#fff;border-radius:2px;-webkit-box-shadow:0 2px 1px hsla(0,0%,67%,.25);box-shadow:0 2px 1px hsla(0,0%,67%,.25);display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;padding:20px;position:relative;width:100%}.Grid-module--itemInner--ZMdMH,.Grid-module--itemInner--ZMdMH:hover{-webkit-transition:.1s ease-out;transition:.1s ease-out}.Grid-module--itemInner--ZMdMH:hover{-webkit-box-shadow:0 2px 1px hsla(0,0%,67%,.45);box-shadow:0 2px 1px hsla(0,0%,67%,.45);-webkit-transform:scale(1.03);transform:scale(1.03)}.Grid-module--itemMeta--TgwO9{color:#838282;font-size:10px;position:absolute;right:8px;top:5px}.Grid-module--itemTitle--G8uEy{color:#3450b6;font-size:18px;font-weight:700;margin-bottom:15px;margin-top:5px}.Grid-module--itemTitle--G8uEy a{text-decoration:none}.Grid-module--itemDescription--qRnFS{-webkit-box-flex:1;-ms-flex-positive:1;-webkit-box-align:center;-ms-flex-align:center;-webkit-line-clamp:2;-webkit-box-orient:vertical;align-items:center;display:-ms-flexbox;display:flex;display:-webkit-box;flex-grow:1;font-size:14px;margin-bottom:20px;overflow:hidden;text-overflow:ellipsis}.Grid-module--itemTags--L\+JuL{bottom:10px;color:#838282;font-size:12px;position:absolute}.Grid-module--noResults--4vv8p{padding-left:20px}.Grid-module--noResults--4vv8p li{cursor:pointer}@media (max-width:1120px){.Grid-module--item--lpw6h{width:33%}}@media (max-width:768px){.Grid-module--item--lpw6h{width:50%}.Grid-module--itemInner--ZMdMH{padding:0}.Grid-module--count--LOn5m{color:#5e637a;font-size:12px;font-weight:300;padding-left:5px}}@media (max-width:620px){.Grid-module--item--lpw6h{width:100%}}.main-module--wrapper--q-7o9{background:#f6f7fc;padding-top:30px}.main-module--content--vytHB{padding-bottom:200px;padding-left:50px}.main-module--content--vytHB p,.main-module--content--vytHB ul{max-width:720px}.main-module--content--vytHB h2{color:#838383;font-size:3rem;font-weight:100}@media (max-width:900px){.main-module--styledRibbon--hQy8P{top:6.5rem!important}}@media (max-width:768px){.main-module--wrapper--q-7o9{padding-left:25px;padding-right:20px}.main-module--content--vytHB{padding-left:0;padding-right:10px}.main-module--featuredImage--J2fa-{width:100%}.main-module--styledRibbon--hQy8P{top:6.5rem!important}}.main-module--tags--HmJ7U{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-left:-5px;max-width:95%}.main-module--tag--2eC86{color:#5e637a;cursor:pointer;font-size:14px;font-weight:400;padding:5px}.main-module--tag--2eC86:hover{color:#5e637aba}.main-module--current--aRAkd{color:#3c64f4;font-weight:600;text-decoration:underline}.main-module--actions--8aROq,.main-module--actions--8aROq a{-webkit-box-align:center;-ms-flex-align:center;-webkit-box-pack:center;-ms-flex-pack:center;align-items:center;display:-webkit-box;display:-ms-flexbox;display:flex;justify-content:center}.main-module--styledRibbon--hQy8P{background-color:#3c64f4;color:#fff;display:block;font-size:1.3rem;font-weight:600;line-height:3.5rem;position:fixed;right:-4rem;text-align:center;text-transform:uppercase;top:9.5rem;-webkit-transform:rotate(45deg);transform:rotate(45deg);width:14rem}.main-module--title--zoE9c{-webkit-box-align:center;-ms-flex-align:center;-webkit-box-pack:justify;-ms-flex-pack:justify;align-items:center;display:-webkit-box;display:-ms-flexbox;display:flex;justify-content:space-between;margin-bottom:15px;margin-right:65px}.main-module--title--zoE9c h1{margin-bottom:0}.main-module--title--zoE9c a{margin-left:20px;text-decoration:none}.main-module--count--X72Yb{color:#3c64f4;font-size:14px;font-weight:400;padding-left:5px}@media (max-width:768px){.main-module--wrapper--q-7o9{padding-left:15px;padding-right:15px}.main-module--content--vytHB{padding-left:10px}.main-module--title--zoE9c{margin-right:5px}.main-module--actions--8aROq,.main-module--tagWrapper--dbx\+9{display:none}}.main-module--featuredImage--J2fa-{border:1px solid #e3e3e3;max-height:400px;max-width:720px}</style>
+  <script>
+      
+      !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(e){return function(){var t=Array.prototype.slice.call(arguments);t.unshift(e);analytics.push(t);return analytics}};for(var e=0;e<analytics.methods.length;e++){var key=analytics.methods[e];analytics[key]=analytics.factory(key)}analytics.load=function(key,e){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.src="https://cdn.segment.io/analytics.js/v1/" + key + "/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);analytics._loadOptions=e};analytics._writeKey="BTmUWLubCbJjBopJwsDTxC0594E6Z5ex";analytics.SNIPPET_VERSION="4.13.2";
+analytics.load('BTmUWLubCbJjBopJwsDTxC0594E6Z5ex');analytics.page();
+}}();
+    </script>
+  <title data-react-helmet="true">BigCommerce Dev Library: Ecommerce Code Samples, Tool and Guides</title>
+  <link data-react-helmet="true" rel="icon" type="image/png/" sizes="96x96" href="/dev-library/logos/favicon.ico">
+  <script data-react-helmet="true" type="application/ld+json">[{"@context":"http://schema.org","@type":"WebSite","url":"https://developer.bigcommerce.com/dev-library","name":"BigCommerce Dev Library","alternateName":"Bigcommerce Code Samples and Tutorials"}]</script>
+  <style type="text/css">
+    .anchor.before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      padding-right: 4px;
+    }
+    .anchor.after {
+      display: inline-block;
+      padding-left: 4px;
+    }
+    h1 .anchor svg,
+    h2 .anchor svg,
+    h3 .anchor svg,
+    h4 .anchor svg,
+    h5 .anchor svg,
+    h6 .anchor svg {
+      visibility: hidden;
+    }
+    h1:hover .anchor svg,
+    h2:hover .anchor svg,
+    h3:hover .anchor svg,
+    h4:hover .anchor svg,
+    h5:hover .anchor svg,
+    h6:hover .anchor svg,
+    h1 .anchor:focus svg,
+    h2 .anchor:focus svg,
+    h3 .anchor:focus svg,
+    h4 .anchor:focus svg,
+    h5 .anchor:focus svg,
+    h6 .anchor:focus svg {
+      visibility: visible;
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+          var clientTop = document.documentElement.clientTop || document.body.clientTop || 0
+          var offset = element.getBoundingClientRect().top + scrollTop - clientTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script>
+  <link rel="sitemap" type="application/xml" href="/dev-library/sitemap/sitemap-index.xml">
+  <link rel="manifest" href="/dev-library/manifest.webmanifest" crossorigin="anonymous">
+  <link rel="apple-touch-icon" sizes="192x192" href="/dev-library/logos/logo-192x192.png">
+  <link rel="preconnect" href="https://www.google-analytics.com">
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
+  <link rel="alternate" type="application/rss+xml" title="BigCommerce Dev Library" href="/dev-library/rss.xml">
+  <link as="script" rel="preload" href="/dev-library/webpack-runtime-b47aa1a255c6d80b14b2.js">
+  <link as="script" rel="preload" href="/dev-library/framework-5697b5d8767e092289f3.js">
+  <link as="script" rel="preload" href="/dev-library/app-a62d13503682249d85d5.js">
+  <link as="script" rel="preload" href="/dev-library/29107295-6111e683b5a275d793ab.js">
+  <link as="script" rel="preload" href="/dev-library/ac0f68620159bf7e81c018ecaf1c065f1cca4e6b-2860518893c0e7996313.js">
+  <link as="script" rel="preload" href="/dev-library/6e0e6cbd1727f0dccf246f2a41c2f2f0962d1201-cfa3fa924d3c657127d6.js">
+  <link as="script" rel="preload" href="/dev-library/component---src-pages-index-js-bd92d0879d79d253e416.js">
+  <link as="fetch" rel="preload" href="/dev-library/page-data/index/page-data.json" crossorigin="anonymous">
+  <link as="fetch" rel="preload" href="/dev-library/page-data/app-data.json" crossorigin="anonymous">
+ </head>
+ <body>
+  <div id="___gatsby">
+   <div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper">
+    <div class="Default-module--base--ulBmb">
+     <header class="Navbar-module--headerWrapper--4sr+J">
+      <div class="Navbar-module--headerMobile--hKwXF">
+       <div class="Navbar-module--headerMobileSideIcons--YI-w1"></div>
+       <div class="Navbar-module--headerMobileCenter--Wj6cD">
+        <div role="listbox" class="Navbar-module--headerMobileCenterDropdown--YZ0YB">
+         <div role="alert" class="Navbar-module--headerMobileCenterDropdownText--8kxEJ">
+          Dev Center
+         </div><i class="Navbar-module--headerMobileCenterDropdownIcon--fSz4h"><span class="Navbar-module--headerMobileCenterDropdownIconText--oqGSL">?</span></i>
+        </div>
+       </div>
+       <div class="Navbar-module--headerMobileSideIcons--YI-w1">
+        <svg data-prefix="fas" data-icon="search" class="Navbar-module--headerMobileCenterDropdownIconSVG--FyhXo" role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512">
+         <path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path>
+        </svg>
+       </div>
+      </div>
+      <div class="Navbar-module--headerDesktop--LkTuz">
+       <div class="Navbar-module--headerDesktopLeft--8M+UE">
+        <a class="Navbar-module--headerDesktopLink--1Svuo" href="https://developer.bigcommerce.com/">
+         <div class="Navbar-module--headerDesktopHomeImgWrapper--kknMG">
+          <img class="Navbar-module--headerDesktopHomeImg--FaYtU" src="https://cdn6.bigcommerce.com/s-qtmbtj/product_images/uploaded_images/bigcommerce-logomark-darkbg.png" alt="Dev Center">
+          <div class="Navbar-module--headerDesktopHomeText--8vsuO">
+           Dev Center
+          </div>
+         </div></a><a class="Navbar-module--headerDesktopLink--1Svuo" href="https://developer.bigcommerce.com/api-docs">
+         <div class="Navbar-module--headerDesktopLinkText--nJBcy">
+          API Docs
+         </div></a><a class="Navbar-module--headerDesktopLink--1Svuo" href="https://developer.bigcommerce.com/api-reference">
+         <div class="Navbar-module--headerDesktopLinkText--nJBcy">
+          API Reference
+         </div></a><a class="Navbar-module--headerDesktopLink--1Svuo" href="https://developer.bigcommerce.com/stencil-docs">
+         <div class="Navbar-module--headerDesktopLinkText--nJBcy">
+          Theme Docs
+         </div></a><a class="Navbar-module--headerDesktopLink--1Svuo" href="https://developer.bigcommerce.com/tools-resources">
+         <div class="Navbar-module--headerDesktopLinkText--nJBcy">
+          Tools
+         </div></a><a class="Navbar-module--headerDesktopLink--1Svuo" href="https://medium.com/bigcommerce-developer-blog" target="devblog">
+         <div class="Navbar-module--headerDesktopLinkText--nJBcy">
+          Blog
+         </div></a><a class="Navbar-module--headerDesktopLink--1Svuo" href="https://developer.bigcommerce.com/changelog">
+         <div class="Navbar-module--headerDesktopLinkText--nJBcy">
+          Changelog
+         </div></a>
+       </div>
+       <div class="Navbar-module--headerDesktopRight---it+8">
+        <a class="Navbar-module--headerDesktopLink--1Svuo" href="https://devtools.bigcommerce.com" target="devtools">
+         <div class="Navbar-module--headerDesktopLinkText--nJBcy">
+          My Apps
+         </div></a><a class="Navbar-module--headerDesktopLink--1Svuo" href="https://login.bigcommerce.com/signup">
+         <div class="Navbar-module--headerDesktopLinkText--nJBcy">
+          Create Account
+         </div></a>
+       </div>
+      </div>
+     </header>
+     <div class="Default-module--wrapper--0SZTp">
+      <div class="Sidebar-module--sidebar--yipdp">
+       <div class="Sidebar-module--sidebarFixed--tJPzd">
+        <div class="Sidebar-module--sidebarInner--IUJju">
+         <a aria-current="page" class="" href="/dev-library/"><span class="Logo-module--logo--DBG6W">
+           <svg version="1.1" id="Layer_1" x="0px" y="0px" viewbox="200 215 240 300">
+            <g>
+             <path class="st0" d="M310.3,379.2h21.1c6,0,9.8-3.3,9.8-8.6c0-5-3.8-8.6-9.8-8.6h-21.1c-0.7,0-1.3,0.6-1.3,1.2V378   C309.1,378.7,309.6,379.2,310.3,379.2z"></path>
+             <path class="st0" d="M310.3,413.3h21.8c6.7,0,10.7-3.4,10.7-9.4c0-5.2-3.8-9.4-10.7-9.4h-21.8c-0.7,0-1.3,0.6-1.3,1.2v16.3   C309.1,412.8,309.6,413.3,310.3,413.3z"></path>
+             <path class="st0" d="M387.5,284.4l-62.4,62.2h10.2c15.9,0,25.3,10,25.3,20.9c0,8.6-5.8,14.9-12,17.7c-1,0.4-1,1.8,0.1,2.2   c7.2,2.8,12.3,10.3,12.3,19.1c0,12.4-8.3,22.3-24.4,22.3h-44.2c-0.7,0-1.3-0.6-1.3-1.2v-47.1l-68.5,68.2c-0.9,0.9-0.3,2.5,1,2.5   h164.7c0.6,0,1.1-0.5,1.1-1.1V285.3C389.7,284.2,388.3,283.6,387.5,284.4z"></path>
+            </g>
+           </svg>
+           <div class="Logo-module--word--TVLf5">
+            Dev Library
+           </div></span></a>
+         <nav class="Sidebar-module--links--sFxFv">
+          <div>
+           <nav>
+            <small>Samples, tools, and guides to help jump start the perfect ecommerce experience.</small>
+           </nav>
+           <div class="main-module--tagWrapper--dbx+9">
+            <h3>Browse by tag</h3>
+            <div class="main-module--tags--HmJ7U">
+             <span class="main-module--current--aRAkd main-module--tag--2eC86">all</span><span class="main-module--tag--2eC86">orders-webhooks</span><span class="main-module--tag--2eC86">twilio</span><span class="main-module--tag--2eC86">serverless</span><span class="main-module--tag--2eC86">stripe</span><span class="main-module--tag--2eC86">subscriptions</span><span class="main-module--tag--2eC86">gatsby</span><span class="main-module--tag--2eC86">headless</span><span class="main-module--tag--2eC86">multi-region</span><span class="main-module--tag--2eC86">netlify</span><span class="main-module--tag--2eC86">connector</span><span class="main-module--tag--2eC86">webhooks</span><span class="main-module--tag--2eC86">aws</span><span class="main-module--tag--2eC86">source code</span><span class="main-module--tag--2eC86">starter</span><span class="main-module--tag--2eC86">graphql</span><span class="main-module--tag--2eC86">javascript</span><span class="main-module--tag--2eC86">storefront</span><span class="main-module--tag--2eC86">tutorial</span><span class="main-module--tag--2eC86">vue</span><span class="main-module--tag--2eC86">cart</span><span class="main-module--tag--2eC86">checkout</span><span class="main-module--tag--2eC86">postman</span><span class="main-module--tag--2eC86">auth</span><span class="main-module--tag--2eC86">express</span><span class="main-module--tag--2eC86">ngrok</span><span class="main-module--tag--2eC86">react</span><span class="main-module--tag--2eC86">handlebars</span><span class="main-module--tag--2eC86">stencil</span><span class="main-module--tag--2eC86">bigdesign</span><span class="main-module--tag--2eC86">admin bar</span><span class="main-module--tag--2eC86">bc4wp</span><span class="main-module--tag--2eC86">plugin</span><span class="main-module--tag--2eC86">wordpress</span><span class="main-module--tag--2eC86">multi-storefront</span><span class="main-module--tag--2eC86">drupal</span><span class="main-module--tag--2eC86">module</span><span class="main-module--tag--2eC86">third party api</span><span class="main-module--tag--2eC86">app</span><span class="main-module--tag--2eC86">laravel</span><span class="main-module--tag--2eC86">bulk</span><span class="main-module--tag--2eC86">form</span><span class="main-module--tag--2eC86">order</span><span class="main-module--tag--2eC86">product reviews</span>
+            </div>
+           </div>
+          </div>
+         </nav>
+        </div>
+       </div>
+      </div>
+      <div class="Default-module--content--6LnGc">
+       <div class="main-module--wrapper--q-7o9">
+        <div class="main-module--content--vytHB">
+         <div style="padding-bottom:300px">
+          <div style="margin-bottom:60px">
+           <div class="main-module--title--zoE9c">
+            <h1>BigCommerce Examples &amp; Starters<span class="main-module--count--X72Yb">(<!-- -->22<!-- -->)</span></h1>
+           </div>
+           <div class="Grid-module--gridWrapper--AGq3G">
+            <div class="Grid-module--gridContent---oRIG">
+             <div style="margin-bottom:10px">
+              <div class="SearchBox-module--searchBox--MMTHF">
+               <div class="SearchBox-module--icon--rJjbO"></div>
+               <div class="Input-module--inputWrapper--O42k9">
+                <input type="text" id="example-search" placeholder="Search examples" role="input" name="example-search" class="Input-module--input--UEkCX Input-module--base--2rw1u">
+               </div>
+              </div>
+             </div>
+             <div class="Grid-module--grid--5XlNJ">
+              <div class="Grid-module--item--lpw6h Card-module--card--9eMFu">
+               <div class="Card-module--cardInner--oGO17">
+                <a href="/dev-library/examples/orders-webhooks/twilio/use-twilio-to-send-an-order-confirmation-text-to-a-customer/">
+                 <div class="Grid-module--itemTitle--G8uEy">
+                  Use Twilio to Send an Order Confirmation Text to a Customer
+                 </div>
+                 <div class="Grid-module--itemDescription--qRnFS">
+                  Using a serverless function, you can get the response from the Orders webhook to call Twilio and send a text message to a customer about their order. This could be a confirmation text or a series of texts based on status changes of an order. Use this to get started, extend it with contributions, or fork it and make it your own application. 
+                 </div>
+                 <div class="Grid-module--itemTags--L+JuL">
+                  orders-webhooks, twilio
+                 </div></a>
+               </div>
+              </div>
+              <div class="Grid-module--item--lpw6h Card-module--card--9eMFu">
+               <div class="Card-module--cardInner--oGO17">
+                <a href="/dev-library/examples/orders-webhooks/serverless/stripe/subscriptions/enable-stripe-subscription-on-bigcommerce/">
+                 <div class="Grid-module--itemTitle--G8uEy">
+                  Enable Stripe Subscription on BigCommerce
+                 </div>
+                 <div class="Grid-module--itemDescription--qRnFS">
+                  Using a serverless function, you can enable Stripe Subscriptions. The application is using BigCommerce webhooks to send Order data to a serverless function to determine if the user purchased a subscription product and should be enrolled in a Stripe subscription. 
+                 </div>
+                 <div class="Grid-module--itemTags--L+JuL">
+                  orders-webhooks, serverless, stripe, subscriptions
+                 </div></a>
+               </div>
+              </div>
+              <div class="Grid-module--item--lpw6h Card-module--card--9eMFu">
+               <div class="Card-module--cardInner--oGO17">
+                <a href="/dev-library/examples/gatsby/headless/multi-region/netlify/build-innovate-and-grow-multi-region-ecommerce-with-bigcommerce/">
+                 <div class="Grid-module--itemTitle--G8uEy">
+                  Build, Innovate and Grow Multi-Region ecommerce with BigCommerce
+                 </div>
+                 <div class="Grid-module--itemDescription--qRnFS">
+                  Netlify Headless Summit Presentation - September 3, 2020 ? Abstract The following is an overview of the creation of a headless multi-region ecommerce site using BigCommerce APIs. This presentation was given at the Netlify Headless Commerce Summit on September 3, 2020. In this document, you will find references and materials to support the development of a multi-region headless site using GatsbyJS, BigCommerce, and Netlify. ? To see the presentation collateral use the "Article" link below.
+                 </div>
+                 <div class="Grid-module--itemTags--L+JuL">
+                  gatsby, headless, multi-region, netlify
+                 </div></a>
+               </div>
+              </div>
+              <div class="Grid-module--item--lpw6h Card-module--card--9eMFu">
+               <div class="Card-module--cardInner--oGO17">
+                <a href="/dev-library/examples/connector/headless/webhooks/bigcommerce-customer-group-webhook-connector/">
+                 <div class="Grid-module--itemTitle--G8uEy">
+                  BigCommerce Customer Group Webhook Connector
+                 </div>
+                 <div class="Grid-module--itemDescription--qRnFS">
+                  This application is using BigCommerce webhooks to send order data to a serverless function then based on what the user purchased assign them to a customer group. In the example, it is looking to see if the user purchased a membership.
+                 </div>
+                 <div class="Grid-module--itemTags--L+JuL">
+                  connector, headless, webhooks
+                 </div></a>
+               </div>
+              </div>
+              <div class="Grid-module--item--lpw6h Card-module--card--9eMFu">
+               <div class="Card-module--cardInner--oGO17">
+                <a href="/dev-library/examples/aws/headless/source-code/starter/bigcommerce-order-replication-service-starter-kit/">
+                 <div class="Grid-module--itemTitle--G8uEy">
+                  BigCommerce Order Replication Service Starter Kit
+                 </div>
+                 <div class="Grid-module--itemDescription--qRnFS">
+                  This starter kit uses the AWS CloudFormation template in cloudformation/stack.json to deploy serverless resources and replicate BigCommerce orders. Also included: workflows for continuous deployment with GitHub actions.
+                 </div>
+                 <div class="Grid-module--itemTags--L+JuL">
+                  aws, headless, source code, starter
+                 </div></a>
+               </div>
+              </div>
+              <div class="Grid-module--item--lpw6h Card-module--card--9eMFu">
+               <div class="Card-module--cardInner--oGO17">
+                <a href="/dev-library/examples/graphql/javascript/storefront/tutorial/using-bigcommerce-storefront-apis-to-create-custom-product-display-page-experiences/">
+                 <div class="Grid-module--itemTitle--G8uEy">
+                  Using BigCommerce Storefront APIs to Create Custom Product Display Page Experiences
+                 </div>
+                 <div class="Grid-module--itemDescription--qRnFS">
+                  In this article, learn how the Product Display Page can be augmented with the Storefront Cart and GraphQL APIs in a non-persistent environment. 
+                 </div>
+                 <div class="Grid-module--itemTags--L+JuL">
+                  graphql, javascript, storefront, tutorial
+                 </div></a>
+               </div>
+              </div>
+              <div class="Grid-module--item--lpw6h Card-module--card--9eMFu">
+               <div class="Card-module--cardInner--oGO17">
+                <a href="/dev-library/examples/headless/source-code/starter/vue/introduction-to-vue-js-bigcommerce/">
+                 <div class="Grid-module--itemTitle--G8uEy">
+                  Introduction to Vue.js + BigCommerce
+                 </div>
+                 <div class="Grid-module--itemDescription--qRnFS">
+                  In this post, we discuss the basics of Vue.js, how it can benefit your upcoming projects, and a prototype example using Nuxt.js, Divante’s Storefront UI, and axios.
+                 </div>
+                 <div class="Grid-module--itemTags--L+JuL">
+                  headless, source code, starter, vue
+                 </div></a>
+               </div>
+              </div>
+              <div class="Grid-module--item--lpw6h Card-module--card--9eMFu">
+               <div class="Card-module--cardInner--oGO17">
+                <a href="/dev-library/examples/cart/checkout/headless/postman/source-code/tutorial/creating-a-headless-bigcommerce-cart-and-checkout-flow-in-postman/">
+                 <div class="Grid-module--itemTitle--G8uEy">
+                  Creating a Headless BigCommerce Cart and Checkout Flow in Postman
+                 </div>
+                 <div class="Grid-module--itemDescription--qRnFS">
+                  In this article, you will configure an environment in Postman with BigCommerce API credentials, and you will create a collection that demonstrates a headless cart and checkout sequence on BigCommerce.
+                 </div>
+                 <div class="Grid-module--itemTags--L+JuL">
+                  cart, checkout, headless, postman, source code, tutorial
+                 </div></a>
+               </div>
+              </div>
+              <div class="Grid-module--item--lpw6h Card-module--card--9eMFu">
+               <div class="Card-module--cardInner--oGO17">
+                <a href="/dev-library/examples/headless/storefront/tutorial/introduction-to-graphql-and-bigcommerce/">
+                 <div class="Grid-module--itemTitle--G8uEy">
+                  Introduction to GraphQL and BigCommerce
+                 </div>
+                 <div class="Grid-module--itemDescription--qRnFS">
+                  In this article, we learn more about GraphQL, an open-source syntax and query processor for APIs, and how it can be used with the GraphQL Storefront API.
+                 </div>
+                 <div class="Grid-module--itemTags--L+JuL">
+                  headless, storefront, tutorial
+                 </div></a>
+               </div>
+              </div>
+              <div class="Grid-module--item--lpw6h Card-module--card--9eMFu">
+               <div class="Card-module--cardInner--oGO17">
+                <a href="/dev-library/examples/gatsby/netlify/source-code/starter/bigcommerce-gatsby-starter-w-netlify-cms/">
+                 <div class="Grid-module--itemTitle--G8uEy">
+                  BigCommerce Gatsby Starter w/ Netlify CMS
+                 </div>
+                 <div class="Grid-module--itemDescription--qRnFS">
+                  Through the use of Netlify Functions, support a built-in cart and checkout flow (with 50+ payment gateways/methods, advanced tax, and shipping providers, etc.) that uses the BigCommerce APIs to provide a complete end-to-end shopper experience, without the need for a complex backend or middleware.
+                 </div>
+                 <div class="Grid-module--itemTags--L+JuL">
+                  gatsby, netlify, source code, starter
+                 </div></a>
+               </div>
+              </div>
+              <div class="Grid-module--item--lpw6h Card-module--card--9eMFu">
+               <div class="Card-module--cardInner--oGO17">
+                <a href="/dev-library/examples/auth/express/ngrok/tutorial/how-to-test-app-authentication-locally-with-ngrok/">
+                 <div class="Grid-module--itemTitle--G8uEy">
+                  How to Test App Authentication Locally with ngrok
+                 </div>
+                 <div class="Grid-module--itemDescription--qRnFS">
+                  In this article, we’ll demonstrate how you can use ngrok to retrieve an Oauth token from the BigCommerce auth service and install the app in your store, all while still working locally. Consider this your comprehensive guide to testing, running, and authenticating BigCommerce apps locally.
+                 </div>
+                 <div class="Grid-module--itemTags--L+JuL">
+                  auth, express, ngrok, tutorial
+                 </div></a>
+               </div>
+              </div>
+              <div class="Grid-module--item--lpw6h Card-module--card--9eMFu">
+               <div class="Card-module--cardInner--oGO17">
+                <a href="/dev-library/examples/headless/react/source-code/tutorial/create-custom-bigcommerce-templates-with-react-in-stencil/">
+                 <div class="Grid-module--itemTitle--G8uEy">
+                  Create Custom BigCommerce Templates with React in Stencil
+                 </div>
+                 <div class="Grid-module--itemDescription--qRnFS">
+                  In this article, follow a step-by-step guide to starting custom templates with React in a Stencil theme in a way that is scalable and reusable.
+                 </div>
+                 <div class="Grid-module--itemTags--L+JuL">
+                  headless, react, source code, tutorial
+                 </div></a>
+               </div>
+              </div>
+              <div class="Grid-module--item--lpw6h Card-module--card--9eMFu">
+               <div class="Card-module--cardInner--oGO17">
+                <a href="/dev-library/examples/handlebars/javascript/stencil/tutorial/5-handlebars-helpers-bigcommerce-developers-should-know/">
+                 <div class="Grid-module--itemTitle--G8uEy">
+                  5 Handlebars Helpers BigCommerce Developers Should Know
+                 </div>
+                 <div class="Grid-module--itemDescription--qRnFS">
+                  In this article, we focus on five underutilized Handlebars Helpers that might be helpful for everyday programming tasks. Developers can direct the presentation of each page in the Stencil theme framework using Handlebars Helpers. 
+                 </div>
+                 <div class="Grid-module--itemTags--L+JuL">
+                  handlebars, javascript, stencil, tutorial
+                 </div></a>
+               </div>
+              </div>
+              <div class="Grid-module--item--lpw6h Card-module--card--9eMFu">
+               <div class="Card-module--cardInner--oGO17">
+                <a href="/dev-library/examples/bigdesign/react/source-code/tutorial/bigdesign-build-native-looking-uis-with-the-bigcommerce-design-system/">
+                 <div class="Grid-module--itemTitle--G8uEy">
+                  BigDesign: Build Native-looking UIs with the BigCommerce Design System
+                 </div>
+                 <div class="Grid-module--itemDescription--qRnFS">
+                  In this article we discover BigDesign, a collection of custom React components and style guidelines created for external developers to quickly build apps that blend seamlessly within BigCommerce.
+                 </div>
+                 <div class="Grid-module--itemTags--L+JuL">
+                  bigdesign, react, source code, tutorial
+                 </div></a>
+               </div>
+              </div>
+              <div class="Grid-module--item--lpw6h Card-module--card--9eMFu">
+               <div class="Card-module--cardInner--oGO17">
+                <a href="/dev-library/examples/admin-bar/bc4wp/plugin/source code/wordpress/hide-wp-admin-bar-for-customers-bc-4-wp/">
+                 <div class="Grid-module--itemTitle--G8uEy">
+                  Hide WP Admin Bar for Customers (BC4WP)
+                 </div>
+                 <div class="Grid-module--itemDescription--qRnFS">
+                  Download a tiny WordPress plugin for BC4WP that prevents the top WordPress 'admin' bar from showing if the user logged in is a BigCommerce customer. 
+                 </div>
+                 <div class="Grid-module--itemTags--L+JuL">
+                  admin bar, bc4wp, plugin, source code, wordpress
+                 </div></a>
+               </div>
+              </div>
+              <div class="Grid-module--item--lpw6h Card-module--card--9eMFu">
+               <div class="Card-module--cardInner--oGO17">
+                <a href="/dev-library/examples/bc4wp/cart/plugin/source-code/wordpress/force-cart-notifications-to-show-bc-4-wp/">
+                 <div class="Grid-module--itemTitle--G8uEy">
+                  Force Cart Notifications To Show (BC4WP)
+                 </div>
+                 <div class="Grid-module--itemDescription--qRnFS">
+                  Download a tiny WordPress plugin for BC4WP that forces notifications within the cart navigation menu item to be active. Useful when you do not have an SSL certificate on the WordPress site, which deactivates the notifications but want to show it anyway.
+                 </div>
+                 <div class="Grid-module--itemTags--L+JuL">
+                  bc4wp, cart, plugin, source code, wordpress
+                 </div></a>
+               </div>
+              </div>
+              <div class="Grid-module--item--lpw6h Card-module--card--9eMFu">
+               <div class="Card-module--cardInner--oGO17">
+                <a href="/dev-library/examples/bc4wp/headless/multi-storefront/tutorial/wordpress/multi-region-storefront-with-bigcommerce-and-wordpress/">
+                 <div class="Grid-module--itemTitle--G8uEy">
+                  Multi-Region Storefront with BigCommerce and WordPress
+                 </div>
+                 <div class="Grid-module--itemDescription--qRnFS">
+                  In this article, we cover our philosophy on enabling multi-region use cases, implementation examples within the plugin, and how to create a basic multi-region shopper experience. Learn how to extend the BigCommerce for Wordpress plugin to support multi-region on your storefront.
+                 </div>
+                 <div class="Grid-module--itemTags--L+JuL">
+                  bc4wp, headless, multi-storefront, tutorial, wordpress
+                 </div></a>
+               </div>
+              </div>
+              <div class="Grid-module--item--lpw6h Card-module--card--9eMFu">
+               <div class="Card-module--cardInner--oGO17">
+                <a href="/dev-library/examples/drupal/headless/module/third-party api/bigcommerce-for-drupal-module/">
+                 <div class="Grid-module--itemTitle--G8uEy">
+                  BigCommerce for Drupal Module
+                 </div>
+                 <div class="Grid-module--itemDescription--qRnFS">
+                  Download the open-source BigCommerce for Drupal commerce module that fast tracks a headless commerce approach using the two platforms. Built and maintained by Acro Media.
+                 </div>
+                 <div class="Grid-module--itemTags--L+JuL">
+                  drupal, headless, module, third party api
+                 </div></a>
+               </div>
+              </div>
+              <div class="Grid-module--item--lpw6h Card-module--card--9eMFu">
+               <div class="Card-module--cardInner--oGO17">
+                <a href="/dev-library/examples/app/laravel/react/source-code/tutorial/bigcommerce-sample-app-laravel-react/">
+                 <div class="Grid-module--itemTitle--G8uEy">
+                  Building a BigCommerce App Using Laravel and React
+                 </div>
+                 <div class="Grid-module--itemDescription--qRnFS">
+                  In this article, follow the steps it took to get to a functional app using Laravel on the back-end and React on the front-end. At the end of the process, you'll have an app running locally that is connected to a production BigCommerce store.
+                 </div>
+                 <div class="Grid-module--itemTags--L+JuL">
+                  app, laravel, react, source code, tutorial
+                 </div></a>
+               </div>
+              </div>
+              <div class="Grid-module--item--lpw6h Card-module--card--9eMFu">
+               <div class="Card-module--cardInner--oGO17">
+                <a href="/dev-library/examples/bulk/form/order/react/storefront/tutorial/bulk-order-form-using-storefront-api-and-react/">
+                 <div class="Grid-module--itemTitle--G8uEy">
+                  Build a Bulk Order Form using the BigCommerce Storefront API and React
+                 </div>
+                 <div class="Grid-module--itemDescription--qRnFS">
+                  In this article, the bulk order form we’re going to build uses the free BigCommerce Cornerstone theme, the BigCommerce Storefront API, and React. It’s implemented by setting a custom layout file on a category page with simple products, feeding the product data into the form automatically.
+                 </div>
+                 <div class="Grid-module--itemTags--L+JuL">
+                  bulk, form, order, react, storefront, tutorial
+                 </div></a>
+               </div>
+              </div>
+              <div class="Grid-module--item--lpw6h Card-module--card--9eMFu">
+               <div class="Card-module--cardInner--oGO17">
+                <a href="/dev-library/examples/gatsby/headless/introduction-gatsby-bigcommerce/">
+                 <div class="Grid-module--itemTitle--G8uEy">
+                  Introduction to Gatsby + BigCommerce
+                 </div>
+                 <div class="Grid-module--itemDescription--qRnFS">
+                  In this article, we hear first impressions of working with Gatsby and a conceptual overview of how Gatsby fits into a headless strategy. We’ll talk high-level architectures and layout how Gatsby interacts with BigCommerce.
+                 </div>
+                 <div class="Grid-module--itemTags--L+JuL">
+                  gatsby, headless
+                 </div></a>
+               </div>
+              </div>
+              <div class="Grid-module--item--lpw6h Card-module--card--9eMFu">
+               <div class="Card-module--cardInner--oGO17">
+                <a href="/dev-library/examples/bc4wp/plugin/product-reviews/source code/wordpress/bc-4-wp-turn-on-reviews-for-all/">
+                 <div class="Grid-module--itemTitle--G8uEy">
+                  Turn on Product Reviews For All Shoppers (BC4WP)
+                 </div>
+                 <div class="Grid-module--itemDescription--qRnFS">
+                  Download a tiny WordPress plugin for BC4WP that turns on the ability to write product reviews for all shoppers.
+                 </div>
+                 <div class="Grid-module--itemTags--L+JuL">
+                  bc4wp, plugin, product reviews, source code, wordpress
+                 </div></a>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="main-module--styledRibbon--hQy8P">
+          Beta
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div>
+  </div>
+  <script>
+  
+  
+  if(true) {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  }
+  if (typeof ga === "function") {
+    ga('create', 'testIdtest', 'auto', {});
+      
+      
+      
+      
+      
+      }</script>
+  <script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/";window.___webpackCompilationHash="28a78936d9a50a8ca27b";/*]]>*/</script>
+  <script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-f2bec55941ca64864dc4.js"],"app":["/app-a62d13503682249d85d5.js"],"component---cache-caches-gatsby-plugin-offline-app-shell-js":["/component---cache-caches-gatsby-plugin-offline-app-shell-js-894a94c80b86363389ff.js"],"component---src-pages-404-js":["/component---src-pages-404-js-8000a80d3cd1ca16f62e.js"],"component---src-pages-about-js":["/component---src-pages-about-js-6280f4c09d6c65e9c646.js"],"component---src-pages-index-js":["/component---src-pages-index-js-bd92d0879d79d253e416.js"],"component---src-templates-example-js":["/component---src-templates-example-js-da42727caeaac7738aba.js"]};/*]]>*/</script>
+  <script src="/dev-library/polyfill-f2bec55941ca64864dc4.js" nomodule=""></script>
+  <script src="/dev-library/component---src-pages-index-js-bd92d0879d79d253e416.js" async></script>
+  <script src="/dev-library/6e0e6cbd1727f0dccf246f2a41c2f2f0962d1201-cfa3fa924d3c657127d6.js" async></script>
+  <script src="/dev-library/ac0f68620159bf7e81c018ecaf1c065f1cca4e6b-2860518893c0e7996313.js" async></script>
+  <script src="/dev-library/29107295-6111e683b5a275d793ab.js" async></script>
+  <script src="/dev-library/app-a62d13503682249d85d5.js" async></script>
+  <script src="/dev-library/framework-5697b5d8767e092289f3.js" async></script>
+  <script src="/dev-library/webpack-runtime-b47aa1a255c6d80b14b2.js" async></script>
+ </body>
+</html>

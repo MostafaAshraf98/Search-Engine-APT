@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"> 
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <meta name="Description" content="Documentation on the Roundup issue tracker, version 2.1.0."> 
+  <meta content="Original proposal for the Roundup Issue Tracker. The problem it solves, and guiding principles. Presents the components of Roundup and how they interact." language="en" name="description"> 
+  <title>Roundup: an Issue-Tracking System for Knowledge Workers - Roundup 2.1.0 documentation</title> 
+  <link rel="stylesheet" href="../_static/style.css" type="text/css"> 
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css"> 
+  <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+          URL_ROOT:    '../',
+          VERSION:     '2.1.0',
+          COLLAPSE_MODINDEX: false,
+          FILE_SUFFIX: '.html'
+      };
+    </script> 
+  <script type="text/javascript" src="../_static/jquery.js"></script> 
+  <script type="text/javascript" src="../_static/underscore.js"></script> 
+  <script type="text/javascript" src="../_static/doctools.js"></script> 
+  <script type="text/javascript" src="../_static/language_data.js"></script> 
+  <link rel="canonical" href="https://www.roundup-tracker.org/docs/overview.html"> 
+  <link rel="index" title="Index" href="../genindex.html"> 
+  <link rel="search" title="Search" href="../search.html"> 
+  <link rel="top" title="Roundup 2.1.0 documentation" href="../index.html"> 
+  <link rel="up" title="Docs" href="../docs.html"> 
+  <link rel="next" title="Roundup - An Issue-Tracking System for Knowledge Workers" href="design.html"> 
+  <link rel="prev" title="License" href="license.html"> 
+ </head> 
+ <body> 
+  <div class="header">
+   <h1>Roundup</h1> 
+   <div id="searchbox" style="display: none"> 
+    <form class="search" action="../search.html" method="get"> 
+     <input type="text" aria-label="Enter search terms" name="q" size="18"> 
+     <input type="submit" value="Search"> 
+     <input type="hidden" name="check_keywords" value="yes"> 
+     <input type="hidden" name="area" value="default"> 
+    </form> 
+   </div> 
+   <script type="text/javascript">$('#searchbox').show(0);</script> 
+  </div> 
+  <div class="navigation"> 
+   <div class="menu"> 
+    <ul class="current"> 
+     <li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a></li> 
+     <li class="toctree-l1"><a class="reference external" href="https://pypi.org/project/roundup/">Download</a></li> 
+     <li class="toctree-l1 current"><a class="reference internal" href="../docs.html">Docs</a>
+      <ul class="current"> 
+       <li class="toctree-l2"><a class="reference internal" href="features.html">Roundup Features</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="installation.html">Installing Roundup</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="upgrading.html">Upgrading to newer versions of Roundup</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="FAQ.html">Roundup FAQ</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="user_guide.html">User Guide</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="customizing.html">Customising Roundup</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="admin_guide.html">Administration Guide</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="debugging.html">Debugging Aids</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="xmlrpc.html">XML-RPC access to Roundup</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="rest.html">REST API for Roundup</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="tracker_templates.html">Roundup Tracker Templates</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="glossary.html">Roundup Glossary</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="acknowledgements.html">Acknowledgements</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="license.html">License</a></li> 
+       <li class="toctree-l2 current"><a class="current reference internal" href="#">Design Overview</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="design.html">Design (original)</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="developers.html">Developing Roundup</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="mysql.html">Notes about the MySQL Database backend</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="postgresql.html">Notes about the PostgreSQL Database backend</a></li> 
+       <li class="toctree-l2"><a class="reference internal" href="implementation.html">Richard Jones implementation notes</a></li> 
+      </ul> </li> 
+     <li class="toctree-l1"><a class="reference external" href="https://issues.roundup-tracker.org">Issues</a></li> 
+     <li class="toctree-l1"><a class="reference internal" href="../contact.html">Contact</a></li> 
+     <li class="toctree-l1"><a class="reference external" href="https://wiki.roundup-tracker.org">Wiki</a></li> 
+     <li class="toctree-l1"><a class="reference internal" href="../code.html">Code</a></li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="content"> 
+   <div id="subnav"> <a title="License" href="license.html"> Prev</a> <a title="Roundup - An Issue-Tracking System for Knowledge Workers" href="design.html"> Next</a> <a title="Index" href="../genindex.html"> Index</a> 
+   </div> 
+   <div class="section" id="roundup-an-issue-tracking-system-for-knowledge-workers"> 
+    <h1><a class="toc-backref" href="#id1">Roundup: an Issue-Tracking System for Knowledge Workers</a></h1> 
+    <table class="docutils field-list" frame="void" rules="none"> 
+     <colgroup>
+      <col class="field-name"> 
+      <col class="field-body"> 
+     </colgroup>
+     <tbody valign="top"> 
+      <tr class="field-odd field">
+       <th class="field-name">Authors:</th>
+       <td class="field-body">Ka-Ping Yee (<a class="reference external" href="original_overview.html">original</a>), Richard Jones (implementation)</td> 
+      </tr> 
+     </tbody> 
+    </table> 
+    <div class="contents topic" id="contents"> 
+     <p class="topic-title first">Contents</p> 
+     <ul class="simple"> 
+      <li><a class="reference internal" href="#roundup-an-issue-tracking-system-for-knowledge-workers" id="id1">Roundup: an Issue-Tracking System for Knowledge Workers</a>
+       <ul> 
+        <li><a class="reference internal" href="#introduction" id="id2">Introduction</a>
+         <ul> 
+          <li><a class="reference internal" href="#background" id="id3">Background</a></li> 
+          <li><a class="reference internal" href="#guiding-principles" id="id4">Guiding Principles</a></li> 
+         </ul> </li> 
+        <li><a class="reference internal" href="#data-model" id="id5">Data Model</a>
+         <ul> 
+          <li><a class="reference internal" href="#the-hyperdatabase" id="id6">The Hyperdatabase</a></li> 
+          <li><a class="reference internal" href="#rationale" id="id7">Rationale</a></li> 
+          <li><a class="reference internal" href="#roundup-s-hyperdatabase" id="id8">Roundup’s Hyperdatabase</a></li> 
+          <li><a class="reference internal" href="#the-default-schema" id="id9">The Default Schema</a></li> 
+         </ul> </li> 
+        <li><a class="reference internal" href="#user-interface" id="id10">User Interface</a>
+         <ul> 
+          <li><a class="reference internal" href="#submission-and-discussion" id="id11">Submission and Discussion</a></li> 
+          <li><a class="reference internal" href="#editing" id="id12">Editing</a></li> 
+          <li><a class="reference internal" href="#browsing-and-searching" id="id13">Browsing and Searching</a></li> 
+         </ul> </li> 
+       </ul> </li> 
+     </ul> 
+    </div> 
+    <div class="section" id="introduction"> 
+     <h2><a class="toc-backref" href="#id2">Introduction</a></h2> 
+     <p>Roundup is an issue-tracking system called which will manage a number of issues (with properties such as “description”, “priority”, and so on) and provides the ability to:</p> 
+     <ol class="loweralpha simple"> 
+      <li>submit new issues,</li> 
+      <li>find and edit existing issues, and</li> 
+      <li>discuss issues with other participants.</li> 
+     </ol> 
+     <p>Roundup facilitates communication among the participants by managing discussions and notifying interested parties when issues are edited.</p> 
+     <div class="section" id="background"> 
+      <h3><a class="toc-backref" href="#id3">Background</a></h3> 
+      <p>A typical software project requires the management of many tasks, usually distributed among several collaborators. In fact, any project team could use a tool for sorting out and discussing all the relevant issues. A common approach is to set up some kind of “to-do” list that people can share.</p> 
+      <p>However, to address the overall problem we need much more than just a shared to-do list; we need to manage a growing body of knowledge and experience to help a team collaborate effectively on a project. The issue-tracking tool becomes a nexus for communication: the Grand Central Station of the group intelligence.</p> 
+      <p>The primary focus of this design is to help developers work together well, not to provide a customer service interface to the developers. This is not to say that the design is to be made unsuitable for customers to use. Rather, it is assumed that many of the same qualities that are good for supporting development (see below) are also good for non-developers using the system. Additional niceties for providing a safe or simplified interface to clients are intentionally deferred for later consideration.</p> 
+      <p>A good issue-tracking system should have at least the following properties:</p> 
+      <dl class="docutils"> 
+       <dt>
+        <strong>Low barrier to participation</strong>
+       </dt> 
+       <dd>
+        The usefulness of the tool depends entirely on the information people contribute to it. It must be made as easy as possible to submit new issues and contribute information about existing issues.
+       </dd> 
+       <dt>
+        <strong>Straightforward navigation</strong>
+       </dt> 
+       <dd>
+        It should be easy for users to extract information they need from the system to direct their decisions and tasks. They should be able to get a decent overview of things as well as finding specific information when they know what they’re after.
+       </dd> 
+       <dt>
+        <strong>Controlled information flow</strong>
+       </dt> 
+       <dd>
+        The users must have control over how much information and what information they get. A common flaw of some issue-tracking systems is that they inundate users with so much useless e-mail that people avoid the system altogether.
+       </dd> 
+      </dl> 
+      <p>With a nod to the time-honoured computer science tradition of “filling in the fourth quadrant”, we note that there are really four kinds of information flow going on here. The three mentioned qualities really address the first three quadrants of this 2-by-2 matrix, respectively:</p> 
+      <ol class="arabic simple"> 
+       <li>User push: a user submits information to the system.</li> 
+       <li>User pull: a user queries for information from the system.</li> 
+       <li>System push: the system sends information out to users.</li> 
+       <li>System pull: the system solicits information from users.</li> 
+      </ol> 
+      <p>An example of the fourth kind of flow is voting. Voting isn’t described in this design, but it should be noted as a potential enhancement.</p> 
+     </div> 
+     <div class="section" id="guiding-principles"> 
+      <h3><a class="toc-backref" href="#id4">Guiding Principles</a></h3> 
+      <dl class="docutils"> 
+       <dt>
+        <strong>Simplicity</strong>
+       </dt> 
+       <dd>
+        It is a strong requirement that the tool be accessible and understandable. It should be fairly obvious what different parts of the interface do, and the inner mechanisms should operate in ways that most users can easily predict.
+       </dd> 
+       <dt>
+        <strong>Efficiency</strong>
+       </dt> 
+       <dd>
+        We aim to optimize for minimum effort to do the most common operations, and best use of resources like screen real estate to maximize the amount of information that we summarize and present.
+       </dd> 
+       <dt>
+        <strong>Generality</strong>
+       </dt> 
+       <dd>
+        We try to avoid making unnecessary assumptions that would restrict the applicability of the tool. For example, there is no reason why one might not also want to use this tool to manage a design process, non-software projects, or organizational decisions.
+       </dd> 
+       <dt>
+        <strong>Persistence</strong> We
+       </dt> 
+       <dd>
+        prefer hiding or reclassifying information to deleting it. This helps support the collection of statistics later. If records are never destroyed, there is little danger in providing access to a larger community, and logging yields accountability, which may encourage better behaviour.
+       </dd> 
+      </dl> 
+     </div> 
+    </div> 
+    <div class="section" id="data-model"> 
+     <h2><a class="toc-backref" href="#id5">Data Model</a></h2> 
+     <p>Roundup stores a number of <em>items</em>, each of which can have several properties and an associated discussion. The properties can be used to classify or search for items. The discussion is a sequence of e-mail messages. Each item is identified by a unique number, and has an activity log which records the time and content of edits made on its properties. The log stays fairly small since the design intentionally provides only small data types as item properties, and encourages anything large to be attached to e-mail where it becomes part of the discussion. The next section explains how items are organized.</p> 
+     <div class="section" id="the-hyperdatabase"> 
+      <h3><a class="toc-backref" href="#id6">The Hyperdatabase</a></h3> 
+      <p>Often when classifying information we are asked to select exactly one of a number of categories or to fit it into a rigid hierarchy. Yet things only sometimes fall into one category; often, a piece of information may be related to several concepts.</p> 
+      <p>For example, forcing each item into a single keyword category is not just suboptimal but counterproductive: seekers of that item may expect to find it in a different category and conclude that the item is not present in the database – which has them <em>worse</em> off than if the items were not categorized at all.</p> 
+      <p>Some systems try to alleviate this problem by allowing items to appear at multiple locations in a tree, as with “aliases” or “symbolic links” in a filesystem, for example. This does help somewhat, but we want to be even more flexible by allowing the organization of items into sets that may freely intersect. Rather than putting each item at exactly one place in an overall “grand scheme”, a item can belong to as many sets as are appropriate.</p> 
+      <p>If we choose to represent the sets themselves as items and set membership as a link between items, we’re now ready to present the definition of a hyperdatabase.</p> 
+      <p>A <em>hyperdatabase</em> is a collection of <em>items</em> that may be hyperlinked to each other (hence the name “hyperdatabase”). Each item carries a collection of key-value pairs, where some of the values may be links to other items. Any item may have an arbitrary number of outgoing and incoming links. Hyperdatabases are able to efficiently answer queries such as “what items link to this item?” and “what items does this item link to?”</p> 
+     </div> 
+     <div class="section" id="rationale"> 
+      <h3><a class="toc-backref" href="#id7">Rationale</a></h3> 
+      <p>There are several reasons for building our own kind of database for Roundup rather than using an existing one.</p> 
+      <p>Requiring the installation of a full-blown third-party SQL database system would probably deter many potential users from attempting to set up Roundup; yet a real relational database would be too complicated to implement on our own.</p> 
+      <p>On the other hand, a hyperdatabase can be implemented fairly easily using one of the Python DBM modules, so we can take the “batteries-included” approach and provide it as part of the system. It’s easier to build and understand than a true relational database (in accordance with our guiding principle of <em>simplicity</em>), but provides most of the query functionality we want.</p> 
+      <p>A hyperdatabase is well suited for finding the intersection of a number of sets in which items belong. We expect that most of the queries people want to do will be of this form, rather than complicated SQL queries. For example, a typical request might be “show me all critical items related to security”. The ability to store arbitrary key-value pairs and links on items gives it more flexibility than an RDBMS.</p> 
+      <p>Users are not going to be making thousands of queries per second, so it makes sense to optimize for simplicity and flexibility rather than performance.</p> 
+     </div> 
+     <div class="section" id="roundup-s-hyperdatabase"> 
+      <h3><a class="toc-backref" href="#id8">Roundup’s Hyperdatabase</a></h3> 
+      <p>For our application, we store each item as a item in a hyperdatabase. The item’s properties are stored as key-value pairs on its item. Several types of properties are allowed: <em>string</em>, <em>number</em>, <em>boolean</em>, <em>date</em>, <em>interval, *link</em>, and <em>multlink</em>. Another type, <em>password</em>, is a special type of string and it’s only used internally to Roundup.</p> 
+      <p>The <em>string</em> type is for short, free-form strings. String properties are not intended to contain large amounts of text, and it is recommended that they be presented as one-line fields to encourage brevity. A <em>number</em> is a special type of string that represents a numeric value. A <em>boolean</em> is further constrained to be a <em>true</em> or <em>false</em> value.</p> 
+      <p>The <em>date</em> type is for calendar dates and times. An <em>interval</em> is the time between two dates.</p> 
+      <p>The <em>link</em> type denotes a single selection from a number of options. A <em>link</em> property entails a link from the item possessing the property to the item representing the chosen option.</p> 
+      <p>The <em>multilink</em> type is for a list of links to any number of other items in the in the database. A <em>multilink</em> property, for example, can be used to refer to related items or keyword categories relevant to an item.</p> 
+      <p>For Roundup, all items have four properties that are not customizable:</p> 
+      <ol class="arabic simple"> 
+       <li>a <em>date</em> property named <strong>creation</strong></li> 
+       <li>a <em>link</em> property named <strong>creator</strong></li> 
+       <li>a <em>date</em> property named <strong>activity</strong></li> 
+      </ol> 
+      <p>These properties represent the date of the creation of the item, who created it, and when the last change was made.</p> 
+      <p>Further, all <em>issue</em> items have an additional four properties:</p> 
+      <ol class="arabic simple"> 
+       <li>a <em>string</em> property named <strong>title</strong></li> 
+       <li>a <em>multilink</em> property named <strong>nosy</strong></li> 
+       <li>a <em>multilink</em> property named <strong>messages</strong></li> 
+       <li>a <em>multilink</em> property named <strong>files</strong></li> 
+       <li>a <em>multilink</em> property named <strong>superseder</strong></li> 
+      </ol> 
+      <p>The <strong>title</strong> property is a short one-line description of the item. The detailed description can go in the first e-mail message of the item’s messages spool.</p> 
+      <p>The <strong>nosy</strong> property contains a list of the people who are interested in an item. This mechanism is explained in the section on <a class="reference internal" href="#submission-and-discussion">Submission and Discussion</a>.</p> 
+      <p>Each message added to the item goes in the <strong>messages</strong> spool - any attached files go in the <strong>files</strong> spool.</p> 
+      <p>The <strong>superseder</strong> property is used to support the splitting, joining, or replacing of items. When several items need to be joined into a single item, all the old items link to the new item in their <strong>superseder</strong> property. When an item needs to be split apart, the item references all the new items in its <strong>superseder</strong> propety. We can easily list all active items just by checking for an empty <strong>superseder</strong> property, and trace the path of an item’s origins by querying the hyperdatabase for links.</p> 
+      <p>Users of the system are also represented by items in the hyperdatabase, containing properties like the user’s e-mail address, login name, and password.</p> 
+     </div> 
+     <div class="section" id="the-default-schema"> 
+      <h3><a class="toc-backref" href="#id9">The Default Schema</a></h3> 
+      <p>It is hoped that the hyperdatabase together with the specializations mentioned above for Roundup will be applicable in a variety of situations (in accordance with our guiding principle of <em>generality</em>).</p> 
+      <p>To address the problem at hand, we need a specific schema for items applied particularly to software development. Again, we are trying to keep the schema simple: too many options make it tougher for someone to make a good choice:</p> 
+      <div class="highlight-default notranslate">
+       <div class="highlight">
+        <pre><span></span><span class="c1"># IssueClass automatically gets these properties:</span>
+<span class="c1">#   title = String()</span>
+<span class="c1">#   messages = Multilink("msg")</span>
+<span class="c1">#   files = Multilink("file")</span>
+<span class="c1">#   nosy = Multilink("user")</span>
+<span class="c1">#   superseder = Multilink("issue")</span>
+<span class="c1">#   (it also gets the Class properties creation, activity and creator)</span>
+<span class="n">issue</span> <span class="o">=</span> <span class="n">IssueClass</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="s2">"issue"</span><span class="p">,</span>
+                <span class="n">assignedto</span><span class="o">=</span><span class="n">Link</span><span class="p">(</span><span class="s2">"user"</span><span class="p">),</span> <span class="n">keyword</span><span class="o">=</span><span class="n">Multilink</span><span class="p">(</span><span class="s2">"keyword"</span><span class="p">),</span>
+                <span class="n">priority</span><span class="o">=</span><span class="n">Link</span><span class="p">(</span><span class="s2">"priority"</span><span class="p">),</span> <span class="n">status</span><span class="o">=</span><span class="n">Link</span><span class="p">(</span><span class="s2">"status"</span><span class="p">))</span>
+</pre>
+       </div> 
+      </div> 
+      <p>The <strong>assignedto</strong> property assigns responsibility for an item to a person or a list of people. The <strong>keyword</strong> property places the item in an arbitrary number of relevant keyword sets (see the section on <a class="reference internal" href="#browsing-and-searching">Browsing and Searching</a>).</p> 
+      <p>The <strong>prority</strong> and <strong>status</strong> values are initially:</p> 
+      <table border="1" class="docutils"> 
+       <colgroup> 
+        <col width="23%"> 
+        <col width="77%"> 
+       </colgroup> 
+       <thead valign="bottom"> 
+        <tr class="row-odd">
+         <th class="head">Priority</th> 
+         <th class="head">Description</th> 
+        </tr> 
+       </thead> 
+       <tbody valign="top"> 
+        <tr class="row-even">
+         <td>“critical”</td> 
+         <td>panic: work is stopped!</td> 
+        </tr> 
+        <tr class="row-odd">
+         <td>“urgent”</td> 
+         <td>important, but not deadly</td> 
+        </tr> 
+        <tr class="row-even">
+         <td>“bug”</td> 
+         <td>lost work or incorrect results</td> 
+        </tr> 
+        <tr class="row-odd">
+         <td>“feature”</td> 
+         <td>want missing functionality</td> 
+        </tr> 
+        <tr class="row-even">
+         <td>“wish”</td> 
+         <td>avoidable bugs, missing conveniences</td> 
+        </tr> 
+       </tbody> 
+      </table> 
+      <table border="1" class="docutils"> 
+       <colgroup> 
+        <col width="25%"> 
+        <col width="75%"> 
+       </colgroup> 
+       <thead valign="bottom"> 
+        <tr class="row-odd">
+         <th class="head">Status</th> 
+         <th class="head">Description</th> 
+        </tr> 
+       </thead> 
+       <tbody valign="top"> 
+        <tr class="row-even">
+         <td>“unread”</td> 
+         <td>submitted but no action yet</td> 
+        </tr> 
+        <tr class="row-odd">
+         <td>“deferred”</td> 
+         <td>intentionally set aside</td> 
+        </tr> 
+        <tr class="row-even">
+         <td>“chatting”</td> 
+         <td>under review or seeking clarification</td> 
+        </tr> 
+        <tr class="row-odd">
+         <td>“need-eg”</td> 
+         <td>need a reproducible example of a bug</td> 
+        </tr> 
+        <tr class="row-even">
+         <td>“in-progress”</td> 
+         <td>understood; development in progress</td> 
+        </tr> 
+        <tr class="row-odd">
+         <td>“testing”</td> 
+         <td>we think it’s done; others, please test</td> 
+        </tr> 
+        <tr class="row-even">
+         <td>“done-cbb”</td> 
+         <td>okay for now, but could be better</td> 
+        </tr> 
+        <tr class="row-odd">
+         <td>“resolved”</td> 
+         <td>fix has been released</td> 
+        </tr> 
+       </tbody> 
+      </table> 
+      <p>As previously mentioned, each item gets an activity log. Whenever a property on an item is changed, the log records the time of the change, the user making the change, and the old and new values of the property. This permits the later gathering of statistics (for example, the average time from submission to resolution).</p> 
+      <p>We do not specify or enforce a state transition graph, since making the system rigid in that fashion is probably more trouble than it’s worth. Experience has shown that there are probably two convenient automatic state transitions:</p> 
+      <ol class="arabic simple"> 
+       <li>from <strong>unread</strong> to <strong>chatting</strong> when e-mail is written about an item</li> 
+       <li>from <strong>testing</strong> to <strong>resolved</strong> when a new release of the software is made</li> 
+      </ol> 
+      <p>Beyond these, in accordance with our principle of <em>generality</em>, we allow access to the hyperdatabase API so that scripts can automate transitions themselves or be triggered by changes in the database.</p> 
+     </div> 
+    </div> 
+    <div class="section" id="user-interface"> 
+     <h2><a class="toc-backref" href="#id10">User Interface</a></h2> 
+     <p>Roundup provides its services through two main interfaces: e-mail and the Web. This division is chosen to optimize the most common tasks.</p> 
+     <p>E-mail is best suited for the submission of new items since most people are most comfortable with composing long messages in their own favourite e-mail client. E-mail also permits them to mention URLs or attach files relevant to their submission. Indeed, in many cases people are already used to making requests by sending e-mail to a mailing list of people; they can do exactly the same thing to use Roundup without even thinking about it. Similarly, people are already familiar with holding discussions in e-mail, and plenty of valuable usage conventions and software tools already exist for that medium.</p> 
+     <p>The Web, on the other hand, is best suited for summarizing and seeking information, because it can present an interactive overview of items. Since the Web has forms, it’s also the best place to edit items.</p> 
+     <div class="section" id="submission-and-discussion"> 
+      <h3><a class="toc-backref" href="#id11">Submission and Discussion</a></h3> 
+      <p>The system needs an address for receiving mail and an address that forwards mail to all participants. Each item has its own list of interested parties, known as its <em>nosy list</em>. Here’s how nosy lists work:</p> 
+      <ol class="arabic simple"> 
+       <li>New items are always submitted by sending an e-mail message to Roundup. The “Subject:” field becomes the description of the new item. The message is saved in the mail spool of the new item, and copied to the list of all participants so everyone knows that a new item has been added. The new item’s nosy list initially contains the submitter.</li> 
+       <li>All e-mail messages sent by Roundup have their “Reply-To:” field set to Roundup’s address, and have the item’s number in the “Subject:” field. Thus, any replies to the initial announcement and subsequent threads are all received by Roundup. Roundup notes the item number in the “Subject:” field of each incoming message and appends the message to the appropriate spool.</li> 
+       <li>Any incoming e-mail tagged with an item number is copied to all the people on the item’s nosy list, and any users found in the “From:”, “To:”, or “Cc:” fields are automatically added to the nosy list. Whenever a user edits an item’s properties in the Web interface, they are also added to the nosy list.</li> 
+      </ol> 
+      <p>The effect is like each item having its own little mailing list, except that no one ever has to worry about subscribing to anything. Indicating interest in an issue is sufficient, and if you want to bring someone new into the conversation, all you need to do is “Cc:” a message to them. It turns out that no one ever has to worry about unsubscribing, either: the nosy lists are so specific in scope that the conversation tends to die down by itself when the issue is resolved or people no longer find it sufficiently important.</p> 
+      <p>Each nosy list is like an asynchronous chat room, lasting only a short time (typically five or ten messages) and involving a small group of people. However, that group is the <em>right</em> group of people: only those who express interest in an item in some way ever end up on the list, so no one gets spammed with mail they don’t care about, and no one who <em>wants</em> to see mail about a particular item needs to be left out, for they can easily join in, and just as easily look at the mail spool on an item to catch up on any messages they might have missed.</p> 
+      <p>We can take this a step further and permit users to monitor particular keywords or classifications of items by allowing other kinds of items to also have their own nosy lists. For example, a manager could be on the nosy list of the priority value item for “critical”, or a developer could be on the nosy list of the keyword value item for “security”. The recipients are then determined by the union of the nosy lists on the item and all the items it links to.</p> 
+      <p>Using many small, specific mailing lists results in much more effective communication than one big list. Taking away the effort of subscribing and unsubscribing gives these lists the “feel” of being cheap and disposable.</p> 
+      <p>The transparent capture of the mail spool attached to each issue also yields a nice knowledge repository over time.</p> 
+     </div> 
+     <div class="section" id="editing"> 
+      <h3><a class="toc-backref" href="#id12">Editing</a></h3> 
+      <p>Since Roundup is intended to support arbitrary user-defined schema for item properties, the editing interface must be automatically generated from the schema. The configuration for Roundup will include a template describing how to lay out the properties to present a UI for inspecting and editing items. For example:</p> 
+      <div class="highlight-default notranslate">
+       <div class="highlight">
+        <pre><span></span><span class="o">&lt;</span><span class="n">tr</span><span class="o">&gt;</span>
+ <span class="o">&lt;</span><span class="n">th</span> <span class="n">class</span><span class="o">=</span><span class="s2">"required"</span><span class="o">&gt;</span><span class="n">Priority</span><span class="o">&lt;/</span><span class="n">th</span><span class="o">&gt;</span>
+ <span class="o">&lt;</span><span class="n">td</span> <span class="n">tal</span><span class="p">:</span><span class="n">content</span><span class="o">=</span><span class="s2">"structure context/priority/menu"</span><span class="o">&gt;</span><span class="n">priority</span><span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+ <span class="o">&lt;</span><span class="n">th</span><span class="o">&gt;</span><span class="n">Status</span><span class="o">&lt;/</span><span class="n">th</span><span class="o">&gt;</span>
+ <span class="o">&lt;</span><span class="n">td</span> <span class="n">tal</span><span class="p">:</span><span class="n">content</span><span class="o">=</span><span class="s2">"structure context/status/menu"</span><span class="o">&gt;</span><span class="n">status</span><span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">tr</span><span class="o">&gt;</span>
+</pre>
+       </div> 
+      </div> 
+      <p>To display the editing form for an item, Roundup inserts an HTML form widget where it encounters an expression like <code class="docutils literal notranslate"><span class="pre">tal:content="structure</span> <span class="pre">context/priority/menu"</span></code>. Each type has its own appropriate editing widget:</p> 
+      <ul class="simple"> 
+       <li><em>string</em> and <em>number</em> properties appear as text fields</li> 
+       <li><em>boolean</em> properties appear as a yes/no selection</li> 
+       <li><em>date</em> and <em>interval</em> properties appear as text fields</li> 
+       <li><em>link</em> properties appear as selection lists</li> 
+       <li>
+        <dl class="first docutils"> 
+         <dt>
+          <em>multilink</em> properties appear as multiple-selection lists
+         </dt> 
+         <dd>
+          or text fields with pop-up widgets for larger selections.
+         </dd> 
+        </dl> </li> 
+      </ul> 
+      <p>We foresee the use of custom date fields for things like deadlines, so input fields for <em>date</em> properties support a simple way of specifying relative dates (such as “3w” for “three weeks from now”).</p> 
+      <p>The <strong>superseder</strong> property is a special case: although it is more efficient to store a <strong>superseder</strong> property in the superseded item, it makes more sense to provide a “supersedes” edit field on the superseding item. We use a special widget on items for this purpose (a text field containing a comma-separated list of items). Links in the <strong>superseder</strong> property appear on both the superseding and superseded items to facilitate navigating an item’s pedigree.</p> 
+      <p>After the editing widgets, the item inspection page shows a “note” text box and then a display of the messages in the discussion spool. This field lets you enter a note explaining your change when you edit the item, and the note is included in the notification message that goes out to tell the interested parties on the nosy list of your edits.</p> 
+     </div> 
+     <div class="section" id="browsing-and-searching"> 
+      <h3><a class="toc-backref" href="#id13">Browsing and Searching</a></h3> 
+      <p>The ideal we would like to achieve is to make searching as much like browsing as possible: the user simply clicks about on things that seem interesting, and the information narrows down comfortably until the goal is in sight. This is preferable to trying to digest a screen filled with widgets and buttons or entering a search expression in some arcane algebraic syntax.</p> 
+      <p>While a one-shot search may be appropriate when you’re looking for a single item and you know exactly what you want, it’s not very helpful when you want an overview of things (“Gee, there are a lot more high-priority items than there were last week!”) or trying to do comparisons (“I have some time today, so who is busiest and could most use some help?”)</p> 
+      <p>The browsing interface presents filtering functionality for each of the properties in the schema. As with editing, the interface is generated from a template describing how to lay out the properties. Each type of property has its own appropriate filtering widget:</p> 
+      <ul class="simple"> 
+       <li><em>string</em> properties appear as text fields supporting case-insensitive substring match</li> 
+       <li><em>date</em> properties appear as a text field which accepts a date range with start, end or both. Multiple date ranges can be specified separated by a comma. An empty date can be searched for by specifying ‘-‘ instead of a date range</li> 
+       <li><em>link</em> properties appear as a group of selectable options (the filter selects the <em>union</em> of the sets of items associated with the active options)</li> 
+       <li><em>multilink</em> properties appear as a group of selectable options (the filter selects the <em>intersection</em> of the sets of items associated with the active options)</li> 
+      </ul> 
+      <p>For a <em>multilink</em> property like <strong>keyword</strong>, one possibility is to show, as hyperlinks, the keywords whose sets have non-empty intersections with the currently displayed set of items. Sorting the keywords by popularity seems reasonable. Clicking on a keyword then narrows both the list of items and the list of keywords. This gives some of the feel of walking around a directory tree – but without the restriction of having to select keywords in a particular hierarchical order, and without the need to travel all the way to the leaves of the tree before any items are visible.</p> 
+      <p>Below the filtering form is a listing of items, with their properties displayed in a table. Rows in the table are generated from a template, as with the editing interface. This listing is the central overview of the system, and it should aim to maximize the density of useful information in accordance with our guiding principle of <em>efficiency</em>. Colour may be used to indicate the status of each item to help the eye sift through the index quickly.</p> 
+      <p>Roundup sorts items in groups by priority, and then within groups by the date of last activity. This reveals at a glance where discussion is most active, and provides an easy way for anyone to move an issue up in the list.</p> 
+      <p>The page produced by a given set of browsing options constitutes an <em>index</em>. The options should all be part of the query parameters in the URL so that views may be bookmarked. An index specifies:</p> 
+      <ul class="simple"> 
+       <li>search strings for string properties</li> 
+       <li>date ranges for date properties</li> 
+       <li>acceptable values for choice properties</li> 
+       <li>required values for reference properties</li> 
+       <li>a sorting key</li> 
+       <li>a grouping key</li> 
+       <li>a list of properties for which to display filtering widgets</li> 
+      </ul> 
+      <p>Our default index is:</p> 
+      <ul class="simple"> 
+       <li>all <strong>status</strong> values except “resolved”</li> 
+       <li>show <strong>priority</strong> and <strong>fixer</strong></li> 
+       <li>grouping by <strong>priority</strong> in sections</li> 
+       <li>sorting by decreasing <strong>activity</strong> date</li> 
+      </ul> 
+      <p>The starting URL for Roundup immediately presents the listing of items generated by this default index, with no preceding query screen.</p> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="footer"> 
+   <div> <span class="source">[<a href="../_sources/docs/overview.txt" rel="nofollow">page source</a>]</span> © Copyright 2009-2021, Richard Jones, Roundup-Team. 
+   </div> 
+   <div>
+     Last updated on May 09, 2022. <span>Hosted by <a href="https://sourceforge.net"><img src="https://sflogo.sourceforge.net/sflogo.php?group_id=31577&amp;type=1" width="88" height="31" border="0" alt="SourceForge.net Logo"></a></span> 
+   </div> 
+  </div> 
+  <script>
+      /* locally hosted goatcounter https://www.goatcounter.com/ */
+      /* include site info in path url to allow multiple sites to be
+      tracked together */
+      window.goatcounter = {
+      path: function(p) { return location.host + p }
+      }
+    </script> 
+  <script data-goatcounter="https://stats.rouilj.dynamic-dns.net/count" integrity="sha384-QGgNMMRFTi8ul5kHJ+vXysPe8gySvSA/Y3rpXZiRLzKPIw8CWY+a3ObKmQsyDr+a" async src="/_static/goatcounter_count.v3.js">
+    </script>  
+ </body>
+</html>

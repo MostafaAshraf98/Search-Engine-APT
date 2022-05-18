@@ -1,0 +1,404 @@
+<!doctype html>
+<html class="no-js" lang="en"> 
+ <head>
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width,initial-scale=1"> 
+  <meta name="color-scheme" content="light dark">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/"> 
+  <link rel="index" title="Index" href="../genindex/">
+  <link rel="search" title="Search" href="../search/">
+  <link rel="next" title="Documenting Python" href="../documenting/">
+  <link rel="prev" title="Increase Test Coverage" href="../coverage/"> 
+  <link rel="canonical" href="https://devguide.python.org/docquality.html"> 
+  <meta name="generator" content="sphinx-4.5.0, furo 2022.04.07"> 
+  <title>Helping with Documentation - Python Developer's Guide</title> 
+  <link rel="stylesheet" type="text/css" href="../_static/pygments.css"> 
+  <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852"> 
+  <link rel="stylesheet" type="text/css" href="../_static/copybutton.css"> 
+  <link rel="stylesheet" type="text/css" href="../_static/custom.css"> 
+  <link rel="stylesheet" type="text/css" href="https://assets.readthedocs.org/static/css/badge_only.css"> 
+  <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e"> 
+  <style>
+  body {
+    --color-code-background: #eeffcc;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style> <!-- RTD Extra Head --> 
+  <link rel="stylesheet" href="https://assets.readthedocs.org/static/css/readthedocs-doc-embed.css" type="text/css"> 
+  <script type="application/json" id="READTHEDOCS_DATA">{"ad_free": false, "api_host": "https://readthedocs.org", "build_date": "2022-05-17T20:56:32Z", "builder": "sphinx", "canonical_url": null, "commit": "272c02d4", "docroot": "/", "features": {"docsearch_disabled": false}, "global_analytics_code": "UA-17997319-1", "language": "en", "page": "docquality", "programming_language": "py", "project": "cpython-devguide", "proxied_api_host": "/_", "source_suffix": ".rst", "subprojects": {}, "theme": "furo", "user_analytics_code": "", "version": "latest"}</script> <!--
+Using this variable directly instead of using `JSON.parse` is deprecated.
+The READTHEDOCS_DATA global variable will be removed in the future.
+--> 
+  <script type="text/javascript">
+READTHEDOCS_DATA = JSON.parse(document.getElementById('READTHEDOCS_DATA').innerHTML);
+</script> 
+  <script type="text/javascript" src="https://assets.readthedocs.org/static/javascript/readthedocs-analytics.js" async></script> <!-- end RTD <extrahead> --> 
+ </head> 
+ <body> 
+  <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script> 
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;"> <symbol id="svg-toc" viewbox="0 0 24 24"> 
+    <title>Contents</title> 
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewbox="0 0 1024 1024"> <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z" /> 
+    </svg> 
+   </symbol> <symbol id="svg-menu" viewbox="0 0 24 24"> 
+    <title>Menu</title> 
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu"> <line x1="3" y1="12" x2="21" y2="12" /> <line x1="3" y1="6" x2="21" y2="6" /> <line x1="3" y1="18" x2="21" y2="18" /> 
+    </svg> 
+   </symbol> <symbol id="svg-arrow-right" viewbox="0 0 24 24"> 
+    <title>Expand</title> 
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right"> <polyline points="9 18 15 12 9 6"></polyline> 
+    </svg> 
+   </symbol> <symbol id="svg-sun" viewbox="0 0 24 24"> 
+    <title>Light mode</title> 
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun"> <circle cx="12" cy="12" r="5" /> <line x1="12" y1="1" x2="12" y2="3" /> <line x1="12" y1="21" x2="12" y2="23" /> <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" /> <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" /> <line x1="1" y1="12" x2="3" y2="12" /> <line x1="21" y1="12" x2="23" y2="12" /> <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" /> <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" /> 
+    </svg> 
+   </symbol> <symbol id="svg-moon" viewbox="0 0 24 24"> 
+    <title>Dark mode</title> 
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon"> <path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" /> 
+    </svg> 
+   </symbol> <symbol id="svg-sun-half" viewbox="0 0 24 24"> 
+    <title>Auto light/dark mode</title> 
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow"> <path stroke="none" d="M0 0h24v24H0z" fill="none" /> <circle cx="12" cy="12" r="9" /> <path d="M13 12h5" /> <path d="M13 15h4" /> <path d="M13 18h1" /> <path d="M13 9h4" /> <path d="M13 6h1" /> 
+    </svg> 
+   </symbol> 
+  </svg> 
+  <input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation"> 
+  <input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc"> <label class="overlay sidebar-overlay" for="__navigation"> 
+   <div class="visually-hidden">
+    Hide navigation sidebar
+   </div> </label> <label class="overlay toc-overlay" for="__toc"> 
+   <div class="visually-hidden">
+    Hide table of contents sidebar
+   </div> </label> 
+  <div class="page"> 
+   <header class="mobile-header"> 
+    <div class="header-left"> <label class="nav-overlay-icon" for="__navigation"> 
+      <div class="visually-hidden">
+       Toggle site navigation sidebar
+      </div> <i class="icon">
+       <svg>
+        <use href="#svg-menu"></use>
+       </svg></i> </label> 
+    </div> 
+    <div class="header-center"> <a href="../">
+      <div class="brand">
+       Python Developer's Guide 
+      </div></a> 
+    </div> 
+    <div class="header-right"> 
+     <div class="theme-toggle-container theme-toggle-header"> <button class="theme-toggle"> 
+       <div class="visually-hidden">
+        Toggle Light / Dark / Auto color theme
+       </div> 
+       <svg class="theme-icon-when-auto">
+        <use href="#svg-sun-half"></use>
+       </svg> 
+       <svg class="theme-icon-when-dark">
+        <use href="#svg-moon"></use>
+       </svg> 
+       <svg class="theme-icon-when-light">
+        <use href="#svg-sun"></use>
+       </svg> </button> 
+     </div> <label class="toc-overlay-icon toc-header-icon" for="__toc"> 
+      <div class="visually-hidden">
+       Toggle table of contents sidebar
+      </div> <i class="icon">
+       <svg>
+        <use href="#svg-toc"></use>
+       </svg></i> </label> 
+    </div> 
+   </header> 
+   <aside class="sidebar-drawer"> 
+    <div class="sidebar-container"> 
+     <div class="sidebar-sticky">
+      <a class="sidebar-brand centered" href="../"> 
+       <div class="sidebar-logo-container"> 
+        <img class="sidebar-logo" src="../_static/python-logo.png" alt="Logo"> 
+       </div> <span class="sidebar-brand-text">Python Developer's Guide </span> </a>
+      <form class="sidebar-search-container" method="get" action="../search/" role="search"> 
+       <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search"> 
+       <input type="hidden" name="check_keywords" value="yes"> 
+       <input type="hidden" name="area" value="default"> 
+      </form> 
+      <div id="searchbox"></div>
+      <div class="sidebar-scroll">
+       <div class="sidebar-tree"> 
+        <ul class="current"> 
+         <li class="toctree-l1"><a class="reference internal" href="../setup/">Getting Started</a></li> 
+         <li class="toctree-l1"><a class="reference internal" href="../help/">Where to Get Help</a></li> 
+         <li class="toctree-l1"><a class="reference internal" href="../pullrequest/">Lifecycle of a Pull Request</a></li> 
+         <li class="toctree-l1"><a class="reference internal" href="../runtests/">Running &amp; Writing Tests</a></li> 
+         <li class="toctree-l1"><a class="reference internal" href="../coverage/">Increase Test Coverage</a></li> 
+         <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Helping with Documentation</a></li> 
+         <li class="toctree-l1"><a class="reference internal" href="../documenting/">Documenting Python</a></li> 
+         <li class="toctree-l1"><a class="reference internal" href="../silencewarnings/">Silence Warnings From the Test Suite</a></li> 
+         <li class="toctree-l1"><a class="reference internal" href="../fixingissues/">Fixing “easy” Issues (and Beyond)</a></li> 
+         <li class="toctree-l1 has-children"><a class="reference internal" href="../tracker/">Issue Tracking</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"><label for="toctree-checkbox-1">
+           <div class="visually-hidden">
+            Toggle child pages in navigation
+           </div><i class="icon">
+            <svg>
+             <use href="#svg-arrow-right"></use>
+            </svg></i></label>
+          <ul> 
+           <li class="toctree-l2"><a class="reference internal" href="../gh-labels/">GitHub Labels</a></li> 
+           <li class="toctree-l2"><a class="reference internal" href="../gh-faq/">GitHub issues for BPO users</a></li> 
+          </ul> </li> 
+         <li class="toctree-l1"><a class="reference internal" href="../triaging/">Triaging an Issue</a></li> 
+         <li class="toctree-l1"><a class="reference internal" href="../communication/">Following Python’s Development</a></li> 
+         <li class="toctree-l1"><a class="reference internal" href="../porting/">Porting Python to a new platform</a></li> 
+         <li class="toctree-l1"><a class="reference internal" href="../coredev/">How to Become a Core Developer</a></li> 
+         <li class="toctree-l1"><a class="reference internal" href="../developers/">Developer Log</a></li> 
+         <li class="toctree-l1"><a class="reference internal" href="../committing/">Accepting Pull Requests</a></li> 
+         <li class="toctree-l1"><a class="reference internal" href="../devcycle/">Development Cycle</a></li> 
+         <li class="toctree-l1"><a class="reference internal" href="../buildbots/">Continuous Integration</a></li> 
+         <li class="toctree-l1"><a class="reference internal" href="../stdlibchanges/">Adding to the Stdlib</a></li> 
+         <li class="toctree-l1"><a class="reference internal" href="../langchanges/">Changing the Python Language</a></li> 
+         <li class="toctree-l1"><a class="reference internal" href="../experts/">Experts Index</a></li> 
+         <li class="toctree-l1"><a class="reference internal" href="../gdb/">gdb Support</a></li> 
+         <li class="toctree-l1"><a class="reference internal" href="../exploring/">Exploring CPython’s Internals</a></li> 
+         <li class="toctree-l1"><a class="reference internal" href="../grammar/">Changing CPython’s Grammar</a></li> 
+         <li class="toctree-l1"><a class="reference internal" href="../parser/">Guide to CPython’s Parser</a></li> 
+         <li class="toctree-l1"><a class="reference internal" href="../compiler/">Design of CPython’s Compiler</a></li> 
+         <li class="toctree-l1"><a class="reference internal" href="../garbage_collector/">Design of CPython’s Garbage Collector</a></li> 
+         <li class="toctree-l1"><a class="reference internal" href="../extensions/">Updating standard library extension modules</a></li> 
+         <li class="toctree-l1"><a class="reference internal" href="../c-api/">Changing Python’s C API</a></li> 
+         <li class="toctree-l1"><a class="reference internal" href="../coverity/">Coverity Scan</a></li> 
+         <li class="toctree-l1"><a class="reference internal" href="../clang/">Dynamic Analysis with Clang</a></li> 
+         <li class="toctree-l1"><a class="reference internal" href="../buildworker/">Running a buildbot worker</a></li> 
+         <li class="toctree-l1"><a class="reference internal" href="../motivations/">Core Developer Motivations and Affiliations</a></li> 
+         <li class="toctree-l1"><a class="reference internal" href="../gitbootcamp/">Git Bootcamp and Cheat Sheet</a></li> 
+         <li class="toctree-l1"><a class="reference internal" href="../appendix/">Appendix: Topics</a></li> 
+        </ul> 
+       </div> 
+       <div id="furo-sidebar-ad-placement" class="flat" data-ea-publisher="readthedocs" data-ea-type="readthedocs-sidebar" data-ea-manual="true"></div> 
+      </div> 
+      <div id="furo-readthedocs-versions" class="rst-versions" data-toggle="rst-versions" role="note" aria-label="Versions" tabindex="0"> <span class="rst-current-version" data-toggle="rst-current-version"> <span class="fa fa-book">&nbsp;</span> v: latest </span> 
+       <div class="rst-other-versions"> 
+        <dl> 
+         <dt>
+          Versions
+         </dt> 
+         <dd>
+          <a href="/en/latest/">latest</a>
+         </dd> 
+        </dl> 
+        <dl> 
+         <dt>
+          Downloads
+         </dt> 
+         <dd>
+          <a href="//devguide.python.org/_/downloads/en/latest/pdf/">pdf</a>
+         </dd> 
+         <dd>
+          <a href="//devguide.python.org/_/downloads/en/latest/htmlzip/">html</a>
+         </dd> 
+         <dd>
+          <a href="//devguide.python.org/_/downloads/en/latest/epub/">epub</a>
+         </dd> 
+        </dl> 
+        <dl> 
+         <dt>
+          On Read the Docs
+         </dt> 
+         <dd> <a href="//readthedocs.org/projects/cpython-devguide/?fromdocs=cpython-devguide">Project Home</a> 
+         </dd> 
+         <dd> <a href="//readthedocs.org/builds/cpython-devguide/?fromdocs=cpython-devguide">Builds</a> 
+         </dd> 
+        </dl> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </aside> 
+   <div class="main"> 
+    <div class="content"> 
+     <div class="article-container"> <a href="#" class="back-to-top muted-link"> 
+       <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"> <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z" /> 
+       </svg> <span>Back to top</span> </a> 
+      <div class="content-icon-container"> 
+       <div class="edit-this-page"> <a class="muted-link" href="https://github.com/python/devguide/edit/main/docquality.rst" title="Edit this page"> 
+         <svg aria-hidden="true" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"> <path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M4 20h4l10.5 -10.5a1.5 1.5 0 0 0 -4 -4l-10.5 10.5v4" /> <line x1="13.5" y1="6.5" x2="17.5" y2="10.5" /> 
+         </svg> <span class="visually-hidden">Edit this page</span> </a> 
+       </div> 
+       <div class="theme-toggle-container theme-toggle-content"> <button class="theme-toggle"> 
+         <div class="visually-hidden">
+          Toggle Light / Dark / Auto color theme
+         </div> 
+         <svg class="theme-icon-when-auto">
+          <use href="#svg-sun-half"></use>
+         </svg> 
+         <svg class="theme-icon-when-dark">
+          <use href="#svg-moon"></use>
+         </svg> 
+         <svg class="theme-icon-when-light">
+          <use href="#svg-sun"></use>
+         </svg> </button> 
+       </div> <label class="toc-overlay-icon toc-content-icon" for="__toc"> 
+        <div class="visually-hidden">
+         Toggle table of contents sidebar
+        </div> <i class="icon">
+         <svg>
+          <use href="#svg-toc"></use>
+         </svg></i> </label> 
+      </div> 
+      <article role="main"> 
+       <section id="helping-with-documentation"> <span id="docquality"></span>
+        <h1>Helping with Documentation<a class="headerlink" href="#helping-with-documentation" title="Permalink to this headline">#</a></h1> 
+        <p>Python is known for having well-written documentation. Maintaining the documentation’s accuracy and keeping a high level of quality takes a lot of effort. Community members, like you, help with writing, editing, and updating content, and these contributions are appreciated and welcomed.</p> 
+        <p>This high-level <strong>Helping with Documentation</strong> section provides:</p> 
+        <ul class="simple"> 
+         <li><p>an overview of Python’s documentation</p></li> 
+         <li><p>how to help with documentation issues</p></li> 
+         <li><p>information on proofreading</p></li> 
+         <li><p>guidance on contributing to this Developer’s Guide</p></li> 
+        </ul> 
+        <p>The next chapter, <a class="reference internal" href="../documenting/#documenting"><span class="std std-ref">Documenting Python</span></a>, gives extensive, detailed information on how to write documentation and submit changes.</p> 
+        <section id="python-documentation"> 
+         <h2>Python Documentation<a class="headerlink" href="#python-documentation" title="Permalink to this headline">#</a></h2> 
+         <p>The <a class="reference internal" href="../documenting/#documenting"><span class="std std-ref">Documenting Python</span></a> section covers the details of how Python’s documentation works. It includes information about the markup language used, specific formats, and style recommendations. Looking at pre-existing documentation source files can be very helpful when getting started. <a class="reference internal" href="../documenting/#building-doc"><span class="std std-ref">How to build the documentation</span></a> walks you through the steps to create a draft build which lets you see how your changes will look and validates that your new markup is correct.</p> 
+         <p>You can view the documentation built from <a class="reference internal" href="../devcycle/#indevbranch"><span class="std std-ref">in-development</span></a> and <a class="reference internal" href="../devcycle/#maintbranch"><span class="std std-ref">maintenance</span></a> branches at <a class="reference external" href="https://docs.python.org/dev/">https://docs.python.org/dev/</a>. The in-development and recent maintenance branches are rebuilt once per day.</p> 
+         <p>If you would like to be more involved with documentation, consider subscribing to the <a class="reference external" href="https://mail.python.org/mailman3/lists/docs.python.org/">docs@python.org</a> mailing list. The <a class="reference external" href="https://github.com/python/cpython/issues">issue tracker</a> sends new documentation issues to this mailing list, and, less frequently, the list receives some directly mailed bug reports. The <a class="reference external" href="https://mail.python.org/mailman/listinfo/doc-sig">docs-sig@python.org</a> mailing list discusses the documentation toolchain, projects, and standards.</p> 
+        </section> 
+        <section id="helping-with-documentation-issues"> 
+         <h2>Helping with documentation issues<a class="headerlink" href="#helping-with-documentation-issues" title="Permalink to this headline">#</a></h2> 
+         <p>If you look at <a class="reference external" href="https://github.com/python/cpython/issues?q=is%3Aissue+is%3Aopen+label%3Adocs">documentation issues</a> on the <a class="reference external" href="https://github.com/python/cpython/issues">issue tracker</a>, you will find various documentation problems that may need work. Issues vary from typos to unclear documentation and items lacking documentation.</p> 
+         <p>If you see a documentation issue that you would like to tackle, you can:</p> 
+         <ul class="simple"> 
+          <li><p>check to see if there is a paperclip or <a class="reference external" href="https://github.com/logos">octocat</a> icon at the end of the issue’s title column. If there is, then someone has already created a pull request for the issue.</p></li> 
+          <li><p>leave a comment on the issue saying you are going to try and create a pull request and roughly how long you think you will take to do so (this allows others to take on the issue if you happen to forget or lose interest).</p></li> 
+          <li><p>submit a <a class="reference internal" href="../pullrequest/"><span class="doc">pull request</span></a> for the issue.</p></li> 
+         </ul> 
+         <p>By following the steps in the <a class="reference internal" href="../pullrequest/#pullrequest-quickguide"><span class="std std-ref">Quick Guide to Pull Requests</span></a>, you will learn the workflow for documentation pull requests.</p> 
+        </section> 
+        <section id="proofreading"> 
+         <h2>Proofreading<a class="headerlink" href="#proofreading" title="Permalink to this headline">#</a></h2> 
+         <p>While an issue filed on the <a class="reference external" href="https://github.com/python/cpython/issues">issue tracker</a> means there is a known issue somewhere, that does not mean there are not other issues lurking about in the documentation. Proofreading a part of the documentation, such as a “How to” or OS specific document, can often uncover problems (e.g., documentation that needs updating for Python 3).</p> 
+         <p>If you decide to proofread, read a section of the documentation from start to finish, filing issues in the issue tracker for each major type of problem you find. Simple typos don’t require issues of their own, but, instead, submit a pull request directly. It’s best to avoid filing a single issue for an entire section containing multiple problems; instead, file several issues so that it is easier to break the work up for multiple people and more efficient review.</p> 
+        </section> 
+        <section id="helping-with-the-developer-s-guide"> <span id="helping-with-the-developers-guide"></span>
+         <h2>Helping with the Developer’s Guide<a class="headerlink" href="#helping-with-the-developer-s-guide" title="Permalink to this headline">#</a></h2> 
+         <p>The Developer’s Guide (what you’re reading now) uses the same process as the main Python documentation, except for some small differences. The source lives in a <a class="reference external" href="https://github.com/python/devguide">separate repository</a> and bug reports should be submitted to the <a class="reference external" href="https://github.com/python/devguide/issues">devguide GitHub tracker</a>.</p> 
+         <p>Our devguide workflow uses continuous integration and deployment so changes to the devguide are normally published when the pull request is merged. Changes to CPython documentation follow the workflow of a CPython release and are published in the release.</p> 
+        </section> 
+        <section id="developer-s-guide-workflow"> 
+         <h2>Developer’s Guide workflow<a class="headerlink" href="#developer-s-guide-workflow" title="Permalink to this headline">#</a></h2> 
+         <p>To submit a <a class="reference internal" href="../pullrequest/"><span class="doc">pull request</span></a>, you can fork the <a class="reference external" href="https://github.com/python/devguide">devguide repo</a> to your GitHub account and clone it using:</p> 
+         <div class="highlight-console notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="gp">$ </span>git clone https://github.com/&lt;your_username&gt;/devguide
+</pre>
+          </div> 
+         </div> 
+         <p>For your PR to be accepted, you will also need to sign the <a class="reference internal" href="../pullrequest/#cla"><span class="std std-ref">contributor agreement</span></a>.</p> 
+         <p>To build the devguide, some additional dependencies are required (most importantly, <a class="reference external" href="https://www.sphinx-doc.org/">Sphinx</a>), and the standard way to install dependencies in Python projects is to create a virtualenv, and then install dependencies from a <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file. For your convenience, this is all <em>automated for you</em>. To build the devguide on a Unix-like system use:</p> 
+         <div class="highlight-console notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="gp">$ </span>make html
+</pre>
+          </div> 
+         </div> 
+         <p>in the checkout directory. On Windows use:</p> 
+         <div class="highlight-doscon notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="gp">&gt;</span> .\make html
+</pre>
+          </div> 
+         </div> 
+         <p>You will find the generated files in <code class="docutils literal notranslate"><span class="pre">_build/html</span></code> or, if you use <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">htmlview</span></code>, the docs will be opened in a browser once the build completes. Note that <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">check</span></code> runs automatically when you submit a <a class="reference internal" href="../pullrequest/"><span class="doc">pull request</span></a>. You may wish to run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">check</span></code> and <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">linkcheck</span></code> to make sure that it runs without errors.</p> 
+        </section> 
+       </section> 
+      </article> 
+     </div> 
+     <footer> 
+      <div class="related-pages"> <a class="next-page" href="../documenting/"> 
+        <div class="page-info"> 
+         <div class="context"> <span>Next</span> 
+         </div> 
+         <div class="title">
+          Documenting Python
+         </div> 
+        </div> 
+        <svg>
+         <use href="#svg-arrow-right"></use>
+        </svg> </a> <a class="prev-page" href="../coverage/"> 
+        <svg>
+         <use href="#svg-arrow-right"></use>
+        </svg> 
+        <div class="page-info"> 
+         <div class="context"> <span>Previous</span> 
+         </div> 
+         <div class="title">
+          Increase Test Coverage
+         </div> 
+        </div> </a> 
+      </div> 
+      <div class="bottom-of-page"> 
+       <div class="left-details"> 
+        <div class="copyright">
+          Copyright © 2011-2022, Python Software Foundation 
+        </div> Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s <a href="https://github.com/pradyunsg/furo">Furo</a> 
+        <div class="last-updated">
+          Last updated on May 17, 2022
+        </div> 
+       </div> 
+       <div class="right-details"> 
+        <div class="icons"> <a class="muted-link" href="https://readthedocs.org/projects/cpython-devguide" aria-label="On Read the Docs"> 
+          <svg x="0px" y="0px" viewbox="-125 217 360 360" xml:space="preserve"> <path fill="currentColor" d="M39.2,391.3c-4.2,0.6-7.1,4.4-6.5,8.5c0.4,3,2.6,5.5,5.5,6.3 c0,0,18.5,6.1,50,8.7c25.3,2.1,54-1.8,54-1.8c4.2-0.1,7.5-3.6,7.4-7.8c-0.1-4.2-3.6-7.5-7.8-7.4c-0.5,0-1,0.1-1.5,0.2 c0,0-28.1,3.5-50.9,1.6c-30.1-2.4-46.5-7.9-46.5-7.9C41.7,391.3,40.4,391.1,39.2,391.3z M39.2,353.6c-4.2,0.6-7.1,4.4-6.5,8.5 c0.4,3,2.6,5.5,5.5,6.3c0,0,18.5,6.1,50,8.7c25.3,2.1,54-1.8,54-1.8c4.2-0.1,7.5-3.6,7.4-7.8c-0.1-4.2-3.6-7.5-7.8-7.4 c-0.5,0-1,0.1-1.5,0.2c0,0-28.1,3.5-50.9,1.6c-30.1-2.4-46.5-7.9-46.5-7.9C41.7,353.6,40.4,353.4,39.2,353.6z M39.2,315.9 c-4.2,0.6-7.1,4.4-6.5,8.5c0.4,3,2.6,5.5,5.5,6.3c0,0,18.5,6.1,50,8.7c25.3,2.1,54-1.8,54-1.8c4.2-0.1,7.5-3.6,7.4-7.8 c-0.1-4.2-3.6-7.5-7.8-7.4c-0.5,0-1,0.1-1.5,0.2c0,0-28.1,3.5-50.9,1.6c-30.1-2.4-46.5-7.9-46.5-7.9 C41.7,315.9,40.4,315.8,39.2,315.9z M39.2,278.3c-4.2,0.6-7.1,4.4-6.5,8.5c0.4,3,2.6,5.5,5.5,6.3c0,0,18.5,6.1,50,8.7 c25.3,2.1,54-1.8,54-1.8c4.2-0.1,7.5-3.6,7.4-7.8c-0.1-4.2-3.6-7.5-7.8-7.4c-0.5,0-1,0.1-1.5,0.2c0,0-28.1,3.5-50.9,1.6 c-30.1-2.4-46.5-7.9-46.5-7.9C41.7,278.2,40.4,278.1,39.2,278.3z M-13.6,238.5c-39.6,0.3-54.3,12.5-54.3,12.5v295.7 c0,0,14.4-12.4,60.8-10.5s55.9,18.2,112.9,19.3s71.3-8.8,71.3-8.8l0.8-301.4c0,0-25.6,7.3-75.6,7.7c-49.9,0.4-61.9-12.7-107.7-14.2 C-8.2,238.6-10.9,238.5-13.6,238.5z M19.5,257.8c0,0,24,7.9,68.3,10.1c37.5,1.9,75-3.7,75-3.7v267.9c0,0-19,10-66.5,6.6 C59.5,536.1,19,522.1,19,522.1L19.5,257.8z M-3.6,264.8c4.2,0,7.7,3.4,7.7,7.7c0,4.2-3.4,7.7-7.7,7.7c0,0-12.4,0.1-20,0.8 c-12.7,1.3-21.4,5.9-21.4,5.9c-3.7,2-8.4,0.5-10.3-3.2c-2-3.7-0.5-8.4,3.2-10.3c0,0,0,0,0,0c0,0,11.3-6,27-7.5 C-16,264.9-3.6,264.8-3.6,264.8z M-11,302.6c4.2-0.1,7.4,0,7.4,0c4.2,0.5,7.2,4.3,6.7,8.5c-0.4,3.5-3.2,6.3-6.7,6.7 c0,0-12.4,0.1-20,0.8c-12.7,1.3-21.4,5.9-21.4,5.9c-3.7,2-8.4,0.5-10.3-3.2c-2-3.7-0.5-8.4,3.2-10.3c0,0,11.3-6,27-7.5 C-20.5,302.9-15.2,302.7-11,302.6z M-3.6,340.2c4.2,0,7.7,3.4,7.7,7.7s-3.4,7.7-7.7,7.7c0,0-12.4-0.1-20,0.7 c-12.7,1.3-21.4,5.9-21.4,5.9c-3.7,2-8.4,0.5-10.3-3.2c-2-3.7-0.5-8.4,3.2-10.3c0,0,11.3-6,27-7.5C-16,340.1-3.6,340.2-3.6,340.2z" /> 
+          </svg> </a><a class="muted-link" href="https://github.com/python/devguide" aria-label="On GitHub"> 
+          <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewbox="0 0 16 16"> <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z" /> 
+          </svg> </a> 
+        </div> 
+       </div> 
+      </div> 
+     </footer> 
+    </div> 
+    <aside class="toc-drawer"> 
+     <div class="toc-sticky toc-scroll"> 
+      <div class="toc-title-container"> <span class="toc-title"> Contents </span> 
+      </div> 
+      <div class="toc-tree-container"> 
+       <div class="toc-tree"> 
+        <ul> 
+         <li><a class="reference internal" href="#">Helping with Documentation</a>
+          <ul> 
+           <li><a class="reference internal" href="#python-documentation">Python Documentation</a></li> 
+           <li><a class="reference internal" href="#helping-with-documentation-issues">Helping with documentation issues</a></li> 
+           <li><a class="reference internal" href="#proofreading">Proofreading</a></li> 
+           <li><a class="reference internal" href="#helping-with-the-developer-s-guide">Helping with the Developer’s Guide</a></li> 
+           <li><a class="reference internal" href="#developer-s-guide-workflow">Developer’s Guide workflow</a></li> 
+          </ul> </li> 
+        </ul> 
+       </div> 
+      </div> 
+     </div> 
+    </aside> 
+   </div> 
+  </div>
+  <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script> 
+  <script src="../_static/jquery.js"></script> 
+  <script src="../_static/underscore.js"></script> 
+  <script src="../_static/doctools.js"></script> 
+  <script src="../_static/scripts/furo.js"></script> 
+  <script src="../_static/clipboard.min.js"></script> 
+  <script src="../_static/copybutton.js"></script> 
+  <script async src="https://assets.readthedocs.org/static/javascript/readthedocs-doc-embed.js"></script>  
+ </body>
+</html>

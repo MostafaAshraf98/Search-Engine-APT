@@ -1,0 +1,339 @@
+<!doctype html>
+<html>
+ <head>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=Material+Icons&amp;display=block" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@400;700&amp;family=Overpass:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <title>OSV</title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZXG9G6HTBR"></script>
+  <script>window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-ZXG9G6HTBR', { 'anonymize_ip': true });</script>
+  <script defer src="/static/vendors.afd4ec18caba527bce86.js"></script>
+  <script defer src="/static/main.783ae95fd4af7ee733c7.js"></script>
+  <link href="/static/main.79daa0478f6f3bf72ed7.css" rel="stylesheet">
+ </head>
+ <body>
+  <header class="top-bar">
+   <div class="logo">
+    <a href="/v2/"><img src="/static/img/logo.png" srcset="/static/img/logo.png, /static/img/logo@2x.png 2x"></a>
+   </div>
+   <ul class="tabs">
+    <li class="active"><a href="/list">Vulnerability Database</a></li>
+    <li class=""><a href="/about">About</a></li>
+   </ul>
+  </header> 
+  <div class="list-page"> 
+   <div class="mdc-layout-grid"> 
+    <div class="mdc-layout-grid__inner"> 
+     <div class="mdc-layout-grid__cell--span-12"> 
+      <h1 class="title">Vulnerability Library</h1> 
+      <div class="search"> 
+       <form action="/list" data-turbo-frame="vulnerability-table"> 
+        <div class="mdc-layout-grid__inner"> 
+         <div class="query-container mdc-layout-grid__cell--span-8"> <mwc-icon class="search-icon">
+           search
+          </mwc-icon> <mwc-textfield-with-enter label="Package or ID search" icon="a" class="query-field" name="q" value=""></mwc-textfield-with-enter> 
+         </div> 
+        </div> <submit-radios> 
+         <spicy-sections class="ecosystem-buttons"> 
+          <spicy-h> 
+           <input type="radio" name="ecosystem" id="ecosystem-radio-all" value=""> 
+           <label class="ecosystem-label ecosystem-label-all" for="ecosystem-radio-all"> <span class="ecosystem-name">All ecosystems</span> <span class="ecosystem-count">20347</span> </label> 
+          </spicy-h> 
+          <div class="spicy-content"> <span class="ecosystems-divider"></span> 
+           <input type="radio" name="ecosystem" id="ecosystem-radio-1" value="Android" checked> <label class="ecosystem-label" for="ecosystem-radio-1"> <span class="ecosystem-name">Android</span> <span class="ecosystem-count">361</span> </label> 
+           <input type="radio" name="ecosystem" id="ecosystem-radio-2" value="crates.io"> <label class="ecosystem-label" for="ecosystem-radio-2"> <span class="ecosystem-name">crates.io</span> <span class="ecosystem-count">793</span> </label> 
+           <input type="radio" name="ecosystem" id="ecosystem-radio-3" value="DWF"> <label class="ecosystem-label" for="ecosystem-radio-3"> <span class="ecosystem-name">DWF</span> <span class="ecosystem-count">30</span> </label> 
+           <input type="radio" name="ecosystem" id="ecosystem-radio-4" value="Go"> <label class="ecosystem-label" for="ecosystem-radio-4"> <span class="ecosystem-name">Go</span> <span class="ecosystem-count">569</span> </label> 
+           <input type="radio" name="ecosystem" id="ecosystem-radio-5" value="GSD"> <label class="ecosystem-label" for="ecosystem-radio-5"> <span class="ecosystem-name">GSD</span> <span class="ecosystem-count">16</span> </label> 
+           <input type="radio" name="ecosystem" id="ecosystem-radio-6" value="Hex"> <label class="ecosystem-label" for="ecosystem-radio-6"> <span class="ecosystem-name">Hex</span> <span class="ecosystem-count">12</span> </label> 
+           <input type="radio" name="ecosystem" id="ecosystem-radio-7" value="JavaScript"> <label class="ecosystem-label" for="ecosystem-radio-7"> <span class="ecosystem-name">JavaScript</span> <span class="ecosystem-count">1</span> </label> 
+           <input type="radio" name="ecosystem" id="ecosystem-radio-8" value="Linux"> <label class="ecosystem-label" for="ecosystem-radio-8"> <span class="ecosystem-name">Linux</span> <span class="ecosystem-count">7657</span> </label> 
+           <input type="radio" name="ecosystem" id="ecosystem-radio-9" value="Maven"> <label class="ecosystem-label" for="ecosystem-radio-9"> <span class="ecosystem-name">Maven</span> <span class="ecosystem-count">1244</span> </label> 
+           <input type="radio" name="ecosystem" id="ecosystem-radio-10" value="npm"> <label class="ecosystem-label" for="ecosystem-radio-10"> <span class="ecosystem-name">npm</span> <span class="ecosystem-count">2456</span> </label> 
+           <input type="radio" name="ecosystem" id="ecosystem-radio-11" value="NuGet"> <label class="ecosystem-label" for="ecosystem-radio-11"> <span class="ecosystem-name">NuGet</span> <span class="ecosystem-count">176</span> </label> 
+           <input type="radio" name="ecosystem" id="ecosystem-radio-12" value="OSS-Fuzz"> <label class="ecosystem-label" for="ecosystem-radio-12"> <span class="ecosystem-name">OSS-Fuzz</span> <span class="ecosystem-count">2510</span> </label> 
+           <input type="radio" name="ecosystem" id="ecosystem-radio-13" value="Packagist"> <label class="ecosystem-label" for="ecosystem-radio-13"> <span class="ecosystem-name">Packagist</span> <span class="ecosystem-count">865</span> </label> 
+           <input type="radio" name="ecosystem" id="ecosystem-radio-14" value="PyPI"> <label class="ecosystem-label" for="ecosystem-radio-14"> <span class="ecosystem-name">PyPI</span> <span class="ecosystem-count">3191</span> </label> 
+           <input type="radio" name="ecosystem" id="ecosystem-radio-15" value="RubyGems"> <label class="ecosystem-label" for="ecosystem-radio-15"> <span class="ecosystem-name">RubyGems</span> <span class="ecosystem-count">465</span> </label> 
+           <input type="radio" name="ecosystem" id="ecosystem-radio-16" value="UVI"> <label class="ecosystem-label" for="ecosystem-radio-16"> <span class="ecosystem-name">UVI</span> <span class="ecosystem-count">1</span> </label> 
+          </div> 
+         </spicy-sections> 
+        </submit-radios> 
+        <input type="submit"> 
+       </form> 
+      </div> 
+     </div> 
+    </div> 
+   </div> <turbo-frame class="vuln-table-container mdc-data-table" id="vulnerability-table" data-turbo-action="advance"> 
+    <div role="table" class="vuln-table mdc-data-table__table" aria-label="Vulnerability table"> 
+     <div role="rowgroup" class="vuln-table-header"> 
+      <div role="row" class="vuln-table-row mdc-data-table__header-row"> <span class="vuln-table-cell mdc-data-table__header-cell
+    
+    
+    
+    " role="columnheader" scope="col" aria-sort="none" data-column-id="id"> 
+        <div class="mdc-data-table__header-cell-wrapper"> 
+         <div class="mdc-data-table__header-cell-label">
+           ID 
+         </div> 
+        </div> </span> <span class="vuln-table-cell mdc-data-table__header-cell
+    
+    
+    
+    " role="columnheader" scope="col" aria-sort="none" data-column-id="package"> 
+        <div class="mdc-data-table__header-cell-wrapper"> 
+         <div class="mdc-data-table__header-cell-label">
+           Packages 
+         </div> 
+        </div> </span> <span class="vuln-table-cell mdc-data-table__header-cell
+    
+    
+    
+    hide-on-mobile" role="columnheader" scope="col" aria-sort="none" data-column-id="summary"> 
+        <div class="mdc-data-table__header-cell-wrapper"> 
+         <div class="mdc-data-table__header-cell-label">
+           Summary 
+         </div> 
+        </div> </span> <span class="vuln-table-cell mdc-data-table__header-cell
+    
+    
+    
+    hide-on-mobile" role="columnheader" scope="col" aria-sort="none" data-column-id="affected-versions"> 
+        <div class="mdc-data-table__header-cell-wrapper"> 
+         <div class="mdc-data-table__header-cell-label">
+           Affected versions 
+         </div> 
+        </div> </span> <span class="vuln-table-cell mdc-data-table__header-cell
+    mdc-data-table__header-cell--with-sort__DISABLED
+    mdc-data-table__header-cell--sorted
+    mdc-data-table__header-cell--sorted-descending
+    hide-on-mobile" role="columnheader" scope="col" aria-sort="descending" data-column-id="last-modified"> 
+        <div class="mdc-data-table__header-cell-wrapper"> 
+         <div class="mdc-data-table__header-cell-label">
+           Last modified 
+         </div> <mwc-icon-button class="mdc-data-table__sort-icon-button" icon="arrow_upward" disabled aria-label="Sort by Last modified" aria-describedby="last-modified-status-label"></mwc-icon-button> 
+         <div class="mdc-data-table__sort-status-label" aria-hidden="true" id="last-modified-status-label"> 
+         </div> 
+        </div> </span> <span class="vuln-table-cell mdc-data-table__header-cell
+    
+    
+    
+    hide-on-mobile" role="columnheader" scope="col" aria-sort="none" data-column-id="fixed"> 
+        <div class="mdc-data-table__header-cell-wrapper"> 
+         <div class="mdc-data-table__header-cell-label">
+           Fix 
+         </div> 
+        </div> </span> 
+      </div> 
+     </div> 
+     <div role="rowgroup" class="vuln-table-rows mdc-data-table__content"> <turbo-frame id="vulnerability-table-page1" data-turbo-action="advance" target="_top"> 
+       <div role="row" class="vuln-table-row mdc-data-table__row"> <span role="cell" class="vuln-table-cell mdc-data-table__cell"> <a href="/vulnerability/ASB-A-193444889">ASB-A-193444889</a> </span> <span role="cell" class="vuln-table-cell vuln-packages mdc-data-table__cell"> 
+         <ul class="packages"> 
+          <li>Android/System</li> 
+         </ul> </span> <span role="cell" class="vuln-table-cell vuln-summary mdc-data-table__cell hide-on-mobile"> In startListening of PluginManagerImpl.java, there is a possible way to disable arbitrary app components due to a missing permission check. This could lead to local denial of service with no additional execution privileges needed. User interaction is not needed for exploitation. </span> <span role="cell" class="vuln-table-cell vuln-versions mdc-data-table__cell hide-on-mobile"> 
+         <ul class="versions"> 
+          <li class="version">10</li> 
+          <li class="version">11</li> 
+         </ul> </span> <span role="cell" class="vuln-table-cell mdc-data-table__cell hide-on-mobile"> 
+         <relative-time datetime="2022-02-01T00:00:00Z">
+           2022-02-01T00:00:00Z 
+         </relative-time> </span> <span role="cell" class="vuln-table-cell vuln-fix-status mdc-data-table__cell hide-on-mobile"> <span class="tag fix-unavailable">No fix available</span> </span> 
+       </div> 
+       <div role="row" class="vuln-table-row mdc-data-table__row"> <span role="cell" class="vuln-table-cell mdc-data-table__cell"> <a href="/vulnerability/ASB-A-193445603">ASB-A-193445603</a> </span> <span role="cell" class="vuln-table-cell vuln-packages mdc-data-table__cell"> 
+         <ul class="packages"> 
+          <li>Android/System</li> 
+         </ul> </span> <span role="cell" class="vuln-table-cell vuln-summary mdc-data-table__cell hide-on-mobile"> In onActivityViewReady of DetailDialog.kt, there is a possible Intent Redirect due to a confused deputy. This could lead to local escalation of privilege that allows actions performed as the System UI, with no additional execution privileges needed. User interaction is needed for exploitation. </span> <span role="cell" class="vuln-table-cell vuln-versions mdc-data-table__cell hide-on-mobile"> 
+         <ul class="versions"> 
+          <li class="version">11</li> 
+          <li class="version">12</li> 
+         </ul> </span> <span role="cell" class="vuln-table-cell mdc-data-table__cell hide-on-mobile"> 
+         <relative-time datetime="2022-02-01T00:00:00Z">
+           2022-02-01T00:00:00Z 
+         </relative-time> </span> <span role="cell" class="vuln-table-cell vuln-fix-status mdc-data-table__cell hide-on-mobile"> <span class="tag fix-unavailable">No fix available</span> </span> 
+       </div> 
+       <div role="row" class="vuln-table-row mdc-data-table__row"> <span role="cell" class="vuln-table-cell mdc-data-table__cell"> <a href="/vulnerability/ASB-A-193890833">ASB-A-193890833</a> </span> <span role="cell" class="vuln-table-cell vuln-packages mdc-data-table__cell"> 
+         <ul class="packages"> 
+          <li>Android/System</li> 
+         </ul> </span> <span role="cell" class="vuln-table-cell vuln-summary mdc-data-table__cell hide-on-mobile"> In clear_data_dlg_text of strings.xml, there is a possible situation when "Clear storage" functionality sets up the wrong security/privacy expectations due to a misleading message. This could lead to local information disclosure with no additional execution privileges needed. User interaction is not needed for exploitation. </span> <span role="cell" class="vuln-table-cell vuln-versions mdc-data-table__cell hide-on-mobile"> 
+         <ul class="versions"> 
+          <li class="version">10</li> 
+          <li class="version">11</li> 
+          <li class="version">12</li> 
+         </ul> </span> <span role="cell" class="vuln-table-cell mdc-data-table__cell hide-on-mobile"> 
+         <relative-time datetime="2022-02-01T00:00:00Z">
+           2022-02-01T00:00:00Z 
+         </relative-time> </span> <span role="cell" class="vuln-table-cell vuln-fix-status mdc-data-table__cell hide-on-mobile"> <span class="tag fix-unavailable">No fix available</span> </span> 
+       </div> 
+       <div role="row" class="vuln-table-row mdc-data-table__row"> <span role="cell" class="vuln-table-cell mdc-data-table__cell"> <a href="/vulnerability/ASB-A-194342672">ASB-A-194342672</a> </span> <span role="cell" class="vuln-table-cell vuln-packages mdc-data-table__cell"> 
+         <ul class="packages"> 
+          <li>Android/Media Framework</li> 
+         </ul> </span> <span role="cell" class="vuln-table-cell vuln-summary mdc-data-table__cell hide-on-mobile"> In exif_entry_get_value of exif-entry.c, there is a possible out of bounds write due to an integer overflow. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation. </span> <span role="cell" class="vuln-table-cell vuln-versions mdc-data-table__cell hide-on-mobile"> 
+         <ul class="versions"> 
+          <li class="version">10</li> 
+          <li class="version">11</li> 
+         </ul> </span> <span role="cell" class="vuln-table-cell mdc-data-table__cell hide-on-mobile"> 
+         <relative-time datetime="2022-02-01T00:00:00Z">
+           2022-02-01T00:00:00Z 
+         </relative-time> </span> <span role="cell" class="vuln-table-cell vuln-fix-status mdc-data-table__cell hide-on-mobile"> <span class="tag fix-unavailable">No fix available</span> </span> 
+       </div> 
+       <div role="row" class="vuln-table-row mdc-data-table__row"> <span role="cell" class="vuln-table-cell mdc-data-table__cell"> <a href="/vulnerability/ASB-A-196085005">ASB-A-196085005</a> </span> <span role="cell" class="vuln-table-cell vuln-packages mdc-data-table__cell"> 
+         <ul class="packages"> 
+          <li>Android/Media Framework</li> 
+         </ul> </span> <span role="cell" class="vuln-table-cell vuln-summary mdc-data-table__cell hide-on-mobile"> An issue was discovered in libexif before 0.6.22. Use of uninitialized memory in EXIF Makernote handling could lead to crashes and potential use-after-free conditions. </span> <span role="cell" class="vuln-table-cell vuln-versions mdc-data-table__cell hide-on-mobile"> 
+         <ul class="versions"> 
+          <li class="version">10</li> 
+          <li class="version">11</li> 
+         </ul> </span> <span role="cell" class="vuln-table-cell mdc-data-table__cell hide-on-mobile"> 
+         <relative-time datetime="2022-02-01T00:00:00Z">
+           2022-02-01T00:00:00Z 
+         </relative-time> </span> <span role="cell" class="vuln-table-cell vuln-fix-status mdc-data-table__cell hide-on-mobile"> <span class="tag fix-unavailable">No fix available</span> </span> 
+       </div> 
+       <div role="row" class="vuln-table-row mdc-data-table__row"> <span role="cell" class="vuln-table-cell mdc-data-table__cell"> <a href="/vulnerability/ASB-A-196969991">ASB-A-196969991</a> </span> <span role="cell" class="vuln-table-cell vuln-packages mdc-data-table__cell"> 
+         <ul class="packages"> 
+          <li>Android/System</li> 
+         </ul> </span> <span role="cell" class="vuln-table-cell vuln-summary mdc-data-table__cell hide-on-mobile"> In onCreate of InstallCaCertificateWarning.java, there is a possible way to mislead an user about CA installation circumstances due to a tapjacking/overlay attack. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is needed for exploitation. </span> <span role="cell" class="vuln-table-cell vuln-versions mdc-data-table__cell hide-on-mobile"> 
+         <ul class="versions"> 
+          <li class="version">11</li> 
+          <li class="version">12</li> 
+         </ul> </span> <span role="cell" class="vuln-table-cell mdc-data-table__cell hide-on-mobile"> 
+         <relative-time datetime="2022-02-01T00:00:00Z">
+           2022-02-01T00:00:00Z 
+         </relative-time> </span> <span role="cell" class="vuln-table-cell vuln-fix-status mdc-data-table__cell hide-on-mobile"> <span class="tag fix-unavailable">No fix available</span> </span> 
+       </div> 
+       <div role="row" class="vuln-table-row mdc-data-table__row"> <span role="cell" class="vuln-table-cell mdc-data-table__cell"> <a href="/vulnerability/ASB-A-197228210">ASB-A-197228210</a> </span> <span role="cell" class="vuln-table-cell vuln-packages mdc-data-table__cell"> 
+         <ul class="packages"> 
+          <li>Android/Framework</li> 
+         </ul> </span> <span role="cell" class="vuln-table-cell vuln-summary mdc-data-table__cell hide-on-mobile"> In writeThrowable of AndroidFuture.java, there is a possible parcel serialization/deserialization mismatch due to improper input validation. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation. </span> <span role="cell" class="vuln-table-cell vuln-versions mdc-data-table__cell hide-on-mobile"> 
+         <ul class="versions"> 
+          <li class="version">11</li> 
+         </ul> </span> <span role="cell" class="vuln-table-cell mdc-data-table__cell hide-on-mobile"> 
+         <relative-time datetime="2022-02-01T00:00:00Z">
+           2022-02-01T00:00:00Z 
+         </relative-time> </span> <span role="cell" class="vuln-table-cell vuln-fix-status mdc-data-table__cell hide-on-mobile"> <span class="tag fix-unavailable">No fix available</span> </span> 
+       </div> 
+       <div role="row" class="vuln-table-row mdc-data-table__row"> <span role="cell" class="vuln-table-cell mdc-data-table__cell"> <a href="/vulnerability/ASB-A-197399948">ASB-A-197399948</a> </span> <span role="cell" class="vuln-table-cell vuln-packages mdc-data-table__cell"> 
+         <ul class="packages"> 
+          <li>Android/Framework</li> 
+         </ul> </span> <span role="cell" class="vuln-table-cell vuln-summary mdc-data-table__cell hide-on-mobile"> In updatePackageMappingsData of UsageStatsService.java, there is a possible way to bypass security and privacy settings of app usage due to an unusual root cause. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation. </span> <span role="cell" class="vuln-table-cell vuln-versions mdc-data-table__cell hide-on-mobile"> 
+         <ul class="versions"> 
+          <li class="version">11</li> 
+          <li class="version">12</li> 
+         </ul> </span> <span role="cell" class="vuln-table-cell mdc-data-table__cell hide-on-mobile"> 
+         <relative-time datetime="2022-02-01T00:00:00Z">
+           2022-02-01T00:00:00Z 
+         </relative-time> </span> <span role="cell" class="vuln-table-cell vuln-fix-status mdc-data-table__cell hide-on-mobile"> <span class="tag fix-unavailable">No fix available</span> </span> 
+       </div> 
+       <div role="row" class="vuln-table-row mdc-data-table__row"> <span role="cell" class="vuln-table-cell mdc-data-table__cell"> <a href="/vulnerability/ASB-A-200682135">ASB-A-200682135</a> </span> <span role="cell" class="vuln-table-cell vuln-packages mdc-data-table__cell"> 
+         <ul class="packages"> 
+          <li>Android/Framework</li> 
+         </ul> </span> <span role="cell" class="vuln-table-cell vuln-summary mdc-data-table__cell hide-on-mobile"> In openFileAndEnforcePathPermissionsHelper of MediaProvider.java, there is a possible bypass of a permissions check due to a confused deputy. This could lead to local escalation of privilege with User execution privileges needed. User interaction is not needed for exploitation. </span> <span role="cell" class="vuln-table-cell vuln-versions mdc-data-table__cell hide-on-mobile"> 
+         <ul class="versions"> 
+          <li class="version">10</li> 
+         </ul> </span> <span role="cell" class="vuln-table-cell mdc-data-table__cell hide-on-mobile"> 
+         <relative-time datetime="2022-02-01T00:00:00Z">
+           2022-02-01T00:00:00Z 
+         </relative-time> </span> <span role="cell" class="vuln-table-cell vuln-fix-status mdc-data-table__cell hide-on-mobile"> <span class="tag fix-unavailable">No fix available</span> </span> 
+       </div> 
+       <div role="row" class="vuln-table-row mdc-data-table__row"> <span role="cell" class="vuln-table-cell mdc-data-table__cell"> <a href="/vulnerability/ASB-A-201083442">ASB-A-201083442</a> </span> <span role="cell" class="vuln-table-cell vuln-packages mdc-data-table__cell"> 
+         <ul class="packages"> 
+          <li>Android/System</li> 
+         </ul> </span> <span role="cell" class="vuln-table-cell vuln-summary mdc-data-table__cell hide-on-mobile"> In btm_sec_connected and btm_sec_disconnected of btm_sec.cc file , there is a possible use after free. This could lead to local escalation of privilege with User execution privileges needed. User interaction is not needed for exploitation. </span> <span role="cell" class="vuln-table-cell vuln-versions mdc-data-table__cell hide-on-mobile"> 
+         <ul class="versions"> 
+          <li class="version">10</li> 
+          <li class="version">11</li> 
+          <li class="version">12</li> 
+         </ul> </span> <span role="cell" class="vuln-table-cell mdc-data-table__cell hide-on-mobile"> 
+         <relative-time datetime="2022-02-01T00:00:00Z">
+           2022-02-01T00:00:00Z 
+         </relative-time> </span> <span role="cell" class="vuln-table-cell vuln-fix-status mdc-data-table__cell hide-on-mobile"> <span class="tag fix-unavailable">No fix available</span> </span> 
+       </div> 
+       <div role="row" class="vuln-table-row mdc-data-table__row"> <span role="cell" class="vuln-table-cell mdc-data-table__cell"> <a href="/vulnerability/ASB-A-203938029">ASB-A-203938029</a> </span> <span role="cell" class="vuln-table-cell vuln-packages mdc-data-table__cell"> 
+         <ul class="packages"> 
+          <li>Android/Framework</li> 
+         </ul> </span> <span role="cell" class="vuln-table-cell vuln-summary mdc-data-table__cell hide-on-mobile"> In LoadedPackage::Load of LoadedArsc.cpp, there is a possible out of bounds read due to a missing bounds check. This could lead to local information disclosure when parsing an APK file with no additional execution privileges needed. User interaction is needed for exploitation. </span> <span role="cell" class="vuln-table-cell vuln-versions mdc-data-table__cell hide-on-mobile"> 
+         <ul class="versions"> 
+          <li class="version">12</li> 
+         </ul> </span> <span role="cell" class="vuln-table-cell mdc-data-table__cell hide-on-mobile"> 
+         <relative-time datetime="2022-02-01T00:00:00Z">
+           2022-02-01T00:00:00Z 
+         </relative-time> </span> <span role="cell" class="vuln-table-cell vuln-fix-status mdc-data-table__cell hide-on-mobile"> <span class="tag fix-unavailable">No fix available</span> </span> 
+       </div> 
+       <div role="row" class="vuln-table-row mdc-data-table__row"> <span role="cell" class="vuln-table-cell mdc-data-table__cell"> <a href="/vulnerability/ASB-A-204077881">ASB-A-204077881</a> </span> <span role="cell" class="vuln-table-cell vuln-packages mdc-data-table__cell"> 
+         <ul class="packages"> 
+          <li>Android/Media Framework</li> 
+         </ul> </span> <span role="cell" class="vuln-table-cell vuln-summary mdc-data-table__cell hide-on-mobile"> In checkSpsUpdated of AAVCAssembler.cpp, there is a possible out of bounds read due to a heap buffer overflow. This could lead to remote information disclosure with no additional execution privileges needed. User interaction is needed for exploitation. </span> <span role="cell" class="vuln-table-cell vuln-versions mdc-data-table__cell hide-on-mobile"> 
+         <ul class="versions"> 
+          <li class="version">12</li> 
+         </ul> </span> <span role="cell" class="vuln-table-cell mdc-data-table__cell hide-on-mobile"> 
+         <relative-time datetime="2022-02-01T00:00:00Z">
+           2022-02-01T00:00:00Z 
+         </relative-time> </span> <span role="cell" class="vuln-table-cell vuln-fix-status mdc-data-table__cell hide-on-mobile"> <span class="tag fix-unavailable">No fix available</span> </span> 
+       </div> 
+       <div role="row" class="vuln-table-row mdc-data-table__row"> <span role="cell" class="vuln-table-cell mdc-data-table__cell"> <a href="/vulnerability/ASB-A-204445255">ASB-A-204445255</a> </span> <span role="cell" class="vuln-table-cell vuln-packages mdc-data-table__cell"> 
+         <ul class="packages"> 
+          <li>Android/Media Framework</li> 
+         </ul> </span> <span role="cell" class="vuln-table-cell vuln-summary mdc-data-table__cell hide-on-mobile"> In extract of MediaMetricsItem.h, there is a possible out of bounds read due to improper input validation. This could lead to local information disclosure with no additional execution privileges needed. User interaction is not needed for exploitation. </span> <span role="cell" class="vuln-table-cell vuln-versions mdc-data-table__cell hide-on-mobile"> 
+         <ul class="versions"> 
+          <li class="version">11</li> 
+          <li class="version">12</li> 
+         </ul> </span> <span role="cell" class="vuln-table-cell mdc-data-table__cell hide-on-mobile"> 
+         <relative-time datetime="2022-02-01T00:00:00Z">
+           2022-02-01T00:00:00Z 
+         </relative-time> </span> <span role="cell" class="vuln-table-cell vuln-fix-status mdc-data-table__cell hide-on-mobile"> <span class="tag fix-unavailable">No fix available</span> </span> 
+       </div> 
+       <div role="row" class="vuln-table-row mdc-data-table__row"> <span role="cell" class="vuln-table-cell mdc-data-table__cell"> <a href="/vulnerability/ASB-A-205729183">ASB-A-205729183</a> </span> <span role="cell" class="vuln-table-cell vuln-packages mdc-data-table__cell"> 
+         <ul class="packages"> 
+          <li>Android/System</li> 
+         </ul> </span> <span role="cell" class="vuln-table-cell vuln-summary mdc-data-table__cell hide-on-mobile"> In GKI_getbuf of gki_buffer.cc, there is a possible out of bounds write due to a heap buffer overflow. This could lead to remote escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation. </span> <span role="cell" class="vuln-table-cell vuln-versions mdc-data-table__cell hide-on-mobile"> 
+         <ul class="versions"> 
+          <li class="version">12</li> 
+         </ul> </span> <span role="cell" class="vuln-table-cell mdc-data-table__cell hide-on-mobile"> 
+         <relative-time datetime="2022-02-01T00:00:00Z">
+           2022-02-01T00:00:00Z 
+         </relative-time> </span> <span role="cell" class="vuln-table-cell vuln-fix-status mdc-data-table__cell hide-on-mobile"> <span class="tag fix-unavailable">No fix available</span> </span> 
+       </div> 
+       <div role="row" class="vuln-table-row mdc-data-table__row"> <span role="cell" class="vuln-table-cell mdc-data-table__cell"> <a href="/vulnerability/ASB-A-206718630">ASB-A-206718630</a> </span> <span role="cell" class="vuln-table-cell vuln-packages mdc-data-table__cell"> 
+         <ul class="packages"> 
+          <li>Android/System</li> 
+         </ul> </span> <span role="cell" class="vuln-table-cell vuln-summary mdc-data-table__cell hide-on-mobile"> In code generated by aidl_const_expressions.cpp, there is a possible out of bounds read due to uninitialized data. This could lead to information disclosure with no additional execution privileges needed. User interaction is not needed for exploitation. </span> <span role="cell" class="vuln-table-cell vuln-versions mdc-data-table__cell hide-on-mobile"> 
+         <ul class="versions"> 
+          <li class="version">12</li> 
+         </ul> </span> <span role="cell" class="vuln-table-cell mdc-data-table__cell hide-on-mobile"> 
+         <relative-time datetime="2022-02-01T00:00:00Z">
+           2022-02-01T00:00:00Z 
+         </relative-time> </span> <span role="cell" class="vuln-table-cell vuln-fix-status mdc-data-table__cell hide-on-mobile"> <span class="tag fix-unavailable">No fix available</span> </span> 
+       </div> 
+       <div role="row" class="vuln-table-row mdc-data-table__row"> <span role="cell" class="vuln-table-cell mdc-data-table__cell"> <a href="/vulnerability/ASB-A-123700107">ASB-A-123700107</a> </span> <span role="cell" class="vuln-table-cell vuln-packages mdc-data-table__cell"> 
+         <ul class="packages"> 
+          <li>Android/Framework</li> 
+         </ul> </span> <span role="cell" class="vuln-table-cell vuln-summary mdc-data-table__cell hide-on-mobile"> In checkKeyIntent of AccountManagerService.java, there is a possible permission bypass. This could lead to local information disclosure with User execution privileges needed. User interaction is needed for exploitation. </span> <span role="cell" class="vuln-table-cell vuln-versions mdc-data-table__cell hide-on-mobile"> 
+         <ul class="versions"> 
+          <li class="version">9</li> 
+          <li class="version">10</li> 
+         </ul> </span> <span role="cell" class="vuln-table-cell mdc-data-table__cell hide-on-mobile"> 
+         <relative-time datetime="2022-01-01T00:00:00Z">
+           2022-01-01T00:00:00Z 
+         </relative-time> </span> <span role="cell" class="vuln-table-cell vuln-fix-status mdc-data-table__cell hide-on-mobile"> <span class="tag fix-unavailable">No fix available</span> </span> 
+       </div> 
+       <turbo-frame id="vulnerability-table-page2" data-turbo-action="advance" target="_top" class="next-page-frame"> 
+        <div class="next-page-container"> <a class="next-page-button link-button" data-turbo-frame="_self" href="/list?page=2&amp;ecosystem=Android"> Load more... </a> <mwc-circular-progress class="next-page-indicator" indeterminate density="-4"></mwc-circular-progress> 
+        </div> 
+       </turbo-frame> 
+      </turbo-frame> 
+     </div> 
+    </div> 
+   </turbo-frame> 
+  </div> 
+  <script>
+import {MDCDataTable} from '@material/data-table';
+const dataTable = new MDCDataTable(document.querySelector('.mdc-data-table'));
+</script> 
+ </body>
+</html>
