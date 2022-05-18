@@ -18,16 +18,23 @@ public class Project {
         // Getting the dataBase from this client.
         MongoDatabase db = client.getDatabase("WebCrawler");
 
+
         WebCrawler webcrawler = new WebCrawler();
+
         System.out.println("Started Crawling");
         long start = System.currentTimeMillis();
-        WebCrawler.Web(args, db);
+        //WebCrawler.Web(args, db);
         long end = System.currentTimeMillis();
         System.out.println("Crawling Finished in " + (end - start) / 60000.0 + " minutes");
-        // Indexer ind = new Indexer();
-        // ind.indexer(args, db);
-        // SearchResult sR = new SearchResult();
 
-        // PageRank.rank(args, db, sR);
+        System.out.println("Started Indexing");
+        start = System.currentTimeMillis();
+        Indexer ind = new Indexer();
+        ind.indexer(args, db);
+        end = System.currentTimeMillis();
+        System.out.println("\nIndexing Finished in " + (end - start) / 60000.0 + " minutes");
+        // SearchResult sR = new SearchResult();
+        // PageRank.rank();
+
     }
 }
