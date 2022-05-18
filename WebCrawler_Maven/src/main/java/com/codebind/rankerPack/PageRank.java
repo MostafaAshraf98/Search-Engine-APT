@@ -2,6 +2,8 @@ package com.codebind.rankerPack;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
+
 import static com.mongodb.client.model.Filters.eq;
 
 import java.util.Iterator;
@@ -17,9 +19,9 @@ import com.mongodb.client.MongoDatabase;
 // import org.bson.conversions.Bson;
 
 public class PageRank {
-    public static WebPage[] Result;
-    public static double[] vec_PR;
-    public static double[][] H;
+    public static ArrayList<WebPage> Result;
+    // public static double[] vec_PR;
+    // public static double[][] H;
 
     public static final double dampingFactor = 0.85;
 
@@ -29,6 +31,9 @@ public class PageRank {
     // The collection in MongoDB that containes the referencing urls. to every url
     public static MongoCollection<org.bson.Document> References;
 
+    // The collection in MongoDB that contains the IndexerCollection word data.
+    public static MongoCollection<org.bson.Document> IndexerCollection;
+
     public PageRank() {
     }
 
@@ -37,26 +42,33 @@ public class PageRank {
         // Getting the collections from the database.
         downloadedURLs = db.getCollection("downloadedURLs");
         References = db.getCollection("References");
+        IndexerCollection = db.getCollection("IndexerCollection");
+        org.bson.Document wordObject = IndexerCollection
+                .find(eq("word", "pico")).first();
+        // System.out.println(wordObject.toJson());
+        System.out.println("word data " + wordObject.get("References"));
 
         // Getting the search results from the SearchResult class.
-        ArrayList<String> list = getPointingToLinks("https://www.bbc.co.uk");
+        ArrayList<String> list = getPointingToLinks("https://login.bigcommerce.com/login");
         for (String L : list) {
             System.out.println("link " + L);
-            System.out.println("Count is  " + getOutgoingLinksCount(L));
+            System.out.println("Count is " + getOutgoingLinksCount(L));
             FindIterable<org.bson.Document> referencedIterator = downloadedURLs
                     .find(eq("url", L));
             Iterator it = referencedIterator.iterator();
             if (it.hasNext()) {
                 org.bson.Document filepointingToUrlObject = (org.bson.Document) it.next();
-                System.out.println("previousPRScore is " + filepointingToUrlObject.get("previousPRScore"));
-                System.out.println("currentPRScore is " + filepointingToUrlObject.get("currentPRScore"));
+                System.out.println("previousPRScore is " +
+                        filepointingToUrlObject.get("previousPRScore"));
+                System.out.println("currentPRScore is " +
+                        filepointingToUrlObject.get("currentPRScore"));
 
             }
 
         }
 
         // SearchResult sR = new SearchResult();
-        Result = sR.searchResults;
+        Result = sR.pagesResults;
 
         calculatePopularity(5);
 
@@ -69,6 +81,19 @@ public class PageRank {
                     Arrays.toString((WP.idpointingto)) + " Scores "
                     + WP.currentPRScore + " " + WP.previousPRScore);
         }
+
+        // try {
+        // Collections.sort(Result, new ScoreComparator());
+        // } catch (Exception e) {
+        // Comparator<PageResult> comparator = new ScoreComparator();
+        // for (PageResult p1 : resultsList) {
+        // for (PageResult p2 : resultsList) {
+        // if (comparator.compare(p1, p2) != -comparator.compare(p2, p1)) {
+        // System.out.println("Loooohl");
+        // }
+        // }
+        // }
+        // }
     }
 
     // Set Combined Score
@@ -116,10 +141,10 @@ public class PageRank {
             double tempScore = 0;
             for (String id : WP.idpointingto) {
                 // System.out.println(" id " + id);
-                tempScore += (Result[Integer.parseInt(id)].getPreviousPRScore()
-                        / Result[Integer.parseInt(id)].getOutgoinglinks());
+                tempScore += (Result.get(Integer.parseInt(id)).getPreviousPRScore()
+                        / Result.get(Integer.parseInt(id)).getOutgoinglinks());
             }
-            tempScore = (double) ((1.0 - dampingFactor) / Result.length) + (dampingFactor * tempScore);
+            tempScore = (double) ((1.0 - dampingFactor) / Result.size()) + (dampingFactor * tempScore);
             WP.setCurrentPRScore(tempScore);
         }
         for (WebPage WP : Result) {
@@ -128,17 +153,17 @@ public class PageRank {
         }
     }
 
-    // private static class ScoreComparator implements Comparator<searchResults> {
+    private static class ScoreComparator implements Comparator<SearchResult> {
 
-    // public int compare(searchResults a, searchResults b) {
-    // return Double.compare(a.getCombinedScore(), b.getCombinedScore());
-    // }
+        public int compare(SearchResult a, SearchResult b) {
+            return Double.compare(a.getCombinedScore(), b.getCombinedScore());
+        }
 
-    // }
+    }
 
     public static void PRCalcMatrix() {
-        vec_PR = new double[Result.length];
-        H = new double[Result.length][Result.length];
+        // vec_PR = new double[Result.length];
+        // H = new double[Result.length][Result.length];
         // for (int i = 0; i < Result.length; i++) {
         // for (int j = 0; j < Result.length; j++) {
         // H[i][j] = 0;
