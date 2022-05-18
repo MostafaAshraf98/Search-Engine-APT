@@ -3,12 +3,14 @@ package com.codebind.indexerPack;
 import java.io.File;
 import java.io.IOException;
 import java.io.FileNotFoundException; // Import this class to handle errors
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Iterator;
-import java.util.Scanner;
+
 
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
@@ -70,9 +72,9 @@ public class Indexer {
         stopwords = new HashMap<String, Integer>();
         try {
             File inputFile = new File("stop_words_english.txt");
-            Scanner myReader = new Scanner(inputFile);
-            while (myReader.hasNextLine()) {
-                String word = myReader.next();
+            BufferedReader myReader = new BufferedReader(new FileReader(inputFile));
+            String word;
+            while ((word= myReader.readLine()) != null) {
                 if (!word.equals("") && !stopwords.containsKey(word))
                     stopwords.put(word, 1);
 
@@ -342,8 +344,10 @@ public class Indexer {
         FindIterable<org.bson.Document> iterDoc = downloadedURLs.find().projection(projection);
         Iterator it = iterDoc.iterator();
         Document doc = null;
+        int count=0;
         while (it.hasNext()) {
             org.bson.Document fileUrlObject = (org.bson.Document) it.next();
+            count+=1;
             doc = readHTMLFile(webpagesPath + fileUrlObject.get("fileName") + ".html");
             if (doc == null) {
                 continue;
@@ -353,6 +357,8 @@ public class Indexer {
             file_URL.put(fileName, URL);
      
             docs.add(doc);            
+            if (count==5)
+            	break;
         }
         return docs;
     }

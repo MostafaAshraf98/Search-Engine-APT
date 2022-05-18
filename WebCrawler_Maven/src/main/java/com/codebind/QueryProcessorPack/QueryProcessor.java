@@ -1,14 +1,16 @@
-package com.codebind.QueryEnginePack;
+package com.codebind.QueryProcessorPack;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.FileNotFoundException; // Import this class to handle errors
+import java.io.FileReader;
 import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Iterator;
-import java.util.Scanner;
+import java.util.LinkedHashSet;
 
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
@@ -28,24 +30,62 @@ import org.bson.conversions.Bson;
 
 import opennlp.tools.stemmer.PorterStemmer;
 
-public class QueryEngine {
+public class QueryProcessor {
     public static MongoCollection<org.bson.Document> IndexerCollection;
     static Map<String, Integer> stopwords;
-    public static void QueryEngine(String[] args, MongoDatabase db) throws IOException {
+    public static ArrayList<String> QueryProcessor(String Query, MongoDatabase db) throws IOException {
         loadStopwords();
         // Getting the collections from this database.
         IndexerCollection = db.getCollection("IndexerCollection");
+        String[] QueryWords=Query.split(" ");
+        ArrayList<String> ProcessedWords=new ArrayList<String>();
+        ArrayList<String> IndexedURLs=new ArrayList<String>();
+        ArrayList<Document> QueryDocuments=new ArrayList<Document>();
+        ArrayList<Document> Ref=new ArrayList<Document>();
+        for(int i=0;i<QueryWords.length;i++) {
+        	String word=QueryWords[i].toLowerCase();
+        	if(!isStopword(word)) {
+        		String Stem=stemWord(word);
+        		ProcessedWords.add(Stem);
+        	}
+        }
+//        IndexerCollection.find({"word":{$in:ProcessedWords}}).pretty();
+        
+        for(int i=0;i<ProcessedWords.size();i++)
+        {
+        	String word=ProcessedWords.get(i);
+//        	System.out.println(word);
+        	Document wordIndexFile=IndexerCollection.find(eq("word",word)).first();
+        	if(wordIndexFile!=null)
+        	{
+//        		System.out.println("check");
+        		ArrayList<Document> References =wordIndexFile.get("References",Ref);
+        		QueryDocuments.add(wordIndexFile);
+//        		System.out.println(" ");
+            	for(int j=0;j<References.size();j++)
+            	{
+//            		System.out.println(References.get(j).get("URL"));
+            		IndexedURLs.add(References.get(j).get("URL")+"");
+            	}
+        	}
+        	
+        }
+        LinkedHashSet<String> URLs=new LinkedHashSet<String>(IndexedURLs);
+        IndexedURLs=new ArrayList<String>(URLs);
+
+        return IndexedURLs;
     }
 
     public static void loadStopwords() throws IOException {
         stopwords = new HashMap<String, Integer>();
         try {
-            File inputFile = new File("english_stopwords.txt");
-            Scanner myReader = new Scanner(inputFile);
-            while (myReader.hasNextLine()) {
-                String word = myReader.next();
+            File inputFile = new File("stop_words_english.txt");
+            BufferedReader myReader = new BufferedReader(new FileReader(inputFile));
+            String word;
+            while ((word= myReader.readLine()) != null) {
                 if (!word.equals("") && !stopwords.containsKey(word))
                     stopwords.put(word, 1);
+
             }
             myReader.close();
         } catch (FileNotFoundException e) {
