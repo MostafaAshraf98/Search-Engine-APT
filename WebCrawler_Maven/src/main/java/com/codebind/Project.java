@@ -23,6 +23,7 @@ public class Project {
 
         System.out.println("Started Crawling");
         long start = System.currentTimeMillis();
+
         //WebCrawler.Web(args, db);
         long end = System.currentTimeMillis();
         System.out.println("Crawling Finished in " + (end - start) / 60000.0 + " minutes");

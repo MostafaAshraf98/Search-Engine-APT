@@ -7,6 +7,8 @@ public class WebPage {
     public double previousPRScore;
     public Integer outgoinglinks;
 
+    // set data from downloaded URLS and then wehn updating get data from downloaded
+    // URLS
     public WebPage(Integer id, String[] idpointingto, double currentPRScore, double previousPRScore,
             Integer outgoinglinks) {
         this.id = id;

@@ -1,22 +1,29 @@
 package com.codebind.rankerPack;
 
+import java.util.ArrayList;
+
 public class SearchResult {
-    public WebPage[] searchResults;
+    public ArrayList<WebPage> pagesResults;
     double tfIDF;
     double PR = 0;
     double combinedScore;
 
+    // send links to be set
+    // set the tfIDF and the PR from the IndexerCollection
     public SearchResult() {
         WebPage P0 = new WebPage(0, new String[] { "2" }, 0, 0.25, 2);
         WebPage P1 = new WebPage(1, new String[] { "0", "2" }, 0, 0.25, 1);
         WebPage P2 = new WebPage(2, new String[] { "0", "3" }, 0, 0.25, 3);
         WebPage P3 = new WebPage(3, new String[] { "1", "2" }, 0, 0.25, 1);
 
-        searchResults = new WebPage[4];
-        searchResults[0] = P0;
-        searchResults[1] = P1;
-        searchResults[2] = P2;
-        searchResults[3] = P3;
+        pagesResults = new ArrayList<WebPage>(4);
+        pagesResults.add(P0);
+        pagesResults.add(P1);
+        pagesResults.add(P2);
+        pagesResults.add(P3);
+        // for (WebPage WB : pagesResults) {
+        // pagesResults.add(WB);
+        // }
 
     }
 

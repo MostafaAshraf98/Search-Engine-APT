@@ -42,6 +42,7 @@ public class Indexer {
     static Map<String, String> file_URL;
     // static Map<String, String> File_size;
 
+
     // Those are used in the indexer map
     static String headName = "head";
     static String bodyName = "body";
@@ -270,6 +271,8 @@ public class Indexer {
             Double totTFIDF = 0.0;
             // QuerryDocuments=IndexerCollection.find(eq("word",word)).first();
             org.bson.Document IndexerDocument = new org.bson.Document("word", word);
+            // add IDF value = Math.log10(total # if doc aka 5000 /# of documents this word
+            // in )
             // org.bson.Document Occurancedocument=null;
             Map<String, Triplet<Integer, Integer, Map<String, Integer>>> Occurances = invertedFile.get(word);
             ArrayList<org.bson.Document> referencedat = new ArrayList<org.bson.Document>();
@@ -287,6 +290,8 @@ public class Indexer {
                 org.bson.Document ReferenceDocument = new org.bson.Document("URL", URL);
                 Triplet<Integer, Integer, Map<String, Integer>> OccurancesInfo = Occurances.get(URL);
                 ReferenceDocument.append("TF", OccurancesInfo.getValue0());
+                // TFBody value / # of words in this document
+                // TFTitle value / # of words in this document
                 ReferenceDocument.append("TFIDF", tfidf);
                 ArrayList<org.bson.Document> importanceInfo = new ArrayList<org.bson.Document>();
                 for (String title : OccurancesInfo.getValue2().keySet()) {
@@ -296,12 +301,17 @@ public class Indexer {
                     importanceInfo.add(titleDocument);
                     // System.out.println(word + " "+URL+" "+ OccurancesInfo.getValue0()+" "+title+"
                     // "+OccurancesInfo.getValue1().get(title));
+
+                    // TF = TFBody*0.3+TFTitle*0.7
                 }
                 ReferenceDocument.append("Appeared as", importanceInfo);
                 referencedat.add(ReferenceDocument);
+                // TF-IDF = TF * IDF
+
             }
             IndexerDocument.append("TFIDF", totTFIDF);
             IndexerDocument.append("References", referencedat);
+
             documentsToInsert.add(IndexerDocument);
             // IndexerCollection.insertOne(IndexerDocument);
 //            break;
