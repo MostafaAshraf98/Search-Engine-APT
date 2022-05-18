@@ -14,10 +14,12 @@ import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.BasicDBObject;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.model.Projections;
 //import com.mongodb.MongoClient;
 import com.mongodb.MongoCredential;
+import static com.mongodb.client.model.Filters.eq;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -37,6 +39,8 @@ public class Indexer {
     static String webpagesPath = "./webPages/";
     // static ArrayList<String> stopwords;
     static Map<String, Integer> stopwords;
+    static Map<String, String> file_URL;
+//    static Map<String, String> File_size;
 
     public static void indexer(String[] args, MongoDatabase db) throws IOException {
         loadStopwords();
@@ -45,9 +49,12 @@ public class Indexer {
         downloadedURLs = db.getCollection("downloadedURLs");
         ArrayList<Document> docs = readAllHTML();
 
-        // Indexing the documents
-        index(docs);
+        // System.out.println(stemWord("universal"));
 
+        // Indexing the documents
+        System.out.print(file_URL.get("539506411.html"));
+        index(docs);
+        AddToDatabase();
     }
 
     public static void loadStopwords() throws IOException {
@@ -81,8 +88,10 @@ public class Indexer {
         return stemmer.stem(word);
     }
 
+    // private static void index(Document doc, String Url) throws IOException {
     private static void index(ArrayList<Document> docs) throws IOException {
         for (Document doc : docs) {
+//        	int count=0;
             // Get all tags in a document
             Elements all = doc.getAllElements();
             for (final Element e : all) {
@@ -90,6 +99,7 @@ public class Indexer {
                 String text = e.text();
                 String[] words = text.split(" ");
                 for (String word : words) {
+                	
                     word = word.toLowerCase();
                     // Replacing all non-alphanumeric (not from "[^a-zA-Z0-9]") characters with
                     // empty string
@@ -103,13 +113,16 @@ public class Indexer {
                     boolean addWord = !isStopWord && word.length() > 0;
                     if (addWord) {
                         if (invertedFile.containsKey(word)) {
+//                        	count=+1;
                             // If the word is already in the inverted file
                             // doc.baseUri() returns the url of the document
                             // ex. C:\Users\dusername\Desktop\Java\.\125241216.html
                             // get the last part of the url
                             // ex. 125241216.html
                             String fileName = doc.baseUri().substring(doc.baseUri().lastIndexOf("\\") + 1);
-
+                            // System.out.print(fileName+" ");
+                            fileName = file_URL.get(fileName);
+                            // System.out.print(fileName+" ");
                             if (invertedFile.get(word).containsKey(fileName)) {
                                 // If the documnet is already in the inverted file
                                 Pair<Integer, Map<String, Integer>> pair = invertedFile.get(word).get(fileName);
@@ -148,7 +161,10 @@ public class Indexer {
                         } else {
                             // If the word is not in the inverted file
 
-                            final String fileName = doc.baseUri().substring(doc.baseUri().lastIndexOf("\\") + 1);
+                            String fileName1 = doc.baseUri().substring(doc.baseUri().lastIndexOf("\\") + 1);
+                            // System.out.print(fileName1+" ");
+                            final String fileName = file_URL.get(fileName1);
+                            // System.out.print(fileName+" ");
                             invertedFile.put(word, new HashMap<String, Pair<Integer, Map<String, Integer>>>() {
                                 {
                                     put(fileName,
@@ -158,32 +174,86 @@ public class Indexer {
                                                 }
                                             }));
                                 }
+
                             });
                         }
                     }
                 }
             }
+            // AddToDatabase(invertedFile);
+        }
+//        for (String word : invertedFile.keySet()) {
+//            Map<String, Pair<Integer, Map<String, Integer>>> Occurances = invertedFile.get(word);
+//            for (String URL : Occurances.keySet()) {
+//
+//                Pair<Integer, Map<String, Integer>> OccurancesInfo = Occurances.get(URL);
+//                for (String title : OccurancesInfo.getValue1().keySet()) {
+//                    Integer count = OccurancesInfo.getValue1().get(title);
+//                    // System.out.println(word + " "+URL+" "+ OccurancesInfo.getValue0()+" "+title+"
+//                    // "+OccurancesInfo.getValue1().get(title));
+//                    break;
+//                }
+//            }
+//        }
+    }
+
+    private static void AddToDatabase() {
+        System.out.println("adding to database");
+        for (String word : invertedFile.keySet()) {
+            // org.bson.Document
+            // QuerryDocuments=IndexerCollection.find(eq("word",word)).first();
+        	org.bson.Document IndexerDocument = new org.bson.Document("word", word);
+            // org.bson.Document Occurancedocument=null;
+            Map<String, Pair<Integer, Map<String, Integer>>> Occurances = invertedFile.get(word);
+            ArrayList<org.bson.Document> referencedat = new ArrayList<org.bson.Document>();
+            for (String URL : Occurances.keySet()) {
+
+                org.bson.Document ReferenceDocument = new org.bson.Document("URL", URL);
+                Pair<Integer, Map<String, Integer>> OccurancesInfo = Occurances.get(URL);
+                ReferenceDocument.append("TF", OccurancesInfo.getValue0());
+                ArrayList<org.bson.Document> importanceInfo = new ArrayList<org.bson.Document>();
+                for (String title : OccurancesInfo.getValue1().keySet()) {
+                    Integer count = OccurancesInfo.getValue1().get(title);
+                    org.bson.Document titleDocument = new org.bson.Document("title", title);
+                    titleDocument.append("title frequency", count);
+                    importanceInfo.add(titleDocument);
+                    // System.out.println(word + " "+URL+" "+ OccurancesInfo.getValue0()+" "+title+"
+                    // "+OccurancesInfo.getValue1().get(title));
+                }
+                ReferenceDocument.append("Appeared as", importanceInfo);
+                referencedat.add(ReferenceDocument);
+            }
+            IndexerDocument.append("References", referencedat);
+            IndexerCollection.insertOne(IndexerDocument);
         }
     }
 
     private static ArrayList<Document> readAllHTML() throws IOException {
+        file_URL = new HashMap<String, String>();
         ArrayList<Document> docs = new ArrayList<Document>();
         File folder = new File(webpagesPath);
+
         // File[] listOfFiles = folder.listFiles();
         // System.out.println("Number of files: " + listOfFiles.length);
         // downloadedURLs = db.getCollection("downloadedURLs");
+
         Bson projection = Projections.fields(Projections.include("url", "fileName"), Projections.excludeId());
         FindIterable<org.bson.Document> iterDoc = downloadedURLs.find().projection(projection);
         Iterator it = iterDoc.iterator();
         int count = 0;
+        Document doc = null;
         while (it.hasNext()) {
             count += 1;
-            // System.out.println(fileUrlObject.getElementsByAttribute("filename"));
             org.bson.Document fileUrlObject = (org.bson.Document) it.next();
-            // System.out.println(fileUrlObject.getElementsByAttribute("filename"));
-            Document doc = readHTMLFile(webpagesPath + fileUrlObject.get("fileName") + ".html");
+            doc = readHTMLFile(webpagesPath + fileUrlObject.get("fileName") + ".html");
+            String fileName = fileUrlObject.get("fileName") + ".html";
+            String URL = fileUrlObject.get("url") + "";
+            file_URL.put(fileName, URL);
+
             docs.add(doc);
+            // break;
         }
+
         return docs;
     }
 
