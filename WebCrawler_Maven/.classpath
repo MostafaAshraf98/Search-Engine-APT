@@ -15,6 +15,7 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5">
 		<attributes>
+			<attribute name="module" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
@@ -23,10 +24,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="D:/Work/CCE/Year 3 - Senior 1/Semester 2/APT/Project/Repo/Search-Engine-APT/WebCrawler_Maven/Our External Jar Files/JavaTuples/javatuples-1.2.jar"/>
-	<classpathentry kind="lib" path="D:/Work/CCE/Year 3 - Senior 1/Semester 2/APT/Project/Repo/Search-Engine-APT/WebCrawler_Maven/Our External Jar Files/Jsoup/jsoup-1.14.3.jar"/>
-	<classpathentry kind="lib" path="D:/Work/CCE/Year 3 - Senior 1/Semester 2/APT/Project/Repo/Search-Engine-APT/WebCrawler_Maven/Our External Jar Files/Servlet/servlet-api.jar"/>
-	<classpathentry kind="lib" path="D:/Work/CCE/Year 3 - Senior 1/Semester 2/APT/Project/Repo/Search-Engine-APT/WebCrawler_Maven/Our External Jar Files/Stemmer/opennlp-tools-1.9.4.jar"/>
 	<classpathentry excluding="**" kind="src" output="target/classes" path="src/main/resources">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
@@ -34,9 +31,13 @@
 	</classpathentry>
 	<classpathentry excluding="**" kind="src" output="target/test-classes" path="src/test/resources">
 		<attributes>
-			<attribute name="maven.pomderived" value="true"/>
 			<attribute name="test" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="Our External Jar Files/JavaTuples/javatuples-1.2.jar"/>
+	<classpathentry kind="lib" path="Our External Jar Files/Jsoup/jsoup-1.14.3.jar"/>
+	<classpathentry kind="lib" path="Our External Jar Files/Servlet/servlet-api.jar"/>
+	<classpathentry kind="lib" path="Our External Jar Files/Stemmer/opennlp-tools-1.9.4.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

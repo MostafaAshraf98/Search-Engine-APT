@@ -3,7 +3,8 @@ https://www.allrecipes.com/recipes/1642/everyday-cooking/
 https://www.bbc.com/
 https://www.rottentomatoes.com/browse/in-theaters/
 https://www.javapoint.com/
-https://www.udemy.com/
 https://www.thenationalnews.com/
 https://www.bigcommerce.com/articles/ecommerce/
-https://www.unicef.org/
+https://www.wikipedia.org/
+https://www.w3schools.com/
+https://www.geeksforgeeks.org/
