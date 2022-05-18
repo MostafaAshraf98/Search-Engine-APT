@@ -6,15 +6,54 @@ public class WebPage {
     public double currentPRScore;
     public double previousPRScore;
     public Integer outgoinglinks;
-    public Integer[] outgoingIDs;
 
     public WebPage(Integer id, String[] idpointingto, double currentPRScore, double previousPRScore,
-            Integer outgoinglinks, Integer[] outgoingIDs) {
+            Integer outgoinglinks) {
         this.id = id;
         this.idpointingto = idpointingto;
         this.currentPRScore = currentPRScore;
         this.previousPRScore = previousPRScore;
         this.outgoinglinks = outgoinglinks;
-        this.outgoingIDs = outgoingIDs;
     }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String[] getIdpointingto() {
+        return idpointingto;
+    }
+
+    public void setIdpointingto(String[] idpointingto) {
+        this.idpointingto = idpointingto;
+    }
+
+    public double getCurrentPRScore() {
+        return currentPRScore;
+    }
+
+    public void setCurrentPRScore(double currentPRScore) {
+        this.currentPRScore = currentPRScore;
+    }
+
+    public double getPreviousPRScore() {
+        return previousPRScore;
+    }
+
+    public void setPreviousPRScore(double previousPRScore) {
+        this.previousPRScore = previousPRScore;
+    }
+
+    public Integer getOutgoinglinks() {
+        return outgoinglinks;
+    }
+
+    public void setOutgoinglinks(Integer outgoinglinks) {
+        this.outgoinglinks = outgoinglinks;
+    }
+
 }
