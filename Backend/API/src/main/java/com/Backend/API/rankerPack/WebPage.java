@@ -1,4 +1,4 @@
-package com.codebind.rankerPack;
+package com.Backend.API.rankerPack;
 
 public class WebPage {
     public Integer id;

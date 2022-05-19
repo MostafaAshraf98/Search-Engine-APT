@@ -1,4 +1,4 @@
-package com.codebind.QueryProcessorPack;
+package com.Backend.API.QueryProcessorPack;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -33,45 +33,43 @@ import opennlp.tools.stemmer.PorterStemmer;
 public class QueryProcessor {
     public static MongoCollection<org.bson.Document> IndexerCollection;
     static Map<String, Integer> stopwords;
+
     public static ArrayList<String> QueryProcessor(String Query, MongoDatabase db) throws IOException {
         loadStopwords();
         // Getting the collections from this database.
         IndexerCollection = db.getCollection("IndexerCollection");
-        String[] QueryWords=Query.split(" ");
-        ArrayList<String> ProcessedWords=new ArrayList<String>();
-        ArrayList<String> IndexedURLs=new ArrayList<String>();
-        ArrayList<Document> QueryDocuments=new ArrayList<Document>();
-        ArrayList<Document> Ref=new ArrayList<Document>();
-        for(int i=0;i<QueryWords.length;i++) {
-        	String word=QueryWords[i].toLowerCase();
-        	if(!isStopword(word)) {
-        		String Stem=stemWord(word);
-        		ProcessedWords.add(Stem);
-        	}
+        String[] QueryWords = Query.split(" ");
+        ArrayList<String> ProcessedWords = new ArrayList<String>();
+        ArrayList<String> IndexedURLs = new ArrayList<String>();
+        ArrayList<Document> QueryDocuments = new ArrayList<Document>();
+        ArrayList<Document> Ref = new ArrayList<Document>();
+        for (int i = 0; i < QueryWords.length; i++) {
+            String word = QueryWords[i].toLowerCase();
+            if (!isStopword(word)) {
+                String Stem = stemWord(word);
+                ProcessedWords.add(Stem);
+            }
         }
-//        IndexerCollection.find({"word":{$in:ProcessedWords}}).pretty();
-        
-        for(int i=0;i<ProcessedWords.size();i++)
-        {
-        	String word=ProcessedWords.get(i);
-//        	System.out.println(word);
-        	Document wordIndexFile=IndexerCollection.find(eq("word",word)).first();
-        	if(wordIndexFile!=null)
-        	{
-//        		System.out.println("check");
-        		ArrayList<Document> References =wordIndexFile.get("References",Ref);
-        		QueryDocuments.add(wordIndexFile);
-//        		System.out.println(" ");
-            	for(int j=0;j<References.size();j++)
-            	{
-//            		System.out.println(References.get(j).get("URL"));
-            		IndexedURLs.add(References.get(j).get("URL")+"");
-            	}
-        	}
-        	
+        // IndexerCollection.find({"word":{$in:ProcessedWords}}).pretty();
+
+        for (int i = 0; i < ProcessedWords.size(); i++) {
+            String word = ProcessedWords.get(i);
+            // System.out.println(word);
+            Document wordIndexFile = IndexerCollection.find(eq("word", word)).first();
+            if (wordIndexFile != null) {
+                // System.out.println("check");
+                ArrayList<Document> References = wordIndexFile.get("References", Ref);
+                QueryDocuments.add(wordIndexFile);
+                // System.out.println(" ");
+                for (int j = 0; j < References.size(); j++) {
+                    // System.out.println(References.get(j).get("URL"));
+                    IndexedURLs.add(References.get(j).get("URL") + "");
+                }
+            }
+
         }
-        LinkedHashSet<String> URLs=new LinkedHashSet<String>(IndexedURLs);
-        IndexedURLs=new ArrayList<String>(URLs);
+        LinkedHashSet<String> URLs = new LinkedHashSet<String>(IndexedURLs);
+        IndexedURLs = new ArrayList<String>(URLs);
 
         return IndexedURLs;
     }
@@ -82,7 +80,7 @@ public class QueryProcessor {
             File inputFile = new File("stop_words_english.txt");
             BufferedReader myReader = new BufferedReader(new FileReader(inputFile));
             String word;
-            while ((word= myReader.readLine()) != null) {
+            while ((word = myReader.readLine()) != null) {
                 if (!word.equals("") && !stopwords.containsKey(word))
                     stopwords.put(word, 1);
 

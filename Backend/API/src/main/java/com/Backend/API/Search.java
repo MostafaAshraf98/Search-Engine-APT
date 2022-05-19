@@ -1,20 +1,22 @@
 package com.Backend.API;
 
+import java.util.ArrayList;
+
 public class Search {
 
-    private String[] search;
+    private ArrayList<String> search;
 
-    public Search(String[] search) {
+    public Search(ArrayList<String> search) {
         this.search = search;
     }
 
     // Add getter
-    public String[] getSearch() {
+    public ArrayList<String> getSearch() {
         return search;
     }
 
     // Add setter
-    public void setSearch(String[] search) {
+    public void setSearch(ArrayList<String> search) {
         this.search = search;
     }
 

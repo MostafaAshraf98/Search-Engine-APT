@@ -8,9 +8,9 @@ import com.mongodb.client.MongoDatabase;
 import java.io.IOException;
 
 import com.codebind.indexerPack.Indexer;
-import com.codebind.rankerPack.PageRank;
-import com.codebind.rankerPack.SearchResult;
-import com.codebind.QueryProcessorPack.QueryProcessor;
+// import com.codebind.rankerPack.PageRank;
+// import com.codebind.rankerPack.SearchResult;
+// import com.codebind.QueryProcessorPack.QueryProcessor;
 
 public class Project {
     public static void main(String[] args) throws IOException {
@@ -19,13 +19,10 @@ public class Project {
         // Getting the dataBase from this client.
         MongoDatabase db = client.getDatabase("WebCrawler");
 
-
-        WebCrawler webcrawler = new WebCrawler();
-
         System.out.println("Started Crawling");
         long start = System.currentTimeMillis();
 
-        //WebCrawler.Web(args, db);
+        // WebCrawler.Web(args, db);
         long end = System.currentTimeMillis();
         System.out.println("Crawling Finished in " + (end - start) / 60000.0 + " minutes");
 
@@ -35,10 +32,6 @@ public class Project {
         ind.indexer(args, db);
         end = System.currentTimeMillis();
         System.out.println("\nIndexing Finished in " + (end - start) / 60000.0 + " minutes");
-//        QueryProcessor QP=new QueryProcessor();
-//        QP.QueryProcessor("The german year", db);
-        // SearchResult sR = new SearchResult();
-        // PageRank.rank();
 
     }
 }
