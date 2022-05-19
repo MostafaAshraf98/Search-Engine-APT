@@ -28,9 +28,9 @@ public class Project {
         // "minutes");
 
         System.out.println("Started Indexing");
-        start = System.currentTimeMillis();
+        long start = System.currentTimeMillis();
         Indexer.indexer(args, db);
-        end = System.currentTimeMillis();
+        long end = System.currentTimeMillis();
         System.out.println("\nIndexing Finished in " + (end - start) / 60000.0 + "minutes");
 
     }
