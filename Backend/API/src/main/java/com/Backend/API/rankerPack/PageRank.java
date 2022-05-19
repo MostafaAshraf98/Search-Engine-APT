@@ -127,6 +127,7 @@ public class PageRank {
                 // System.out.println("Link " + doc.get("URL") + " Popularity " + PR);
                 Double ComScore = (5 * tfidfVal) + PR;
                 // l.put(Link, ComScore);
+                
                 l.put(Link, l.get(Link) + ComScore);
                 System.out.println("Link " + doc.get("URL") + " Combined Score  " + l.get(Link));
 
@@ -244,6 +245,8 @@ public class PageRank {
     // helper function to get double value from db
     private static Double getDoubleValFDownloadedURLs(String L, String searchKey) {
         org.bson.Document linksIterator = downloadedURLs.find(eq("url", L)).first();
+        if (linksIterator == null)
+            return 1.0;
         return ((Double) linksIterator.get(searchKey)).doubleValue();
 
     }

@@ -28,8 +28,6 @@ public class SearchController {
         // Getting the dataBase from this client.
         MongoDatabase db = client.getDatabase("APTProject");
 
-        System.out.println("Printed successfully");
-
         ArrayList<String> result = QueryProcessor.QueryProcessor(search, db);
 
         // ArrayList<String> result = new ArrayList<>();

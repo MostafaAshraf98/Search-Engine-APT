@@ -303,11 +303,10 @@ public class WebCrawler {
 				}
 				// Write the html content (DOM) in a file with a unique name = to the hashcode
 				// of this document
-				// wr = new BufferedWriter(
-				// new FileWriter(System.getProperty("user.dir") + "/webPages/" + doc.hashCode()
-				// + ".html"));
-				// wr.write(doc.html());
-				// wr.close();
+				wr = new BufferedWriter(
+						new FileWriter(System.getProperty("user.dir") + "/webPages/" + doc.hashCode() + ".html"));
+				wr.write(doc.html());
+				wr.close();
 				// Save this downloaded Webpage in the database
 				// with the fields url, filname, compactedString and normalizedURL
 				org.bson.Document document = new org.bson.Document("url", url)
