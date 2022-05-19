@@ -70,8 +70,10 @@ public class QueryProcessor {
         }
         LinkedHashSet<String> URLs = new LinkedHashSet<String>(IndexedURLs);
         IndexedURLs = new ArrayList<String>(URLs);
-
-        return IndexedURLs;
+        PageRank pr = new PageRank();
+        Document wordIndexFile =  IndexerCollection.find(eq("word", ProcessedWords.get(0))).first()
+        ArrayList<String> sortedList= pr.rank(IndexedURLs, db,wordIndexFile);
+        return sortedList;
     }
 
     public static void loadStopwords() throws IOException {
