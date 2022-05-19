@@ -3,7 +3,7 @@ package com.Backend.API;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import com.Backend.API.QueryProcessorPack.QueryProcessor;
+// import com.Backend.API.QueryProcessorPack.QueryProcessor;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
@@ -24,16 +24,17 @@ public class SearchController {
         // Getting the dataBase from this client.
         MongoDatabase db = client.getDatabase("WebCrawler");
 
-        ArrayList<String> result = QueryProcessor.QueryProcessor(search, db);
+        // ArrayList<String> result = QueryProcessor.QueryProcessor(search, db);
 
-        // ArrayList<String> result = new ArrayList<>();
-        // MongoCollection<org.bson.Document> References =
-        // db.getCollection("References");
-        // System.out.println("HERE");
-        // // get the first document in the colelction references
-        // org.bson.Document doc = References.find().first();
+        ArrayList<String> result = new ArrayList<>();
+        MongoCollection<org.bson.Document> References = db.getCollection("References");
+        // get the first document in the colelction references
+        org.bson.Document doc = References.find().first();
 
         // result.add(doc.get("url").toString());
+        result.add("https://en.wikipedia.org/wiki/Computer");
+        result.add("https://en.wikipedia.org/wiki/Computer_science");
+        result.add("https://en.wikipedia.org/wiki/Algorithm");
 
         return new Search(result);
     }

@@ -16,6 +16,7 @@ import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import com.Backend.API.rankerPack.PageRank;
 import com.mongodb.BasicDBObject;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.model.Projections;
@@ -74,8 +75,8 @@ public class QueryProcessor {
         LinkedHashSet<String> URLs = new LinkedHashSet<String>(IndexedURLs);
         IndexedURLs = new ArrayList<String>(URLs);
         PageRank pr = new PageRank();
-        Document wordIndexFile =  IndexerCollection.find(eq("word", ProcessedWords.get(0))).first()
-        ArrayList<String> sortedList= pr.rank(IndexedURLs, db,wordIndexFile);
+        Document wordIndexFile = IndexerCollection.find(eq("word", ProcessedWords.get(0))).first();
+        ArrayList<String> sortedList = pr.rank(IndexedURLs, db, wordIndexFile);
         return sortedList;
     }
 
