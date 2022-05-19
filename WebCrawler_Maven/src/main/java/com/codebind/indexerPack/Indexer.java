@@ -61,10 +61,8 @@ public class Indexer {
         IndexerCollection = db.getCollection("IndexerCollection");
         downloadedURLs = db.getCollection("downloadedURLs");
 
-        for (int i = 0; i < 10; i++) {
-            ArrayList<Document> docs = readAllHTML(i * 500, (i + 1) * 500);
-            index(docs);
-        }
+        ArrayList<Document> docs = readAllHTML();
+        index(docs);
 
         // System.out.println(stemWord("universal"));
 
@@ -391,6 +389,8 @@ public class Indexer {
         org.bson.Document IndexerDocument = new org.bson.Document("word", word);
         // add IDF value = Math.log10(total # if doc aka 5000 /# of documents this word
         // in )
+        // explain map
+
         Map<String, Triplet<Integer, Integer, Map<String, Integer>>> Occurances = invertedFile.get(word);
         ArrayList<org.bson.Document> referencedat = new ArrayList<org.bson.Document>();
         for (String URL : Occurances.keySet()) {
@@ -431,30 +431,31 @@ public class Indexer {
         IndexerCollection.insertOne(IndexerDocument);
     }
 
-    private static ArrayList<Document> readAllHTML(int start, int end) throws IOException {
+    private static ArrayList<Document> readAllHTML() throws IOException {
         file_URL = new HashMap<String, String>();
         ArrayList<Document> docs = new ArrayList<Document>();
 
-        File folder = new File(webpagesPath);
-        File[] listOfFiles = folder.listFiles();
+        // File folder = new File(webpagesPath);
+        // File[] listOfFiles = folder.listFiles();
 
-        if (end > listOfFiles.length) {
-            end = listOfFiles.length;
-        }
-        if (start > end) {
-            System.out.println("start is greater than end");
-            return docs;
-        }
-        // System.out.println("Number of files: " + listOfFiles.length);
-        for (int i = start; i < end; i++) {
-            if (listOfFiles[i].isFile()) {
-                String fileName = listOfFiles[i].getName();
-                String filePath = listOfFiles[i].getAbsolutePath();
-                // file_URL.put(fileName, filePath);
-                Document doc = Jsoup.parse(new File(filePath), "UTF-8");
-                docs.add(doc);
-            }
-        }
+        // if (end > listOfFiles.length)
+        // {
+        // end = listOfFiles.length;
+        // }
+        // if (start > end) {
+        // System.out.println("start is greater than end");
+        // return docs;
+        // }
+        // // System.out.println("Number of files: " + listOfFiles.length);
+        // for (int i = start; i < end; i++) {
+        // if (listOfFiles[i].isFile()) {
+        // String fileName = listOfFiles[i].getName();
+        // String filePath = listOfFiles[i].getAbsolutePath();
+        // //file_URL.put(fileName, filePath);
+        // Document doc = Jsoup.parse(new File(filePath), "UTF-8");
+        // docs.add(doc);
+        // }
+        // }
 
         Bson projection = Projections.fields(Projections.include("url", "fileName"),
                 Projections.excludeId());
@@ -463,14 +464,14 @@ public class Indexer {
         Document doc = null;
         while (it.hasNext()) {
             org.bson.Document fileUrlObject = (org.bson.Document) it.next();
-            // doc = readHTMLFile(webpagesPath + fileUrlObject.get("fileName") + ".html");
+            doc = readHTMLFile(webpagesPath + fileUrlObject.get("fileName") + ".html");
             if (doc == null) {
                 continue;
             }
             String fileName = fileUrlObject.get("fileName") + ".html";
             String URL = fileUrlObject.get("url") + "";
             file_URL.put(fileName, URL);
-            // docs.add(doc);
+            docs.add(doc);
         }
         return docs;
     }
