@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import com.Backend.API.QueryProcessorPack.QueryProcessor;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,6 +25,15 @@ public class SearchController {
         MongoDatabase db = client.getDatabase("WebCrawler");
 
         ArrayList<String> result = QueryProcessor.QueryProcessor(search, db);
+
+        // ArrayList<String> result = new ArrayList<>();
+        // MongoCollection<org.bson.Document> References =
+        // db.getCollection("References");
+        // System.out.println("HERE");
+        // // get the first document in the colelction references
+        // org.bson.Document doc = References.find().first();
+
+        // result.add(doc.get("url").toString());
 
         return new Search(result);
     }
