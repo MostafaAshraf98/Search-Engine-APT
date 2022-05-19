@@ -4,10 +4,15 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 
 import static com.mongodb.client.model.Filters.eq;
 
 import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 
 import com.mongodb.client.FindIterable;
 // Dependency for MongoDB connection 
@@ -43,21 +48,20 @@ public class PageRank {
     public PageRank() {
     }
 
-    public static  ArrayList<String>  rank(ArrayList<String> list, MongoDatabase db,org.bson.Document wordObject) {
-
+    public static ArrayList<String> rank(ArrayList<String> list, HashMap<String, Double> l, MongoDatabase db,
+            ArrayList<org.bson.Document> wordObject) {
         // Getting the collections from the database.
         downloadedURLs = db.getCollection("downloadedURLs");
         References = db.getCollection("References");
         IndexerCollection = db.getCollection("IndexerCollection");
 
-        ArrayList<Pair<String, Double>> l = new ArrayList<Pair<String, Double>>();
+        // HashMap<String, Double> l = new HashMap<String, Double>();
 
         // Both Doc and list taken in Ranker
         // org.bson.Document wordObject = IndexerCollection
-        //         .find(eq("word", "pick")).first();
-        // ArrayList<String> list = getPointingToLinksFReferences("https://login.bigcommerce.com/login");
-
-        ArrayList<org.bson.Document> referencedIterator = (ArrayList<Document>) wordObject.get("References");
+        // .find(eq("word", "popolazion")).first();
+        // ArrayList<String> list =
+        // getPointingToLinksFReferences("https://login.bigcommerce.com/login");
 
         // System.out.println(wordObject.toJson());
         // System.out.println("word data " + wordObject.get("TFIDF"));
@@ -95,7 +99,7 @@ public class PageRank {
 
         // }
 
-        // calculatePopularity(5);
+        calculatePopularity(5);
 
         // for (WebPage WP : Result) {
         // System.out.println("2link " + WP.url);
@@ -106,20 +110,39 @@ public class PageRank {
         // System.out.println("2outgoinglinks is " + WP.getIdpointingto());
 
         // }
-        for (org.bson.Document doc : referencedIterator) {
-            Double tfidfVal = ((Double) doc.get("TFIDF")).doubleValue();
-            System.out.println("Link " + doc.get("URL") + " TFIDF " + doc.get("TFIDF"));
-            String Link = (String) doc.get("URL");
-            Double PR = getDoubleValFDownloadedURLs(Link, "currentPRScore");
-            System.out.println("Link " + doc.get("URL") + " Popularity " + PR);
-            Double ComScore = (5 * tfidfVal) + PR;
-            l.add(new Pair<String, Double>(Link, ComScore));
-        }
+        for (Document d : wordObject) {
+            // ArrayList<org.bson.Document> referencedIterator = (ArrayList<Document>)
+            // wordObject.get("References");
+            for (org.bson.Document doc : referencedIterator) {
+                Double tfidfVal = ((Double) doc.get("TFIDF")).doubleValue();
+                // System.out.println("Link " + doc.get("URL") + " TFIDF " + doc.get("TFIDF"));
+                String Link = (String) doc.get("URL");
+                Double PR = getDoubleValFDownloadedURLs(Link, "currentPRScore");
+                // System.out.println("Link " + doc.get("URL") + " Popularity " + PR);
+                ComScore = (5 * tfidfVal) + PR;
+                // l.put(Link, ComScore);
+                l.put(link,map.get(link)+ComScore)
+                 System.out.println("Link " + doc.get("URL") + " Combined Score  " + map.get(link));
 
-        Collections.sort(l, new ScoreComparator());
+            }
+
+        }
+        // ArrayList<org.bson.Document> referencedIterator = (ArrayList<Document>)
+        // wordObject.get("References");
+
+        // Collections.sort(l, new ScoreComparator());
         ArrayList<String> sortedList = new ArrayList<String>();
-        for (Pair<String, Double> p : l) {
-            sortedList.add(p.getKey());
+        // for (Pair<String, Double> p : l) {
+        // sortedList.add(p.getKey());
+        // System.out.println("Link" + p.getKey());
+        // }
+        HashMap<String, Double> hm1 = sortByValue(l);
+
+        // print the sorted hashmap
+        for (Map.Entry me : hm1.entrySet()) {
+            // System.out.println("Key: " + me.getKey() + " & Value: " + me.getValue());
+            sortedList.add((String) me.getKey());
+
         }
         return sortedList;
         // try {
@@ -223,6 +246,26 @@ public class PageRank {
             return Double.compare((Double) a.getValue(), (Double) b.getValue());
         }
 
+    }
+
+    public static HashMap<String, Double> sortByValue(HashMap<String, Double> hm) {
+        // Create a list from elements of HashMap
+        List<Map.Entry<String, Double>> list = new LinkedList<Map.Entry<String, Double>>(hm.entrySet());
+
+        // Sort the list
+        Collections.sort(list, new Comparator<Map.Entry<String, Double>>() {
+            public int compare(Map.Entry<String, Double> o1,
+                    Map.Entry<String, Double> o2) {
+                return (o2.getValue()).compareTo(o1.getValue());
+            }
+        });
+
+        // put data from sorted list to hashmap
+        HashMap<String, Double> temp = new LinkedHashMap<String, Double>();
+        for (Map.Entry<String, Double> aa : list) {
+            temp.put(aa.getKey(), aa.getValue());
+        }
+        return temp;
     }
 
     public static void PRCalcMatrix() {
