@@ -1,4 +1,4 @@
-package com.Backend.API.rankerPack;
+package com.codebind.rankerPack;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -15,6 +15,9 @@ import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 // import com.mongodb.client.model.Projections;
+import com.mongodb.client.result.UpdateResult;
+
+import org.bson.Document;
 
 // import org.bson.conversions.Bson;
 
@@ -37,50 +40,73 @@ public class PageRank {
     public PageRank() {
     }
 
-    public static void rank(String[] args, MongoDatabase db, SearchResult sR) {
+    public static void rank(String[] args, MongoDatabase db) {
 
         // Getting the collections from the database.
         downloadedURLs = db.getCollection("downloadedURLs");
         References = db.getCollection("References");
         IndexerCollection = db.getCollection("IndexerCollection");
         org.bson.Document wordObject = IndexerCollection
-                .find(eq("word", "pico")).first();
-        // System.out.println(wordObject.toJson());
-        System.out.println("word data " + wordObject.get("References"));
-
-        // Getting the search results from the SearchResult class.
-        ArrayList<String> list = getPointingToLinks("https://login.bigcommerce.com/login");
-        for (String L : list) {
-            System.out.println("link " + L);
-            System.out.println("Count is " + getOutgoingLinksCount(L));
-            FindIterable<org.bson.Document> referencedIterator = downloadedURLs
-                    .find(eq("url", L));
-            Iterator it = referencedIterator.iterator();
-            if (it.hasNext()) {
-                org.bson.Document filepointingToUrlObject = (org.bson.Document) it.next();
-                System.out.println("previousPRScore is " +
-                        filepointingToUrlObject.get("previousPRScore"));
-                System.out.println("currentPRScore is " +
-                        filepointingToUrlObject.get("currentPRScore"));
-
-            }
+                .find(eq("word", "pick")).first();
+        ArrayList<org.bson.Document> referencedIterator = (ArrayList<Document>) wordObject.get("References");
+        for (org.bson.Document doc : referencedIterator) {
+            System.out.println("Link " + doc.get("URL") + " TFIDF " + doc.get("TFIDF"));
+            String Link = (String) doc.get("URL");
+            System.out.println("Link " + doc.get("URL") + " Popularity "
+                    + getDoubleValFDownloadedURLs(Link, "currentPRScore"));
 
         }
+        // System.out.println(wordObject.toJson());
+        System.out.println("word data " + wordObject.get("TFIDF"));
 
-        // SearchResult sR = new SearchResult();
+        // Getting the search results from the SearchResult class.
+        ArrayList<String> list = getPointingToLinksFReferences("https://login.bigcommerce.com/login");
+        // for (String L : list) {
+        // System.out.println("link " + L);
+        // System.out.println("Count is " + getOutgoingLinksCount(L));
+        // FindIterable<org.bson.Document> referencedIterator = downloadedURLs
+        // .find(eq("url", L));
+        // Iterator it = referencedIterator.iterator();
+        // if (it.hasNext()) {
+        // org.bson.Document filepointingToUrlObject = (org.bson.Document) it.next();
+        // System.out.println("previousPRScore is " +
+        // filepointingToUrlObject.get("previousPRScore"));
+        // System.out.println("currentPRScore is " +
+        // filepointingToUrlObject.get("currentPRScore"));
+
+        // }
+
+        // }
+
+        // updateEntryFDownloadedURLs("https://www.python.org/about/gettingstarted/",
+        // "currentPRScore",
+        // 1);
+        SearchResult sR = new SearchResult(list, db);
         Result = sR.pagesResults;
+        // for (WebPage WP : Result) {
+        // System.out.println("1link " + WP.url);
+        // System.out.println("1Count is " + WP.getOutgoinglinks());
 
-        calculatePopularity(5);
+        // System.out.println("1previousPRScore is " + WP.getPreviousPRScore());
+        // System.out.println("1currentPRScore is " + WP.getCurrentPRScore());
+        // System.out.println("1outgoinglinks is " + WP.getIdpointingto());
 
+        // }
+
+        // calculatePopularity(5);
+
+        // for (WebPage WP : Result) {
+        // System.out.println("2link " + WP.url);
+        // System.out.println("2Count is " + WP.getOutgoinglinks());
+
+        // System.out.println("2previousPRScore is " + WP.getPreviousPRScore());
+        // System.out.println("2currentPRScore is " + WP.getCurrentPRScore());
+        // System.out.println("2outgoinglinks is " + WP.getIdpointingto());
+
+        // }
         double combinedScore = (5 * sR.getTfIDF()) + sR.getPR();
 
         sR.setCombinedScore(combinedScore);// sR.setCombinedScore(combinedScore * 10000000);
-
-        for (WebPage WP : Result) {
-            System.out.println(" id " + WP.id + " pointed to by " +
-                    Arrays.toString((WP.idpointingto)) + " Scores "
-                    + WP.currentPRScore + " " + WP.previousPRScore);
-        }
 
         // try {
         // Collections.sort(Result, new ScoreComparator());
@@ -99,7 +125,7 @@ public class PageRank {
     // Set Combined Score
 
     // Function to get Pointing To links for a URL
-    public static ArrayList<String> getPointingToLinks(String url) {
+    public static ArrayList<String> getPointingToLinksFReferences(String url) {
         FindIterable<org.bson.Document> iterDoc = References
                 .find(eq("url", url));
         Iterator it = iterDoc.iterator();
@@ -141,16 +167,40 @@ public class PageRank {
             double tempScore = 0;
             for (String id : WP.idpointingto) {
                 // System.out.println(" id " + id);
-                tempScore += (Result.get(Integer.parseInt(id)).getPreviousPRScore()
-                        / Result.get(Integer.parseInt(id)).getOutgoinglinks());
+                tempScore += (getDoubleValFDownloadedURLs(id, "previousPRScore")
+                        / getIntegerVal(id, "linksCount"));
             }
             tempScore = (double) ((1.0 - dampingFactor) / Result.size()) + (dampingFactor * tempScore);
             WP.setCurrentPRScore(tempScore);
+            updateEntryFDownloadedURLs(WP.url, "currentPRScore", tempScore);
         }
         for (WebPage WP : Result) {
             // WP.previousPRScore = WP.currentPRScore;
             WP.setPreviousPRScore(WP.getCurrentPRScore());
+            updateEntryFDownloadedURLs(WP.url, "previousPRScore",
+                    getDoubleValFDownloadedURLs(WP.url, "currentPRScore"));
+
         }
+    }
+
+    // helper function to update entry
+    public static void updateEntryFDownloadedURLs(String url, String field, double value) {
+        UpdateResult result = downloadedURLs.updateOne(eq("url", url),
+                new org.bson.Document("$set", new org.bson.Document(field, value)));
+    }
+
+    // helper function to get double value from db
+    private static Double getDoubleValFDownloadedURLs(String L, String searchKey) {
+        org.bson.Document linksIterator = downloadedURLs.find(eq("url", L)).first();
+        return ((Double) linksIterator.get(searchKey)).doubleValue();
+
+    }
+
+    // helper function to get integer value from db
+    private static Integer getIntegerVal(String L, String searchKey) {
+        org.bson.Document linksIterator = downloadedURLs.find(eq("url", L)).first();
+        return ((Integer) linksIterator.get(searchKey)).intValue();
+
     }
 
     private static class ScoreComparator implements Comparator<SearchResult> {

@@ -1,17 +1,22 @@
-package com.Backend.API.rankerPack;
+package com.codebind.rankerPack;
+
+import java.util.ArrayList;
 
 public class WebPage {
     public Integer id;
-    public String[] idpointingto;
+    public String url;
+    public ArrayList<String> idpointingto;
     public double currentPRScore;
     public double previousPRScore;
     public Integer outgoinglinks;
 
     // set data from downloaded URLS and then wehn updating get data from downloaded
     // URLS
-    public WebPage(Integer id, String[] idpointingto, double currentPRScore, double previousPRScore,
+    public WebPage(Integer id, String Url, ArrayList<String> idpointingto, double currentPRScore,
+            double previousPRScore,
             Integer outgoinglinks) {
         this.id = id;
+        this.url = Url;
         this.idpointingto = idpointingto;
         this.currentPRScore = currentPRScore;
         this.previousPRScore = previousPRScore;
@@ -26,11 +31,11 @@ public class WebPage {
         this.id = id;
     }
 
-    public String[] getIdpointingto() {
+    public ArrayList<String> getIdpointingto() {
         return idpointingto;
     }
 
-    public void setIdpointingto(String[] idpointingto) {
+    public void setIdpointingto(ArrayList<String> idpointingto) {
         this.idpointingto = idpointingto;
     }
 
