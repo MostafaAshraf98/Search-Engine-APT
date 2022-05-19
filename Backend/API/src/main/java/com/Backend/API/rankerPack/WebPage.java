@@ -1,4 +1,4 @@
-package com.Backend.API.rankerPack;
+package com.codebind.rankerPack;
 
 import java.util.ArrayList;
 

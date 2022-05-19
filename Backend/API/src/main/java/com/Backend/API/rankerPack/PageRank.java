@@ -1,7 +1,8 @@
-package com.Backend.API.rankerPack;
+package com.codebind.rankerPack;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
 
 import static com.mongodb.client.model.Filters.eq;
@@ -18,6 +19,8 @@ import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.result.UpdateResult;
 
 import org.bson.Document;
+
+import javafx.util.Pair;
 
 // import org.bson.conversions.Bson;
 
@@ -40,27 +43,26 @@ public class PageRank {
     public PageRank() {
     }
 
-    public static void rank(String[] args, MongoDatabase db) {
+    public static  ArrayList<String>  rank(ArrayList<String> list, MongoDatabase db,org.bson.Document wordObject) {
 
         // Getting the collections from the database.
         downloadedURLs = db.getCollection("downloadedURLs");
         References = db.getCollection("References");
         IndexerCollection = db.getCollection("IndexerCollection");
-        org.bson.Document wordObject = IndexerCollection
-                .find(eq("word", "pick")).first();
-        ArrayList<org.bson.Document> referencedIterator = (ArrayList<Document>) wordObject.get("References");
-        for (org.bson.Document doc : referencedIterator) {
-            System.out.println("Link " + doc.get("URL") + " TFIDF " + doc.get("TFIDF"));
-            String Link = (String) doc.get("URL");
-            System.out.println("Link " + doc.get("URL") + " Popularity "
-                    + getDoubleValFDownloadedURLs(Link, "currentPRScore"));
 
-        }
+        ArrayList<Pair<String, Double>> l = new ArrayList<Pair<String, Double>>();
+
+        // Both Doc and list taken in Ranker
+        // org.bson.Document wordObject = IndexerCollection
+        //         .find(eq("word", "pick")).first();
+        // ArrayList<String> list = getPointingToLinksFReferences("https://login.bigcommerce.com/login");
+
+        ArrayList<org.bson.Document> referencedIterator = (ArrayList<Document>) wordObject.get("References");
+
         // System.out.println(wordObject.toJson());
-        System.out.println("word data " + wordObject.get("TFIDF"));
+        // System.out.println("word data " + wordObject.get("TFIDF"));
 
         // Getting the search results from the SearchResult class.
-        ArrayList<String> list = getPointingToLinksFReferences("https://login.bigcommerce.com/login");
         // for (String L : list) {
         // System.out.println("link " + L);
         // System.out.println("Count is " + getOutgoingLinksCount(L));
@@ -104,10 +106,22 @@ public class PageRank {
         // System.out.println("2outgoinglinks is " + WP.getIdpointingto());
 
         // }
-        double combinedScore = (5 * sR.getTfIDF()) + sR.getPR();
+        for (org.bson.Document doc : referencedIterator) {
+            Double tfidfVal = ((Double) doc.get("TFIDF")).doubleValue();
+            System.out.println("Link " + doc.get("URL") + " TFIDF " + doc.get("TFIDF"));
+            String Link = (String) doc.get("URL");
+            Double PR = getDoubleValFDownloadedURLs(Link, "currentPRScore");
+            System.out.println("Link " + doc.get("URL") + " Popularity " + PR);
+            Double ComScore = (5 * tfidfVal) + PR;
+            l.add(new Pair<String, Double>(Link, ComScore));
+        }
 
-        sR.setCombinedScore(combinedScore);// sR.setCombinedScore(combinedScore * 10000000);
-
+        Collections.sort(l, new ScoreComparator());
+        ArrayList<String> sortedList = new ArrayList<String>();
+        for (Pair<String, Double> p : l) {
+            sortedList.add(p.getKey());
+        }
+        return sortedList;
         // try {
         // Collections.sort(Result, new ScoreComparator());
         // } catch (Exception e) {
@@ -203,10 +217,10 @@ public class PageRank {
 
     }
 
-    private static class ScoreComparator implements Comparator<SearchResult> {
+    private static class ScoreComparator implements Comparator<Pair> {
 
-        public int compare(SearchResult a, SearchResult b) {
-            return Double.compare(a.getCombinedScore(), b.getCombinedScore());
+        public int compare(Pair a, Pair b) {
+            return Double.compare((Double) a.getValue(), (Double) b.getValue());
         }
 
     }
