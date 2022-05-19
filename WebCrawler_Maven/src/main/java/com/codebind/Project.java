@@ -19,13 +19,13 @@ public class Project {
         // Getting the dataBase from this client.
         MongoDatabase db = client.getDatabase("APTProject");
 
-        System.out.println("Started Crawling");
-        long start = System.currentTimeMillis();
+        // System.out.println("Started Crawling");
+        // long start = System.currentTimeMillis();
 
-        WebCrawler.Web(args, db);
-        long end = System.currentTimeMillis();
-        System.out.println("Crawling Finished in " + (end - start) / 60000.0 +
-                "minutes");
+        // WebCrawler.Web(args, db);
+        // long end = System.currentTimeMillis();
+        // System.out.println("Crawling Finished in " + (end - start) / 60000.0 +
+        // "minutes");
 
         System.out.println("Started Indexing");
         start = System.currentTimeMillis();
