@@ -61,9 +61,8 @@ public class Indexer {
         IndexerCollection = db.getCollection("IndexerCollection");
         downloadedURLs = db.getCollection("downloadedURLs");
 
-        for(int i = 0; i < 10; i++)
-        {
-            ArrayList<Document> docs = readAllHTML(i * 500, (i+1) * 500);
+        for (int i = 0; i < 10; i++) {
+            ArrayList<Document> docs = readAllHTML(i * 500, (i + 1) * 500);
             index(docs);
         }
 
@@ -436,12 +435,10 @@ public class Indexer {
         file_URL = new HashMap<String, String>();
         ArrayList<Document> docs = new ArrayList<Document>();
 
-        
         File folder = new File(webpagesPath);
         File[] listOfFiles = folder.listFiles();
 
-        if (end > listOfFiles.length)
-        {
+        if (end > listOfFiles.length) {
             end = listOfFiles.length;
         }
         if (start > end) {
@@ -453,7 +450,7 @@ public class Indexer {
             if (listOfFiles[i].isFile()) {
                 String fileName = listOfFiles[i].getName();
                 String filePath = listOfFiles[i].getAbsolutePath();
-                //file_URL.put(fileName, filePath);
+                // file_URL.put(fileName, filePath);
                 Document doc = Jsoup.parse(new File(filePath), "UTF-8");
                 docs.add(doc);
             }

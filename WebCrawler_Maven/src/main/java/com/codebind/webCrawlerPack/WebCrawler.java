@@ -53,7 +53,7 @@ public class WebCrawler {
 	// public Object lock = new Object();
 
 	// The total required number of crawled webpages.
-	final static int TOTAL_NUM_WEBPAGES = 5000;
+	final static int TOTAL_NUM_WEBPAGES = 500;
 
 	// Maps every hostID to the robot.txt rules in it.
 	static Hashtable<String, BaseRobotRules> robotsTxtRules;

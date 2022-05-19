@@ -37,7 +37,7 @@ public class SearchController {
         // org.bson.Document document = new org.bson.Document("url", "Hello");
         // References.insertOne(document);
 
-        // // result.add(doc.get("url").toString());
+        // result.add(doc.get("url").toString());
         // result.add("https://en.wikipedia.org/wiki/Computer");
         // result.add("https://en.wikipedia.org/wiki/Computer_science");
         // result.add("https://en.wikipedia.org/wiki/Algorithm");

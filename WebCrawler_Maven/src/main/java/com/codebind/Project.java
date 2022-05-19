@@ -24,7 +24,8 @@ public class Project {
 
         WebCrawler.Web(args, db);
         long end = System.currentTimeMillis();
-        System.out.println("Crawling Finished in " + (end - start) / 60000.0 + "minutes");
+        System.out.println("Crawling Finished in " + (end - start) / 60000.0 +
+                "minutes");
 
         System.out.println("Started Indexing");
         start = System.currentTimeMillis();

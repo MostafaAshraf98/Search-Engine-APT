@@ -84,9 +84,11 @@ public class QueryProcessor {
 
         IndexedURLs = new ArrayList<String>(URLs);
         System.out.println("ranking started");
-        ArrayList<String> sortedList = PageRank.rank(IndexedURLs, URL_I, db, QueryDocuments);
+        ArrayList<String> sortedList = PageRank.rank(IndexedURLs, URL_I, db,
+                QueryDocuments);
         System.out.println("ranking finished");
         return sortedList;
+        // return IndexedURLs;
     }
 
     public static void loadStopwords() throws IOException {

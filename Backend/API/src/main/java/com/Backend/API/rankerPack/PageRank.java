@@ -56,14 +56,14 @@ public class PageRank {
         References = db.getCollection("References");
         IndexerCollection = db.getCollection("IndexerCollection");
 
-        // if (flag == 0) {
-        // ArrayList<String> urlList = new ArrayList<String>();
-        // for (org.bson.Document doc : downloadedURLs.find()) {
-        // urlList.add(doc.get("url").toString());
-        // }
-        // PageRank.calculatePR(urlList, db);
-        // flag = 1;
-        // }
+        if (flag == 0) {
+            ArrayList<String> urlList = new ArrayList<String>();
+            for (org.bson.Document doc : downloadedURLs.find()) {
+                urlList.add(doc.get("url").toString());
+            }
+            PageRank.calculatePR(urlList, db);
+            flag = 1;
+        }
 
         // HashMap<String, Double> l = new HashMap<String, Double>();
 
@@ -127,8 +127,9 @@ public class PageRank {
                 // System.out.println("Link " + doc.get("URL") + " Popularity " + PR);
                 Double ComScore = (5 * tfidfVal) + PR;
                 // l.put(Link, ComScore);
-                
-                l.put(Link, l.get(Link) + ComScore);
+                if (l.get(Link) != null) {
+                    l.put(Link, l.get(Link) + ComScore);
+                }
                 System.out.println("Link " + doc.get("URL") + " Combined Score  " + l.get(Link));
 
             }
