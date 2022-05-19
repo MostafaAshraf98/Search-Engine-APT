@@ -73,6 +73,9 @@ public class SearchResult {
     // Function to get Pointing To links for a URL
     public static ArrayList<String> getPointingToLinks(String url) {
         org.bson.Document iterDoc = References.find(eq("url", url)).first();
+        if (iterDoc == null) {
+            return new ArrayList<String>();
+        }
         // System.out.println("val " + iterDoc.get("referencedBy"));
         return (ArrayList<String>) iterDoc.get("referencedBy");
 

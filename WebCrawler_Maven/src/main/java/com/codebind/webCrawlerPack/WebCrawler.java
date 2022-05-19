@@ -151,7 +151,7 @@ public class WebCrawler {
 					try {
 						url = inQueueURLs.findOneAndDelete(null).get("url").toString();
 					} catch (NullPointerException e) {
-						System.out.println("Error while getting the next url from the queue: " + e);
+						// System.out.println("Error while getting the next url from the queue: " + e);
 					}
 				}
 
@@ -160,7 +160,8 @@ public class WebCrawler {
 						normalizedURL = (new URL(url));
 				} catch (MalformedURLException e) {
 					url = null;
-					System.out.println("Error while creating URL from the url: " + url + " " + e);
+					// System.out.println("Error while creating URL from the url: " + url + " " +
+					// e);
 				}
 
 			}
@@ -174,7 +175,7 @@ public class WebCrawler {
 			// Base/Stopping condition:
 			if (downloadedURLs.countDocuments() >= TOTAL_NUM_WEBPAGES)
 				return;
-			System.out.println("Crawling the url: " + url);
+			// System.out.println("Crawling the url: " + url);
 			// Request this document.
 			Document doc = req(url);
 			// doc is null if this url is not valid (visited before or not valid to
@@ -221,7 +222,7 @@ public class WebCrawler {
 					try {
 						next_url = inQueueURLs.findOneAndDelete(null).get("url").toString();
 					} catch (NullPointerException e) {
-						System.out.println("Error while getting the next url from the queue: " + e);
+						// System.out.println("Error while getting the next url from the queue: " + e);
 					}
 				}
 				try {
@@ -229,7 +230,8 @@ public class WebCrawler {
 						normalizedURL = (new URL(next_url));
 				} catch (MalformedURLException e) {
 					next_url = null;
-					System.out.println("Error while creating URL from the url: " + url + " " + e);
+					// System.out.println("Error while creating URL from the url: " + url + " " +
+					// e);
 				}
 
 			}
@@ -252,7 +254,7 @@ public class WebCrawler {
 				if (con.response().statusCode() == 200) {
 
 					if (downloadedURLs.countDocuments() < TOTAL_NUM_WEBPAGES) {
-						System.out.println("Downloading the url: " + url);
+						// System.out.println("Downloading the url: " + url);
 						// Result is a boolean is the download was success or failure.
 						Boolean result = DownloadWebPage(url, doc);
 						if (result == false)
@@ -263,10 +265,12 @@ public class WebCrawler {
 					return null;
 				}
 			} catch (IOException e) {
-				System.out.println("IO Exception raised while requesting the url: " + url + " " + e);
+				// System.out.println("IO Exception raised while requesting the url: " + url + "
+				// " + e);
 				return null;
 			} catch (IllegalArgumentException mue) {
-				System.out.println("Malformed URL Exception raised while requesting the url: " + url + " " + mue);
+				// System.out.println("Malformed URL Exception raised while requesting the url:
+				// " + url + " " + mue);
 				return null;
 			}
 		}
@@ -280,27 +284,30 @@ public class WebCrawler {
 				String contentCompactString = compactStringHelper(doc.html());
 				if (downloadedURLs.find(eq("compactedContent",
 						contentCompactString)).first() != null) {
-					System.out.println("Download unsuccessful because the webPage: " + url
-							+ " is already visited (FOUND SAME COMPACT STRING)");
+					// System.out.println("Download unsuccessful because the webPage: " + url
+					// + " is already visited (FOUND SAME COMPACT STRING)");
 					return false;
 				} else if (downloadedURLs.find(eq("normalizedURL", normalizedURL.getNormalizedUrl()))
 						.first() != null) {
-					System.out.println("Download unsuccessful because the webPage: " + url
-							+ " is already visited (FOUND SAME NORMALIZED URL)");
+					// System.out.println("Download unsuccessful because the webPage: " + url
+					// + " is already visited (FOUND SAME NORMALIZED URL)");
 					return false;
 				} else if (downloadedURLs.countDocuments() >= TOTAL_NUM_WEBPAGES) {
-					System.out.println("Download unsuccessful because we reached the FINAL COUNT");
+					// System.out.println("Download unsuccessful because we reached the FINAL
+					// COUNT");
 					return false;
 				} else if (isRobotExcluded(url)) {
-					System.out.println("Download unsuccessful because The url is EXCLUDED BY ROBOT.TXT");
+					// System.out.println("Download unsuccessful because The url is EXCLUDED BY
+					// ROBOT.TXT");
 					return false;
 				}
 				// Write the html content (DOM) in a file with a unique name = to the hashcode
 				// of this document
-				wr = new BufferedWriter(
-						new FileWriter(System.getProperty("user.dir") + "/webPages/" + doc.hashCode() + ".html"));
-				wr.write(doc.html());
-				wr.close();
+				// wr = new BufferedWriter(
+				// new FileWriter(System.getProperty("user.dir") + "/webPages/" + doc.hashCode()
+				// + ".html"));
+				// wr.write(doc.html());
+				// wr.close();
 				// Save this downloaded Webpage in the database
 				// with the fields url, filname, compactedString and normalizedURL
 				org.bson.Document document = new org.bson.Document("url", url)
@@ -316,15 +323,18 @@ public class WebCrawler {
 				return true;
 			} // Exceptions
 			catch (MalformedURLException mue) {
-				System.out.println(
-						"Malformed URL Exception raised while downloading the webPage: " + url + " " + mue);
+				// System.out.println(
+				// "Malformed URL Exception raised while downloading the webPage: " + url + " "
+				// + mue);
 				return false;
 			} catch (IOException ie) {
-				System.out.println("IOException raised While downloading the webPage: " + url + " " + ie);
+				// System.out.println("IOException raised While downloading the webPage: " + url
+				// + " " + ie);
 				return false;
 			} catch (StringIndexOutOfBoundsException e) {
-				System.out.println(
-						"StringIndexOutOfBoundsException raised while downloading the webPage: " + url + " " + e);
+				// System.out.println(
+				// "StringIndexOutOfBoundsException raised while downloading the webPage: " +
+				// url + " " + e);
 				return false;
 			}
 		}
@@ -334,7 +344,7 @@ public class WebCrawler {
 		private String compactStringHelper(String html) {
 			StringBuilder contentCompactString = new StringBuilder();
 			String trimmedhtml = html.trim();
-			for (int i = 0; i < trimmedhtml.length(); i += 10)
+			for (int i = 0; i < trimmedhtml.length(); i += 100)
 				contentCompactString.append(trimmedhtml.charAt(i));
 			return contentCompactString.toString();
 		}
@@ -394,7 +404,8 @@ public class WebCrawler {
 					robotsTxtRules.put(hostId, rules);
 				}
 			} catch (IOException e) {
-				System.out.println("Error while fetching the robots.txt file for the url: " + url + " " + e);
+				// System.out.println("Error while fetching the robots.txt file for the url: " +
+				// url + " " + e);
 				return false;
 			}
 			// return whether it is allowed or not to crawl this url.

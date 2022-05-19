@@ -34,9 +34,12 @@ import opennlp.tools.stemmer.PorterStemmer;
 public class QueryProcessor {
     public static MongoCollection<org.bson.Document> IndexerCollection;
     static Map<String, Integer> stopwords;
+    static HashMap<String, Double> URL_I;
 
     public static ArrayList<String> QueryProcessor(String Query, MongoDatabase db) throws IOException {
+        System.out.println("Entered the query processor");
         loadStopwords();
+        URL_I = new HashMap<String, Double>();
         // Getting the collections from this database.
         IndexerCollection = db.getCollection("IndexerCollection");
         String[] QueryWords = Query.split(" ");
@@ -45,15 +48,17 @@ public class QueryProcessor {
         ArrayList<Document> QueryDocuments = new ArrayList<Document>();
         ArrayList<Document> Ref = new ArrayList<Document>();
 
+        System.out.println("Before the for loop1");
         for (int i = 0; i < QueryWords.length; i++) {
             String word = QueryWords[i].toLowerCase();
             word.replaceAll("[^a-zA-Z0-9]", "");
             if (!isStopword(word)) {
                 String Stem = stemWord(word);
-
+                // System.out.println(word);
                 ProcessedWords.add(Stem);
             }
         }
+        System.out.println("Before the for loop 2");
         // IndexerCollection.find({"word":{$in:ProcessedWords}}).pretty();
 
         for (int i = 0; i < ProcessedWords.size(); i++) {
@@ -67,16 +72,20 @@ public class QueryProcessor {
                 // System.out.println(" ");
                 for (int j = 0; j < References.size(); j++) {
                     // System.out.println(References.get(j).get("URL"));
-                    IndexedURLs.add(References.get(j).get("URL") + "");
+                    String URL = References.get(j).get("URL") + "";
+                    IndexedURLs.add(URL);
+                    if (!URL_I.containsKey(URL)) {
+                        URL_I.put(URL, 0.0);
+                    }
                 }
             }
-
         }
         LinkedHashSet<String> URLs = new LinkedHashSet<String>(IndexedURLs);
+
         IndexedURLs = new ArrayList<String>(URLs);
-        PageRank pr = new PageRank();
-        Document wordIndexFile = IndexerCollection.find(eq("word", ProcessedWords.get(0))).first();
-        ArrayList<String> sortedList = pr.rank(IndexedURLs, db, wordIndexFile);
+        System.out.println("ranking started");
+        ArrayList<String> sortedList = PageRank.rank(IndexedURLs, URL_I, db, QueryDocuments);
+        System.out.println("ranking finished");
         return sortedList;
     }
 

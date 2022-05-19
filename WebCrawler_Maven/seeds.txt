@@ -1,10 +1,7 @@
-https://www.python.org/about/gettingstarted/
-https://www.allrecipes.com/recipes/1642/everyday-cooking/
-https://www.bbc.com/
-https://www.rottentomatoes.com/browse/in-theaters/
-https://www.javapoint.com/
-https://www.thenationalnews.com/
-https://www.bigcommerce.com/articles/ecommerce/
-https://www.wikipedia.org/
-https://www.w3schools.com/
+https://www.javatpoint.com
+https://www.arduino.cc/en/hardware
 https://www.geeksforgeeks.org/
+https://www.python.org/
+https://www.apple.com/
+https://docs.python.org/
+https://www.bbc.com/

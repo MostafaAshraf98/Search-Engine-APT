@@ -12,7 +12,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Iterator;
 
-
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
@@ -47,7 +46,6 @@ public class Indexer {
     static Map<String, String> file_URL;
     // static Map<String, String> File_size;
 
-
     // Those are used in the indexer map
     static String headName = "head";
     static String bodyName = "body";
@@ -68,8 +66,8 @@ public class Indexer {
         index(docs);
         // print the inverted file
         // printInvertedFile();
-//        AddToDatabase();
-//        UpdateDatabase();
+        AddToDatabase();
+        // UpdateDatabase();
 
     }
 
@@ -79,7 +77,7 @@ public class Indexer {
             File inputFile = new File("stop_words_english.txt");
             BufferedReader myReader = new BufferedReader(new FileReader(inputFile));
             String word;
-            while ((word= myReader.readLine()) != null) {
+            while ((word = myReader.readLine()) != null) {
                 if (!word.equals("") && !stopwords.containsKey(word))
                     stopwords.put(word, 1);
 
@@ -107,7 +105,9 @@ public class Indexer {
     // private static void index(Document doc, String Url) throws IOException {
     private static void index(ArrayList<Document> docs) throws IOException {
         totDocCount = docs.size();
+        int count = 0;
         for (Document doc : docs) {
+            System.out.print("\rIndexing: " + ++count + "/" + totDocCount);
             // int count=0;
             // Get all tags in a document
             Elements all = doc.getAllElements();
@@ -140,7 +140,7 @@ public class Indexer {
                     word = word.toLowerCase();
                     // Replacing all non-alphanumeric (not from "[^a-zA-Z0-9]") characters with
                     // empty string
-                    word = word.replaceAll("[^a-zA-Z0-9]", "");
+                    word = word.replaceAll("[^a-zA-Z]", "");
                     // TODO: remove stop words
                     boolean isStopWord = isStopword(word);
                     // TODO: stemming
@@ -287,9 +287,9 @@ public class Indexer {
 
                 Integer tf = Occurances.get(URL).getValue0();
                 Integer wordCount = Occurances.get(URL).getValue1();
-                Double normalisedTF = (double) (tf) / (double)(wordCount);
+                Double normalisedTF = (double) (tf) / (double) (wordCount);
 
-                Double idf = Math.log10((double)totDocCount / (double) Occurances.size());
+                Double idf = Math.log10((double) totDocCount / (double) Occurances.size());
 
                 Double tfidf = 0.35 * normalisedTF + 0.65 * idf;
                 totTFIDF += tfidf;
@@ -321,12 +321,11 @@ public class Indexer {
 
             documentsToInsert.add(IndexerDocument);
             // IndexerCollection.insertOne(IndexerDocument);
-//            break;
+            // break;
         }
         IndexerCollection.insertMany(documentsToInsert);
     }
-    
-    
+
     private static void UpdateDatabase() {
         System.out.println("updating database");
         // Loop through the inverted file
@@ -334,15 +333,15 @@ public class Indexer {
             // org.bson.Document
             Double totTFIDF = 0.0;
             Bson query = Filters.eq("word", word);
-            Bson update=null;
+            Bson update = null;
             Map<String, Triplet<Integer, Integer, Map<String, Integer>>> Occurances = invertedFile.get(word);
             ArrayList<org.bson.Document> referencedat = new ArrayList<org.bson.Document>();
             for (String URL : Occurances.keySet()) {
                 Integer tf = Occurances.get(URL).getValue0();
                 Integer wordCount = Occurances.get(URL).getValue1();
-                Double normalisedTF = (double) (tf) / (double)(wordCount);
+                Double normalisedTF = (double) (tf) / (double) (wordCount);
 
-                Double idf = Math.log10((double)totDocCount / (double) Occurances.size());
+                Double idf = Math.log10((double) totDocCount / (double) Occurances.size());
 
                 Double tfidf = 0.35 * normalisedTF + 0.65 * idf;
                 totTFIDF += tfidf;
@@ -368,63 +367,61 @@ public class Indexer {
                 // TF-IDF = TF * IDF
             }
             update = Updates.pushEach("References", referencedat);
-            org.bson.Document oldDocument=IndexerCollection.findOneAndUpdate(query, update);
-            if(oldDocument== null)
-            {
-            	AddWordToDatabase(word);
+            org.bson.Document oldDocument = IndexerCollection.findOneAndUpdate(query, update);
+            if (oldDocument == null) {
+                AddWordToDatabase(word);
             }
         }
-//        IndexerCollection.insertMany(documentsToInsert);
+        // IndexerCollection.insertMany(documentsToInsert);
     }
 
     private static void AddWordToDatabase(String word) {
         // Loop through the inverted file
-            Double totTFIDF = 0.0;
-            // QuerryDocuments=IndexerCollection.find(eq("word",word)).first();
-            org.bson.Document IndexerDocument = new org.bson.Document("word", word);
-            // add IDF value = Math.log10(total # if doc aka 5000 /# of documents this word
-            // in )
-            Map<String, Triplet<Integer, Integer, Map<String, Integer>>> Occurances = invertedFile.get(word);
-            ArrayList<org.bson.Document> referencedat = new ArrayList<org.bson.Document>();
-            for (String URL : Occurances.keySet()) {
+        Double totTFIDF = 0.0;
+        // QuerryDocuments=IndexerCollection.find(eq("word",word)).first();
+        org.bson.Document IndexerDocument = new org.bson.Document("word", word);
+        // add IDF value = Math.log10(total # if doc aka 5000 /# of documents this word
+        // in )
+        Map<String, Triplet<Integer, Integer, Map<String, Integer>>> Occurances = invertedFile.get(word);
+        ArrayList<org.bson.Document> referencedat = new ArrayList<org.bson.Document>();
+        for (String URL : Occurances.keySet()) {
 
-                Integer tf = Occurances.get(URL).getValue0();
-                Integer wordCount = Occurances.get(URL).getValue1();
-                Double normalisedTF = (double) (tf) / (double)(wordCount);
+            Integer tf = Occurances.get(URL).getValue0();
+            Integer wordCount = Occurances.get(URL).getValue1();
+            Double normalisedTF = (double) (tf) / (double) (wordCount);
 
-                Double idf = Math.log10((double)totDocCount / (double) Occurances.size());
+            Double idf = Math.log10((double) totDocCount / (double) Occurances.size());
 
-                Double tfidf = 0.35 * normalisedTF + 0.65 * idf;
-                totTFIDF += tfidf;
+            Double tfidf = 0.35 * normalisedTF + 0.65 * idf;
+            totTFIDF += tfidf;
 
-                org.bson.Document ReferenceDocument = new org.bson.Document("URL", URL);
-                Triplet<Integer, Integer, Map<String, Integer>> OccurancesInfo = Occurances.get(URL);
-                ReferenceDocument.append("TF", OccurancesInfo.getValue0());
-                // TFBody value / # of words in this document
-                // TFTitle value / # of words in this document
-                ReferenceDocument.append("TFIDF", tfidf);
-                ArrayList<org.bson.Document> importanceInfo = new ArrayList<org.bson.Document>();
-                for (String title : OccurancesInfo.getValue2().keySet()) {
-                    Integer count = OccurancesInfo.getValue2().get(title);
-                    org.bson.Document titleDocument = new org.bson.Document("tag", title);
-                    titleDocument.append("tag frequency", count);
-                    importanceInfo.add(titleDocument);
-                    // System.out.println(word + " "+URL+" "+ OccurancesInfo.getValue0()+" "+title+"
-                    // "+OccurancesInfo.getValue1().get(title));
+            org.bson.Document ReferenceDocument = new org.bson.Document("URL", URL);
+            Triplet<Integer, Integer, Map<String, Integer>> OccurancesInfo = Occurances.get(URL);
+            ReferenceDocument.append("TF", OccurancesInfo.getValue0());
+            // TFBody value / # of words in this document
+            // TFTitle value / # of words in this document
+            ReferenceDocument.append("TFIDF", tfidf);
+            ArrayList<org.bson.Document> importanceInfo = new ArrayList<org.bson.Document>();
+            for (String title : OccurancesInfo.getValue2().keySet()) {
+                Integer count = OccurancesInfo.getValue2().get(title);
+                org.bson.Document titleDocument = new org.bson.Document("tag", title);
+                titleDocument.append("tag frequency", count);
+                importanceInfo.add(titleDocument);
+                // System.out.println(word + " "+URL+" "+ OccurancesInfo.getValue0()+" "+title+"
+                // "+OccurancesInfo.getValue1().get(title));
 
-                    // TF = TFBody*0.3+TFTitle*0.7
-                }
-                ReferenceDocument.append("Appeared as", importanceInfo);
-                referencedat.add(ReferenceDocument);
-                // TF-IDF = TF * IDF
-
+                // TF = TFBody*0.3+TFTitle*0.7
             }
-            IndexerDocument.append("TFIDF", totTFIDF);
-            IndexerDocument.append("References", referencedat);
-            IndexerCollection.insertOne(IndexerDocument);
+            ReferenceDocument.append("Appeared as", importanceInfo);
+            referencedat.add(ReferenceDocument);
+            // TF-IDF = TF * IDF
+
+        }
+        IndexerDocument.append("TFIDF", totTFIDF);
+        IndexerDocument.append("References", referencedat);
+        IndexerCollection.insertOne(IndexerDocument);
     }
-    
-    
+
     private static ArrayList<Document> readAllHTML() throws IOException {
         file_URL = new HashMap<String, String>();
         ArrayList<Document> docs = new ArrayList<Document>();
@@ -457,7 +454,7 @@ public class Indexer {
             String fileName = fileUrlObject.get("fileName") + ".html";
             String URL = fileUrlObject.get("url") + "";
             file_URL.put(fileName, URL);
-            docs.add(doc);            
+            docs.add(doc);
         }
         return docs;
     }

@@ -1,4 +1,4 @@
-package com.codebind.rankerPack;
+package com.Backend.API.rankerPack;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -25,12 +25,11 @@ import com.mongodb.client.result.UpdateResult;
 
 import org.bson.Document;
 
-import javafx.util.Pair;
-
 // import org.bson.conversions.Bson;
 
 public class PageRank {
     public static ArrayList<WebPage> Result;
+    public static Integer flag = 0;
     // public static double[] vec_PR;
     // public static double[][] H;
 
@@ -44,8 +43,10 @@ public class PageRank {
 
     // The collection in MongoDB that contains the IndexerCollection word data.
     public static MongoCollection<org.bson.Document> IndexerCollection;
+    FindIterable<org.bson.Document> downloadedURLsDocuments;
 
     public PageRank() {
+        downloadedURLsDocuments = downloadedURLs.find();
     }
 
     public static ArrayList<String> rank(ArrayList<String> list, HashMap<String, Double> l, MongoDatabase db,
@@ -54,6 +55,15 @@ public class PageRank {
         downloadedURLs = db.getCollection("downloadedURLs");
         References = db.getCollection("References");
         IndexerCollection = db.getCollection("IndexerCollection");
+
+        // if (flag == 0) {
+        // ArrayList<String> urlList = new ArrayList<String>();
+        // for (org.bson.Document doc : downloadedURLs.find()) {
+        // urlList.add(doc.get("url").toString());
+        // }
+        // PageRank.calculatePR(urlList, db);
+        // flag = 1;
+        // }
 
         // HashMap<String, Double> l = new HashMap<String, Double>();
 
@@ -87,8 +97,7 @@ public class PageRank {
         // updateEntryFDownloadedURLs("https://www.python.org/about/gettingstarted/",
         // "currentPRScore",
         // 1);
-        SearchResult sR = new SearchResult(list, db);
-        Result = sR.pagesResults;
+
         // for (WebPage WP : Result) {
         // System.out.println("1link " + WP.url);
         // System.out.println("1Count is " + WP.getOutgoinglinks());
@@ -98,8 +107,6 @@ public class PageRank {
         // System.out.println("1outgoinglinks is " + WP.getIdpointingto());
 
         // }
-
-        calculatePopularity(5);
 
         // for (WebPage WP : Result) {
         // System.out.println("2link " + WP.url);
@@ -111,18 +118,17 @@ public class PageRank {
 
         // }
         for (Document d : wordObject) {
-            // ArrayList<org.bson.Document> referencedIterator = (ArrayList<Document>)
-            // wordObject.get("References");
+            ArrayList<org.bson.Document> referencedIterator = (ArrayList<Document>) d.get("References");
             for (org.bson.Document doc : referencedIterator) {
                 Double tfidfVal = ((Double) doc.get("TFIDF")).doubleValue();
                 // System.out.println("Link " + doc.get("URL") + " TFIDF " + doc.get("TFIDF"));
                 String Link = (String) doc.get("URL");
                 Double PR = getDoubleValFDownloadedURLs(Link, "currentPRScore");
                 // System.out.println("Link " + doc.get("URL") + " Popularity " + PR);
-                ComScore = (5 * tfidfVal) + PR;
+                Double ComScore = (5 * tfidfVal) + PR;
                 // l.put(Link, ComScore);
-                l.put(link,map.get(link)+ComScore)
-                 System.out.println("Link " + doc.get("URL") + " Combined Score  " + map.get(link));
+                l.put(Link, l.get(Link) + ComScore);
+                System.out.println("Link " + doc.get("URL") + " Combined Score  " + l.get(Link));
 
             }
 
@@ -159,6 +165,13 @@ public class PageRank {
         // }
     }
 
+    public static void calculatePR(ArrayList<String> list, MongoDatabase db) {
+        System.out.println("USING CALCPR");
+        SearchResult sR = new SearchResult(list, db);
+        Result = sR.pagesResults;
+        calculatePopularity(5);
+
+    }
     // Set Combined Score
 
     // Function to get Pointing To links for a URL
@@ -202,12 +215,14 @@ public class PageRank {
 
         for (WebPage WP : Result) {
             double tempScore = 0;
-            for (String id : WP.idpointingto) {
-                // System.out.println(" id " + id);
-                tempScore += (getDoubleValFDownloadedURLs(id, "previousPRScore")
-                        / getIntegerVal(id, "linksCount"));
+            if (WP.getIdpointingto().size() != 0) {
+                for (String id : WP.idpointingto) {
+                    // System.out.println(" id " + id);
+                    tempScore += (getDoubleValFDownloadedURLs(id, "previousPRScore")
+                            / getIntegerVal(id, "linksCount"));
+                }
+                tempScore = (double) ((1.0 - dampingFactor) / Result.size()) + (dampingFactor * tempScore);
             }
-            tempScore = (double) ((1.0 - dampingFactor) / Result.size()) + (dampingFactor * tempScore);
             WP.setCurrentPRScore(tempScore);
             updateEntryFDownloadedURLs(WP.url, "currentPRScore", tempScore);
         }
@@ -237,14 +252,6 @@ public class PageRank {
     private static Integer getIntegerVal(String L, String searchKey) {
         org.bson.Document linksIterator = downloadedURLs.find(eq("url", L)).first();
         return ((Integer) linksIterator.get(searchKey)).intValue();
-
-    }
-
-    private static class ScoreComparator implements Comparator<Pair> {
-
-        public int compare(Pair a, Pair b) {
-            return Double.compare((Double) a.getValue(), (Double) b.getValue());
-        }
 
     }
 

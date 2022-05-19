@@ -8,30 +8,29 @@ import com.mongodb.client.MongoDatabase;
 import java.io.IOException;
 
 import com.codebind.indexerPack.Indexer;
-// import com.codebind.rankerPack.PageRank;
-// import com.codebind.rankerPack.SearchResult;
-// import com.codebind.QueryProcessorPack.QueryProcessor;
 
 public class Project {
     public static void main(String[] args) throws IOException {
-        MongoClient client = MongoClients.create(
-                "mongodb+srv://Mostafa_98:mostafa123@webcrawler.6mfpo.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
+        // MongoClient client = MongoClients.create(
+        // "mongodb+srv://Mostafa_98:mostafa123@webcrawler.6mfpo.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
+        // MongoDatabase db = client.getDatabase("WebCrawler");
+
+        MongoClient client = MongoClients.create("mongodb://127.0.0.1:27017");
         // Getting the dataBase from this client.
-        MongoDatabase db = client.getDatabase("WebCrawler");
+        MongoDatabase db = client.getDatabase("APTProject");
 
         System.out.println("Started Crawling");
         long start = System.currentTimeMillis();
 
-        // WebCrawler.Web(args, db);
+        WebCrawler.Web(args, db);
         long end = System.currentTimeMillis();
-        System.out.println("Crawling Finished in " + (end - start) / 60000.0 + " minutes");
+        System.out.println("Crawling Finished in " + (end - start) / 60000.0 + "minutes");
 
         System.out.println("Started Indexing");
         start = System.currentTimeMillis();
-        Indexer ind = new Indexer();
-        ind.indexer(args, db);
+        Indexer.indexer(args, db);
         end = System.currentTimeMillis();
-        System.out.println("\nIndexing Finished in " + (end - start) / 60000.0 + " minutes");
+        System.out.println("\nIndexing Finished in " + (end - start) / 60000.0 + "minutes");
 
     }
 }
