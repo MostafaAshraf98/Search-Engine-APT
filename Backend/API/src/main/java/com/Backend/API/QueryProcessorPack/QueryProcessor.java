@@ -43,10 +43,13 @@ public class QueryProcessor {
         ArrayList<String> IndexedURLs = new ArrayList<String>();
         ArrayList<Document> QueryDocuments = new ArrayList<Document>();
         ArrayList<Document> Ref = new ArrayList<Document>();
+
         for (int i = 0; i < QueryWords.length; i++) {
             String word = QueryWords[i].toLowerCase();
+            word.replaceAll("[^a-zA-Z0-9]", "");
             if (!isStopword(word)) {
                 String Stem = stemWord(word);
+
                 ProcessedWords.add(Stem);
             }
         }
