@@ -53,17 +53,23 @@ public class Indexer {
     static Integer totDocCount = 0;
 
     public static void indexer(String[] args, MongoDatabase db) throws IOException {
+
         loadStopwords();
+
         // Getting the collections from this database.
+
         IndexerCollection = db.getCollection("IndexerCollection");
         downloadedURLs = db.getCollection("downloadedURLs");
-        ArrayList<Document> docs = readAllHTML();
+
+        for(int i = 0; i < 10; i++)
+        {
+            ArrayList<Document> docs = readAllHTML(i * 500, (i+1) * 500);
+            index(docs);
+        }
 
         // System.out.println(stemWord("universal"));
 
         // Indexing the documents
-        // System.out.print(file_URL.get("539506411.html"));
-        index(docs);
         // print the inverted file
         // printInvertedFile();
         AddToDatabase();
@@ -104,8 +110,11 @@ public class Indexer {
 
     // private static void index(Document doc, String Url) throws IOException {
     private static void index(ArrayList<Document> docs) throws IOException {
-        totDocCount = docs.size();
+        System.out.println("Indexing the documents");
         int count = 0;
+
+        totDocCount = docs.size();
+
         for (Document doc : docs) {
             System.out.print("\rIndexing: " + ++count + "/" + totDocCount);
             // int count=0;
@@ -122,6 +131,7 @@ public class Indexer {
 
             for (final Element e : all) {
                 // For each tag, get the text
+
                 String text = e.text();
                 // Get the tag name
                 final String tag = e.tagName();
@@ -422,23 +432,32 @@ public class Indexer {
         IndexerCollection.insertOne(IndexerDocument);
     }
 
-    private static ArrayList<Document> readAllHTML() throws IOException {
+    private static ArrayList<Document> readAllHTML(int start, int end) throws IOException {
         file_URL = new HashMap<String, String>();
         ArrayList<Document> docs = new ArrayList<Document>();
 
-        // File folder = new File(webpagesPath);
-        // File[] listOfFiles = folder.listFiles();
+        
+        File folder = new File(webpagesPath);
+        File[] listOfFiles = folder.listFiles();
+
+        if (end > listOfFiles.length)
+        {
+            end = listOfFiles.length;
+        }
+        if (start > end) {
+            System.out.println("start is greater than end");
+            return docs;
+        }
         // System.out.println("Number of files: " + listOfFiles.length);
-        // for (int i = 0; i < listOfFiles.length; i++) {
-        // if (listOfFiles[i].isFile()) {
-        // String fileName = listOfFiles[i].getName();
-        // String filePath = listOfFiles[i].getAbsolutePath();
-        // file_URL.put(fileName, filePath);
-        // Document doc = Jsoup.parse(new File(filePath), "UTF-8");
-        // docs.add(doc);
-        // }
-        // }
-        // downloadedURLs = db.getCollection("downloadedURLs");
+        for (int i = start; i < end; i++) {
+            if (listOfFiles[i].isFile()) {
+                String fileName = listOfFiles[i].getName();
+                String filePath = listOfFiles[i].getAbsolutePath();
+                //file_URL.put(fileName, filePath);
+                Document doc = Jsoup.parse(new File(filePath), "UTF-8");
+                docs.add(doc);
+            }
+        }
 
         Bson projection = Projections.fields(Projections.include("url", "fileName"),
                 Projections.excludeId());
@@ -447,14 +466,14 @@ public class Indexer {
         Document doc = null;
         while (it.hasNext()) {
             org.bson.Document fileUrlObject = (org.bson.Document) it.next();
-            doc = readHTMLFile(webpagesPath + fileUrlObject.get("fileName") + ".html");
+            // doc = readHTMLFile(webpagesPath + fileUrlObject.get("fileName") + ".html");
             if (doc == null) {
                 continue;
             }
             String fileName = fileUrlObject.get("fileName") + ".html";
             String URL = fileUrlObject.get("url") + "";
             file_URL.put(fileName, URL);
-            docs.add(doc);
+            // docs.add(doc);
         }
         return docs;
     }
